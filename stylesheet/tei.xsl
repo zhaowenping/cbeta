@@ -178,7 +178,7 @@
 
 <!--处理note TODO -->
   <xsl:template match="note[@place='inline']">
-        (<xsl:apply-templates/>)
+      <span style="color:#A9A9A9">(<xsl:apply-templates/>)</span>
   </xsl:template>
 
   <xsl:template match="note">
@@ -191,14 +191,14 @@
     </xsl:variable>
     <xsl:choose>
       <xsl:when test="ancestor::bibl"> (<xsl:apply-templates/>) </xsl:when>
-      <xsl:when test="@place='inline'">
-    <!--xsl:call-template name="makeAnchor">
+      <!--xsl:when test="@place='inline'">
+    <xsl:call-template name="makeAnchor">
       <xsl:with-param name="name" select="$identifier"/>
-    </xsl:call-template-->
+    </xsl:call-template>
         <xsl:text> (</xsl:text>
         <xsl:apply-templates/>
         <xsl:text>)</xsl:text>
-      </xsl:when>
+      </xsl:when-->
       <xsl:when test="@place='display'">
     <!--xsl:call-template name="makeAnchor">
       <xsl:with-param name="name" select="$identifier"/>
@@ -381,7 +381,7 @@
     <br/>
   </xsl:template>
 
-<!--是上一页下一页用的-->
+<!--是上一页下一页用的, 先注释掉吧-->
   <xsl:template match="cb:mulu">
   </xsl:template>
 
@@ -409,6 +409,19 @@
        <xsl:apply-templates/>
      </footer>
    </xsl:template>
+
+   <xsl:template match="list">
+       <ul>
+       <xsl:apply-templates/>
+       </ul>
+   </xsl:template>
+
+   <xsl:template match="list/item">
+       <li>
+       <xsl:apply-templates/>
+       </li>
+   </xsl:template>
+
 
 
 </xsl:stylesheet>
