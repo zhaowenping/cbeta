@@ -121,6 +121,25 @@
     <xsl:value-of select="normalize-space(.)"/>
   </xsl:template>
 
+   <!--处理图片-->
+  <!--xsl:template match="figure">
+    <img>
+      <xsl:attribute name="src">
+          <xsl:value-of select="graphic[@url]"/>
+      </xsl:attribute>
+    </img>
+    <figure>
+      <xsl:apply-templates/>
+    </figure>
+  </xsl:template-->
+  <xsl:template match="graphic">
+    <img>
+      <xsl:attribute name="src">
+          <xsl:value-of select="@url"/>
+      </xsl:attribute>
+    </img>
+  </xsl:template>
+
     <!--处理段落-->
   <xsl:template match="p">
     <p class="p">
@@ -301,27 +320,77 @@
  <localName>Romanized form in CBETA transcription</localName>
  <localName>Romanized form in Unicode transcription</localName-->
     <xsl:choose>
-        <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='normalized form']/value">
-            <xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='normalized form']/value"/>
+        <xsl:when test="starts-with($Ref, 'SD')">
+            <ruby><img>
+                <xsl:attribute name="src">
+                    <xsl:text>../../sd-gif/</xsl:text>
+                    <xsl:value-of select="substring($Ref, 4, 2)"/>
+                    <xsl:text>/</xsl:text>
+                    <xsl:value-of select="$Ref"/>
+                    <xsl:text>.gif</xsl:text>
+                </xsl:attribute>
+                </img>
+            <!--xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='Character in the Siddham font']/value"/>
+            <xsl:value-of select="."/-->
+                <rt>
+    <xsl:choose>
+        <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in Unicode transcription']/value">
+            (<xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in Unicode transcription']/value"/>)
         </xsl:when>
-        <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='composition']/value">
-            <xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='composition']/value"/>
+        <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in CBETA transcription']/value">
+            (<xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in CBETA transcription']/value"/>)
         </xsl:when>
         <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='Character in the Siddham font']/value">
             <xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='Character in the Siddham font']/value"/>
         </xsl:when>
-        <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in Unicode transcription']/value">
-            <xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in Unicode transcription']/value"/>
+        <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='big5']/value">
+            <xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='big5']/value"/>
         </xsl:when>
-        <!--xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in CBETA transcription']/value">
-            <xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in CBETA transcription']/value"/>
+    </xsl:choose>
+            </rt>
+        </ruby>
+        </xsl:when>
+        <!--蘭札字-->
+        <xsl:when test="starts-with($Ref, 'RJ')">
+            <ruby>
+                <img>
+                <xsl:attribute name="src">
+                    <xsl:text>../../rj-gif/</xsl:text>
+                    <xsl:value-of select="substring($Ref, 4, 2)"/>
+                    <xsl:text>/</xsl:text>
+                    <xsl:value-of select="$Ref"/>
+                    <xsl:text>.gif</xsl:text>
+                </xsl:attribute>
+                </img>
+            <!--xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='rjchar']/value"/-->
+                <rt>
+    <xsl:choose>
+        <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in Unicode transcription']/value">
+            (<xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in Unicode transcription']/value"/>)
+        </xsl:when>
+        <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in CBETA transcription']/value">
+            (<xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in CBETA transcription']/value"/>)
+        </xsl:when>
+        <xsl:otherwise>
+            <xsl:value-of select="."/>
+        </xsl:otherwise>
+    </xsl:choose>
+                </rt>
+            </ruby>
+        </xsl:when>
+
+        <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='normalized form']/value">
+            <xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='normalized form']/value"/>
+        </xsl:when>
+        <xsl:when test="/TEI//char[@xml:id=$Ref]/mapping[@type='unicode']">
+            <xsl:value-of select="."/>
+        </xsl:when>
+        <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='composition']/value">
+            <xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='composition']/value"/>
         </xsl:when>
         <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='rjchar']/value">
             <xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='rjchar']/value"/>
         </xsl:when>
-        <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='big5']/value">
-            <xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='big5']/value"/>
-        </xsl:when-->
         <xsl:otherwise>
             <xsl:value-of select="."/>
         </xsl:otherwise>
@@ -363,21 +432,27 @@
     <xsl:apply-templates/>
   </xsl:template>
 
-<!--head的上级节点是div类节点则不显示? -->
-  <!--xsl:template match="head">
+<!--head 小节的目录。上级节点是div类节点则不显示? -->
+  <xsl:template match="head">
     <xsl:variable name="parent" select="local-name(..)"/>
-    <xsl:if test="not(starts-with($parent,'div'))">
+    <!--xsl:if test="not(starts-with($parent,'div'))">
       <xsl:apply-templates/>
-    </xsl:if>
-  </xsl:template-->
+    </xsl:if-->
+    <h2>
+      <xsl:apply-templates/>
+    </h2>
+  </xsl:template>
 
   <!--xsl:template match="title">
       <h1 class="title"><xsl:value-of select="."/></h1>
     <br/>
   </xsl:template-->
 
+<!--标题-->
   <xsl:template match="cb:jhead">
-      <h1 class="title"><xsl:value-of select="."/></h1>
+  <h1 class="title">
+    <xsl:apply-templates/>
+  </h1>
     <br/>
   </xsl:template>
 
@@ -405,11 +480,13 @@
    </xsl:template>
 
    <xsl:template match="text/back">
+       <!--hr/>
      <footer class="byline">
        <xsl:apply-templates/>
-     </footer>
+     </footer-->
    </xsl:template>
 
+   <!--处理列表-->
    <xsl:template match="list">
        <ul>
        <xsl:apply-templates/>
@@ -422,7 +499,22 @@
        </li>
    </xsl:template>
 
+<!--处理空缺-->
+  <xsl:template match="unclear">
+    <span class="unclear">
+      <xsl:if test="@xml:id">
+        <xsl:attribute name="id">
+            <xsl:value-of select="@xml:id"/>
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:apply-templates/>
+      &#65533; 
+    </span>
+  </xsl:template>
 
+  <!--TODO-->
+  <!--xsl:template match="anchor">
+  </xsl:template-->
 
 </xsl:stylesheet>
 
