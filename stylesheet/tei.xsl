@@ -15,7 +15,33 @@
 
          <script> </script>
         </head>
+
         <body>
+
+    <!--侧边栏目录-->
+        <!--nav>
+        <ul>
+            <xsl:for-each select="//cb:mulu">
+        <xsl:choose>
+            <xsl:when test="@level=1">
+                <li><a>
+          <xsl:attribute name="href">
+              <xsl:text>#</xsl:text>
+            <xsl:value-of select="p[@xml:id]"/>
+          </xsl:attribute>
+                        <xsl:value-of select="."/></a></li>
+            </xsl:when>
+            <xsl:when test="@level=2">
+                <ul><li><a href="#"><xsl:value-of select="."/></a></li></ul>
+            </xsl:when>
+            <xsl:when test="@level=3">
+                <ul><ul><li><a href="#"><xsl:value-of select="."/></a></li></ul></ul>
+            </xsl:when>
+        </xsl:choose>
+            </xsl:for-each>
+        </ul>
+        </nav-->
+
             <br/>
             <xsl:apply-templates/>
         </body>
@@ -64,6 +90,36 @@
       </sup-->
     </a>
   </xsl:template>
+
+  <!--处理表格table-->
+  <!--TODO: table rend="border:0"-->
+    <xsl:template match="table">
+        <table class="table">
+            <xsl:apply-templates/>
+        </table>
+    </xsl:template>
+  <!--处理表格row-->
+    <xsl:template match="row">
+        <tr>
+            <xsl:apply-templates/>
+        </tr>
+    </xsl:template>
+  <!--处理表格cell-->
+    <xsl:template match="cell">
+        <td>
+            <xsl:if test="@cols">
+            <xsl:attribute name="colspan">
+                <xsl:value-of select="@cols"/>
+            </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="@rows">
+            <xsl:attribute name="rowspan">
+                <xsl:value-of select="@rows"/>
+            </xsl:attribute>
+            </xsl:if>
+            <xsl:apply-templates/>
+        </td>
+    </xsl:template>
 
     <!--处理所有的颂-->
 <!-- rend="margin-left:1em;text-indent:-1em" -->
@@ -135,7 +191,8 @@
   <xsl:template match="graphic">
     <img>
       <xsl:attribute name="src">
-          <xsl:value-of select="@url"/>
+          <xsl:text>/static</xsl:text>
+          <xsl:value-of select="substring(@url, 3)"/>
       </xsl:attribute>
     </img>
   </xsl:template>
@@ -143,6 +200,11 @@
     <!--处理段落-->
   <xsl:template match="p">
     <p class="p">
+      <xsl:if test="@id">
+          <xsl:attribute name="id">      
+            <xsl:value-of select="@xml:id"/>
+          </xsl:attribute>
+      </xsl:if>
       <xsl:apply-templates/>
     </p>
   </xsl:template>
@@ -323,7 +385,7 @@
         <xsl:when test="starts-with($Ref, 'SD')">
             <ruby><img>
                 <xsl:attribute name="src">
-                    <xsl:text>../../sd-gif/</xsl:text>
+                    <xsl:text>/static/sd-gif/</xsl:text>
                     <xsl:value-of select="substring($Ref, 4, 2)"/>
                     <xsl:text>/</xsl:text>
                     <xsl:value-of select="$Ref"/>
@@ -355,7 +417,7 @@
             <ruby>
                 <img>
                 <xsl:attribute name="src">
-                    <xsl:text>../../rj-gif/</xsl:text>
+                    <xsl:text>/static/rj-gif/</xsl:text>
                     <xsl:value-of select="substring($Ref, 4, 2)"/>
                     <xsl:text>/</xsl:text>
                     <xsl:value-of select="$Ref"/>
@@ -456,10 +518,6 @@
     <br/>
   </xsl:template>
 
-<!--是上一页下一页用的, 先注释掉吧-->
-  <xsl:template match="cb:mulu">
-  </xsl:template>
-
 
    <xsl:template match="byline">
      <div class="byline">
@@ -515,6 +573,13 @@
   <!--TODO-->
   <!--xsl:template match="anchor">
   </xsl:template-->
+
+<!--处理div评论-->
+  <xsl:template match="cb:div[@type='commentary']">
+    <div class="commentary">
+      <xsl:apply-templates/>
+    </div>
+  </xsl:template>
 
 </xsl:stylesheet>
 

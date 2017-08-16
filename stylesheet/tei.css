@@ -44,6 +44,13 @@ of this software, even if advised of the possibility of such damage.
 }
 */
 
+@font-face {
+  font-family: 'siddam';
+  font-style: normal;
+  font-weight: 400;
+  src: url(http://localhost:8080/font/siddam.woff2) format('woff2');
+}
+
 /* main layout */
 /* @import url(odd.css); */
 body.simple{
@@ -412,6 +419,10 @@ a.inlinetoc-sub:link
 }
 
 span.gaiji{
+    /*font-family: 'siddam';
+     'UntitledTTF',
+    font-family: 'UntitledTTF';
+    */
     color:#00d7ff;
 }
 
@@ -574,10 +585,11 @@ p {
    text-indent: 2em;
    text-align: justify;
    white-space: normal; /* 单词间空白,对中文无效 */
-   font-family: Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "PMingLiU", "Hiragino Sans GB", SimSun, "宋体", "Microsoft YaHei", "微软雅黑";
+   font-family: Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", SimSun, "宋体", "Microsoft YaHei", "微软雅黑", "PMingLiU";
    /*font-family: "新明細體","標楷體",Arial,Helvetica,sans-serif;*/
 /*   font-size: small;    */
-   font-size: 1em;
+   /*font-size: 1em;*/
+   font-size: normal;
    font-weight: normal;
 /*   letter-spacing: 0.15em; *//* 字母间空白 */
    letter-spacing: 0.12em; /* 字母间空白 */
@@ -691,6 +703,10 @@ div.listBibl{
     margin-top:6pt;
     margin-bottom:6pt;
 }
+div.listBibl{
+    margin-top:6pt;
+    margin-bottom:6pt;
+}
 span.bibl{
     font-style:italic;
 }
@@ -720,6 +736,13 @@ div.citbibl:after{
 div.citbibl{
     font-style:italic;
     font-size:smaller;
+}
+
+/*add*/
+div.commentary{
+    font-style:italic;
+    font-size:smaller;
+    font-weight:light;
 }
 /* a <quote> inside a <cit> */
 div.citquote{
@@ -909,7 +932,11 @@ div.altfigure{
     border-bottom:solid black 1pt;
 }
 
-table.table,
+table.table {
+    margin: 0 auto;  /*添加了居中*/
+    border:solid black 1pt;
+}
+
 table.table tr,
 table.table td{
     border:solid black 1pt;
