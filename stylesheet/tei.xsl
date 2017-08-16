@@ -20,11 +20,11 @@
 
     <!--侧边栏目录-->
         <!--nav>
-        <ul>
+        <ul class="toc">
             <xsl:for-each select="//cb:mulu">
         <xsl:choose>
             <xsl:when test="@level=1">
-                <li><a>
+                <li class="toc"><a>
           <xsl:attribute name="href">
               <xsl:text>#</xsl:text>
             <xsl:value-of select="p[@xml:id]"/>
@@ -108,7 +108,7 @@
     <xsl:template match="cell">
         <td>
             <xsl:if test="@cols">
-            <xsl:attribute name="colspan">
+                <xsl:attribute name="colspan">
                 <xsl:value-of select="@cols"/>
             </xsl:attribute>
             </xsl:if>
@@ -538,10 +538,10 @@
    </xsl:template>
 
    <xsl:template match="text/back">
-       <!--hr/>
+       <hr/>
      <footer class="byline">
        <xsl:apply-templates/>
-     </footer-->
+     </footer>
    </xsl:template>
 
    <!--处理列表-->
@@ -572,7 +572,18 @@
 
   <!--TODO-->
   <!--xsl:template match="anchor">
+      <xsl:variable name="Ref" select="concat('#', @xml:id)"/>
+      <xsl:if test="@xml:id and /TEI//note[@target=$Ref]">
+        <a>[<xsl:value-of select="substring(@n, 6)"/>]</a>
+        <div id="divPiao">
+            <xsl:value-of select="/TEI//note[@target=$Ref]"/>
+        </div>
+      </xsl:if>
+      <xsl:if test="@type='star' and /TEI//app[@from=$Ref]">
+        <a>[*]</a>
+      </xsl:if>
   </xsl:template-->
+
 
 <!--处理div评论-->
   <xsl:template match="cb:div[@type='commentary']">

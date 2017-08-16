@@ -43,14 +43,14 @@ of this software, even if advised of the possibility of such damage.
   src: url(http://themes.googleusercontent.com/static/fonts/gabriela/v2/fLaucCvjCt_Hmc9smyo_rPesZW2xOQ-xsNqO47m55DA.woff) format('woff');
 }
 */
-
+/*
 @font-face {
   font-family: 'siddam';
   font-style: normal;
   font-weight: 400;
   src: url(http://localhost:8080/font/siddam.woff2) format('woff2');
 }
-
+*/
 /* main layout */
 /* @import url(odd.css); */
 body.simple{
@@ -933,7 +933,7 @@ div.altfigure{
 }
 
 table.table {
-    margin: 0 auto;  /*添加了居中*/
+    /*margin: 0 auto; */ /*添加了居中*/
     border:solid black 1pt;
 }
 
