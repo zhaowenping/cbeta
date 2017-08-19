@@ -4,9 +4,7 @@
     <!--xpath-default-namespace="http://www.tei-c.org/ns/1.0"-->
 
     <xsl:variable name="filename">
-        <xsl:for-each select="/TEI">
-           <xsl:value-of select="@xml:id"/>
-        </xsl:for-each>
+        <xsl:value-of select="/TEI[1]/@xml:id"/>
     </xsl:variable>
 
     <xsl:template match="/">
@@ -24,51 +22,26 @@
 
         <body>
 
-    <!--侧边栏目录-->
+    <!--侧边栏目录 max(level)=28-->
+        <!--aside style="height:100%;width:20%; margin-bottom:-3000px; padding-bottom:3000px; background:#cad5eb; float:left;"-->
         <nav>
-            <xsl:variable name="file" select="document('../xml/T30/T30n1579_001.xml')" />
         <ul class="toc">
-            <xsl:for-each select="//cb:mulu">
-        <xsl:choose>
-            <xsl:when test="@level=1">
-                <li class="toc"><a>
-          <xsl:attribute name="href">
-              <xsl:text>#</xsl:text>
-              <xsl:value-of select="following::*[@xml:id][1]/@xml:id"/>
-          </xsl:attribute>
-          <xsl:value-of select="."/>
-                </a></li>
-            </xsl:when>
-            <xsl:when test="@level=2">
-                <ul><li><a>
-                    <xsl:attribute name="href">
-                    <xsl:text>#</xsl:text>
-                    <xsl:value-of select="following::*[@xml:id][1]/@xml:id"/>
-                    </xsl:attribute>
-                            <xsl:value-of select="."/>
-                </a></li></ul>
-            </xsl:when>
-            <xsl:when test="@level=3">
-                <ul><ul><li><a>
-                    <xsl:attribute name="href">
-                    <xsl:text>#</xsl:text>
-              <xsl:for-each select="following::*[@xml:id][1]">
-                        <xsl:value-of select="@xml:id"/>
-                    </xsl:for-each>
-                    </xsl:attribute>
-                                <xsl:value-of select="."/>
-                </a></li></ul></ul>
-            </xsl:when>
-            <xsl:when test="@level=4">
-                <ul><ul><ul><li><a>
-          <xsl:attribute name="href">
-              <xsl:text>#</xsl:text>
-              <xsl:value-of select="following::*[@xml:id][1]/@xml:id"/>
-          </xsl:attribute>
-              <xsl:value-of select="."/></a></li></ul></ul></ul>
-            </xsl:when>
-        </xsl:choose>
-            </xsl:for-each>
+
+        <xsl:call-template name="make_catalog">
+            <xsl:with-param name="pos" select="//cb:mulu">
+            </xsl:with-param>
+        </xsl:call-template>
+
+        <xsl:call-template name="make_catalog">
+            <!--xsl:with-param name="pos" select="document('../xml/T30/T30n1579_002.xml')//cb:mulu"-->
+            <xsl:with-param name="pos" select="document(concat('../xml/', substring-before($filename, 'n'), '/', $filename, '_002.xml'))//cb:mulu">
+            </xsl:with-param>
+        </xsl:call-template>
+
+        <xsl:call-template name="make_catalog">
+            <xsl:with-param name="pos" select="document(concat('../xml/', substring-before($filename, 'n'), '/', $filename, '_003.xml'))//cb:mulu">
+            </xsl:with-param>
+        </xsl:call-template>
         </ul>
         </nav>
 
@@ -576,9 +549,7 @@
    </xsl:template>
 
    <xsl:template match="text/body">
-     <section class="byline">
        <xsl:apply-templates/>
-     </section>
    </xsl:template>
 
    <xsl:template match="text/back">
@@ -634,6 +605,50 @@
     <div class="commentary">
       <xsl:apply-templates/>
     </div>
+  </xsl:template>
+
+  <!--生成导航目录-->
+  <xsl:template name="make_catalog">
+      <xsl:param name="pos"/>
+            <xsl:for-each select="$pos">
+        <xsl:choose>
+            <xsl:when test="@level=1">
+                <li class="toc"><a>
+          <xsl:attribute name="href">
+              <xsl:text>#</xsl:text>
+              <xsl:value-of select="following::*[@xml:id][1]/@xml:id"/>
+          </xsl:attribute>
+          <xsl:value-of select="."/>
+                </a></li>
+            </xsl:when>
+            <xsl:when test="@level=2">
+                <ul><li><a>
+                    <xsl:attribute name="href">
+                    <xsl:text>#</xsl:text>
+                    <xsl:value-of select="following::*[@xml:id][1]/@xml:id"/>
+                    </xsl:attribute>
+                            <xsl:value-of select="."/>
+                </a></li></ul>
+            </xsl:when>
+            <xsl:when test="@level=3">
+                <ul><ul><li><a>
+                    <xsl:attribute name="href">
+                    <xsl:text>#</xsl:text>
+                    <xsl:value-of select="following::*[@xml:id][1]/@xml:id"/>
+                    </xsl:attribute>
+                                <xsl:value-of select="."/>
+                </a></li></ul></ul>
+            </xsl:when>
+            <xsl:when test="@level=4">
+                <ul><ul><ul><li><a>
+          <xsl:attribute name="href">
+              <xsl:text>#</xsl:text>
+              <xsl:value-of select="following::*[@xml:id][1]/@xml:id"/>
+          </xsl:attribute>
+              <xsl:value-of select="."/></a></li></ul></ul></ul>
+            </xsl:when>
+        </xsl:choose>
+            </xsl:for-each>
   </xsl:template>
 
 </xsl:stylesheet>
