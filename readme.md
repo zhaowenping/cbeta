@@ -41,6 +41,15 @@
 3. 首先把cbeta中的xml文件拷贝出来到一个目录比如TMP，然后拷贝上述两个文件到TMP目录。
 4. 启动nginx服务器，设置静态目录为TMP。一个不错的阅经环境就设置完成了
 
+## 文件列表
+static/tei.xsl 主体程序
+static/tei.css css效果文件
+static/siddham.ttf 符合unicode10.0的悉昙体字库
+static/siddham.sfd 符合unicode10.0的悉昙体字库的fontforg文件，可以根据这个文件继续修改字库
+static/siddham.woff 符合unicode10.0的悉昙体字库,可以通过webfont方式使用悉昙体字库，以便读者不用安装字库即可阅读悉昙体
+terms.txt  佛教词汇大全，用来给藏经分词用的, 以便全文检索使用
+
+
 ## 工作到一半的时候发现已经有了
 http://cbetaonline.dila.edu.tw/zh/T1579_011
 但是技术没有公开, 而且还有显示问题
@@ -55,3 +64,7 @@ http://cbetaonline.dila.edu.tw/zh/T1579_011
 
 ## 目前存在的问题
 1.搜索生成的索引文件太大了, 整整有4G，查找一次使用时间太长，需要15～20秒。搜索结果不理想
+
+## 联系方式
+可以通过wenping_zhao@126.com与我联系使用中的问题
+
