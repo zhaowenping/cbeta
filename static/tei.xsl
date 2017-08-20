@@ -14,7 +14,7 @@
          <!--link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/-->
          <link rel="stylesheet" type="text/css" href="/stylesheet/tei.css"/>
          <title>
-            <xsl:value-of select="//teiHeader//title"/>
+            <xsl:value-of select="substring-after(//teiHeader//title, 'No. ')"/>
         </title>
 
          <script> </script>
@@ -22,31 +22,74 @@
 
         <body>
 
+            <xsl:variable name="previous_page">
+              <xsl:value-of select="concat('/xml/', substring-before($filename, 'n'), '/', $filename, '_')"/>
+              <xsl:number format="001" value="/TEI//cb:juan/@n - 1"/>
+              <xsl:text>.xml</xsl:text>
+            </xsl:variable>
+
+            <xsl:variable name="next_page">
+              <xsl:value-of select="concat('/xml/', substring-before($filename, 'n'), '/', $filename, '_')"/>
+              <xsl:number format="001" value="/TEI//cb:juan/@n + 1"/>
+              <xsl:text>.xml</xsl:text>
+            </xsl:variable>
+
+        <nav class="top">
+        <a>
+          <xsl:attribute name="href">
+              <xsl:value-of select="$previous_page"/>
+          </xsl:attribute>
+          上一卷
+        </a>
+        <a href="">返回目录</a>
+        <a>
+          <xsl:attribute name="href">
+              <xsl:value-of select="$next_page"/>
+          </xsl:attribute>
+          下一卷
+        </a>
+        </nav>
+
     <!--侧边栏目录 max(level)=28-->
         <!--aside style="height:100%;width:20%; margin-bottom:-3000px; padding-bottom:3000px; background:#cad5eb; float:left;"-->
         <nav>
         <ul class="toc">
 
         <xsl:call-template name="make_catalog">
-            <xsl:with-param name="pos" select="//cb:mulu">
-            </xsl:with-param>
+            <xsl:with-param name="pos" select="//cb:mulu"/>
         </xsl:call-template>
 
         <xsl:call-template name="make_catalog">
             <!--xsl:with-param name="pos" select="document('../xml/T30/T30n1579_002.xml')//cb:mulu"-->
-            <xsl:with-param name="pos" select="document(concat('../xml/', substring-before($filename, 'n'), '/', $filename, '_002.xml'))//cb:mulu">
-            </xsl:with-param>
+            <xsl:with-param name="pos" select="document(concat('../xml/', substring-before($filename, 'n'), '/', $filename, '_002.xml'))//cb:mulu"/>
         </xsl:call-template>
 
         <xsl:call-template name="make_catalog">
-            <xsl:with-param name="pos" select="document(concat('../xml/', substring-before($filename, 'n'), '/', $filename, '_003.xml'))//cb:mulu">
-            </xsl:with-param>
+            <xsl:with-param name="pos" select="document(concat('../xml/', substring-before($filename, 'n'), '/', $filename, '_003.xml'))//cb:mulu"/>
         </xsl:call-template>
         </ul>
         </nav>
 
             <br/>
-            <xsl:apply-templates/>
+            <xsl:apply-templates match="body"/>
+
+        <nav class="bottom">
+        <a>
+          <xsl:attribute name="href">
+              <xsl:value-of select="$previous_page"/>
+          </xsl:attribute>
+          上一卷
+        </a>
+        <a>返回目录
+        </a>
+        <a>
+          <xsl:attribute name="href">
+              <xsl:value-of select="$next_page"/>
+          </xsl:attribute>
+          下一卷
+        </a>
+        </nav>
+
         </body>
         </html>
     </xsl:template>
@@ -59,16 +102,14 @@
 
     <xsl:template match="teiHeader"/>
 
-    <!--测试没通过-->
+    <!--不能切换段落, 否则显示不正常-->
     <xsl:template match="pb">
-      <!--xsl:call-template name="makeAnchor"/-->
-      <!--p style="page-break-before: always"> </p-->
-        <div>
+        <span>
           <xsl:attribute name="id">
             <xsl:value-of select="@xml:id"/>
           </xsl:attribute>
           <xsl:comment>anchor</xsl:comment>
-        </div>
+        </span>
     </xsl:template>
 
     <!--不显示目录-->
@@ -198,11 +239,15 @@
   </xsl:template>
 
    <!--处理图片-->
-  <!--xsl:template match="figure">
+  <xsl:template match="figure">
     <figure>
       <xsl:apply-templates/>
+      <figcaption>
+        <xsl:value-of select="head"/>
+      </figcaption>
     </figure>
-  </xsl:template-->
+  </xsl:template>
+
   <xsl:template match="graphic">
     <img>
       <xsl:attribute name="src">
@@ -398,7 +443,7 @@
  <localName>Romanized form in Unicode transcription</localName-->
     <xsl:choose>
         <xsl:when test="starts-with($Ref, 'SD')">
-            <ruby><img>
+            <ruby><!--img>
                 <xsl:attribute name="src">
                     <xsl:text>/static/sd-gif/</xsl:text>
                     <xsl:value-of select="substring($Ref, 4, 2)"/>
@@ -406,10 +451,10 @@
                     <xsl:value-of select="$Ref"/>
                     <xsl:text>.gif</xsl:text>
                 </xsl:attribute>
-                </img>
+                </img-->
             <!--装字库用这句, 没装用上面的图片-->
-            <xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='Character in the Siddham font']/value"/>
-            <!--完成之后用这句xsl:value-of select="."/-->
+            <!--xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='Character in the Siddham font']/value"/-->
+            <xsl:value-of select="."/>
                 <rt>
     <xsl:choose>
         <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in Unicode transcription']/value">
@@ -542,15 +587,15 @@
      </div>
    </xsl:template>
 
-   <xsl:template match="text">
+   <!--xsl:template match="text">
      <article class="byline">
        <xsl:apply-templates/>
      </article>
-   </xsl:template>
+   </xsl:template-->
 
-   <xsl:template match="text/body">
+   <!--xsl:template match="text/body">
        <xsl:apply-templates/>
-   </xsl:template>
+   </xsl:template-->
 
    <xsl:template match="text/back">
        <hr/>
@@ -581,7 +626,7 @@
         </xsl:attribute>
       </xsl:if>
       <xsl:apply-templates/>
-      &#65533; 
+      &#128441;
     </span>
   </xsl:template>
 
@@ -607,10 +652,14 @@
     </div>
   </xsl:template>
 
-  <!--生成导航目录-->
+  <!--生成导航目录 max(level)=28-->
   <xsl:template name="make_catalog">
       <xsl:param name="pos"/>
             <xsl:for-each select="$pos">
+            <!--xsl:with-param name="pos" select="document('../xml/T30/T30n1579_002.xml')//cb:mulu"-->
+            <xsl:if test="starts-with($pos, 'docu')">
+                <a>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</a>
+            </xsl:if>
         <xsl:choose>
             <xsl:when test="@level=1">
                 <li class="toc"><a>
@@ -627,7 +676,7 @@
                     <xsl:text>#</xsl:text>
                     <xsl:value-of select="following::*[@xml:id][1]/@xml:id"/>
                     </xsl:attribute>
-                            <xsl:value-of select="."/>
+                    <xsl:value-of select="."/>
                 </a></li></ul>
             </xsl:when>
             <xsl:when test="@level=3">
@@ -636,7 +685,7 @@
                     <xsl:text>#</xsl:text>
                     <xsl:value-of select="following::*[@xml:id][1]/@xml:id"/>
                     </xsl:attribute>
-                                <xsl:value-of select="."/>
+                    <xsl:value-of select="."/>
                 </a></li></ul></ul>
             </xsl:when>
             <xsl:when test="@level=4">
