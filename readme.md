@@ -36,18 +36,16 @@
 
 ## 使用说明
 
-1. tei.xsl是用来处理大藏经中的xml文件的.
-2. tei.css是用来调整显示效果的。
-3. 首先把cbeta中的xml文件拷贝出来到一个目录比如TMP，然后拷贝上述两个文件到TMP目录。
-4. 启动nginx服务器，设置静态目录为TMP。一个不错的阅经环境就设置完成了
+1. 首先把cbeta中的xml文件拷贝出来到一个目录比如TMP，然后拷贝static/tei.xsl和static/tei.css两个文件到TMP目录下的stylesheet目录。
+2. 启动nginx服务器，设置静态目录为TMP。一个不错的阅经环境就设置完成了
 
 ## 文件列表
-# static/tei.xsl 主体程序
-# static/tei.css css效果文件
-# static/siddham.ttf 符合unicode10.0的悉昙体字库
-# static/siddham.sfd 符合unicode10.0的悉昙体字库的fontforg文件，可以根据这个文件继续修改字库
-# static/siddham.woff 符合unicode10.0的悉昙体字库,可以通过webfont方式使用悉昙体字库，以便读者不用安装字库即可阅读悉昙体
-# terms.txt  佛教词汇大全，用来给藏经分词用的, 以便全文检索使用
+1. static/tei.xsl 主体程序
+2. static/tei.css css效果文件
+3. static/siddham.ttf 符合unicode10.0的悉昙体字库
+4. static/siddham.sfd 符合unicode10.0的悉昙体字库的fontforg文件，可以根据这个文件继续修改字库
+5. static/siddham.woff 符合unicode10.0的悉昙体字库,可以通过webfont方式使用悉昙体字库，以便读者不用安装字库即可阅读悉昙体
+5. terms.txt  佛教词汇大全，用来给藏经分词用的, 以便全文检索使用
 
 
 ## 工作到一半的时候发现已经有了
@@ -63,8 +61,8 @@ http://cbetaonline.dila.edu.tw/zh/T1579_011
 6. 删除异体字和组字式
 
 # 查询使用的语法
-关键字是AND、OR、NOT。搜索域是title、author, 可以随意组合,使用()
-例如搜索阿含经中的一段话,使用如下语句:  比丘集讲堂 AND title:阿含经
+1. 关键字是AND、OR、NOT。搜索域是title、author, 可以随意组合,使用()
+2. 例如搜索阿含经中的一段话,使用如下语句:  比丘集讲堂 AND title:阿含经
 
 ## 目前存在的问题
 1.搜索生成的索引文件太大了, 整整有4G，查找一次使用时间太长，需要15～20秒。搜索结果不理想
