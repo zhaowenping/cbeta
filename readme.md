@@ -45,7 +45,9 @@
 3. static/siddham.ttf 符合unicode10.0的悉昙体字库
 4. static/siddham.sfd 符合unicode10.0的悉昙体字库的fontforg文件，可以根据这个文件继续修改字库
 5. static/siddham.woff 符合unicode10.0的悉昙体字库,可以通过webfont方式使用悉昙体字库，以便读者不用安装字库即可阅读悉昙体
-5. terms.txt  佛教词汇大全，用来给藏经分词用的, 以便全文检索使用
+6. terms.txt  佛教词汇大全，用来给藏经分词用的, 以便全文检索使用
+7. w_normal.txt 制作的组合字表,相比原光盘的更加清晰, 用来清洗xml文档
+8. w_norm2.txt 制作的未知组合字表, 需要填写
 
 
 ## 工作到一半的时候发现已经有了
