@@ -1,10 +1,23 @@
-<?xml version="1.0" encoding="utf8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:cb="http://www.cbeta.org/ns/1.0">
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cb="http://www.cbeta.org/ns/1.0">
     <xsl:output method="html" encoding="utf8" doctype-system="about:legacy-compat" indent="yes"/>
     <!--xpath-default-namespace="http://www.tei-c.org/ns/1.0"-->
 
-    <xsl:variable name="filename">
+    <xsl:variable name="current_filename" as="xs:string">
         <xsl:value-of select="/TEI[1]/@xml:id"/>
+    </xsl:variable>
+
+    <xsl:variable name="prev_filepath" as="xs:string">
+      <xsl:value-of select="concat('/xml/', substring-before($current_filename, 'n'), '/', $current_filename, '_')"/>
+      <xsl:number format="001" value="/TEI[1]//cb:juan[1]/@n - 1"/>
+      <xsl:text>.xml</xsl:text>
+    </xsl:variable>
+
+    <xsl:variable name="next_filepath" as="xs:string">
+      <xsl:value-of select="concat('/xml/', substring-before($current_filename, 'n'), '/', $current_filename, '_')"/>
+      <xsl:number format="001" value="/TEI[1]//cb:juan[1]/@n + 1"/>
+      <xsl:text>.xml</xsl:text>
     </xsl:variable>
 
     <xsl:template match="/">
@@ -22,29 +35,17 @@
 
         <body>
 
-            <xsl:variable name="previous_page">
-              <xsl:value-of select="concat('/xml/', substring-before($filename, 'n'), '/', $filename, '_')"/>
-              <xsl:number format="001" value="/TEI//cb:juan/@n - 1"/>
-              <xsl:text>.xml</xsl:text>
-            </xsl:variable>
-
-            <xsl:variable name="next_page">
-              <xsl:value-of select="concat('/xml/', substring-before($filename, 'n'), '/', $filename, '_')"/>
-              <xsl:number format="001" value="/TEI//cb:juan/@n + 1"/>
-              <xsl:text>.xml</xsl:text>
-            </xsl:variable>
-
         <nav class="top">
         <a>
           <xsl:attribute name="href">
-              <xsl:value-of select="$previous_page"/>
+              <xsl:value-of select="$prev_filepath"/>
           </xsl:attribute>
           上一卷
         </a>
         <a href="">返回目录</a>
         <a>
           <xsl:attribute name="href">
-              <xsl:value-of select="$next_page"/>
+              <xsl:value-of select="$next_filepath"/>
           </xsl:attribute>
           下一卷
         </a>
@@ -60,12 +61,11 @@
         </xsl:call-template>
 
         <xsl:call-template name="make_catalog">
-            <!--xsl:with-param name="pos" select="document('../xml/T30/T30n1579_002.xml')//cb:mulu"-->
-            <xsl:with-param name="pos" select="document(concat('../xml/', substring-before($filename, 'n'), '/', $filename, '_002.xml'))//cb:mulu"/>
+            <xsl:with-param name="pos" select="document($prev_filepath)//cb:mulu"/>
         </xsl:call-template>
 
         <xsl:call-template name="make_catalog">
-            <xsl:with-param name="pos" select="document(concat('../xml/', substring-before($filename, 'n'), '/', $filename, '_003.xml'))//cb:mulu"/>
+            <xsl:with-param name="pos" select="document($next_filepath)//cb:mulu"/>
         </xsl:call-template>
         </ul>
         </nav>
@@ -73,10 +73,10 @@
             <br/>
             <xsl:apply-templates match="body"/>
 
-        <nav class="bottom">
+        <!--nav class="bottom">
         <a>
           <xsl:attribute name="href">
-              <xsl:value-of select="$previous_page"/>
+              <xsl:value-of select="$prev_filepath"/>
           </xsl:attribute>
           上一卷
         </a>
@@ -84,11 +84,11 @@
         </a>
         <a>
           <xsl:attribute name="href">
-              <xsl:value-of select="$next_page"/>
+              <xsl:value-of select="$next_filepath"/>
           </xsl:attribute>
           下一卷
         </a>
-        </nav>
+        </nav-->
 
         </body>
         </html>
@@ -201,7 +201,7 @@
     <xsl:template match="lb">
         <span class="lb">
          <xsl:attribute name="id">
-             <xsl:value-of select="concat($filename, '_p', @n)" />
+             <xsl:value-of select="concat($current_filename, '_p', @n)" />
          </xsl:attribute>
         </span>
     </xsl:template>
@@ -268,6 +268,15 @@
       <xsl:apply-templates/>
     </p>
   </xsl:template>
+
+  <!--处理词典-->
+  <xsl:template match="form">
+    <span class="term">
+      <xsl:apply-templates/>
+      <xsl:text>:&#160;&#160;&#160;&#160;</xsl:text>
+    </span>
+  </xsl:template>
+
 
   <!--xsl:template match="p">
     <xsl:variable name="wrapperElement">
@@ -466,9 +475,6 @@
         <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='big5']/value">
             <xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='big5']/value"/>
         </xsl:when>
-        <!--xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='Character in the Siddham font']/value">
-            <xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='Character in the Siddham font']/value"/>
-        </xsl:when-->
     </xsl:choose>
             </rt>
         </ruby>
@@ -654,7 +660,7 @@
 
   <!--生成导航目录 max(level)=28-->
   <xsl:template name="make_catalog">
-      <xsl:param name="pos"/>
+      <xsl:param name="pos" as="xs:string" required="yes"/>
             <xsl:for-each select="$pos">
             <!--xsl:with-param name="pos" select="document('../xml/T30/T30n1579_002.xml')//cb:mulu"-->
             <xsl:if test="starts-with($pos, 'docu')">
@@ -699,6 +705,12 @@
         </xsl:choose>
             </xsl:for-each>
   </xsl:template>
+
+  <!--cb:yin><cb:zi>得浪</cb:zi><cb:sg>二合</cb:sg></cb:yin-->
+  <xsl:template match="cb:sg">
+      (<xsl:apply-templates/>)
+  </xsl:template>
+
 
 </xsl:stylesheet>
 
