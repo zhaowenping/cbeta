@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cb="http://www.cbeta.org/ns/1.0">
+        xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cb="http://www.cbeta.org/ns/1.0">
     <xsl:output method="html" encoding="utf8" doctype-system="about:legacy-compat" indent="yes"/>
     <!--xpath-default-namespace="http://www.tei-c.org/ns/1.0"-->
 
-    <xsl:variable name="current_filename" as="xs:string">
+    <xsl:variable name="current_filename">
         <xsl:value-of select="/TEI[1]/@xml:id"/>
     </xsl:variable>
 
-    <xsl:variable name="prev_filepath" as="xs:string">
+    <xsl:variable name="prev_filepath" as="xs:string" xmlns:cb="http://www.cbeta.org/ns/1.0">
       <xsl:value-of select="concat('/xml/', substring-before($current_filename, 'n'), '/', $current_filename, '_')"/>
       <xsl:number format="001" value="/TEI[1]//cb:juan[1]/@n - 1"/>
       <xsl:text>.xml</xsl:text>
@@ -24,7 +24,7 @@
         <html lang="zh_TW">
         <head>
          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-         <!--link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/-->
+         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
          <link rel="stylesheet" type="text/css" href="/stylesheet/tei.css"/>
          <title>
             <xsl:value-of select="substring-after(//teiHeader//title, 'No. ')"/>
@@ -36,19 +36,27 @@
         <body>
 
         <nav class="top">
+            <ul id="nav">
+            <li>
         <a>
           <xsl:attribute name="href">
               <xsl:value-of select="$prev_filepath"/>
           </xsl:attribute>
           上一卷
         </a>
+            </li>
+            <li>
         <a href="">返回目录</a>
+            </li>
+            <li>
         <a>
           <xsl:attribute name="href">
               <xsl:value-of select="$next_filepath"/>
           </xsl:attribute>
           下一卷
         </a>
+            </li>
+        </ul>
         </nav>
 
     <!--侧边栏目录 max(level)=28-->
@@ -60,13 +68,13 @@
             <xsl:with-param name="pos" select="//cb:mulu"/>
         </xsl:call-template>
 
-        <xsl:call-template name="make_catalog">
+        <!--xsl:call-template name="make_catalog">
             <xsl:with-param name="pos" select="document($prev_filepath)//cb:mulu"/>
         </xsl:call-template>
 
         <xsl:call-template name="make_catalog">
             <xsl:with-param name="pos" select="document($next_filepath)//cb:mulu"/>
-        </xsl:call-template>
+        </xsl:call-template-->
         </ul>
         </nav>
 
@@ -479,6 +487,7 @@
             </rt>
         </ruby>
         </xsl:when>
+
         <!--蘭札字-->
         <xsl:when test="starts-with($Ref, 'RJ')">
             <ruby>
@@ -512,18 +521,22 @@
         </xsl:when>
 
         <!--組字式-->
-        <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='normalized form']/value">
-            <xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='normalized form']/value"/>
+        <xsl:when test="starts-with($Ref, 'CB')">
+            <xsl:choose>
+            <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='normalized form']/value">
+                <xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='normalized form']/value"/>
+            </xsl:when>
+            <xsl:when test="/TEI//char[@xml:id=$Ref]/mapping[@type='unicode']">
+                <xsl:value-of select="."/>
+            </xsl:when>
+            <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='composition']/value">
+                <xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='composition']/value"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="."/>
+            </xsl:otherwise>
+            </xsl:choose>
         </xsl:when>
-        <xsl:when test="/TEI//char[@xml:id=$Ref]/mapping[@type='unicode']">
-            <xsl:value-of select="."/>
-        </xsl:when>
-        <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='composition']/value">
-            <xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='composition']/value"/>
-        </xsl:when>
-        <xsl:otherwise>
-            <xsl:value-of select="."/>
-        </xsl:otherwise>
     </xsl:choose>
     </span> 
   </xsl:template>
@@ -660,7 +673,7 @@
 
   <!--生成导航目录 max(level)=28-->
   <xsl:template name="make_catalog">
-      <xsl:param name="pos" as="xs:string" required="yes"/>
+      <xsl:param name="pos" as="xs:string" required="yes"/> 
             <xsl:for-each select="$pos">
             <!--xsl:with-param name="pos" select="document('../xml/T30/T30n1579_002.xml')//cb:mulu"-->
             <xsl:if test="starts-with($pos, 'docu')">
