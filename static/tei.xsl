@@ -8,16 +8,55 @@
         <xsl:value-of select="/TEI[1]/@xml:id"/>
     </xsl:variable>
 
-    <xsl:variable name="prev_filepath" as="xs:string" xmlns:cb="http://www.cbeta.org/ns/1.0">
+    <!--计算上一章-->
+    <xsl:variable name="prev_filepath" as="xs:string">
+    <xsl:variable name="tmp" as="xs:string">
       <xsl:value-of select="concat('/xml/', substring-before($current_filename, 'n'), '/', $current_filename, '_')"/>
       <xsl:number format="001" value="/TEI[1]//cb:juan[1]/@n - 1"/>
       <xsl:text>.xml</xsl:text>
     </xsl:variable>
+    <xsl:if test="document($tmp)/TEI">
+        <xsl:value-of select="$tmp"/>
+    </xsl:if>
+    </xsl:variable>
 
+    <!--计算下一章-->
     <xsl:variable name="next_filepath" as="xs:string">
-      <xsl:value-of select="concat('/xml/', substring-before($current_filename, 'n'), '/', $current_filename, '_')"/>
-      <xsl:number format="001" value="/TEI[1]//cb:juan[1]/@n + 1"/>
-      <xsl:text>.xml</xsl:text>
+        <xsl:variable name="tmp" as="xs:string">
+          <xsl:value-of select="concat('/xml/', substring-before($current_filename, 'n'), '/', $current_filename, '_')"/>
+          <xsl:number format="001" value="/TEI[1]//cb:juan[1]/@n + 1"/>
+          <xsl:text>.xml</xsl:text>
+        </xsl:variable>
+        <xsl:variable name="nextjuan" as="xs:string">
+          <xsl:value-of select="concat('/xml/', substring-before($current_filename, 'n'), '/', substring-before($current_filename, 'n'), 'n')"/>
+          <xsl:number format="0001" value="substring-after($current_filename, 'n') + 1"/>
+          <xsl:text>_001.xml</xsl:text>
+        </xsl:variable>
+        <xsl:variable name="nextzang" as="xs:string">
+          <xsl:text>/xml/</xsl:text>
+          <xsl:value-of select="substring(substring-before($current_filename, 'n'), 1, 1)"/>
+          <xsl:number format="01" value="substring(substring-before($current_filename, 'n'), 2) + 1"/>
+          <xsl:text>/</xsl:text>
+          <xsl:value-of select="substring(substring-before($current_filename, 'n'), 1, 1)"/>
+          <xsl:number format="01" value="substring(substring-before($current_filename, 'n'), 2) + 1"/>
+          <xsl:text>n</xsl:text>
+          <xsl:number format="0001" value="substring-after($current_filename, 'n') + 1"/>
+          <xsl:text>_001.xml</xsl:text>
+        </xsl:variable>
+        <xsl:choose>
+          <xsl:when test="document($tmp)/TEI">
+              <xsl:value-of select="$tmp"/>
+          </xsl:when>
+          <xsl:when test="document($nextjuan)/TEI">
+              <xsl:value-of select="$nextjuan"/>
+          </xsl:when>
+          <xsl:when test="document($nextzang)/TEI">
+              <xsl:value-of select="$nextzang"/>
+          </xsl:when>
+          <xsl:otherwise>
+              <xsl:text>#</xsl:text>
+          </xsl:otherwise>
+        </xsl:choose>
     </xsl:variable>
 
     <xsl:template match="/">
@@ -30,13 +69,18 @@
             <xsl:value-of select="substring-after(//teiHeader//title, 'No. ')"/>
         </title>
 
-         <script> </script>
+         <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+         <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+         <script>
+// $(function (){$("[data-toggle='popover']").popover();});
+            $(function () { $("[data-toggle='tooltip']").tooltip(); });
+        </script>
         </head>
 
-        <body>
+        <body style="padding:50px;">
 
-        <nav class="top">
-            <ul id="nav">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <ul class="nav navbar-nav">
             <li>
         <a>
           <xsl:attribute name="href">
@@ -46,7 +90,7 @@
         </a>
             </li>
             <li>
-        <a href="">返回目录</a>
+                <a href="http://localhost:8081/mulu">返回目录</a>
             </li>
             <li>
         <a>
@@ -57,6 +101,14 @@
         </a>
             </li>
         </ul>
+        <!--div>
+      <form class="navbar-form navbar-left" role="search">
+         <div class="form-group">
+            <input type="search" class="form-control" placeholder="Search"/>
+         </div>
+         <button type="submit" class="btn btn-default">直达</button>
+      </form>    
+      </div-->
         </nav>
 
     <!--侧边栏目录 max(level)=28-->
@@ -81,22 +133,29 @@
             <br/>
             <xsl:apply-templates match="body"/>
 
-        <!--nav class="bottom">
+        <nav class="bottom">
+             <ul class="nav">
+             <li>
         <a>
           <xsl:attribute name="href">
               <xsl:value-of select="$prev_filepath"/>
           </xsl:attribute>
           上一卷
         </a>
-        <a>返回目录
-        </a>
+             </li>
+             <li>
+                <a href="http://localhost:8081/mulu">返回目录</a>
+             </li>
+             <li>
         <a>
           <xsl:attribute name="href">
               <xsl:value-of select="$next_filepath"/>
           </xsl:attribute>
           下一卷
         </a>
-        </nav-->
+             </li>
+             </ul>
+        </nav>
 
         </body>
         </html>
@@ -617,10 +676,10 @@
    </xsl:template-->
 
    <xsl:template match="text/back">
-       <hr/>
+       <!--hr/>
      <footer class="byline">
        <xsl:apply-templates/>
-     </footer>
+     </footer-->
    </xsl:template>
 
    <!--处理列表-->
@@ -649,19 +708,26 @@
     </span>
   </xsl:template>
 
-  <!--TODO-->
-  <!--xsl:template match="anchor">
+  <!--使用tooltip显示注释-->
+  <xsl:template match="anchor">
       <xsl:variable name="Ref" select="concat('#', @xml:id)"/>
+    <a data-toggle="tooltip" data-placement="auto">
       <xsl:if test="@xml:id and /TEI//note[@target=$Ref]">
-        <a>[<xsl:value-of select="substring(@n, 6)"/>]</a>
-        <div id="divPiao">
+        <xsl:attribute name="title">
             <xsl:value-of select="/TEI//note[@target=$Ref]"/>
-        </div>
+        </xsl:attribute>
+        [<xsl:value-of select="substring(@n, 6)"/>]
       </xsl:if>
+
       <xsl:if test="@type='star' and /TEI//app[@from=$Ref]">
-        <a>[*]</a>
+        <xsl:attribute name="title">
+            <xsl:variable name="tmp" select="substring(/TEI//app[@from=$Ref]/@corresp, 2)"/>
+            <xsl:value-of select="/TEI//note[@n=$tmp]"/>
+        </xsl:attribute>
+        [*]
       </xsl:if>
-  </xsl:template-->
+    </a>
+  </xsl:template>
 
 
 <!--处理div评论-->
