@@ -35,24 +35,14 @@ of this software, even if advised of the possibility of such damage.
 
 */
 
-/*
-@font-face {
-  font-family: 'Gabriela';
-  font-style: normal;
-  font-weight: 400;
-  src: url(http://themes.googleusercontent.com/static/fonts/gabriela/v2/fLaucCvjCt_Hmc9smyo_rPesZW2xOQ-xsNqO47m55DA.woff) format('woff');
-}
-*/
-/*
 @font-face {
   font-family: 'siddham';
   font-style: normal;
   font-weight: 400;
   src: url(http://localhost:8080/font/siddam.woff2) format('woff2');
 }
-*/
 
-/*正确显示小蝌蚪符号: 引号、逗号、分号等*/
+/*使用simsun字体以便正确显示小蝌蚪符号: 引号、逗号、分号等*/
 @font-face {
   font-family: quote;
   src: local('SimSun');    
@@ -69,7 +59,6 @@ body.simple{
 
 body{
     color:#000000;
-    /* background-color:#FFFFFF;*/
     background-color: #E7F4FE;
     margin:10pt;
     padding:0;
@@ -426,6 +415,10 @@ a.inlinetoc-sub:link
     font-size:smaller;
 }
 
+/* 错误更正*/
+span.corr{
+    color: #FF0000;
+}
 span.gaiji{
     /*font-family: 'siddham';
      'UntitledTTF',
@@ -588,8 +581,9 @@ p {
 /*   margin-left: 0.5em; */
 /*   margin-top: 1pt;
    margin-bottom: 3pt; */
-   margin-right: 2em;
+/*   margin-right: 2em;
    margin-left: 2em;
+   */
    line-height: 160%;
    text-indent: 2em;
    text-align: justify;
@@ -604,6 +598,7 @@ p {
    letter-spacing: 0.12em; /* 字母间空白 */
    /*padding: 0.5em 0 0.5em 0;*/
 }
+
 
 span.p,
 div.p{

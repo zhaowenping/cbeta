@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-        xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cb="http://www.cbeta.org/ns/1.0">
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cb="http://www.cbeta.org/ns/1.0"
+    exclude-result-prefixes="xs cb">
     <xsl:output method="html" encoding="utf8" doctype-system="about:legacy-compat" indent="yes"/>
     <!--xpath-default-namespace="http://www.tei-c.org/ns/1.0"-->
 
@@ -9,8 +10,8 @@
     </xsl:variable>
 
     <!--计算上一章-->
-    <xsl:variable name="prev_filepath" as="xs:string">
-    <xsl:variable name="tmp" as="xs:string">
+    <xsl:variable name="prev_filepath">
+    <xsl:variable name="tmp">
       <xsl:value-of select="concat('/xml/', substring-before($current_filename, 'n'), '/', $current_filename, '_')"/>
       <xsl:number format="001" value="/TEI[1]//cb:juan[1]/@n - 1"/>
       <xsl:text>.xml</xsl:text>
@@ -21,18 +22,18 @@
     </xsl:variable>
 
     <!--计算下一章-->
-    <xsl:variable name="next_filepath" as="xs:string">
-        <xsl:variable name="tmp" as="xs:string">
+    <xsl:variable name="next_filepath">
+        <xsl:variable name="tmp">
           <xsl:value-of select="concat('/xml/', substring-before($current_filename, 'n'), '/', $current_filename, '_')"/>
           <xsl:number format="001" value="/TEI[1]//cb:juan[1]/@n + 1"/>
           <xsl:text>.xml</xsl:text>
         </xsl:variable>
-        <xsl:variable name="nextjuan" as="xs:string">
+        <xsl:variable name="nextjuan">
           <xsl:value-of select="concat('/xml/', substring-before($current_filename, 'n'), '/', substring-before($current_filename, 'n'), 'n')"/>
           <xsl:number format="0001" value="substring-after($current_filename, 'n') + 1"/>
           <xsl:text>_001.xml</xsl:text>
         </xsl:variable>
-        <xsl:variable name="nextzang" as="xs:string">
+        <xsl:variable name="nextzang">
           <xsl:text>/xml/</xsl:text>
           <xsl:value-of select="substring(substring-before($current_filename, 'n'), 1, 1)"/>
           <xsl:number format="01" value="substring(substring-before($current_filename, 'n'), 2) + 1"/>
@@ -62,6 +63,7 @@
     <xsl:template match="/">
         <html lang="zh_TW">
         <head>
+         <meta charset="utf-8"/>
          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
          <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
          <link rel="stylesheet" type="text/css" href="/stylesheet/tei.css"/>
@@ -80,7 +82,7 @@
         <body style="padding:50px;">
 
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <ul class="nav navbar-nav">
+            <ul class="pagination pagination-sm">
             <li>
         <a>
           <xsl:attribute name="href">
@@ -131,7 +133,7 @@
         </nav>
 
             <br/>
-            <xsl:apply-templates match="body"/>
+            <xsl:apply-templates/>
 
         <nav class="bottom">
              <ul class="nav">
@@ -326,7 +328,12 @@
 
     <!--处理段落-->
   <xsl:template match="p">
-    <p class="p">
+    <p>
+      <!--xsl:if test="@cb:type='dharani'">
+        <xsl:attribute name="class">
+            <xsl:text>dharani</xsl:text>
+        </xsl:attribute>
+      </xsl:if-->
       <xsl:if test="@xml:id">
           <xsl:attribute name="id">      
             <xsl:value-of select="@xml:id"/>
@@ -507,7 +514,6 @@
 
   <!--处理异体字-->
   <xsl:template match="g">
-      <!--span class="gaiji"><xsl:value-of select="."/></span-->
       <xsl:variable name="Ref" select="substring(@ref, 2)"/>
       <span class="gaiji">
  <!--localName>normalized form</localName>
@@ -532,17 +538,17 @@
             <!--xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='Character in the Siddham font']/value"/-->
             <xsl:value-of select="."/>
                 <rt>
-    <xsl:choose>
-        <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in Unicode transcription']/value">
+    <!--xsl:choose>
+        <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in Unicode transcription']/value"-->
             (<xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in Unicode transcription']/value"/>)
-        </xsl:when>
+        <!--/xsl:when>
         <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in CBETA transcription']/value">
             (<xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in CBETA transcription']/value"/>)
         </xsl:when>
         <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='big5']/value">
             <xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='big5']/value"/>
         </xsl:when>
-    </xsl:choose>
+    </xsl:choose-->
             </rt>
         </ruby>
         </xsl:when>
@@ -559,22 +565,23 @@
                     <xsl:text>.gif</xsl:text>
                 </xsl:attribute>
                 </img>
+            <!-- 安装了cbeta的蘭扎字库，使用这句，不推荐-->
             <!--xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='rjchar']/value"/-->
             <!--xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='rjchar']/value">
                 <xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='rjchar']/value"/>
             </xsl:when-->
                 <rt>
-                <xsl:choose>
-                    <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in Unicode transcription']/value">
+                <!--xsl:choose>
+                    <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in Unicode transcription']/value"-->
                         (<xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in Unicode transcription']/value"/>)
-                    </xsl:when>
+                    <!--/xsl:when>
                     <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in CBETA transcription']/value">
                         (<xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in CBETA transcription']/value"/>)
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="."/>
                     </xsl:otherwise>
-                </xsl:choose>
+                </xsl:choose-->
                 </rt>
             </ruby>
         </xsl:when>
@@ -665,21 +672,7 @@
      </div>
    </xsl:template>
 
-   <!--xsl:template match="text">
-     <article class="byline">
-       <xsl:apply-templates/>
-     </article>
-   </xsl:template-->
-
-   <!--xsl:template match="text/body">
-       <xsl:apply-templates/>
-   </xsl:template-->
-
    <xsl:template match="text/back">
-       <!--hr/>
-     <footer class="byline">
-       <xsl:apply-templates/>
-     </footer-->
    </xsl:template>
 
    <!--处理列表-->
@@ -739,7 +732,7 @@
 
   <!--生成导航目录 max(level)=28-->
   <xsl:template name="make_catalog">
-      <xsl:param name="pos" as="xs:string" required="yes"/> 
+      <xsl:param name="pos"/> 
             <xsl:for-each select="$pos">
             <!--xsl:with-param name="pos" select="document('../xml/T30/T30n1579_002.xml')//cb:mulu"-->
             <xsl:if test="starts-with($pos, 'docu')">
@@ -788,6 +781,24 @@
   <!--cb:yin><cb:zi>得浪</cb:zi><cb:sg>二合</cb:sg></cb:yin-->
   <xsl:template match="cb:sg">
       (<xsl:apply-templates/>)
+  </xsl:template>
+
+<!--错误更正-->
+  <xsl:template match="choice">
+    <span class="corr">
+      <xsl:value-of select="corr"/>
+    </span>
+  </xsl:template>
+<!--公式强调-->
+  <xsl:template match="hi">
+    <span>
+    <xsl:if test="@rend">
+    <xsl:attribute name="style">
+      <xsl:value-of select="@rend"/>
+    </xsl:attribute>
+    </xsl:if>
+      <xsl:apply-templates/>
+    </span>
   </xsl:template>
 
 
