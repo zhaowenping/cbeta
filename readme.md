@@ -53,9 +53,22 @@
 ## 浏览器兼容性
 1. firefox、opera、chrome、safari、搜狗浏览器、IOS手机等主流浏览器都没有发现任何问题
 2. Edge 12、ie11在处理xslt失败之后使用了一个空的xslt处理xml,估计ms具有特殊的xslt格式
-3. ie8, 360浏览器卡死，无法使用
-4. links2无法显示汉字， w3m和lynx可以正常显示汉字，但是xml则只显示xml文件，没有处理。
-5. 因为导航需要探测文件存在与否，所有出现文件不存在的警告是正常的
+3. 360浏览器在调整兼容性之后可以正常使用了。但是有些地方渲染比较奇怪
+4. ie8浏览器卡死，无法使用;估计ie9是最低要求
+5. links2无法显示汉字， w3m和lynx可以正常显示汉字，但是xml则只显示xml文件，没有处理。
+6. 因为导航需要探测文件存在与否，所有出现文件不存在的警告是正常的
+
+| 浏览器        | 渲染引擎      | xslt版本| 
+| ------------- |:-------------:| -------:| 
+| chrome        | libxslt       |         |
+| firefox       | Transformiix  |         |
+| opera         | libxslt       |         |
+| safari        | libxslt       |         |
+| 搜狗          | libxslt       |         |
+| midori        | libxslt       |         |
+| 360           | Microsoft     |         |
+
+
 
 ## 工作到一半的时候发现已经有了
 http://cbetaonline.dila.edu.tw/zh/T1579_011

@@ -5,6 +5,7 @@
     <!--xpath-default-namespace="http://www.tei-c.org/ns/1.0"-->
     <xsl:output method="html" encoding="utf-8" doctype-system="about:legacy-compat" indent="yes"/>
 
+
     <xsl:variable name="current_filename">
         <xsl:value-of select="/TEI[1]/@xml:id"/>
     </xsl:variable>
@@ -109,6 +110,9 @@
         </a>
             </li>
         </ul>
+        <xsl:value-of select="system-property('xsl:version')"/>
+        <xsl:value-of select="system-property('xsl:vendor')"/>
+        <xsl:value-of select="system-property('xsl:vendor-url')"/>
         <!--div>
       <form class="navbar-form navbar-left" role="search">
          <div class="form-group">
@@ -475,10 +479,10 @@
     </xsl:choose>
   </xsl:template>
 
-  <xsl:template match="note[@type='action']">
+  <!--xsl:template match="note[@type='action']">
     <div class="right"><b>Action <xsl:number count="note[@type='action']" level="any"/>
          </b>: <i><xsl:apply-templates/></i></div>
-  </xsl:template>
+  </xsl:template-->
 <!--处理note TODO end -->
 
   <xsl:template match="space">
@@ -734,10 +738,16 @@
   </xsl:template>
 
 
-<!--处理div评论-->
+<!--处理div 折叠式注释-->
   <xsl:template match="cb:div[@type='commentary']">
-    <div class="commentary">
+    <!--div class="commentary" id="collapseTwo" class="panel-collapse collapse"-->
+    <div>
+        <a data-toggle="collapse" data-parent="#accordion" href="#{generate-id()}">點擊閱讀註疏：</a>
+    <div id="{generate-id()}" class="panel-collapse collapse">
+        <div class="panel-body">
       <xsl:apply-templates/>
+    </div>
+    </div>
     </div>
   </xsl:template>
 
