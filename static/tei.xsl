@@ -2,30 +2,35 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cb="http://www.cbeta.org/ns/1.0"
     exclude-result-prefixes="xs cb">
-    <xsl:output method="html" encoding="utf8" doctype-system="about:legacy-compat" indent="yes"/>
     <!--xpath-default-namespace="http://www.tei-c.org/ns/1.0"-->
+    <xsl:output method="html" encoding="utf8" doctype-system="about:legacy-compat" indent="yes"/>
 
     <xsl:variable name="current_filename">
         <xsl:value-of select="/TEI[1]/@xml:id"/>
+    </xsl:variable>
+
+    <xsl:variable name="juan">
+        <xsl:value-of select="/TEI[1]/text/body//cb:juan[1]/@n"/>
     </xsl:variable>
 
     <!--计算上一章-->
     <xsl:variable name="prev_filepath">
     <xsl:variable name="tmp">
       <xsl:value-of select="concat('/xml/', substring-before($current_filename, 'n'), '/', $current_filename, '_')"/>
-      <xsl:number format="001" value="/TEI[1]//cb:juan[1]/@n - 1"/>
+      <xsl:number format="001" value="$juan - 1"/>
       <xsl:text>.xml</xsl:text>
     </xsl:variable>
     <xsl:if test="document($tmp)/TEI">
         <xsl:value-of select="$tmp"/>
     </xsl:if>
+    <xsl:value-of select="$juan"/>
     </xsl:variable>
 
     <!--计算下一章-->
     <xsl:variable name="next_filepath">
         <xsl:variable name="tmp">
           <xsl:value-of select="concat('/xml/', substring-before($current_filename, 'n'), '/', $current_filename, '_')"/>
-          <xsl:number format="001" value="/TEI[1]//cb:juan[1]/@n + 1"/>
+          <xsl:number format="001" value="$juan + 1"/>
           <xsl:text>.xml</xsl:text>
         </xsl:variable>
         <xsl:variable name="nextjuan">
@@ -45,13 +50,13 @@
           <xsl:text>_001.xml</xsl:text>
         </xsl:variable>
         <xsl:choose>
-          <xsl:when test="document($tmp)/TEI">
+          <xsl:when test="document($tmp)">
               <xsl:value-of select="$tmp"/>
           </xsl:when>
-          <xsl:when test="document($nextjuan)/TEI">
+          <xsl:when test="document($nextjuan)">
               <xsl:value-of select="$nextjuan"/>
           </xsl:when>
-          <xsl:when test="document($nextzang)/TEI">
+          <xsl:when test="document($nextzang)">
               <xsl:value-of select="$nextzang"/>
           </xsl:when>
           <xsl:otherwise>
@@ -68,7 +73,7 @@
          <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
          <link rel="stylesheet" type="text/css" href="/stylesheet/tei.css"/>
          <title>
-            <xsl:value-of select="substring-after(//teiHeader//title, 'No. ')"/>
+             <xsl:value-of select="substring-after(/TEI/teiHeader/fileDesc/titleStmt/title, 'No. ')"/>
         </title>
 
          <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
@@ -92,7 +97,7 @@
         </a>
             </li>
             <li>
-                <a href="http://localhost:8081/mulu">返回目录</a>
+                <a href="http://10.81.25.167:8081/mulu">返回目录</a>
             </li>
             <li>
         <a>
@@ -146,7 +151,7 @@
         </a>
              </li>
              <li>
-                <a href="http://localhost:8081/mulu">返回目录</a>
+                <a href="http://10.81.25.167:8081/mulu">返回目录</a>
              </li>
              <li>
         <a>
@@ -540,7 +545,7 @@
                 <rt>
     <!--xsl:choose>
         <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in Unicode transcription']/value"-->
-            (<xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in Unicode transcription']/value"/>)
+            (<xsl:value-of select="/TEI/teiHeader//char[@xml:id=$Ref]/charProp[localName='Romanized form in Unicode transcription']/value"/>)
         <!--/xsl:when>
         <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in CBETA transcription']/value">
             (<xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in CBETA transcription']/value"/>)
@@ -589,14 +594,14 @@
         <!--組字式-->
         <xsl:when test="starts-with($Ref, 'CB')">
             <xsl:choose>
-            <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='normalized form']/value">
-                <xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='normalized form']/value"/>
+            <xsl:when test="/TEI/teiHeader//char[@xml:id=$Ref]/charProp[localName='normalized form']/value">
+                <xsl:value-of select="/TEI/teiHeader//char[@xml:id=$Ref]/charProp[localName='normalized form']/value"/>
             </xsl:when>
-            <xsl:when test="/TEI//char[@xml:id=$Ref]/mapping[@type='unicode']">
+            <xsl:when test="/TEI/teiHeader//char[@xml:id=$Ref]/mapping[@type='unicode']">
                 <xsl:value-of select="."/>
             </xsl:when>
-            <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='composition']/value">
-                <xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='composition']/value"/>
+            <xsl:when test="/TEI/teiHeader//char[@xml:id=$Ref]/charProp[localName='composition']/value">
+                <xsl:value-of select="/TEI/teiHeader//char[@xml:id=$Ref]/charProp[localName='composition']/value"/>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:value-of select="."/>
@@ -705,17 +710,17 @@
   <xsl:template match="anchor">
       <xsl:variable name="Ref" select="concat('#', @xml:id)"/>
     <a data-toggle="tooltip" data-placement="auto">
-      <xsl:if test="@xml:id and /TEI//note[@target=$Ref]">
+        <xsl:if test="@xml:id and /TEI/text/back//note[@target=$Ref]">
         <xsl:attribute name="title">
-            <xsl:value-of select="/TEI//note[@target=$Ref]"/>
+            <xsl:value-of select="/TEI/text/back//note[@target=$Ref]"/>
         </xsl:attribute>
         [<xsl:value-of select="substring(@n, 6)"/>]
       </xsl:if>
 
-      <xsl:if test="@type='star' and /TEI//app[@from=$Ref]">
+      <xsl:if test="@type='star' and /TEI/text/back//app[@from=$Ref]">
         <xsl:attribute name="title">
-            <xsl:variable name="tmp" select="substring(/TEI//app[@from=$Ref]/@corresp, 2)"/>
-            <xsl:value-of select="/TEI//note[@n=$tmp]"/>
+            <xsl:variable name="tmp" select="substring(/TEI/text/back//app[@from=$Ref]/@corresp, 2)"/>
+            <xsl:value-of select="/TEI/text/back//note[@n=$tmp]"/>
         </xsl:attribute>
         [*]
       </xsl:if>
