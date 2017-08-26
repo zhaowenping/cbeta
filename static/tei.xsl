@@ -3,7 +3,7 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cb="http://www.cbeta.org/ns/1.0"
     exclude-result-prefixes="xs cb">
     <!--xpath-default-namespace="http://www.tei-c.org/ns/1.0"-->
-    <xsl:output method="html" encoding="utf8" doctype-system="about:legacy-compat" indent="yes"/>
+    <xsl:output method="html" encoding="utf-8" doctype-system="about:legacy-compat" indent="yes"/>
 
     <xsl:variable name="current_filename">
         <xsl:value-of select="/TEI[1]/@xml:id"/>
@@ -24,7 +24,6 @@
     <xsl:if test="document($tmp)/TEI">
         <xsl:value-of select="$tmp"/>
     </xsl:if>
-    <xsl:value-of select="$juan"/>
     </xsl:variable>
 
     <!--计算下一章-->
@@ -71,6 +70,7 @@
         <head>
          <meta charset="utf-8"/>
          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
          <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
          <link rel="stylesheet" type="text/css" href="/stylesheet/tei.css"/>
          <title>
