@@ -49,6 +49,11 @@
 7. w_normal.txt 制作的组合字表,相比原光盘的更加清晰, 用来清洗xml文档
 8. w_norm2.txt 制作的未知组合字表, 需要填写
 9. yoga 目录,打算后期为瑜伽师地论做现代化标点
+10. reader.py python的web程序入口, 提供目录、搜索等服务
+11.  static/bulei_sutra_sch.lst
+    static/cangjian.lst
+    static/sutra_sch.lst
+    目录文件
 
 ## 浏览器兼容性
 1. firefox、opera、chrome、safari、搜狗浏览器、IOS手机等主流浏览器都没有发现任何问题
