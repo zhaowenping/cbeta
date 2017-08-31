@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cb="http://www.cbeta.org/ns/1.0"
     exclude-result-prefixes="xs cb">
     <!--xpath-default-namespace="http://www.tei-c.org/ns/1.0"-->
     <xsl:output method="html" encoding="utf-8" doctype-system="about:legacy-compat" indent="yes"/>
 
+    <!--xsl:for-each select="collection('?select=empolyee-*.xml')">  
+    <xsl:copy-of select="."/>  
+    </xsl:for-each--> 
 
     <xsl:variable name="current_filename">
         <xsl:value-of select="/TEI[1]/@xml:id"/>
@@ -67,26 +70,39 @@
     </xsl:variable>
 
     <xsl:template match="/">
-        <html lang="zh_TW">
+        <html>
+          <xsl:attribute name="lang">
+            <xsl:choose>
+            <xsl:when test="/TEI/@xml:lang">
+                <xsl:value-of select="/TEI/@xml:lang"/>
+            </xsl:when>
+            <xsl:otherwise>
+            <xsl:text>zh_TW</xsl:text>
+            </xsl:otherwise>
+            </xsl:choose>
+          </xsl:attribute>
         <head>
-         <meta charset="utf-8"/>
-         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
-         <link rel="stylesheet" type="text/css" href="/stylesheet/tei.css"/>
-         <title>
-             <xsl:value-of select="substring-after(/TEI/teiHeader/fileDesc/titleStmt/title, 'No. ')"/>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="/static/tei.css"/>
+        <title>
+            <xsl:value-of select="substring-after(/TEI/teiHeader/fileDesc/titleStmt/title, 'No. ')"/>
         </title>
 
-         <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
-         <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!--[if lt IE9]> 
+        <script src="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+        <![endif]-->
          <script>
-// $(function (){$("[data-toggle='popover']").popover();});
-            $(function () { $("[data-toggle='tooltip']").tooltip(); });
+ $(function (){$("[data-toggle='popover']").popover();});
+ //            $(function () { $("[data-toggle='tooltip']").tooltip(); });
         </script>
         </head>
 
-        <body style="padding:50px;">
+        <body>
 
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <ul class="pagination pagination-sm">
@@ -99,7 +115,7 @@
         </a>
             </li>
             <li>
-                <a href="http://10.81.25.167:8081/mulu">返回目录</a>
+                <a href="/mulu">返回目录</a>
             </li>
             <li>
         <a>
@@ -110,9 +126,9 @@
         </a>
             </li>
         </ul>
-        <xsl:value-of select="system-property('xsl:version')"/>
+        <!--xsl:value-of select="system-property('xsl:version')"/>
         <xsl:value-of select="system-property('xsl:vendor')"/>
-        <xsl:value-of select="system-property('xsl:vendor-url')"/>
+        <xsl:value-of select="system-property('xsl:vendor-url')"/-->
         <!--div>
       <form class="navbar-form navbar-left" role="search">
          <div class="form-group">
@@ -156,7 +172,7 @@
         </a>
              </li>
              <li>
-                <a href="http://10.81.25.167:8081/mulu">返回目录</a>
+                <a href="/mulu">返回目录</a>
              </li>
              <li>
         <a>
@@ -472,9 +488,9 @@
         <xsl:call-template name="i18n">
           <xsl:with-param name="word">Note</xsl:with-param>
         </xsl:call-template-->
-        <xsl:text>: </xsl:text>
+        <!--xsl:text>: </xsl:text-->
         <xsl:apply-templates/>
-        <xsl:text>]</xsl:text>
+        <!--xsl:text>]</xsl:text-->
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
@@ -676,7 +692,7 @@
   <h1 class="title">
     <xsl:apply-templates/>
   </h1>
-    <br/>
+  <br/>
   </xsl:template>
 
 
@@ -684,6 +700,8 @@
      <div class="byline">
        <xsl:apply-templates/>
      </div>
+  <br/>
+  <br/>
    </xsl:template>
 
    <xsl:template match="text/back">
@@ -719,20 +737,37 @@
   <xsl:template match="anchor">
       <xsl:variable name="Ref" select="concat('#', @xml:id)"/>
       <xsl:variable name="back" select="/TEI/text/back"/>
-    <a data-toggle="tooltip" data-placement="auto">
-        <xsl:if test="@xml:id and $back//note[@target=$Ref]">
+      <a data-toggle="popover" data-placement="auto" data-container="body" data-trigger="hover focus">
+        <xsl:variable name="note_content" select="$back//note[@target=$Ref]"/>
+        <xsl:if test="@xml:id and $note_content">
         <xsl:attribute name="title">
-            <xsl:value-of select="$back//note[@target=$Ref]"/>
+            <xsl:text>修訂註解</xsl:text>
+        </xsl:attribute>
+        <xsl:attribute name="data-content">
+            <xsl:apply-templates select="$note_content"/>
+            <!--xsl:value-of select="$note_content"/-->
         </xsl:attribute>
         [<xsl:value-of select="substring(@n, 6)"/>]
       </xsl:if>
 
       <xsl:if test="@type='star' and $back//app[@from=$Ref]">
         <xsl:attribute name="title">
+            註解
+        </xsl:attribute>
+        <xsl:attribute name="data-content">
             <xsl:variable name="tmp" select="substring($back//app[@from=$Ref]/@corresp, 2)"/>
             <xsl:value-of select="$back//note[@n=$tmp]"/>
         </xsl:attribute>
         [*]
+      </xsl:if>
+      <xsl:if test="@type='cb-app'">
+        <xsl:attribute name="title">
+            CBETA修訂註解
+        </xsl:attribute>
+        <xsl:attribute name="data-content">
+            原文為: <xsl:value-of select="$back//choice[@cb:from=$Ref]/sic"/>
+        </xsl:attribute>
+        [<xsl:value-of select="concat('c', substring(@xml:id, 5))"/>]
       </xsl:if>
     </a>
   </xsl:template>
@@ -756,9 +791,6 @@
       <xsl:param name="pos"/> 
             <xsl:for-each select="$pos">
             <!--xsl:with-param name="pos" select="document('../xml/T30/T30n1579_002.xml')//cb:mulu"-->
-            <xsl:if test="starts-with($pos, 'docu')">
-                <a>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</a>
-            </xsl:if>
         <xsl:choose>
             <xsl:when test="@level=1">
                 <li class="toc"><a>
@@ -805,11 +837,13 @@
   </xsl:template>
 
 <!--错误更正-->
-  <xsl:template match="choice">
+  <xsl:template match="corr">
     <span class="corr">
       <xsl:value-of select="corr"/>
     </span>
   </xsl:template>
+  <!--xsl:template match="choice">
+  </xsl:template-->
 <!--公式强调-->
   <xsl:template match="hi">
     <span>

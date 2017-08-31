@@ -35,12 +35,14 @@ of this software, even if advised of the possibility of such damage.
 
 */
 
+/*
 @font-face {
   font-family: 'siddham';
   font-style: normal;
   font-weight: 400;
   src: url(http://localhost:8080/font/siddam.woff2) format('woff2');
 }
+*/
 
 /*使用simsun字体以便正确显示小蝌蚪符号: 引号、逗号、分号等*/
 @font-face {
@@ -61,7 +63,8 @@ body{
     color:#000000;
     background-color: #E7F4FE;
     margin:10pt;
-    padding:0;
+    padding:2em;
+    padding-top:100px;
     font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;
     /* font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;*/
 }
@@ -422,9 +425,8 @@ span.corr{
 span.gaiji{
     /*font-family: 'siddham';
      'UntitledTTF',
-     transform:translateX(50px);
+    <span style="width:0;height:0;float:left;">
     */
-    font-family: 'UntitledTTF';
     color:#00d7ff;
 }
 
