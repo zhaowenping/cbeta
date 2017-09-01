@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cb="http://www.cbeta.org/ns/1.0"
     exclude-result-prefixes="xs cb">
     <!--xpath-default-namespace="http://www.tei-c.org/ns/1.0"-->
     <xsl:output method="html" encoding="utf-8" doctype-system="about:legacy-compat" indent="yes"/>
-
-    <!--xsl:for-each select="collection('?select=empolyee-*.xml')">  
-    <xsl:copy-of select="."/>  
-    </xsl:for-each--> 
 
     <xsl:variable name="current_filename">
         <xsl:value-of select="/TEI[1]/@xml:id"/>
@@ -18,6 +14,8 @@
         <xsl:value-of select="/TEI[1]/text/body//cb:juan[1]/@n"/>
     </xsl:variable>
 
+    <xsl:variable name="MSIE" select="system-property('xsl:vendor')='Microsoft'"/>
+
     <!--计算上一章-->
     <xsl:variable name="prev_filepath">
     <xsl:variable name="tmp">
@@ -25,7 +23,7 @@
       <xsl:number format="001" value="$juan - 1"/>
       <xsl:text>.xml</xsl:text>
     </xsl:variable>
-    <xsl:if test="document($tmp)/TEI">
+    <xsl:if test="$MSIE or document($tmp)/TEI">
         <xsl:value-of select="$tmp"/>
     </xsl:if>
     </xsl:variable>
@@ -54,13 +52,13 @@
           <xsl:text>_001.xml</xsl:text>
         </xsl:variable>
         <xsl:choose>
-          <xsl:when test="document($tmp)">
+          <xsl:when test="$MSIE or document($tmp)">
               <xsl:value-of select="$tmp"/>
           </xsl:when>
-          <xsl:when test="document($nextjuan)">
+          <xsl:when test="$MSIE or document($nextjuan)">
               <xsl:value-of select="$nextjuan"/>
           </xsl:when>
-          <xsl:when test="document($nextzang)">
+          <xsl:when test="$MSIE or document($nextzang)">
               <xsl:value-of select="$nextzang"/>
           </xsl:when>
           <xsl:otherwise>
@@ -695,13 +693,15 @@
   <br/>
   </xsl:template>
 
-
+  <!--作者译者之后空出两行然后开始正文-->
    <xsl:template match="byline">
      <div class="byline">
        <xsl:apply-templates/>
      </div>
-  <br/>
-  <br/>
+     <xsl:if test="last()">
+         <br/>
+         <br/>
+     </xsl:if>
    </xsl:template>
 
    <xsl:template match="text/back">
@@ -729,7 +729,7 @@
         </xsl:attribute>
       </xsl:if>
       <xsl:apply-templates/>
-      &#128441;
+       &#9610;
     </span>
   </xsl:template>
 
