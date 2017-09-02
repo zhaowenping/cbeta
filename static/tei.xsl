@@ -95,12 +95,16 @@
         <!--[if lt IE9]> 
         <script src="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
         <![endif]-->
-         <script>
+        <script>(function(){if(!/*@cc_on!@*/0)return;var e="abbr,article,aside,audio,canvas,datalist,details,dialog,eventsource,figure,footer,header,hgroup,mark,menu,meter,nav,output,progress,section,time,video".split(','),i=e.length;while(i--){document.createElement(e[i])}})();
+        </script>
+        <script>
  $(function (){$("[data-toggle='popover']").popover();});
         </script>
+
         </head>
 
         <body>
+
 
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <ul class="pagination pagination-sm">
@@ -617,6 +621,10 @@
             </xsl:when>
             <xsl:when test="$char/mapping[@type='unicode']">
                 <xsl:value-of select="."/>
+            </xsl:when>
+            <!--使用xml实体输出显示，不能用于搜索, 形如: &#x25F9D;-->
+            <xsl:when test="$char/mapping[@type='normal_unicode']">
+                <xsl:value-of disable-output-escaping='yes' select="concat('&amp;#x', substring($char/mapping[@type='normal_unicode'], 3), ';')"/>
             </xsl:when>
             <xsl:when test="$char/charProp[localName='composition']/value">
                 <xsl:value-of select="$char/charProp[localName='composition']/value"/>
