@@ -5,58 +5,59 @@
     <!--xpath-default-namespace="http://www.tei-c.org/ns/1.0"-->
     <xsl:output method="html" encoding="utf-8" doctype-system="about:legacy-compat" indent="yes"/>
 
-    <xsl:variable name="current_filename">
-        <xsl:value-of select="/TEI[1]/@xml:id"/>
-    </xsl:variable>
+    <!--当前经集的名字, 形如: T20n1167 -->
+    <xsl:variable name="current_sutra" select="/TEI[1]/@xml:id"/>
 
-    <!--当前文件的卷数-->
-    <xsl:variable name="juan">
-        <xsl:value-of select="/TEI[1]/text/body//cb:juan[1]/@n"/>
-    </xsl:variable>
+    <!--当前文件的卷数, 形如: 001-->
+    <xsl:variable name="juan" select="/TEI[1]/text/body//cb:juan[1]/@n"/>
 
+    <!--是否微软浏览器-->
     <xsl:variable name="MSIE" select="system-property('xsl:vendor')='Microsoft'"/>
 
-    <!--计算上一章-->
+    <!--xml所在目录前缀, 形如: /xml/T01/-->
+    <xsl:variable name="dir" select="concat('/xml/', substring-before($current_sutra, 'n'), '/')"/>
+
+    <!--计算上一页-->
     <xsl:variable name="prev_filepath">
-    <xsl:variable name="tmp">
-      <xsl:value-of select="concat('/xml/', substring-before($current_filename, 'n'), '/', $current_filename, '_')"/>
+    <xsl:variable name="prevvol">
+      <xsl:value-of select="concat($dir, $current_sutra, '_')"/>
       <xsl:number format="001" value="$juan - 1"/>
       <xsl:text>.xml</xsl:text>
     </xsl:variable>
-    <xsl:if test="$MSIE or document($tmp)/TEI">
-        <xsl:value-of select="$tmp"/>
+    <xsl:if test="$MSIE or document($prevvol)/TEI">
+        <xsl:value-of select="$prevvol"/>
     </xsl:if>
     </xsl:variable>
 
-    <!--计算下一章-->
+    <!--计算下一页-->
     <xsl:variable name="next_filepath">
-        <xsl:variable name="tmp">
-          <xsl:value-of select="concat('/xml/', substring-before($current_filename, 'n'), '/', $current_filename, '_')"/>
+        <xsl:variable name="nextvol">
+          <xsl:value-of select="concat($dir, $current_sutra, '_')"/>
           <xsl:number format="001" value="$juan + 1"/>
           <xsl:text>.xml</xsl:text>
         </xsl:variable>
-        <xsl:variable name="nextjuan">
-          <xsl:value-of select="concat('/xml/', substring-before($current_filename, 'n'), '/', substring-before($current_filename, 'n'), 'n')"/>
-          <xsl:number format="0001" value="substring-after($current_filename, 'n') + 1"/>
+        <xsl:variable name="nextsutra">
+          <xsl:value-of select="concat($dir, substring-before($current_sutra, 'n'), 'n')"/>
+          <xsl:number format="0001" value="substring-after($current_sutra, 'n') + 1"/>
           <xsl:text>_001.xml</xsl:text>
         </xsl:variable>
         <xsl:variable name="nextzang">
           <xsl:text>/xml/</xsl:text>
-          <xsl:value-of select="substring(substring-before($current_filename, 'n'), 1, 1)"/>
-          <xsl:number format="01" value="substring(substring-before($current_filename, 'n'), 2) + 1"/>
+          <xsl:value-of select="substring(substring-before($current_sutra, 'n'), 1, 1)"/>
+          <xsl:number format="01" value="substring(substring-before($current_sutra, 'n'), 2) + 1"/>
           <xsl:text>/</xsl:text>
-          <xsl:value-of select="substring(substring-before($current_filename, 'n'), 1, 1)"/>
-          <xsl:number format="01" value="substring(substring-before($current_filename, 'n'), 2) + 1"/>
+          <xsl:value-of select="substring(substring-before($current_sutra, 'n'), 1, 1)"/>
+          <xsl:number format="01" value="substring(substring-before($current_sutra, 'n'), 2) + 1"/>
           <xsl:text>n</xsl:text>
-          <xsl:number format="0001" value="substring-after($current_filename, 'n') + 1"/>
+          <xsl:number format="0001" value="substring-after($current_sutra, 'n') + 1"/>
           <xsl:text>_001.xml</xsl:text>
         </xsl:variable>
         <xsl:choose>
-          <xsl:when test="$MSIE or document($tmp)">
-              <xsl:value-of select="$tmp"/>
+          <xsl:when test="$MSIE or document($nextvol)">
+              <xsl:value-of select="$nextvol"/>
           </xsl:when>
-          <xsl:when test="$MSIE or document($nextjuan)">
-              <xsl:value-of select="$nextjuan"/>
+          <xsl:when test="$MSIE or document($nextsutra)">
+              <xsl:value-of select="$nextsutra"/>
           </xsl:when>
           <xsl:when test="$MSIE or document($nextzang)">
               <xsl:value-of select="$nextzang"/>
@@ -96,7 +97,6 @@
         <![endif]-->
          <script>
  $(function (){$("[data-toggle='popover']").popover();});
- //            $(function () { $("[data-toggle='tooltip']").tooltip(); });
         </script>
         </head>
 
@@ -124,17 +124,12 @@
         </a>
             </li>
         </ul>
-        <!--xsl:value-of select="system-property('xsl:version')"/>
-        <xsl:value-of select="system-property('xsl:vendor')"/>
-        <xsl:value-of select="system-property('xsl:vendor-url')"/-->
-        <!--div>
       <form class="navbar-form navbar-left" role="search">
          <div class="form-group">
             <input type="search" class="form-control" placeholder="Search"/>
          </div>
          <button type="submit" class="btn btn-default">直达</button>
       </form>    
-      </div-->
         </nav>
 
     <!--侧边栏目录 max(level)=28-->
@@ -294,7 +289,7 @@
     <xsl:template match="lb">
         <span class="lb">
          <xsl:attribute name="id">
-             <xsl:value-of select="concat($current_filename, '_p', @n)" />
+             <xsl:value-of select="concat($current_sutra, '_p', @n)" />
          </xsl:attribute>
         </span>
     </xsl:template>
@@ -785,6 +780,13 @@
     </div>
     </div>
   </xsl:template>
+
+        <xsl:template name="find_vol">
+          <xsl:param name="vol"/> 
+          <xsl:value-of select="concat($dir, $current_sutra, '_')"/>
+          <xsl:number format="001" value="$vol"/>
+          <xsl:text>.xml</xsl:text>
+        </xsl:template>
 
   <!--生成导航目录 max(level)=28-->
   <xsl:template name="make_catalog">
