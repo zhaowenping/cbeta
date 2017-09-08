@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-09-08 18:46:59
+# Last Modified: 2017-09-08 18:59:14
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -14,6 +14,7 @@ __version__ = "0.0.1"
 
 
 import os
+import bottle
 from bottle import get, post
 from bottle import route, run, static_file
 from bottle import redirect, abort
@@ -296,7 +297,8 @@ def gaiji_post():
 
 # run(host = '0.0.0.0', port = 8081)
 # GeventServer.run(host = '0.0.0.0', port = 8081)
-run(host='0.0.0.0', port=8081, server='gunicorn', workers=4)
+# run(host='0.0.0.0', port=8081, server='gunicorn', workers=4)
+app = bottle.default_app()
 
 def main():
     ''''''
