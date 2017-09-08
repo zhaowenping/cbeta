@@ -22,7 +22,7 @@ function lookup(word){
               // body: JSON.stringify($('#basicForm').serializeJSON()),
               // body: JSON.stringify($('#form.user.'+userid).serializeJSON({parseNulls: true, parseNumbers: true})),
        };
-       fetch('/g/'+word, options)  
+       fetch('/dict/'+word, options)  
          .then(  
            function(response) {  
                console.log('回应报文');
@@ -48,10 +48,11 @@ function lookup(word){
                  response.json().then(function(data) {  
                    console.log(data);  
                    console.log(word);
+                   if(data.pinyin || data.definition) console.log('ok');
                    //word.innerHTML ="<a> 成功了</a>";
                    //  location.replace(data.location);
                     repaceSelectionText(word,
-'<span data-toggle="popover" title="拼音/释义" data-placement="auto" data-container="body" data-trigger="hover focus" data-content="' + data.pinyin + '|'+data.definition+'">' +
+'<span data-toggle="popover" title="拼音/释义" data-placement="auto" data-container="body" data-trigger="hover focus" data-content="[' + data.pinyin + ']'+data.definition+'">' +
 word.toString() +
 '</span>');
 $(function (){$("[data-toggle='popover']").popover({html:true});});
@@ -112,9 +113,11 @@ $(document).ready(function () {
                 var x = e.pageX - parentOffset.left;
                 var y = e.pageY - parentOffset.top;
                 txt = window.getSelection();
-                if (txt.toString().length == 1) {
-                 //alert(txt);
+                // 计算unicode字符串的长度 console.log(txt.toString().length);
+                if (Array.from(txt.toString()).length == 1) {
                  lookup(txt);
                 }
                });
               });
+
+

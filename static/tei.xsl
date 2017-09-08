@@ -273,7 +273,7 @@
     </xsl:template>
 
     <!--处理所有的颂-->
-<!-- rend="margin-left:1em;text-indent:-1em" -->
+    <!-- rend="margin-left:1em;text-indent:-1em" -->
     <xsl:template match="lg">
         <p class="lg">
             <xsl:if test="@xml:id">
@@ -294,7 +294,7 @@
         </p>
     </xsl:template>
 
-    <!--去掉偈中重复的换行-->
+    <!--偈中重复的换行只显示一个-->
     <xsl:template match="lg/lb">
         <xsl:if test="local-name(preceding-sibling::*[1])!='lb'">
             <br/>
@@ -335,30 +335,30 @@
        </span>&#12288;<!--IDEOGRAPHIC SPACE-->
     </xsl:template>
 
-  <!--清除文档中无用空格-->
-  <xsl:template match="text()|@*">
-    <xsl:value-of select="normalize-space(.)"/>
+    <!--清除文档中无用空格-->
+    <xsl:template match="text()|@*">
+        <xsl:value-of select="normalize-space(.)"/>
     <!--xsl:value-of select="normalize-unicode()"/-->
-  </xsl:template>
+    </xsl:template>
 
-   <!--处理图片-->
-  <xsl:template match="figure">
-    <figure>
-      <xsl:apply-templates/>
-      <figcaption>
-        <xsl:value-of select="head"/>
-      </figcaption>
-    </figure>
-  </xsl:template>
+    <!--处理图片-->
+    <xsl:template match="figure">
+        <figure>
+          <xsl:apply-templates/>
+          <figcaption>
+            <xsl:value-of select="head"/>
+          </figcaption>
+        </figure>
+    </xsl:template>
 
-  <xsl:template match="graphic">
-    <img>
-      <xsl:attribute name="src">
-          <xsl:text>/static</xsl:text>
-          <xsl:value-of select="substring(@url, 3)"/>
-      </xsl:attribute>
-    </img>
-  </xsl:template>
+    <xsl:template match="graphic">
+      <img>
+        <xsl:attribute name="src">
+            <xsl:text>/static</xsl:text>
+            <xsl:value-of select="substring(@url, 3)"/>
+        </xsl:attribute>
+      </img>
+    </xsl:template>
 
     <!--处理段落-->
     <!--xsl:template match="p[contains(@rend, 'inline')]">
@@ -366,210 +366,93 @@
     </xsl:template-->
 
     <xsl:template match="p">
-    <p>
-      <xsl:if test="@xml:id">
-          <xsl:attribute name="id">      
-            <xsl:value-of select="@xml:id"/>
-          </xsl:attribute>
-      </xsl:if>
-      <xsl:if test="@cb:type='dharani'">
-        <xsl:attribute name="class">
-            <xsl:text>dharani</xsl:text>
-        </xsl:attribute>
-        <a href="#">&#128362;</a>
-      </xsl:if>
-      <!--xsl:if test="contains(@rend, 'inline')">
-        <xsl:attribute name="style">
-            <xsl:text>display:inline</xsl:text>
-        </xsl:attribute>
-      </xsl:if-->
-      <xsl:apply-templates/>
-    </p>
+        <p>
+          <xsl:if test="@xml:id">
+              <xsl:attribute name="id">      
+                <xsl:value-of select="@xml:id"/>
+              </xsl:attribute>
+          </xsl:if>
+          <xsl:if test="@cb:type='dharani'">
+            <xsl:attribute name="class">
+                <xsl:text>dharani</xsl:text>
+            </xsl:attribute>
+            <a href="#">&#128362;</a>
+          </xsl:if>
+          <!--xsl:if test="contains(@rend, 'inline')">
+            <xsl:attribute name="style">
+                <xsl:text>display:inline</xsl:text>
+            </xsl:attribute>
+          </xsl:if-->
+          <xsl:apply-templates/>
+        </p>
     </xsl:template>
 
-  <!--处理词典-->
-  <xsl:template match="form">
-    <span class="term">
-      <xsl:apply-templates/>
-      <xsl:text>:&#160;&#160;&#160;&#160;</xsl:text>
-    </span>
-  </xsl:template>
-
-
-  <!--xsl:template match="p">
-    <xsl:variable name="wrapperElement">
-      <xsl:choose>
-        <xsl:when test="specList|quote|moduleSpec|list|eg|teix:egXML|table|specGrp|specGrpRef|q[@rend='display']|figure">
-          <xsl:text>div</xsl:text>
-        </xsl:when>
-        <xsl:when test="parent::p">
-          <xsl:text>div</xsl:text>
-        </xsl:when>
-        <xsl:when test="parent::remarks">
-          <xsl:text>div</xsl:text>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:text>p</xsl:text>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:variable>
-    <xsl:element name="{$wrapperElement}">
-      <xsl:call-template name="rendToClass">
-    <xsl:with-param name="default">
-      <xsl:if test="$wrapperElement='div'">p</xsl:if>
-    </xsl:with-param>
-      </xsl:call-template>
-
-      <xsl:choose>
-    <xsl:when test="@id">
-      <xsl:call-template name="makeAnchor">
-        <xsl:with-param name="name">
-          <xsl:value-of select="@id"/>
-        </xsl:with-param>
-      </xsl:call-template>
-    </xsl:when>
-    <xsl:when test="$generateParagraphIDs='true'">
-      <xsl:call-template name="makeAnchor">
-        <xsl:with-param name="name">
-          <xsl:value-of select="generate-id()"/>
-        </xsl:with-param>
-      </xsl:call-template>
-    </xsl:when>
-      </xsl:choose>
-      <xsl:if test="$numberParagraphs='true'">
-        <xsl:number/>
-        <xsl:text> </xsl:text>
-      </xsl:if>
-      <xsl:apply-templates/>
-    </xsl:element>
-  </xsl:template-->
-
-<!--处理note TODO -->
-  <xsl:template match="note[@place='inline']">
-      <span style="color:#A9A9A9">(<xsl:apply-templates/>)</span>
-  </xsl:template>
-
-  <xsl:template match="note">
-    <xsl:if test="@type='inline'">
-        (<xsl:apply-templates/>)
-    </xsl:if>
-    <xsl:variable name="identifier">
-      <xsl:text>Note</xsl:text>
-      <!--xsl:call-template name="noteID"/-->
-    </xsl:variable>
-    <xsl:choose>
-      <xsl:when test="ancestor::bibl"> (<xsl:apply-templates/>) </xsl:when>
-      <!--xsl:when test="@place='inline'">
-    <xsl:call-template name="makeAnchor">
-      <xsl:with-param name="name" select="$identifier"/>
-    </xsl:call-template>
-        <xsl:text> (</xsl:text>
+    <!--处理词典-->
+    <xsl:template match="form">
+      <span class="term">
         <xsl:apply-templates/>
-        <xsl:text>)</xsl:text>
-      </xsl:when-->
-      <xsl:when test="@place='display'">
-    <!--xsl:call-template name="makeAnchor">
-      <xsl:with-param name="name" select="$identifier"/>
-    </xsl:call-template-->
-        <blockquote>
-      <xsl:choose>
-        <xsl:when test="@rend">
-          <xsl:attribute name="class">      
-        <xsl:value-of select="@rend"/>
-          </xsl:attribute>
-        </xsl:when>
-        <xsl:when test="@rendition">
-          <!--xsl:call-template name="applyRendition"/-->
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:attribute name="class">
-          <xsl:text>note</xsl:text>
-          </xsl:attribute>
-        </xsl:otherwise>
-      </xsl:choose>
-      <p> <xsl:apply-templates/> </p>
-        </blockquote>
-      </xsl:when>
-      <xsl:when test="@place='foot' or @place='end'">
-    <!--xsl:call-template name="makeAnchor">
-      <xsl:with-param name="name" select="concat($identifier,'_return')"/>
-    </xsl:call-template-->
-        <a class="notelink" title="Go to note" href="#{$identifier}">
-            <sup> <!--xsl:call-template name="noteN"/--> noteN </sup>
-        </a>
-      </xsl:when>
-      <xsl:otherwise>
-    <!--xsl:call-template name="makeAnchor">
-      <xsl:with-param name="name" select="$identifier"/>
-    </xsl:call-template>
-        <xsl:text> [</xsl:text>
-        <xsl:call-template name="i18n">
-          <xsl:with-param name="word">Note</xsl:with-param>
-        </xsl:call-template-->
-        <!--xsl:text>: </xsl:text-->
-        <xsl:apply-templates/>
-        <!--xsl:text>]</xsl:text-->
-      </xsl:otherwise>
-    </xsl:choose>
-  </xsl:template>
+        <xsl:text>:&#160;&#160;&#160;&#160;</xsl:text>
+      </span>
+    </xsl:template>
 
-  <!--xsl:template match="note[@type='action']">
-    <div class="right"><b>Action <xsl:number count="note[@type='action']" level="any"/>
-         </b>: <i><xsl:apply-templates/></i></div>
-  </xsl:template-->
-<!--处理note TODO end -->
+    <!--处理note-->
+    <xsl:template match="note[@place='inline']|note[@type='inline']">
+        <span style="color:#A9A9A9">(<xsl:apply-templates/>)</span>
+    </xsl:template>
 
-  <xsl:template match="space">
-    <span style="display:inline-block">
-      <xsl:if test="@quantity">
-        <xsl:variable name="unit">
-          <xsl:choose>
-            <xsl:when test="@unit='chars'">
-              <xsl:text>em</xsl:text>
-            </xsl:when>
-            <xsl:when test="@unit">
-              <xsl:value-of select="@unit"/>
-            </xsl:when>
-            <xsl:otherwise>em</xsl:otherwise>
-          </xsl:choose>
-        </xsl:variable>
-        <xsl:attribute name="width">
-          <xsl:value-of select="@quantity"/>
-          <xsl:value-of select="$unit"/>
-        </xsl:attribute>
-      </xsl:if>
-      <xsl:text> </xsl:text>
-    </span>
-  </xsl:template>
+    <xsl:template match="space">
+      <span style="display:inline-block">
+        <xsl:if test="@quantity">
+          <xsl:variable name="unit">
+            <xsl:choose>
+              <xsl:when test="@unit='chars'">
+                <xsl:text>em</xsl:text>
+              </xsl:when>
+              <xsl:when test="@unit">
+                <xsl:value-of select="@unit"/>
+              </xsl:when>
+              <xsl:otherwise>em</xsl:otherwise>
+            </xsl:choose>
+          </xsl:variable>
+          <xsl:attribute name="width">
+            <xsl:value-of select="@quantity"/>
+            <xsl:value-of select="$unit"/>
+          </xsl:attribute>
+        </xsl:if>
+        <xsl:text> </xsl:text>
+      </span>
+    </xsl:template>
 
 
   <!--xsl:template match="juan">
           <xsl:apply-templates/>
   </xsl:template-->
 
-  <xsl:template match="t">
-      <xsl:if test="@lang='chi'">
-          <xsl:apply-templates/>
-      </xsl:if>
-      <xsl:if test="@lang='san-sd'">
-          (<xsl:apply-templates/>)
-      </xsl:if>
-  </xsl:template>
+    <!--sa,sa-x-rj多语言对照, 暂时作为注释显示,cbeta没有显示-->
+    <xsl:template match="cb:t">
+        <xsl:if test="@xml:lang='zh'">
+            <xsl:apply-templates/>
+        </xsl:if>
+        <!--xsl:if test="@xml:lang!='zh'">
+            <span style="color:#A9A9A9">(<xsl:apply-templates/>)</span>
+        </xsl:if-->
+    </xsl:template>
 
-  <!--处理异体字-->
-  <xsl:template match="g">
-      <xsl:variable name="Ref" select="substring(@ref, 2)"/>
-      <xsl:variable name="char" select="/TEI/teiHeader/encodingDesc/charDecl/char[@xml:id=$Ref]"/>
-      <xsl:variable name="rmpinyin" select="$char/charProp[localName='Romanized form in Unicode transcription']/value"/>
-      <span class="gaiji">
- <!--localName>normalized form</localName>
- <localName>Character in the Siddham font</localName>   xml:id="SD-E2F6"
- <localName>big5</localName>                            xml:id="SD-E2F6"
- <localName>composition</localName> 组字式              xml:id="CB00178"
- <localName>rjchar</localName>                          xml:id="RJ-CBD3"
- <localName>Romanized form in CBETA transcription</localName>
- <localName>Romanized form in Unicode transcription</localName>
- <mapping type="normal_unicode">U+2A31C</mapping-->
+    <!--处理异体字-->
+    <xsl:key name="char_id" match="char" use="@xml:id"/>
+    <xsl:template match="g">
+        <xsl:variable name="Ref" select="substring(@ref, 2)"/>
+        <xsl:variable name="char" select="/TEI/teiHeader/encodingDesc/charDecl/char[@xml:id=$Ref]"/>
+        <xsl:variable name="rmpinyin" select="$char/charProp[localName='Romanized form in Unicode transcription']/value"/>
+        <span class="gaiji">
+    <!--localName>normalized form</localName>
+    <localName>Character in the Siddham font</localName>   xml:id="SD-E2F6"
+    <localName>big5</localName>                            xml:id="SD-E2F6"
+    <localName>composition</localName> 组字式              xml:id="CB00178"
+    <localName>rjchar</localName>                          xml:id="RJ-CBD3"
+    <localName>Romanized form in CBETA transcription</localName>
+    <localName>Romanized form in Unicode transcription</localName>
+    <mapping type="normal_unicode">U+2A31C</mapping-->
     <xsl:choose>
         <xsl:when test="starts-with($Ref, 'SD')">
           <ruby><img>
@@ -754,7 +637,7 @@
     </span>
   </xsl:template>
 
-  <!--使用popover显示注释, 链接三个标签，可能有些不对-->
+    <!--使用popover显示注释, 链接三个标签，可能有些不对-->
   <!--xsl:template match="note[@type='cf1']">
       修訂依據:
       <xsl:apply-templates/>
@@ -795,6 +678,7 @@
       <!--比较危险的用法,可能报错: 给替换的部分着红色-->
 
     <xsl:key name="app_from" match="app" use="@from"/>
+    <xsl:key name="tt_from" match="cb:tt" use="@from"/>
     <xsl:key name="choice_from" match="choice" use="@cb:from"/>
     <xsl:key name="note_target" match="note" use="@target"/>
     <xsl:key name="note_n" match="note" use="@n"/>

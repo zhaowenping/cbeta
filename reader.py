@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-08-27 22:10:59
+# Last Modified: 2017-09-08 18:46:59
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
-
+web入口程序
 """
 
 __all__ = []
@@ -20,10 +20,11 @@ from bottle import redirect, abort
 from bottle import template
 from bottle import jinja2_view as view
 from bottle import request
+from bottle import GeventServer
 
 # from xsltproc import xsltproc, XSLT
 
-# XSLT_FILE = 'stylesheet/xhtml/tei.xsl'
+# XSLT_FILE = 'static/tei.xsl'
 
 @route('/')
 def index():
@@ -64,14 +65,14 @@ sch_a = "menu/sutra_sch.lst"
 sch_b = "menu/bulei_sutra_sch.lst"
 
 @route('/mulu')
-@view('menu.jinja2')
+@view('temp/menu.jinja2')
 def menu():
     menu = read_menu_file(sch_b)
     return {'menus': menu, 'request':request}
 
 
 @route('/mulu/:bulei#.+#')
-@view('menu.jinja2')
+@view('temp/menu.jinja2')
 def submenu(bulei):
     menu = read_menu_file(sch_b)
     bulei = bulei.split('/')
@@ -94,14 +95,15 @@ def submenu(bulei):
                 sutras.append(path)
         sutras.sort()
         sutra = sutras[0]            # T01n0002_001.xml
-        url = f"http://10.81.25.167:8080/xml/{ye}/{sutra}"
+        # url = f"http://10.81.25.167:8080/xml/{ye}/{sutra}"
+        url = f"/xml/{ye}/{sutra}"
         redirect(url)
     return {'menus': menu, 'request':request, 'nav': nav}
 
 
 # 处理搜索
 @get('/search')
-@view('search.htm')
+@view('temp/search.jinja2')
 def search():
     return {}
 
@@ -114,13 +116,13 @@ import opencc
 import time
 import pprint
 
-ix = open_dir("index")
+# ix = open_dir("index")
 # 搜索content内容
-qp = QueryParser("content", ix.schema)
+# qp = QueryParser("content", ix.schema)
 
 # TODO 搜索的时候被搜索内容应该手动分词
 @post('/search')
-@view('search.htm')
+@view('temp/search.jinja2')
 def search_post():
     global qp
     # content = request.forms.get('content')
@@ -207,13 +209,33 @@ def read_menu_file(sutra_list):
         return menu
 
 # 处理组合字
-import psycopg2
+# import psycopg2
 
 # print(conn)
+@get('/dict/:word')
+def g_get(word):
+    print('发过来一个字:%s' % word)
+    pinyin = ''
+    definition = ''
+    with open('static/Unihan_Readings.txt') as fd:
+        for line in fd:
+            line = line.strip()
+            if not line or line.startswith("#"): continue
+            line = line.split(None, 2)
+            unichar = 'U+%X' % ord(word)
+            if unichar == line[0] and 'kDefinition' == line[1]:
+                definition = line[2]
+            if unichar == line[0] and 'kMandarin' == line[1]:
+                pinyin = line[2]
+                break
+
+    print(pinyin, definition)
+
+    return {'word': word, 'pinyin': pinyin, 'definition': definition}
 
 @get('/gaiji')
-@view('gaiji.htm')
-def gaiji_get():
+@view('temp/gaiji.jinja2')
+def dict_get():
     q = request.GET.q
     print(q)
     conn = psycopg2.connect(database="buddha", user="postgres", password="1234", host="127.0.0.1", port="5432")
@@ -222,9 +244,9 @@ def gaiji_get():
         if len(q) > 1:
             cur.execute('select * from cb where position(%s in des)>0 or position(%s in name)>0', (q, q))
         else:
-            cur.execute('select * from cb where norm = %s or val = %s or position(%s in des)>0', (q, q, q))
+            cur.execute('select * from cb where nor = %s or val = %s or position(%s in des)>0', (q, q, q))
     else:
-        cur.execute('select * from cb where norm is null or val is null')
+        cur.execute('select * from cb where nor is null or val is null')
     data = cur.fetchall()
     result = []
     for i in data:
@@ -246,7 +268,7 @@ def gaiji_get():
 
 import urllib.request
 @post('/gaiji')
-@view('gaiji.htm')
+@view('temp/gaiji.htm')
 def gaiji_post():
     print('~~~~~~~~~~~~~~~~~~~~~')
     name = request.forms.name
@@ -264,7 +286,7 @@ def gaiji_post():
     print((name, val, norm))
     conn = psycopg2.connect(database="buddha", user="postgres", password="1234", host="127.0.0.1", port="5432")
     cur = conn.cursor()
-    cur.execute('update cb set norm = %s, val = %s, tag = %s where name = %s', (norm, val, True, name))
+    cur.execute('update cb set nor = %s, val = %s, tag = %s where name = %s', (norm, val, True, name))
     conn.commit()
     cur.close()
     conn.close()
@@ -272,7 +294,9 @@ def gaiji_post():
     redirect('/gaiji?q=%s'%urllib.request.quote(q))
 
 
-run(host = '0.0.0.0', port = 8081)
+# run(host = '0.0.0.0', port = 8081)
+# GeventServer.run(host = '0.0.0.0', port = 8081)
+run(host='0.0.0.0', port=8081, server='gunicorn', workers=4)
 
 def main():
     ''''''
