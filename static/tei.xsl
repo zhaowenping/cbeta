@@ -275,25 +275,30 @@
     <!--处理所有的颂-->
 <!-- rend="margin-left:1em;text-indent:-1em" -->
     <xsl:template match="lg">
-        <xsl:choose>
-            <xsl:when test="@rend">
-                <div class="lg">
+        <p class="lg">
+            <xsl:if test="@xml:id">
+                <xsl:attribute name="id">
+                    <xsl:value-of select="@xml:id"/>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:choose>
+                <xsl:when test="@rend">
                     <xsl:attribute name="style">
-                    <xsl:text>text-indent:-1em;</xsl:text>
+                    <xsl:value-of select="concat('text-indent:', substring-before(substring-after(@rend,'text-indent:'), 'em'), 'em;')"/>
                     </xsl:attribute>
-                    <xsl:apply-templates/>
-                </div>
-            </xsl:when>
-            <xsl:otherwise>
-                <div class="lg">
-                    <xsl:apply-templates/>
-                </div>
-            </xsl:otherwise>
-        </xsl:choose>
+                </xsl:when>
+                <xsl:otherwise>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:apply-templates/>
+        </p>
     </xsl:template>
 
+    <!--去掉偈中重复的换行-->
     <xsl:template match="lg/lb">
-        <br/>
+        <xsl:if test="local-name(preceding-sibling::*[1])!='lb'">
+            <br/>
+        </xsl:if>
     </xsl:template>
 
     <xsl:template match="lb">
@@ -356,9 +361,9 @@
   </xsl:template>
 
     <!--处理段落-->
-    <xsl:template match="p[contains(@rend, 'inline')]">
+    <!--xsl:template match="p[contains(@rend, 'inline')]">
         <span><xsl:apply-templates/></span>
-    </xsl:template>
+    </xsl:template-->
 
     <xsl:template match="p">
     <p>
@@ -825,7 +830,7 @@
                     CBETA修訂註解
                 </xsl:attribute>
                 <xsl:attribute name="data-content">
-                    原文為: <xsl:value-of select="key('choice_from', $Ref)/sic|key('app_from', $Ref)/rdg"/>
+                    原文為: <xsl:apply-templates select="key('choice_from', $Ref)/sic|key('app_from', $Ref)/rdg"/>
                 </xsl:attribute>
                 [<xsl:value-of select="concat('c', substring(@xml:id, 5))"/>]
             </xsl:when>
@@ -835,7 +840,7 @@
                 </xsl:attribute>
                 <xsl:attribute name="data-content">
                     <xsl:variable name="tmp" select="substring(key('app_from', $Ref)/@corresp, 2)"/>
-                    <xsl:value-of select="key('note_n', $tmp)"/>
+                    <xsl:apply-templates select="key('note_n', $tmp)"/>
                 </xsl:attribute>
                 [*]
             </xsl:when>

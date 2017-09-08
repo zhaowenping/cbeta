@@ -72,7 +72,8 @@ body{
     margin:10pt;
     padding:2em;
     padding-top:100px;
-    font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;
+    /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;*/
+    font-family: quote, dash, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", "PingFang SC", "PMingLiU";
     /* font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;*/
 }
 
@@ -602,7 +603,6 @@ p {
    text-indent: 2em;
    text-align: justify;
    white-space: normal; /* 单词间空白,对中文无效 */
-   font-family: quote, dash, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", SimSun, "宋体", "PMingLiU";
    /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", SimSun, "宋体", "Microsoft YaHei", "微软雅黑", "PMingLiU";
    ont-family: "新明細體","標楷體",Arial,Helvetica,sans-serif;*/
 /*   font-size: small;    */
@@ -634,11 +634,13 @@ p.box{
 }
 
 /* verse */
-div.lg{
+/* div.lg{*/
+p.lg{
    /* margin-left:10px;
     margin-bottom:10px; */
    /* text-indent:-1em;*/
     /*font-family: FZSuXinShiLiuKaiT-R-GB;*/
+    text-indent: 0;
     margin-left: 4em;
     color: #10AA10;
 
@@ -918,7 +920,7 @@ span.element{
     color:black;
 }
 span.unclear{
-    font-style:italic;
+   /* font-style:italic;*/
 }
 span.wordtypeNN,
 span.wordtypeNNS{
