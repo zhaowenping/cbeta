@@ -113,9 +113,10 @@
 
         <nav class="navbar-sm navbar-default navbar-fixed-top" role="navigation">
             <!--ul class="pagination pagination-sm"-->
+            <div class="container">
             <ul class="nav navbar-nav">
             <li>
-        <a>
+        <a class="navbar-brand">
           <xsl:attribute name="href">
               <xsl:value-of select="$prev_filepath"/>
           </xsl:attribute>
@@ -123,10 +124,10 @@
         </a>
             </li>
             <li>
-                <a href="/mulu">返回目录</a>
+                <a class="navbar-brand" href="/mulu">返回目录</a>
             </li>
             <li>
-        <a>
+        <a class="navbar-brand">
           <xsl:attribute name="href">
               <xsl:value-of select="$next_filepath"/>
           </xsl:attribute>
@@ -134,12 +135,13 @@
         </a>
             </li>
         </ul>
-      <form class="navbar-form navbar-left" role="search">
+      <!--form class="navbar-form navbar-left" role="search">
          <div class="form-group">
             <input type="search" class="form-control" placeholder="Search"/>
          </div>
          <button type="submit" class="btn btn-default">直达</button>
-      </form>    
+      </form-->    
+  </div>
         </nav>
 
     <!--侧边栏目录 max(level)=28-->
@@ -165,7 +167,7 @@
             <br/>
             <xsl:apply-templates/>
 
-        <nav class="navbar-sm navbar-default" role="navigation">
+        <nav class="navbar-sm navbar-default navbar-center" role="navigation">
             <ul class="nav navbar-nav">
              <li>
         <a>
@@ -693,6 +695,7 @@
         <xsl:if test="not($firefox) and starts-with(@xml:id, 'end')">
             <xsl:text disable-output-escaping="yes">&lt;/span&gt;</xsl:text>
         </xsl:if>
+        <sup>
         <a data-toggle="popover" data-placement="auto" data-container="body" data-trigger="hover focus">
         <xsl:if test="@xml:id">
             <xsl:attribute name="id">
@@ -733,6 +736,7 @@
             </xsl:when>
         </xsl:choose>
         </a>
+        </sup>
     </xsl:template>
 
 
