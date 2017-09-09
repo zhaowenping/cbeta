@@ -111,7 +111,7 @@
             <menuitem label="菜单测试4" icon="img/arrow-stop-270.png"/>
         </menu>
 
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <nav class="navbar-sm navbar-default navbar-fixed-top" role="navigation">
             <!--ul class="pagination pagination-sm"-->
             <ul class="nav navbar-nav">
             <li>
@@ -148,8 +148,8 @@
         <ul class="toc">
 
         <xsl:call-template name="make_catalog">
-            <xsl:with-param name="pos" select="document($prev_filepath)//cb:mulu|//cb:mulu|document($next_filepath)//cb:mulu"/>
-            <!--xsl:with-param name="pos" select="//cb:mulu"/-->
+            <!--xsl:with-param name="pos" select="document($prev_filepath)//cb:mulu|//cb:mulu|document($next_filepath)//cb:mulu"/-->
+            <xsl:with-param name="pos" select="//cb:mulu"/>
         </xsl:call-template>
 
         <!--xsl:call-template name="make_catalog">
@@ -165,8 +165,8 @@
             <br/>
             <xsl:apply-templates/>
 
-        <nav class="bottom">
-             <ul class="nav">
+        <nav class="navbar-sm navbar-default" role="navigation">
+            <ul class="nav navbar-nav">
              <li>
         <a>
           <xsl:attribute name="href">
