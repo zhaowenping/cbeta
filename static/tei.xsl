@@ -111,7 +111,7 @@
             <menuitem label="菜单测试4" icon="img/arrow-stop-270.png"/>
         </menu>
 
-        <nav class="navbar-sm navbar-default navbar-fixed-top" role="navigation">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <!--ul class="pagination pagination-sm"-->
             <div class="container">
             <ul class="nav navbar-nav">
@@ -167,7 +167,7 @@
             <br/>
             <xsl:apply-templates/>
 
-        <nav class="navbar-sm navbar-default navbar-center" role="navigation">
+        <nav class="navbar-sm navbar-default" role="navigation">
             <ul class="nav navbar-nav">
              <li>
         <a>
