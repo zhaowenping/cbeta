@@ -112,7 +112,8 @@
         </menu>
 
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <ul class="pagination pagination-sm">
+            <!--ul class="pagination pagination-sm"-->
+            <ul class="nav navbar-nav">
             <li>
         <a>
           <xsl:attribute name="href">
@@ -428,14 +429,14 @@
           <xsl:apply-templates/>
   </xsl:template-->
 
-    <!--sa,sa-x-rj多语言对照, 暂时作为注释显示,cbeta没有显示-->
+    <!--sa,sa-x-rj多语言对照 -->
     <xsl:template match="cb:t">
         <xsl:if test="@xml:lang='zh'">
             <xsl:apply-templates/>
         </xsl:if>
-        <!--xsl:if test="@xml:lang!='zh'">
-            <span style="color:#A9A9A9">(<xsl:apply-templates/>)</span>
-        </xsl:if-->
+        <xsl:if test="@xml:lang!='zh'">
+            <span style="color:#A9A9A9"><xsl:apply-templates/></span>
+        </xsl:if>
     </xsl:template>
 
     <!--处理异体字-->
@@ -587,15 +588,15 @@
   <h1 class="title">
     <xsl:apply-templates/>
   </h1>
-  <br/>
+  <!--br/-->
   </xsl:template>
 
-    <!--作者译者cb:type="author"之后空出两行然后开始正文-->
+    <!--最后一个作者译者cb:type="author"之后空出两行然后开始正文-->
     <xsl:template match="byline">
         <div class="byline">
             <xsl:apply-templates/>
         </div>
-        <xsl:if test="last()">
+        <xsl:if test="../byline[last()]=.">
          <br/>
          <br/>
         </xsl:if>
@@ -757,7 +758,7 @@
                 <li class="toc"><a>
                     <xsl:attribute name="href">
                         <xsl:text>#</xsl:text>
-                        <xsl:value-of select="following::*[@xml:id][1]/@xml:id"/>
+                        <xsl:apply-templates select="following::*[@xml:id][1]/@xml:id"/>
                     </xsl:attribute>
                     <xsl:value-of select="."/>
                 </a></li>
@@ -766,7 +767,8 @@
                 <ul><li><a>
                     <xsl:attribute name="href">
                     <xsl:text>#</xsl:text>
-                    <xsl:value-of select="following::*[@xml:id][1]/@xml:id"/>
+                    <!--xsl:value-of select="following::*[@xml:id][1]/@xml:id"/-->
+                        <xsl:apply-templates select="following::*[@xml:id][1]/@xml:id"/>
                     </xsl:attribute>
                     <xsl:value-of select="."/>
                 </a></li></ul>
@@ -775,7 +777,8 @@
                 <ul><ul><li><a>
                     <xsl:attribute name="href">
                     <xsl:text>#</xsl:text>
-                    <xsl:value-of select="following::*[@xml:id][1]/@xml:id"/>
+                    <!--xsl:value-of select="following::*[@xml:id][1]/@xml:id"/-->
+                        <xsl:apply-templates select="following::*[@xml:id][1]/@xml:id"/>
                     </xsl:attribute>
                     <xsl:value-of select="."/>
                 </a></li></ul></ul>
