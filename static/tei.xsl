@@ -135,12 +135,12 @@
         </a>
             </li>
         </ul>
-      <!--form class="navbar-form navbar-left" role="search">
+      <form class="navbar-form navbar-left" role="search">
          <div class="form-group">
             <input type="search" class="form-control" placeholder="Search"/>
          </div>
          <button type="submit" class="btn btn-default">直达</button>
-      </form-->    
+      </form>    
   </div>
         </nav>
 
@@ -391,12 +391,9 @@
     </xsl:template>
 
     <!--处理词典-->
-    <xsl:template match="form">
-      <span class="term">
-        <xsl:apply-templates/>
-        <xsl:text>:&#160;&#160;&#160;&#160;</xsl:text>
-      </span>
-    </xsl:template>
+    <xsl:template match="entry"><dl><xsl:apply-templates/></dl></xsl:template>
+    <xsl:template match="form"><dt><xsl:apply-templates/></dt></xsl:template>
+    <xsl:template match="cb:def"><dd><xsl:apply-templates/></dd></xsl:template>
 
     <!--处理note-->
     <xsl:template match="note[@place='inline']|note[@type='inline']">
@@ -458,7 +455,7 @@
     <mapping type="normal_unicode">U+2A31C</mapping-->
     <xsl:choose>
         <xsl:when test="starts-with($Ref, 'SD')">
-          <ruby><img>
+            <ruby><img>
                 <xsl:attribute name="src">
                     <xsl:text>/static/sd-gif/</xsl:text>
                     <xsl:value-of select="substring($Ref, 4, 2)"/>
@@ -470,12 +467,12 @@
             <!--装字库用这句, 没装用上面的图片-->
             <!--xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='Character in the Siddham font']/value"/-->
             <!--xsl:value-of select="."/-->
-            <rt>
-                <xsl:if test="$rmpinyin">
-                    <xsl:value-of select="$rmpinyin"/>
-                </xsl:if>
-            </rt>
-          </ruby>
+                <rt>
+                    <xsl:if test="$rmpinyin">
+                        <xsl:value-of select="$rmpinyin"/>
+                    </xsl:if>
+                </rt>
+            </ruby>
         </xsl:when>
 
         <!--蘭札字-->
@@ -531,54 +528,28 @@
             </xsl:when>
             </xsl:choose>
         </xsl:when>
-    </xsl:choose>
-    </span> 
-  </xsl:template>
+      </xsl:choose>
+     </span> 
+    </xsl:template>
 
-  <xsl:template match="gaiji">
-    <xsl:choose>
-       <!--xsl:when test="starts-with(@cb,'SD')"><font face="siddam"><xsl:value-of select="@big5"/></font></xsl:when-->
-       <xsl:when test="starts-with(@cb,'SD')"><font face="siddam"><xsl:value-of select="@udia"/></font></xsl:when>
-         <!-- 若有通用字則以藍色顯示 -->
-     <xsl:when test="@nor!=''">
-       <font color="blue"><xsl:value-of select="@nor"/></font>
-     </xsl:when>
-       <!--若unicode標志為0-->
-     <xsl:when test="@uniflag='0'">
-         <!--span class="nor" title="xxoo" color="blue"--><font color="blue"><xsl:value-of select="@des"/></font><!--/span-->
-     </xsl:when>
-         <!-- 若有 Unicode 則以 Unicode 顯示 -->
-     <xsl:when test="@uni!=''">
-         <!--xsl:text disable-output-escaping="yes">&amp;</xsl:text>#x<xsl:value-of select="@uni"/>;</xsl:when-->
-   <font color="#00d7ff">
-           <xsl:value-of select="@uni"/>
-   </font>
-         </xsl:when>
-         <!-- 組字式 -->
-         <xsl:when test="@des!=''"><xsl:value-of select="@des"/></xsl:when>
-         <xsl:otherwise><xsl:value-of select="@cb"/></xsl:otherwise>
-    </xsl:choose>
-  </xsl:template>
-
-  <!--处理teiHeader-->
-
-  <xsl:template match="titleStmt/title">
-    <xsl:if test="preceding-sibling::title">
-      <br/>
-    </xsl:if>
-    <xsl:apply-templates/>
-  </xsl:template>
-
-<!--head 小节的目录。上级节点是div类节点则不显示? -->
-  <xsl:template match="head">
-    <xsl:variable name="parent" select="local-name(..)"/>
-    <!--xsl:if test="not(starts-with($parent,'div'))">
+    <!--处理teiHeader-->
+    <xsl:template match="titleStmt/title">
+      <xsl:if test="preceding-sibling::title">
+        <br/>
+      </xsl:if>
       <xsl:apply-templates/>
-    </xsl:if-->
-    <h2>
-      <xsl:apply-templates/>
-    </h2>
-  </xsl:template>
+    </xsl:template>
+
+    <!--head 小节的目录。上级节点是div类节点则不显示? -->
+    <xsl:template match="head">
+      <xsl:variable name="parent" select="local-name(..)"/>
+      <!--xsl:if test="not(starts-with($parent,'div'))">
+        <xsl:apply-templates/>
+      </xsl:if-->
+      <h2>
+        <xsl:apply-templates/>
+      </h2>
+    </xsl:template>
 
   <!--xsl:template match="title">
       <h1 class="title"><xsl:value-of select="."/></h1>
@@ -615,17 +586,8 @@
    </xsl:template>
 
    <!--处理列表-->
-   <xsl:template match="list">
-       <ul>
-       <xsl:apply-templates/>
-       </ul>
-   </xsl:template>
-
-   <xsl:template match="list/item">
-       <li>
-       <xsl:apply-templates/>
-       </li>
-   </xsl:template>
+   <xsl:template match="list"><ul><xsl:apply-templates/></ul></xsl:template>
+   <xsl:template match="list/item"><li><xsl:apply-templates/></li></xsl:template>
 
 <!--处理空缺 unclear@reason-->
   <xsl:template match="unclear">
@@ -710,7 +672,9 @@
                 <xsl:attribute name="data-content">
                     <xsl:apply-templates select="key('note_target', $Ref)"/>
                 </xsl:attribute>
-                [<xsl:value-of select="substring(@n, 6)"/>]
+                <xsl:text>[</xsl:text>
+                <xsl:value-of select="substring(@n, 6)"/>
+                <xsl:text>]</xsl:text>
             </xsl:when>
             <!--XXX-->
             <xsl:when test="@type='cb-app'">
@@ -720,7 +684,7 @@
                 <xsl:attribute name="data-content">
                     原文為: <xsl:apply-templates select="key('choice_from', $Ref)/sic|key('app_from', $Ref)/rdg"/>
                 </xsl:attribute>
-                [<xsl:value-of select="concat('c', substring(@xml:id, 5))"/>]
+                <xsl:value-of select="concat('[c', substring(@xml:id, 5), ']')"/>
             </xsl:when>
             <xsl:when test="@type='star' and key('app_from', $Ref)">
                 <xsl:attribute name="title">
@@ -730,7 +694,7 @@
                     <xsl:variable name="tmp" select="substring(key('app_from', $Ref)/@corresp, 2)"/>
                     <xsl:apply-templates select="key('note_n', $tmp)"/>
                 </xsl:attribute>
-                [*]
+                <xsl:text>[*]</xsl:text>
             </xsl:when>
             <xsl:when test="@type='circle'">
             </xsl:when>
