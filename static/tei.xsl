@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cb="http://www.cbeta.org/ns/1.0"
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:cb="http://www.cbeta.org/ns/1.0"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
     exclude-result-prefixes="xs cb">
     <!--xpath-default-namespace="http://www.tei-c.org/ns/1.0"-->
     <xsl:output method="html" encoding="utf-8" doctype-system="about:legacy-compat" indent="yes"/>
@@ -149,10 +150,10 @@
         <nav>
         <ul class="toc">
 
-        <xsl:call-template name="make_catalog">
             <!--xsl:with-param name="pos" select="document($prev_filepath)//cb:mulu|//cb:mulu|document($next_filepath)//cb:mulu"/-->
+        <!--xsl:call-template name="make_catalog">
             <xsl:with-param name="pos" select="//cb:mulu"/>
-        </xsl:call-template>
+        </xsl:call-template-->
 
         <!--xsl:call-template name="make_catalog">
             <xsl:with-param name="pos" select="document($prev_filepath)//cb:mulu"/>
@@ -213,7 +214,7 @@
         </span>
     </xsl:template>
 
-    <!--不显示目录-->
+    <!--不在正文显示目录-->
     <xsl:template match="cb:mulu">
         <a class="mulu">
            <xsl:attribute name="id">
@@ -442,8 +443,7 @@
     <xsl:key name="char_id" match="char" use="@xml:id"/>
     <xsl:template match="g">
         <xsl:variable name="Ref" select="substring(@ref, 2)"/>
-        <xsl:variable name="char" select="/TEI/teiHeader/encodingDesc/charDecl/char[@xml:id=$Ref]"/>
-        <xsl:variable name="rmpinyin" select="$char/charProp[localName='Romanized form in Unicode transcription']/value"/>
+        <xsl:variable name="char" select="key('char_id', $Ref)"/>
         <span class="gaiji">
     <!--localName>normalized form</localName>
     <localName>Character in the Siddham font</localName>   xml:id="SD-E2F6"
@@ -455,6 +455,7 @@
     <mapping type="normal_unicode">U+2A31C</mapping-->
     <xsl:choose>
         <xsl:when test="starts-with($Ref, 'SD')">
+        <xsl:variable name="rmpinyin" select="key('char_id', $Ref)/charProp[localName='Romanized form in Unicode transcription']/value"/>
             <ruby><img>
                 <xsl:attribute name="src">
                     <xsl:text>/static/sd-gif/</xsl:text>
@@ -477,6 +478,7 @@
 
         <!--蘭札字-->
         <xsl:when test="starts-with($Ref, 'RJ')">
+        <xsl:variable name="rmpinyin" select="key('char_id', $Ref)/charProp[localName='Romanized form in Unicode transcription']/value"/>
             <ruby>
                 <img>
                 <xsl:attribute name="src">
@@ -512,9 +514,10 @@
 
         <!--組字式-->
         <xsl:when test="starts-with($Ref, 'CB')">
+            <xsl:variable name="nor" select="$char/charProp[localName='normalized form']/value"/>
             <xsl:choose>
-            <xsl:when test="$char/charProp[localName='normalized form']/value">
-                <xsl:value-of select="$char/charProp[localName='normalized form']/value"/>
+            <xsl:when test="$nor">
+                <xsl:value-of select="$nor"/>
             </xsl:when>
             <xsl:when test="$char/mapping[@type='unicode']">
                 <xsl:value-of select="."/>
@@ -642,8 +645,8 @@
 
       <!--比较危险的用法,可能报错: 给替换的部分着红色-->
 
-    <xsl:key name="app_from" match="app" use="@from"/>
     <xsl:key name="tt_from" match="cb:tt" use="@from"/>
+    <xsl:key name="app_from" match="app" use="@from"/>
     <xsl:key name="choice_from" match="choice" use="@cb:from"/>
     <xsl:key name="note_target" match="note" use="@target"/>
     <xsl:key name="note_n" match="note" use="@n"/>
@@ -676,7 +679,6 @@
                 <xsl:value-of select="substring(@n, 6)"/>
                 <xsl:text>]</xsl:text>
             </xsl:when>
-            <!--XXX-->
             <xsl:when test="@type='cb-app'">
                 <xsl:attribute name="title">
                     CBETA修訂註解
@@ -717,7 +719,7 @@
         </div>
     </xsl:template>
 
-    <!--生成导航目录 max(cb:mulu@level)=28-->
+    <!--生成导航目录 max(cb:mulu@level)=28, XXX: 不能显示cb:mulu中的异体字:K34n1257_007.xml-->
     <xsl:template name="make_catalog">
         <xsl:param name="pos"/> 
         <xsl:for-each select="$pos">
@@ -726,7 +728,7 @@
                 <li class="toc"><a>
                     <xsl:attribute name="href">
                         <xsl:text>#</xsl:text>
-                        <xsl:apply-templates select="following::*[@xml:id][1]/@xml:id"/>
+                        <xsl:value-of select="following::*[@xml:id][1]/@xml:id"/>
                     </xsl:attribute>
                     <xsl:value-of select="."/>
                 </a></li>
@@ -735,8 +737,7 @@
                 <ul><li><a>
                     <xsl:attribute name="href">
                     <xsl:text>#</xsl:text>
-                    <!--xsl:value-of select="following::*[@xml:id][1]/@xml:id"/-->
-                        <xsl:apply-templates select="following::*[@xml:id][1]/@xml:id"/>
+                        <xsl:value-of select="following::*[@xml:id][1]/@xml:id"/>
                     </xsl:attribute>
                     <xsl:value-of select="."/>
                 </a></li></ul>
@@ -745,8 +746,7 @@
                 <ul><ul><li><a>
                     <xsl:attribute name="href">
                     <xsl:text>#</xsl:text>
-                    <!--xsl:value-of select="following::*[@xml:id][1]/@xml:id"/-->
-                        <xsl:apply-templates select="following::*[@xml:id][1]/@xml:id"/>
+                        <xsl:value-of select="following::*[@xml:id][1]/@xml:id"/>
                     </xsl:attribute>
                     <xsl:value-of select="."/>
                 </a></li></ul></ul>
@@ -757,7 +757,10 @@
               <xsl:text>#</xsl:text>
               <xsl:value-of select="following::*[@xml:id][1]/@xml:id"/>
           </xsl:attribute>
-              <xsl:value-of select="."/></a></li></ul></ul></ul>
+                    <!--xsl:apply-templates select="."/-->
+                    <!--xsl:copy-of select="."/-->
+                    <xsl:value-of select="."/>
+          </a></li></ul></ul></ul>
             </xsl:when>
         </xsl:choose>
       </xsl:for-each>
