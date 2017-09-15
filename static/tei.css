@@ -687,6 +687,18 @@ div.l{
    color: #10AA10;
 
 }
+/*在小屏幕设备上居中显示偈颂*/
+@media screen and (max-width: 640px) {
+p.lg{
+    margin-left: 0;
+text-align:center;
+}
+div.l{
+    margin-left: 0;
+text-align:center;
+}
+}
+
 /* misc */
 div.epigraph{
     margin:20pt;
