@@ -26,7 +26,7 @@
       <xsl:number format="001" value="$juan - 1"/>
       <xsl:text>.xml</xsl:text>
     </xsl:variable>
-    <xsl:if test="$MSIE or document($prevvol)/TEI">
+    <xsl:if test="$MSIE or document($prevvol)">
         <xsl:value-of select="$prevvol"/>
     </xsl:if>
     </xsl:variable>
@@ -89,7 +89,7 @@
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="/static/tei.css"/>
         <title>
-            <xsl:value-of select="substring-after(/TEI/teiHeader/fileDesc/titleStmt/title, 'No. ')"/>
+            <xsl:value-of select="concat($current_sutra, ' ', substring-after(substring-after(/TEI/teiHeader/fileDesc/titleStmt/title, 'No. '), ' '))"/>
         </title>
 
         <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
@@ -112,8 +112,11 @@
             <menuitem label="菜单测试4" icon="img/arrow-stop-270.png"/>
         </menu>
 
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <!--ul class="pagination pagination-sm"-->
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <!--div class="navbar-header">  
+                <a class="navbar-brand">&#9776;</a>  
+            </div--> 
             <div class="container">
             <ul class="nav navbar-nav">
             <li>
@@ -136,38 +139,36 @@
         </a>
             </li>
         </ul>
-      <form class="navbar-form navbar-left" role="search">
+      <!--form class="collspae navbar-collspae navbar-form navbar-left" role="search">
          <div class="form-group">
             <input type="search" class="form-control" placeholder="Search"/>
          </div>
          <button type="submit" class="btn btn-default">直达</button>
-      </form>    
+      </form-->    
   </div>
         </nav>
 
     <!--侧边栏目录 max(level)=28-->
         <!--aside style="height:100%;width:20%; margin-bottom:-3000px; padding-bottom:3000px; background:#cad5eb; float:left;"-->
         <nav>
-        <ul class="toc">
+            <ul class="toc">
 
-            <!--xsl:with-param name="pos" select="document($prev_filepath)//cb:mulu|//cb:mulu|document($next_filepath)//cb:mulu"/-->
-        <!--xsl:call-template name="make_catalog">
-            <xsl:with-param name="pos" select="//cb:mulu"/>
-        </xsl:call-template-->
-
-        <!--xsl:call-template name="make_catalog">
-            <xsl:with-param name="pos" select="document($prev_filepath)//cb:mulu"/>
-        </xsl:call-template-->
-
-        <!--xsl:call-template name="make_catalog">
-            <xsl:with-param name="pos" select="document($next_filepath)//cb:mulu"/>
-        </xsl:call-template-->
-        </ul>
+            <!--生成目录-->
+                <!--xsl:with-param name="pos" select="document($prev_filepath)//cb:mulu|//cb:mulu|document($next_filepath)//cb:mulu"/-->
+            <!--xsl:call-template name="make_catalog">
+                <xsl:with-param name="pos" select="//cb:mulu"/>
+            </xsl:call-template-->
+            </ul>
         </nav>
 
             <br/>
-            <xsl:apply-templates/>
 
+        <!--div class="content" style="writing-mode:vertical-rl;"-->
+        <div class="contentx">
+            <xsl:apply-templates/>
+        </div>
+
+        <!--底栏目录-->
         <nav class="navbar-sm navbar-default" role="navigation">
             <ul class="nav navbar-nav">
              <li>
@@ -298,7 +299,7 @@
         </p>
     </xsl:template>
 
-    <!--偈中重复的换行只显示一个-->
+    <!--偈中重复的换行只显示一个换行-->
     <xsl:template match="lg/lb">
         <xsl:if test="local-name(preceding-sibling::*[1])!='lb'">
             <br/>
@@ -342,7 +343,6 @@
     <!--清除文档中无用空格-->
     <xsl:template match="text()|@*">
         <xsl:value-of select="normalize-space(.)"/>
-    <!--xsl:value-of select="normalize-unicode()"/-->
     </xsl:template>
 
     <!--处理图片-->
@@ -444,7 +444,6 @@
     <xsl:template match="g">
         <xsl:variable name="Ref" select="substring(@ref, 2)"/>
         <xsl:variable name="char" select="key('char_id', $Ref)"/>
-        <span class="gaiji">
     <!--localName>normalized form</localName>
     <localName>Character in the Siddham font</localName>   xml:id="SD-E2F6"
     <localName>big5</localName>                            xml:id="SD-E2F6"
@@ -455,8 +454,8 @@
     <mapping type="normal_unicode">U+2A31C</mapping-->
     <xsl:choose>
         <xsl:when test="starts-with($Ref, 'SD')">
-        <xsl:variable name="rmpinyin" select="key('char_id', $Ref)/charProp[localName='Romanized form in Unicode transcription']/value"/>
-            <ruby><img>
+        <span class="gaiji_sd">
+            <ruby><!--img>
                 <xsl:attribute name="src">
                     <xsl:text>/static/sd-gif/</xsl:text>
                     <xsl:value-of select="substring($Ref, 4, 2)"/>
@@ -464,21 +463,20 @@
                     <xsl:value-of select="$Ref"/>
                     <xsl:text>.gif</xsl:text>
                 </xsl:attribute>
-                </img>
+                </img-->
             <!--装字库用这句, 没装用上面的图片-->
             <!--xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='Character in the Siddham font']/value"/-->
-            <!--xsl:value-of select="."/-->
+            <xsl:value-of select="."/>
                 <rt>
-                    <xsl:if test="$rmpinyin">
-                        <xsl:value-of select="$rmpinyin"/>
-                    </xsl:if>
+                    <xsl:value-of select="key('char_id', $Ref)/charProp[localName='Romanized form in Unicode transcription']/value"/>
                 </rt>
             </ruby>
+        </span> 
         </xsl:when>
 
         <!--蘭札字-->
         <xsl:when test="starts-with($Ref, 'RJ')">
-        <xsl:variable name="rmpinyin" select="key('char_id', $Ref)/charProp[localName='Romanized form in Unicode transcription']/value"/>
+        <span class="gaiji_rj">
             <ruby>
                 <img>
                 <xsl:attribute name="src">
@@ -491,15 +489,10 @@
                 </img>
             <!-- 安装了cbeta的蘭扎字库，使用这句，不推荐-->
             <!--xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='rjchar']/value"/-->
-            <!--xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='rjchar']/value">
-                <xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='rjchar']/value"/>
-            </xsl:when-->
                 <rt>
+                    <xsl:value-of select="key('char_id', $Ref)/charProp[localName='Romanized form in Unicode transcription']/value"/>
                 <!--xsl:choose>
                     <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in Unicode transcription']/value"-->
-                    <xsl:if test="$rmpinyin">
-                        <xsl:value-of select="$rmpinyin"/>
-                    </xsl:if>
                     <!--/xsl:when>
                     <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in CBETA transcription']/value">
                         (<xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in CBETA transcription']/value"/>)
@@ -510,10 +503,12 @@
                 </xsl:choose-->
                 </rt>
             </ruby>
+        </span> 
         </xsl:when>
 
         <!--組字式-->
         <xsl:when test="starts-with($Ref, 'CB')">
+        <span class="gaiji_cb">
             <xsl:variable name="nor" select="$char/charProp[localName='normalized form']/value"/>
             <xsl:choose>
             <xsl:when test="$nor">
@@ -530,9 +525,9 @@
                 <xsl:value-of select="$char/charProp[localName='composition']/value"/>
             </xsl:when>
             </xsl:choose>
+        </span> 
         </xsl:when>
       </xsl:choose>
-     </span> 
     </xsl:template>
 
     <!--处理teiHeader-->
@@ -706,10 +701,11 @@
     </xsl:template>
 
 
-    <!--处理div 折叠式注释-->
+    <!--处理div 折叠式注释 TODO-->
+    <!--xsl:template match="cb:div[@type='orig']"-->
     <xsl:template match="cb:div[@type='commentary']">
       <!--div class="commentary" id="collapseTwo" class="panel-collapse collapse"-->
-        <div>
+        <div class="commentary panel-collapse">
             <a data-toggle="collapse" data-parent="#accordion" href="#{generate-id()}">點擊閱讀/關閉註疏：</a>
             <div id="{generate-id()}" class="panel-collapse collapse">
               <div class="panel-body">
@@ -717,6 +713,7 @@
               </div>
             </div>
         </div>
+        <br/>
     </xsl:template>
 
     <!--生成导航目录 max(cb:mulu@level)=28, XXX: 不能显示cb:mulu中的异体字:K34n1257_007.xml-->

@@ -35,36 +35,57 @@ of this software, even if advised of the possibility of such damage.
 
 */
 
-/*
+
+/* 悉昙体字体 */
 @font-face {
   font-family: 'siddham';
   font-style: normal;
-  font-weight: 400;
-  src: url(http://localhost:8080/font/siddam.woff2) format('woff2');
+  font-weight: normal;
+  src: url(/static/siddham.woff) format('woff');
+}
+
+/*
+@font-face {
+  font-family: 'consol';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Inconsolata');
+  src: local('Consolas');
 }
 */
+
 
 /*使用SimSun字体以便正确显示小蝌蚪符号: 引号、逗号、分号等、顿号*/
 @font-face {
   font-family: quote;
   src: local('SimSun');    
-  unicode-range: U+0027,U+002C, U+2018, U+2019, U+201a, U+201c, U+201d, U+201e, U+3001, U+FF0C, U+ff1a, U+ff1b ;
-}
-/*破折号*/
-@font-face {
-  font-family: dash;
-  src: local('Times New Roman');    
-  unicode-range: U+2014;
+  //src: local('PingFang SC');    
+  //src: local('Hiragino Sans GB');    
+  unicode-range: U+2010-2027, U+3001-303F, U+FF01-FF9F;
 }
 
+/*破折号*/
+/*@font-face {
+  font-family: dash;
+  src: local('Arial');    
+  unicode-range: U+2500, U+2014;
+  font-style: normal;
+  font-weight: normal;
+  unicode-range: U+0025-00FF;
+  font-variant: small-caps;
+  font-stretch: expanded;
+  font-feature-settings："liga1" on;
+}
+*/
 
 /* main layout */
 /* @import url(odd.css); */
-body.simple{
+/*body.simple{
     color:#000000;
     background-color:#FFFFFF;
     margin:10pt;
 }
+*/
 
 body{
     color:#000000;
@@ -73,7 +94,8 @@ body{
     padding:2em;
     padding-top:100px;
     /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;*/
-    font-family: quote, dash, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", "PingFang SC", "PMingLiU";
+    font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", "PingFang SC", "PMingLiU";
+    font-size: large;
     /* font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;*/
 }
 
@@ -426,17 +448,31 @@ a.inlinetoc-sub:link
     font-size:smaller;
 }
 
-/* 错误更正*/
+/* 错误更正 */
 span.corr{
     color: #FF0000;
 }
+
+/* 悉昙体、兰扎体与异体字 */
 span.gaiji{
-    /*font-family: 'siddham';
-     'UntitledTTF',
-    <span style="width:0;height:0;float:left;">
+    color:#00d7ff;
+}
+span.gaiji_sd{
+    font-family: 'siddham';
+    // font-kerning: normal;  // 具有字距调整信息的OpenType字体才有用
+    /*<span style="width:0;height:0;float:left;">
     */
     color:#00d7ff;
 }
+
+span.gaiji_rj{
+    color:#00d7ff;
+}
+
+span.gaiji_cb{
+    color:#00d7ff;
+}
+
 
 span.toclist{
     font-size:smaller;
@@ -599,18 +635,16 @@ p {
 /*   margin-right: 2em;
    margin-left: 2em;
    */
-   line-height: 160%;
-   text-indent: 2em;
-   text-align: justify;
-   white-space: normal; /* 单词间空白,对中文无效 */
-   /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", SimSun, "宋体", "Microsoft YaHei", "微软雅黑", "PMingLiU";
-   ont-family: "新明細體","標楷體",Arial,Helvetica,sans-serif;*/
-/*   font-size: small;    */
-   /*font-size: 1em;*/
-   font-size: normal;
-   font-weight: normal;
-/*   letter-spacing: 0.15em; *//* 字母间空白 */
-   letter-spacing: 0.12em; /* 字母间空白 */
+    line-height: 162%;
+    text-indent: 2em;
+    text-align: justify;
+    white-space: normal; /* 单词间空白,对中文无效 */
+    font-family: quote, Inconsolata, "Hiragino Sans GB", "PingFang SC", "PMingLiU";
+    /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", SimSun, "宋体", "Microsoft YaHei", "微软雅黑", "PMingLiU";*/
+    font-size: normal;
+    font-weight: normal;
+    letter-spacing: 0.12em; /* 字母间空白0.12em */
+    //vertical-align: text-bottom;
    /*padding: 0.5em 0 0.5em 0;*/
 }
 
@@ -761,9 +795,10 @@ div.citbibl{
 }
 
 /*add*/
-div.commentary{
-    font-style:italic;
+div.commentary p{
+    //font-style:italic;
     font-size:smaller;
+    font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "PMingLiU", SimSun;
     font-weight:light;
 }
 /* a <quote> inside a <cit> */
@@ -1190,3 +1225,14 @@ ul.nav li a:hover{background:#0095BB}
 */
 /*html5*/
 article,aside,dialog,footer,header,section,footer,nav,figure,menu{ display:block }
+
+/*
+.navbar-brand,
+.navbar-nav,
+.navbar li a {
+    line-height: 20px;
+    height: 20px;
+    font: small;
+    padding-top: 0;
+*/
+}
