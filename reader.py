@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-09-08 18:59:14
+# Last Modified: 2017-09-16 13:55:58
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -14,9 +14,8 @@ __version__ = "0.0.1"
 
 
 import os
-import bottle
 from bottle import get, post
-from bottle import route, run, static_file
+from bottle import route, run, static_file, default_app
 from bottle import redirect, abort
 from bottle import template
 from bottle import jinja2_view as view
@@ -109,9 +108,9 @@ def search():
     return {}
 
 # 搜索！
-from whoosh.index import open_dir
-from whoosh.qparser import QueryParser
-from whoosh.query import *
+# from whoosh.index import open_dir
+# from whoosh.qparser import QueryParser
+# from whoosh.query import *
 import opencc
 
 import time
@@ -211,26 +210,41 @@ def read_menu_file(sutra_list):
 
 # 处理组合字
 # import psycopg2
+import json
+import time
+
+s = time.time()
+with open('dict/dfb.json') as fd:
+    dfb = json.load(fd)
+e = time.time()
+
+print('装入丁福宝词典，用时%s' % (e - s))
+
 
 # print(conn)
 @get('/dict/:word')
 def g_get(word):
+    '''查字典'''
     print('发过来一个字:%s' % word)
     pinyin = ''
     definition = ''
-    with open('static/Unihan_Readings.txt') as fd:
-        for line in fd:
-            line = line.strip()
-            if not line or line.startswith("#"): continue
-            line = line.split(None, 2)
-            unichar = 'U+%X' % ord(word)
-            if unichar == line[0] and 'kDefinition' == line[1]:
-                definition = line[2]
-            if unichar == line[0] and 'kMandarin' == line[1]:
-                pinyin = line[2]
-                break
+    if len(word) == 1:
+        with open('dict/Unihan_Readings.txt') as fd:
+            for line in fd:
+                line = line.strip()
+                if not line or line.startswith("#"): continue
+                line = line.split(None, 2)
+                unichar = 'U+%X' % ord(word)
+                if unichar == line[0] and 'kDefinition' == line[1]:
+                    definition = line[2]
+                if unichar == line[0] and 'kMandarin' == line[1]:
+                    pinyin = line[2]
+                    break
+    elif word in dfb:
+        pinyin = dfb[word]['usg']
+        definition = dfb[word]['def']
 
-    print(pinyin, definition)
+    # print(pinyin, definition)
 
     return {'word': word, 'pinyin': pinyin, 'definition': definition}
 
@@ -295,10 +309,40 @@ def gaiji_post():
     redirect('/gaiji?q=%s'%urllib.request.quote(q))
 
 
-# run(host = '0.0.0.0', port = 8081)
+@get('/sd')
+@view('temp/sd.jinja2')
+def gaiji_post():
+    q = request.GET.q
+    conn = psycopg2.connect(database="buddha", user="postgres", password="1234", host="127.0.0.1", port="5432")
+    cur = conn.cursor()
+    if q:
+        cur.execute('select name, romanu, romanc, value from siddham where position(%s in romanu)>0 or position(%s in romanc)>0 order by name', (q, q))
+    else:
+        cur.execute('select name, romanu, romanc, value from siddham order by name')
+        # cur.execute("select name, romanu, romanc, value from siddham where romanc ='' or romanu = '' order by name")
+        # cur.execute("select name, romanu, romanc, value from siddham where value is not null order by name")
+    data = cur.fetchall()
+    result = []
+    for i in data:
+    #     print(i)
+        name = i[0].strip()
+        romanu = i[1].strip()
+        romanc = i[2].strip()
+        value = i[3].strip() if i[3] else ''
+        tt = name[19:].strip()
+        url = '/static/sd-gif/{}/SD-{}.gif'.format(tt[:2], tt)
+        result.append((name, romanu, romanc, value, url))
+    print(result)
+    print('____________________________')
+    conn.commit()
+    cur.close()
+    conn.close()
+    return {'result': result}
+
+run(host = '0.0.0.0', port = 8081)
 # GeventServer.run(host = '0.0.0.0', port = 8081)
+# app = default_app()
 # run(host='0.0.0.0', port=8081, server='gunicorn', workers=4)
-app = bottle.default_app()
 
 def main():
     ''''''

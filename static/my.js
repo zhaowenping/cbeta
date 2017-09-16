@@ -48,7 +48,7 @@ function lookup(word){
                  response.json().then(function(data) {  
                    console.log(data);  
                    console.log(word);
-                   if(data.pinyin || data.definition) console.log('ok');
+                   if(data.pinyin || data.definition) {console.log('ok');
                    //word.innerHTML ="<a> 成功了</a>";
                    //  location.replace(data.location);
                     repaceSelectionText(word,
@@ -56,6 +56,7 @@ function lookup(word){
 word.toString() +
 '</span>');
 $(function (){$("[data-toggle='popover']").popover({html:true});});
+                   }
 
 // <a href="#" type="button" title="&lt;h2&gt;Title&lt;/h2&gt;" data-container="body" data-toggle="popover" data-content="h4Popover 中的一些内容options 方法/h4">Popover</a>
           // var range;
@@ -114,9 +115,9 @@ $(document).ready(function () {
                 var y = e.pageY - parentOffset.top;
                 txt = window.getSelection();
                 // 计算unicode字符串的长度 console.log(txt.toString().length);
-                if (Array.from(txt.toString()).length == 1) {
+                // if (Array.from(txt.toString()).length == 1) {
                  lookup(txt);
-                }
+                // }
                });
               });
 
