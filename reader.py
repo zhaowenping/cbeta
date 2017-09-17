@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-09-16 13:55:58
+# Last Modified: 2017-09-17 19:01:40
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -241,8 +241,8 @@ def g_get(word):
                     pinyin = line[2]
                     break
     elif word in dfb:
-        pinyin = dfb[word]['usg']
-        definition = dfb[word]['def']
+        pinyin = dfb[word][0]['usg']
+        definition = dfb[word][0]['def']
 
     # print(pinyin, definition)
 
