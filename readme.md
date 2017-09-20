@@ -59,8 +59,21 @@
 
 ## 使用说明
 
-1. 首先把cbeta中的xml文件拷贝出来到一个目录比如TMP，然后拷贝static/tei.xsl和static/tei.css两个文件到TMP目录下的stylesheet目录。
-2. 启动nginx服务器，设置静态目录为TMP。一个不错的阅经环境就设置完成了
+1. 示例是在ubuntu16.04上所做。其他操作系统仿照即可。不需要安装数据库，web服务器，只需要安装python即可
+2. 假设安装到$HOME/cbeta目录
+3. 安装python虚拟环境, 会生成一个py35的目录，里面是python的可执行程序
+ $ git clone https://github.com/zhaowenping/cbeta.git
+ $ cd cbeta
+ $ python3 -m venv py35
+ $ cd py35
+ $ . bin/activate
+ $ cd ..
+ $ pip install --upgrade pip
+ $ pip install -r requirements.txt
+4. 将全部的xml文件移动到 cbeta/xml目录中, 需要使用make_xml.py文件生成, 主要作用是两个，第一，去掉xml文件中的默认地址空间，第二，添加tei.xsl文件的链接上去
+5. 运行程序 $ python reader.py
+6. 打开浏览器，默认地址 http://localhost:8081 即可看到
+
 
 ## 文件列表
 1. static/tei.xsl 主体程序
