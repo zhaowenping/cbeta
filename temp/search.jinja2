@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="revised" content="">
+  <title>搜索</title>
+  <link rel="stylesheet" href="">
+  <script>
+  //<![CDATA[
+  //]]>
+  </script>
+  <style>
+  <!--
+  -->
+  </style>
+</head>
+<body>
+<br />
+
+<form action="/search" method="post">
+查找: <input type="search" name="content">
+<input type="submit">
+</form>
+
+<ul>
+{% for hl, an, title in results %}
+<li>
+<div>
+<a href="{{an}}">{{title}}</a>
+<div>
+{{hl}}
+</div>
+</div>
+</li>
+{% endfor %}
+<br>
+<br>
+</ul>
+  <!--script src="jquery.js"></script-->
+  <!--script src="http://code.jquery.com/jquery-1.4.2.min.js"></script-->
+</body>
+</html>
+
+

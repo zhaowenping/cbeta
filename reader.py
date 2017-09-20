@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-09-17 19:01:40
+# Last Modified: 2017-09-20 16:35:32
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -27,14 +27,15 @@ from bottle import GeventServer
 # XSLT_FILE = 'static/tei.xsl'
 
 @route('/')
+@view('temp/index.jinja2')
 def index():
-    return 'Hello World!'
+    return {'Hello World!':''}
 
-@route('/static/:filename')
+@route('/static/:filename#.+#')
 def server_static(filename):
     return static_file(filename, root='static')
 
-@route('/xml/:filename')
+@route('/xml/:filename#.+#')
 def server_xml(filename):
     return static_file(filename, root='xml')
 
@@ -46,28 +47,34 @@ def listdir():
             sutras.append(path)
     sutra.sort()
 
-# 浏览器渲染，也可以
-@route('/xml/:n')
-#example: n = T01n0001_001
-def browse(n):
-    tt = XSLT(XSLT_FILE)
-    XML_FILE = '../xml/%s/%s.xml' % (n[:3], n)
-    if not os.path.exists(XML_FILE):
-        abort(404, '无此文件')
-    xhtml = tt.transform(XML_FILE)
-    print(xhtml)
-    #xhtml = xsltproc(XSLT_FILE, XML_FILE)
-    return xhtml
-
+# # 浏览器渲染，也可以
+# @route('/xml/:n')
+# #example: n = T01n0001_001
+# def browse(n):
+#     tt = XSLT(XSLT_FILE)
+#     XML_FILE = '../xml/%s/%s.xml' % (n[:3], n)
+#     if not os.path.exists(XML_FILE):
+#         abort(404, '无此文件')
+#     xhtml = tt.transform(XML_FILE)
+#     print(xhtml)
+#     #xhtml = xsltproc(XSLT_FILE, XML_FILE)
+#     return xhtml
+#
 
 # 显示菜单
-sch_a = "menu/sutra_sch.lst"
-sch_b = "menu/bulei_sutra_sch.lst"
+sch_a = "static/sutra_sch.lst"
+sch_b = "static/bulei_sutra_sch.lst"
 
 @route('/mulu')
 @view('temp/menu.jinja2')
 def menu():
     menu = read_menu_file(sch_b)
+    return {'menus': menu, 'request':request}
+
+@route('/cebie')
+@view('temp/menu.jinja2')
+def menu():
+    menu = read_menu_file(sch_a)
     return {'menus': menu, 'request':request}
 
 
@@ -96,7 +103,36 @@ def submenu(bulei):
         sutras.sort()
         sutra = sutras[0]            # T01n0002_001.xml
         # url = f"http://10.81.25.167:8080/xml/{ye}/{sutra}"
-        url = f"/xml/{ye}/{sutra}"
+        url = "/xml/{ye}/{sutra}".format(**locals())
+        redirect(url)
+    return {'menus': menu, 'request':request, 'nav': nav}
+
+@route('/cebie/:bulei#.+#')
+@view('temp/menu.jinja2')
+def submenu(bulei):
+    menu = read_menu_file(sch_a)
+    bulei = bulei.split('/')
+
+    nav = [('/cebie', '总目录')]
+    for b in bulei:
+        menu = menu[b]
+        t = '/'.join((nav[-1][0], b))
+        nav.append((t, b))
+    nav.pop(0)
+
+    # 跳转到正文
+    if not menu:
+        sutra = bulei[-1].split()[0]  # T01n0002
+        ye = sutra.split('n')[0]
+        # 查找第一卷(有些不是从第一卷开始的)
+        sutras = []
+        for path in os.listdir('xml/{ye}'.format(**locals())):
+            if path.startswith(sutra):
+                sutras.append(path)
+        sutras.sort()
+        sutra = sutras[0]            # T01n0002_001.xml
+        # url = f"http://10.81.25.167:8080/xml/{ye}/{sutra}"
+        url = "/xml/{ye}/{sutra}".format(**locals())
         redirect(url)
     return {'menus': menu, 'request':request, 'nav': nav}
 
@@ -108,9 +144,9 @@ def search():
     return {}
 
 # 搜索！
-# from whoosh.index import open_dir
-# from whoosh.qparser import QueryParser
-# from whoosh.query import *
+from whoosh.index import open_dir
+from whoosh.qparser import QueryParser
+from whoosh.query import *
 import opencc
 
 import time
@@ -151,7 +187,7 @@ def search_post():
             hl = hit.highlights("content",  top=5)
             ct = hit["content"]
             juan = hit["filename"].split('n')[0]
-            an = f'/xml/{juan}/{hit["filename"]}#{hit["p"]}'
+            an = '/xml/{juan}/{hit["filename"]}#{hit["p"]}'.format(**locals())
             xx.append((hl, an, hit['title']))
             pprint.pprint((hl, an))
     e = time.time()
@@ -224,7 +260,6 @@ print('装入丁福宝词典，用时%s' % (e - s))
 # print(conn)
 @get('/dict/:word')
 def g_get(word):
-    '''查字典'''
     print('发过来一个字:%s' % word)
     pinyin = ''
     definition = ''
@@ -339,9 +374,8 @@ def gaiji_post():
     conn.close()
     return {'result': result}
 
-run(host = '0.0.0.0', port = 8081)
 # GeventServer.run(host = '0.0.0.0', port = 8081)
-# app = default_app()
+app = default_app()
 # run(host='0.0.0.0', port=8081, server='gunicorn', workers=4)
 
 def main():
@@ -353,5 +387,6 @@ def test():
 if __name__ == "__main__":
     #main()
     test()
+    run(host = '0.0.0.0', port = 8081)
 
 

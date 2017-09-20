@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="revised" content="">
+  <title>Title</title>
+  <link rel="stylesheet" href="">
+  <script>
+  //<![CDATA[
+  //]]>
+  </script>
+  <style>
+  <!--
+  -->
+  </style>
+</head>
+<body>
+<br />
+  <!--script src="jquery.js"></script-->
+  <!--script src="http://code.jquery.com/jquery-1.4.2.min.js"></script-->
+      <!--li><a href="/mulu/{{key|truncate(5, end='')}}">{{ key }}</a></li-->
+        <nav>
+   <h1>Navigation</h1>
+   <a href="/mulu">按照部类方式</a>
+   <a href="/cebie">按照册别方式</a>
+  </nav>
+<br>
+<br>
+<br>
+<br>
+<ul>
+    {# for key in menus #}
+     <li><a href="{#request.path#}/{#key#}">{# key #}</a></li>
+    {# endfor#}
+</ul>
+
+</body>
+</html>
+
+

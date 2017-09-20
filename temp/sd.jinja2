@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="revised" content="">
+  <title>Title</title>
+  <link rel="stylesheet" href="">
+  <script>
+  //<![CDATA[
+  //]]>
+  </script>
+  <style>
+  <!--
+  -->
+  </style>
+</head>
+<body>
+<br />
+
+
+<form action="/gaiji" method="post">
+名字: <input type="text" name="name">
+通用字: <input type="text" name="norm">
+原字: <input type="text" name="val">
+<input type="submit" value="提交">
+</form>
+
+<table>
+<tr>
+<td>Cell A</td>
+<td>Cell B</td>
+</tr>
+</table>
+
+<table>
+<tr><td>名称</td><td>romanu</td><td>romanu</td><td>原字</td><td>图片</td>></tr>
+{% for name, romanu, romanc, value, pic in result %}
+<tr><td>{{name}}</td><td>{{romanu}}</td><td>{{romanc}}</td><td>{{value}}</td><td><img src="{{pic}}"/></td></tr>
+{% endfor %}
+</table>
+  <!--script src="jquery.js"></script-->
+  <!--script src="http://code.jquery.com/jquery-1.4.2.min.js"></script-->
+</body>
+</html>
+
+
