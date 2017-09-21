@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-09-20 16:35:32
+# Last Modified: 2017-09-21 15:32:12
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -103,7 +103,7 @@ def submenu(bulei):
         sutras.sort()
         sutra = sutras[0]            # T01n0002_001.xml
         # url = f"http://10.81.25.167:8080/xml/{ye}/{sutra}"
-        url = "/xml/{ye}/{sutra}".format(**locals())
+        url = f"/xml/{ye}/{sutra}"
         redirect(url)
     return {'menus': menu, 'request':request, 'nav': nav}
 
@@ -132,7 +132,7 @@ def submenu(bulei):
         sutras.sort()
         sutra = sutras[0]            # T01n0002_001.xml
         # url = f"http://10.81.25.167:8080/xml/{ye}/{sutra}"
-        url = "/xml/{ye}/{sutra}".format(**locals())
+        url = f"/xml/{ye}/{sutra}"
         redirect(url)
     return {'menus': menu, 'request':request, 'nav': nav}
 
@@ -144,9 +144,9 @@ def search():
     return {}
 
 # 搜索！
-from whoosh.index import open_dir
-from whoosh.qparser import QueryParser
-from whoosh.query import *
+# from whoosh.index import open_dir
+# from whoosh.qparser import QueryParser
+# from whoosh.query import *
 import opencc
 
 import time
@@ -187,7 +187,7 @@ def search_post():
             hl = hit.highlights("content",  top=5)
             ct = hit["content"]
             juan = hit["filename"].split('n')[0]
-            an = '/xml/{juan}/{hit["filename"]}#{hit["p"]}'.format(**locals())
+            an = f'/xml/{juan}/{hit["filename"]}#{hit["p"]}'
             xx.append((hl, an, hit['title']))
             pprint.pprint((hl, an))
     e = time.time()
@@ -245,7 +245,7 @@ def read_menu_file(sutra_list):
         return menu
 
 # 处理组合字
-# import psycopg2
+import psycopg2
 import json
 import time
 
@@ -255,6 +255,14 @@ with open('dict/dfb.json') as fd:
 e = time.time()
 
 print('装入丁福宝词典，用时%s' % (e - s))
+
+s = time.time()
+with open('dict/庄春江汉译阿含经词典ver4.json') as fd:
+    ccc = json.load(fd)
+e = time.time()
+
+print('装入庄春江词典，用时%s' % (e - s))
+
 
 
 # print(conn)
@@ -278,6 +286,8 @@ def g_get(word):
     elif word in dfb:
         pinyin = dfb[word][0]['usg']
         definition = dfb[word][0]['def']
+    elif word in ccc:
+        definition = ccc[word]
 
     # print(pinyin, definition)
 

@@ -78,13 +78,14 @@
                 <xsl:value-of select="/TEI/@xml:lang"/>
             </xsl:when>
             <xsl:otherwise>
-            <xsl:text>zh_TW</xsl:text>
+            <!--xsl:text>zh_TW</xsl:text-->
+            <xsl:text>lzh-Hant</xsl:text>
             </xsl:otherwise>
             </xsl:choose>
           </xsl:attribute>
         <head>
         <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="/static/tei.css"/>
@@ -163,7 +164,21 @@
 
             <br/>
 
-        <!--div class="content" style="writing-mode:vertical-rl;"-->
+        <!--div class="content" style="writing-mode:vertical-rl;" 竖排-->
+        <!--补上南传等经典的标题以及作者-->
+        <xsl:if test="not(//cb:jhead)">
+            <h1 class="title">
+                <xsl:value-of select="concat($current_sutra, ' ', substring-after(substring-after(/TEI/teiHeader/fileDesc/titleStmt/title, 'No. '), ' '))"/>
+            </h1>
+            <br/>
+            <div class="byline">
+                <xsl:value-of select="/TEI/teiHeader/fileDesc/titleStmt/author"/>
+            </div>
+            <br/>
+            <br/>
+        </xsl:if>
+
+        <!--正文内容-->
         <div class="contentx">
             <xsl:apply-templates/>
         </div>
@@ -205,13 +220,16 @@
 
     <xsl:template match="teiHeader"/>
 
+    <!--不显示back部分-->
+   <!--xsl:template match="text/back">
+   </xsl:template-->
+
     <!--不能切换段落, 否则显示不正常-->
     <xsl:template match="pb">
         <span>
           <xsl:attribute name="id">
             <xsl:value-of select="@xml:id"/>
           </xsl:attribute>
-          <xsl:comment>anchor</xsl:comment>
         </span>
     </xsl:template>
 
@@ -247,20 +265,20 @@
     </a>
   </xsl:template-->
 
-  <!--处理表格table-->
-  <!--TODO: table rend="border:0"-->
+    <!--处理表格table-->
+    <!--TODO: table rend="border:0"-->
     <xsl:template match="table">
-        <table class="table">
+        <table class="table table-bordered">
             <xsl:apply-templates/>
         </table>
     </xsl:template>
-  <!--处理表格row-->
+    <!--处理表格row-->
     <xsl:template match="row">
         <tr>
             <xsl:apply-templates/>
         </tr>
     </xsl:template>
-  <!--处理表格cell-->
+    <!--处理表格cell-->
     <xsl:template match="cell">
         <td>
             <xsl:if test="@cols">
@@ -369,6 +387,26 @@
         <span><xsl:apply-templates/></span>
     </xsl:template-->
 
+    <xsl:template match="p[contains(@cb:type, 'head')]">
+        <xsl:choose>
+            <xsl:when test="@cb:type='head1'">
+                <h2><xsl:apply-templates/></h2>
+            </xsl:when>
+            <xsl:when test="@cb:type='head2'">
+                <h3><xsl:apply-templates/></h3>
+            </xsl:when>
+            <xsl:when test="@cb:type='head3'">
+                <h4><xsl:apply-templates/></h4>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:template>
+
+    <!--xsl:template match="p[@cb:type='dharani']">
+        <p class="dharani">
+          <xsl:apply-templates/>
+        </p>
+    </xsl:template-->
+
     <xsl:template match="p">
         <p>
           <xsl:if test="@xml:id">
@@ -382,6 +420,10 @@
             </xsl:attribute>
             <a href="#">&#128362;</a>
           </xsl:if>
+          <!--xsl:if test="@cb:type='pre'"-->
+          <!--xsl:if test="@cb:type='head1'"-->
+          <!--xsl:if test="@cb:type='head2'"-->
+          <!--xsl:if test="@cb:type='head3'"-->
           <!--xsl:if test="contains(@rend, 'inline')">
             <xsl:attribute name="style">
                 <xsl:text>display:inline</xsl:text>
@@ -428,8 +470,34 @@
   <!--xsl:template match="juan">
           <xsl:apply-templates/>
   </xsl:template-->
+    <!--连续的cb:tt标签在最后一次性显示-->
+    <!--xsl:template name="tt">
+        <xsl:param name="ntext"/> 
+        <xsl:if test="local-name(following-sibling::*[1])!='tt'">
+            <xsl:value-of select="$ntext"/>
+        </xsl:if>
+        <xsl:if test="local-name(following-sibling::*[1])='tt'">
+            <xsl:call-template name="tt" select="preceding-sibling::*[1]">
+                <xsl:with-param name="ntext">
+                    <xsl:value-of select="cb:t[@xml:lang!='zh']"/>
+                    <xsl:value-of select="$ntext"/>
+                </xsl:with-param>
+            </xsl:call-template>
+        </xsl:if>
+    </xsl:template-->
 
-    <!--sa,sa-x-rj多语言对照 -->
+    <xsl:template match="cb:tt">
+        <xsl:apply-templates select="cb:t[@xml:lang='zh']"/>
+        <xsl:if test="local-name(following-sibling::*[1])!='tt'">
+            <xsl:apply-templates select="cb:t[@xml:lang!='zh']"/>
+            <!--xsl:value-of select="local-name(following-sibling::*[1])"/>
+            <xsl:value-of select="local-name(preceding-sibling::*[1])"/>
+            <xsl:call-template name="tt" select="preceding-sibling::*[1]">
+                <xsl:with-param name="ntext" select="cb:t[@xml:lang!='zh']"/>
+            </xsl:call-template-->
+        </xsl:if>
+    </xsl:template>
+    <!--sa,sa-x-rj,sa-Sidd多语言对照 -->
     <xsl:template match="cb:t">
         <xsl:if test="@xml:lang='zh'">
             <xsl:apply-templates/>
@@ -455,7 +523,9 @@
     <xsl:choose>
         <xsl:when test="starts-with($Ref, 'SD')">
         <span class="gaiji_sd">
-            <ruby><!--img>
+            <ruby>
+            <!--xsl:value-of select="."/-->
+                <img>
                 <xsl:attribute name="src">
                     <xsl:text>/static/sd-gif/</xsl:text>
                     <xsl:value-of select="substring($Ref, 4, 2)"/>
@@ -463,10 +533,9 @@
                     <xsl:value-of select="$Ref"/>
                     <xsl:text>.gif</xsl:text>
                 </xsl:attribute>
-                </img-->
-            <!--装字库用这句, 没装用上面的图片-->
+                </img>
+            <!--装cbeta字库用这句, 没装用上面的图片-->
             <!--xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='Character in the Siddham font']/value"/-->
-            <xsl:value-of select="."/>
                 <rt>
                     <xsl:value-of select="key('char_id', $Ref)/charProp[localName='Romanized form in Unicode transcription']/value"/>
                 </rt>
@@ -579,10 +648,6 @@
         </span>
     </xsl:template>
     
-    <!--不显示back部分-->
-   <xsl:template match="text/back">
-   </xsl:template>
-
    <!--处理列表-->
    <xsl:template match="list"><ul><xsl:apply-templates/></ul></xsl:template>
    <xsl:template match="list/item"><li><xsl:apply-templates/></li></xsl:template>
@@ -590,22 +655,16 @@
 <!--处理空缺 unclear@reason-->
   <xsl:template match="unclear">
     <span class="unclear">
-      <xsl:if test="@xml:id">
-        <xsl:attribute name="id">
-            <xsl:value-of select="@xml:id"/>
-        </xsl:attribute>
-      </xsl:if>
-      <xsl:apply-templates/>
-       &#9610;
+      <xsl:text>&#9610;</xsl:text>
     </span>
   </xsl:template>
 
     <!--使用popover显示注释, 链接三个标签，可能有些不对-->
-  <!--xsl:template match="note[@type='cf1']">
-      修訂依據:
-      <xsl:apply-templates/>
-  </xsl:template>
-  <xsl:template match="sic|rdg">
+    <!--跨文件注释？note type="cf1">K19n0663_p0486b18</note-->
+    <xsl:template match="note[starts-with(@type, 'cf')]">
+        (修訂依據:<xsl:apply-templates/>)
+    </xsl:template>
+  <!--xsl:template match="sic|rdg">
   <xsl:template match="rdg">
       原文為: 
       <xsl:if test="@wit">
@@ -617,26 +676,51 @@
         <!--/TEI/teiHeader/fileDesc/sourceDesc/bibl/listWit/witness/@xml:id-->
         <!--/TEI/teiHeader/fileDesc/sourceDesc/bibl/listWit/witness/@xml:id-->
         <!--xsl:apply-templates/-->
-    <!--xsl:template match="lem">
+
+    <!--xsl:template match="app">
+        <table border="1">
+            <tr>
+              <th>内容</th>
+              <th>版本</th>
+            </tr>
         <xsl:apply-templates/>
-        <xsl:if test="@wit">
-            @
-            <xsl:call-template name="tokenize">
-                <xsl:with-param name="text" select="@wit"/>
-            </xsl:call-template>
-        </xsl:if>
-        =
-    </xsl:template>
-    <xsl:template match="rdg">
-        <xsl:apply-templates/>
-        <xsl:if test="@wit">
-            @
-            <xsl:call-template name="tokenize">
-                <xsl:with-param name="text" select="@wit"/>
-            </xsl:call-template>
-        </xsl:if>
-        。
+        </table>
+        <br/>
     </xsl:template-->
+
+    <!--错误更正-->
+    <!--xsl:template match="corr">
+        <span class="corr">
+            <xsl:value-of select="."/>
+        </span>
+    </xsl:template-->
+
+    <!--xsl:template match="reg">
+    </xsl:template-->
+
+    <xsl:template match="orig">
+        <xsl:apply-templates/>
+        <xsl:text>&#8658;</xsl:text>
+    </xsl:template>
+
+    <xsl:template match="lem|corr">
+        <xsl:apply-templates/>
+        <xsl:if test="@wit">
+            <xsl:call-template name="tokenize">
+                <xsl:with-param name="text" select="@wit"/>
+            </xsl:call-template>
+        </xsl:if>
+        <xsl:text>&#8656;</xsl:text>
+    </xsl:template>
+
+    <xsl:template match="rdg|sic">
+        <xsl:apply-templates/>
+        <xsl:if test="@wit">
+            <xsl:call-template name="tokenize">
+                <xsl:with-param name="text" select="@wit"/>
+            </xsl:call-template>
+        </xsl:if>
+    </xsl:template>
 
       <!--比较危险的用法,可能报错: 给替换的部分着红色-->
 
@@ -663,35 +747,54 @@
             </xsl:attribute>
         </xsl:if>
         <xsl:choose>
-            <xsl:when test="key('note_target', $Ref)">
+            <xsl:when test="@type='cb-app' and key('app_from', $Ref)">
+            <!--xsl:when test="key('app_from', $Ref)"-->
                 <xsl:attribute name="title">
-                    <xsl:text>修訂註解</xsl:text>
+                    <xsl:text>CBETA修訂註解</xsl:text>
                 </xsl:attribute>
                 <xsl:attribute name="data-content">
-                    <xsl:apply-templates select="key('note_target', $Ref)"/>
+                    <xsl:apply-templates select="key('app_from', $Ref)"/>
                 </xsl:attribute>
-                <xsl:text>[</xsl:text>
-                <xsl:value-of select="substring(@n, 6)"/>
-                <xsl:text>]</xsl:text>
+                <xsl:value-of select="concat('[c', substring(@xml:id, 5), ']')"/>
             </xsl:when>
-            <xsl:when test="@type='cb-app'">
+            <xsl:when test="@type='cb-app' and key('choice_from', $Ref)/sic">
                 <xsl:attribute name="title">
-                    CBETA修訂註解
+                    <xsl:text>勘誤</xsl:text>
                 </xsl:attribute>
                 <xsl:attribute name="data-content">
-                    原文為: <xsl:apply-templates select="key('choice_from', $Ref)/sic|key('app_from', $Ref)/rdg"/>
+                    <!--xsl:apply-templates select="key('choice_from', $Ref)"/-->
+                    原文為: <xsl:apply-templates select="key('choice_from', $Ref)/sic"/>
+                </xsl:attribute>
+                <xsl:value-of select="concat('[c', substring(@xml:id, 5), ']')"/>
+            </xsl:when>
+            <xsl:when test="@type='cb-app' and key('choice_from', $Ref)/reg">
+                <xsl:attribute name="title">
+                    <xsl:apply-templates select="key('choice_from', $Ref)/reg/@type"/>  <!--通用詞-->
+                </xsl:attribute>
+                <xsl:attribute name="data-content">
+                    <xsl:apply-templates select="key('choice_from', $Ref)"/>
                 </xsl:attribute>
                 <xsl:value-of select="concat('[c', substring(@xml:id, 5), ']')"/>
             </xsl:when>
             <xsl:when test="@type='star' and key('app_from', $Ref)">
                 <xsl:attribute name="title">
-                    註解
+                    <xsl:text>註解</xsl:text>
                 </xsl:attribute>
                 <xsl:attribute name="data-content">
-                    <xsl:variable name="tmp" select="substring(key('app_from', $Ref)/@corresp, 2)"/>
-                    <xsl:apply-templates select="key('note_n', $tmp)"/>
+                    <xsl:apply-templates select="key('app_from', $Ref)"/>,
+                    <!--xsl:variable name="tmp" select="substring(key('app_from', $Ref)/@corresp, 2)"/>
+                    <xsl:apply-templates select="key('note_n', $tmp)"/-->
                 </xsl:attribute>
                 <xsl:text>[*]</xsl:text>
+            </xsl:when>
+            <xsl:when test="key('note_target', $Ref)">
+                <xsl:attribute name="title">
+                    <xsl:text>註釋</xsl:text>
+                </xsl:attribute>
+                <xsl:attribute name="data-content">
+                    <xsl:apply-templates select="key('note_target', $Ref)"/>
+                </xsl:attribute>
+                <xsl:value-of select="concat('[', substring(@n, 6), ']')"/>
             </xsl:when>
             <xsl:when test="@type='circle'">
             </xsl:when>
@@ -768,14 +871,6 @@
         (<xsl:apply-templates/>)
     </xsl:template>
 
-<!--错误更正-->
-  <xsl:template match="corr">
-    <span class="corr">
-      <xsl:value-of select="corr"/>
-    </span>
-  </xsl:template>
-  <!--xsl:template match="choice">
-  </xsl:template-->
     <!--公式强调角标-->
     <xsl:template match="hi">
         <span>
@@ -788,7 +883,7 @@
         </span>
     </xsl:template>
 
-    <!--string-split函数-->
+    <!--string-split函数: 空格分割后取值witness@id-->
     <xsl:template match="text/text()" name="tokenize">
         <xsl:param name="text" select="."/>
         <xsl:param name="separator" select="' '"/>

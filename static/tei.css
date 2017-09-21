@@ -42,6 +42,7 @@ of this software, even if advised of the possibility of such damage.
   font-style: normal;
   font-weight: normal;
   src: url(/static/siddham.woff) format('woff');
+  unicode-range: U+11580-115FF;
 }
 
 /*
@@ -94,7 +95,7 @@ body{
     padding:2em;
     padding-top:100px;
     /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;*/
-    font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", "PingFang SC", "PMingLiU";
+    font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", "PingFang SC", "PMingLiU", siddham;
     font-size: large;
     /* font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;*/
 }
@@ -688,15 +689,19 @@ div.l{
 
 }
 /*在小屏幕设备上居中显示偈颂*/
-@media screen and (max-width: 640px) {
-p.lg{
-    margin-left: 0;
-text-align:center;
-}
-div.l{
-    margin-left: 0;
-text-align:center;
-}
+@media screen and (max-width: 736px) {
+    body {
+        //margin: 10px;
+        padding: 0.5em;
+    }
+    p.lg {
+        margin-left: 0;
+        text-align:center;
+    }
+    div.l {
+        margin-left: 0;
+        text-align:center;
+    }
 }
 
 /* misc */
@@ -1001,18 +1006,19 @@ div.altfigure{
     border-bottom:solid black 1pt;
 }
 
-table.table {
-    /*margin: 0 auto; */ /*添加了居中*/
-    border:solid black 1pt;
-}
-
-table.table tr,
-table.table td{
-    border:solid black 1pt;
-}
-table.table td{
-    padding:1ex 1ex 1ex 1ex;
-}
+// table.table {
+//     /*margin: 0 auto; */ /*添加了居中*/
+//     border:solid black 1pt;
+//     border-top:2px solid ;
+// }
+// 
+// table.table tr,
+// table.table td{
+//     border:solid black 1pt;
+// }
+// table.table td{
+//     padding:1ex 1ex 1ex 1ex;
+// }
 p.mainAuthor{
     display:block;
     margin:1ex 0ex 1ex 0ex;
