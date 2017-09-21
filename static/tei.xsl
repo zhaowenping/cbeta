@@ -221,8 +221,8 @@
     <xsl:template match="teiHeader"/>
 
     <!--不显示back部分-->
-   <!--xsl:template match="text/back">
-   </xsl:template-->
+    <xsl:template match="text/back">
+    </xsl:template>
 
     <!--不能切换段落, 否则显示不正常-->
     <xsl:template match="pb">
