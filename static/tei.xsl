@@ -103,6 +103,7 @@
 
         </head>
 
+        <!--firefox浏览器特有的菜单-->
         <body class="contenttext" contextmenu="supermenu">
         <a href="#">&#128266;</a>
 
@@ -243,28 +244,6 @@
         </a>
     </xsl:template>
 
- <!--xsl:template match="app">
-    <xsl:variable name="identifier">
-      <xsl:text>App</xsl:text>
-      <xsl:choose>
-    <xsl:when test="@id">
-      <xsl:value-of select="@id"/>
-    </xsl:when>
-    <xsl:when test="@n">
-      <xsl:value-of select="@n"/>
-    </xsl:when>
-    <xsl:otherwise>
-      <xsl:number count="app" level="any"/>
-    </xsl:otherwise>
-      </xsl:choose>
-    </xsl:variable>
-    <a class="notelink" href="#{$identifier}">
-   <span class="lem"> <xsl:value-of select="lem"/> </span>
-      <sup>
-        <xsl:call-template name="appN"/>
-      </sup>
-    </a>
-  </xsl:template-->
 
     <!--处理表格table-->
     <!--TODO: table rend="border:0"-->
@@ -407,6 +386,13 @@
           <xsl:apply-templates/>
         </p>
     </xsl:template-->
+
+    <xsl:template match="p[@cb:type='pre']">
+        <pre>
+          <!--xsl:apply-templates/-->
+          <xsl:value-of select="."/>
+        </pre>
+    </xsl:template>
 
     <xsl:template match="p">
         <p>

@@ -100,6 +100,17 @@ body{
     /* font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;*/
 }
 
+pre {
+    clear:both;
+    background-color: #E7F4FE;
+    white-space: pre;
+    border:dashed 0px blue;
+    text-indent: 0;
+    padding 0 0 0 0:
+    font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", "PingFang SC", "PMingLiU", siddham;
+    font-size: large;
+}
+
 body.pagetable{
     color:#000000;
     background-color:#FFFFFF;
@@ -243,6 +254,14 @@ h3{
     font-style:italic;
 }
 
+// add
+h4{
+    font-size:1.1em;
+    font-weight:bold;
+    margin-bottom:0.4em;
+    font-style:italic;
+}
+
 h1.maintitle{
     margin-left:100px;
     font-family:Arial, Helvetica, sans-serif;
@@ -375,7 +394,6 @@ div.cdata{
     clear:both;
 }
 
-pre,
 div.pre,
 div.pre_eg,
 pre.eg,
