@@ -9,8 +9,9 @@
     <!--当前经集的名字, 形如: T20n1167 -->
     <xsl:variable name="current_sutra" select="/TEI[1]/@xml:id"/>
 
-    <!--当前文件的卷数, 形如: 001-->
-    <xsl:variable name="juan" select="/TEI[1]/text/body//cb:juan[1]/@n"/>
+    <!--当前文件的卷数, 形如: 001; 目前只能靠猜了-->
+    <!--xsl:variable name="juan" select="/TEI[1]/text/body//cb:juan[1]/@n|/TEI/text/body//milestone[@unit='juan']/@n|/TEI/text/body//cb:mulu[@type='卷']/@n"/-->
+    <xsl:variable name="juan" select="/TEI/text/body//milestone[@unit='juan']/@n"/>
 
     <!--是否微软浏览器-->
     <xsl:variable name="MSIE" select="system-property('xsl:vendor')='Microsoft'"/>
@@ -623,13 +624,13 @@
     <br/>
   </xsl:template-->
 
-<!--标题-->
-  <xsl:template match="cb:jhead">
-  <h1 class="title">
-    <xsl:apply-templates/>
-  </h1>
-  <!--br/-->
-  </xsl:template>
+    <!--标题-->
+    <xsl:template match="cb:jhead">
+        <h1 class="title">
+            <xsl:apply-templates/>
+        </h1>
+        <!--br/-->
+    </xsl:template>
 
     <!--最后一个作者译者cb:type="author"之后空出两行然后开始正文-->
     <xsl:template match="byline">
@@ -652,49 +653,18 @@
    <xsl:template match="list"><ul><xsl:apply-templates/></ul></xsl:template>
    <xsl:template match="list/item"><li><xsl:apply-templates/></li></xsl:template>
 
-<!--处理空缺 unclear@reason-->
-  <xsl:template match="unclear">
-    <span class="unclear">
-      <xsl:text>&#9610;</xsl:text>
-    </span>
-  </xsl:template>
+    <!--处理空缺 unclear@reason-->
+    <xsl:template match="unclear">
+        <span class="unclear">
+            <xsl:text>&#9610;</xsl:text>
+        </span>
+    </xsl:template>
 
     <!--使用popover显示注释, 链接三个标签，可能有些不对-->
     <!--跨文件注释？note type="cf1">K19n0663_p0486b18</note-->
     <xsl:template match="note[starts-with(@type, 'cf')]">
         (修訂依據:<xsl:apply-templates/>)
     </xsl:template>
-  <!--xsl:template match="sic|rdg">
-  <xsl:template match="rdg">
-      原文為: 
-      <xsl:if test="@wit">
-      <xsl:value-of select="substring(@wit, 2)"/>
-      /TEI/teiHeader/fileDesc/sourceDesc/bibl/listWit/witness/@xml:id
-      </xsl:if>
-      <xsl:apply-templates/>
-  </xsl:template-->
-        <!--/TEI/teiHeader/fileDesc/sourceDesc/bibl/listWit/witness/@xml:id-->
-        <!--/TEI/teiHeader/fileDesc/sourceDesc/bibl/listWit/witness/@xml:id-->
-        <!--xsl:apply-templates/-->
-
-    <!--xsl:template match="app">
-        <table border="1">
-            <tr>
-              <th>内容</th>
-              <th>版本</th>
-            </tr>
-        <xsl:apply-templates/>
-        </table>
-        <br/>
-    </xsl:template-->
-
-    <!--错误更正-->
-    <!--xsl:template match="corr">
-        <span class="corr">
-            <xsl:value-of select="."/>
-        </span>
-    </xsl:template-->
-
     <!--xsl:template match="reg">
     </xsl:template-->
 
