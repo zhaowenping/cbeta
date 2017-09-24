@@ -116,7 +116,7 @@ $(document).ready(function () {
                 txt = window.getSelection();
                 // 计算unicode字符串的长度 console.log(txt.toString().length);
                 // if (Array.from(txt.toString()).length == 1) {
-                if (txt.toString().replace(/(^s*)|(s*$)/g, "").length != 0)
+                if (typeof txt !== "undefined" && txt !== null && txt.toString().replace(/(^s*)|(s*$)/g, "").length != 0)
                  lookup(txt);
                 // }
                });
