@@ -1,76 +1,42 @@
 <!DOCTYPE html>
 <html lang="zh_CN">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"> 
   <meta name="author" content="">
   <meta name="description" content="">
   <meta name="keywords" content="">
   <meta name="revised" content="">
-  <title>Title</title>
-  <link rel="stylesheet" href="">
-  <script>
-  //<![CDATA[
-  //]]>
-  </script>
+  <title>㍽ 大正新修大藏經</title>
+  <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
-  <!--
-    .menu, .menu li {
-     list-style:none;
-     padding:0;
-     margin:0;
-    }
-    .menu li { 
-     float:left; 
-    }
-    .menu li a {
-     display:block;
-     /* 如果是中英文混排的文字，建议用固定宽度
-     width:150px;
-     height:30px;
-     line-height:30px;
-     text-align:center;
-     */
-     padding:8px 50px;
-     background:#3A4953;
-     color:#fff;
-     text-decoration:none;
-     border-right:1px solid #000;
-    }
-    .menu li a:hover {
-     background:#146C9C;
-     color:#fff;
-     text-decoration:none;
-     border-right:1px solid #000;
-    }
-    .menu li a.last {
-     border-right:0; /* 去掉左侧边框 */
-    }
-  -->
+.odd{
+//background-color: #99cc66;
+//background-color: #ccff66;
+background-color: #99cc99;
+}
   </style>
 </head>
 <body>
-<br />
-  <!--script src="jquery.js"></script-->
-  <!--script src="http://code.jquery.com/jquery-1.4.2.min.js"></script-->
-      <!--li><a href="/mulu/{{key|truncate(5, end='')}}">{{ key }}</a></li-->
-        <nav>
-   <h1>Navigation</h1>
-   <ul class="menu breadcrumb">
+<div class="container">
+  <nav>
+   <h1 style="text-align:center;">大正藏目录</h1>
+
+   <ol class="breadcrumb">
     <li><a href="/mulu">总目录</a></li>
     {% for url, content in nav %}
     <li><a href="{{url}}">-&gt;{{content}}</a></li>
     {% endfor %}
-   </ul>
+   </ol>
   </nav>
-<br>
-<br>
-<br>
-<br>
-<ul>
-    {% for key in menus %}
-     <li><a href="{{request.path}}/{{key}}">{{ key }}</a></li>
-    {% endfor%}
-</ul>
+
+  <ul class="list-group">
+      {% for key in menus %}
+       <li class="list-group-item {{ loop.cycle('odd', 'even') }}"><a href="{{request.path}}/{{key}}">{{ key }}</a><span class="badge">新</span></li>
+      {% endfor%}
+  </ul>
+</div>
 
 </body>
 </html>
