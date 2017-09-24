@@ -7,36 +7,37 @@
   <meta name="keywords" content="">
   <meta name="revised" content="">
   <title>㍽ 大正新修大藏經</title>
-  <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
-  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">  
+  <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
-.odd{
-//background-color: #99cc66;
-//background-color: #ccff66;
-background-color: #99cc99;
-}
+    .odd{
+    //background-color: #99cc66;
+    //background-color: #ccff66;
+    background-color: #99cc99;
+    }
   </style>
 </head>
 <body>
-<div class="container">
-  <nav>
-   <h1 style="text-align:center;">大正藏目录</h1>
 
-   <ol class="breadcrumb">
-    <li><a href="/mulu">总目录</a></li>
-    {% for url, content in nav %}
-    <li><a href="{{url}}">-&gt;{{content}}</a></li>
-    {% endfor %}
-   </ol>
-  </nav>
-
-  <ul class="list-group">
-      {% for key in menus %}
-       <li class="list-group-item {{ loop.cycle('odd', 'even') }}"><a href="{{request.path}}/{{key}}">{{ key }}</a><span class="badge">新</span></li>
-      {% endfor%}
-  </ul>
-</div>
+  <div class="container">
+    <nav>
+     <h1 style="text-align:center;">大正藏目录</h1>
+  
+     <ol class="breadcrumb">
+      <li><a href="/mulu">总目录</a></li>
+      {% for url, content in nav %}
+      <li><a href="{{url}}">-&gt;{{content}}</a></li>
+      {% endfor %}
+     </ol>
+    </nav>
+  
+    <ul class="list-group">
+        {% for key in menus %}
+         <li class="list-group-item {{ loop.cycle('odd', 'even') }}"><a href="{{request.path}}/{{key}}">{{ key }}</a><span class="badge">新</span></li>
+        {% endfor%}
+    </ul>
+  </div>
 
 </body>
 </html>
