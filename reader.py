@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-09-21 15:32:12
+# Last Modified: 2017-09-28 15:45:19
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -69,13 +69,13 @@ sch_b = "static/bulei_sutra_sch.lst"
 @view('temp/menu.jinja2')
 def menu():
     menu = read_menu_file(sch_b)
-    return {'menus': menu, 'request':request}
+    return {'menus': menu, 'request':request, 'yiju': '部類'}
 
 @route('/cebie')
 @view('temp/menu.jinja2')
 def menu():
     menu = read_menu_file(sch_a)
-    return {'menus': menu, 'request':request}
+    return {'menus': menu, 'request':request, 'yiju': '冊別'}
 
 
 @route('/mulu/:bulei#.+#')
@@ -105,7 +105,7 @@ def submenu(bulei):
         # url = f"http://10.81.25.167:8080/xml/{ye}/{sutra}"
         url = f"/xml/{ye}/{sutra}"
         redirect(url)
-    return {'menus': menu, 'request':request, 'nav': nav}
+    return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '部類'}
 
 @route('/cebie/:bulei#.+#')
 @view('temp/menu.jinja2')
@@ -134,7 +134,7 @@ def submenu(bulei):
         # url = f"http://10.81.25.167:8080/xml/{ye}/{sutra}"
         url = f"/xml/{ye}/{sutra}"
         redirect(url)
-    return {'menus': menu, 'request':request, 'nav': nav}
+    return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '冊別'}
 
 
 # 处理搜索
@@ -144,17 +144,17 @@ def search():
     return {}
 
 # 搜索！
-# from whoosh.index import open_dir
-# from whoosh.qparser import QueryParser
-# from whoosh.query import *
+from whoosh.index import open_dir
+from whoosh.qparser import QueryParser
+from whoosh.query import *
 import opencc
 
 import time
 import pprint
 
-# ix = open_dir("index")
+ix = open_dir("index")
 # 搜索content内容
-# qp = QueryParser("content", ix.schema)
+qp = QueryParser("content", ix.schema)
 
 # TODO 搜索的时候被搜索内容应该手动分词
 @post('/search')
@@ -250,6 +250,20 @@ import json
 import time
 
 s = time.time()
+with open('dict/Unihan_Readings.json') as fd:
+    unihan = json.load(fd)
+e = time.time()
+
+print('装入Unicode10.0字典，用时%s' % (e - s))
+
+s = time.time()
+with open('dict/fk.json') as fd:
+    fk = json.load(fd)
+e = time.time()
+
+print('装入佛光山词典，用时%s' % (e - s))
+
+s = time.time()
 with open('dict/dfb.json') as fd:
     dfb = json.load(fd)
 e = time.time()
@@ -263,39 +277,69 @@ e = time.time()
 
 print('装入庄春江词典，用时%s' % (e - s))
 
+s = time.time()
+with open('dict/于凌波唯识名词白话新解.json') as fd:
+    ylb = json.load(fd)
+e = time.time()
+
+print('装入于凌波唯识名词白话新解，用时%s' % (e - s))
+
+s = time.time()
+with open('dict/nsl.json') as fd:
+    nsl = json.load(fd)
+e = time.time()
+
+print('装入南山律学词典，用时%s' % (e - s))
+
+s = time.time()
+with open('dict/cxy.json') as fd:
+    cxy = json.load(fd)
+e = time.time()
+
+print('装入陈孝义词典，用时%s' % (e - s))
+
 
 
 # print(conn)
 @get('/dict/:word')
-def g_get(word):
+def dict_get(word):
+    '''查字典'''
     print('发过来一个字:%s' % word)
     pinyin = ''
+    _from = ''
     definition = ''
     if len(word) == 1:
-        with open('dict/Unihan_Readings.txt') as fd:
-            for line in fd:
-                line = line.strip()
-                if not line or line.startswith("#"): continue
-                line = line.split(None, 2)
-                unichar = 'U+%X' % ord(word)
-                if unichar == line[0] and 'kDefinition' == line[1]:
-                    definition = line[2]
-                if unichar == line[0] and 'kMandarin' == line[1]:
-                    pinyin = line[2]
-                    break
+        _from = "unicode"
+        definition = unihan.get(word, {}).get('kDefinition', '')
+        pinyin = unihan.get(word, {}).get('kMandarin', '')
+    elif word in fk:
+        _from = "佛光山"
+        definition = fk[word]
     elif word in dfb:
-        pinyin = dfb[word][0]['usg']
+        _from = dfb[word][0]['usg']
         definition = dfb[word][0]['def']
     elif word in ccc:
+        _from = "庄春江"
         definition = ccc[word]
+    elif word in nsl:
+        _from = "南山律"
+        definition = nsl[word]
+    elif word in cxy:
+        _from = "陈孝义"
+        definition = nsl[word]
+    elif word in ylb:
+        _from = "于凌波"
+        definition = ylb[word]
 
+    if _from:
+        pinyin = ' '.join([unihan.get(x, {}).get('kMandarin', ' ') for x in word])
     # print(pinyin, definition)
 
-    return {'word': word, 'pinyin': pinyin, 'definition': definition}
+    return {'word': word, 'pinyin': pinyin, 'definition': definition, 'from': _from}
 
 @get('/gaiji')
 @view('temp/gaiji.jinja2')
-def dict_get():
+def g_get():
     q = request.GET.q
     print(q)
     conn = psycopg2.connect(database="buddha", user="postgres", password="1234", host="127.0.0.1", port="5432")
@@ -356,7 +400,8 @@ def gaiji_post():
 
 @get('/sd')
 @view('temp/sd.jinja2')
-def gaiji_post():
+def gaiji_sd_get():
+    print('查询sd')
     q = request.GET.q
     conn = psycopg2.connect(database="buddha", user="postgres", password="1234", host="127.0.0.1", port="5432")
     cur = conn.cursor()
@@ -383,6 +428,28 @@ def gaiji_post():
     cur.close()
     conn.close()
     return {'result': result}
+
+@post('/sd')
+@view('temp/sd.htm')
+def gaiji_sd_post():
+    print('~~~~~~~~~~~~~~~~~~~~~')
+    name = request.forms.name
+    if not name:
+        return {}
+    val = request.forms.val
+    if not val:
+        val = None
+
+    print((name, val))
+    conn = psycopg2.connect(database="buddha", user="postgres", password="1234", host="127.0.0.1", port="5432")
+    cur = conn.cursor()
+    cur.execute('update siddham set value = %s where name = %s', (val, name))
+    conn.commit()
+    cur.close()
+    conn.close()
+    print('____________________________')
+    redirect('/sd?q=%s'%urllib.request.quote(val))
+
 
 # GeventServer.run(host = '0.0.0.0', port = 8081)
 app = default_app()

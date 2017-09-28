@@ -74,27 +74,23 @@
  $ pip install --upgrade pip
  $ pip install -r requirements.txt
  ```
-4. 将全部的xml文件移动到 cbeta/xml目录中, 需要使用make_xml.py文件生成, 主要作用是两个，第一，去掉xml文件中的默认地址空间，第二，添加tei.xsl文件的链接上去
+4. 将全部的xml文件移动到 cbeta/xml目录中,原有目录保留, 需要使用make_xml.py文件生成, 主要作用是两个，第一，去掉xml文件中的默认地址空间，第二，添加tei.xsl文件的链接上去
 5. 运行程序 $ python reader.py
 6. 打开浏览器，默认地址 http://localhost:8081 即可看到
 
 
 ## 文件列表
 1. static/tei.xsl 主体程序
-2. static/tei.css css效果文件
+2. static/taisho.xsl 大正藏转换程序
 3. static/siddham.ttf 符合unicode10.0的悉昙体字库
 4. static/siddham.sfd 符合unicode10.0的悉昙体字库的fontforg文件，可以根据这个文件继续修改字库
 5. static/siddham.woff 符合unicode10.0的悉昙体字库,可以通过webfont方式使用悉昙体字库，以便读者不用安装字库即可阅读悉昙体
 6. terms.txt  佛教词汇大全，目前搜集了不到8万词汇，用来给藏经分词用的, 以便全文检索使用
-7. w_normal.txt 制作的组合字表,相比原光盘的更加清晰, 用来清洗xml文档
-8. w_norm2.txt 制作的未知组合字表, 需要填写
-9. yoga 目录,打算后期为瑜伽师地论做现代化标点
-10. reader.py python的web程序入口, 提供目录、搜索等服务
-11.  static/bulei_sutra_sch.lst
-    static/cangjian.lst
-    static/sutra_sch.lst
-    目录文件
-12. temp目录, 页面模板文件
+7. w_normal.txt 制作的组合字表, 用来清洗xml文档
+8. yoga 目录,打算后期为瑜伽师地论做现代化标点
+9. reader.py python的web程序入口, 提供目录、搜索等服务
+10.  .lst文件 tab分割的目录文件
+11. temp目录, 页面的jinja2模板文件
 
 ## 字库
 
