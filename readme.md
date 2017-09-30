@@ -23,7 +23,7 @@
 8. 戒律保障：因为全部使用自由软件，所以你可以持最严格的戒律，尤其是盗戒，保持戒律清净，不用担心盗版软件，也不用担心商业公司在你使用一段时间之后修改了软件条款，而你处于闭关状态无法及时响应。这是我唯一可以保障的。
 9. 因为这是自由软件，但是不是免费软件，所以此资源完全可以通过商业途径传播，可以倒找钱、白送、高价、天价或者宇宙价出售光盘/U盘/硬盘, 可以随有价光盘/U盘一起赠送！这些不需要本人的任何授权！也不需要通知本人。
 10. 庄春江居士的阿含词典已经得到庄春江居士的(非營利用途)授权，但是此词典会持续更新，最新版在 [最新版本](http://agama.buddhason.org) 
-11. [威廉梵汉词典](https://github.com/sanskrit-lexicon/Cologne-Sanskrit-Tamil), from http://www.sanskrit-lexicon.uni-koeln.de/
+11. [威廉梵英词典](https://github.com/sanskrit-lexicon/Cologne-Sanskrit-Tamil), from http://www.sanskrit-lexicon.uni-koeln.de/
 12. [觉悟之路](http://dhamma.sutta.org/pali-course/Pali-Chinese-English%20Dictionary.html) 提供的15部巴利语词典: pali-dict.json.gz
 
 ## 与cbeta阅读器的差异
@@ -33,7 +33,7 @@
 4. 删除了破折号，统一替换为逗号。因为破折号的显示不理想。容易误读为"一一"
 5. cbeta在注释问题字段的时候使用两个anchor标签夹在一起的做法。导致获得这些字段非常困难, 考虑替换成orig标签，以便自由切换不同藏经
 6. 使用<byline cb:type="Author">表示作者, <byline cb:type="translator">表示译者，混用大小写和中英文，还同时使用cb:jl_byline，含义模糊
-7. <p rend="inline">的写法，本来就是一个行内元素,导致T55n2157_024.xml显示不正常
+7. p rend="inline" 的写法，本来就是一个行内元素,导致T55n2157_024.xml显示不正常
 8. cbeta的note标注有时候显示的是勘误后的文字，有时候显示的是勘误前的文字。让人迷惑
 9. 支持简体阅读和简体搜索
 10. 可在线查字典, 使用Levenshtein算法
