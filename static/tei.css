@@ -41,7 +41,8 @@ of this software, even if advised of the possibility of such damage.
   font-family: 'siddham';
   font-style: normal;
   font-weight: normal;
-  src: url(/static/siddham.woff) format('woff');
+  src:  local(siddham),
+        url(/static/siddham.woff) format('woff');
   unicode-range: U+11580-115FF;
 }
 
@@ -235,6 +236,10 @@ div.stdheader{
 #hdr h1{
     color:red;
 }
+// h1, h2, h3, h4{
+//     //font-weight:bold;
+//     font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+// }
 h1{
     font-weight:bold;
     font-size:1.8em;
@@ -259,7 +264,7 @@ h4{
     font-size:1.1em;
     font-weight:bold;
     margin-bottom:0.4em;
-    font-style:italic;
+    // font-style:italic;
 }
 
 h1.maintitle{
@@ -473,15 +478,13 @@ span.corr{
 }
 
 /* 悉昙体、兰扎体与异体字 */
-span.gaiji{
-    color:#00d7ff;
-}
 span.gaiji_sd{
     font-family: 'siddham';
     // font-kerning: normal;  // 具有字距调整信息的OpenType字体才有用
-    /*<span style="width:0;height:0;float:left;">
-    */
-    color:#00d7ff;
+    // <span style="width:0;height:0;float:left;">
+    // color:#00d7ff;
+    color:#990099;
+    
 }
 
 span.gaiji_rj{
@@ -667,6 +670,12 @@ p {
    /*padding: 0.5em 0 0.5em 0;*/
 }
 
+p.dharani {
+     text-indent: 2em;
+     //margin-left: 2em; 
+    color:#990099;
+ }
+
 
 span.p,
 div.p{
@@ -710,15 +719,21 @@ div.l{
 @media screen and (max-width: 736px) {
     body {
         //margin: 10px;
-        padding: 0.5em;
+        padding: 0.3em;
     }
     p.lg {
+        //margin: 0 0 0 0;
         margin-left: 0;
+        // text-align:left;
         text-align:center;
     }
     div.l {
         margin-left: 0;
         text-align:center;
+        // text-align:left;
+    }
+    sup{
+        display: none;
     }
 }
 
