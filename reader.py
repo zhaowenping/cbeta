@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-10-08 13:25:18
+# Last Modified: 2017-10-08 14:15:30
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -325,6 +325,8 @@ def dict_get(word):
                 definition = kangxi[word]['英文翻譯']
             else:
                 definition = ''
+            if "國語發音" in kangxi[word]:
+                pinyin = kangxi[word]['國語發音']
         else:
             _from = "unicode"
             definition = unihan.get(word, {}).get('kDefinition', '')
@@ -348,7 +350,7 @@ def dict_get(word):
         _from = "于凌波"
         definition = ylb[word]
 
-    if _from:
+    if _from and not pinyin:
         pinyin = ' '.join([unihan.get(x, {}).get('kMandarin', ' ') for x in word])
     # print(pinyin, definition)
 
