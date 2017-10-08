@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-10-08 11:55:26
+# Last Modified: 2017-10-08 13:25:18
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -14,6 +14,7 @@ __version__ = "0.0.1"
 
 
 import os
+import gzip
 from bottle import get, post
 from bottle import route, run, static_file, default_app
 from bottle import redirect, abort
@@ -250,7 +251,7 @@ import json
 import time
 
 s = time.time()
-with open('dict/kangxi.json') as fd:
+with gzip.open('dict/kangxi.json.gz') as fd:
     kangxi = json.load(fd)
 e = time.time()
 print('装入康熙字典，用时%s' % (e - s))
@@ -262,7 +263,7 @@ e = time.time()
 print('装入Unicode10.0字典，用时%s' % (e - s))
 
 s = time.time()
-with open('dict/fk.json') as fd:
+with gzip.open('dict/fk.json.gz') as fd:
     fk = json.load(fd)
 e = time.time()
 print('装入佛光山词典，用时%s' % (e - s))
