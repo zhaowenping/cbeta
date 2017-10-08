@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-10-08 14:15:30
+# Last Modified: 2017-10-08 14:29:41
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -269,7 +269,7 @@ e = time.time()
 print('装入佛光山词典，用时%s' % (e - s))
 
 s = time.time()
-with open('dict/dfb.json') as fd:
+with gzip.open('dict/dfb.json.gz') as fd:
     dfb = json.load(fd)
 e = time.time()
 print('装入丁福宝词典，用时%s' % (e - s))
