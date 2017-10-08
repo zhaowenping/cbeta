@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-09-28 15:45:19
+# Last Modified: 2017-10-08 11:55:26
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -152,9 +152,9 @@ import opencc
 import time
 import pprint
 
-ix = open_dir("index")
+# ix = open_dir("index")
 # 搜索content内容
-qp = QueryParser("content", ix.schema)
+# qp = QueryParser("content", ix.schema)
 
 # TODO 搜索的时候被搜索内容应该手动分词
 @post('/search')
@@ -250,32 +250,46 @@ import json
 import time
 
 s = time.time()
+with open('dict/kangxi.json') as fd:
+    kangxi = json.load(fd)
+e = time.time()
+print('装入康熙字典，用时%s' % (e - s))
+
+s = time.time()
 with open('dict/Unihan_Readings.json') as fd:
     unihan = json.load(fd)
 e = time.time()
-
 print('装入Unicode10.0字典，用时%s' % (e - s))
 
 s = time.time()
 with open('dict/fk.json') as fd:
     fk = json.load(fd)
 e = time.time()
-
 print('装入佛光山词典，用时%s' % (e - s))
 
 s = time.time()
 with open('dict/dfb.json') as fd:
     dfb = json.load(fd)
 e = time.time()
-
 print('装入丁福宝词典，用时%s' % (e - s))
 
 s = time.time()
 with open('dict/庄春江汉译阿含经词典ver4.json') as fd:
     ccc = json.load(fd)
 e = time.time()
-
 print('装入庄春江词典，用时%s' % (e - s))
+
+s = time.time()
+with open('dict/nsl.json') as fd:
+    nsl = json.load(fd)
+e = time.time()
+print('装入南山律学词典，用时%s' % (e - s))
+
+s = time.time()
+with open('dict/cxy.json') as fd:
+    cxy = json.load(fd)
+e = time.time()
+print('装入佛學常見詞彙（陳義孝），用时%s' % (e - s))
 
 s = time.time()
 with open('dict/于凌波唯识名词白话新解.json') as fd:
@@ -283,20 +297,6 @@ with open('dict/于凌波唯识名词白话新解.json') as fd:
 e = time.time()
 
 print('装入于凌波唯识名词白话新解，用时%s' % (e - s))
-
-s = time.time()
-with open('dict/nsl.json') as fd:
-    nsl = json.load(fd)
-e = time.time()
-
-print('装入南山律学词典，用时%s' % (e - s))
-
-s = time.time()
-with open('dict/cxy.json') as fd:
-    cxy = json.load(fd)
-e = time.time()
-
-print('装入陈孝义词典，用时%s' % (e - s))
 
 
 
@@ -309,9 +309,25 @@ def dict_get(word):
     _from = ''
     definition = ''
     if len(word) == 1:
-        _from = "unicode"
-        definition = unihan.get(word, {}).get('kDefinition', '')
-        pinyin = unihan.get(word, {}).get('kMandarin', '')
+        if word in kangxi:
+            _from = "康熙字典"
+            definition = []
+            if "說文解字" in kangxi[word]:
+                definition.append(kangxi[word]["說文解字"])
+            if "康熙字典" in kangxi[word]:
+                definition.append(kangxi[word]["康熙字典"])
+            if "宋本廣韻" in kangxi[word]:
+                definition.append(kangxi[word]["宋本廣韻"])
+            if definition:
+                definition = '|'.join(definition)
+            elif '英文翻譯' in kangxi[word]:
+                definition = kangxi[word]['英文翻譯']
+            else:
+                definition = ''
+        else:
+            _from = "unicode"
+            definition = unihan.get(word, {}).get('kDefinition', '')
+            pinyin = unihan.get(word, {}).get('kMandarin', '')
     elif word in fk:
         _from = "佛光山"
         definition = fk[word]
@@ -406,9 +422,9 @@ def gaiji_sd_get():
     conn = psycopg2.connect(database="buddha", user="postgres", password="1234", host="127.0.0.1", port="5432")
     cur = conn.cursor()
     if q:
-        cur.execute('select name, romanu, romanc, value from siddham where position(%s in romanu)>0 or position(%s in romanc)>0 order by name', (q, q))
+        cur.execute('select name, romanu, romanc, value, siddham_font from siddham where position(%s in romanu)>0 or position(%s in romanc)>0 order by name', (q, q))
     else:
-        cur.execute('select name, romanu, romanc, value from siddham order by name')
+        cur.execute('select name, romanu, romanc, value, siddham_font from siddham order by name')
         # cur.execute("select name, romanu, romanc, value from siddham where romanc ='' or romanu = '' order by name")
         # cur.execute("select name, romanu, romanc, value from siddham where value is not null order by name")
     data = cur.fetchall()
@@ -419,9 +435,10 @@ def gaiji_sd_get():
         romanu = i[1].strip()
         romanc = i[2].strip()
         value = i[3].strip() if i[3] else ''
+        sd = i[4].strip() if i[4] else ''
         tt = name[19:].strip()
         url = '/static/sd-gif/{}/SD-{}.gif'.format(tt[:2], tt)
-        result.append((name, romanu, romanc, value, url))
+        result.append((name, romanu, romanc, value, sd, url))
     print(result)
     print('____________________________')
     conn.commit()

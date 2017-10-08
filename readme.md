@@ -27,7 +27,7 @@
 12. [觉悟之路](http://dhamma.sutta.org/pali-course/Pali-Chinese-English%20Dictionary.html) 提供的15部巴利语词典: pali-dict.json.gz
 
 ## 与cbeta阅读器的差异
-1. 使用unicode显示悉昙字, 蘭扎字(目前只替换了部分悉曇字)
+1. 使用unicode显示悉昙字, 蘭扎字(目前只替换了部分悉曇字), 使用: https://en.wikipedia.org/wiki/Siddha%E1%B9%83_script
 2. 使用python和xslt编写，可以运行在目前几乎所有主流操作系统中。cbeta光盘版是C++写的，Windows only
 3. 稳定运行，稳定快速。
 4. 删除了破折号，统一替换为逗号。因为破折号的显示不理想。容易误读为"一一"
