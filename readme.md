@@ -24,7 +24,7 @@
 9. 因为这是自由软件，但是不是免费软件，所以此资源完全可以通过商业途径传播，可以倒找钱、白送、高价、天价或者宇宙价出售光盘/U盘/硬盘, 可以随有价光盘/U盘一起赠送！这些不需要本人的任何授权！也不需要通知本人。
 10. 庄春江居士的阿含词典已经得到庄春江居士的(非營利用途)授权，但是此词典会持续更新，最新版在 [最新版本](http://agama.buddhason.org) 
 11. [威廉梵英词典](https://github.com/sanskrit-lexicon/Cologne-Sanskrit-Tamil), from http://www.sanskrit-lexicon.uni-koeln.de/
-12. [觉悟之路](http://dhamma.sutta.org/pali-course/Pali-Chinese-English%20Dictionary.html) 提供的15部巴利语词典: pali-dict.json.gz
+12. [觉悟之路](http://dhamma.sutta.org/pali-course/Pali-Chinese-English%20Dictionary.html) 提供的15部巴利语词典: pali-hant.json.gz
 
 ## 与cbeta阅读器的差异
 1. 使用unicode显示悉昙字, 蘭扎字(目前只替换了部分悉曇字), 使用: https://en.wikipedia.org/wiki/Siddha%E1%B9%83_script
@@ -65,12 +65,12 @@
 
 1. 示例是在ubuntu16.04上所做。其他操作系统仿照即可。不需要安装数据库，web服务器，只需要安装python即可
 2. 假设安装到$HOME/cbeta目录
-3. 安装python虚拟环境, 会生成一个py35的目录，里面是python的可执行程序
+3. 安装python虚拟环境, 会生成一个py36的目录，里面是python的可执行程序(需要python3.6及以上版本)
 ```
  $ git clone https://github.com/zhaowenping/cbeta.git
  $ cd cbeta
- $ python3 -m venv py35
- $ cd py35
+ $ python3 -m venv py36
+ $ cd py36
  $ . bin/activate
  $ cd ..
  $ pip install --upgrade pip
@@ -98,6 +98,7 @@
 
 1. 页面整体上是使用冬青黑体或者苹方字体显示主要文字，使用SimSun显示标点符号，你可以随意修改为自己喜欢的字体
 2. 建议下载花園明朝(HanaMin)字体以便显示生僻字  http://fonts.jp/hanazono/ 或者 http://ctext.org/font-test-page/zh, 因为花园字体是自由字体，尤其是花園明朝B一定要安装
+
 
 ## 浏览器兼容性
 1. 主流浏览器: firefox、opera、chrome、safari、搜狗浏览器、IOS手机等主流浏览器都没有发现任何问题
