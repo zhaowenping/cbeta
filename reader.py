@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-10-08 14:29:41
+# Last Modified: 2017-10-08 19:35:33
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -354,7 +354,7 @@ def dict_get(word):
         pinyin = ' '.join([unihan.get(x, {}).get('kMandarin', ' ') for x in word])
     # print(pinyin, definition)
 
-    return {'word': word, 'pinyin': pinyin, 'definition': definition, 'from': _from}
+    return json.dumps({'word': word, 'pinyin': pinyin, 'definition': definition, 'from': _from}, ensure_ascii=False, indent =4)
 
 @get('/gaiji')
 @view('temp/gaiji.jinja2')
