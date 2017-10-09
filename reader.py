@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-10-09 11:23:28
+# Last Modified: 2017-10-09 20:16:17
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -13,8 +13,10 @@ __author__ = ""
 __version__ = "0.0.1"
 
 
+import re
 import os
 import gzip
+
 from bottle import get, post
 from bottle import route, run, static_file, default_app
 from bottle import redirect, abort
@@ -257,6 +259,73 @@ import psycopg2
 import json
 import time
 
+def hk2sa(str_in, m=1):
+    '''hk系统转拉丁梵语, 会有两个结果，分别是t1和t2'''
+    x = {'S':'sh',
+        'R':'\u1e5bi',
+        'RR':'\u1e5b\u012b'}
+
+    t1 = {'A': '\u0101',
+        'I':'\u012b',
+        'U':'\u016b',
+        'M':'\u1e43', # 1e43
+        'H':'\u1e25',
+        'G':'\u1e45',
+        'J':'\u00f1',
+        'T':'\u1e6d',
+        'D':'\u1e0d',
+        'N':'\u1e47',
+        'L':'\u1eca',
+        'z':'\u1e61',
+        }
+
+    t2 = {'A': '\u0101',
+        'I':'\u012b',
+        'U':'\u016b',
+        'M':'\u1e49', # 1e49
+        'H':'\u1e25',
+        'G':'\u1e45',
+        'J':'\u00f1',
+        'T':'\u1e6d',
+        'D':'\u1e0d',
+        'N':'\u1e47',
+        'L':'\u1eca',
+        'z':'\u1e61',
+        }
+
+    if m == 1:
+        usedt = {ord(k): ord(t1[k]) for k in t1}
+    else:
+        usedt = {ord(k): ord(t2[k]) for k in t2}
+    str_out = str_in.replace('S', 'sh').replace('RR', '\u1e5b\u012b').replace('R', '\u1e5bi')
+    str_out = str_out.translate(usedt)
+    return str_out
+
+import gzip
+import json
+import re
+
+mwpatten = re.compile(r'(%\{\w+?})')
+
+s = time.time()
+with gzip.open('dict/sa-en.json.gz') as fd:
+    data = fd.read()
+
+data = json.loads(data)
+sa_en = dict()
+for key in data:
+    val = data[key]
+    x = mwpatten.findall(val)
+    if x:
+        for ff in x:
+            val = val.replace(ff, hk2sa(ff))
+    # 不知道以下这两行那个对
+    sa_en.update({hk2sa(key, 1): val})
+    sa_en.update({hk2sa(key, 2): val})
+e = time.time()
+print('装入梵英字典，用时%s' % (e - s))
+
+
 s = time.time()
 with gzip.open('dict/kangxi.json.gz') as fd:
     kangxi = json.load(fd)
@@ -320,20 +389,18 @@ def dict_get(word):
         if word in kangxi:
             _from = "康熙字典"
             definition = []
-            if "說文解字" in kangxi[word]:
-                definition.append(kangxi[word]["說文解字"])
-            if "康熙字典" in kangxi[word]:
-                definition.append(kangxi[word]["康熙字典"])
-            if "宋本廣韻" in kangxi[word]:
-                definition.append(kangxi[word]["宋本廣韻"])
+            kxword = kangxi[word]
+            if "說文解字" in kxword:
+                definition.append(kxword["說文解字"])
+            if "康熙字典" in kxword:
+                definition.append(kxword["康熙字典"])
+            if "宋本廣韻" in kxword:
+                definition.append(kxword["宋本廣韻"])
             if definition:
                 definition = '|'.join(definition)
-            elif '英文翻譯' in kangxi[word]:
-                definition = kangxi[word]['英文翻譯']
             else:
-                definition = ''
-            if "國語發音" in kangxi[word]:
-                pinyin = kangxi[word]['國語發音']
+                definition = kxword.get('英文翻譯', '')
+            pinyin = kxword.get('國語發音', '')
         else:
             _from = "unicode"
             definition = unihan.get(word, {}).get('kDefinition', '')
@@ -356,6 +423,9 @@ def dict_get(word):
     elif word in ylb:
         _from = "于凌波"
         definition = ylb[word]
+    else:
+        _from = "威廉梵英词典"
+        definition = sa_en.get(hk2sa(word.split()[0]), '')
 
     if _from and not pinyin:
         pinyin = ' '.join([unihan.get(x, {}).get('kMandarin', ' ') for x in word])
