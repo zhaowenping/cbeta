@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-10-08 19:35:33
+# Last Modified: 2017-10-09 11:23:28
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -65,18 +65,25 @@ def listdir():
 # 显示菜单
 sch_a = "static/sutra_sch.lst"
 sch_b = "static/bulei_sutra_sch.lst"
+sch_c = "static/long.lst"
 
 @route('/mulu')
 @view('temp/menu.jinja2')
 def menu():
     menu = read_menu_file(sch_b)
-    return {'menus': menu, 'request':request, 'yiju': '部類'}
+    return {'menus': menu, 'request':request, 'yiju': '大正藏部類'}
+
+@route('/qianlong')
+@view('temp/menu.jinja2')
+def menu():
+    menu = read_menu_file(sch_c)
+    return {'menus': menu, 'request':request, 'yiju': '乾隆藏'}
 
 @route('/cebie')
 @view('temp/menu.jinja2')
 def menu():
     menu = read_menu_file(sch_a)
-    return {'menus': menu, 'request':request, 'yiju': '冊別'}
+    return {'menus': menu, 'request':request, 'yiju': '大正藏冊別'}
 
 
 @route('/mulu/:bulei#.+#')
@@ -106,7 +113,7 @@ def submenu(bulei):
         # url = f"http://10.81.25.167:8080/xml/{ye}/{sutra}"
         url = f"/xml/{ye}/{sutra}"
         redirect(url)
-    return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '部類'}
+    return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大正藏部類'}
 
 @route('/cebie/:bulei#.+#')
 @view('temp/menu.jinja2')
@@ -135,7 +142,7 @@ def submenu(bulei):
         # url = f"http://10.81.25.167:8080/xml/{ye}/{sutra}"
         url = f"/xml/{ye}/{sutra}"
         redirect(url)
-    return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '冊別'}
+    return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大正藏冊別'}
 
 
 # 处理搜索

@@ -10,13 +10,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
   <title>㍽ 大正新修大藏經</title>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">  
+  <!--link rel="stylesheet" type="text/css" href="/static/tei.css"-->
   <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
+  li.list-group-item {
+    float:left;
+    width:50%; 
+    display : block;
+    }
     .odd{
     //background-color: #99cc66;
     //background-color: #ccff66;
-    background-color: #99cc99;
+    // background-color: #99cc99;
     }
   </style>
 </head>
@@ -24,10 +30,10 @@
 
   <div class="container">
     <nav>
-     <h1 style="text-align:center;">大正藏{{yiju}}目录</h1>
+     <h1 style="text-align:center;">{{yiju}}目錄</h1>
   
      <ol class="breadcrumb">
-      <li><a href="/mulu">总目录</a></li>
+      <li><a href="/mulu">總目錄</a></li>
       {% for url, content in nav %}
       <li><a href="{{url}}">-&gt;{{content}}</a></li>
       {% endfor %}
@@ -36,7 +42,10 @@
   
     <ul class="list-group">
         {% for key in menus %}
-         <li class="list-group-item {{ loop.cycle('odd', 'even') }}"><a href="{{request.path}}/{{key}}">{{ key }}</a><span class="badge">新</span></li>
+         <li class="list-group-item {{ loop.cycle('odd', 'even') }}">
+          <a href="{{request.path}}/{{key}}">{{ key }}</a>
+          <!--span class="badge">新</span-->
+         </li>
         {% endfor%}
     </ul>
   </div>
