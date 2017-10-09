@@ -24,14 +24,14 @@
       <!--li><a href="/mulu/{{key|truncate(5, end='')}}">{{ key }}</a></li-->
         <nav>
    <h1>Navigation</h1>
-   <a href="/mulu">按照部类方式</a>
-   <a href="/cebie">按照册别方式</a>
   </nav>
 <br>
 <br>
 <br>
 <br>
 <ul>
+   <li><a href="/mulu">按照部类方式</a></li>
+   <li><a href="/cebie">按照册别方式</a></li>
     {# for key in menus #}
      <li><a href="{#request.path#}/{#key#}">{# key #}</a></li>
     {# endfor#}
