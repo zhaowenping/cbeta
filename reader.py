@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-10-10 10:23:36
+# Last Modified: 2017-10-10 10:26:45
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -445,11 +445,11 @@ def dict_get(word):
             _from = "文理学院"
     if not definition:
         # 使用Harvard-Kyoto转写查找字典
-        definition = sa_en.get(hk2sa(word), [])
+        definition = sa_en.get(hk2sa(word), '')
         # 使用缩写查找字典
         if not definition:
             w = word.replace('1', '').replace("'", '').replace('4', '').replace('7', '').replace('8', '').replace('9', '').replace('0', '').replace('-', '').lower()
-            definition = sa_en.get(w, [])
+            definition = sa_en.get(w, '')
         if definition:
             definition = '|'.join(definition)
             _from = "威廉梵英词典"
