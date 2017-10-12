@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-10-10 10:26:45
+# Last Modified: 2017-10-12 10:44:12
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -305,18 +305,51 @@ def hk2sa(str_in, m=1):
     return str_out
 
 
-# 装入梵英词典
+# 装入梵英词典, 太大了，暂时不装了
 mwpatten = re.compile(r'(%\{.+?})')
+sa_en = dict()
 
+# s = time.time()
+# with gzip.open('dict/sa-en.json.gz') as fd:
+#     data = fd.read()
+# data = json.loads(data)
+# sa_en = dict()
+# for key in data:
+#     k = key.replace('1', '').replace("'", '').replace('4', '').replace('7', '').replace('8', '').replace('9', '').replace('0', '').replace('-', '').lower()
+#     sa_en.update({k: data[key]})
+#
+# for key in data:
+#     vals = data[key]
+#     res = []
+#     for val in vals:
+#         x = mwpatten.findall(val)
+#         if x:
+#             for ff in x:
+#                 val = val.replace(ff, hk2sa(ff))
+#         res.append(val)
+#     # 不知道以下这两行那个对
+#     sa_en.update({hk2sa(key, 1): res})
+#     sa_en.update({hk2sa(key, 2): res})
+# e = time.time()
+# print('装入梵英词典，用时%s' % (e - s))
+
+sa_hant = dict()
+# s = time.time()
+# with gzip.open('dict/sa-hant.json.gz') as fd:
+#     data = fd.read()
+# data = json.loads(data)
+# for key in data:
+#     sa_hant.update({key.lower(): data[key]})
+# e = time.time()
+# print('装入梵汉词典，用时%s' % (e - s))
+
+yat = dict()
 s = time.time()
-with gzip.open('dict/sa-en.json.gz') as fd:
+with gzip.open('dict/yat.json.gz') as fd:
     data = fd.read()
 data = json.loads(data)
-sa_en = dict()
 for key in data:
-    k = key.replace('1', '').replace("'", '').replace('4', '').replace('7', '').replace('8', '').replace('9', '').replace('0', '').replace('-', '').lower()
-    sa_en.update({k: data[key]})
-
+    yat.update({key.lower(): data[key]})
 for key in data:
     vals = data[key]
     res = []
@@ -324,23 +357,12 @@ for key in data:
         x = mwpatten.findall(val)
         if x:
             for ff in x:
-                val = val.replace(ff, hk2sa(ff))
-        res.append(val)
-    # 不知道以下这两行那个对
-    sa_en.update({hk2sa(key, 1): res})
-    sa_en.update({hk2sa(key, 2): res})
+                v = val.replace(ff, hk2sa(ff))
+        res.append(v)
+    yat.update({hk2sa(key, 1): res})
+    yat.update({hk2sa(key, 2): res})
 e = time.time()
-print('装入梵英词典，用时%s' % (e - s))
-
-s = time.time()
-with gzip.open('dict/sa-hant.json.gz') as fd:
-    data = fd.read()
-data = json.loads(data)
-sa_hant = dict()
-for key in data:
-    sa_hant.update({key.lower(): data[key]})
-e = time.time()
-print('装入梵汉词典，用时%s' % (e - s))
+print('装入Yates梵英词典，用时%s' % (e - s))
 
 s = time.time()
 with gzip.open('dict/kangxi.json.gz') as fd:
@@ -443,6 +465,7 @@ def dict_get(word):
         definition = sa_hant.get(hk2sa(word).lower(), '')
         if definition:
             _from = "文理学院"
+            pinyin = "文理学院"
     if not definition:
         # 使用Harvard-Kyoto转写查找字典
         definition = sa_en.get(hk2sa(word), '')
@@ -453,10 +476,25 @@ def dict_get(word):
         if definition:
             definition = '|'.join(definition)
             _from = "威廉梵英词典"
+            pinyin = "威廉梵英词典"
+    if not definition:
+        print(hk2sa(word))
+        definition = yat.get(hk2sa(word), '')
+        if not definition:
+            w = word.replace('-', '').lower()
+            definition = yat.get(w, '')
+        if definition:
+            definition = '|'.join(definition)
+            _from = "YAT"
+            pinyin = "YAT"
 
     if _from and not pinyin:
         pinyin = ' '.join([unihan.get(x, {}).get('kMandarin', ' ') for x in word])
     # print(pinyin, definition)
+
+    # else:
+    with open('yoga.dict', 'a+') as fd:
+        fd.write(word + '\n')
 
     return json.dumps({'word': word, 'pinyin': pinyin, 'definition': definition, 'from': _from}, ensure_ascii=False, indent =4)
 
