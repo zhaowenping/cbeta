@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-10-12 10:44:12
+# Last Modified: 2017-10-20 09:44:42
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -17,8 +17,10 @@ import re
 import os
 import gzip
 import json
+import psycopg2
+import time
 
-from bottle import get, post
+from bottle import get, post, response
 from bottle import route, run, static_file, default_app
 from bottle import redirect, abort
 from bottle import template
@@ -26,12 +28,21 @@ from bottle import jinja2_view as view
 from bottle import request
 from bottle import GeventServer
 
+from whoosh.index import open_dir
+from whoosh.qparser import QueryParser
+from whoosh.query import *
+import opencc
+
+import pprint
+from libhan import hk2sa, read_menu_file, kangxi, unihan, fk, dfb, ccc, nsl, cxy, ylb
+from libhan import get_all_juan
+from libhan import sa_hant, sa_en, yat
 # from xsltproc import xsltproc, XSLT
 
 # XSLT_FILE = 'static/tei.xsl'
 
 @route('/')
-@view('temp/index.jinja2')
+@view('temp/index.html')
 def index():
     return {'Hello World!':''}
 
@@ -88,7 +99,6 @@ def menu():
     menu = read_menu_file(sch_a)
     return {'menus': menu, 'request':request, 'yiju': '大正藏冊別'}
 
-
 @route('/mulu/:bulei#.+#')
 @view('temp/menu.jinja2')
 def submenu(bulei):
@@ -105,16 +115,9 @@ def submenu(bulei):
     # 跳转到正文
     if not menu:
         sutra = bulei[-1].split()[0]  # T01n0002
-        ye = sutra.split('n')[0]
-        # 查找第一卷(有些不是从第一卷开始的)
-        sutras = []
-        for path in os.listdir('xml/{ye}'.format(**locals())):
-            if path.startswith(sutra):
-                sutras.append(path)
-        sutras.sort()
-        sutra = sutras[0]            # T01n0002_001.xml
-        # url = f"http://10.81.25.167:8080/xml/{ye}/{sutra}"
-        url = f"/xml/{ye}/{sutra}"
+        zang = sutra.split('n')[0]              # T01
+        juan = get_all_juan(sutra)[0]           # 001
+        url = f"/xml/{zang}/{sutra}_{juan}.xml"  # T01n0002_001.xml
         redirect(url)
     return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大正藏部類'}
 
@@ -122,6 +125,7 @@ def submenu(bulei):
 @view('temp/menu.jinja2')
 def submenu(bulei):
     menu = read_menu_file(sch_a)
+    #pprint.pprint(menu)
     bulei = bulei.split('/')
 
     nav = [('/cebie', '总目录')]
@@ -134,16 +138,10 @@ def submenu(bulei):
     # 跳转到正文
     if not menu:
         sutra = bulei[-1].split()[0]  # T01n0002
-        ye = sutra.split('n')[0]
+        zang = sutra.split('n')[0]              # T01
         # 查找第一卷(有些不是从第一卷开始的)
-        sutras = []
-        for path in os.listdir('xml/{ye}'.format(**locals())):
-            if path.startswith(sutra):
-                sutras.append(path)
-        sutras.sort()
-        sutra = sutras[0]            # T01n0002_001.xml
-        # url = f"http://10.81.25.167:8080/xml/{ye}/{sutra}"
-        url = f"/xml/{ye}/{sutra}"
+        juan = get_all_juan(sutra)[0]           # 001
+        url = f"/xml/{zang}/{sutra}_{juan}.xml"  # T01n0002_001.xml
         redirect(url)
     return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大正藏冊別'}
 
@@ -155,17 +153,10 @@ def search():
     return {}
 
 # 搜索！
-from whoosh.index import open_dir
-from whoosh.qparser import QueryParser
-from whoosh.query import *
-import opencc
 
-import time
-import pprint
-
-# ix = open_dir("index")
+#ix = open_dir("index")
 # 搜索content内容
-# qp = QueryParser("content", ix.schema)
+#qp = QueryParser("content", ix.schema)
 
 # TODO 搜索的时候被搜索内容应该手动分词
 @post('/search')
@@ -210,210 +201,6 @@ def search_post():
 
 # "menu/sutra_sch.lst"
 # "menu/bulei_sutra_sch.lst'
-
-def read_menu_file(sutra_list):
-    '''读取tab分隔的菜单文件，返回树状字典'''
-    menu = dict()
-
-    with open(sutra_list) as fd:
-        for line in fd:
-            line = line.rstrip()
-            # if line.startswith('\t\t\t\t\t'):
-            #     print(line)
-            if not line.startswith('\t'):
-                key1 = line
-                menu.update({line:{}})
-                continue
-            line = line[1:]
-
-            if not line.startswith('\t'):
-                key2 = line
-                menu[key1].update({line: {}})
-                continue
-            line = line[1:]
-
-            if not line.startswith('\t'):
-                key3 = line
-                menu[key1][key2].update({line: {}})
-                continue
-            line = line[1:]
-
-            if not line.startswith('\t'):
-                key4 = line
-                menu[key1][key2][key3].update({line: {}})
-                continue
-            line = line[1:]
-
-            if not line.startswith('\t'):
-                key5 = line
-                menu[key1][key2][key3][key4].update({line: {}})
-                continue
-            line = line[1:]
-
-            if not line.startswith('\t'):
-                menu[key1][key2][key3][key4][key5].update({line: {}})
-                continue
-        return menu
-
-# 处理组合字
-import psycopg2
-import json
-import time
-
-def hk2sa(str_in, m=1):
-    '''hk系统转拉丁梵语, 会有两个结果，分别是t1和t2'''
-    x = {'S':'sh',
-        'R':'\u1e5bi',
-        'RR':'\u1e5b\u012b'}
-
-    t1 = {'A': '\u0101',
-        'I':'\u012b',
-        'U':'\u016b',
-        'M':'\u1e43', # 1e43
-        'H':'\u1e25',
-        'G':'\u1e45',
-        'J':'\u00f1',
-        'T':'\u1e6d',
-        'D':'\u1e0d',
-        'N':'\u1e47',
-        'L':'\u1eca',
-        'z':'\u1e61',
-        '@':' ',
-        }
-
-    t2 = {'A': '\u0101',
-        'I':'\u012b',
-        'U':'\u016b',
-        'M':'\u1e49', # 1e49
-        'H':'\u1e25',
-        'G':'\u1e45',
-        'J':'\u00f1',
-        'T':'\u1e6d',
-        'D':'\u1e0d',
-        'N':'\u1e47',
-        'L':'\u1eca',
-        'z':'\u1e61',
-        '@':' ',
-        }
-
-    if m == 1:
-        usedt = {ord(k): ord(t1[k]) for k in t1}
-    else:
-        usedt = {ord(k): ord(t2[k]) for k in t2}
-    str_out = str_in.replace('S', 'sh').replace('RR', '\u1e5b\u012b').replace('R', '\u1e5bi')
-    str_out = str_out.translate(usedt)
-    return str_out
-
-
-# 装入梵英词典, 太大了，暂时不装了
-mwpatten = re.compile(r'(%\{.+?})')
-sa_en = dict()
-
-# s = time.time()
-# with gzip.open('dict/sa-en.json.gz') as fd:
-#     data = fd.read()
-# data = json.loads(data)
-# sa_en = dict()
-# for key in data:
-#     k = key.replace('1', '').replace("'", '').replace('4', '').replace('7', '').replace('8', '').replace('9', '').replace('0', '').replace('-', '').lower()
-#     sa_en.update({k: data[key]})
-#
-# for key in data:
-#     vals = data[key]
-#     res = []
-#     for val in vals:
-#         x = mwpatten.findall(val)
-#         if x:
-#             for ff in x:
-#                 val = val.replace(ff, hk2sa(ff))
-#         res.append(val)
-#     # 不知道以下这两行那个对
-#     sa_en.update({hk2sa(key, 1): res})
-#     sa_en.update({hk2sa(key, 2): res})
-# e = time.time()
-# print('装入梵英词典，用时%s' % (e - s))
-
-sa_hant = dict()
-# s = time.time()
-# with gzip.open('dict/sa-hant.json.gz') as fd:
-#     data = fd.read()
-# data = json.loads(data)
-# for key in data:
-#     sa_hant.update({key.lower(): data[key]})
-# e = time.time()
-# print('装入梵汉词典，用时%s' % (e - s))
-
-yat = dict()
-s = time.time()
-with gzip.open('dict/yat.json.gz') as fd:
-    data = fd.read()
-data = json.loads(data)
-for key in data:
-    yat.update({key.lower(): data[key]})
-for key in data:
-    vals = data[key]
-    res = []
-    for val in vals:
-        x = mwpatten.findall(val)
-        if x:
-            for ff in x:
-                v = val.replace(ff, hk2sa(ff))
-        res.append(v)
-    yat.update({hk2sa(key, 1): res})
-    yat.update({hk2sa(key, 2): res})
-e = time.time()
-print('装入Yates梵英词典，用时%s' % (e - s))
-
-s = time.time()
-with gzip.open('dict/kangxi.json.gz') as fd:
-    kangxi = json.load(fd)
-e = time.time()
-print('装入康熙字典，用时%s' % (e - s))
-
-s = time.time()
-with open('dict/Unihan_Readings.json') as fd:
-    unihan = json.load(fd)
-e = time.time()
-print('装入Unicode10.0字典，用时%s' % (e - s))
-
-s = time.time()
-with gzip.open('dict/fk.json.gz') as fd:
-    fk = json.load(fd)
-e = time.time()
-print('装入佛光山词典，用时%s' % (e - s))
-
-s = time.time()
-with gzip.open('dict/dfb.json.gz') as fd:
-    dfb = json.load(fd)
-e = time.time()
-print('装入丁福宝词典，用时%s' % (e - s))
-
-s = time.time()
-with open('dict/庄春江汉译阿含经词典ver4.json') as fd:
-    ccc = json.load(fd)
-e = time.time()
-print('装入庄春江词典，用时%s' % (e - s))
-
-s = time.time()
-with open('dict/nsl.json') as fd:
-    nsl = json.load(fd)
-e = time.time()
-print('装入南山律学词典，用时%s' % (e - s))
-
-s = time.time()
-with open('dict/cxy.json') as fd:
-    cxy = json.load(fd)
-e = time.time()
-print('装入佛學常見詞彙（陳義孝），用时%s' % (e - s))
-
-s = time.time()
-with open('dict/于凌波唯识名词白话新解.json') as fd:
-    ylb = json.load(fd)
-e = time.time()
-
-print('装入于凌波唯识名词白话新解，用时%s' % (e - s))
-
-
 
 # print(conn)
 @get('/dict/:word')
@@ -489,13 +276,14 @@ def dict_get(word):
             pinyin = "YAT"
 
     if _from and not pinyin:
-        pinyin = ' '.join([unihan.get(x, {}).get('kMandarin', ' ') for x in word])
+        pinyin = ' '.join([unihan.get(x, {}).get('kMandarin', '') for x in word])
     # print(pinyin, definition)
 
     # else:
     with open('yoga.dict', 'a+') as fd:
         fd.write(word + '\n')
 
+    print({'word': word, 'pinyin': pinyin, 'definition': definition, 'from': _from})
     return json.dumps({'word': word, 'pinyin': pinyin, 'definition': definition, 'from': _from}, ensure_ascii=False, indent =4)
 
 @get('/gaiji')
@@ -611,6 +399,25 @@ def gaiji_sd_post():
     conn.close()
     print('____________________________')
     redirect('/sd?q=%s'%urllib.request.quote(val))
+
+# xml/T13/T13n0423_001.xml
+@route('/zh/:filename#.+#')
+def zh(filename):
+    '''简体版'''
+    with open(filename) as fd:
+        content = fd.read()
+    response.content_type = 'text/xml'
+    content = opencc.convert(content, config='t2s.json')
+    return content
+
+@route('/zhx/:filename')
+def zhx(filename):
+    '''从目录简体版转到简体阅读章节'''
+    jing = filename.split()[0]
+    zang = jing.split('n')[0]
+    juan = get_all_juan(jing)[0]
+    url = f"/zh/xml/{zang}/{jing}_{juan}.xml"
+    redirect(url)
 
 
 # GeventServer.run(host = '0.0.0.0', port = 8081)
