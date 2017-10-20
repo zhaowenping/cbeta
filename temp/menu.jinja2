@@ -44,7 +44,10 @@
         {% for key in menus %}
          <li class="list-group-item {{ loop.cycle('odd', 'even') }}">
           <a href="{{request.path}}/{{key}}">{{ key }}</a>
-          <span class="badge"><a href="{{key}}">简体版</a></span>
+          {% if not menus[key] %}
+          <!--span class="badge"><a href="{{key}}">简体版</a></span-->
+          <a href="/zhx/{{key}}" class="badge"><span class="badge">简体版<span></a>
+          {% endif %}
          </li>
         {% endfor%}
     </ul>
