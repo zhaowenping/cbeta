@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-10-19 11:54:03
+# Last Modified: 2017-10-21 20:27:52
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -208,14 +208,14 @@ e = time.time()
 print('装入丁福宝词典，用时%s' % (e - s))
 
 s = time.time()
-with open('dict/庄春江汉译阿含经词典ver4.json') as fd:
+with open('dict/ccc.json') as fd:
     ccc = json.load(fd)
 e = time.time()
 print('装入庄春江词典，用时%s' % (e - s))
 
 s = time.time()
-with open('dict/nsl.json') as fd:
-    nsl = json.load(fd)
+with open('dict/nvd.json') as fd:
+    nvd = json.load(fd)
 e = time.time()
 print('装入南山律学词典，用时%s' % (e - s))
 

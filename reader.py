@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-10-20 09:44:42
+# Last Modified: 2017-10-21 20:27:05
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -34,7 +34,7 @@ from whoosh.query import *
 import opencc
 
 import pprint
-from libhan import hk2sa, read_menu_file, kangxi, unihan, fk, dfb, ccc, nsl, cxy, ylb
+from libhan import hk2sa, read_menu_file, kangxi, unihan, fk, dfb, ccc, nvd, cxy, ylb
 from libhan import get_all_juan
 from libhan import sa_hant, sa_en, yat
 # from xsltproc import xsltproc, XSLT
@@ -239,12 +239,12 @@ def dict_get(word):
     elif word in ccc:
         _from = "庄春江"
         definition = ccc[word]
-    elif word in nsl:
+    elif word in nvd:
         _from = "南山律"
-        definition = nsl[word]
+        definition = nvd[word]
     elif word in cxy:
         _from = "陈孝义"
-        definition = nsl[word]
+        definition = cxy[word]
     elif word in ylb:
         _from = "于凌波"
         definition = ylb[word]
@@ -406,6 +406,7 @@ def zh(filename):
     '''简体版'''
     with open(filename) as fd:
         content = fd.read()
+    content = content.replace("<TEI ", "<TEI xml:lang='lzh-Hans' ")
     response.content_type = 'text/xml'
     content = opencc.convert(content, config='t2s.json')
     return content
@@ -419,6 +420,23 @@ def zhx(filename):
     url = f"/zh/xml/{zang}/{jing}_{juan}.xml"
     redirect(url)
 
+
+# 输出pdf
+# import xhtml2pdf.pisa as pisa
+# from StringIO import StringIO
+
+@route('/download', methods=['GET'])
+def download_pdf():
+    env = Environment(loader=PackageLoader(current_app.name, 'templates'))
+    template = env.get_template('test.jinja2') # 获得页面模板
+
+    html = template.render(name='大Ren', font_path='/static/simsun.ttf').encode('utf-8')
+    result = StringIO()
+    pdf = pisa.CreatePDF(StringIO(html), result)
+    resp = make_response(result.getvalue())
+    resp.headers["Content-Disposition"] = ("attachment; filename='{0}'; filename*=UTF-8''{0}".format('test.pdf'))
+    resp.headers['Content-Type'] = 'application/pdf'
+    return resp
 
 # GeventServer.run(host = '0.0.0.0', port = 8081)
 app = default_app()
