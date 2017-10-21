@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-10-21 20:27:52
+# Last Modified: 2017-10-21 23:58:49
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -226,7 +226,7 @@ e = time.time()
 print('装入佛學常見詞彙（陳義孝），用时%s' % (e - s))
 
 s = time.time()
-with open('dict/于凌波唯识名词白话新解.json') as fd:
+with open('dict/ylb.json') as fd:
     ylb = json.load(fd)
 e = time.time()
 

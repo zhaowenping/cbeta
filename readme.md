@@ -122,7 +122,8 @@
 | 15部巴利语词典          | pali-hant.json.gz            |  49111   |
 | 三藏法数                | szfs.json                    |   1413   |
 | Yates梵英词典           | yat.json.gz                  |  44720   |
-|                         | 于凌波唯识名词白话新解.json  |   1506   |
+| 于凌波唯识名词白话新解  | ylb.json                     |   1506   |
+| 法相辞典 - 朱芾煌       |                              |          |
 
 ## 浏览器兼容性
 1. 主流浏览器: firefox、opera、chrome、safari、搜狗浏览器、IOS手机等主流浏览器都没有发现任何问题
