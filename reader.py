@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-10-21 20:27:05
+# Last Modified: 2017-10-23 13:14:07
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -17,7 +17,6 @@ import re
 import os
 import gzip
 import json
-import psycopg2
 import time
 
 from bottle import get, post, response
@@ -31,12 +30,27 @@ from bottle import GeventServer
 from whoosh.index import open_dir
 from whoosh.qparser import QueryParser
 from whoosh.query import *
+import psycopg2
 import opencc
 
 import pprint
-from libhan import hk2sa, read_menu_file, kangxi, unihan, fk, dfb, ccc, nvd, cxy, ylb
+from libhan import hk2sa, read_menu_file, load_dict
 from libhan import get_all_juan
-from libhan import sa_hant, sa_en, yat
+
+# 装入各种词典
+dd = load_dict()
+sa_hant = dd['sa_hant']
+sa_en = dd['sa_en']
+yat = dd['yat']
+kangxi = dd['kangxi']
+unihan = dd['unihan']
+fk = dd['fk']
+dfb = dd['dfb']
+ccc = dd['ccc']
+nvd = dd['nvd']
+cxy = dd['cxy']
+ylb = dd['ylb']
+fxcd = dd['fxcd']
 # from xsltproc import xsltproc, XSLT
 
 # XSLT_FILE = 'static/tei.xsl'
@@ -203,6 +217,70 @@ def search_post():
 # "menu/bulei_sutra_sch.lst'
 
 # print(conn)
+@get('/dict/ccc/:word')
+def ccc_dict_get(word):
+    pinyin = ''
+    _from = ''
+    definition = ''
+    if word in ccc:
+        _from = "庄春江"
+        definition = ccc[word]
+    return json.dumps({'word': word, 'pinyin': pinyin, 'definition': definition, 'from': _from}, ensure_ascii=False, indent =4)
+
+@get('/dict/dfb/:word')
+def dfb_dict_get(word):
+    pinyin = ''
+    definition = ''
+    if word in dfb:
+        definition = dfb[word]
+    return json.dumps({'word': word, 'pinyin': pinyin, 'definition': definition}, ensure_ascii=False, indent =4)
+
+@get('/dict/fxcd/:word')
+def fxcd_dict_get(word):
+    pinyin = ''
+    _from = ''
+    definition = ''
+    if word in fxcd:
+        _from = "於沛煌"
+        definition = fxcd[word]
+    return json.dumps({'word': word, 'pinyin': pinyin, 'definition': definition, 'from': _from}, ensure_ascii=False, indent =4)
+
+@get('/dict/fk/:word')
+def fk_dict_get(word):
+    pinyin = ''
+    _from = ''
+    definition = ''
+    if word in fk:
+        _from = "佛光山"
+        definition = fk[word]
+    return json.dumps({'word': word, 'pinyin': pinyin, 'definition': definition, 'from': _from}, ensure_ascii=False, indent =4)
+
+@get('/dict/kx/:word')
+def kx_dict_get(word):
+    pinyin = ''
+    _from = ''
+    definition = ''
+    if len(word) == 1:
+        if word in kangxi:
+            _from = "康熙字典"
+            definition = []
+            kxword = kangxi[word]
+            if "說文解字" in kxword:
+                definition.append(kxword["說文解字"])
+            if "康熙字典" in kxword:
+                definition.append(kxword["康熙字典"])
+            if "宋本廣韻" in kxword:
+                definition.append(kxword["宋本廣韻"])
+            if definition:
+                definition = '|'.join(definition)
+            else:
+                definition = kxword.get('英文翻譯', '')
+            pinyin = kxword.get('國語發音', '')
+        else:
+            kxword = None
+    return json.dumps({word: kxword}, ensure_ascii=False, indent =4)
+    # return json.dumps({'word': word, 'pinyin': pinyin, 'definition': definition, 'from': _from}, ensure_ascii=False, indent =4)
+
 @get('/dict/:word')
 def dict_get(word):
     '''查字典'''

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-10-21 23:58:49
+# Last Modified: 2017-10-23 10:26:12
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -123,114 +123,125 @@ def hk2sa(str_in, m=1):
     str_out = str_out.translate(usedt)
     return str_out
 
+def load_dict():
 
-# 装入梵英词典, 太大了，暂时不装了
-mwpatten = re.compile(r'(%\{.+?})')
-sa_en = dict()
+    # 装入梵英词典, 太大了，暂时不装了
+    mwpatten = re.compile(r'(%\{.+?})')
+    sa_en = dict()
 
-# s = time.time()
-# with gzip.open('dict/sa-en.json.gz') as fd:
-#     data = fd.read()
-# data = json.loads(data)
-# sa_en = dict()
-# for key in data:
-#     k = key.replace('1', '').replace("'", '').replace('4', '').replace('7', '').replace('8', '').replace('9', '').replace('0', '').replace('-', '').lower()
-#     sa_en.update({k: data[key]})
-#
-# for key in data:
-#     vals = data[key]
-#     res = []
-#     for val in vals:
-#         x = mwpatten.findall(val)
-#         if x:
-#             for ff in x:
-#                 val = val.replace(ff, hk2sa(ff))
-#         res.append(val)
-#     # 不知道以下这两行那个对
-#     sa_en.update({hk2sa(key, 1): res})
-#     sa_en.update({hk2sa(key, 2): res})
-# e = time.time()
-# print('装入梵英词典，用时%s' % (e - s))
+    # s = time.time()
+    # with gzip.open('dict/sa-en.json.gz') as fd:
+    #     data = fd.read()
+    # data = json.loads(data)
+    # sa_en = dict()
+    # for key in data:
+    #     k = key.replace('1', '').replace("'", '').replace('4', '').replace('7', '').replace('8', '').replace('9', '').replace('0', '').replace('-', '').lower()
+    #     sa_en.update({k: data[key]})
+    #
+    # for key in data:
+    #     vals = data[key]
+    #     res = []
+    #     for val in vals:
+    #         x = mwpatten.findall(val)
+    #         if x:
+    #             for ff in x:
+    #                 val = val.replace(ff, hk2sa(ff))
+    #         res.append(val)
+    #     # 不知道以下这两行那个对
+    #     sa_en.update({hk2sa(key, 1): res})
+    #     sa_en.update({hk2sa(key, 2): res})
+    # e = time.time()
+    # print('装入梵英词典，用时%s' % (e - s))
 
-sa_hant = dict()
-# s = time.time()
-# with gzip.open('dict/sa-hant.json.gz') as fd:
-#     data = fd.read()
-# data = json.loads(data)
-# for key in data:
-#     sa_hant.update({key.lower(): data[key]})
-# e = time.time()
-# print('装入梵汉词典，用时%s' % (e - s))
+    sa_hant = dict()
+    # s = time.time()
+    # with gzip.open('dict/sa-hant.json.gz') as fd:
+    #     data = fd.read()
+    # data = json.loads(data)
+    # for key in data:
+    #     sa_hant.update({key.lower(): data[key]})
+    # e = time.time()
+    # print('装入梵汉词典，用时%s' % (e - s))
 
-yat = dict()
-s = time.time()
-with gzip.open('dict/yat.json.gz') as fd:
-    data = fd.read()
-data = json.loads(data)
-for key in data:
-    yat.update({key.lower(): data[key]})
-for key in data:
-    vals = data[key]
-    res = []
-    for val in vals:
-        x = mwpatten.findall(val)
-        if x:
-            for ff in x:
-                v = val.replace(ff, hk2sa(ff))
-        res.append(v)
-    yat.update({hk2sa(key, 1): res})
-    yat.update({hk2sa(key, 2): res})
-e = time.time()
-print('装入Yates梵英词典，用时%s' % (e - s))
+    yat = dict()
+    s = time.time()
+    with gzip.open('dict/yat.json.gz') as fd:
+        data = fd.read()
+    data = json.loads(data)
+    for key in data:
+        yat.update({key.lower(): data[key]})
+    for key in data:
+        vals = data[key]
+        res = []
+        for val in vals:
+            x = mwpatten.findall(val)
+            if x:
+                for ff in x:
+                    v = val.replace(ff, hk2sa(ff))
+            res.append(v)
+        yat.update({hk2sa(key, 1): res})
+        yat.update({hk2sa(key, 2): res})
+    e = time.time()
+    print('装入Yates梵英词典，用时%s' % (e - s))
 
-s = time.time()
-with gzip.open('dict/kangxi.json.gz') as fd:
-    kangxi = json.load(fd)
-e = time.time()
-print('装入康熙字典，用时%s' % (e - s))
+    s = time.time()
+    with gzip.open('dict/kangxi.json.gz') as fd:
+        kangxi = json.load(fd)
+    e = time.time()
+    print('装入康熙字典，用时%s' % (e - s))
 
-s = time.time()
-with open('dict/Unihan_Readings.json') as fd:
-    unihan = json.load(fd)
-e = time.time()
-print('装入Unicode10.0字典，用时%s' % (e - s))
+    s = time.time()
+    with open('dict/Unihan_Readings.json') as fd:
+        unihan = json.load(fd)
+    e = time.time()
+    print('装入Unicode10.0字典，用时%s' % (e - s))
 
-s = time.time()
-with gzip.open('dict/fk.json.gz') as fd:
-    fk = json.load(fd)
-e = time.time()
-print('装入佛光山词典，用时%s' % (e - s))
+    s = time.time()
+    with gzip.open('dict/fk.json.gz') as fd:
+        fk = json.load(fd)
+    e = time.time()
+    print('装入佛光山词典，用时%s' % (e - s))
 
-s = time.time()
-with gzip.open('dict/dfb.json.gz') as fd:
-    dfb = json.load(fd)
-e = time.time()
-print('装入丁福宝词典，用时%s' % (e - s))
+    s = time.time()
+    with gzip.open('dict/dfb.json.gz') as fd:
+        dfb = json.load(fd)
+    e = time.time()
+    print('装入丁福宝词典，用时%s' % (e - s))
 
-s = time.time()
-with open('dict/ccc.json') as fd:
-    ccc = json.load(fd)
-e = time.time()
-print('装入庄春江词典，用时%s' % (e - s))
+    s = time.time()
+    with open('dict/ccc.json') as fd:
+        ccc = json.load(fd)
+    e = time.time()
+    print('装入庄春江词典，用时%s' % (e - s))
 
-s = time.time()
-with open('dict/nvd.json') as fd:
-    nvd = json.load(fd)
-e = time.time()
-print('装入南山律学词典，用时%s' % (e - s))
+    s = time.time()
+    with open('dict/nvd.json') as fd:
+        nvd = json.load(fd)
+    e = time.time()
+    print('装入南山律学词典，用时%s' % (e - s))
 
-s = time.time()
-with open('dict/cxy.json') as fd:
-    cxy = json.load(fd)
-e = time.time()
-print('装入佛學常見詞彙（陳義孝），用时%s' % (e - s))
+    s = time.time()
+    with open('dict/cxy.json') as fd:
+        cxy = json.load(fd)
+    e = time.time()
+    print('装入佛學常見詞彙（陳義孝），用时%s' % (e - s))
 
-s = time.time()
-with open('dict/ylb.json') as fd:
-    ylb = json.load(fd)
-e = time.time()
+    s = time.time()
+    with open('dict/ylb.json') as fd:
+        ylb = json.load(fd)
+    e = time.time()
+    print('装入於凌波，用时%s' % (e - s))
 
-print('装入于凌波唯识名词白话新解，用时%s' % (e - s))
+    s = time.time()
+    with gzip.open('dict/fxcd.json.gz') as fd:
+        fxcd = json.load(fd)
+    e = time.time()
+    print('装入法相詞典，用时%s' % (e - s))
+
+    print('装入于凌波唯识名词白话新解，用时%s' % (e - s))
+    return {'kangxi':kangxi, 'unihan':unihan, 'fk':fk, 'dfb': dfb, 'ccc': ccc, 'nvd': nvd, 'cxy': cxy, 'ylb': ylb, 'fxcd': fxcd,
+        'sa_hant': sa_hant, 'sa_en': sa_en, 'yat': yat}
+
 
 
 def lookinkangxi(word):
