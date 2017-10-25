@@ -375,7 +375,8 @@
 
     <xsl:template match="p[contains(@cb:type, 'head')]">
         <xsl:variable name="hunit" select="concat('h', substring(@cb:type, 5)+1)"/>
-        <xsl:element name="{$hunit}" use-attribute-sets="class id">
+        <!--xsl:element name="{$hunit}" use-attribute-sets="class id" ie!!-->
+        <xsl:element name="{$hunit}">
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
