@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-10-23 10:26:12
+# Last Modified: 2017-10-25 10:51:05
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -18,6 +18,9 @@ import os
 import gzip
 import json
 import time
+from functools import reduce
+
+import opencc
 
 
 print('调用函数库')
@@ -290,14 +293,73 @@ def lookinsa(word):
             pinyin = "YAT"
 
 
+class Search:
+    def __init__(self):
+        mulu = read_menu_file("static/sutra_sch.lst")
+        #pprint.pprint(m['T 大正藏'])
+        # d = mulu['T 大正藏']
+        def walk(d, result=[]):
+            '''遍历目录树'''
+            for x in d:
+                if not d[x]:
+                    result.append(x)
+                else:
+                    walk(d[x], result)
+            return result
+
+
+        result = walk(mulu)
+        result = [i.split(maxsplit=2) for i in result]
+        titles = [(i[0], ' '.join((i[1], i[2]))) for i in result]
+        # titles 是经号和title的对照表
+        # 生成索引表
+        self.index = {}
+        for i in titles:
+            z = 0
+            #print(i)
+            for j in i[1]:
+                if j in self.index:
+                    self.index[j].append((i[0], z))
+                else:
+                    self.index[j] = [(i[0], z),]
+                #print(j, i[0], z)
+                z += 1
+        for i in self.index:
+            # print(i)
+            v = self.index[i]
+            r = dict()
+            for j in v:
+                if j[0] in r:
+                    r[j[0]].append(j[1])
+                else:
+                    r[j[0]] = [j[1],]
+            # pprint.pprint((i, r))
+            self.index.update({i: r})
+        self.titles = dict(titles)
+
+
+    def search(self, title):
+        title = opencc.convert(title, config='s2t.json')
+        # ( for zi in index)
+        a = (set(self.index[tt].keys()) for tt in list(title))
+        return reduce(lambda x, y: x & y, a)
+
 def main():
     ''''''
+    ss = Search()
+    s = time.time()
+    ss.search('成唯识论')
+    e = time.time()
+    print(e-s)
+    for idx in ss.search('成唯识论'):
+        print(idx, ss.titles[idx])
+
 
 def test():
     ''''''
 
 if __name__ == "__main__":
-    #main()
+    # main()
     test()
 
 

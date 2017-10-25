@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-10-23 13:14:07
+# Last Modified: 2017-10-25 11:05:52
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -22,7 +22,7 @@ import time
 from bottle import get, post, response
 from bottle import route, run, static_file, default_app
 from bottle import redirect, abort
-from bottle import template
+from bottle import Jinja2Template as template
 from bottle import jinja2_view as view
 from bottle import request
 from bottle import GeventServer
@@ -36,6 +36,7 @@ import opencc
 import pprint
 from libhan import hk2sa, read_menu_file, load_dict
 from libhan import get_all_juan
+from libhan import Search
 
 # 装入各种词典
 dd = load_dict()
@@ -166,6 +167,25 @@ def submenu(bulei):
 def search():
     return {}
 
+ss = Search()
+@post('/searchmulu')
+@view('temp/search.jinja2')
+def searchmulu():
+    content = request.forms.content
+    title = opencc.convert(content, config='s2t.json')
+    results = []
+    for idx in ss.search(title):
+        title = idx
+        hl = ss.titles[idx]
+        print(title, hl)
+        an = ''
+        zang = idx.split('n')[0]              # T01
+        juan = get_all_juan(idx)[0]           # 001
+        an = f"/xml/{zang}/{idx}_{juan}.xml"  # T01n0002_001.xml
+        # results.append({'hl': hl, 'an':an, 'title':title})
+        results.append([hl, an, title])
+    return {'results': results}
+
 # 搜索！
 
 #ix = open_dir("index")
@@ -235,11 +255,18 @@ def dfb_dict_get(word):
         definition = dfb[word]
     return json.dumps({'word': word, 'pinyin': pinyin, 'definition': definition}, ensure_ascii=False, indent =4)
 
+@get('/dict/yph')
+@view('temp/dict.jinja2')
+def fxcd_dict_all():
+    return {'dd': fxcd}
+
 @get('/dict/fxcd/:word')
+# @view('temp/search.jinja2')
 def fxcd_dict_get(word):
     pinyin = ''
     _from = ''
     definition = ''
+    print(word)
     if word in fxcd:
         _from = "於沛煌"
         definition = fxcd[word]
