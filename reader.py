@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-10-25 11:05:52
+# Last Modified: 2017-10-25 11:37:02
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -171,14 +171,13 @@ ss = Search()
 @post('/searchmulu')
 @view('temp/search.jinja2')
 def searchmulu():
+    '''搜索标题'''
     content = request.forms.content
     title = opencc.convert(content, config='s2t.json')
     results = []
     for idx in ss.search(title):
         title = idx
         hl = ss.titles[idx]
-        print(title, hl)
-        an = ''
         zang = idx.split('n')[0]              # T01
         juan = get_all_juan(idx)[0]           # 001
         an = f"/xml/{zang}/{idx}_{juan}.xml"  # T01n0002_001.xml

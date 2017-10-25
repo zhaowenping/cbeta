@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-10-25 10:51:05
+# Last Modified: 2017-10-25 11:36:29
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -20,7 +20,6 @@ import json
 import time
 from functools import reduce
 
-import opencc
 
 
 print('调用函数库')
@@ -339,19 +338,22 @@ class Search:
 
 
     def search(self, title):
-        title = opencc.convert(title, config='s2t.json')
+        # title = opencc.convert(title, config='s2t.json')
         # ( for zi in index)
-        a = (set(self.index[tt].keys()) for tt in list(title))
+        a = (set(self.index.get(tt, {}).keys()) for tt in list(title))
         return reduce(lambda x, y: x & y, a)
 
 def main():
     ''''''
     ss = Search()
+    title = '成唯识论'
+    import opencc
+    title = opencc.convert(title, config='s2t.json')
     s = time.time()
-    ss.search('成唯识论')
+    ss.search(title)
     e = time.time()
     print(e-s)
-    for idx in ss.search('成唯识论'):
+    for idx in ss.search(title):
         print(idx, ss.titles[idx])
 
 

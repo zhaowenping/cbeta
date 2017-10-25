@@ -41,7 +41,7 @@ of this software, even if advised of the possibility of such damage.
   font-family: 'siddham';
   font-style: normal;
   font-weight: normal;
-  src:  local(siddham),
+  src:  local(ApDevaSiddham),
         url(/static/siddham.woff) format('woff');
   unicode-range: U+11580-115FF;
 }
@@ -97,7 +97,7 @@ body{
     padding-top:100px;
     /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;*/
     font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", "PingFang SC", "PMingLiU", siddham;
-    font-size: large;
+    // font-size: large;
     /* font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;*/
 }
 
@@ -696,23 +696,21 @@ p.box{
 }
 
 /* verse */
-/* div.lg{*/
-p.lg{
+div.lg {
+/*p.lg{*/
    /* margin-left:10px;
     margin-bottom:10px; */
    /* text-indent:-1em;*/
-    /*font-family: FZSuXinShiLiuKaiT-R-GB;*/
-    text-indent: 0;
+    margin-bottom:1em; 
+    margin-top:0;
     margin-left: 4em;
+    text-indent: 0;
     color: #10AA10;
 
 }
-div.l{
-/*span.l{*/
-    /*text-align:left;
-    margin-left:1em;*/
-   margin-left: 5em;
-   color: #10AA10;
+span.l {
+    margin-left:1em;
+    color: #10AA10;
 
 }
 /*在小屏幕设备上居中显示偈颂*/
@@ -727,7 +725,7 @@ div.l{
         // text-align:left;
         text-align:center;
     }
-    div.l {
+    span.l {
         margin-left: 0;
         text-align:center;
         // text-align:left;
