@@ -56,7 +56,7 @@
                 <xsl:value-of select="/TEI/teiHeader/fileDesc/titleStmt/author"/>
           </fo:block>
 
-<xsl:apply-templates/>
+        <xsl:apply-templates/>
 
 
         </fo:flow>
@@ -129,7 +129,28 @@
 
    <xsl:template match="text()|@*">
        <xsl:value-of select="normalize-space(.)"/>
-   </xsl:template>
+    </xsl:template>
 
+    <xsl:template match="head">
+          <fo:block font-family="PingFang SC"
+                line-height="15pt"
+                space-after.optimum="3pt"
+                font-weight="bold"
+                font-size="1.6em"
+                margin-bottom="0.8em"
+                text-align="center">
+          </fo:block>
+    </xsl:template>
+
+    <xsl:template match="graphic">
+      <fo:block start-indent="0cm" end-indent="0cm" border=".1pt solid red" color="blue">
+        <fo:external-graphic width="16cm" content-width="16cm" content-height="27cm" display-align="center" text-align="center">
+        <xsl:attribute name="src">
+            <xsl:text>/home/zhaowp/project/cbeta/static</xsl:text>
+            <xsl:value-of select="substring(@url, 3)"/>
+        </xsl:attribute>
+        </fo:external-graphic>
+      </fo:block>
+    </xsl:template>
 
 </xsl:stylesheet>
