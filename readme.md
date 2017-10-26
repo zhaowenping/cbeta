@@ -100,6 +100,7 @@
 9. reader.py python的web程序入口, 提供目录、搜索等服务
 10.  .lst文件 tab分割的目录文件
 11. temp目录, 页面的jinja2模板文件
+12. fo目录, 使用fop生成pdf的程序，使用的时候需要修改fop.xconf文件中的directory标签，指向字库文件目录(fop2.1)
 
 ## 字库
 
