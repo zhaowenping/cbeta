@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-10-25 11:36:29
+# Last Modified: 2017-10-25 19:00:37
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -23,6 +23,49 @@ from functools import reduce
 
 
 print('调用函数库')
+
+class TSDetect:
+    '''简体繁体检测'''
+    def __init__(self):
+
+        self.p = re.compile(r'[\u4e00-\u9fa5]')
+
+        self.tt = set()
+        self.ss = set()
+        # with open('static/TSCharacters.txt') as fd:
+        with open('OpenCC/data/dictionary/TSCharacters.txt') as fd:
+            for line in fd:
+                line = line.strip().split()
+                # print(line.split())
+                self.tt.add(line[0])
+                for zi in line[1:]:
+                    self.ss.add(zi)
+
+        xx = self.tt & self.ss
+        self.tt = self.tt - xx
+        self.ss = self.ss - xx
+
+    def detect(self, s0):
+        '''判断一段文本是简体还是繁体的概率'''
+        s0 = set(s0)
+        # 同时是简体繁体的概率
+        j = 0
+        aa = s0 - self.tt - self.ss
+        for i in aa:
+            if self.p.match(i):
+                j += 1
+        # 繁体概率
+        t = 100 +  ((j * 50 -len(s0 - self.tt) * 100 )/ len(s0))
+        # 简体概率
+        s = 100 + ((j * 50 - len(s0 - self.ss) * 100 )/ len(s0))
+
+        confidence = ''
+        if t > 50:
+            confidence = 't'
+        elif s > 50:
+            confidence = 's'
+        return {'t': t, 's': s, 'confidence': confidence}
+
 
 def read_menu_file(sutra_list):
     '''读取tab分隔的菜单文件，返回树状字典'''

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-10-25 11:37:02
+# Last Modified: 2017-10-27 10:50:05
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -37,6 +37,7 @@ import pprint
 from libhan import hk2sa, read_menu_file, load_dict
 from libhan import get_all_juan
 from libhan import Search
+from libhan import TSDetect
 
 # 装入各种词典
 dd = load_dict()
@@ -168,12 +169,14 @@ def search():
     return {}
 
 ss = Search()
+ts = TSDetect()
 @post('/searchmulu')
 @view('temp/search.jinja2')
 def searchmulu():
     '''搜索标题'''
     content = request.forms.content
-    title = opencc.convert(content, config='s2t.json')
+    if ts.detect(content)['confidence'] == 's':
+        title = opencc.convert(content, config='s2t.json')
     results = []
     for idx in ss.search(title):
         title = idx
