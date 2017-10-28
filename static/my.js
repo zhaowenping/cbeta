@@ -3,6 +3,9 @@
 
 /*bootstrap popver*/
 $(function (){$("[data-toggle='popover']").popover({html:true});});
+// $(function (){
+// $("[data-toggle='popover']").webuiPopover();
+// });
 
 /*查找单字的拼音和英文解释*/
 function lookup(word){
@@ -52,10 +55,14 @@ function lookup(word){
                    //word.innerHTML ="<a> 成功了</a>";
                    //  location.replace(data.location);
                     repaceSelectionText(word,
-'<span data-toggle="popover" title="拼音/释义" data-placement="auto" data-container="body" data-trigger="hover focus" data-content="[' + data.pinyin + ']'+data.definition+'">' +
+'<span data-toggle="uipopover" data-title="拼音/释义" data-placement="auto" data-container="body" data-trigger="hover" data-content="[' + data.pinyin + ']'+data.definition+'">' +
 word.toString() +
 '</span>');
-$(function (){$("[data-toggle='popover']").popover({html:true});});
+$(function (){
+     $("[data-toggle='uipopover']").popover({html:true});
+     // $("[data-toggle='uipopover']").webuiPopover();
+     //WebuiPopovers.show("[data-toggle='uipopover']", {"width": "50%", "height": "auto", "delay":{"show":0, "hide":0}});
+});
                    }
 
 // <a href="#" type="button" title="&lt;h2&gt;Title&lt;/h2&gt;" data-container="body" data-toggle="popover" data-content="h4Popover 中的一些内容options 方法/h4">Popover</a>
@@ -122,4 +129,14 @@ $(document).ready(function () {
                });
               });
 
-
+// 智能导航: 自动保存书签. http://www.jb51.net/article/113085.htm
+window.onscroll = function(){ 
+    var t = document.documentElement.scrollTop || document.body.scrollTop;  
+    console.log(t);
+    // var top_div = document.getElementById( "top_div" ); 
+    // if( t >= 300 ) { 
+    //     top_div.style.display = "inline"; 
+    // } else { 
+    //     top_div.style.display = "none"; 
+    // } 
+} 
