@@ -661,8 +661,9 @@ p {
     text-indent: 2em;
     text-align: justify;
     white-space: normal; /* 单词间空白,对中文无效 */
-    font-family: quote, Inconsolata, "Hiragino Sans GB", "PingFang SC", "PMingLiU";
-    /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", SimSun, "宋体", "Microsoft YaHei", "微软雅黑", "PMingLiU";*/
+    font-family: quote, "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", "PMingLiU";
+    /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", SimSun, "宋体", "Microsoft YaHei", "微软雅黑", "PMingLiU", 
+     * "Source Han Serif TC";*/
     font-size: normal;
     font-weight: normal;
     letter-spacing: 0.12em; /* 字母间空白0.12em */

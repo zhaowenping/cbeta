@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-10-27 10:50:05
+# Last Modified: 2017-10-27 19:59:48
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -174,9 +174,9 @@ ts = TSDetect()
 @view('temp/search.jinja2')
 def searchmulu():
     '''搜索标题'''
-    content = request.forms.content
-    if ts.detect(content)['confidence'] == 's':
-        title = opencc.convert(content, config='s2t.json')
+    title = request.forms.content
+    if ts.detect(title)['confidence'] == 's':
+        title = opencc.convert(title, config='s2t.json')
     results = []
     for idx in ss.search(title):
         title = idx
