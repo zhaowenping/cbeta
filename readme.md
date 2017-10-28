@@ -101,6 +101,7 @@
 10.  .lst文件 tab分割的目录文件
 11. temp目录, 页面的jinja2模板文件
 12. fo目录, 使用fop程序生成pdf的程序，使用的时候需要修改fop.xconf文件中的directory标签，指向字库文件目录(fop2.1)
+13. cb-Siddam.woff 原cbeta的悉檀字庫，因爲不標準所以轉換而成
 
 ## 字库
 
