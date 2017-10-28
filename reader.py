@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-10-27 19:59:48
+# Last Modified: 2017-10-28 10:24:52
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -418,7 +418,8 @@ def g_get():
         uni = i[4]
         pua = i[5]
         tag = i[6]
-        result.append((name, nor, val, des, uni, pua, tag))
+        info = i[8]
+        result.append((name, nor, val, des, uni, pua, tag, info))
 
     conn.commit()
     cur.close()
