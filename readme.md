@@ -87,6 +87,7 @@
 2. 在阅读中查询某字或者某词，使用鼠标选中希望查询的字词，然后把鼠标悬浮到被选择的字词上，如果在字典中存在被查询的字词，就会自动悬浮显示
 3. 单独使用字典词典，例如查询'仁'字, 可以在浏览器中输入 http://localhost:8081/dict/仁
 4. 查詢指定字典词典，例如在丁福保詞典中查询'佛陀'一詞, 可以在浏览器中输入 http://localhost:8081/dict/dfb/佛陀 , 目前可以查詢的有fk,kangxi,ccc,fxcd,dfb
+5. 支持dict协议(rfc2229), 使用 $ apt install dict 安装dict客户端。使用$ dict 佛陀 -h kepan.org 即可查询字典
 
 ## 文件列表
 1. static/tei.xsl 主体程序
@@ -102,6 +103,8 @@
 11. temp目录, 页面的jinja2模板文件
 12. fo目录, 使用fop程序生成pdf的程序，使用的时候需要修改fop.xconf文件中的directory标签，指向字库文件目录(fop2.1)
 13. cb-Siddam.woff 原cbeta的悉檀字庫，因爲不標準所以轉換而成
+14. dictd.py 文件: 支持[dict协议](https://tools.ietf.org/html/rfc2229) 的字典查询服务器程序
+
 
 ## 字库
 
