@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="revised" content="">
+  <title>Title</title>
+  <link rel="stylesheet" href="">
+  <script>
+  //<![CDATA[
+  //]]>
+  </script>
+  <style>
+  <!--
+  -->
+  </style>
+</head>
+<body>
+<br />
+
+
+<!--form action="/gaiji" method="post">
+名字: <input type="text" name="name">
+通用字: <input type="text" name="norm">
+原字: <input type="text" name="val">
+<input type="submit" value="提交">
+</form-->
+
+<table>
+<tr>
+<td>Cell A</td>
+<td>Cell B</td>
+</tr>
+</table>
+
+<table>
+<tr><td>教育部编号</td><td>正字</td><td>原字</td>></tr>
+{% for no, rzi, ozi in result %}
+<tr> <td>{{no}}</td>
+{% if "image" in rzi %}
+<td><img src="{{rzi}}"></td>
+{% else %}
+<td>{{rzi}}</td>
+{% endif %}
+
+<td>
+{% for zi in ozi %}
+{% if "image" in zi %}
+<img src="{{zi}}">
+{% else %}
+{{zi}}
+{% endif %}
+{% endfor %}
+</td>
+</tr>
+{% endfor %}
+</table>
+  <!--script src="jquery.js"></script-->
+  <!--script src="http://code.jquery.com/jquery-1.4.2.min.js"></script-->
+</body>
+</html>
+
+
