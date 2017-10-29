@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-10-28 10:24:52
+# Last Modified: 2017-10-29 11:42:18
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -545,6 +545,22 @@ def download_pdf():
     resp.headers["Content-Disposition"] = ("attachment; filename='{0}'; filename*=UTF-8''{0}".format('test.pdf'))
     resp.headers['Content-Type'] = 'application/pdf'
     return resp
+
+# 异体字检索
+@get('/yitizi/:qu')
+@view('temp/yitizi.jinja2')
+def yitizi_get(qu):
+    with gzip.open(f'dict/yitizi{qu}.json.gz') as fd:
+        yitizi = json.load(fd)
+    result = []
+    for no in yitizi:
+        rzi = yitizi[no][0]
+        #if len(yitizi[no]) > 1:
+        ozi = yitizi[no][1:]
+        #else:
+        #    ozi = []
+        result.append((no, rzi, ozi))
+    return {'result': result}
 
 # GeventServer.run(host = '0.0.0.0', port = 8081)
 app = default_app()
