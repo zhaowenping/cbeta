@@ -8,10 +8,9 @@
 
     <!--当前经集的名字, 形如: T20n1167 -->
     <xsl:variable name="current_sutra" select="/TEI[1]/@xml:id"/>
-    <xsl:variable name="current_han" select="substring(substring-before($current_sutra, 'n'), 2)"/>  <!--XXX-->
-    <xsl:variable name="current_ce" select="substring-after($current_sutra, 'n')"/>
+    <xsl:variable name="current_han" select="substring(substring-before($current_sutra, 'n'), 2)"/>  <!--XXX T20-->
+    <xsl:variable name="current_ce" select="substring-after($current_sutra, 'n')"/> <!---1167-->
     <xsl:variable name="title" select="substring-after(substring-after(/TEI/teiHeader/fileDesc/titleStmt/title, 'No. '), ' ')"/>
-
     <!--当前文件的卷数, 形如: 001; 目前只能靠猜了-->
     <!--xsl:variable name="juan" select="/TEI[1]/text/body//cb:juan[1]/@n|/TEI/text/body//milestone[@unit='juan']/@n|/TEI/text/body//cb:mulu[@type='卷']/@n"/-->
     <xsl:variable name="juan" select="/TEI/text/body//milestone[@unit='juan']/@n"/>
@@ -92,13 +91,14 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
-        <link rel="stylesheet" type="text/css" href="/static/tei.css"/>
+        <link rel="stylesheet" href="/static/jquery.webui-popover.min.css"/>
+        <link rel="stylesheet" href="/static/tei.css"/>
         <title>
             <xsl:value-of select="concat($current_sutra, ' ', $title)"/>
         </title>
-
         <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
         <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="/static/jquery.webui-popover.min.js"></script>
         <!--[if lt IE9]> 
         <script src="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
         <![endif]-->
@@ -108,11 +108,12 @@
 
         <!--firefox浏览器特有的菜单-->
         <body class="contenttext" contextmenu="supermenu">
-        <a href="#">&#128266;</a>
+        <!--a href="#">&#128266;</a>
+        <a href="https://www.sejda.com/html-to-pdf?save-link" target="_blank">Save to PDF</a-->
 
         <menu id="supermenu" type="context">
             <menuitem label="报告错误" onclick="alert('step1')"/>
-            <menuitem label="菜单测试1" onclick="imageRotation('rotate-90')" icon="img/arrow-return-090.png"/>
+            <menuitem label="保存书签" onclick="imageRotation('rotate-90')" icon="img/arrow-return-090.png"/>
             <menuitem label="菜单测试2" icon="img/arrow-return-180.png"/>
             <menuitem label="菜单测试3" icon="img/arrow-stop-180.png"/>
             <menuitem label="菜单测试4" icon="img/arrow-stop-270.png"/>
@@ -271,13 +272,13 @@
     <!--处理所有的颂-->
     <!-- rend="margin-left:1em;text-indent:-1em" -->
     <xsl:template match="lg">
-        <p class="lg">
+        <div class="lg">
             <xsl:if test="@xml:id">
                 <xsl:attribute name="id">
                     <xsl:value-of select="@xml:id"/>
                 </xsl:attribute>
             </xsl:if>
-            <xsl:choose>
+            <!--xsl:choose>
                 <xsl:when test="@rend">
                     <xsl:attribute name="style">
                     <xsl:value-of select="concat('text-indent:', substring-before(substring-after(@rend,'text-indent:'), 'em'), 'em;')"/>
@@ -285,9 +286,9 @@
                 </xsl:when>
                 <xsl:otherwise>
                 </xsl:otherwise>
-            </xsl:choose>
+            </xsl:choose-->
             <xsl:apply-templates/>
-        </p>
+        </div>
     </xsl:template>
 
     <!--偈中重复的换行只显示一个换行-->
@@ -306,8 +307,8 @@
     </xsl:template>
 
     <xsl:template match="lg/l">
-       <span>
-         <xsl:attribute name="class">
+       <span class="l">
+         <!--xsl:attribute name="class">
            <xsl:choose>
              <xsl:when test="@rend='Alignr'">
                <xsl:text>right</xsl:text>
@@ -315,9 +316,13 @@
              <xsl:when test="@rend='Alignc'">
                <xsl:text>center</xsl:text>
              </xsl:when>
+             <xsl:when test="starts-with(@rend,'text-indent:')">
+               <xsl:text>indent</xsl:text>
+               <xsl:value-of select="substring-before(substring-after(@rend,':'),'em')" />
+             </xsl:when>
              <xsl:when test="starts-with(@rend,'indent(')">
                <xsl:text>indent</xsl:text>
-               <xsl:value-of select="concat(substring-before(substring-after(@rend,'('),')'),'em')" />
+               <xsl:value-of select="substring-before(substring-after(@rend,'('),')')" />
              </xsl:when>
              <xsl:when test="@rend='indent'">
                <xsl:text>indent1</xsl:text>
@@ -326,9 +331,10 @@
                <xsl:text>l</xsl:text>
              </xsl:otherwise>
            </xsl:choose>
-         </xsl:attribute>
+         </xsl:attribute-->
          <xsl:apply-templates/>
-         <xsl:text>&#12288;</xsl:text><!--IDEOGRAPHIC SPACE-->
+         <!--xsl:text>&#12288;</xsl:text--><!--IDEOGRAPHIC SPACE-->
+         <!--xsl:text>&#9;</xsl:text--><!--IDEOGRAPHIC SPACE-->
      </span>
     </xsl:template>
 
@@ -369,7 +375,8 @@
 
     <xsl:template match="p[contains(@cb:type, 'head')]">
         <xsl:variable name="hunit" select="concat('h', substring(@cb:type, 5)+1)"/>
-        <xsl:element name="{$hunit}" use-attribute-sets="class id">
+        <!--xsl:element name="{$hunit}" use-attribute-sets="class id" ie!!-->
+        <xsl:element name="{$hunit}">
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
@@ -472,31 +479,44 @@
     </xsl:template-->
 
     <xsl:template match="cb:tt">
-        <xsl:variable name="header" select="."/>
+        <xsl:apply-templates select="cb:t[@xml:lang!='zh']"/>
+        <xsl:apply-templates select="cb:t[@xml:lang='zh']"/>
+    </xsl:template>
+
+    <!--xsl:template match="cb:tt">
+        <xsl:variable name="header" select="generate-id(.)"/>
         <xsl:variable name="prev_node" select="preceding-sibling::*[1]"/>
         <xsl:variable name="next_node" select="following-sibling::*[1]"/>
         <xsl:if test="local-name($prev_node)!='tt'">
             <xsl:apply-templates select="cb:t[@xml:lang!='zh']"/>
-            <xsl:if test="local-name($next_node)='tt'">
-                <xsl:for-each select="following-sibling::cb:tt"> 
-                    <xsl:if test="count(following-sibling::*)=count(following-sibling::cb:tt)">
+            <xsl:for-each select="following-sibling::cb:tt"> 
                     <xsl:apply-templates select="cb:t[@xml:lang!='zh']"/>
-                    </xsl:if>
+                <xsl:if test="generate-id(preceding-sibling::cb:tt[1])=$header"> 
+                </xsl:if>
+                </xsl:for-each-->
+
+            <!--xsl:apply-templates select="cb:t[@xml:lang!='zh']"/>
+            <xsl:if test="local-name($next_node)='tt'">
+                <xsl:for-each select="following-sibling::cb:tt[generate-id(preceding-sibling::*[1])=$header]"> 
+                    <xsl:apply-templates select="cb:t[@xml:lang!='zh']"/>
+                </xsl:for-each-->
+                    <!--xsl:if test="count(following-sibling::*)=count(following-sibling::cb:tt)">
+                    </xsl:if-->
                     <!--xsl:value-of select="generate-id(current())=generate-id(preceding-sibling::*[1])"/-->
                     <!--xsl:value-of select="local-name(preceding-sibling::*[1])"/-->
-                </xsl:for-each>
                 <!--xsl:call-template name="tt" select="$next_node">
                     <xsl:with-param name="nn" select="$next_node"/>
                 </xsl:call-template-->
-            </xsl:if>
+            <!--/xsl:if-->
             <!--xsl:value-of select="local-name(following-sibling::*[1])"/>
             <xsl:value-of select="local-name(preceding-sibling::*[1])"/>
             <xsl:call-template name="tt" select="preceding-sibling::*[1]">
                 <xsl:with-param name="ntext" select="cb:t[@xml:lang!='zh']"/>
             </xsl:call-template-->
-        </xsl:if>
+        <!--/xsl:if>
         <xsl:apply-templates select="cb:t[@xml:lang='zh']"/>
-    </xsl:template>
+    </xsl:template-->
+
     <!--sa,sa-x-rj,sa-Sidd多语言对照 -->
     <xsl:template match="cb:t">
         <xsl:if test="@xml:lang='zh'">
@@ -585,22 +605,24 @@
         <!--組字式-->
         <xsl:when test="starts-with($Ref, 'CB')">
         <span class="gaiji_cb">
+            <!--abbr title="xxxxx"-->
             <xsl:variable name="nor" select="$char/charProp[localName='normalized form']/value"/>
             <xsl:choose>
             <xsl:when test="$nor">
                 <xsl:value-of select="$nor"/>
             </xsl:when>
-            <xsl:when test="$char/mapping[@type='unicode']">
-                <xsl:value-of select="."/>
-            </xsl:when>
             <!--使用xml实体输出显示，不能用于搜索, 形如: &#x25F9D;-->
             <xsl:when test="$char/mapping[@type='normal_unicode']">
                 <xsl:value-of disable-output-escaping='yes' select="concat('&amp;#x', substring($char/mapping[@type='normal_unicode'], 3), ';')"/>
+            </xsl:when>
+            <xsl:when test="$char/mapping[@type='unicode']">
+                <xsl:value-of select="."/>
             </xsl:when>
             <xsl:when test="$char/charProp[localName='composition']/value">
                 <xsl:value-of select="$char/charProp[localName='composition']/value"/>
             </xsl:when>
             </xsl:choose>
+            <!--/abbr-->
         </span> 
         </xsl:when>
       </xsl:choose>
@@ -717,6 +739,7 @@
         </xsl:if>
         <sup>
         <a data-toggle="popover" data-placement="auto" data-container="body" data-trigger="hover focus">
+        <!--a data-toggle="popover" data-placement="auto" data-trigger="hover"-->
         <xsl:if test="@xml:id">
             <xsl:attribute name="id">
                 <xsl:value-of select="@xml:id"/>
@@ -725,7 +748,7 @@
         <xsl:choose>
             <xsl:when test="@type='cb-app' and key('app_from', $Ref)">
             <!--xsl:when test="key('app_from', $Ref)"-->
-                <xsl:attribute name="title">
+                <xsl:attribute name="data-title">
                     <xsl:text>CBETA修訂註解</xsl:text>
                 </xsl:attribute>
                 <xsl:attribute name="data-content">
@@ -734,7 +757,7 @@
                 <xsl:value-of select="concat('[c', substring(@xml:id, 5), ']')"/>
             </xsl:when>
             <xsl:when test="@type='cb-app' and key('choice_from', $Ref)/sic">
-                <xsl:attribute name="title">
+                <xsl:attribute name="data-title">
                     <xsl:text>勘誤</xsl:text>
                 </xsl:attribute>
                 <xsl:attribute name="data-content">
@@ -744,7 +767,7 @@
                 <xsl:value-of select="concat('[c', substring(@xml:id, 5), ']')"/>
             </xsl:when>
             <xsl:when test="@type='cb-app' and key('choice_from', $Ref)/reg">
-                <xsl:attribute name="title">
+                <xsl:attribute name="data-title">
                     <xsl:apply-templates select="key('choice_from', $Ref)/reg/@type"/>  <!--通用詞-->
                 </xsl:attribute>
                 <xsl:attribute name="data-content">
@@ -753,7 +776,7 @@
                 <xsl:value-of select="concat('[c', substring(@xml:id, 5), ']')"/>
             </xsl:when>
             <xsl:when test="@type='star' and key('app_from', $Ref)">
-                <xsl:attribute name="title">
+                <xsl:attribute name="data-title">
                     <xsl:text>註解</xsl:text>
                 </xsl:attribute>
                 <xsl:attribute name="data-content">
@@ -764,7 +787,7 @@
                 <xsl:text>[*]</xsl:text>
             </xsl:when>
             <xsl:when test="key('note_target', $Ref)">
-                <xsl:attribute name="title">
+                <xsl:attribute name="data-title">
                     <xsl:text>註釋</xsl:text>
                 </xsl:attribute>
                 <xsl:attribute name="data-content">
@@ -849,13 +872,13 @@
 
     <!--公式强调角标-->
     <xsl:template match="hi">
-        <span>
-        <xsl:if test="@rend">
-        <xsl:attribute name="style">
-            <xsl:value-of select="@rend"/>
-        </xsl:attribute>
-        </xsl:if>
-        <xsl:apply-templates/>
+        <span class="formula">
+            <xsl:if test="@rend">
+                <xsl:attribute name="style">
+                    <xsl:value-of select="@rend"/>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:apply-templates/>
         </span>
     </xsl:template>
 
