@@ -113,7 +113,7 @@
 
         <menu id="supermenu" type="context">
             <menuitem label="报告错误" onclick="alert('step1')"/>
-            <menuitem label="菜单测试1" onclick="imageRotation('rotate-90')" icon="img/arrow-return-090.png"/>
+            <menuitem label="保存书签" onclick="imageRotation('rotate-90')" icon="img/arrow-return-090.png"/>
             <menuitem label="菜单测试2" icon="img/arrow-return-180.png"/>
             <menuitem label="菜单测试3" icon="img/arrow-stop-180.png"/>
             <menuitem label="菜单测试4" icon="img/arrow-stop-270.png"/>
@@ -605,22 +605,25 @@
         <!--組字式-->
         <xsl:when test="starts-with($Ref, 'CB')">
         <span class="gaiji_cb">
+            <!--abbr title="xxxxx"-->
             <xsl:variable name="nor" select="$char/charProp[localName='normalized form']/value"/>
             <xsl:choose>
             <xsl:when test="$nor">
                 <xsl:value-of select="$nor"/>
             </xsl:when>
-            <xsl:when test="$char/mapping[@type='unicode']">
-                <xsl:value-of select="."/>
-            </xsl:when>
             <!--使用xml实体输出显示，不能用于搜索, 形如: &#x25F9D;-->
             <xsl:when test="$char/mapping[@type='normal_unicode']">
                 <xsl:value-of disable-output-escaping='yes' select="concat('&amp;#x', substring($char/mapping[@type='normal_unicode'], 3), ';')"/>
+            </xsl:when>
+            <xsl:when test="$char/mapping[@type='unicode']">
+                <xsl:value-of disable-output-escaping='yes' select="concat('&amp;#x', substring($char/mapping[@type='unicode'], 3), ';')"/>
+                <!--xsl:value-of select="."/ 部分字不符和这个规律-->
             </xsl:when>
             <xsl:when test="$char/charProp[localName='composition']/value">
                 <xsl:value-of select="$char/charProp[localName='composition']/value"/>
             </xsl:when>
             </xsl:choose>
+            <!--/abbr-->
         </span> 
         </xsl:when>
       </xsl:choose>

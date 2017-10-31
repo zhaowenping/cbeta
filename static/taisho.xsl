@@ -616,7 +616,8 @@
                 <xsl:value-of disable-output-escaping='yes' select="concat('&amp;#x', substring($char/mapping[@type='normal_unicode'], 3), ';')"/>
             </xsl:when>
             <xsl:when test="$char/mapping[@type='unicode']">
-                <xsl:value-of select="."/>
+                <xsl:value-of disable-output-escaping='yes' select="concat('&amp;#x', substring($char/mapping[@type='unicode'], 3), ';')"/>
+                <!--xsl:value-of select="."/ 部分字不符和这个规律-->
             </xsl:when>
             <xsl:when test="$char/charProp[localName='composition']/value">
                 <xsl:value-of select="$char/charProp[localName='composition']/value"/>
