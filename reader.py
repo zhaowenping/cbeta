@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-11-01 19:00:27
+# Last Modified: 2017-11-01 19:18:06
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -570,6 +570,8 @@ def diff_get():
 
 import difflib
 from difflib import *
+import chardet
+# chardet.detect(r.content)['encoding']
 @post('/diff')
 @view('temp/diff.jinja2')
 def diff_post():
@@ -591,20 +593,20 @@ def diff_post():
     d = Differ()
     with open('lfile.tmp') as fd:
         lfile = fd.read()
-        lfiles = [line.strip() for line in lfile.splitlines()]
+        # lfiles = [line.strip() for line in lfile.splitlines()]
 
     with open('rfile.tmp') as fd:
         rfile = fd.read()
-        rfiles = [line.strip() for line in rfile.splitlines()]
+        # rfiles = [line.strip() for line in rfile.splitlines()]
 
-    result = list(d.compare(lfiles, rfiles))
-    # result = [line for line in result if not line.startswith(' ')]
-    # lfile = [line for line in result if not line.startswith(' ')]
+    # result = list(d.compare(lfiles, rfiles))
+    result = list(d.compare(lfile, rfile))
 
     lfile = []
     rfile = []
     for line in result:
         if line.startswith(' '):
+            line = line[2:]
             lfile.append(f'<span class="orig">{line}</span>')
             rfile.append(f'<span class="orig">{line}</span>')
         elif line.startswith('- '):
@@ -615,8 +617,8 @@ def diff_post():
             rfile.append(f'<span class="red">{line}</span>')
         elif line.startswith('?'):
             continue
-    lfile = '\n'.join(lfile)
-    rfile = '\n'.join(rfile)
+    lfile = ''.join(lfile)
+    rfile = ''.join(rfile)
 
     return {'lfile': lfile, 'rfile': rfile}
 
