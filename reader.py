@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-10-29 11:42:18
+# Last Modified: 2017-11-01 13:28:54
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -18,6 +18,7 @@ import os
 import gzip
 import json
 import time
+import datetime
 
 from bottle import get, post, response
 from bottle import route, run, static_file, default_app
@@ -388,7 +389,7 @@ def dict_get(word):
 
     # else:
     with open('yoga.dict', 'a+') as fd:
-        fd.write(word + '\n')
+        fd.write(datetime.datetime.now().strftime("%Y%m%dT%T ") + word + '\n')
 
     print({'word': word, 'pinyin': pinyin, 'definition': definition, 'from': _from})
     return json.dumps({'word': word, 'pinyin': pinyin, 'definition': definition, 'from': _from}, ensure_ascii=False, indent =4)
@@ -561,6 +562,44 @@ def yitizi_get(qu):
         #    ozi = []
         result.append((no, rzi, ozi))
     return {'result': result}
+
+@get('/diff')
+@view('temp/diff.jinja2')
+def diff_get():
+    return {}
+
+@post('/diff')
+@view('temp/diff.jinja2')
+def diff_post():
+    lfile = request.files.lfile
+    rfile = request.files.rfile
+    lfile.save('lfile.tmp', overwrite=True)
+    rfile.save('rfile.tmp', overwrite=True)
+    from subprocess import Popen, PIPE
+    p2 = Popen(["diff", "lfile.tmp", "rfile.tmp"], stdin=PIPE, stdout=PIPE)
+    output = p2.communicate()[0]
+    output = output.decode('utf8')
+
+    ll = output.splitlines()[1::4]
+    rr = output.splitlines()[3::4]
+    lfile = open('lfile.tmp').read()
+    rfile = open('rfile.tmp').read()
+    for line in ll:
+        line = line.strip('< ')
+        if not line: continue
+        lpart, rpart = lfile.split(line)
+        lfile = f'<span class="orig">{lpart}</span><span class="red">{line}</span><span class="orig">{rpart}</span>'
+        # lfile = lfile.replace(line, '<span class="red">'+line+'<span>')
+    for line in rr:
+        line = line.strip('> ')
+        if not line: continue
+        lpart, rpart = rfile.split(line)
+        rfile = f'<span class="orig">{lpart}</span><span class="red">{line}</span><span class="orig">{rpart}</span>'
+        #rfile = rfile.replace(line, "<span class='red'>"+line+'<span>')
+
+
+    print(lfile)
+    return {'lfile': lfile, 'rfile': rfile}
 
 # GeventServer.run(host = '0.0.0.0', port = 8081)
 app = default_app()
