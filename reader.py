@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-11-01 13:28:54
+# Last Modified: 2017-11-01 19:00:27
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -568,6 +568,8 @@ def yitizi_get(qu):
 def diff_get():
     return {}
 
+import difflib
+from difflib import *
 @post('/diff')
 @view('temp/diff.jinja2')
 def diff_post():
@@ -575,30 +577,47 @@ def diff_post():
     rfile = request.files.rfile
     lfile.save('lfile.tmp', overwrite=True)
     rfile.save('rfile.tmp', overwrite=True)
-    from subprocess import Popen, PIPE
-    p2 = Popen(["diff", "lfile.tmp", "rfile.tmp"], stdin=PIPE, stdout=PIPE)
-    output = p2.communicate()[0]
-    output = output.decode('utf8')
+    # from subprocess import Popen, PIPE
+    # p2 = Popen(["diff", "lfile.tmp", "rfile.tmp"], stdin=PIPE, stdout=PIPE)
+    # output = p2.communicate()[0]
+    # output = output.decode('utf8')
 
-    ll = output.splitlines()[1::4]
-    rr = output.splitlines()[3::4]
-    lfile = open('lfile.tmp').read()
-    rfile = open('rfile.tmp').read()
-    for line in ll:
-        line = line.strip('< ')
-        if not line: continue
-        lpart, rpart = lfile.split(line)
-        lfile = f'<span class="orig">{lpart}</span><span class="red">{line}</span><span class="orig">{rpart}</span>'
-        # lfile = lfile.replace(line, '<span class="red">'+line+'<span>')
-    for line in rr:
-        line = line.strip('> ')
-        if not line: continue
-        lpart, rpart = rfile.split(line)
-        rfile = f'<span class="orig">{lpart}</span><span class="red">{line}</span><span class="orig">{rpart}</span>'
-        #rfile = rfile.replace(line, "<span class='red'>"+line+'<span>')
+    # ll = output.splitlines()[1::4]
+    # rr = output.splitlines()[3::4]
+    # lfile = open('lfile.tmp').read()
+    # rfile = open('rfile.tmp').read()
+    # print(''.join(list(difflib.Differ().compare(lfile, rfile))))
 
+    d = Differ()
+    with open('lfile.tmp') as fd:
+        lfile = fd.read()
+        lfiles = [line.strip() for line in lfile.splitlines()]
 
-    print(lfile)
+    with open('rfile.tmp') as fd:
+        rfile = fd.read()
+        rfiles = [line.strip() for line in rfile.splitlines()]
+
+    result = list(d.compare(lfiles, rfiles))
+    # result = [line for line in result if not line.startswith(' ')]
+    # lfile = [line for line in result if not line.startswith(' ')]
+
+    lfile = []
+    rfile = []
+    for line in result:
+        if line.startswith(' '):
+            lfile.append(f'<span class="orig">{line}</span>')
+            rfile.append(f'<span class="orig">{line}</span>')
+        elif line.startswith('- '):
+            line = line[2:]
+            lfile.append(f'<span class="red">{line}</span>')
+        elif line.startswith('+ '):
+            line = line[2:]
+            rfile.append(f'<span class="red">{line}</span>')
+        elif line.startswith('?'):
+            continue
+    lfile = '\n'.join(lfile)
+    rfile = '\n'.join(rfile)
+
     return {'lfile': lfile, 'rfile': rfile}
 
 # GeventServer.run(host = '0.0.0.0', port = 8081)
