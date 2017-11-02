@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-11-01 19:18:06
+# Last Modified: 2017-11-02 09:12:49
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -571,10 +571,12 @@ def diff_get():
 import difflib
 from difflib import *
 import chardet
+import jieba
 # chardet.detect(r.content)['encoding']
 @post('/diff')
 @view('temp/diff.jinja2')
 def diff_post():
+    '''比较两个文件不同'''
     lfile = request.files.lfile
     rfile = request.files.rfile
     lfile.save('lfile.tmp', overwrite=True)
@@ -621,6 +623,81 @@ def diff_post():
     rfile = ''.join(rfile)
 
     return {'lfile': lfile, 'rfile': rfile}
+
+@get('/diff/word')
+@view('temp/diff.jinja2')
+def diff_word_get():
+    '''按照词比较两个文件不同'''
+    d = Differ()
+    with open('lfile.tmp') as fd:
+        lfile = fd.read()
+        lfile = list(jieba.cut(lfile))
+        # lfiles = [line.strip() for line in lfile.splitlines()]
+
+    with open('rfile.tmp') as fd:
+        rfile = fd.read()
+        rfile = list(jieba.cut(rfile))
+        # rfiles = [line.strip() for line in rfile.splitlines()]
+
+    # result = list(d.compare(lfiles, rfiles))
+    result = list(d.compare(lfile, rfile))
+
+    lfile = []
+    rfile = []
+    for line in result:
+        if line.startswith(' '):
+            line = line[2:]
+            lfile.append(f'<span class="orig">{line}</span>')
+            rfile.append(f'<span class="orig">{line}</span>')
+        elif line.startswith('- '):
+            line = line[2:]
+            lfile.append(f'<span class="red">{line}</span>')
+        elif line.startswith('+ '):
+            line = line[2:]
+            rfile.append(f'<span class="red">{line}</span>')
+        elif line.startswith('?'):
+            continue
+    lfile = ''.join(lfile)
+    rfile = ''.join(rfile)
+
+    return {'lfile': lfile, 'rfile': rfile}
+
+@get('/diff/line')
+@view('temp/diff.jinja2')
+def diff_line_get():
+    '''按照行比较两个文件不同'''
+    d = Differ()
+    with open('lfile.tmp') as fd:
+        lfile = fd.read()
+        lfiles = [line.strip() for line in lfile.splitlines()]
+
+    with open('rfile.tmp') as fd:
+        rfile = fd.read()
+        rfiles = [line.strip() for line in rfile.splitlines()]
+
+    result = list(d.compare(lfiles, rfiles))
+    # result = list(d.compare(lfile, rfile))
+
+    lfile = []
+    rfile = []
+    for line in result:
+        if line.startswith(' '):
+            line = line[2:]
+            lfile.append(f'<span class="orig">{line}</span>')
+            rfile.append(f'<span class="orig">{line}</span>')
+        elif line.startswith('- '):
+            line = line[2:]
+            lfile.append(f'<span class="red">{line}</span>')
+        elif line.startswith('+ '):
+            line = line[2:]
+            rfile.append(f'<span class="red">{line}</span>')
+        elif line.startswith('?'):
+            continue
+    lfile = ''.join(lfile)
+    rfile = ''.join(rfile)
+
+    return {'lfile': lfile, 'rfile': rfile}
+
 
 # GeventServer.run(host = '0.0.0.0', port = 8081)
 app = default_app()
