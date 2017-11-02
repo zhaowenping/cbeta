@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-11-02 10:13:00
+# Last Modified: 2017-11-02 13:08:01
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -147,6 +147,7 @@ def submenu(bulei):
 
     nav = [('/cebie', '总目录')]
     for b in bulei:
+        if b not in menu: abort(404)
         menu = menu[b]
         t = '/'.join((nav[-1][0], b))
         nav.append((t, b))
@@ -585,7 +586,7 @@ def diff_post():
     encoding = chardet.detect(lfile)['encoding']
     if encoding.startswith('GB'):
         encoding = 'GB18030'
-    lfile = lfile.decode(encoding)
+    lfile = lfile.decode(encoding, 'replace')
     with open('lfile.tmp', 'w') as fd:
         fd.write(lfile)
 
@@ -593,7 +594,7 @@ def diff_post():
     encoding = chardet.detect(rfile)['encoding']
     if encoding.startswith('GB'):
         encoding = 'GB18030'
-    rfile = rfile.decode(encoding)
+    rfile = rfile.decode(encoding, 'replace')
     with open('rfile.tmp', 'w') as fd:
         fd.write(rfile)
 

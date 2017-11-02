@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-10-25 19:00:37
+# Last Modified: 2017-11-02 13:03:47
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -118,6 +118,7 @@ def get_all_juan(sutra):
     juan = []
     for path in os.listdir('xml/{ye}'.format(**locals())):
         if path.startswith(sutra):
+            print(path)
             juan.append(path.split('_')[1][:-4])
             # juan.append(path)
     juan.sort()
@@ -209,25 +210,25 @@ def load_dict():
     # print('装入梵汉词典，用时%s' % (e - s))
 
     yat = dict()
-    s = time.time()
-    with gzip.open('dict/yat.json.gz') as fd:
-        data = fd.read()
-    data = json.loads(data)
-    for key in data:
-        yat.update({key.lower(): data[key]})
-    for key in data:
-        vals = data[key]
-        res = []
-        for val in vals:
-            x = mwpatten.findall(val)
-            if x:
-                for ff in x:
-                    v = val.replace(ff, hk2sa(ff))
-            res.append(v)
-        yat.update({hk2sa(key, 1): res})
-        yat.update({hk2sa(key, 2): res})
-    e = time.time()
-    print('装入Yates梵英词典，用时%s' % (e - s))
+    # s = time.time()
+    # with gzip.open('dict/yat.json.gz') as fd:
+    #     data = fd.read()
+    # data = json.loads(data)
+    # for key in data:
+    #     yat.update({key.lower(): data[key]})
+    # for key in data:
+    #     vals = data[key]
+    #     res = []
+    #     for val in vals:
+    #         x = mwpatten.findall(val)
+    #         if x:
+    #             for ff in x:
+    #                 v = val.replace(ff, hk2sa(ff))
+    #         res.append(v)
+    #     yat.update({hk2sa(key, 1): res})
+    #     yat.update({hk2sa(key, 2): res})
+    # e = time.time()
+    # print('装入Yates梵英词典，用时%s' % (e - s))
 
     s = time.time()
     with gzip.open('dict/kangxi.json.gz') as fd:
