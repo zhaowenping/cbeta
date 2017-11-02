@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-11-02 09:58:07
+# Last Modified: 2017-11-02 10:13:00
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -642,6 +642,7 @@ def diff_post():
 
     return {'lfile': lfile, 'rfile': rfile}
 
+jieba.load_userdict('dict/terms.txt')
 @get('/diff/word')
 @view('temp/diff.jinja2')
 def diff_word_get():
