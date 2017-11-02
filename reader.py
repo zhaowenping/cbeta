@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-11-02 09:12:49
+# Last Modified: 2017-11-02 09:58:07
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -579,8 +579,26 @@ def diff_post():
     '''比较两个文件不同'''
     lfile = request.files.lfile
     rfile = request.files.rfile
-    lfile.save('lfile.tmp', overwrite=True)
-    rfile.save('rfile.tmp', overwrite=True)
+
+    # 自动编码检测
+    lfile = lfile.file.read() #.decode('utf8')
+    encoding = chardet.detect(lfile)['encoding']
+    if encoding.startswith('GB'):
+        encoding = 'GB18030'
+    lfile = lfile.decode(encoding)
+    with open('lfile.tmp', 'w') as fd:
+        fd.write(lfile)
+
+    rfile = rfile.file.read() #.decode('utf8')
+    encoding = chardet.detect(rfile)['encoding']
+    if encoding.startswith('GB'):
+        encoding = 'GB18030'
+    rfile = rfile.decode(encoding)
+    with open('rfile.tmp', 'w') as fd:
+        fd.write(rfile)
+
+    # lfile.save('lfile.tmp', overwrite=True)
+    # rfile.save('rfile.tmp', overwrite=True)
     # from subprocess import Popen, PIPE
     # p2 = Popen(["diff", "lfile.tmp", "rfile.tmp"], stdin=PIPE, stdout=PIPE)
     # output = p2.communicate()[0]
