@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-11-02 13:08:01
+# Last Modified: 2017-11-03 09:43:14
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -564,6 +564,8 @@ def yitizi_get(qu):
         result.append((no, rzi, ozi))
     return {'result': result}
 
+punct = re.compile(r"([\u3000-\u303f])")
+
 @get('/diff')
 @view('temp/diff.jinja2')
 def diff_get():
@@ -587,6 +589,8 @@ def diff_post():
     if encoding.startswith('GB'):
         encoding = 'GB18030'
     lfile = lfile.decode(encoding, 'replace')
+    if request.forms.punct == 'true':
+        lfile = punct.sub(' ', lfile)
     with open('lfile.tmp', 'w') as fd:
         fd.write(lfile)
 
@@ -595,8 +599,11 @@ def diff_post():
     if encoding.startswith('GB'):
         encoding = 'GB18030'
     rfile = rfile.decode(encoding, 'replace')
+    if request.forms.punct == 'true':
+        rfile = punct.sub(' ', rfile)
     with open('rfile.tmp', 'w') as fd:
         fd.write(rfile)
+
 
     # lfile.save('lfile.tmp', overwrite=True)
     # rfile.save('rfile.tmp', overwrite=True)

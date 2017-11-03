@@ -40,9 +40,9 @@
     <option value="volvo" selected="selected">简体繁体智能模式(自动判断简体繁体然后全部转换成繁体比较)</option>
     <option value="saab">原样模式(不对上传文字简体繁体做判断)</option>
   </select>
-  <select>
-    <option value="volvo" selected="selected">不比较标点符号(忽略标点符号的差异)</option>
-    <option value="saab">比较标点符号</option>
+  <select name="punct">
+    <option value="true" selected="selected">不比较标点符号(过滤标点符号)</option>
+    <option value="false">比较标点符号</option>
   </select>
   <input type="submit" value="上传">
 </form>
