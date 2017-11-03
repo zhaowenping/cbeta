@@ -1,40 +1,35 @@
+@charset "UTF-8";
+
 /* 
-** Copyright 2015 TEI Consortium
-
-This software is dual-licensed:
-
-1. Distributed under a Creative Commons Attribution-ShareAlike 3.0
-Unported License http://creativecommons.org/licenses/by-sa/3.0/ 
-
-2. http://www.opensource.org/licenses/BSD-2-Clause
-		
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are
-met:
-
-* Redistributions of source code must retain the above copyright
-notice, this list of conditions and the following disclaimer.
-
-* Redistributions in binary form must reproduce the above copyright
-notice, this list of conditions and the following disclaimer in the
-documentation and/or other materials provided with the distribution.
-
-This software is provided by the copyright holders and contributors
-"as is" and any express or implied warranties, including, but not
-limited to, the implied warranties of merchantability and fitness for
-a particular purpose are disclaimed. In no event shall the copyright
-holder or contributors be liable for any direct, indirect, incidental,
-special, exemplary, or consequential damages (including, but not
-limited to, procurement of substitute goods or services; loss of use,
-data, or profits; or business interruption) however caused and on any
-theory of liability, whether in contract, strict liability, or tort
-(including negligence or otherwise) arising in any way out of the use
-of this software, even if advised of the possibility of such damage.
 
 */
 
+
+@font-face {
+    font-family:"HeitiTC";
+    src:local("Hiragino Sans GB"),
+        local("Lantinghei TC Extralight"),
+        local("Lantinghei SC Extralight"),
+        local(FZLTXHB--B51-0),
+        local(FZLTZHK--GBK1-0),
+        local(".PingFang SC Light"),
+        local(".PingFang TC Light"),
+        local(".PingFang-SC-Light"),
+        local(".PingFang-TC-Light"),
+        local(".PingFang SC"),
+        local(".PingFang TC"),
+        local("Heiti SC Light"),
+        local(STHeitiSC-Light),
+        local("Heiti SC"),
+        local("Heiti TC Light"),
+        local(STHeitiTC-Light),local("Heiti TC"),
+        local("Microsoft Yahei"),
+        local("Microsoft Jhenghei"),
+        local("Noto Sans CJK KR"),local("Noto Sans CJK JP"),local("Noto Sans CJK SC"), local("Noto Sans CJK TC"),
+        local("Source Han Sans K"), local("Source Han Sans KR"),
+        local("Source Han Sans JP"),local("Source Han Sans CN"),local("Source Han Sans HK"),local("Source Han Sans TW"), local("Source Han Sans TWHK"),
+        local("Droid Sans Fallback");
+}
 
 /* 悉昙体字体 */
 @font-face {
@@ -89,153 +84,40 @@ of this software, even if advised of the possibility of such damage.
 }
 */
 
+html {
+    font-family: sans-serif;
+    margin:10pt;
+}
+
 body{
+    line-height: 1.3;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /*-webkit-font-smoothing: antialiased;*/
     color:#000000;
     background-color: #E7F4FE;
-    margin:10pt;
     padding:2em;
     padding-top:100px;
     /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;*/
-    font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", "PingFang SC", "PMingLiU", siddham;
+    font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", "PingFang SC", "PMingLiU", "Microsoft YaHei", siddham;
     // font-size: large;
     /* font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;*/
 }
 
 pre {
     clear:both;
-    background-color: #E7F4FE;
     white-space: pre;
+    word-wrap: normal;
+    background-color: #E7F4FE;
     border:dashed 0px blue;
     text-indent: 0;
     padding 0 0 0 0:
-    font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", "PingFang SC", "PMingLiU", siddham;
-    font-size: large;
+    /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", "PingFang SC", "PMingLiU", siddham;*/
+    /*font-size: large;*/
 }
 
-body.pagetable{
-    color:#000000;
-    background-color:#FFFFFF;
-}
-
-/* 3 columns allowed for, or just a right and left */
-#col1{
-    width:20%;
-    background:#FFFFFF;
-    margin:0;
-    margin-top:10px;
-    color:#000066;
-    padding:5px;
-    position:absolute;
-    float:left;
-    border-style:solid;
-    border-width:1px;
-    border-color:red;
-}
-
-#col2{
-    background:#FFFFFF;
-    color:#333333;
-    border-style:solid;
-    border-width:1px;
-    border-color:#000000;
-    margin:0;
-    margin-top:10px;
-    padding:5px;
-    left:22%;
-    width:51%;
-    position:absolute;
-}
-
-#col3{
-    width:24%;
-    left:75%;
-    color:#000066;
-    background:#FFFFFF;
-    border-style:solid;
-    border-width:1px;
-    border-color:red;
-    margin:0;
-    margin-top:10px;
-    padding:5px;
-    position:absolute;
-    float:right;
-}
-
-#lh-col{
-    width:16%;
-    color:#000000;
-    margin-top:2pt;
-    margin-right:10pt;
-    padding:5px;
-    background-color:#FFFFFF;
-    float:left;
-    font-weight:normal;
-}
-
-#rh-col{
-    background-color:#FFFFFF;
-    color:#333333;
-    margin:2pt;
-    padding:5px;
-    float:right;
-    width:75%;
-    font-weight:normal;
-}
-
-/* now the layers of the header */
-
-/* the main title */
-div.stdheader{
-    border-bottom:1pt solid black;
-}
-
-#hdr{
-    width:auto;
-    margin:0;
-    background-repeat:no-repeat;
-    overflow:inherit;
-}
-
-/* a navigation bar */
-#hdr2{
-    width:auto;
-    color:#000000;
-    font-family:Arial, Helvetica, sans-serif;
-    font-weight:bold;
-    background-color:#99CCFF;
-    padding-left:5px;
-    padding-bottom:2px;
-    padding-top:2px;
-    padding-right:5px;
-}
-
-/* a breadcrumb trail */
-#hdr3{
-    width:auto;
-    color:#000000;
-    background-color:#AD06BC;
-    padding-left:5px;
-    padding-bottom:2px;
-    padding-top:2px;
-    padding-right:5px;
-    font-family:Arial, Helvetica, sans-serif;
-    font-weight:bold;
-    font-size:smaller;
-}
-
-.bannerright{
-    float:right;
-    color:#FFFFFF;
-    font-family:Arial, Helvetica, sans-serif;
-    font-size:0.8em;
-    font-weight:bold;
-    text-decoration:none;
-}
-
-/* section headings */
-#hdr h1{
-    color:red;
-}
 // h1, h2, h3, h4{
 //     //font-weight:bold;
 //     font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
@@ -315,6 +197,10 @@ a.breadcrumb{
     font-size:0.8em;
 }
 
+ol,ul {
+    padding-left: 2em;
+}
+
 ul.breadcrumb
 {
     display:inline;
@@ -344,15 +230,6 @@ li.breadcrumb-first
 
 div.breadcrumb{
     display:inline;
-}
-
-.skiplinks{
-    font-family:arial, sans-serif;
-    color:#FFFFFF;
-    font-weight:bold;
-    font-size:0.8em;
-    text-decoration:none;
-    padding-right:15px;
 }
 
 .tocontent{
@@ -387,18 +264,6 @@ a.navbar:hover{
 }
 
 
-/* an inner <text>, eg inside a <q> */
-div.innertext{
-    margin:6pt;
-    border:1pt solid red;
-}
-/* literal code */
-
-div.cdata{
-    white-space:pre;
-    clear:both;
-}
-
 div.pre,
 div.pre_eg,
 pre.eg,
@@ -421,19 +286,6 @@ div.eg{
     font-size:10pt;
     /*white-space:pre;*/
     white-space: nowrap;
-}
-
-div.egXML_valid{
-    background-color:#f7f9f6;
-    border-color:#c5d8bb;
-}
-div.egXML_feasible{
-    background-color:#fff9f3;
-    border-color:#ffe1ad;
-}
-div.egXML_invalid{
-    border-color:#ffe7e8;
-    background-color:#fdbbac;
 }
 
 /* table of contents */
@@ -657,7 +509,7 @@ p {
 /*   margin-right: 2em;
    margin-left: 2em;
    */
-    line-height: 162%;
+    line-height: 1.7em;
     text-indent: 2em;
     text-align: justify;
     white-space: normal; /* 单词间空白,对中文无效 */
@@ -668,7 +520,7 @@ p {
     font-weight: normal;
     letter-spacing: 0.12em; /* 字母间空白0.12em */
     //vertical-align: text-bottom;
-   /*padding: 0.5em 0 0.5em 0;*/
+   padding: 0.1em 0 0.3em 0;
 }
 
 p.dharani {
@@ -727,9 +579,10 @@ span.l {
         text-align:center;
     }
     span.l {
-        margin-left: 0;
+        margin-left:1em;
+       /* margin-left: 0;*/
         text-align:center;
-        // text-align:left;
+        /* text-align:left;*/
     }
     sup{
         display: none;
@@ -1266,23 +1119,34 @@ table.border{
 .orange{
     color:orange;
 }
-/*
-ul.nav{ width:100%; height:60px; background:#00A2CA;margin:0 center} 
-ul.nav li{display:inline;} 
-ul.nav li a{display:inline-block; padding:0 20px; height:60xp; line-height:60px;
-    color:#FFF; font-family:"\5FAE\8F6F\96C5\9ED1"; font-size:16px} 
-ul.nav li a:hover{background:#0095BB} 
-*/
+
+ruby rtc rt {
+    display: inline;
+    font-size: inherit;
+}
+
+ruby.mps,ruby.zhuyin {
+    display: ruby;
+    -webkit-ruby-position: inter-character;
+    ruby-position: inter-character;
+}
+
+ruby.mps>rt,ruby.zhuyin>rt {
+    font-size: .5em;
+    -webkit-transform: scale(.8);
+    -moz-transform: scale(.8);
+    transform: scale(.8);
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    transform-origin: left center;
+    -ms-transform: scale(.8);
+    -ms-transform-origin: left center;
+}
+
+ruby.mps>rt:empty,ruby.zhuyin>rt:empty {
+    display: none;
+}
+
 /*html5*/
 article,aside,dialog,footer,header,section,footer,nav,figure,menu{ display:block }
 
-/*
-.navbar-brand,
-.navbar-nav,
-.navbar li a {
-    line-height: 20px;
-    height: 20px;
-    font: small;
-    padding-top: 0;
-*/
-}

@@ -89,16 +89,21 @@
         <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+        <meta name="description" content="印刷品般的漢字網頁排版框架"/>
+        <meta name="keywords" content="漢字標準格式, 中文, 排版, 排版規範, 日文, 字體排印, 文字設計, CLReq, CSS, Sass, typography"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+        <!--link rel="stylesheet" href="http://han-css.herokuapp.com/style.css"/-->
         <link rel="stylesheet" href="/static/jquery.webui-popover.min.css"/>
         <link rel="stylesheet" href="/static/tei.css"/>
+        <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Han/3.2.7/han.min.css"/-->
         <title>
             <xsl:value-of select="concat($current_sutra, ' ', $title)"/>
         </title>
         <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
         <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="/static/jquery.webui-popover.min.js"></script>
+        <!--script src="https://cdnjs.cloudflare.com/ajax/libs/Han/3.2.7/han.min.js"></script-->
         <!--[if lt IE9]> 
         <script src="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
         <![endif]-->
@@ -108,13 +113,22 @@
 
         <!--firefox浏览器特有的菜单-->
         <body class="contenttext" contextmenu="supermenu">
+            <!--header class="layout">
+                <div><div class="logo">
+                    <h1><a href="/manual/">漢字標準格式</a></h1>
+                    <p class="desc">印刷品般的漢字排版框架</p>
+                    </div>
+                    <ul><li><a id="github-repo" href="https://github.com/ethantw/Han">GitHub Project</a></li>
+                    <li><button id="trad2simp">繁簡切換</button></li></ul><button id="toggle-nav" hidden="">選單開關</button></div>
+            </header-->
+
         <!--a href="#">&#128266;</a>
         <a href="https://www.sejda.com/html-to-pdf?save-link" target="_blank">Save to PDF</a-->
 
         <menu id="supermenu" type="context">
             <menuitem label="报告错误" onclick="alert('step1')"/>
             <menuitem label="保存书签" onclick="imageRotation('rotate-90')" icon="img/arrow-return-090.png"/>
-            <menuitem label="菜单测试2" icon="img/arrow-return-180.png"/>
+            <menuitem label="简繁切换" icon="img/arrow-return-180.png"/>
             <menuitem label="菜单测试3" icon="img/arrow-stop-180.png"/>
             <menuitem label="菜单测试4" icon="img/arrow-stop-270.png"/>
         </menu>
