@@ -22,7 +22,20 @@
           <fo:region-body/>
         </fo:simple-page-master-->
 
-         <fo:simple-page-master master-name="A4-portrait"
+        <!--字号 11.5, 行距20, 方正书宋体系列-->
+        <fo:simple-page-master master-name="K32"
+                  page-height="21cm" 
+                  page-width="14.8cm"
+                  margin-top="0.5cm" 
+                  margin-bottom="2cm" 
+                  margin-left="2.5cm" 
+                  margin-right="2.5cm">
+            <fo:region-body margin-top="2cm"/>
+            <fo:region-before extent="3cm"/>
+            <fo:region-after extent="1.5cm"/>
+        </fo:simple-page-master>
+
+        <fo:simple-page-master master-name="A4-portrait"
                   page-height="29.7cm" 
                   page-width="21cm"
                   margin-top="1cm" 
@@ -35,28 +48,43 @@
         </fo:simple-page-master>
 
       </fo:layout-master-set>
-      <fo:page-sequence master-reference="A4-portrait">
+
+      <fo:page-sequence master-reference="K32" initial-page-number="1">
         <fo:flow flow-name="xsl-region-body">
           <fo:block font-family="PingFang SC"
-                line-height="15pt"
+                line-height="22pt"  
                 space-after.optimum="3pt"
                 font-weight="bold"
-                font-size="1.8em"
+                font-size="12pt" 
                 margin-bottom="0.8em"
                 text-align="center">
                 <xsl:value-of select="concat($current_sutra, ' ', $title)"/>
           </fo:block>
 
+          <!--line-height="15pt"-->
           <fo:block font-size="12pt" 
                 font-family="SimSun" 
-                line-height="15pt"
+                line-height="22pt"
                 space-after.optimum="3pt"
                 color="#336633"
                 text-align="right">
                 <xsl:value-of select="/TEI/teiHeader/fileDesc/titleStmt/author"/>
           </fo:block>
 
+          <!--fo:block>
+          <fo:instream-foreign-object>
+  <svg:svg xmlns:svg="http://www.w3.org/2000/svg" width="40px" height="40px">
+    <svg:g style="fill:red; stroke:#000000">
+      <svg:rect x="0" y="0" width="15" height="15"/>
+    </svg:g>
+  </svg:svg>
+</fo:instream-foreign-object>
+          </fo:block-->
+
         <xsl:apply-templates/>
+          <fo:block text-align="center" font-size="15pt">
+        Page <fo:page-number/>/<fo:page-number-citation-last ref-id="end"/>
+          </fo:block>
 
 
         </fo:flow>
@@ -90,23 +118,14 @@
     </xsl:template>
 
     <xsl:template match="p">
-          <!--fo:block line-height="162%"
-                    text-indent="2em"
-                    white-space="normal"
-                    font-size="1em"
-                    font-weight="normal"
-                    letter-spacing="0.12em"
-                font-family="PingFang SC" 
-                space-after.optimum="3pt"
-                text-align="justify"-->
           <fo:block font-family="SimSun"
-                line-height="162%"
-                    text-indent="2em"
-                    white-space="normal"
+                line-height="20pt"
+                text-indent="2em"
+                white-space="normal"
                 space-after.optimum="3pt"
                 font-weight="bold"
-                font-size="1em"
-                    letter-spacing="0em"
+                font-size="11.5pt"
+                letter-spacing="0em"
                 margin-bottom="0.8em"
                 text-align="justify">
           <xsl:apply-templates/>
