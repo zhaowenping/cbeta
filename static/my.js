@@ -54,14 +54,11 @@ function lookup(word){
                    if(data.pinyin || data.definition) {console.log('ok');
                    //word.innerHTML ="<a> 成功了</a>";
                    //  location.replace(data.location);
-                    repaceSelectionText(word,
-'<span data-toggle="uipopover" data-title="拼音/释义" data-placement="auto" data-container="body" data-trigger="hover" data-content="[' + data.pinyin + ']'+data.definition+'">' +
-word.toString() +
-'</span>');
+                    var ctx = "[" + data.pinyin + "]" + data.definition;
+                    repaceSelectionText(word, '<span data-toggle="uipopover" data-placement="auto" data-container="body" data-trigger="hover">' + word.toString() + '</span>');
 $(function (){
      // $("[data-toggle='uipopover']").popover({html:true});
-     $("[data-toggle='uipopover']").webuiPopover({"width": 500, "closeable": true});
-     //WebuiPopovers.show("[data-toggle='uipopover']", {"width": "50", "height": "auto", "delay":{"show":0, "hide":0}});
+     $("[data-toggle='uipopover']").webuiPopover({"width": 500, "closeable": true, "title": "拼音/释义", "content": ctx});
 });
                    }
 
