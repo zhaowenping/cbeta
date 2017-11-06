@@ -59,9 +59,9 @@ function lookup(word){
 word.toString() +
 '</span>');
 $(function (){
-     $("[data-toggle='uipopover']").popover({html:true});
-     // $("[data-toggle='uipopover']").webuiPopover();
-     //WebuiPopovers.show("[data-toggle='uipopover']", {"width": "50%", "height": "auto", "delay":{"show":0, "hide":0}});
+     // $("[data-toggle='uipopover']").popover({html:true});
+     $("[data-toggle='uipopover']").webuiPopover({"width": 500, "closeable": true});
+     //WebuiPopovers.show("[data-toggle='uipopover']", {"width": "50", "height": "auto", "delay":{"show":0, "hide":0}});
 });
                    }
 
@@ -132,7 +132,22 @@ $(document).ready(function () {
 // 智能导航: 自动保存书签. http://www.jb51.net/article/113085.htm
 window.onscroll = function(){ 
     var t = document.documentElement.scrollTop || document.body.scrollTop;  
-    console.log(t);
+    var paras = $('p');
+    var len = paras.length - 1;
+    var prev = paras[0];
+    for (; len > -1; len--) {
+        var that = paras.eq(len);
+        if (t >= that.offset().top && that[0].id != prev.id) {
+           // $navs.removeClass('current').eq(len).addClass('current');
+            console.log(that[0].id===prev.id);
+            console.log(that[0].id==prev.id);
+            console.log(that[0].id);
+            console.log(prev.id);
+            prev = that[0];
+            console.log('-----------------------');
+           break;
+        }
+    }
     // var top_div = document.getElementById( "top_div" ); 
     // if( t >= 300 ) { 
     //     top_div.style.display = "inline"; 
@@ -140,3 +155,19 @@ window.onscroll = function(){
     //     top_div.style.display = "none"; 
     // } 
 } 
+function shupai(evt){
+    if(evt.value == "竖") {
+    //获取div1
+    var div1 = document.getElementById('allcontent');
+    div1.style.writingMode="vertical-rl";
+    var ipt1 = document.getElementById('shupaictl');
+    ipt1.value = "横";
+    }
+    else if(evt.value == "横") {
+    ////获取div1
+    var div1 = document.getElementById('allcontent');
+    div1.style.writingMode="horizontal-tb";
+    var ipt1 = document.getElementById('shupaictl');
+    ipt1.value = "竖";
+    }
+}
