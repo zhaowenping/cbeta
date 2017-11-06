@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-11-03 09:43:14
+# Last Modified: 2017-11-06 18:22:30
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -331,7 +331,7 @@ def dict_get(word):
             if "宋本廣韻" in kxword:
                 definition.append(kxword["宋本廣韻"])
             if definition:
-                definition = '|'.join(definition)
+                definition = '<br><br>'.join(definition)
             else:
                 definition = kxword.get('英文翻譯', '')
             pinyin = kxword.get('國語發音', '')

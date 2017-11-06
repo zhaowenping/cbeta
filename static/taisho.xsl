@@ -150,6 +150,15 @@
                     <a class="navbar-brand" href="{$next_filepath}">下一卷</a>
                 </li>
             </ul>
+            <input id="shupaictl" type="button" value="竖" onclick="shupai(this);"/>
+            <a>
+                <xsl:attribute name="href">
+                    <xsl:value-of select="concat('/zh', $dir, $current_sutra, '_')"/>
+                    <xsl:number format="001" value="$juan"/>
+                    <xsl:text>.xml</xsl:text>
+                </xsl:attribute>
+                简
+            </a>
             <!--form class="collspae navbar-collspae navbar-form navbar-left" role="search">
                <div class="form-group">
                   <input type="search" class="form-control" placeholder="Search"/>
@@ -174,7 +183,7 @@
 
             <br/>
 
-        <!--div class="content" style="writing-mode:vertical-rl;" 竖排-->
+        <div id="allcontent" class="content"> <!-- style="writing-mode:vertical-rl;"-->
         <!--补上南传等经典的标题以及作者-->
         <xsl:if test="not(//cb:jhead)">
             <h1 class="title">
@@ -217,6 +226,7 @@
              </li>
              </ul>
         </nav>
+    </div>
 
         </body>
         </html>
