@@ -4,31 +4,25 @@
 
 */
 
-
+/* 黑体 */
 @font-face {
     font-family:"HeitiTC";
     src:local("Hiragino Sans GB"),
-        local("Lantinghei TC Extralight"),
-        local("Lantinghei SC Extralight"),
-        local(FZLTXHB--B51-0),
-        local(FZLTZHK--GBK1-0),
+        local("PingFang HK"),
+        local("PingFang SC"),
         local(".PingFang SC Light"),
         local(".PingFang TC Light"),
         local(".PingFang-SC-Light"),
         local(".PingFang-TC-Light"),
         local(".PingFang SC"),
         local(".PingFang TC"),
-        local("Heiti SC Light"),
-        local(STHeitiSC-Light),
-        local("Heiti SC"),
-        local("Heiti TC Light"),
-        local(STHeitiTC-Light),local("Heiti TC"),
-        local("Microsoft Yahei"),
-        local("Microsoft Jhenghei"),
-        local("Noto Sans CJK KR"),local("Noto Sans CJK JP"),local("Noto Sans CJK SC"), local("Noto Sans CJK TC"),
+        local("Microsoft YaHei"),
+        local("Lantinghei TC Extralight"),
+        local("Lantinghei SC Extralight"),
+        local(FZLTXHB--B51-0),
+        local(FZLTZHK--GBK1-0),
         local("Source Han Sans K"), local("Source Han Sans KR"),
-        local("Source Han Sans JP"),local("Source Han Sans CN"),local("Source Han Sans HK"),local("Source Han Sans TW"), local("Source Han Sans TWHK"),
-        local("Droid Sans Fallback");
+        local("Source Han Sans JP"),local("Source Han Sans CN"),local("Source Han Sans HK"),local("Source Han Sans TW"), local("Source Han Sans TWHK");
 }
 
 /* 悉昙体字体 */
@@ -101,7 +95,7 @@ body{
     padding:2em;
     padding-top:100px;
     /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;*/
-    font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", "PingFang SC", "PMingLiU", "Microsoft YaHei", siddham;
+    font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "PingFang HK", "Hiragino Sans GB", "PingFang SC", "PMingLiU", "Microsoft YaHei", siddham;
     font-size: large;
     /* font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;*/
 }
@@ -138,7 +132,7 @@ h3{
     font-size:1.2em;
     font-weight:bold;
     margin-bottom:0.5em;
-    font-style:italic;
+    /*font-style:italic;*/
 }
 
 // add
@@ -419,7 +413,7 @@ div.note{
 span.noteLabel{
     vertical-align:super;
     font-size:smaller;
-    font-style:italic;
+    /*font-style:italic;*/
 }
 span.note:before{
     content:" [";
@@ -434,7 +428,7 @@ span.note{
 /* address */
 span.address {
     display: block;
-    font-style: italic;
+    /*font-style: italic;*/
 }
 /* images */
 img.display{
@@ -470,10 +464,10 @@ div.titlepage{
 div.docImprint{
     margin-top:6pt;
     display:block;
-    font-style:italic;
+    /*font-style:italic;*/
 }
 div.docDate{
-    font-style:italic;
+    /*font-style:italic;*/
 }
 div.docTitle{
     display:block;
@@ -482,7 +476,7 @@ div.docTitle{
     margin-bottom:18pt;
 }
 div.docAuthor{
-    font-style:italic;
+    /*font-style:italic;*/
 }
 
 span.byline{
@@ -526,6 +520,7 @@ p {
 p.dharani {
      text-indent: 2em;
      //margin-left: 2em; 
+    line-height: 2.7em;
     color:#990099;
  }
 
@@ -666,7 +661,7 @@ div.listBibl{
     margin-bottom:6pt;
 }
 span.bibl{
-    font-style:italic;
+    /*font-style:italic;*/
 }
 div.bibl{
     margin-left:0.5em;
@@ -692,7 +687,7 @@ div.citbibl:after{
     content:")";
 }
 div.citbibl{
-    font-style:italic;
+    /*font-style:italic;*/
     font-size:smaller;
 }
 
@@ -739,7 +734,7 @@ div.q{
     margin-top:6pt;
     margin-bottom:12pt;
     display:block;
-    font-style:italic;
+    /*font-style:italic;*/
 }
 /* inline quote */
 span.q{
@@ -758,51 +753,51 @@ div.spProse{
     margin-left:1em;
 }
 div.speaker{
-    font-style:italic;
+    /*font-style:italic;*/
 }
 span.speaker{
-    font-style:italic;
+   /* font-style:italic;*/
 }
 
 span.actor{
-    font-style:italic;
+    /*font-style:italic;*/
 }
 span.camera{
-    font-style:italic;
+    /*font-style:italic;*/
 }
 span.role{
-    font-style:italic;
+    /*font-style:italic;*/
 }
 span.set{
-    font-style:italic;
+    /*font-style:italic;*/
 }
 span.sound{
-    font-style:italic;
+    /*font-style:italic;*/
 }
 span.stage{
-    font-style:italic;
+    /*font-style:italic;*/
 }
 span.tech{
-    font-style:italic;
+    /*font-style:italic;*/
 }
 span.view{
-    font-style:italic;
+    /*font-style:italic;*/
 }
 span.nextLink{
-    font-style:italic;
+    /*font-style:italic;*/
 }
 span.previousLink{
-    font-style:italic;
+    /*font-style:italic;*/
 }
 span.upLink{
-    font-style:italic;
+    /*font-style:italic;*/
 }
 /* bibl */
 span.titlem{
-    font-style:italic;
+    /*font-style:italic;*/
 }
 span.titlej{
-    font-style:italic;
+    /*font-style:italic;*/
 }
 span.titleu{
 }
@@ -820,7 +815,7 @@ div.notemargin{
     font-size:smaller;
     clear:right;
     padding:4pt;
-    font-style:italic;
+    /*font-style:italic;*/
     width:10%;
     border:solid green 1pt;
     margin:6pt;
@@ -954,7 +949,7 @@ span.bold{
     font-weight:bold;
 }
 span.italic{
-    font-style:italic;
+    /*font-style:italic;*/
 }
 span.allcaps{
     text-transform:uppercase;
@@ -997,11 +992,11 @@ span.numberParagraph{
 /* misc inline*/
 
 span.foreign{
-    font-style:italic;
+    /*font-style:italic;*/
 }
 
 span.distinct{
-  font-style: italic;
+  /*font-style: italic;*/
 }
 
 /* generic rendition */
@@ -1013,10 +1008,12 @@ span.distinct{
     font-size:small;
 }
 .term{
-    font-style:italic;
+    /*font-style:italic;*/
+    font-style:normal;
+    font-weight:bold;
 }
 .hi{
-    font-style:italic;
+    /*font-style:italic;*/
 }
 .emph{
     font-weight:bold;
@@ -1025,7 +1022,7 @@ span.distinct{
     font-weight:bold;
 }
 .mentioned{
-    font-style:italic;
+    /*font-style:italic;*/
 }
 
 /* transcription */
@@ -1147,6 +1144,41 @@ ruby.mps>rt:empty,ruby.zhuyin>rt:empty {
     display: none;
 }
 
+h-ruby.zhuyin h-zhuyin,ruby.mps h-zhuyin,ruby.zhuyin h-zhuyin {                                                                                                                                        
+    position: relative;                                                                                                                                                                                
+    letter-spacing: 0;                                                                                                                                                                                 
+                                                                                                                                                                                                  }                                                                                                                                                                                                      
+h-ruby.zhuyin h-diao,ruby.mps h-diao,ruby.zhuyin h-diao {                                                                                                                                              
+    position: absolute;                                                                                                                                                                                
+    right: -.9em;                                                                                                                                                                                      
+    bottom: .5em;                                                                                                                                                                                      
+    display: block;                                                                                                                                                                                    
+    font-size: 1.5em;                                                                                                                                                                                  
+                                                                                                                                                                                                  }                                                                                                                                                                                                      
+h-ruby.zhuyin h-diao h-char,ruby.mps h-diao h-char,ruby.zhuyin h-diao h-char {                                                                                                                         
+    -webkit-writing-mode: horizontal-tb;                                                                                                                                                               
+    writing-mode: horizontal-tb;                                                                                                                                                                       
+                                                                                                                                                                                                  }                                                                                                                                                                                                      
+h-ruby.zhuyin [diao="˙"] h-diao,ruby.mps [diao="˙"] h-diao,ruby.zhuyin [diao="˙"] h-diao {  {                                                                                                          
+    top: -.3em;                                                                                                                                                                                        
+    right: auto;                                                                                                                                                                                       
+    bottom: auto;                                                                                                                                                                                      
+    left: 0;                                                                                                                                                                                           
+    font-size: 1em;                                                                                                                                                                                    
+}  
+
+html
+{                                                                                                                                                                          
+    -moz-font-feature-settings: "liga";                                                                                                                                                                
+    -ms-font-feature-settings: "liga";                                                                                                                                                                 
+    -webkit-font-feature-settings: "liga";                                                                                                                                                             
+    font-feature-settings: "liga";                                                                                                                                                                     
+}[lang*=Hant],[lang*=Hans],[lang=zh-TW],[lang=zh-HK],[lang=zh-CN],[lang^=zh],article blockquote i,article blockquote var,article strong,code,html,kbd,pre,samp {                                       
+    -moz-font-feature-settings: "liga=1, locl=0";                                                                                                                                                      
+    -ms-font-feature-settings: "liga","locl" 0;                                                                                                                                                        
+    -webkit-font-feature-settings: "liga","locl" 0;                                                                                                                                                    
+    font-feature-settings: "liga","locl" 0;                                                                                                                                                            
+}                                         
 /*html5*/
 article,aside,dialog,footer,header,section,footer,nav,figure,menu{ display:block }
 

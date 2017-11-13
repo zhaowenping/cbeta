@@ -89,7 +89,7 @@
         <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
-        <meta name="description" content="印刷品般的漢字網頁排版框架"/>
+        <meta name="description" content="印刷品般的经典阅读"/>
         <meta name="keywords" content="漢字標準格式, 中文, 排版, 排版規範, 日文, 字體排印, 文字設計, CLReq, CSS, Sass, typography"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
@@ -407,9 +407,18 @@
 
     <xsl:template match="p[@cb:type='dharani']">
         <p class="dharani">
+            <ruby>
+            <xsl:apply-templates/>
+            </ruby>
+        </p>
+    </xsl:template>
+    <xsl:template match="p[@cb:type='dharanix']">
+        <p class="dharani">
             <xsl:apply-templates select="cb:tt/cb:t[@xml:lang!='zh']"/>
             <br/>
-            <xsl:apply-templates/>
+            <!--xsl:apply-templates/-->
+            <xsl:apply-templates select="cb:tt/cb:t[@xml:lang='zh']"/>
+            <xsl:apply-templates select="note"/>
         </p>
     </xsl:template>
 
@@ -471,7 +480,6 @@
             <xsl:value-of select="$unit"/>
           </xsl:attribute>
         </xsl:if>
-        <xsl:text> </xsl:text>
       </span>
     </xsl:template>
 
@@ -480,32 +488,38 @@
           <xsl:apply-templates/>
   </xsl:template-->
     <!--连续的cb:tt标签在最后一次性显示 TODO-->
-    <xsl:template name="tt" match="cb:tt">
-        <xsl:param name="nn"/> 
-        <xsl:variable name="next_node" select="following-sibling::*[1]"/>
-        <xsl:apply-templates select="cb:t[@xml:lang!='zh']"/>
-        <!--xsl:if test="local-name($next_node)='tt'">
-            <xsl:call-template name="tt" select="$next_node"/>
-        </xsl:if-->
+    <xsl:template match="w//g">
+        <xsl:variable name="Ref" select="substring(@ref, 2)"/>
+        <xsl:value-of select="key('char_id', $Ref)/charProp[localName='Romanized form in Unicode transcription']/value"/>
     </xsl:template>
-        <!--xsl:param name="ntext"/> 
-        <xsl:if test="local-name(following-sibling::*[1])!='tt'">
-            <xsl:value-of select="$ntext"/>
-        </xsl:if>
-        <xsl:if test="local-name(following-sibling::*[1])='tt'">
-            <xsl:call-template name="tt" select="preceding-sibling::*[1]">
-                <xsl:with-param name="ntext">
-                    <xsl:value-of select="cb:t[@xml:lang!='zh']"/>
-                    <xsl:value-of select="$ntext"/>
-                </xsl:with-param>
-            </xsl:call-template>
-        </xsl:if>
-    </xsl:template-->
 
-    <xsl:template match="cb:tt">
-        <xsl:apply-templates select="cb:t[@xml:lang!='zh']"/>
-        <xsl:apply-templates select="cb:t[@xml:lang='zh']"/>
+    <xsl:template match="w">
+        <rb>
+            <xsl:apply-templates match="//cb:t[@xml:lang='zh']"/>
+        </rb>
+        <rt>
+            <xsl:apply-templates match="//cb:t[@xml:lang!='zh']"/>
+        </rt>
     </xsl:template>
+
+    <!--xsl:template match="cb:tt/cb:t[@xml:lang='zh']">
+        <rb>
+            <xsl:apply-templates/>
+        </rb>
+    </xsl:template>
+    <xsl:template match="cb:tt/cb:t[@xml:lang!='zh']">
+        <rt>
+            <xsl:apply-templates/>
+        </rt>
+    </xsl:template-->
+    <!--xsl:template match="cb:tt">
+        <ruby>
+            <xsl:apply-templates select="cb:t[@xml:lang='zh']"/>
+        <rt>
+            <xsl:apply-templates select="cb:t[@xml:lang!='zh']"/>
+        </rt>
+        </ruby>
+    </xsl:template-->
 
     <!--xsl:template match="cb:tt">
         <xsl:variable name="header" select="generate-id(.)"/>
@@ -630,9 +644,10 @@
         <xsl:when test="starts-with($Ref, 'CB')">
         <span class="gaiji_cb">
             <!--abbr title="xxxxx"-->
+            <xsl:variable name="term1" select=".."/>
             <xsl:variable name="nor" select="$char/charProp[localName='normalized form']/value"/>
             <xsl:choose>
-            <xsl:when test="$nor">
+            <xsl:when test="$nor and not($term1[@rend='no_nor'])">
                 <xsl:value-of select="$nor"/>
             </xsl:when>
             <!--使用xml实体输出显示，不能用于搜索, 形如: &#x25F9D;-->
@@ -831,7 +846,6 @@
     <!--处理div 折叠式注释 TODO-->
     <!--xsl:template match="cb:div[@type='orig']"-->
     <xsl:template match="cb:div[@type='commentary']">
-      <!--div class="commentary" id="collapseTwo" class="panel-collapse collapse"-->
         <div class="commentary panel-collapse">
             <a data-toggle="collapse" data-parent="#accordion" href="#{generate-id()}">點擊閱讀/關閉註疏：</a>
             <div id="{generate-id()}" class="panel-collapse collapse">
@@ -891,9 +905,7 @@
     </xsl:template>
 
     <!--cb:yin><cb:zi>得浪</cb:zi><cb:sg>二合</cb:sg></cb:yin-->
-    <xsl:template match="cb:sg">
-        (<xsl:apply-templates/>)
-    </xsl:template>
+    <xsl:template match="cb:sg">(<xsl:apply-templates/>)</xsl:template>
 
     <!--公式强调角标-->
     <xsl:template match="hi">
@@ -905,6 +917,29 @@
             </xsl:if>
             <xsl:apply-templates/>
         </span>
+    </xsl:template>
+
+
+    <!-- <ref target="#PTS.Ja.3.227" type="PTS_hide"> -->
+    <!-- <ref target="#PTS.Ja.3.153"> -->
+    <!-- <ref target="../T31/T31n1585.xml#xpath2(//0041b09)"> -->
+    <!-- <ref target="../T31/T31n1585_008.xml#0041b09)"> TODO -->
+    <xsl:template match="ref">
+        <a>
+          <xsl:attribute name="href">
+             <!--xsl:value-of select="concat($current_sutra, '_p', @n)" /-->
+            <xsl:value-of select="@target"/>
+          </xsl:attribute>
+          <!--xsl:value-of select="."/-->
+          <xsl:apply-templates/>
+        </a>
+    </xsl:template>
+
+    <!-- <term rend="no_nor"> 此标签内的g不标准化-->
+    <xsl:template match="term">
+        <dfn class="term">
+            <xsl:apply-templates/>
+        </dfn>
     </xsl:template>
 
     <!--string-split函数: 空格分割后取值witness@id-->
