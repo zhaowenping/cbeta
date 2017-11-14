@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-11-14 17:30:08
+# Last Modified: 2017-11-14 22:25:18
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -738,7 +738,8 @@ def dharani_get(filename):
     print(f'zhouyu/{filename}')
     if os.path.exists(f'zhouyu/{filename}'):
         print('新版本')
-        with open(f'zhouyu/{filename}') as fd:
+        filename = f'zhouyu/{filename}'
+        with open(filename) as fd:
             content = fd.read()
     else:
         print('旧版本')
