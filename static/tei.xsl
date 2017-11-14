@@ -504,7 +504,7 @@
         <rt>
             <xsl:choose>
             <xsl:when test="cb:t[@xml:lang='sa-Latn']">
-                <xsl:value-of select="."/>
+                <xsl:value-of select="cb:t[@xml:lang='sa-Latn']"/>
             </xsl:when>
             <xsl:when test="cb:t[@xml:lang='sa-Sidd']">
                 <xsl:value-of select="key('char_id', substring(cb:t/g/@ref, 2))/charProp[localName='Romanized form in Unicode transcription']/value"/>
