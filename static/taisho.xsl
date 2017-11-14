@@ -410,7 +410,7 @@
 
     <xsl:template match="p[@cb:type='dharani']">
         <p class="dharani">
-            <p><xsl:apply-templates select="cb:tt/cb:t[@xml:lang!='zh']"/></p>
+            <p><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-Sidd']"/></p>
             <p class="dharani"><xsl:apply-templates/></p>
         </p>
     </xsl:template>
@@ -504,10 +504,10 @@
         <rt>
             <xsl:choose>
             <xsl:when test="cb:t[@xml:lang='sa-Latn']">
-                <xsl:value-of select="cb:t[@xml:lang='sa-Latn']"/>
+                <xsl:apply-templates select="cb:t[@xml:lang='sa-Latn']"/>
             </xsl:when>
             <xsl:when test="cb:t[@xml:lang='sa-Sidd']">
-                <xsl:value-of select="key('char_id', substring(cb:t/g/@ref, 2))/charProp[localName='Romanized form in Unicode transcription']/value"/>
+                <xsl:apply-templates select="key('char_id', substring(cb:t/g/@ref, 2))/charProp[localName='Romanized form in Unicode transcription']/value"/>
             </xsl:when>
             </xsl:choose>
         </rt>
