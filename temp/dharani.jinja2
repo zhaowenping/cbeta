@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf8">
+<meta name="robots" content="all">
+<meta name="author" content="zhaowp">
+<!--link rel="stylesheet" type="text/css" href="http://www.w3school.com.cn/tiy/tc.css" /-->
+<link rel="stylesheet" type="text/css" href="/static/tc.css" />
+<title>dharani注音</title>
+</head>
+<body id="editor">
+<div id="wrapper">
+
+<div id="header">
+
+<h1>陀罗尼注音程序</h1>
+
+</div>
+
+
+<form action="/dharani" method="post" id="tryitform" name="tryitform"> <!-- onSubmit="validateForm();" target="i"-->
+
+<div id="butt">
+<!--input type="button" value="提交代码" onClick="submitTryit()"-->
+<input type="submit" value="刷新">
+<a href="#">UNDO</a>
+</div>
+
+<div id="CodeArea">
+<h2>编辑您的代码：</h2>
+<textarea id="TestCode" name="xmlfile" wrap="logical">{{content}}</textarea>
+</div>
+<input type="hidden" name="path" value="{{path}}">
+
+
+</form>
+
+
+
+<div id="result">
+
+<h2>查看结果:</h2>
+
+<iframe frameborder="0" name="i" src="/{{path}}"></iframe>
+
+</div>
+
+<div id="footer">
+<p>请在上面的文本框中编辑您的代码，然后单击刷新按钮测试结果。</p>
+</div>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+function submitTryit()
+{
+var t=document.getElementById("TestCode").value;
+t=t.replace(/=/gi,"w3equalsign");
+t=t.replace(/script/gi,"w3scrw3ipttag");
+document.getElementById("code").value=t;
+document.getElementById("tryitform").action="v.asp";
+validateForm();
+document.getElementById("tryitform").submit();
+}
+
+
+
+function validateForm()
+{
+var code=document.getElementById("code").value;
+if (code.length>5000)
+  {
+  document.getElementById("code").value="<h1>Error</h1>";
+  }
+}
+
+</script>
+</body>
+</html>
