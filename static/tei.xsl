@@ -14,8 +14,14 @@
     <!--当前文件的卷数, 形如: 001; 目前只能靠猜了-->
     <!--xsl:variable name="juan" select="/TEI[1]/text/body//cb:juan[1]/@n|/TEI/text/body//milestone[@unit='juan']/@n|/TEI/text/body//cb:mulu[@type='卷']/@n"/-->
     <xsl:variable name="juan" select="/TEI/text/body//milestone[@unit='juan']/@n"/>
+    <!--是否属于疑伪部-->
+    <xsl:variable name="fake">
+        <xsl:variable name="nn" select="number(substring($current_ce, 1, 4))"/>
+        <xsl:variable name="n2" select="($nn >= 8 and 15 >= $nn) or $nn = 31 or $nn = 43 or $nn = 63 or $nn = 64 or $nn = 69"/>
+        <xsl:value-of select="starts-with($current_sutra, 'T85') or (starts-with($current_sutra, 'W') and $n2)"/>
+    </xsl:variable>
 
-    <!--是否微软浏览器-->
+    <!--是否微软、火狐浏览器-->
     <xsl:variable name="MSIE" select="system-property('xsl:vendor')='Microsoft'"/>
     <xsl:variable name="firefox" select="system-property('xsl:vendor')='Transformiix'"/>
 
@@ -357,8 +363,6 @@
            </xsl:choose>
          </xsl:attribute-->
          <xsl:apply-templates/>
-         <!--xsl:text>&#12288;</xsl:text--><!--IDEOGRAPHIC SPACE-->
-         <!--xsl:text>&#9;</xsl:text--><!--IDEOGRAPHIC SPACE-->
      </span>
     </xsl:template>
 
@@ -488,17 +492,20 @@
           <xsl:apply-templates/>
   </xsl:template-->
     <!--连续的cb:tt标签在最后一次性显示 TODO-->
-    <xsl:template match="w//g">
-        <xsl:variable name="Ref" select="substring(@ref, 2)"/>
-        <xsl:value-of select="key('char_id', $Ref)/charProp[localName='Romanized form in Unicode transcription']/value"/>
-    </xsl:template>
 
-    <xsl:template match="w">
+    <xsl:template match="cb:tt[@type='app']">
+        <ruby>
+            <xsl:apply-templates/>
+        </ruby>
+    </xsl:template>
+    <xsl:template match="cb:tt[@type='app']/cb:t[@xml:lang='zh']">
         <rb>
-            <xsl:apply-templates match="//cb:t[@xml:lang='zh']"/>
+            <xsl:apply-templates/>
         </rb>
+    </xsl:template>
+    <xsl:template match="cb:tt[@type='app']/cb:t[@xml:lang='sa']">
         <rt>
-            <xsl:apply-templates match="//cb:t[@xml:lang!='zh']"/>
+            <xsl:apply-templates/>
         </rt>
     </xsl:template>
 
@@ -579,6 +586,7 @@
     <localName>Romanized form in Unicode transcription</localName>
     <mapping type="normal_unicode">U+2A31C</mapping-->
     <xsl:choose>
+        <!--悉檀字-->
         <xsl:when test="starts-with($Ref, 'SD')">
         <span class="gaiji_sd">
             <ruby>
@@ -625,16 +633,6 @@
             <!--xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='rjchar']/value"/-->
                 <rt>
                     <xsl:value-of select="key('char_id', $Ref)/charProp[localName='Romanized form in Unicode transcription']/value"/>
-                <!--xsl:choose>
-                    <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in Unicode transcription']/value"-->
-                    <!--/xsl:when>
-                    <xsl:when test="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in CBETA transcription']/value">
-                        (<xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='Romanized form in CBETA transcription']/value"/>)
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:value-of select="."/>
-                    </xsl:otherwise>
-                </xsl:choose-->
                 </rt>
             </ruby>
         </span> 
@@ -696,6 +694,9 @@
     <xsl:template match="cb:jhead">
         <h1 class="title">
             <xsl:apply-templates/>
+            <xsl:if test="$fake">
+                <sup style="color:red"><xsl:text>[疑偽經]</xsl:text></sup>
+            </xsl:if>
         </h1>
         <!--br/-->
     </xsl:template>
@@ -724,7 +725,7 @@
     <!--处理空缺 unclear@reason-->
     <xsl:template match="unclear">
         <span class="unclear">
-            <xsl:text>&#9610;</xsl:text>
+            <xsl:text>&#x258a;</xsl:text>
         </span>
     </xsl:template>
 
@@ -935,11 +936,29 @@
         </a>
     </xsl:template>
 
-    <!-- <term rend="no_nor"> 此标签内的g不标准化-->
+    <!-- <term rend="no_nor"> 此标签内的g不规范化-->
     <xsl:template match="term">
         <dfn class="term">
             <xsl:apply-templates/>
         </dfn>
+    </xsl:template>
+
+    <!--sa, pi, x-unknown-->
+    <xsl:template match="foreign">
+        <xsl:choose>
+            <xsl:when test="@xml:lang='sa'">
+                <xsl:text>[梵語]</xsl:text>
+                <xsl:apply-templates/>
+            </xsl:when>
+            <xsl:when test="@xml:lang='pi'">
+                <xsl:text>[巴利語]</xsl:text>
+                <xsl:apply-templates/>
+            </xsl:when>
+            <xsl:when test="@xml:lang='x-unknown'">
+                <xsl:text>[UNKNOWN]</xsl:text>
+                <xsl:apply-templates/>
+            </xsl:when>
+        </xsl:choose>
     </xsl:template>
 
     <!--string-split函数: 空格分割后取值witness@id-->
