@@ -403,7 +403,6 @@
 
     <xsl:template match="p[contains(@cb:type, 'head')]">
         <xsl:variable name="hunit" select="concat('h', substring(@cb:type, 5)+1)"/>
-        <!--xsl:element name="{$hunit}" use-attribute-sets="class id" ie!!-->
         <xsl:element name="{$hunit}">
             <xsl:apply-templates/>
         </xsl:element>
@@ -411,18 +410,8 @@
 
     <xsl:template match="p[@cb:type='dharani']">
         <p class="dharani">
-            <ruby>
-            <xsl:apply-templates/>
-            </ruby>
-        </p>
-    </xsl:template>
-    <xsl:template match="p[@cb:type='dharanix']">
-        <p class="dharani">
-            <xsl:apply-templates select="cb:tt/cb:t[@xml:lang!='zh']"/>
-            <br/>
-            <!--xsl:apply-templates/-->
-            <xsl:apply-templates select="cb:tt/cb:t[@xml:lang='zh']"/>
-            <xsl:apply-templates select="note"/>
+            <p><xsl:apply-templates select="cb:tt/cb:t[@xml:lang!='zh']"/></p>
+            <p class="dharani"><xsl:apply-templates/></p>
         </p>
     </xsl:template>
 
@@ -493,40 +482,37 @@
   </xsl:template-->
     <!--连续的cb:tt标签在最后一次性显示 TODO-->
 
-    <xsl:template match="cb:tt[@type='app']">
+    <!--xsl:template match="cb:tt">
         <ruby>
             <xsl:apply-templates/>
         </ruby>
     </xsl:template>
-    <xsl:template match="cb:tt[@type='app']/cb:t[@xml:lang='zh']">
+    <xsl:template match="cb:t[@xml:lang='zh']">
         <rb>
             <xsl:apply-templates/>
         </rb>
     </xsl:template>
-    <xsl:template match="cb:tt[@type='app']/cb:t[@xml:lang='sa']">
-        <rt>
-            <xsl:apply-templates/>
-        </rt>
-    </xsl:template>
-
-    <!--xsl:template match="cb:tt/cb:t[@xml:lang='zh']">
-        <rb>
-            <xsl:apply-templates/>
-        </rb>
-    </xsl:template>
-    <xsl:template match="cb:tt/cb:t[@xml:lang!='zh']">
+    <xsl:template match="cb:t[@xml:lang!='zh']">
         <rt>
             <xsl:apply-templates/>
         </rt>
     </xsl:template-->
-    <!--xsl:template match="cb:tt">
+
+    <xsl:template match="cb:tt">
         <ruby>
             <xsl:apply-templates select="cb:t[@xml:lang='zh']"/>
         <rt>
-            <xsl:apply-templates select="cb:t[@xml:lang!='zh']"/>
+            <xsl:choose>
+            <xsl:when test="cb:t[@xml:lang='sa-Latn']">
+                <xsl:apply-templates/>
+            </xsl:when>
+            <xsl:when test="cb:t[@xml:lang='sa-Sidd']">
+                <xsl:value-of select="key('char_id', substring(cb:t/g/@ref, 2))/charProp[localName='Romanized form in Unicode transcription']/value"/>
+            </xsl:when>
+            </xsl:choose>
         </rt>
         </ruby>
-    </xsl:template-->
+    </xsl:template>
 
     <!--xsl:template match="cb:tt">
         <xsl:variable name="header" select="generate-id(.)"/>
@@ -563,14 +549,14 @@
     </xsl:template-->
 
     <!--sa,sa-x-rj,sa-Sidd多语言对照 -->
-    <xsl:template match="cb:t">
+    <!--xsl:template match="cb:t">
         <xsl:if test="@xml:lang='zh'">
             <xsl:apply-templates/>
         </xsl:if>
         <xsl:if test="@xml:lang!='zh'">
             <span style="color:#A9A9A9"><xsl:apply-templates/></span>
         </xsl:if>
-    </xsl:template>
+    </xsl:template-->
 
     <!--处理异体字-->
     <xsl:key name="char_id" match="char" use="@xml:id"/>
