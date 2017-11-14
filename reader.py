@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-11-07 09:39:31
+# Last Modified: 2017-11-14 17:30:08
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -121,8 +121,9 @@ def menu():
 def submenu(bulei):
     menu = read_menu_file(sch_b)
     bulei = bulei.split('/')
+    root = '/mulu'
 
-    nav = [('/mulu', '总目录')]
+    nav = [(root, '总目录')]
     for b in bulei:
         menu = menu[b]
         t = '/'.join((nav[-1][0], b))
@@ -136,7 +137,7 @@ def submenu(bulei):
         juan = get_all_juan(sutra)[0]           # 001
         url = f"/xml/{zang}/{sutra}_{juan}.xml"  # T01n0002_001.xml
         redirect(url)
-    return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大正藏部類'}
+    return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大正藏部類', 'root':root}
 
 @route('/cebie/:bulei#.+#')
 @view('temp/menu.jinja2')
@@ -144,8 +145,9 @@ def submenu(bulei):
     menu = read_menu_file(sch_a)
     #pprint.pprint(menu)
     bulei = bulei.split('/')
+    root = '/cebie'
 
-    nav = [('/cebie', '总目录')]
+    nav = [(root, '总目录')]
     for b in bulei:
         if b not in menu: abort(404)
         menu = menu[b]
@@ -161,7 +163,7 @@ def submenu(bulei):
         juan = get_all_juan(sutra)[0]           # 001
         url = f"/xml/{zang}/{sutra}_{juan}.xml"  # T01n0002_001.xml
         redirect(url)
-    return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大正藏冊別'}
+    return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大正藏冊別', 'root': root}
 
 
 # 处理搜索
@@ -727,6 +729,45 @@ def diff_line_get():
 
     return {'lfile': lfile, 'rfile': rfile}
 
+
+# xml/T13/T13n0423_001.xml
+@get('/dharani/:filename#.+#')
+@view('temp/dharani.jinja2')
+def dharani_get(filename):
+    '''咒语标注计划'''
+    print(f'zhouyu/{filename}')
+    if os.path.exists(f'zhouyu/{filename}'):
+        print('新版本')
+        with open(f'zhouyu/{filename}') as fd:
+            content = fd.read()
+    else:
+        print('旧版本')
+        with open(filename) as fd:
+            content = fd.read()
+    content = content.replace("&", "&amp;")
+    content = content.replace("<", "&lt;")
+    content = content.replace(">", "&gt;")
+    content = content.replace('"', "&quot;")
+    content = content.replace("'", "&apos;")
+    # response.content_type = 'text/xml'
+    # content = opencc.convert(content, config='t2s.json')
+    return {"content": content, "path": filename}
+
+import bottle
+bottle.BaseRequest.MEMFILE_MAX = 24 * 1024 * 1024 # (or whatever you want)
+@post('/dharani')
+def dharani_post():
+    '''咒语标注计划: 保存修改后的文件'''
+    xmlfile = request.forms.xmlfile
+    path = request.forms.path
+    ddir = os.path.split(path)[0]
+    if not os.path.exists(f'zhouyu/{ddir}'):
+        os.mkdir(f'zhouyu/{ddir}')
+    with open(f'zhouyu/{path}', 'w') as fd:
+        fd.write(xmlfile)
+    # print(xmlfile)
+    print(path)   # xml/X23/X23n0438_004.xml
+    redirect(f'/dharani/{path}')
 
 # GeventServer.run(host = '0.0.0.0', port = 8081)
 app = default_app()
