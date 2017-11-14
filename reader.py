@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-11-14 22:25:18
+# Last Modified: 2017-11-14 22:28:03
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -62,6 +62,10 @@ fxcd = dd['fxcd']
 @view('temp/index.html')
 def index():
     return {'Hello World!':''}
+
+@route('/zhouyu/:filename#.+#')
+def server_zhouyu(filename):
+    return static_file(filename, root='zhouyu')
 
 @route('/static/:filename#.+#')
 def server_static(filename):
