@@ -694,9 +694,9 @@
     <xsl:template match="cb:jhead">
         <h1 class="title">
             <xsl:apply-templates/>
-            <xsl:if test="$fake">
+            <!--xsl:if test="$fake">
                 <sup style="color:red"><xsl:text>[疑偽經]</xsl:text></sup>
-            </xsl:if>
+            </xsl:if-->
         </h1>
         <!--br/-->
     </xsl:template>
