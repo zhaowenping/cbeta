@@ -35,15 +35,15 @@
   unicode-range: U+11580-115FF;
 }
 
-/*
+
 @font-face {
-  font-family: 'consol';
+  font-family: 'consola';
   font-style: normal;
   font-weight: normal;
   src: local('Inconsolata');
   src: local('Consolas');
 }
-*/
+
 
 
 /*使用SimSun字体以便正确显示小蝌蚪符号: 引号、逗号、分号等、顿号*/
@@ -1119,7 +1119,8 @@ table.border{
 
 ruby rtc rt {
     display: inline;
-    font-size: inherit;
+    /*font-size: inherit;*/
+    font-family: Arial, Helvetica, sans-serif, consola;
 }
 
 ruby.mps,ruby.zhuyin {
@@ -1128,7 +1129,7 @@ ruby.mps,ruby.zhuyin {
     ruby-position: inter-character;
 }
 
-ruby.mps>rt,ruby.zhuyin>rt {
+rt {
     font-size: .5em;
     -webkit-transform: scale(.8);
     -moz-transform: scale(.8);
@@ -1140,7 +1141,7 @@ ruby.mps>rt,ruby.zhuyin>rt {
     -ms-transform-origin: left center;
 }
 
-ruby.mps>rt:empty,ruby.zhuyin>rt:empty {
+rt:empty{
     display: none;
 }
 
