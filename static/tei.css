@@ -519,8 +519,8 @@ p {
 
 p.dharani {
      text-indent: 2em;
-     //margin-left: 2em; 
-    line-height: 2.7em;
+     /*margin-left: 2em; */
+    /*line-height: 2.7em;*/
     color:#990099;
  }
 
@@ -1145,11 +1145,12 @@ rt:empty{
     display: none;
 }
 
-h-ruby.zhuyin h-zhuyin,ruby.mps h-zhuyin,ruby.zhuyin h-zhuyin {                                                                                                                                        
+/*h-ruby.zhuyin h-zhuyin,ruby.mps h-zhuyin,ruby.zhuyin h-zhuyin {                                                                                                                                       */ 
+ruby {
     position: relative;                                                                                                                                                                                
     letter-spacing: 0;                                                                                                                                                                                 
                                                                                                                                                                                                   }                                                                                                                                                                                                      
-h-ruby.zhuyin h-diao,ruby.mps h-diao,ruby.zhuyin h-diao {                                                                                                                                              
+/*h-ruby.zhuyin h-diao,ruby.mps h-diao,ruby.zhuyin h-diao {                                                                                                                                              
     position: absolute;                                                                                                                                                                                
     right: -.9em;                                                                                                                                                                                      
     bottom: .5em;                                                                                                                                                                                      
@@ -1167,6 +1168,7 @@ h-ruby.zhuyin [diao="˙"] h-diao,ruby.mps [diao="˙"] h-diao,ruby.zhuyin [diao="
     left: 0;                                                                                                                                                                                           
     font-size: 1em;                                                                                                                                                                                    
 }  
+*/
 
 html
 {                                                                                                                                                                          
