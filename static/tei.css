@@ -1175,6 +1175,10 @@ h-ruby.zhuyin [diao="˙"] h-diao,ruby.mps [diao="˙"] h-diao,ruby.zhuyin [diao="
 }  
 */
 
+:lang(en){
+    font-family: consola;
+    letter-spacing: 0;
+}
 html
 {                                                                                                                                                                          
     -moz-font-feature-settings: "liga";                                                                                                                                                                
