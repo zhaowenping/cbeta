@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-11-14 22:28:03
+# Last Modified: 2017-11-16 13:33:11
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -321,6 +321,8 @@ def kx_dict_get(word):
 @get('/dict/:word')
 def dict_get(word):
     '''查字典'''
+    pt = re.compile(r'\[|\]|\d')  # 应该在前端过滤
+    word = pt.sub('', word)
     print('发过来一个字:%s' % word)
     pinyin = ''
     _from = ''
