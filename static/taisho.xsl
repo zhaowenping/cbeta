@@ -701,7 +701,7 @@
         </xsl:if>
     </xsl:template>
     <!--列表中的作者译者不另外换行,应该清洗掉这种标志 XXX-->
-    <xsl:template match="list//byline|list//cb:jl_byline">
+    <xsl:template match="list//byline|cb:jl_byline">
         <span class="byline">
             <xsl:apply-templates/>
         </span>
@@ -718,10 +718,10 @@
         </span>
     </xsl:template>
 
-    <!--使用popover显示注释, 链接三个标签，可能有些不对-->
+    <!--使用popover显示注释, 链接三个标签，可能有些不对 TODO 使用超链接-->
     <!--跨文件注释？note type="cf1">K19n0663_p0486b18</note-->
     <xsl:template match="note[starts-with(@type, 'cf')]">
-        (修訂依據:<xsl:apply-templates/>)
+        (見:<a><xsl:value-of select="."/></a>)
     </xsl:template>
     <!--xsl:template match="reg">
     </xsl:template-->
@@ -916,12 +916,19 @@
     <!-- <ref target="../T31/T31n1585_008.xml#0041b09)"> TODO -->
     <xsl:template match="ref">
         <a>
-          <xsl:attribute name="href">
-             <!--xsl:value-of select="concat($current_sutra, '_p', @n)" /-->
-            <xsl:value-of select="@target"/>
-          </xsl:attribute>
-          <!--xsl:value-of select="."/-->
-          <xsl:apply-templates/>
+            <xsl:attribute name="href">
+               <!--xsl:value-of select="concat($current_sutra, '_p', @n)" /-->
+              <xsl:value-of select="@target"/>
+            </xsl:attribute>
+            <!--xsl:value-of select="."/-->
+            <xsl:choose>
+            <xsl:when test="not(text())">
+                <sup>[pts]</sup>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:apply-templates/>
+            </xsl:otherwise>
+            </xsl:choose>
         </a>
     </xsl:template>
 
@@ -932,6 +939,7 @@
         </dfn>
     </xsl:template>
 
+    <!--'sa-x-rj', 'en', 'sa-Sidd', 'zh', 'san-tr', 'sa', 'x-unknown', 'pi', 'zh-x-yy'-->
     <!--sa, pi, x-unknown-->
     <xsl:template match="foreign">
         <xsl:choose>
@@ -949,6 +957,22 @@
             </xsl:when>
         </xsl:choose>
     </xsl:template>
+
+    <!-- 经录的卷数 -->
+    <xsl:template match="cb:jl_juan">
+        <span class="jl">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+    <!-- 经录的标题: TODO 做一个超链接到应该的文件 -->
+    <xsl:template match="cb:jl_title">
+        <cite>
+            <a href="#TODO">
+            <xsl:apply-templates/>
+            </a>
+        </cite>
+    </xsl:template>
+
 
     <!--string-split函数: 空格分割后取值witness@id-->
     <xsl:template match="text/text()" name="tokenize">

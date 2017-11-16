@@ -150,6 +150,11 @@ h1.maintitle{
     bottom:5px;
 }
 
+.jl{
+    font-weight: lighter;
+    font-size: small;
+    font-style: normal;
+}
 h1.title{
     /*margin-left:100px;*/
     text-align:center;
