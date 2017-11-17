@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-11-16 13:33:11
+# Last Modified: 2017-11-17 11:29:22
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -775,6 +775,12 @@ def dharani_post():
     # print(xmlfile)
     print(path)   # xml/X23/X23n0438_004.xml
     redirect(f'/dharani/{path}')
+
+@get('/timeline')
+@view('temp/timeline.jinja2')
+def timeline_get():
+    print('timeline')
+    return {}
 
 # GeventServer.run(host = '0.0.0.0', port = 8081)
 app = default_app()

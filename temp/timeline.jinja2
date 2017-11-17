@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="lzh-Hant">
+<head>
+  <meta charset="utf-8"> 
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="revised" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>㍽ 大正新修大藏經</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">  
+  <link rel="stylesheet" href="/static/timeline.css">  
+  <!--link rel="stylesheet" type="text/css" href="/static/tei.css"-->
+  <!--script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script-->
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  li.list-group-item {
+    float:left;
+    width:50%; 
+    display : block;
+    }
+    @media screen and (max-width: 736px) {
+      li.list-group-item {
+        width:100%; 
+        }
+    }
+    .odd{
+    //background-color: #99cc66;
+    //background-color: #ccff66;
+    // background-color: #99cc99;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <nav>
+     <h1 style="text-align:center;">{{yiju}}目錄</h1>
+  
+     <ol class="breadcrumb">
+      <li><a href="/">回首頁</a></li>
+      <li><a href="{{root}}">總目錄</a></li>
+      {% for url, content in nav %}
+      <li><a href="{{url}}">{{content}}</a></li>
+      {% endfor %}
+     </ol>
+    </nav>
+  
+    <div class="row">
+        <div class="col-md-12">
+            <div class="main-timeline">
+                <div class="timeline">
+                    <div class="timeline-content">
+                        <span class="date">
+                            <!--span class="day">10<sup>th</sup></span>
+                            <span class="month">Apr</span-->
+                            <span class="year">前202年-8年</span>
+                        </span>
+                        <h2 class="title">汉朝著作</h2>
+                        <p class="description">包括后汉和新的全部著作和翻译</p>
+                    </div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-content">
+                        <span class="date">
+                            <span class="day">10<sup>th</sup></span>
+                            <span class="month">08</span>
+                            <span class="year">2017</span>
+                        </span>
+                        <h2 class="title">唐朝著作</h2>
+                        <p class="description">......</p>
+                    </div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-content">
+                        <span class="date">
+                            <span class="day">10<sup>th</sup></span>
+                            <span class="month">08</span>
+                            <span class="year">2017</span>
+                        </span>
+                        <h2 class="title">元朝著作</h2>
+                        <p class="description">......</p>
+                    </div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-content">
+                        <span class="date">
+                            <span class="day">10<sup>th</sup></span>
+                            <span class="month">08</span>
+                            <span class="year">2017</span>
+                        </span>
+                        <h2 class="title">明朝著作</h2>
+                        <p class="description">......</p>
+                    </div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-content">
+                        <span class="date">
+                            <span class="day">10<sup>th</sup></span>
+                            <span class="month">08</span>
+                            <span class="year">2017</span>
+                        </span>
+                        <h2 class="title">清朝著作</h2>
+                        <p class="description">......</p>
+                    </div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-content">
+                        <span class="date">
+                            <span class="day">10<sup>th</sup></span>
+                            <span class="month">08</span>
+                            <span class="year">2017</span>
+                        </span>
+                        <h2 class="title">中华民国(台湾)著作</h2>
+                        <p class="description">......</p>
+                    </div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-content">
+                        <span class="date">
+                            <span class="day">10<sup>th</sup></span>
+                            <span class="month">08</span>
+                            <span class="year">2017</span>
+                        </span>
+                        <h2 class="title">共和国著作</h2>
+                        <p class="description">......</p>
+                    </div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-content">
+                        <span class="date">
+                            <span class="day">10<sup>th</sup></span>
+                            <span class="month">08</span>
+                            <span class="year">2017</span>
+                        </span>
+                        <h2 class="title">日本著作</h2>
+                        <p class="description">......</p>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <ul class="list-group">
+        {% for key in menus %}
+         <li class="list-group-item {{ loop.cycle('odd', 'even') }}">
+          <a href="{{request.path}}/{{key}}">{{ key }}</a>
+          {% if not menus[key] %}
+          <!--span class="badge"><a href="{{key}}">简体版</a></span-->
+          <!--a href="/dharani/{{key}}" class="badge"><span class="badge">陀罗尼注音<span></a-->
+          <a href="/zhx/{{key}}" class="badge"><span class="badge">简体版<span></a>
+          {% endif %}
+         </li>
+        {% endfor%}
+    </ul>
+  </div>
+  <hr>
+
+</body>
+</html>
+
+
