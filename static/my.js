@@ -154,7 +154,7 @@ window.onscroll = function(){
 } 
 function shupai(evt){
     if(evt.value == "竖") {
-    //获取div1
+    //获取div1,改排版方式为竖排
     var div1 = document.getElementById('allcontent');
     div1.style.writingMode="vertical-rl";
     var ipt1 = document.getElementById('shupaictl');

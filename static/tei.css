@@ -549,12 +549,9 @@ p.box{
 /* verse */
 div.lg {
 /*p.lg{*/
-   /* margin-left:10px;
-    margin-bottom:10px; */
-   /* text-indent:-1em;*/
+    margin-left: 4em;
     margin-bottom:1em; 
     margin-top:0;
-    margin-left: 4em;
     text-indent: 0;
     color: #10AA10;
 
@@ -571,16 +568,13 @@ span.l {
         padding: 0.3em;
     }
     p.lg {
-        //margin: 0 0 0 0;
         margin-left: 0;
         // text-align:left;
         text-align:center;
     }
     span.l {
         margin-left:1em;
-       /* margin-left: 0;*/
         text-align:center;
-        /* text-align:left;*/
     }
     sup{
         display: none;
@@ -1055,12 +1049,10 @@ div.zone{
     margin-bottom:0.5ex;
 }
 
-div.line{
-}
-
 div.facsimage{
     float:right;
 }
+
 div.facsimage img{
     max-height:100%;
     width:auto
@@ -1173,9 +1165,13 @@ h-ruby.zhuyin [diao="˙"] h-diao,ruby.mps [diao="˙"] h-diao,ruby.zhuyin [diao="
 }  
 */
 
-:lang(en){
+:lang(en), :lang(*-Latn) {
     font-family: consola;
     letter-spacing: 0;
+}
+
+/*汉字/西文混排间隙: 预设在「汉字-拉丁字母」「汉字－希腊字母」「汉字－西里耳字母」间加入宽为0.25em的间隙*/
+:lang(zh)+:lang(en), :lang(zh)+lang(*-Latn){
 }
 
 sub,sup {
@@ -1199,12 +1195,15 @@ html
     -ms-font-feature-settings: "liga";                                                                                                                                                                 
     -webkit-font-feature-settings: "liga";                                                                                                                                                             
     font-feature-settings: "liga";                                                                                                                                                                     
-}[lang*=Hant],[lang*=Hans],[lang=zh-TW],[lang=zh-HK],[lang=zh-CN],[lang^=zh],article blockquote i,article blockquote var,article strong,code,html,kbd,pre,samp {                                       
+}
+
+[lang*=Hant],[lang*=Hans],[lang=zh-TW],[lang=zh-HK],[lang=zh-CN],[lang^=zh],article blockquote i,article blockquote var,article strong,code,html,kbd,pre,samp {                                       
     -moz-font-feature-settings: "liga=1, locl=0";                                                                                                                                                      
     -ms-font-feature-settings: "liga","locl" 0;                                                                                                                                                        
     -webkit-font-feature-settings: "liga","locl" 0;                                                                                                                                                    
     font-feature-settings: "liga","locl" 0;                                                                                                                                                            
 }                                         
-/*html5*/
+
+/* ie 的 html5 兼容性设置 */
 article,aside,dialog,footer,header,section,footer,nav,figure,menu{ display:block }
 

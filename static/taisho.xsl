@@ -15,11 +15,11 @@
     <!--xsl:variable name="juan" select="/TEI[1]/text/body//cb:juan[1]/@n|/TEI/text/body//milestone[@unit='juan']/@n|/TEI/text/body//cb:mulu[@type='卷']/@n"/-->
     <xsl:variable name="juan" select="/TEI/text/body//milestone[@unit='juan']/@n"/>
     <!--是否属于疑伪部-->
-    <xsl:variable name="fake">
+    <!--xsl:variable name="fake">
         <xsl:variable name="nn" select="number(substring($current_ce, 1, 4))"/>
         <xsl:variable name="n2" select="($nn >= 8 and 15 >= $nn) or $nn = 31 or $nn = 43 or $nn = 63 or $nn = 64 or $nn = 69"/>
         <xsl:value-of select="starts-with($current_sutra, 'T85') or (starts-with($current_sutra, 'W') and $n2)"/>
-    </xsl:variable>
+    </xsl:variable-->
 
     <!--是否微软、火狐浏览器-->
     <xsl:variable name="MSIE" select="system-property('xsl:vendor')='Microsoft'"/>
@@ -189,6 +189,9 @@
 
             <br/>
 
+        <div id="topAnchor"/>
+        <a href="#topAnchor" style="position:fixed;right:0;bottom:0" rel="bookmark">&#x21c8;</a>  <!--回到顶部-->
+        <a href="#bottomAnchor" style="position:fixed;right:0;top:100" rel="bookmark">&#x21ca;</a> <!--回到底部-->
         <div id="allcontent" class="content"> <!-- style="writing-mode:vertical-rl;"-->
         <!--补上南传等经典的标题以及作者-->
         <xsl:if test="not(//cb:jhead)">
@@ -207,6 +210,7 @@
         <div class="contentx">
             <xsl:apply-templates/>
         </div>
+        <div id="bottomAnchor"/>
         <!--版權資訊-->
         <div>
             <hr style=" height:2px;border:none;border-top:2px solid #185598;" />
