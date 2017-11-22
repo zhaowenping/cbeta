@@ -21,6 +21,7 @@
         local("Lantinghei SC Extralight"),
         local(FZLTXHB--B51-0),
         local(FZLTZHK--GBK1-0),
+        local("Source Han Serif TC"),
         local("Source Han Sans K"), local("Source Han Sans KR"),
         local("Source Han Sans JP"),local("Source Han Sans CN"),local("Source Han Sans HK"),local("Source Han Sans TW"), local("Source Han Sans TWHK");
 }
@@ -1207,16 +1208,20 @@ sub {
 
 html
 {                                                                                                                                                                          
-    -moz-font-feature-settings: "liga";                                                                                                                                                                
-    -ms-font-feature-settings: "liga";                                                                                                                                                                 
-    -webkit-font-feature-settings: "liga";                                                                                                                                                             
-    font-feature-settings: "liga";                                                                                                                                                                     
-}[lang*=Hant],[lang*=Hans],[lang=zh-TW],[lang=zh-HK],[lang=zh-CN],[lang^=zh],article blockquote i,article blockquote var,article strong,code,html,kbd,pre,samp {                                       
-    -moz-font-feature-settings: "liga=1, locl=0";                                                                                                                                                      
-    -ms-font-feature-settings: "liga","locl" 0;                                                                                                                                                        
-    -webkit-font-feature-settings: "liga","locl" 0;                                                                                                                                                    
-    font-feature-settings: "liga","locl" 0;                                                                                                                                                            
-}                                         
+    -moz-font-feature-settings: "liga";
+    -ms-font-feature-settings: "liga";
+    -webkit-font-feature-settings: "liga";
+    font-feature-settings: "liga";
+}
+
+/* 关闭新字形?
+[lang*=Hant],[lang*=Hans],[lang=zh-TW],[lang=zh-HK],[lang=zh-CN],[lang^=zh],article blockquote i,article blockquote var,article strong,code,html,kbd,pre,samp {                                       
+    -moz-font-feature-settings: "liga=1, locl=0";
+    -ms-font-feature-settings: "liga","locl" 0;
+    -webkit-font-feature-settings: "liga","locl" 0;
+    font-feature-settings: "liga","locl" 0;
+}*/
+
 /*html5*/
 article,aside,dialog,footer,header,section,footer,nav,figure,menu{ display:block }
 

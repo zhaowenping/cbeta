@@ -191,7 +191,7 @@
 
         <div id="topAnchor"/>
         <a href="#topAnchor" style="position:fixed;right:0;bottom:0" rel="bookmark">&#x21c8;</a>  <!--回到顶部-->
-        <a href="#bottomAnchor" style="position:fixed;right:0;top:100" rel="bookmark">&#x21ca;</a> <!--回到底部-->
+        <a href="#bottomAnchor" style="position:fixed;right:0;top:70" rel="bookmark">&#x21ca;</a> <!--回到底部-->
         <div id="allcontent" class="content"> <!-- style="writing-mode:vertical-rl;"-->
         <!--补上南传等经典的标题以及作者-->
         <xsl:if test="not(//cb:jhead)">
@@ -370,9 +370,9 @@
      </span>
     </xsl:template>
 
-    <!--清除文档中无用空格-->
+    <!--清除文档中无用空格, 替换错误的人名分割符号-->
     <xsl:template match="text()|@*">
-        <xsl:value-of select="normalize-space(.)"/>
+        <xsl:value-of select="translate(normalize-space(.), '&#xff0e;', '&#x00b7;')"/>
     </xsl:template>
 
     <!--处理图片-->
