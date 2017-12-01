@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:cb="http://www.cbeta.org/ns/1.0"
+    xmlns:str="http://exslt.org/strings"
+    extension-element-prefixes="str"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     exclude-result-prefixes="xs cb">
     <!--xpath-default-namespace="http://www.tei-c.org/ns/1.0"-->
+    <!--xsl:import href="str.xsl"/-->
     <xsl:output method="html" encoding="utf-8" doctype-system="about:legacy-compat" indent="yes"/>
 
     <!--当前经集的名字, 形如: T20n1167 -->
@@ -130,12 +133,15 @@
 
         <!--a href="#">&#128266;</a>
         <a href="https://www.sejda.com/html-to-pdf?save-link" target="_blank">Save to PDF</a-->
+        <!--xsl:value-of select="function-available('codepoints-to-string')"/>
+        <xsl:value-of select="function-available('str:tokenize')"/-->
+        <!--xsl:value-of select="str:tokenize('2001-06-03T11:40:23', '-T:')"/-->
 
         <menu id="supermenu" type="context">
             <menuitem label="报告错误" onclick="alert('step1')"/>
             <menuitem label="保存书签" onclick="imageRotation('rotate-90')" icon="img/arrow-return-090.png"/>
             <menuitem label="简繁切换" icon="img/arrow-return-180.png"/>
-            <menuitem label="菜单测试3" icon="img/arrow-stop-180.png"/>
+            <menuitem label="横排竖排" icon="img/arrow-stop-180.png"/>
             <menuitem label="菜单测试4" icon="img/arrow-stop-270.png"/>
         </menu>
 
@@ -156,7 +162,7 @@
                     <a class="navbar-brand" href="{$next_filepath}">下一卷</a>
                 </li>
             </ul>
-            <input id="shupaictl" type="button" value="竖" onclick="shupai(this);"/>
+            <!--input id="shupaictl" type="button" value="竖" onclick="shupai(this);"/-->
             <a>
                 <xsl:attribute name="href">
                     <xsl:value-of select="concat('/zh', $dir, $current_sutra, '_')"/>
@@ -414,7 +420,7 @@
 
     <xsl:template match="p[@cb:type='dharani']">
         <p class="dharani">
-            <p><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-Sidd']"/></p>
+            <p lang="sa-Sidd"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-Sidd']"/></p>
             <p class="dharani"><xsl:apply-templates/></p>
         </p>
     </xsl:template>
@@ -504,7 +510,9 @@
 
     <xsl:template match="cb:tt">
         <ruby>
+        <rb>
             <xsl:apply-templates select="cb:t[@xml:lang='zh']"/>
+        </rb>
         <rt>
             <xsl:choose>
             <xsl:when test="cb:t[@xml:lang='sa-Latn']">
@@ -633,28 +641,34 @@
 
         <!--組字式-->
         <xsl:when test="starts-with($Ref, 'CB')">
-        <span class="gaiji_cb">
+        <!--span class="gaiji_cb"-->
             <!--abbr title="xxxxx"-->
             <xsl:variable name="term1" select=".."/>
             <xsl:variable name="nor" select="$char/charProp[localName='normalized form']/value"/>
             <xsl:choose>
             <xsl:when test="$nor and not($term1[@rend='no_nor'])">
-                <xsl:value-of select="$nor"/>
+                <span class="gaiji_nor"><xsl:value-of select="$nor"/></span>
             </xsl:when>
-            <!--使用xml实体输出显示，不能用于搜索, 形如: &#x25F9D;-->
+            <!--使用xml实体输出显示，不能用于搜索,ff无效, 形如: &#x25F9D;-->
             <xsl:when test="$char/mapping[@type='normal_unicode']">
-                <xsl:value-of disable-output-escaping='yes' select="concat('&amp;#x', substring($char/mapping[@type='normal_unicode'], 3), ';')"/>
+                <span class="gaiji_nor">
+                    <xsl:value-of disable-output-escaping='yes' select="concat('&amp;#x', substring($char/mapping[@type='normal_unicode'], 3), ';')"/>
+                </span>
             </xsl:when>
             <xsl:when test="$char/mapping[@type='unicode']">
-                <xsl:value-of disable-output-escaping='yes' select="concat('&amp;#x', substring($char/mapping[@type='unicode'], 3), ';')"/>
+                <span class="gaiji_uni">
+                    <xsl:value-of disable-output-escaping='yes' select="concat('&amp;#x', substring($char/mapping[@type='unicode'], 3), ';')"/>
+                </span>
                 <!--xsl:value-of select="."/ 部分字不符和这个规律-->
             </xsl:when>
             <xsl:when test="$char/charProp[localName='composition']/value">
-                <xsl:value-of select="$char/charProp[localName='composition']/value"/>
+                <span class="gaiji_nor">
+                    <xsl:value-of select="$char/charProp[localName='composition']/value"/>
+                </span>
             </xsl:when>
             </xsl:choose>
             <!--/abbr-->
-        </span> 
+        <!--/span--> 
         </xsl:when>
       </xsl:choose>
     </xsl:template>
@@ -739,7 +753,7 @@
         <xsl:apply-templates/>
         <xsl:if test="@wit">
             <xsl:call-template name="tokenize">
-                <xsl:with-param name="text" select="@wit"/>
+                <xsl:with-param name="string" select="@wit"/>
             </xsl:call-template>
         </xsl:if>
         <xsl:text>&#8656;</xsl:text>
@@ -749,7 +763,7 @@
         <xsl:apply-templates/>
         <xsl:if test="@wit">
             <xsl:call-template name="tokenize">
-                <xsl:with-param name="text" select="@wit"/>
+                <xsl:with-param name="string" select="@wit"/>
             </xsl:call-template>
         </xsl:if>
     </xsl:template>
@@ -927,7 +941,7 @@
             <!--xsl:value-of select="."/-->
             <xsl:choose>
             <xsl:when test="not(text())">
-                <sup>[pts]</sup>
+                <sup lang="en">[pts]</sup>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:apply-templates/>
@@ -980,16 +994,16 @@
 
     <!--string-split函数: 空格分割后取值witness@id-->
     <xsl:template match="text/text()" name="tokenize">
-        <xsl:param name="text" select="."/>
-        <xsl:param name="separator" select="' '"/>
+        <xsl:param name="string" select="."/>
+        <xsl:param name="delimiters" select="' '"/>
         <xsl:choose>
-            <xsl:when test="not(contains($text, $separator))">
-                <xsl:value-of select="key('witness_id', substring(normalize-space($text), 2))"/>
+            <xsl:when test="not(contains($string, $delimiters))">
+                <xsl:value-of select="key('witness_id', substring(normalize-space($string), 2))"/>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:value-of select="key('witness_id', substring(normalize-space(substring-before($text, $separator)), 2))"/>
+                <xsl:value-of select="key('witness_id', substring(normalize-space(substring-before($string, $delimiters)), 2))"/>
                 <xsl:call-template name="tokenize">
-                    <xsl:with-param name="text" select="substring-after($text, $separator)"/>
+                    <xsl:with-param name="string" select="substring-after($string, $delimiters)"/>
                 </xsl:call-template>
             </xsl:otherwise>
         </xsl:choose>

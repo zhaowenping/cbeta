@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-11-17 11:29:22
+# Last Modified: 2017-12-01 15:30:36
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -525,6 +525,12 @@ def zh(filename):
     with open(filename) as fd:
         content = fd.read()
     content = content.replace("<TEI ", "<TEI xml:lang='lzh-Hans' ")
+    # 简体繁体双引号切换
+    content = content.replace("\u300c", "\u201c")
+    content = content.replace("\u300d", "\u201d")
+    # 简体繁体单引号切换
+    content = content.replace("\u300e", "\u2018")
+    content = content.replace("\u300f", "\u2019")
     response.content_type = 'text/xml'
     content = opencc.convert(content, config='t2s.json')
     return content

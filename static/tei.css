@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/* 
+/*
 
 */
 
@@ -50,16 +50,17 @@
 /*使用SimSun字体以便正确显示小蝌蚪符号: 引号、逗号、分号等、顿号*/
 @font-face {
   font-family: quote;
-  src: local('SimSun');    
-  //src: local('PingFang SC');    
-  //src: local('Hiragino Sans GB');    
+  src: local('SimSun');
+  /*local('Source Han Serif TC'),*/
+  /*src: local('PingFang SC');
+  src: local('Hiragino Sans GB');*/
   unicode-range: U+2010-2027, U+3001-303F, U+FF01-FF9F;
 }
 
 /*破折号*/
 /*@font-face {
   font-family: dash;
-  src: local('Arial');    
+  src: local('Arial');
   unicode-range: U+2500, U+2014;
   font-style: normal;
   font-weight: normal;
@@ -327,23 +328,33 @@ span.corr{
     color: #FF0000;
 }
 
-/* 悉昙体、兰扎体与异体字 */
+/* 悉昙体 */
 span.gaiji_sd{
     font-family: 'siddham';
     // font-kerning: normal;  // 具有字距调整信息的OpenType字体才有用
     // <span style="width:0;height:0;float:left;">
     // color:#00d7ff;
     color:#990099;
-    
+    letter-spacing: 0;
+
 }
 
+/* 兰扎体 */
 span.gaiji_rj{
     color:#00d7ff;
+    letter-spacing: 0;
 }
 
-span.gaiji_cb{
+/* 规范化异体字 */
+span.gaiji_nor{
     color:#00d7ff;
 }
+
+/* 未规范化异体字 */
+span.gaiji_uni{
+    color:#1685a9;
+}
+
 
 
 span.toclist{
@@ -512,7 +523,7 @@ p {
     text-align: justify;
     white-space: normal; /* 单词间空白,对中文无效 */
     font-family: quote, "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", "PMingLiU";
-    /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", SimSun, "宋体", "Microsoft YaHei", "微软雅黑", "PMingLiU", 
+    /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", SimSun, "宋体", "Microsoft YaHei", "微软雅黑", "PMingLiU",
      * "Source Han Serif TC";*/
     font-size: normal;
     font-weight: normal;
@@ -553,7 +564,7 @@ div.lg {
    /* margin-left:10px;
     margin-bottom:10px; */
    /* text-indent:-1em;*/
-    margin-bottom:1em; 
+    margin-bottom:1em;
     margin-top:0;
     margin-left: 4em;
     text-indent: 0;
@@ -895,7 +906,7 @@ div.altfigure{
 //     border:solid black 1pt;
 //     border-top:2px solid ;
 // }
-// 
+//
 // table.table tr,
 // table.table td{
 //     border:solid black 1pt;
@@ -1149,29 +1160,29 @@ rt:empty{
     display: none;
 }
 
-/*h-ruby.zhuyin h-zhuyin,ruby.mps h-zhuyin,ruby.zhuyin h-zhuyin {                                                                                                                                       */ 
+/*h-ruby.zhuyin h-zhuyin,ruby.mps h-zhuyin,ruby.zhuyin h-zhuyin {                                                                                                                                       */
 ruby {
-    position: relative;                                                                                                                                                                                
-    letter-spacing: 0;                                                                                                                                                                                 
-                                                                                                                                                                                                  }                                                                                                                                                                                                      
-/*h-ruby.zhuyin h-diao,ruby.mps h-diao,ruby.zhuyin h-diao {                                                                                                                                              
-    position: absolute;                                                                                                                                                                                
-    right: -.9em;                                                                                                                                                                                      
-    bottom: .5em;                                                                                                                                                                                      
-    display: block;                                                                                                                                                                                    
-    font-size: 1.5em;                                                                                                                                                                                  
-                                                                                                                                                                                                  }                                                                                                                                                                                                      
-h-ruby.zhuyin h-diao h-char,ruby.mps h-diao h-char,ruby.zhuyin h-diao h-char {                                                                                                                         
-    -webkit-writing-mode: horizontal-tb;                                                                                                                                                               
-    writing-mode: horizontal-tb;                                                                                                                                                                       
-                                                                                                                                                                                                  }                                                                                                                                                                                                      
-h-ruby.zhuyin [diao="˙"] h-diao,ruby.mps [diao="˙"] h-diao,ruby.zhuyin [diao="˙"] h-diao {  {                                                                                                          
-    top: -.3em;                                                                                                                                                                                        
-    right: auto;                                                                                                                                                                                       
-    bottom: auto;                                                                                                                                                                                      
-    left: 0;                                                                                                                                                                                           
-    font-size: 1em;                                                                                                                                                                                    
-}  
+    position: relative;
+    letter-spacing: 0;
+                                                                                                                                                                                                  }
+/*h-ruby.zhuyin h-diao,ruby.mps h-diao,ruby.zhuyin h-diao {
+    position: absolute;
+    right: -.9em;
+    bottom: .5em;
+    display: block;
+    font-size: 1.5em;
+                                                                                                                                                                                                  }
+h-ruby.zhuyin h-diao h-char,ruby.mps h-diao h-char,ruby.zhuyin h-diao h-char {
+    -webkit-writing-mode: horizontal-tb;
+    writing-mode: horizontal-tb;
+                                                                                                                                                                                                  }
+h-ruby.zhuyin [diao="˙"] h-diao,ruby.mps [diao="˙"] h-diao,ruby.zhuyin [diao="˙"] h-diao {  {
+    top: -.3em;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    font-size: 1em;
+}
 */
 
 :lang(en){
@@ -1192,10 +1203,12 @@ h-ruby.zhuyin [diao="˙"] h-diao,ruby.mps [diao="˙"] h-diao,ruby.zhuyin [diao="
 
 
 sub,sup {
+    font-family: 'consola';
     position: relative;
     vertical-align: baseline;
     font-size: 75%;
     line-height: 0;
+    letter-spacing: 0;
 }
 
 sup {
@@ -1207,7 +1220,7 @@ sub {
 }
 
 html
-{                                                                                                                                                                          
+{
     -moz-font-feature-settings: "liga";
     -ms-font-feature-settings: "liga";
     -webkit-font-feature-settings: "liga";
@@ -1215,7 +1228,7 @@ html
 }
 
 /* 关闭新字形?
-[lang*=Hant],[lang*=Hans],[lang=zh-TW],[lang=zh-HK],[lang=zh-CN],[lang^=zh],article blockquote i,article blockquote var,article strong,code,html,kbd,pre,samp {                                       
+[lang*=Hant],[lang*=Hans],[lang=zh-TW],[lang=zh-HK],[lang=zh-CN],[lang^=zh],article blockquote i,article blockquote var,article strong,code,html,kbd,pre,samp {
     -moz-font-feature-settings: "liga=1, locl=0";
     -ms-font-feature-settings: "liga","locl" 0;
     -webkit-font-feature-settings: "liga","locl" 0;
