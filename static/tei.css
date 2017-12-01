@@ -41,8 +41,9 @@
   font-family: 'consola';
   font-style: normal;
   font-weight: normal;
-  src: local('Inconsolata');
-  src: local('Consolas');
+  src: local('Inconsolata'),
+       local('Consolas'),
+       local('Monaco');
 }
 
 
@@ -1203,7 +1204,7 @@ h-ruby.zhuyin [diao="˙"] h-diao,ruby.mps [diao="˙"] h-diao,ruby.zhuyin [diao="
 
 
 sub,sup {
-    font-family: 'consola';
+    font-family: consola;
     position: relative;
     vertical-align: baseline;
     font-size: 75%;
