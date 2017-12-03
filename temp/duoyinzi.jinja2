@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="revised" content="">
+  <title>多音字表</title>
+  <link rel="stylesheet" href="">
+  <script>
+  //<![CDATA[
+  //]]>
+  </script>
+  <style>
+  <!--
+  -->
+  </style>
+</head>
+<body>
+<br />
+
+
+<form action="/gaiji" method="post">
+名字: <input type="text" name="name">
+通用字: <input type="text" name="norm">
+原字: <input type="text" name="val">
+<input type="submit" value="提交">
+</form>
+
+<table>
+<tr>
+<td>Cell A</td>
+<td>Cell B</td>
+</tr>
+</table>
+
+<table>
+<tr><td>序号</td><td>名称</td><td>简化字</td><td>词频率</td><td>发音</td></tr>
+{% for name, jt, pin, sou in result %}
+<tr><td>{{loop.index}}</td><td>{{name}}</td><td>{{jt}}</td><td>{{pin}}</td><td>{{sou}}</td></tr>
+{% endfor %}
+</table>
+  <!--script src="jquery.js"></script-->
+  <!--script src="http://code.jquery.com/jquery-1.4.2.min.js"></script-->
+</body>
+</html>
+
+

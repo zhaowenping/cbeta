@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-01 15:30:36
+# Last Modified: 2017-12-03 10:11:11
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -525,12 +525,8 @@ def zh(filename):
     with open(filename) as fd:
         content = fd.read()
     content = content.replace("<TEI ", "<TEI xml:lang='lzh-Hans' ")
-    # 简体繁体双引号切换
-    content = content.replace("\u300c", "\u201c")
-    content = content.replace("\u300d", "\u201d")
-    # 简体繁体单引号切换
-    content = content.replace("\u300e", "\u2018")
-    content = content.replace("\u300f", "\u2019")
+    # 简体繁体双引号, 单引号切换
+    content = content.translate({0x300c: 0x201c, 0x300d: 0x201d, 0x300e: 0x2018, 0x300f: 0x2019})
     response.content_type = 'text/xml'
     content = opencc.convert(content, config='t2s.json')
     return content
@@ -787,6 +783,13 @@ def dharani_post():
 def timeline_get():
     print('timeline')
     return {}
+
+@get('/duoyinzi')
+@view('temp/duoyinzi.jinja2')
+def duoyinzi_get():
+    with gzip.open('dict/duoyinzi.json.gz') as fd:
+        data = json.load(fd)
+    return {'result': data}
 
 # GeventServer.run(host = '0.0.0.0', port = 8081)
 app = default_app()
