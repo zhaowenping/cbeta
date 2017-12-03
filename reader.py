@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-03 10:11:11
+# Last Modified: 2017-12-03 10:50:54
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -784,12 +784,30 @@ def timeline_get():
     print('timeline')
     return {}
 
+# 多音字处理
 @get('/duoyinzi')
 @view('temp/duoyinzi.jinja2')
 def duoyinzi_get():
     with gzip.open('dict/duoyinzi.json.gz') as fd:
         data = json.load(fd)
     return {'result': data}
+
+@post('/duoyinzi')
+def duoyinzi_post():
+    name = request.forms.name
+    val = request.forms.val
+    val = val.strip("'").strip("]").strip("[")
+    val = val.replace("'", "").replace(',', ' ')
+    print(name, val.split())
+    with gzip.open('dict/duoyinzi.json.gz') as fd:
+        data = json.load(fd)
+    if name in data:
+        x = data[name]
+        data[name] = x[0], x[1], val
+    with gzip.open('dict/duoyinzi.json.gz', 'w') as fd:
+        json.dump(data, fd, ensure_ascii=False)
+    redirect(f'/duoyinzi')
+
 
 # GeventServer.run(host = '0.0.0.0', port = 8081)
 app = default_app()
