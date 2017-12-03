@@ -21,10 +21,9 @@
 <br />
 
 
-<form action="/gaiji" method="post">
+<form action="/duoyinzi" method="post">
 名字: <input type="text" name="name">
-通用字: <input type="text" name="norm">
-原字: <input type="text" name="val">
+新的发音序列: <input type="text" name="val">
 <input type="submit" value="提交">
 </form>
 
@@ -37,8 +36,8 @@
 
 <table>
 <tr><td>序号</td><td>名称</td><td>简化字</td><td>词频率</td><td>发音</td></tr>
-{% for name, jt, pin, sou in result %}
-<tr><td>{{loop.index}}</td><td>{{name}}</td><td>{{jt}}</td><td>{{pin}}</td><td>{{sou}}</td></tr>
+{% for zi in result %}
+<tr><td>{{loop.index}}</td><td>{{zi}}</td><td>{{result[zi][0]}}</td><td>{{result[zi][1]}}</td><td>{{result[zi][2]}}</td><td>{{result[zi][3]}}</td></tr>
 {% endfor %}
 </table>
   <!--script src="jquery.js"></script-->
