@@ -7,7 +7,10 @@
   <meta name="keywords" content="">
   <meta name="revised" content="">
   <title>多音字表</title>
-  <link rel="stylesheet" href="">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+  <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
   <script>
   //<![CDATA[
   //]]>
@@ -29,21 +32,60 @@
 <body>
 <br />
 
+<div class="container">
+<!--button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Open modal for @fat</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Open modal for @getbootstrap</button-->
+
+{% for zi in result %}
+<div class="modal fade" id="ID{{loop.index}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+      </div>
+      <div class="modal-body">
+        <form action="/keyifayin" method="post">
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">名称:</label>
+            <input type="text" class="form-control" id="recipient-name" name="name" value="{{zi[0]}}">
+            <label for="recipient-pinyin" class="control-label">拼音:</label>
+            <input type="text" class="form-control" id="recipient-pinyin" name="val" value="{{zi[3]}}">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">修改理由:</label>
+            <textarea class="form-control" id="message-text" name="reason"></textarea>
+          </div>
+                 <input type="submit" value="提交">
+        </form>
+      </div>
+      <!--div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div-->
+    </div>
+  </div>
+</div>
+{% endfor %}
+</div>
 
 <h1>可疑发音校对</h1>
-<form action="/keyifayin" style="position:fixed;right:0;bottom:0" method="post">
+<!--form action="/keyifayin" style="position:fixed;right:0;bottom:0" method="post">
 名称: <input type="text" name="name">
 新的发音序列: <input type="text" name="val">
 修改理由: <input type="text" name="reason">
 <input type="submit" value="提交">
-</form>
+</form-->
 
 
 <table>
-<tr><td>序号</td><td>名称</td><td>简化字</td><td>unicode</td><td>目前使用</td><td>国学大师</td><td>修改原因</td></tr>
+<tr><td>序号</td><td>名称</td><td>简化字</td><td>unicode</td><td>目前使用</td><td>国学大师</td><td>修改原因</td><td>操作</td></tr>
 {% for zi in result %}
 <tr {% if zi[5] %}class="green"{% endif %}>
-<td>{{loop.index}}</td><td>{{zi[0]}}</td><td>{{zi[1]}}</td><td>{{zi[2]}}</td><td>{{zi[3]}}</td><td>{{zi[4]}}</td><td>{{zi[6]}}</tr>
+<td>{{loop.index}}</td><td>{{zi[0]}}</td><td>{{zi[1]}}</td><td>{{zi[2]}}</td><td>{{zi[3]}}</td><td>{{zi[4]}}</td><td>{{zi[6]}}</td>
+<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ID{{loop.index}}" data-whatever="@mdo">修改</button></td>
+</tr>
 {% endfor %}
 </table>
   <!--script src="jquery.js"></script-->
