@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-09 09:41:34
+# Last Modified: 2017-12-09 21:07:04
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -809,7 +809,39 @@ def duoyinzi_post():
     redirect(f'/duoyinzi')
 
 # 词频
+# 可疑发音校对
+@get('/keyifayin')
+@view('temp/keyifayin.jinja2')
+def keyifayin_get():
+    conn = psycopg2.connect(database="buddha", user="postgres", password="1234", host="kepan.org", port="5432")
+    cur = conn.cursor()
+    cur.execute('select * from keyifayin')
+    data = cur.fetchall()
+    result = [i for i in data]
+#  zi      | character(1)          | not null
+#  jt      | character(1)          |
+#  unicode | character varying(16) |
+#  cur     | character varying(16) |
+#  gxds    | character varying(16) |
+#  tag     | boolean               |
+    conn.commit()
+    cur.close()
+    conn.close()
+    return {'result': result}
 
+
+@post('/keyifayin')
+def keyifayin_post():
+    zi = request.forms.name
+    val = request.forms.val
+    reason = request.forms.reason
+    conn = psycopg2.connect(database="buddha", user="postgres", password="1234", host="kepan.org", port="5432")
+    cur = conn.cursor()
+    cur.execute('update keyifayin set cur = %s, tag = %s, reason=%s where zi = %s', (val, True, reason, zi))
+    conn.commit()
+    cur.close()
+    conn.close()
+    redirect(f'/keyifayin')
 
 # GeventServer.run(host = '0.0.0.0', port = 8081)
 app = default_app()
