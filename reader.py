@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-03 10:50:54
+# Last Modified: 2017-12-09 09:41:34
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -796,17 +796,19 @@ def duoyinzi_get():
 def duoyinzi_post():
     name = request.forms.name
     val = request.forms.val
-    val = val.strip("'").strip("]").strip("[")
-    val = val.replace("'", "").replace(',', ' ')
-    print(name, val.split())
+    val = val.replace(r"[", " ").replace(r"]", " ").replace(r"'", "").replace(',', ' ')
+    print(name, val, val.split())
     with gzip.open('dict/duoyinzi.json.gz') as fd:
         data = json.load(fd)
+
     if name in data:
         x = data[name]
         data[name] = x[0], x[1], val
     with gzip.open('dict/duoyinzi.json.gz', 'w') as fd:
         json.dump(data, fd, ensure_ascii=False)
     redirect(f'/duoyinzi')
+
+# 词频
 
 
 # GeventServer.run(host = '0.0.0.0', port = 8081)

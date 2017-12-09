@@ -146,8 +146,12 @@
           </fo:block>
     </xsl:template>
 
-   <xsl:template match="text()|@*">
+   <!--xsl:template match="text()|@*"-->
+   <xsl:template match="text()">
        <xsl:value-of select="normalize-space(.)"/>
+         <!--xsl:call-template name="zhuyin">
+                  <xsl:with-param name="string" select="."/>
+         </xsl:call-template-->
     </xsl:template>
 
     <xsl:template match="head">
@@ -170,6 +174,24 @@
         </xsl:attribute>
         </fo:external-graphic>
       </fo:block>
+    </xsl:template>
+
+    <!--注音模板, 使用kx.xml作为字典给全文注音-->
+    <xsl:template match="text/text()" name="zhuyin">
+        <xsl:param name="string" select="."/>
+        <xsl:param name="num" select="1"/>
+                <xsl:variable name="zi" select="substring($string, $num, 1)"/>
+                <ruby>
+                    <xsl:value-of select="substring($string, $num, 1)"/>
+                    <rt>
+                        <xsl:value-of select="document('kx.xml')//char[@zi=$zi]"/>
+                    </rt>
+                </ruby>
+            <xsl:if test="substring($string, $num+1, 1)">
+                <xsl:call-template name="zhuyin">
+                    <xsl:with-param name="string" select="substring($string, $num+1)"/>
+                </xsl:call-template>
+            </xsl:if>
     </xsl:template>
 
 </xsl:stylesheet>
