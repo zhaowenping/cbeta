@@ -68,3 +68,4 @@ Whoosh==2.7.4
 xhtml2pdf==0.0.6
 zope.deprecation==4.2.0
 zope.interface==4.3.3
+python-docx
