@@ -1,11 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-11-02 13:03:47
+# Last Modified: 2017-12-09 10:23:23
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
 函数库
+1. 简体繁体检测
+2. 简体繁体转换
+3. 注音 phonetic notation
+4. 注音格式转换
 """
 
 __all__ = []
@@ -22,6 +26,7 @@ from functools import reduce
 
 
 
+
 print('调用函数库')
 
 class TSDetect:
@@ -33,7 +38,7 @@ class TSDetect:
         self.tt = set()
         self.ss = set()
         # with open('static/TSCharacters.txt') as fd:
-        with open('OpenCC/data/dictionary/TSCharacters.txt') as fd:
+        with open('cc/TSCharacters.txt') as fd:
             for line in fd:
                 line = line.strip().split()
                 # print(line.split())
@@ -124,14 +129,20 @@ def get_all_juan(sutra):
     juan.sort()
     return juan
 
+# FROM: https://en.wikipedia.org/wiki/International_Alphabet_of_Sanskrit_Transliteration
 
-def hk2sa(str_in, m=1):
+# FROM: https://en.wikipedia.org/wiki/Harvard-Kyoto
+class SA:
+    '''梵语字符串类, 可以使用HK转写和iast转写输入, 使用天城体, 悉檀体, 拉丁输出'''
+    pass
+
+def hk2iast(str_in, m=1):
     '''hk系统转拉丁梵语, 会有两个结果，分别是t1和t2'''
     x = {'S':'sh',
-        'R':'\u1e5bi',
-        'RR':'\u1e5b\u012b'}
+        'R':'\u1e5bi',      # ṛi
+        'RR':'\u1e5b\u012b'}  #   1e5d
 
-    t1 = {'A': '\u0101',
+    t1 = {'A': '\u0101',    # ā
         'I':'\u012b',
         'U':'\u016b',
         'M':'\u1e43', # 1e43
@@ -141,7 +152,7 @@ def hk2sa(str_in, m=1):
         'T':'\u1e6d',
         'D':'\u1e0d',
         'N':'\u1e47',
-        'L':'\u1eca',
+        'L':'\u1eca',   # Ị
         'z':'\u1e61',
         '@':' ',
         }
@@ -168,6 +179,8 @@ def hk2sa(str_in, m=1):
     str_out = str_in.replace('S', 'sh').replace('RR', '\u1e5b\u012b').replace('R', '\u1e5bi')
     str_out = str_out.translate(usedt)
     return str_out
+
+hk2sa = hk2iast
 
 def load_dict():
 
