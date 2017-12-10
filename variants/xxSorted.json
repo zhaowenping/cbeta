@@ -147,7 +147,6 @@
 蹋 踏 蹹 U+8E4B kSemanticVariant U+8E0F<kMeyerWempe U+8E79<kMatthews
 罈 墰 壜 U+58B0 kSemanticVariant U+7F48<kFenn U+58DC<kMatthews
 鞀 鼗 鞉 U+9F17 kSemanticVariant U+9780<kMatthews U+9789<kMatthews,kMeyerWempe
-鐵 鉄 銕 U+9435 kSemanticVariant U+9244<kLau,kMatthews,kMeyerWempe U+9295<kMatthews
 砣 𥓿 鉈 U+7823 kSemanticVariant U+254FF<kFenn U+9248<kMatthews
 完 烟 菸 煙 U+70DF kSemanticVariant U+5B8C<kLau U+83F8<kFenn U+7159<kHKGlyph,kLau,kMatthews,kMeyerWempe
 碗 椀 盌 U+6900 kSemanticVariant U+76CC<kMatthews,kMeyerWempe U+7897<kMatthews,kMeyerWempe
@@ -185,6 +184,7 @@
 一 弌 壹 U+4E00 kSemanticVariant U+5F0C<kLau,kMatthews,kMeyerWempe U+58F9<kLau,kMatthews,kMeyerWempe
 壹 一 弌 U+58F9 kSemanticVariant U+4E00<kLau,kMatthews,kMeyerWempe U+5F0C<kLau,kMatthews,kMeyerWempe
 銕 鉄 鐵 U+9295 kSemanticVariant U+9244<kMatthews U+9435<kMatthews
+鐵 鉄 銕 U+9435 kSemanticVariant U+9244<kLau,kMatthews,kMeyerWempe U+9295<kMatthews
 藝 埶 秇 蓺 U+85DD kSemanticVariant U+57F6<kMatthews U+79C7<kMatthews U+84FA<kLau,kMatthews
 甖 罌 罃 U+7516 kSemanticVariant U+7F4C<kMatthews U+7F43<kMatthews
 邕 𪪝 雍 雝 U+2AA9D kSemanticVariant U+9095<kMatthews U+96CD<kMatthews U+96DD<kMatthews
