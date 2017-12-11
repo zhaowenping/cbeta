@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-09 21:07:04
+# Last Modified: 2017-12-11 18:34:25
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -32,13 +32,15 @@ from whoosh.index import open_dir
 from whoosh.qparser import QueryParser
 from whoosh.query import *
 import psycopg2
-import opencc
+# import opencc
 
 import pprint
 from libhan import hk2sa, read_menu_file, load_dict
 from libhan import get_all_juan
 from libhan import Search
 from libhan import TSDetect
+from libhan import convert2t
+from libhan import convert2s
 
 # 装入各种词典
 dd = load_dict()
@@ -184,7 +186,8 @@ def searchmulu():
     '''搜索标题'''
     title = request.forms.content
     if ts.detect(title)['confidence'] == 's':
-        title = opencc.convert(title, config='s2t.json')
+        # title = opencc.convert(title, config='s2t.json')
+        title = convert2t(title)
     results = []
     for idx in ss.search(title):
         title = idx
@@ -212,7 +215,8 @@ def search_post():
     print(request.POST)
     content = request.forms.content
     print(('content', content))
-    content = opencc.convert(content, config='s2t.json')
+    #content = opencc.convert(content, config='s2t.json')
+    content = convert2t(content)
     # content = request.forms.getunicode('content')
     # print(('content', content))
     mq = qp.parse(content)
@@ -528,7 +532,8 @@ def zh(filename):
     # 简体繁体双引号, 单引号切换
     content = content.translate({0x300c: 0x201c, 0x300d: 0x201d, 0x300e: 0x2018, 0x300f: 0x2019})
     response.content_type = 'text/xml'
-    content = opencc.convert(content, config='t2s.json')
+    # content = opencc.convert(content, config='t2s.json')
+    content = convert2t(content)
     return content
 
 @route('/zhx/:filename')

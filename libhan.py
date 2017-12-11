@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-09 10:23:23
+# Last Modified: 2017-12-11 18:31:35
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -25,7 +25,41 @@ import time
 from functools import reduce
 
 
+# 读入繁体转简体数据库
+tstable = dict()
+with open('cc/TSCharacters.txt') as fd:
+    for line in fd:
+        line = line.strip().split()
+        tstable[ord(line[0])] = ord(line[1:][0])
 
+sttable = dict()
+with open('cc/STCharacters.txt') as fd:
+    for line in fd:
+        line = line.strip().split()
+        sttable[ord(line[0])] = ord(line[1:][0])
+
+# content = opencc.convert(content, config='t2s.json')
+def convert2t(content, punctuation=True, region=False):
+    '''繁体转简体, punctuation是否转换单双引号
+    region 是否执行区域转换
+    region 转换后的地区
+    '''
+
+    content = content.translate(tstable)
+    if punctuation:
+        content = content.translate({0x300c: 0x201c, 0x300d: 0x201d, 0x300e: 0x2018, 0x300f: 0x2019})
+    return content
+
+def convert2s(content, punctuation=True, region=False):
+    '''简体转繁体, punctuation是否转换单双引号
+    region 是否执行区域转换
+    region 转换后的地区
+    '''
+
+    content = content.translate(sttable)
+    if punctuation:
+        content = content.translate({0x201c: 0x300c, 0x201d: 0x300d, 0x2018: 0x300e, 0x2019: 0x300f})
+    return content
 
 print('调用函数库')
 
@@ -37,7 +71,6 @@ class TSDetect:
 
         self.tt = set()
         self.ss = set()
-        # with open('static/TSCharacters.txt') as fd:
         with open('cc/TSCharacters.txt') as fd:
             for line in fd:
                 line = line.strip().split()
@@ -51,7 +84,7 @@ class TSDetect:
         self.ss = self.ss - xx
 
     def detect(self, s0):
-        '''判断一段文本是简体还是繁体的概率'''
+        '''粗略判断一段文本是简体还是繁体的概率'''
         s0 = set(s0)
         # 同时是简体繁体的概率
         j = 0
