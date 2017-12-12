@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-12 20:39:17
+# Last Modified: 2017-12-12 20:54:58
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -476,7 +476,7 @@ def convert2s(string, punctuation=True, region=False):
 
     return content
 
-def convert2t(self, string, punctuation=True, region=False):
+def convert2t(string, punctuation=True, region=False):
     '''简体转繁体, punctuation是否转换单双引号
     region 是否执行区域转换
     region 转换后的地区
@@ -485,7 +485,7 @@ def convert2t(self, string, punctuation=True, region=False):
     if punctuation:
         string = string.translate({0x201c: 0x300c, 0x201d: 0x300d, 0x2018: 0x300e, 0x2019: 0x300f})
 
-    content = ''.join(i[0].translate(self.sttable) if not i[1] else self.stptable[i[0]] for i in splitstring(self.stp, string))
+    content = ''.join(i[0].translate(sttable) if not i[1] else stptable[i[0]] for i in splitstring(stp, string))
 
     return content
 
