@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-11 18:31:35
+# Last Modified: 2017-12-12 20:39:17
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -24,42 +24,6 @@ import json
 import time
 from functools import reduce
 
-
-# 读入繁体转简体数据库
-tstable = dict()
-with open('cc/TSCharacters.txt') as fd:
-    for line in fd:
-        line = line.strip().split()
-        tstable[ord(line[0])] = ord(line[1:][0])
-
-sttable = dict()
-with open('cc/STCharacters.txt') as fd:
-    for line in fd:
-        line = line.strip().split()
-        sttable[ord(line[0])] = ord(line[1:][0])
-
-# content = opencc.convert(content, config='t2s.json')
-def convert2t(content, punctuation=True, region=False):
-    '''繁体转简体, punctuation是否转换单双引号
-    region 是否执行区域转换
-    region 转换后的地区
-    '''
-
-    content = content.translate(tstable)
-    if punctuation:
-        content = content.translate({0x300c: 0x201c, 0x300d: 0x201d, 0x300e: 0x2018, 0x300f: 0x2019})
-    return content
-
-def convert2s(content, punctuation=True, region=False):
-    '''简体转繁体, punctuation是否转换单双引号
-    region 是否执行区域转换
-    region 转换后的地区
-    '''
-
-    content = content.translate(sttable)
-    if punctuation:
-        content = content.translate({0x201c: 0x300c, 0x201d: 0x300d, 0x2018: 0x300e, 0x2019: 0x300f})
-    return content
 
 print('调用函数库')
 
@@ -432,6 +396,100 @@ class Search:
         # ( for zi in index)
         a = (set(self.index.get(tt, {}).keys()) for tt in list(title))
         return reduce(lambda x, y: x & y, a)
+
+
+
+# 简体繁体转换
+def splitstring(pattern, string):
+    '''把输入字符串使用pattern分割, 每个字符串附带一个标志，表示该字符串是否短语匹配'''
+    rr = pattern.search(string)
+    if not rr:
+        yield (string, False)
+        raise StopIteration()
+    start, end = rr.span()
+    if start !=0:
+        yield (string[0:start], False)
+    yield (string[start:end], True)
+    while True:
+        string = string[end:]
+        rr = pattern.search(string)
+        if not rr: break
+        start, end = rr.span()
+        if start !=0:
+            yield (string[0:start], False)
+        yield (string[start:end], True)
+
+    if string:
+        yield (string, False)
+
+def __init_cc__():
+    '''读取简体繁体转换数据库'''
+    # 读取繁体转简体短语
+    tsptable = dict()
+    with open('cc/TSPhrases.txt') as fd:
+        for line in fd:
+            line = line.strip().split()
+            tsptable[line[0]] = line[1:][0]
+
+    # 读取简体转繁体转简体短语
+    stptable = dict()
+    with open('cc/STPhrases.txt') as fd:
+        for line in fd:
+            line = line.strip().split()
+            stptable[line[0]] = line[1:][0]
+    # print('|'.join(sorted(tsptable.keys(), key=lambda x: len(x), reverse=True)))
+
+    tsp = re.compile('|'.join(tsptable.keys()))
+    stp = re.compile('|'.join(stptable.keys()))
+
+    tstable = dict()
+    with open('cc/TSCharacters.txt') as fd:
+        for line in fd:
+            line = line.strip().split()
+            tstable[ord(line[0])] = ord(line[1:][0])
+
+    sttable = dict()
+    with open('cc/STCharacters.txt') as fd:
+        for line in fd:
+            line = line.strip().split()
+            sttable[ord(line[0])] = ord(line[1:][0])
+    return tsp, tstable, tsptable, stp, sttable, stptable
+
+    # self.tsp = tsp
+    # self.tstable = tstable
+    # self.tsptable = tsptable
+    # self.stp = stp
+    # self.sttable = sttable
+    # self.stptable = stptable
+
+tsp, tstable, tsptable, stp, sttable, stptable = __init_cc__()
+
+def convert2s(string, punctuation=True, region=False):
+    '''繁体转简体, punctuation是否转换单双引号
+    region 是否执行区域转换
+    region 转换后的地区
+    '''
+    if punctuation:
+        string = string.translate({0x300c: 0x201c, 0x300d: 0x201d, 0x300e: 0x2018, 0x300f: 0x2019})
+
+    content = ''.join(i[0].translate(tstable) if not i[1] else tsptable[i[0]] for i in splitstring(tsp, string))
+
+    return content
+
+def convert2t(self, string, punctuation=True, region=False):
+    '''简体转繁体, punctuation是否转换单双引号
+    region 是否执行区域转换
+    region 转换后的地区
+    '''
+
+    if punctuation:
+        string = string.translate({0x201c: 0x300c, 0x201d: 0x300d, 0x2018: 0x300e, 0x2019: 0x300f})
+
+    content = ''.join(i[0].translate(self.sttable) if not i[1] else self.stptable[i[0]] for i in splitstring(self.stp, string))
+
+    return content
+
+# 简体繁体转换结束
 
 def main():
     ''''''

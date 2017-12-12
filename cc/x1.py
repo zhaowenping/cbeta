@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-11 17:59:07
+# Last Modified: 2017-12-11 18:38:37
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -22,8 +22,8 @@ with open('TSCharacters.txt') as fd:
         line = line.strip().split()
         # ts[line[0]] = line[1:][0]
         ts[ord(line[0])] = ord(line[1:][0])
-        # if(len(line[1:])>1):
-        #     print(line)
+        if(len(line[1:])>1):
+            print(line)
         #tt.add(line[0])
         #for zi in line[1:]:
         #    ss.add(zi)
