@@ -4,7 +4,7 @@
 
 */
 
-/* 黑体 */
+/* 统一黑体 */
 @font-face {
     font-family:"HeitiTC";
     src:local("Hiragino Sans GB"),
@@ -37,6 +37,7 @@
 }
 
 
+/* 用于显示等宽英文和拼音, 拼音a的显示还存在问题 */
 @font-face {
   font-family: 'consola';
   font-style: normal;
@@ -46,19 +47,29 @@
        local('Monaco');
 }
 
+/* 正常显示缺字方块大小, 冬青黑和雅黑不能随着字体大小变化 */
+@font-face {
+  font-family: WSQUARE;
+  src: local('Source Han Serif TC'),
+       local('PingFang HK'),
+       local('PingFang SC'),
+       local('PMingLiU'),
+       local('SimSun');
+  unicode-range: U+25A1;
+}
 
-
-/*使用SimSun字体以便正确显示小蝌蚪符号: 引号、逗号、分号等、顿号*/
+/* 使用SimSun字体以便正确显示小蝌蚪符号: 引号、逗号、分号等、顿号,需要做一个排查, 标点符号显示需要使用light字重 */
 @font-face {
   font-family: quote;
-  src: local('SimSun');
+  src: local('SimSun'),
+       local('PingFang SC');
   /*local('Source Han Serif TC'),*/
   /*src: local('PingFang SC');
   src: local('Hiragino Sans GB');*/
-  unicode-range: U+2010-2027, U+3001-303F, U+FF01-FF9F;
+  unicode-range: U+25a1,U+2010-2027, U+3001-303F, U+FF01-FF9F;
 }
 
-/*破折号*/
+/*破折号, 很多字体不支持连字技术，应该做一个排查, 已经只有思源字体支持连字技术*/
 /*@font-face {
   font-family: dash;
   src: local('Arial');
@@ -73,13 +84,6 @@
 */
 
 /* main layout */
-/* @import url(odd.css); */
-/*body.simple{
-    color:#000000;
-    background-color:#FFFFFF;
-    margin:10pt;
-}
-*/
 
 html {
     font-family: sans-serif;
@@ -98,7 +102,7 @@ body{
     padding:2em;
     padding-top:100px;
     /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;*/
-    font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "PingFang HK", "Hiragino Sans GB", "PingFang SC", "PMingLiU", "Microsoft YaHei", siddham;
+    font-family: WSQUARE, quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", "PingFang HK", "PingFang SC", "PMingLiU", "Microsoft YaHei", siddham;
     font-size: large;
     /* font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;*/
 }
