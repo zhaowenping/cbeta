@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-12 20:54:58
+# Last Modified: 2017-12-14 08:55:55
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -428,6 +428,7 @@ def __init_cc__():
     tsptable = dict()
     with open('cc/TSPhrases.txt') as fd:
         for line in fd:
+            if line.startswith('#'): continue
             line = line.strip().split()
             tsptable[line[0]] = line[1:][0]
 
@@ -435,6 +436,7 @@ def __init_cc__():
     stptable = dict()
     with open('cc/STPhrases.txt') as fd:
         for line in fd:
+            if line.startswith('#'): continue
             line = line.strip().split()
             stptable[line[0]] = line[1:][0]
     # print('|'.join(sorted(tsptable.keys(), key=lambda x: len(x), reverse=True)))
@@ -445,12 +447,14 @@ def __init_cc__():
     tstable = dict()
     with open('cc/TSCharacters.txt') as fd:
         for line in fd:
+            if line.startswith('#'): continue
             line = line.strip().split()
             tstable[ord(line[0])] = ord(line[1:][0])
 
     sttable = dict()
     with open('cc/STCharacters.txt') as fd:
         for line in fd:
+            if line.startswith('#'): continue
             line = line.strip().split()
             sttable[ord(line[0])] = ord(line[1:][0])
     return tsp, tstable, tsptable, stp, sttable, stptable
