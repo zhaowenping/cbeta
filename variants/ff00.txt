@@ -1,0 +1,472 @@
+豈 豈 U+8C48 U+F900
+更 更 U+66F4 U+F901
+車 車 U+8ECA U+F902
+賈 賈 U+8CC8 U+F903
+滑 滑 U+6ED1 U+F904
+串 串 U+4E32 U+F905
+句 句 U+53E5 U+F906
+龜 龜 U+9F9C U+F907
+龜 龜 U+9F9C U+F908
+契 契 U+5951 U+F909
+金 金 U+91D1 U+F90A
+喇 喇 U+5587 U+F90B
+奈 奈 U+5948 U+F90C
+懶 懶 U+61F6 U+F90D
+癩 癩 U+7669 U+F90E
+羅 羅 U+7F85 U+F90F
+蘿 蘿 U+863F U+F910
+螺 螺 U+87BA U+F911
+裸 裸 U+88F8 U+F912
+邏 邏 U+908F U+F913
+樂 樂 U+6A02 U+F914
+洛 洛 U+6D1B U+F915
+烙 烙 U+70D9 U+F916
+珞 珞 U+73DE U+F917
+落 落 U+843D U+F918
+酪 酪 U+916A U+F919
+駱 駱 U+99F1 U+F91A
+亂 亂 U+4E82 U+F91B
+卵 卵 U+5375 U+F91C
+欄 欄 U+6B04 U+F91D
+爛 爛 U+721B U+F91E
+蘭 蘭 U+862D U+F91F
+鸞 鸞 U+9E1E U+F920
+嵐 嵐 U+5D50 U+F921
+濫 濫 U+6FEB U+F922
+藍 藍 U+85CD U+F923
+襤 襤 U+8964 U+F924
+拉 拉 U+62C9 U+F925
+臘 臘 U+81D8 U+F926
+蠟 蠟 U+881F U+F927
+廊 廊 U+5ECA U+F928
+朗 朗 U+6717 U+F929
+浪 浪 U+6D6A U+F92A
+狼 狼 U+72FC U+F92B
+郎 郎 U+90CE U+F92C
+來 來 U+4F86 U+F92D
+冷 冷 U+51B7 U+F92E
+勞 勞 U+52DE U+F92F
+擄 擄 U+64C4 U+F930
+櫓 櫓 U+6AD3 U+F931
+爐 爐 U+7210 U+F932
+盧 盧 U+76E7 U+F933
+老 老 U+8001 U+F934
+蘆 蘆 U+8606 U+F935
+虜 虜 U+865C U+F936
+路 路 U+8DEF U+F937
+露 露 U+9732 U+F938
+魯 魯 U+9B6F U+F939
+鷺 鷺 U+9DFA U+F93A
+碌 碌 U+788C U+F93B
+祿 祿 U+797F U+F93C
+綠 綠 U+7DA0 U+F93D
+菉 菉 U+83C9 U+F93E
+錄 錄 U+9304 U+F93F
+鹿 鹿 U+9E7F U+F940
+論 論 U+8AD6 U+F941
+壟 壟 U+58DF U+F942
+弄 弄 U+5F04 U+F943
+籠 籠 U+7C60 U+F944
+聾 聾 U+807E U+F945
+牢 牢 U+7262 U+F946
+磊 磊 U+78CA U+F947
+賂 賂 U+8CC2 U+F948
+雷 雷 U+96F7 U+F949
+壘 壘 U+58D8 U+F94A
+屢 屢 U+5C62 U+F94B
+樓 樓 U+6A13 U+F94C
+淚 淚 U+6DDA U+F94D
+漏 漏 U+6F0F U+F94E
+累 累 U+7D2F U+F94F
+縷 縷 U+7E37 U+F950
+陋 陋 U+964B U+F951
+勒 勒 U+52D2 U+F952
+肋 肋 U+808B U+F953
+凜 凜 U+51DC U+F954
+凌 凌 U+51CC U+F955
+稜 稜 U+7A1C U+F956
+綾 綾 U+7DBE U+F957
+菱 菱 U+83F1 U+F958
+陵 陵 U+9675 U+F959
+讀 讀 U+8B80 U+F95A
+拏 拏 U+62CF U+F95B
+樂 樂 U+6A02 U+F95C
+諾 諾 U+8AFE U+F95D
+丹 丹 U+4E39 U+F95E
+寧 寧 U+5BE7 U+F95F
+怒 怒 U+6012 U+F960
+率 率 U+7387 U+F961
+異 異 U+7570 U+F962
+北 北 U+5317 U+F963
+磻 磻 U+78FB U+F964
+便 便 U+4FBF U+F965
+復 復 U+5FA9 U+F966
+不 不 U+4E0D U+F967
+泌 泌 U+6CCC U+F968
+數 數 U+6578 U+F969
+索 索 U+7D22 U+F96A
+參 參 U+53C3 U+F96B
+塞 塞 U+585E U+F96C
+省 省 U+7701 U+F96D
+葉 葉 U+8449 U+F96E
+   說    U+F96F
+殺 殺 U+6BBA U+F970
+辰 辰 U+8FB0 U+F971
+沈 沈 U+6C88 U+F972
+拾 拾 U+62FE U+F973
+若 若 U+82E5 U+F974
+掠 掠 U+63A0 U+F975
+略 略 U+7565 U+F976
+亮 亮 U+4EAE U+F977
+兩 兩 U+5169 U+F978
+凉 凉 U+51C9 U+F979
+梁 梁 U+6881 U+F97A
+糧 糧 U+7CE7 U+F97B
+良 良 U+826F U+F97C
+諒 諒 U+8AD2 U+F97D
+量 量 U+91CF U+F97E
+勵 勵 U+52F5 U+F97F
+呂 呂 U+5442 U+F980
+女 女 U+5973 U+F981
+廬 廬 U+5EEC U+F982
+旅 旅 U+65C5 U+F983
+濾 濾 U+6FFE U+F984
+礪 礪 U+792A U+F985
+閭 閭 U+95AD U+F986
+驪 驪 U+9A6A U+F987
+麗 麗 U+9E97 U+F988
+黎 黎 U+9ECE U+F989
+力 力 U+529B U+F98A
+曆 曆 U+66C6 U+F98B
+歷 歷 U+6B77 U+F98C
+轢 轢 U+8F62 U+F98D
+年 年 U+5E74 U+F98E
+憐 憐 U+6190 U+F98F
+戀 戀 U+6200 U+F990
+撚 撚 U+649A U+F991
+漣 漣 U+6F23 U+F992
+煉 煉 U+7149 U+F993
+璉 璉 U+7489 U+F994
+秊 秊 U+79CA U+F995
+練 練 U+7DF4 U+F996
+聯 聯 U+806F U+F997
+輦 輦 U+8F26 U+F998
+蓮 蓮 U+84EE U+F999
+連 連 U+9023 U+F99A
+鍊 鍊 U+934A U+F99B
+列 列 U+5217 U+F99C
+劣 劣 U+52A3 U+F99D
+咽 咽 U+54BD U+F99E
+烈 烈 U+70C8 U+F99F
+裂 裂 U+88C2 U+F9A0
+說 說 U+8AAA U+F9A1
+廉 廉 U+5EC9 U+F9A2
+念 念 U+5FF5 U+F9A3
+捻 捻 U+637B U+F9A4
+殮 殮 U+6BAE U+F9A5
+簾 簾 U+7C3E U+F9A6
+獵 獵 U+7375 U+F9A7
+令 令 U+4EE4 U+F9A8
+囹 囹 U+56F9 U+F9A9
+寧 寧 U+5BE7 U+F9AA
+嶺 嶺 U+5DBA U+F9AB
+怜 怜 U+601C U+F9AC
+玲 玲 U+73B2 U+F9AD
+瑩 瑩 U+7469 U+F9AE
+羚 羚 U+7F9A U+F9AF
+聆 聆 U+8046 U+F9B0
+鈴 鈴 U+9234 U+F9B1
+零 零 U+96F6 U+F9B2
+靈 靈 U+9748 U+F9B3
+領 領 U+9818 U+F9B4
+例 例 U+4F8B U+F9B5
+禮 禮 U+79AE U+F9B6
+醴 醴 U+91B4 U+F9B7
+隸 隸 U+96B8 U+F9B8
+惡 惡 U+60E1 U+F9B9
+了 了 U+4E86 U+F9BA
+僚 僚 U+50DA U+F9BB
+寮 寮 U+5BEE U+F9BC
+尿 尿 U+5C3F U+F9BD
+料 料 U+6599 U+F9BE
+樂 樂 U+6A02 U+F9BF
+燎 燎 U+71CE U+F9C0
+療 療 U+7642 U+F9C1
+蓼 蓼 U+84FC U+F9C2
+遼 遼 U+907C U+F9C3
+龍 龍 U+9F8D U+F9C4
+暈 暈 U+6688 U+F9C5
+阮 阮 U+962E U+F9C6
+劉 劉 U+5289 U+F9C7
+杻 杻 U+677B U+F9C8
+柳 柳 U+67F3 U+F9C9
+流 流 U+6D41 U+F9CA
+溜 溜 U+6E9C U+F9CB
+琉 琉 U+7409 U+F9CC
+留 留 U+7559 U+F9CD
+硫 硫 U+786B U+F9CE
+紐 紐 U+7D10 U+F9CF
+類 類 U+985E U+F9D0
+六 六 U+516D U+F9D1
+戮 戮 U+622E U+F9D2
+陸 陸 U+9678 U+F9D3
+倫 倫 U+502B U+F9D4
+崙 崙 U+5D19 U+F9D5
+淪 淪 U+6DEA U+F9D6
+輪 輪 U+8F2A U+F9D7
+律 律 U+5F8B U+F9D8
+慄 慄 U+6144 U+F9D9
+栗 栗 U+6817 U+F9DA
+率 率 U+7387 U+F9DB
+隆 隆 U+9686 U+F9DC
+利 利 U+5229 U+F9DD
+吏 吏 U+540F U+F9DE
+履 履 U+5C65 U+F9DF
+易 易 U+6613 U+F9E0
+李 李 U+674E U+F9E1
+梨 梨 U+68A8 U+F9E2
+泥 泥 U+6CE5 U+F9E3
+理 理 U+7406 U+F9E4
+痢 痢 U+75E2 U+F9E5
+罹 罹 U+7F79 U+F9E6
+裏 裏 U+88CF U+F9E7
+裡 裡 U+88E1 U+F9E8
+里 里 U+91CC U+F9E9
+離 離 U+96E2 U+F9EA
+匿 匿 U+533F U+F9EB
+溺 溺 U+6EBA U+F9EC
+吝 吝 U+541D U+F9ED
+燐 燐 U+71D0 U+F9EE
+璘 璘 U+7498 U+F9EF
+藺 藺 U+85FA U+F9F0
+隣 隣 U+96A3 U+F9F1
+鱗 鱗 U+9C57 U+F9F2
+麟 麟 U+9E9F U+F9F3
+林 林 U+6797 U+F9F4
+淋 淋 U+6DCB U+F9F5
+臨 臨 U+81E8 U+F9F6
+立 立 U+7ACB U+F9F7
+笠 笠 U+7B20 U+F9F8
+粒 粒 U+7C92 U+F9F9
+狀 狀 U+72C0 U+F9FA
+炙 炙 U+7099 U+F9FB
+識 識 U+8B58 U+F9FC
+什 什 U+4EC0 U+F9FD
+茶 茶 U+8336 U+F9FE
+刺 刺 U+523A U+F9FF
+切 切 U+5207 U+FA00
+度 度 U+5EA6 U+FA01
+拓 拓 U+62D3 U+FA02
+糖 糖 U+7CD6 U+FA03
+宅 宅 U+5B85 U+FA04
+洞 洞 U+6D1E U+FA05
+暴 暴 U+66B4 U+FA06
+輻 輻 U+8F3B U+FA07
+行 行 U+884C U+FA08
+降 降 U+964D U+FA09
+見 見 U+898B U+FA0A
+廓 廓 U+5ED3 U+FA0B
+兀 兀 U+5140 U+FA0C
+嗀 嗀 U+55C0 U+FA0D
+   﨎    U+FA0E
+   﨏    U+FA0F
+塚 塚 U+585A U+FA10
+   﨑    U+FA11
+晴 晴 U+6674 U+FA12
+   﨓    U+FA13
+   﨔    U+FA14
+凞 凞 U+51DE U+FA15
+猪 猪 U+732A U+FA16
+益 益 U+76CA U+FA17
+礼 礼 U+793C U+FA18
+神 神 U+795E U+FA19
+祥 祥 U+7965 U+FA1A
+福 福 U+798F U+FA1B
+靖 靖 U+9756 U+FA1C
+精 精 U+7CBE U+FA1D
+羽 羽 U+7FBD U+FA1E
+   﨟    U+FA1F
+   蘒    U+FA20
+   﨡    U+FA21
+諸 諸 U+8AF8 U+FA22
+   﨣    U+FA23
+   﨤    U+FA24
+逸 逸 U+9038 U+FA25
+都 都 U+90FD U+FA26
+   﨧    U+FA27
+   﨨    U+FA28
+   﨩    U+FA29
+飯 飯 U+98EF U+FA2A
+飼 飼 U+98FC U+FA2B
+館 館 U+9928 U+FA2C
+鶴 鶴 U+9DB4 U+FA2D
+   郞    U+FA2E
+   隷    U+FA2F
+侮 侮 U+4FAE U+FA30
+   僧    U+FA31
+   免    U+FA32
+   勉    U+FA33
+   勤    U+FA34
+   卑    U+FA35
+   喝    U+FA36
+   嘆    U+FA37
+   器    U+FA38
+   塀    U+FA39
+墨 墨 U+58A8 U+FA3A
+   層    U+FA3B
+   屮    U+FA3C
+悔 悔 U+6094 U+FA3D
+   慨    U+FA3E
+   憎    U+FA3F
+   懲    U+FA40
+   敏    U+FA41
+   既    U+FA42
+   暑    U+FA43
+梅 梅 U+6885 U+FA44
+   海    U+FA45
+   渚    U+FA46
+   漢    U+FA47
+   煮    U+FA48
+   爫    U+FA49
+   琢    U+FA4A
+碑 碑 U+7891 U+FA4B
+   社    U+FA4C
+   祉    U+FA4D
+   祈    U+FA4E
+   祐    U+FA4F
+   祖    U+FA50
+   祝    U+FA51
+   禍    U+FA52
+   禎    U+FA53
+   穀    U+FA54
+   突    U+FA55
+   節    U+FA56
+   練    U+FA57
+   縉    U+FA58
+   繁    U+FA59
+   署    U+FA5A
+   者    U+FA5B
+臭 臭 U+81ED U+FA5C
+   艹    U+FA5D
+   艹    U+FA5E
+   著    U+FA5F
+   褐    U+FA60
+   視    U+FA61
+   謁    U+FA62
+   謹    U+FA63
+   賓    U+FA64
+   贈    U+FA65
+辶 辶 U+8FB6 U+FA66
+   逸    U+FA67
+   難    U+FA68
+   響    U+FA69
+   頻    U+FA6A
+   恵    U+FA6B
+   𤋮    U+FA6C
+   舘    U+FA6D
+   並    U+FA70
+   况    U+FA71
+   全    U+FA72
+   侀    U+FA73
+   充    U+FA74
+   冀    U+FA75
+   勇    U+FA76
+   勺    U+FA77
+   喝    U+FA78
+   啕    U+FA79
+   喙    U+FA7A
+   嗢    U+FA7B
+   塚    U+FA7C
+   墳    U+FA7D
+   奄    U+FA7E
+   奔    U+FA7F
+   婢    U+FA80
+   嬨    U+FA81
+   廒    U+FA82
+   廙    U+FA83
+   彩    U+FA84
+   徭    U+FA85
+   惘    U+FA86
+   慎    U+FA87
+   愈    U+FA88
+   憎    U+FA89
+   慠    U+FA8A
+   懲    U+FA8B
+   戴    U+FA8C
+揄 揄 U+63C4 U+FA8D
+   搜    U+FA8E
+   摒    U+FA8F
+   敖    U+FA90
+晴 晴 U+6674 U+FA91
+   朗    U+FA92
+   望    U+FA93
+   杖    U+FA94
+   歹    U+FA95
+   殺    U+FA96
+   流    U+FA97
+   滛    U+FA98
+   滋    U+FA99
+   漢    U+FA9A
+   瀞    U+FA9B
+煮 煮 U+716E U+FA9C
+   瞧    U+FA9D
+   爵    U+FA9E
+   犯    U+FA9F
+   猪    U+FAA0
+   瑱    U+FAA1
+   甆    U+FAA2
+   画    U+FAA3
+   瘝    U+FAA4
+   瘟    U+FAA5
+   益    U+FAA6
+   盛    U+FAA7
+   直    U+FAA8
+   睊    U+FAA9
+   着    U+FAAA
+磌 磌 U+78CC U+FAAB
+   窱    U+FAAC
+節 節 U+7BC0 U+FAAD
+   类    U+FAAE
+   絛    U+FAAF
+   練    U+FAB0
+   缾    U+FAB1
+   者    U+FAB2
+   荒    U+FAB3
+   華    U+FAB4
+   蝹    U+FAB5
+   襁    U+FAB6
+   覆    U+FAB7
+   視    U+FAB8
+   調    U+FAB9
+   諸    U+FABA
+   請    U+FABB
+   謁    U+FABC
+   諾    U+FABD
+   諭    U+FABE
+   謹    U+FABF
+   變    U+FAC0
+   贈    U+FAC1
+   輸    U+FAC2
+   遲    U+FAC3
+   醙    U+FAC4
+   鉶    U+FAC5
+   陼    U+FAC6
+   難    U+FAC7
+   靖    U+FAC8
+   韛    U+FAC9
+   響    U+FACA
+   頋    U+FACB
+   頻    U+FACC
+鬒 鬒 U+9B12 U+FACD
+   龜    U+FACE
+   𢡊    U+FACF
+   𢡄    U+FAD0
+   𣏕    U+FAD1
+   㮝    U+FAD2
+   䀘    U+FAD3
+   䀹    U+FAD4
+   𥉉    U+FAD5
+   𥳐    U+FAD6
+   𧻓    U+FAD7
+   齃    U+FAD8
+   龎    U+FAD9

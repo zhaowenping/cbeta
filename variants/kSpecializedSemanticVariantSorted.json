@@ -5,7 +5,6 @@
 蜡 䄍 U+8721 U+410D
 個 个 U+500B<kMeyerWempe U+4E2A
 乾 亁 U+4E7E U+4E81<kFenn
-乾 亁 U+4E7E<kFenn U+4E81
 井 丼 U+4E95 U+4E3C
 從 从 U+5F9E<kFenn U+4ECE
 胄 伷 U+80C4<kMeyerWempe U+4F37
@@ -102,7 +101,7 @@
 淨 凈 U+6DE8 U+51C8<kMeyerWempe
 渨 偎 U+6E28 U+504E<kMeyerWempe
 溺 尿 U+6EBA U+5C3F<kFenn
-滾 菌 U+6EFE U+83CC<kMeyerWempe
+# 滾 菌 U+6EFE U+83CC<kMeyerWempe
 潦 澇 U+6F66 U+6F87<kFenn
 澹 淡 U+6FB9 U+6DE1<kMeyerWempe
 炰 炮 U+70B0 U+70AE<kFenn
@@ -145,7 +144,7 @@
 舒 摴 U+8212 U+6474
 鋪 舖 U+92EA<kMeyerWempe U+8216
 莿 刺 U+83BF U+523A<kMeyerWempe
-菌 滾 U+83CC U+6EFE<kMeyerWempe
+# 菌 滾 U+83CC U+6EFE<kMeyerWempe
 華 蕐 U+83EF<kFenn U+8550
 參 薓 U+53C3<kFenn U+8593
 號 号 U+865F U+53F7<kFenn

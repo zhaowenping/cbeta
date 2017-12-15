@@ -1,0 +1,31 @@
+並 竝 并 幷 U+7ADD kSemanticVariant U+4E26<kMatthews U+5E76<kMatthews U+5E77<kMatthews
+并 並 幷 竝 U+5E76 kSemanticVariant U+4E26<kMatthews,kMeyerWempe U+5E77<kMatthews,kMeyerWempe U+7ADD<kMatthews
+於 于 亏 扵 U+65BC kSemanticVariant U+4E8E<kLau U+4E8F<kMatthews U+6275<kLau,kMatthews
+于 扵 亏 於 U+6275 kSemanticVariant U+4E8E<kLau U+4E8F<kMatthews U+65BC<kLau,kMatthews
+災 烖 灾 菑 U+70D6 kSemanticVariant U+707D<kLau,kMatthews U+707E<kLau,kMatthews U+83D1<kFenn
+藝 埶 秇 蓺 U+85DD kSemanticVariant U+57F6<kMatthews U+79C7<kMatthews U+84FA<kLau,kMatthews
+邕 𪪝 雍 雝 U+2AA9D kSemanticVariant U+9095<kMatthews U+96CD<kMatthews U+96DD<kMatthews
+煙 完 烟 菸 U+7159 kSemanticVariant U+5B8C<kLau U+70DF<kHKGlyph,kLau,kMatthews,kMeyerWempe U+83F8
+鹽 䀋 塩 𥂁 U+9E7D kSemanticVariant U+400B<kLau U+5869<kMatthews U+25081<kMeyerWempe
+完 烟 菸 煙 U+70DF kSemanticVariant U+5B8C<kLau U+83F8<kFenn U+7159<kHKGlyph,kLau,kMatthews,kMeyerWempe
+# 卍 万 卐 萬 U+534D kSemanticVariant U+4E07<kFenn U+5350 U+842C<kFenn
+塢 隝 隖 鄔 U+5862 kSemanticVariant U+969D<kLau U+9696<kMatthews U+9114<kMeyerWempe
+秋 䆋 秌 龝 U+79CB kSemanticVariant U+418B<kMatthews U+79CC<kLau U+9F9D<kMatthews
+澀 澁 濇 瀒 U+6F80 kSemanticVariant U+6F81<kMeyerWempe U+6FC7<kMatthews,kMeyerWempe U+7012<kMatthews
+歲 𡻕 亗 岁 U+21ED5 kSemanticVariant U+4E97<kFenn U+5C81<kFenn U+6B72<kLau,kMeyerWempe
+蕩 偒 盪 蘯 U+8569 kSemanticVariant U+5052 U+76EA U+862F
+創 刅 刱 戧 U+5275 kSemanticVariant U+5205<kMatthews U+5231<kHanYu:T,kMeyerWempe U+6227<kMatthews
+窗 䆫 牕 窓 窻 U+7A97 kSemanticVariant U+41AB<kMeyerWempe U+7255<kFenn U+7A93<kLau,kMatthews,kMeyerWempe U+7ABB<kFenn
+關 寡 関 闗 U+95DC kSemanticVariant U+5BE1<kLau U+95A2<kMatthews U+95D7<kMatthews,kMeyerWempe
+關 関 闗 𨶹 U+95A2 kSemanticVariant U+95D7<kMatthews U+95DC<kMatthews U+28DB9<kLau
+唬 諕 猇 虓 U+552C kSemanticVariant U+8AD5<kMatthews U+7307<kMeyerWempe U+8653<kMeyerWempe
+蚘 痐 蛔 蛕 U+8698 kSemanticVariant U+75D0<kMeyerWempe U+86D4<kMatthews U+86D5<kMatthews
+堿 鹻 碱 鹼 U+9E7B kSemanticVariant U+583F<kFenn U+78B1<kLau U+9E7C<kLau,kMatthews,kMeyerWempe
+饋 匱 櫃 餽 U+994B kSemanticVariant U+5331<kLau U+6AC3<kLau U+993D<kFenn
+曆 厤 歴 歷 U+66C6 kSemanticVariant U+53A4<kLau,kMatthews U+6B74<kMeyerWempe U+6B77<kMeyerWempe
+櫓 樐 㯭 艪 U+6A10 kSemanticVariant U+3BED<kMatthews U+826A<kMatthews U+6AD3<kMatthews
+炮 砲 炰 礮 礟 U+70AE kSemanticVariant U+7832<kMeyerWempe U+70B0<kMatthews U+792E<kMeyerWempe U+791F<kLau,kMatthews
+櫃 匱 柜 樻 饋 鐀 U+6AC3 kSemanticVariant U+5331<kLau,kMatthews,kMeyerWempe U+67DC<kHKGlyph U+6A3B<kMeyerWempe U+994B<kLau U+9400<kMatthews
+麤 粗 麁 麄 觕  
+屄 毴 𫵘 𣭈
+
