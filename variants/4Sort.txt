@@ -28,4 +28,10 @@
 櫃 匱 柜 樻 饋 鐀 U+6AC3 kSemanticVariant U+5331<kLau,kMatthews,kMeyerWempe U+67DC<kHKGlyph U+6A3B<kMeyerWempe U+994B<kLau U+9400<kMatthews
 麤 粗 麁 麄 觕  
 屄 毴 𫵘 𣭈
+效 効 俲 傚 U+6548 U+52B9 U+4FF2 U+509A
+窗 窓 牕 窻 U+7A97 U+7A93 U+7255 U+7ABB
+鬥 鬬 閗 闘 U+9B25 U+9B2C U+9597 U+95D8
+總 総 緫 惣 U+7E3D U+7DCF U+7DEB U+60E3
+劫 刦 刧 刼 U+52AB U+5226 U+5227 U+523C
+
 
