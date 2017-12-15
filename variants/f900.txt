@@ -286,10 +286,10 @@
 精 精 U+7CBE U+FA1D
 羽 羽 U+7FBD U+FA1E
    﨟    U+FA1F
-   蘒    U+FA20
+蘒 蘒 U+8612 U+FA20
    﨡    U+FA21
 諸 諸 U+8AF8 U+FA22
-   﨣    U+FA23
+𧺯 﨣 U+27EAF U+FA23
    﨤    U+FA24
 逸 逸 U+9038 U+FA25
 都 都 U+90FD U+FA26
