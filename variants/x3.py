@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-16 19:02:53
+# Last Modified: 2017-12-16 21:04:05
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -38,6 +38,7 @@ with open('tw_edu.json') as fd:
 #                 print(c1, c3, c2, "U+%X" % ord(c1), "U+%X" % ord(c3), "U+%X" % ord(c2))
 
 result = set()
+rr = dict()
 with open('variants.txt') as fd:
     for line in fd:
         if line.startswith('#'): continue
@@ -55,7 +56,7 @@ with open('variants.txt') as fd:
 result = sorted(list(result), key=lambda x: ord(x[0]))
 
 for c1,c2 in result:
-    print(c1,c2, "U+%X" % ord(c1), "U+%X" % ord(c2))
+    print(c1, c2, "U+%X" % ord(c1), "U+%X" % ord(c2))
 
 # print(data)
 
