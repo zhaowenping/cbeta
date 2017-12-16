@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-16 12:16:23
+# Last Modified: 2017-12-16 19:02:53
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -38,7 +38,7 @@ with open('tw_edu.json') as fd:
 #                 print(c1, c3, c2, "U+%X" % ord(c1), "U+%X" % ord(c3), "U+%X" % ord(c2))
 
 result = set()
-with open('zz.txt') as fd:
+with open('variants.txt') as fd:
     for line in fd:
         if line.startswith('#'): continue
         line = line.strip()
@@ -47,6 +47,7 @@ with open('zz.txt') as fd:
         c1 = data[0]
         c2 = data[1]
         # c3 = data[2]
+        #if c1 in edu and c2 not in edu:
         result.add((c1, c2))
         # else:
         #     print(c2)
