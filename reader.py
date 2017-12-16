@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-12 20:20:22
+# Last Modified: 2017-12-16 13:24:46
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -41,6 +41,7 @@ from libhan import Search
 from libhan import TSDetect
 from libhan import convert2t
 from libhan import convert2s
+from libhan import normyitizi
 
 # 装入各种词典
 dd = load_dict()
@@ -332,6 +333,8 @@ def dict_get(word):
     _from = ''
     definition = ''
     if len(word) == 1:
+        # if word not in kangxi:
+        #     word2 = normyitizi(word)
         if word in kangxi:
             _from = "康熙字典"
             definition = []

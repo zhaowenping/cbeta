@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-14 08:55:55
+# Last Modified: 2017-12-16 13:35:49
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -133,11 +133,13 @@ class SA:
     '''梵语字符串类, 可以使用HK转写和iast转写输入, 使用天城体, 悉檀体, 拉丁输出'''
     pass
 
-def hk2iast(str_in, m=1):
-    '''hk系统转拉丁梵语, 会有两个结果，分别是t1和t2'''
+def hk2iast(str_in):
+    '''hk哈佛-京都系统转IAST梵语'''
     x = {'S':'sh',
-        'R':'\u1e5bi',      # ṛi
         'RR':'\u1e5b\u012b'}  #   1e5d
+        # 'RR':'\u1e5d'}     # 1e5d
+        # 'lR':'\u1eca'}     # 1e5d
+        # 'lRR':'\u1e39'}     # 1e5d
 
     t1 = {'A': '\u0101',    # ā
         'I':'\u012b',
@@ -152,6 +154,8 @@ def hk2iast(str_in, m=1):
         'L':'\u1eca',   # Ị
         'z':'\u1e61',
         '@':' ',
+        'R':'\u1e5b',      # ṛ
+        'S':'\u1e63',      #
         }
 
     t2 = {'A': '\u0101',
@@ -169,11 +173,8 @@ def hk2iast(str_in, m=1):
         '@':' ',
         }
 
-    if m == 1:
-        usedt = {ord(k): ord(t1[k]) for k in t1}
-    else:
-        usedt = {ord(k): ord(t2[k]) for k in t2}
-    str_out = str_in.replace('S', 'sh').replace('RR', '\u1e5b\u012b').replace('R', '\u1e5bi')
+    usedt = {ord(k): ord(t1[k]) for k in t1}
+    str_out = str_in.replace('RR', '\u1e5d').replace('lR', '\u1eca').replace('lRR', '\u1e39')
     str_out = str_out.translate(usedt)
     return str_out
 
@@ -424,7 +425,7 @@ def splitstring(pattern, string):
 
 def __init_cc__():
     '''读取简体繁体转换数据库'''
-    # 读取繁体转简体短语
+    # 读取繁体转简体短语字典
     tsptable = dict()
     with open('cc/TSPhrases.txt') as fd:
         for line in fd:
@@ -432,7 +433,7 @@ def __init_cc__():
             line = line.strip().split()
             tsptable[line[0]] = line[1:][0]
 
-    # 读取简体转繁体转简体短语
+    # 读取简体转繁体转简体短语字典
     stptable = dict()
     with open('cc/STPhrases.txt') as fd:
         for line in fd:
@@ -441,6 +442,7 @@ def __init_cc__():
             stptable[line[0]] = line[1:][0]
     # print('|'.join(sorted(tsptable.keys(), key=lambda x: len(x), reverse=True)))
 
+    # 简体繁体转换pattern
     tsp = re.compile('|'.join(tsptable.keys()))
     stp = re.compile('|'.join(stptable.keys()))
 
@@ -468,11 +470,15 @@ def __init_cc__():
 
 tsp, tstable, tsptable, stp, sttable, stptable = __init_cc__()
 
-def convert2s(string, punctuation=True, region=False):
+def convert2s(string, punctuation=True, region=False, autonorm=True):
     '''繁体转简体, punctuation是否转换单双引号
     region 是否执行区域转换
     region 转换后的地区
+    autonorm 自动规范化异体字
     '''
+    if autonorm:
+        string = normyitizi(string)
+
     if punctuation:
         string = string.translate({0x300c: 0x201c, 0x300d: 0x201d, 0x300e: 0x2018, 0x300f: 0x2019})
 
@@ -495,6 +501,22 @@ def convert2t(string, punctuation=True, region=False):
 
 # 简体繁体转换结束
 
+# 异体字处理
+
+# 读入异体字对照表
+yitizi = dict()
+with open('dict/variants.txt') as fd:
+    for line in fd:
+        if line.startswith('#'): continue
+        line = line.strip().split()
+        yitizi[ord(line[1])] = ord(line[0])
+
+def normyitizi(string, level=0):
+    '''异体字规范化为标准繁体字'''
+    string = string.translate(yitizi)
+    return string
+
+
 def main():
     ''''''
     ss = Search()
@@ -511,6 +533,7 @@ def main():
 
 def test():
     ''''''
+    print(normyitizi('妬'))
 
 if __name__ == "__main__":
     # main()
