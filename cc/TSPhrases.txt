@@ -35,6 +35,9 @@
 乾道	乾道
 乾陵	乾陵
 乾隆	乾隆
+尼乾陀	尼乾陀
+康乾	康乾
+張法乾	张法乾
 # 乾慧	干慧
 # 乾陀羅	干陀罗
 # 血氣未乾	血气未干
@@ -54,10 +57,6 @@
 # 扭轉乾坤	扭转乾坤
 # 旋轉乾坤	旋转乾坤
 # 旋轉乾坤之力	旋转乾坤之力
-目<anchor xml:id="nkr_note_orig_0003002" n="0003002"/><anchor xml:id="nkr_note_mod_0003002" n="0003002"/><anchor xml:id="beg0003002" n="0003002"/>乾<anchor xml:id="end0003002"/>連	目<anchor xml:id="nkr_note_orig_0003002" n="0003002"/><anchor xml:id="nkr_note_mod_0003002" n="0003002"/><anchor xml:id="beg0003002" n="0003002"/>乾<anchor xml:id="end0003002"/>连
-尼乾陀	尼乾陀
-康乾	康乾
-張法乾	张法乾
 # 乾躁	干燥
 # 乾脆	干脆
 # 餅乾	饼干
