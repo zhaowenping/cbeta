@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-14 10:29:45
+# Last Modified: 2017-12-15 13:40:07
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -17,7 +17,7 @@ import opencc
 import time
 
 ts = dict()
-with open('TSCharacters.txt') as fd:
+with open('STCharacters.txt') as fd:
     for line in fd:
         if line.startswith('#'): continue
         line = line.strip().split()
