@@ -140,9 +140,13 @@
         <menu id="supermenu" type="context">
             <menuitem label="报告错误" onclick="alert('step1')"/>
             <menuitem label="保存书签" onclick="imageRotation('rotate-90')" icon="img/arrow-return-090.png"/>
-            <menuitem label="简繁切换" icon="img/arrow-return-180.png"/>
-            <menuitem label="横排竖排" icon="img/arrow-stop-180.png"/>
-            <menuitem label="菜单测试4" icon="img/arrow-stop-270.png"/>
+            <menuitem label="拼音标注" onclick="alert('此功能暂时不开放')" icon="img/arrow-return-180.png"/>
+            <menuitem label="简繁切换" onclick="alert('此功能暂时不开放')" icon="img/arrow-return-180.png"/>
+            <menuitem label="横排竖排" onclick="alert('此功能暂时不开放')" icon="img/arrow-stop-180.png"/>
+            <menuitem label="引用复制" onclick="alert('此功能暂时不开放')" icon="img/arrow-stop-270.png"/>
+            <menuitem label="导出PDF"  onclick="alert('此功能暂时不开放')" icon="img/arrow-stop-270.png"/>
+            <menuitem label="导出epub" onclick="alert('此功能暂时不开放')" icon="img/arrow-stop-270.png"/>
+            <menuitem label="导出txt"  onclick="alert('此功能暂时不开放')" icon="img/arrow-stop-270.png"/>
         </menu>
 
             <!--ul class="pagination pagination-sm"-->
@@ -379,6 +383,9 @@
     <!--清除文档中无用空格, 替换错误的人名分割符号-->
     <xsl:template match="text()|@*">
         <xsl:value-of select="translate(normalize-space(.), '&#xff0e;', '&#x00b7;')"/>
+            <!--xsl:call-template name="zhuyin">
+                <xsl:with-param name="string" select="."/>
+            </xsl:call-template-->
     </xsl:template>
 
     <!--处理图片-->
@@ -687,7 +694,7 @@
       <!--xsl:if test="not(starts-with($parent,'div'))">
         <xsl:apply-templates/>
       </xsl:if-->
-      <h2>
+      <h2 class="head">
         <xsl:apply-templates/>
       </h2>
     </xsl:template>
@@ -1007,6 +1014,24 @@
                 </xsl:call-template>
             </xsl:otherwise>
         </xsl:choose>
+    </xsl:template>
+
+    <!--注音模板, 使用kx.xml作为字典给全文注音-->
+    <xsl:template match="text/text()" name="zhuyin">
+        <xsl:param name="string" select="."/>
+        <xsl:param name="num" select="1"/>
+                <xsl:variable name="zi" select="substring($string, $num, 1)"/>
+                <ruby>
+                    <xsl:value-of select="substring($string, $num, 1)"/>
+                    <rt>
+                        <xsl:value-of select="document('kx.xml')//char[@zi=$zi]"/>
+                    </rt>
+                </ruby>
+            <xsl:if test="substring($string, $num+1, 1)">
+                <xsl:call-template name="zhuyin">
+                    <xsl:with-param name="string" select="substring($string, $num+1)"/>
+                </xsl:call-template>
+            </xsl:if>
     </xsl:template>
 
     <!--计数循环-->
