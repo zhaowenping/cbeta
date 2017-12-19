@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-15 13:40:07
+# Last Modified: 2017-12-19 08:17:20
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -17,19 +17,29 @@ import opencc
 import time
 
 ts = dict()
-with open('STCharacters.txt') as fd:
+rr = []
+with open('TSCharacters.txt') as fd:
     for line in fd:
-        if line.startswith('#'): continue
+        # if line.startswith('#'):
+        #     print (line)
         line = line.strip().split()
+        if line[0] == line[1]:
+            print(line)
+        rr.append(line)
         # ts[line[0]] = line[1:][0]
         ts[ord(line[0])] = ord(line[1:][0])
-        if(len(line[1:])>1):
-            print(line)
+        #if len(line[1:]) == 2:
+        #    print(line)
         #tt.add(line[0])
         #for zi in line[1:]:
         #    ss.add(zi)
 
 
+# rr = sorted(rr, key= lambda x: ord(x[0]))
+# for i in rr:
+#     if len(i) == 2:
+#         if ord(i[0]) < 0x20000 and ord(i[1]) > 0x20000:
+#             print("{} {}, {} {}".format(i[0], i[1], 'U+%X' % ord(i[0]), 'U+%X' % ord(i[1])))
 
 
 def main():

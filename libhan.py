@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-16 13:35:49
+# Last Modified: 2017-12-19 08:56:49
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -19,6 +19,7 @@ __version__ = "0.0.1"
 
 import re
 import os
+import copy
 import gzip
 import json
 import time
@@ -470,11 +471,12 @@ def __init_cc__():
 
 tsp, tstable, tsptable, stp, sttable, stptable = __init_cc__()
 
-def convert2s(string, punctuation=True, region=False, autonorm=True):
+def convert2s(string, punctuation=True, region=False, autonorm=True, onlyURO=True):
     '''繁体转简体, punctuation是否转换单双引号
     region 是否执行区域转换
     region 转换后的地区
     autonorm 自动规范化异体字
+    onlyURO 不简化低位类推简化字
     '''
     if autonorm:
         string = normyitizi(string)
@@ -482,7 +484,12 @@ def convert2s(string, punctuation=True, region=False, autonorm=True):
     if punctuation:
         string = string.translate({0x300c: 0x201c, 0x300d: 0x201d, 0x300e: 0x2018, 0x300f: 0x2019})
 
-    content = ''.join(i[0].translate(tstable) if not i[1] else tsptable[i[0]] for i in splitstring(tsp, string))
+    # 类推简化字处理
+    tstable2 = copy.deepcopy(tstable)
+    if onlyURO:
+        tstable2 = {k:tstable[k] for k in tstable if not (k < 0x20000 and tstable[k] > 0x20000)}
+
+    content = ''.join(i[0].translate(tstable2) if not i[1] else tsptable[i[0]] for i in splitstring(tsp, string))
 
     return content
 
