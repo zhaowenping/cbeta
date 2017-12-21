@@ -24,7 +24,6 @@
 櫓 樐 㯭 艪 U+6A10 kSemanticVariant U+3BED<kMatthews U+826A<kMatthews U+6AD3<kMatthews
 屄 毴 𫵘 𣭈
 效 効 俲 傚 U+6548 U+52B9 U+4FF2 U+509A
-窗 窓 牕 窻 U+7A97 U+7A93 U+7255 U+7ABB
 鬥 鬬 閗 闘 U+9B25 U+9B2C U+9597 U+95D8
 總 総 緫 惣 U+7E3D U+7DCF U+7DEB U+60E3
 劫 刦 刧 刼 U+52AB U+5226 U+5227 U+523C

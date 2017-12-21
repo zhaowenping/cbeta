@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-16 13:24:46
+# Last Modified: 2017-12-19 15:58:29
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -399,8 +399,9 @@ def dict_get(word):
             _from = "YAT"
             pinyin = "YAT"
 
+    # 用Unicode数据库注音
     if _from and not pinyin:
-        pinyin = ' '.join([unihan.get(x, {}).get('kMandarin', '') for x in word])
+        pinyin = ' '.join([unihan.get(x, {}).get('kMandarin', '').split()[0] for x in word])
     # print(pinyin, definition)
 
     # else:
