@@ -1,8 +1,0 @@
-並 竝 并 幷 U+7ADD kSemanticVariant U+4E26<kMatthews U+5E76<kMatthews U+5E77<kMatthews
-并 並 幷 竝 U+5E76 kSemanticVariant U+4E26<kMatthews,kMeyerWempe U+5E77<kMatthews,kMeyerWempe U+7ADD<kMatthews
-於 于 亏 扵 U+65BC kSemanticVariant U+4E8E<kLau U+4E8F<kMatthews U+6275<kLau,kMatthews
-于 扵 亏 於 U+6275 kSemanticVariant U+4E8E<kLau U+4E8F<kMatthews U+65BC<kLau,kMatthews
-煙 完 烟 菸 U+7159 kSemanticVariant U+5B8C<kLau U+70DF<kHKGlyph,kLau,kMatthews,kMeyerWempe U+83F8
-完 烟 菸 煙 U+70DF kSemanticVariant U+5B8C<kLau U+83F8<kFenn U+7159<kHKGlyph,kLau,kMatthews,kMeyerWempe
-蕩 偒 盪 蘯 U+8569 kSemanticVariant U+5052 U+76EA U+862F
-鬥 鬬 閗 闘 U+9B25 U+9B2C U+9597 U+95D8
