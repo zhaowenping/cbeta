@@ -117,6 +117,19 @@
         <script src="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
         <![endif]-->
         <script src="/static/my.js"></script>
+        <script src="/static/bootstrap-paginator.min.js"></script>
+        <script>
+    var options = {
+        bootstrapMajorVersion: 3,
+        alignment:'center',
+        currentPage:1,
+        numberOfPages:5,
+        totalPages: 10,
+        };
+    $(document).ready(function(){
+       $("#pagination").bootstrapPaginator(options);
+    });
+</script>
 
         </head>
 
@@ -155,6 +168,7 @@
                 <a class="navbar-brand">&#9776;</a>  
             </div--> 
             <div class="container">
+                <ul id="pagination"></ul>
                 <ul class="nav navbar-nav">
                 <li>
                     <a class="navbar-brand" href="{$prev_filepath}">上一卷</a>
@@ -1017,7 +1031,7 @@
     </xsl:template>
 
     <!--注音模板, 使用kx.xml作为字典给全文注音-->
-    <xsl:template match="text/text()" name="zhuyin">
+    <!--xsl:template match="text/text()" name="zhuyin">
         <xsl:param name="string" select="."/>
         <xsl:param name="num" select="1"/>
                 <xsl:variable name="zi" select="substring($string, $num, 1)"/>
@@ -1032,7 +1046,7 @@
                     <xsl:with-param name="string" select="substring($string, $num+1)"/>
                 </xsl:call-template>
             </xsl:if>
-    </xsl:template>
+    </xsl:template-->
 
     <!--计数循环-->
     <xsl:template name="loop">
