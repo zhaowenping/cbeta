@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-19 15:58:29
+# Last Modified: 2017-12-23 11:45:08
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -202,24 +202,22 @@ def searchmulu():
 
 # 搜索！
 
-#ix = open_dir("index")
+ix = open_dir("index")
 # 搜索content内容
-#qp = QueryParser("content", ix.schema)
+qp = QueryParser("content", ix.schema)
 
 # TODO 搜索的时候被搜索内容应该手动分词
 @post('/search')
 @view('temp/search.jinja2')
 def search_post():
     global qp
-    # content = request.forms.get('content')
-    # content = request.POST.get('content')
     print(request.POST)
     content = request.forms.content
+    if ts.detect(content)['confidence'] == 's':
+        content = convert2t(content)
+    stop_words = frozenset("不無一是有之者如法為故生此佛所三以二人云也於中若得心大")
+    content = ''.join(set(content)-stop_words)
     print(('content', content))
-    #content = opencc.convert(content, config='s2t.json')
-    content = convert2t(content)
-    # content = request.forms.getunicode('content')
-    # print(('content', content))
     mq = qp.parse(content)
     print(mq)
     # mq = Term('content', content)
@@ -229,7 +227,7 @@ def search_post():
     with ix.searcher() as searcher:
         # results = searcher.search(mq)
         pageid = 1
-        results = searcher.search_page(mq, pageid, pagelen=20)
+        results = searcher.search_page(mq, pageid, pagelen=40)
         # results = searcher.find(mq)
         found = results.scored_length()
         print(('found:', found))
@@ -851,6 +849,10 @@ def keyifayin_post():
     cur.close()
     conn.close()
     redirect(f'/keyifayin')
+
+@get('/page')
+def page_get():
+    return []
 
 # GeventServer.run(host = '0.0.0.0', port = 8081)
 app = default_app()
