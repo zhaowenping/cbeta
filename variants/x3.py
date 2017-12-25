@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-22 11:20:06
+# Last Modified: 2017-12-24 21:50:34
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -48,15 +48,21 @@ with open('variants.txt') as fd:
         c1 = data[0]
         c2 = data[1]
         # c3 = data[2]
-        #if c1 in edu and c2 not in edu:
-        result.add((c1, c2))
+        if c1 in rr:
+            rr[c1].append(c2)
+        else:
+            rr[c1] = [c2,]
+        # result.add((c1, c2))
         # else:
         #     print(c2)
 
-result = sorted(list(result), key=lambda x: ord(x[0]))
+# result = sorted(list(result), key=lambda x: ord(x[0]))
+rk = sorted(rr.keys(), key=lambda x: ord(x))
 
-for c1,c2 in result:
-    print(c1, c2, "U+%X" % ord(c1), "U+%X" % ord(c2))
+for c1 in rk:
+    cc = sorted([i for i in rr[c1]], key=lambda x: ord(x))
+    for c2 in cc:
+        print(c1, c2, "U+%X" % ord(c1), "U+%X" % ord(c2))
 
 # print(data)
 
