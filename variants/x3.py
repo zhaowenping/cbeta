@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-24 21:50:34
+# Last Modified: 2017-12-27 12:59:56
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -22,20 +22,6 @@ with open('tw_edu.json') as fd:
     edu = json.load(fd)
 
 
-# with open('3Sort.txt') as fd:
-#     for line in fd:
-#         if line.startswith('#'): continue
-#         line = line.strip()
-#         if not line: continue
-#         data = line.split()
-#         c1 = data[0]
-#         c2 = data[1]
-#         c3 = data[2]
-#         if c2 in edu or c3 in edu and not (c2 in edu and c3 in edu):
-#             if c2 in edu:
-#                 print(c1, c2, c3, "U+%X" % ord(c1), "U+%X" % ord(c2), "U+%X" % ord(c3))
-#             else:
-#                 print(c1, c3, c2, "U+%X" % ord(c1), "U+%X" % ord(c3), "U+%X" % ord(c2))
 
 result = set()
 rr = dict()
@@ -62,6 +48,7 @@ rk = sorted(rr.keys(), key=lambda x: ord(x))
 for c1 in rk:
     cc = sorted([i for i in rr[c1]], key=lambda x: ord(x))
     for c2 in cc:
+        # if c1 in edu and c2 in edu:
         print(c1, c2, "U+%X" % ord(c1), "U+%X" % ord(c2))
 
 # print(data)
