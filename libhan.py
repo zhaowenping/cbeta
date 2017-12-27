@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-19 08:56:49
+# Last Modified: 2017-12-28 05:17:20
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -24,6 +24,7 @@ import gzip
 import json
 import time
 from functools import reduce
+import requests
 
 
 print('调用函数库')
@@ -34,7 +35,9 @@ class TSDetect:
 
         self.p = re.compile(r'[\u4e00-\u9fa5]')
 
+        # 纯繁体字集合
         self.tt = set()
+        # 纯简体字集合
         self.ss = set()
         with open('cc/TSCharacters.txt') as fd:
             for line in fd:
@@ -50,16 +53,15 @@ class TSDetect:
 
     def detect(self, s0):
         '''粗略判断一段文本是简体还是繁体的概率'''
+        if len(s0) == 0:
+            return {'t': 50, 's': 50, 'confidence': ''}
+
         s0 = set(s0)
-        # 同时是简体繁体的概率
-        j = 0
-        aa = s0 - self.tt - self.ss
-        for i in aa:
-            if self.p.match(i):
-                j += 1
-        # 繁体概率
-        t = 100 +  ((j * 50 -len(s0 - self.tt) * 100 )/ len(s0))
-        # 简体概率
+        # 同时是简体繁体的可能性
+        j = sum(1 for i in (s0 - self.tt - self.ss) if self.p.match(i))
+        # 繁体可能性
+        t = 100 + ((j * 50 - len(s0 - self.tt) * 100 )/ len(s0))
+        # 简体可能性
         s = 100 + ((j * 50 - len(s0 - self.ss) * 100 )/ len(s0))
 
         confidence = ''
@@ -476,7 +478,7 @@ def convert2s(string, punctuation=True, region=False, autonorm=True, onlyURO=Tru
     region 是否执行区域转换
     region 转换后的地区
     autonorm 自动规范化异体字
-    onlyURO 不简化低位类推简化字
+    onlyURO 不简化低位类推简化字(繁体字处于BMP和扩展A区, 但是简体字处于扩展B,C,D,E,F的汉字)
     '''
     if autonorm:
         string = normyitizi(string)
@@ -523,6 +525,44 @@ def normyitizi(string, level=0):
     string = string.translate(yitizi)
     return string
 
+
+def fullsearch(ct):
+    '''全文搜索'''
+    url = "http://127.0.0.1:9200/cbeta/fulltext/_search?"#创建一个文档，如果该文件已经存在，则返回失败
+    queryParams = "pretty&size=40"
+    url = url + queryParams
+    data = {
+     "query": {
+        "match": {
+            "content": {
+                "query": ct,
+            }
+        }
+    },
+    "highlight": {
+        "fields": {
+            "content": {
+
+            }
+        }
+    }
+}
+    # 修改其中的keyword
+    # tempjason = json.loads(QUERY_TEMPLATE)
+    # tempjason["query"]["match"]["content"]["query"] = "天空的雾来的漫不经心"
+    # data = json.dumps(tempjason)
+
+    r = requests.get(url, json=data, timeout=10)
+    hits = r.json()['hits']['hits']
+    result = []
+    for i  in hits:
+        _source = i["_source"]
+        juan = _source["filename"].split('n')[0]
+        result.append((''.join(i['highlight']['content']), f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', _source['title']))
+    import pprint
+    pprint.pprint(result)
+
+    return result
 
 def main():
     ''''''

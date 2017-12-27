@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-23 11:45:08
+# Last Modified: 2017-12-28 05:17:54
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -42,6 +42,7 @@ from libhan import TSDetect
 from libhan import convert2t
 from libhan import convert2s
 from libhan import normyitizi
+from libhan import fullsearch
 
 # 装入各种词典
 dd = load_dict()
@@ -64,6 +65,11 @@ fxcd = dd['fxcd']
 @route('/')
 @view('temp/index.html')
 def index():
+    return {'Hello World!':''}
+
+@route('/tools')
+@view('temp/tools.html')
+def tools():
     return {'Hello World!':''}
 
 @route('/zhouyu/:filename#.+#')
@@ -132,6 +138,7 @@ def submenu(bulei):
 
     nav = [(root, '总目录')]
     for b in bulei:
+        if b not in menu: abort(404)
         menu = menu[b]
         t = '/'.join((nav[-1][0], b))
         nav.append((t, b))
@@ -202,43 +209,44 @@ def searchmulu():
 
 # 搜索！
 
-ix = open_dir("index")
+# ix = open_dir("index")
 # 搜索content内容
-qp = QueryParser("content", ix.schema)
+# qp = QueryParser("content", ix.schema)
 
 # TODO 搜索的时候被搜索内容应该手动分词
 @post('/search')
 @view('temp/search.jinja2')
 def search_post():
-    global qp
+    # global qp
     print(request.POST)
     content = request.forms.content
     if ts.detect(content)['confidence'] == 's':
         content = convert2t(content)
-    stop_words = frozenset("不無一是有之者如法為故生此佛所三以二人云也於中若得心大")
-    content = ''.join(set(content)-stop_words)
+    # stop_words = frozenset("不無一是有之者如法為故生此佛所三以二人云也於中若得心大")
+    # content = ''.join(set(content)-stop_words)
     print(('content', content))
-    mq = qp.parse(content)
-    print(mq)
-    # mq = Term('content', content)
-    xx = []
     s = time.time()
-    print('----------------------------------------')
-    with ix.searcher() as searcher:
-        # results = searcher.search(mq)
-        pageid = 1
-        results = searcher.search_page(mq, pageid, pagelen=40)
-        # results = searcher.find(mq)
-        found = results.scored_length()
-        print(('found:', found))
+    xx = fullsearch(content)
+    # mq = qp.parse(content)
+    # print(mq)
+    # # mq = Term('content', content)
+    # xx = []
+    # print('----------------------------------------')
+    # with ix.searcher() as searcher:
+    #     # results = searcher.search(mq)
+    #     pageid = 1
+    #     results = searcher.search_page(mq, pageid, pagelen=40)
+    #     # results = searcher.find(mq)
+    #     found = results.scored_length()
+    #     print(('found:', found))
 
-        for hit in results:
-            hl = hit.highlights("content",  top=5)
-            ct = hit["content"]
-            juan = hit["filename"].split('n')[0]
-            an = f'/xml/{juan}/{hit["filename"]}#{hit["p"]}'
-            xx.append((hl, an, hit['title']))
-            pprint.pprint((hl, an))
+    #     for hit in results:
+    #         hl = hit.highlights("content",  top=5)
+    #         ct = hit["content"]
+    #         juan = hit["filename"].split('n')[0]
+    #         an = f'/xml/{juan}/{hit["filename"]}#{hit["p"]}'
+    #         xx.append((hl, an, hit['title']))
+    #         pprint.pprint((hl, an))
     e = time.time()
 
     print('----------------------------------------')
@@ -579,6 +587,19 @@ def yitizi_get(qu):
         #else:
         #    ozi = []
         result.append((no, rzi, ozi))
+    return {'result': result}
+
+@get('/ytz')
+@view('temp/ytz.jinja2')
+def ytz():
+    result = []
+    return {'result': result}
+    with open('dict/ytzb.txt') as fd:
+        for line in fd:
+            line = line.strip()
+            line = line.split()
+            result.append((line[0], line[1:]))
+
     return {'result': result}
 
 punct = re.compile(r"([\u3000-\u303f\ufe10-\uff0f\uff1a-\uffee])")
