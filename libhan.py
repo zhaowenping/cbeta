@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-28 05:17:20
+# Last Modified: 2017-12-28 23:36:49
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -525,6 +525,31 @@ def normyitizi(string, level=0):
     string = string.translate(yitizi)
     return string
 
+def zi_order(ss, ct):
+    '''判断ss字符串中的字是否按照顺序在ct字符串中出现'''
+    rr = dict()
+    for i, zi in enumerate(ct):
+        if zi in rr:
+            rr[zi].add(i)
+        else:
+            rr[zi] = {i}
+
+    result = []
+    for zi in ss:
+        if zi not in rr:
+            return False
+        else:
+            result.append(rr[zi])
+
+    start = -1
+    for i in result:
+        start = {j for j in i if j > start}
+        if not start:
+            return False
+        else:
+            start = min(start)
+    return True
+
 
 def fullsearch(ct):
     '''全文搜索'''
@@ -557,10 +582,14 @@ def fullsearch(ct):
     result = []
     for i  in hits:
         _source = i["_source"]
+        author = _source['author'].split('\u3000')[0]
         juan = _source["filename"].split('n')[0]
-        result.append((''.join(i['highlight']['content']), f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', _source['title']))
-    import pprint
-    pprint.pprint(result)
+        # result.append((''.join(i['highlight']['content']), f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', _source['title'], author))
+        if zi_order(ct, _source['content']):
+            result.append((''.join(_source['content']), f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', _source['title'], author))
+        # else:
+        #     import pprint
+        #     pprint.pprint(('||'.join(_source['content']), f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', _source['title'], author))
 
     return result
 
