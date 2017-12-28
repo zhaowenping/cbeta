@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-28 05:17:54
+# Last Modified: 2017-12-28 23:51:00
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -181,10 +181,10 @@ def submenu(bulei):
 
 
 # 处理搜索
-@get('/search')
-@view('temp/search.jinja2')
-def search():
-    return {}
+# @get('/search')
+# @view('temp/search.jinja2')
+# def search():
+#     return {}
 
 ss = Search()
 ts = TSDetect()
@@ -214,12 +214,14 @@ def searchmulu():
 # qp = QueryParser("content", ix.schema)
 
 # TODO 搜索的时候被搜索内容应该手动分词
-@post('/search')
+@get('/search')
 @view('temp/search.jinja2')
 def search_post():
     # global qp
-    print(request.POST)
-    content = request.forms.content
+    # print(request.POST)
+    content = request.GET.content
+    if not content: return {}
+    # content = request.forms.content
     if ts.detect(content)['confidence'] == 's':
         content = convert2t(content)
     # stop_words = frozenset("不無一是有之者如法為故生此佛所三以二人云也於中若得心大")
