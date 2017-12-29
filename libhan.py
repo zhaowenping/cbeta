@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-28 23:36:49
+# Last Modified: 2017-12-29 07:38:42
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -586,7 +586,7 @@ def fullsearch(ct):
         juan = _source["filename"].split('n')[0]
         # result.append((''.join(i['highlight']['content']), f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', _source['title'], author))
         if zi_order(ct, _source['content']):
-            result.append((''.join(_source['content']), f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', _source['title'], author))
+            result.append({'hl': _source['content'], 'an': f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', 'title':_source['title'], 'author': author})
         # else:
         #     import pprint
         #     pprint.pprint(('||'.join(_source['content']), f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', _source['title'], author))

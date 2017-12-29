@@ -46,12 +46,12 @@
 </form>
 
 <ol>
-  {% for hl, an, title, author in results %}
+  {% for it in results %}
   <li>
     <div>
-    <a href="{{an}}">{{title}}</a> <span>{{author}}</span><br>
+    <a href="{{it.an}}">{{it.title}}</a>{%if it.author is defined%} <span>{{it.author}}</span>{% endif%}<br>
     <div>
-    {{hl}}
+    {{it.hl}}
     </div>
     </div>
   </li>

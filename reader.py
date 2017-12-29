@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-28 23:51:00
+# Last Modified: 2017-12-29 08:15:16
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -181,10 +181,6 @@ def submenu(bulei):
 
 
 # 处理搜索
-# @get('/search')
-# @view('temp/search.jinja2')
-# def search():
-#     return {}
 
 ss = Search()
 ts = TSDetect()
@@ -204,7 +200,7 @@ def searchmulu():
         juan = get_all_juan(idx)[0]           # 001
         an = f"/xml/{zang}/{idx}_{juan}.xml"  # T01n0002_001.xml
         # results.append({'hl': hl, 'an':an, 'title':title})
-        results.append([hl, an, title])
+        results.append({'hl': hl, 'an':an, 'title':title, 'author':''})
     return {'results': results}
 
 # 搜索！
