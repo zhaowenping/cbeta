@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-30 21:56:32
+# Last Modified: 2017-12-30 22:04:37
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -424,9 +424,9 @@ def g_get():
     cur = conn.cursor()
     if q:
         if len(q) > 1:
-            cur.execute('select * from cb where position(%s in des)>0 or position(%s in name)>0', (q, q))
+            cur.execute('select * from cb where position(%s in des)>0 or position(%s in name)>0 order by cipin desc', (q, q))
         else:
-            cur.execute('select * from cb where nor = %s or val = %s or position(%s in des)>0', (q, q, q))
+            cur.execute('select * from cb where nor = %s or val = %s or position(%s in des)>0 order by cipin desc', (q, q, q))
     else:
         cur.execute('select * from cb where nor is null or val is null')
     data = cur.fetchall()
@@ -438,7 +438,6 @@ def g_get():
         val = i[2]
         des = i[3]
         uni = i[4]
-        # pua = i[5]
         tag = i[5]
         nun = i[6]
         info = i[7]
