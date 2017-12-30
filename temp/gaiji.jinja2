@@ -6,7 +6,7 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
   <meta name="revised" content="">
-  <title>Title</title>
+  <title>异体字表</title>
   <link rel="stylesheet" href="">
   <script>
   //<![CDATA[
@@ -22,23 +22,16 @@
 
 
 <form action="/gaiji" method="post">
-名字: <input type="text" name="name">
+编号: <input type="text" name="name">
 通用字: <input type="text" name="norm">
-原字: <input type="text" name="val">
+异体字: <input type="text" name="val">
 <input type="submit" value="提交">
 </form>
 
 <table>
-<tr>
-<td>Cell A</td>
-<td>Cell B</td>
-</tr>
-</table>
-
-<table>
-<tr><td>名称</td><td>通用字</td><td>原字</td><td>组字式</td><td>UNICODE</td><td>PUA</td><td>标记</td><td>信息</td></tr>
-{% for name, norm, val, des, uni, pua, tag, info in result %}
-<tr><td>{{name}}</td><td>{{norm}}</td><td>{{val}}</td><td>{{des}}</td><td>{{uni}}</td><td>{{pua}}</td><td>{{tag}}</td><td>{{info}}</td></tr>
+<tr><td>名称</td><td>通用字</td><td>原字</td><td>组字式</td><td>UNICODE</td><td>标记</td><td>信息</td><td>词频</td></tr>
+{% for name, norm, val, des, uni, tag, info, cipin in result %}
+<tr><td>{{name}}</td><td>{{norm}}</td><td>{{val}}</td><td>{{des}}</td><td>{{uni}}</td><td>{{tag}}</td><td>{{info}}</td><td>{{cipin}}</td></tr>
 {% endfor %}
 </table>
   <!--script src="jquery.js"></script-->
