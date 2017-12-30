@@ -14,6 +14,9 @@
   </script>
   <style>
   <!--
+  .green {
+    color: blue;
+  }
   -->
   </style>
 </head>
@@ -31,7 +34,7 @@
 <table>
 <tr><td>编号</td><td>通用字</td><td>异体字</td><td>组字式</td><td>UNICODE</td><td>词频</td><td>修改标记</td><td>信息</td></tr>
 {% for name, norm, val, des, uni, tag, info, cipin in result %}
-<tr><td>{{name}}</td><td>{{norm}}</td><td>{{val}}</td><td>{{des}}</td><td>{{uni}}</td><td>{{cipin}}</td><td>{{tag}}</td><td>{{info}}</td></tr>
+<tr {% if tag %}class="green"{% endif %}><td>{{name}}</td><td>{{norm}}</td><td>{{val}}</td><td>{{des}}</td><td>{{uni}}</td><td>{{cipin}}</td><td>{{tag}}</td><td>{{info}}</td></tr>
 {% endfor %}
 </table>
   <!--script src="jquery.js"></script-->
