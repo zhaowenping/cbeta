@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-29 07:38:42
+# Last Modified: 2017-12-31 10:53:55
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -404,8 +404,8 @@ class Search:
 
 
 # 简体繁体转换
-def splitstring(pattern, string):
-    '''把输入字符串使用pattern分割, 每个字符串附带一个标志，表示该字符串是否短语匹配'''
+def re_search(pattern, string):
+    '''对re模块search的改进；把输入字符串使用pattern分割, 每个字符串附带一个标志，表示该字符串是否短语匹配'''
     rr = pattern.search(string)
     if not rr:
         yield (string, False)
@@ -491,7 +491,7 @@ def convert2s(string, punctuation=True, region=False, autonorm=True, onlyURO=Tru
     if onlyURO:
         tstable2 = {k:tstable[k] for k in tstable if not (k < 0x20000 and tstable[k] > 0x20000)}
 
-    content = ''.join(i[0].translate(tstable2) if not i[1] else tsptable[i[0]] for i in splitstring(tsp, string))
+    content = ''.join(i[0].translate(tstable2) if not i[1] else tsptable[i[0]] for i in re_search(tsp, string))
 
     return content
 
@@ -504,7 +504,7 @@ def convert2t(string, punctuation=True, region=False):
     if punctuation:
         string = string.translate({0x201c: 0x300c, 0x201d: 0x300d, 0x2018: 0x300e, 0x2019: 0x300f})
 
-    content = ''.join(i[0].translate(sttable) if not i[1] else stptable[i[0]] for i in splitstring(stp, string))
+    content = ''.join(i[0].translate(sttable) if not i[1] else stptable[i[0]] for i in re_search(stp, string))
 
     return content
 
@@ -550,6 +550,11 @@ def zi_order(ss, ct):
             start = min(start)
     return True
 
+def highlight(ss, ct):
+    for zi in set(ss):
+        ct = ct.replace(zi, f'<em>{zi}</em>')
+    return ct
+
 
 def fullsearch(ct):
     '''全文搜索'''
@@ -586,7 +591,7 @@ def fullsearch(ct):
         juan = _source["filename"].split('n')[0]
         # result.append((''.join(i['highlight']['content']), f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', _source['title'], author))
         if zi_order(ct, _source['content']):
-            result.append({'hl': _source['content'], 'an': f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', 'title':_source['title'], 'author': author})
+            result.append({'hl': highlight(ct, _source['content']), 'an': f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', 'title':_source['title'], 'author': author})
         # else:
         #     import pprint
         #     pprint.pprint(('||'.join(_source['content']), f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', _source['title'], author))
