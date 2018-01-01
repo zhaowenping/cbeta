@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-31 10:53:55
+# Last Modified: 2018-01-01 08:55:02
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -559,7 +559,7 @@ def highlight(ss, ct):
 def fullsearch(ct):
     '''全文搜索'''
     url = "http://127.0.0.1:9200/cbeta/fulltext/_search?"#创建一个文档，如果该文件已经存在，则返回失败
-    queryParams = "pretty&size=40"
+    queryParams = "pretty&size=50"
     url = url + queryParams
     data = {
      "query": {
@@ -577,6 +577,27 @@ def fullsearch(ct):
         }
     }
 }
+    data = {
+  "query": {
+    "match": {
+      "content": ct
+    }
+  },
+  "rescore" : {
+    "window_size" : 50,
+    "query" : {
+      "rescore_query" : {
+        "match_phrase" : {
+          "content" : {
+            "query" : ct,
+            "slop" : 50
+          }
+        }
+      }
+    }
+  }
+}
+
     # 修改其中的keyword
     # tempjason = json.loads(QUERY_TEMPLATE)
     # tempjason["query"]["match"]["content"]["query"] = "天空的雾来的漫不经心"

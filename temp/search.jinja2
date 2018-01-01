@@ -7,7 +7,7 @@
   <meta name="keywords" content="">
   <meta name="revised" content="">
   <title>全文搜索</title>
-  <link rel="stylesheet" href="">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
   <script>
   //<![CDATA[
   //]]>
@@ -18,16 +18,16 @@
   em {
       padding-bottom: .05em;
       padding-bottom: -webkit-calc(0px);
-      border-bottom: 2px dotted;
-      text-emphasis: filled circle;
       font-style: inherit;
       -moz-text-emphasis: filled circle;
       -webkit-text-emphasis: filled circle;
-      -moz-text-emphasis-position: under;
-      -webkit-text-emphasis-position: under;
-      text-emphasis-position: under;
+      -moz-text-emphasis-position: under right;
+      -webkit-text-emphasis-position: under right;
+      text-emphasis: filled circle;
+      text-emphasis-position: under right;
+      /*border-bottom: 2px dotted;*/
       border-bottom-width: -webkit-calc(0px);
-      font-weight: bold;
+      /*font-weight: bold;*/
   }
   span {
     color: green;
@@ -39,7 +39,6 @@
 <body>
 <br />
 <ul>
-<li>支持自动检测简体繁体查找所需内容．</li>
 <li>全文搜索可以使用的字段包括author, title, content, 在url上直接查询即可; 默认只在content中查找</li>
 </ul>
 
