@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-30 22:06:12
+# Last Modified: 2018-01-03 11:30:50
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -843,15 +843,9 @@ def duoyinzi_post():
 def keyifayin_get():
     conn = psycopg2.connect(database="buddha", user="postgres", password="1234", host="kepan.org", port="5432")
     cur = conn.cursor()
-    cur.execute('select * from keyifayin')
+    cur.execute('select * from keyifayin order by cipin desc')
     data = cur.fetchall()
     result = [i for i in data]
-#  zi      | character(1)          | not null
-#  jt      | character(1)          |
-#  unicode | character varying(16) |
-#  cur     | character varying(16) |
-#  gxds    | character varying(16) |
-#  tag     | boolean               |
     conn.commit()
     cur.close()
     conn.close()
