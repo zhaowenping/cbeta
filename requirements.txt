@@ -69,3 +69,5 @@ xhtml2pdf
 zope.deprecation
 zope.interface
 python-docx
+python-levenshtein
+fuzzywuzzy

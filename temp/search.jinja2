@@ -38,14 +38,20 @@
 </head>
 <body>
 <br />
-<ul>
-<li>全文搜索可以使用的字段包括author, title, content, 在url上直接查询即可; 默认只在content中查找</li>
-</ul>
 
-<form action="/search" method="get">
-查找: <input type="search" name="content">
-<input type="submit">
+<div class="container">
+<form action="/search" method="get" role="form">
+  <div class="row center-block">
+    <div class="col-lg-8">
+      <input type="text" class="form-control" id="content" name="content" placeholder="自动检测简体繁体内容">
+    </div>
+    <input type="submit" class="btn btn-default">
+  </div>
+<span class="help-block">全文搜索可以使用的字段包括author, title, content, dict. 在url上直接查询即可; 默认只在content中查找</span>
 </form>
+</div>
+  <br>
+  <br>
 
 <ol>
   {% for it in results %}

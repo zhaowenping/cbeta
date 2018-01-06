@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-01-03 11:30:50
+# Last Modified: 2018-01-06 11:19:52
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -250,6 +250,10 @@ def search_post():
     print('----------------------------------------')
     print('搜索花费时间:%d' % (e-s))
     print(xx)
+
+    with open('search.dict', 'a+') as fd:
+        fd.write(datetime.datetime.now().strftime("%Y%m%dT%T ") + content + '\n')
+
     return {'results': xx}
 
 # "menu/sutra_sch.lst"
