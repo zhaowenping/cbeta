@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-01-01 08:55:02
+# Last Modified: 2018-01-06 15:31:36
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -71,6 +71,7 @@ class TSDetect:
             confidence = 's'
         return {'t': t, 's': s, 'confidence': confidence}
 
+TSDinst = TSDetect()
 
 def read_menu_file(sutra_list):
     '''读取tab分隔的菜单文件，返回树状字典'''
@@ -183,7 +184,15 @@ def hk2iast(str_in):
 
 hk2sa = hk2iast
 
-def load_dict():
+def load_dict(dictionary=None):
+
+    # 词典列表
+    dicts = {'fk': ('佛光山', 'fk.json.gz'), 'dfb': ('丁福保', 'dfb.json.gz'), 'ccc': ('庄春江', 'ccc.json'), 'fxcd': ('法相詞典', 'fxcd.json.gz'),
+            'nvd': ('南山律学词典', 'nvd.json'), 'cxy': ('佛學常見詞彙（陳義孝）', 'cxy.json'), 'ylb': ('唯识名词白话新解', 'ylb.json'),
+            'szfs': ('三藏法数', 'szfs.json'), 'fymyj': ('翻譯名義集', 'fymyj.json'), 'wdhy': ('五燈會元', 'wdhy.json.gz'), 'yzzj': ('閱藏知津', 'yzzj.json.gz'),
+            'ldms': ('歷代名僧辭典', 'ldms.json.gz'), 'syfy': ('俗語佛源', 'syfy.json.gz'), 'bkqs': ('中华佛教百科全书','bkqs.json.gz')}
+
+    aio = dict()
 
     # 装入梵英词典, 太大了，暂时不装了
     mwpatten = re.compile(r'(%\{.+?})')
@@ -212,6 +221,7 @@ def load_dict():
     #     sa_en.update({hk2sa(key, 2): res})
     # e = time.time()
     # print('装入梵英词典，用时%s' % (e - s))
+    yield ('sa_en', sa_en)
 
     sa_hant = dict()
     # s = time.time()
@@ -222,6 +232,7 @@ def load_dict():
     #     sa_hant.update({key.lower(): data[key]})
     # e = time.time()
     # print('装入梵汉词典，用时%s' % (e - s))
+    yield ('sa_hant', sa_hant)
 
     yat = dict()
     # s = time.time()
@@ -243,64 +254,50 @@ def load_dict():
     #     yat.update({hk2sa(key, 2): res})
     # e = time.time()
     # print('装入Yates梵英词典，用时%s' % (e - s))
+    yield ('yat', yat)
 
     s = time.time()
     with gzip.open('dict/kangxi.json.gz') as fd:
         kangxi = json.load(fd)
     e = time.time()
     print('装入康熙字典，用时%s' % (e - s))
+    yield ('kangxi', kangxi)
 
     s = time.time()
     with open('dict/Unihan_Readings.json') as fd:
         unihan = json.load(fd)
     e = time.time()
     print('装入Unicode10.0字典，用时%s' % (e - s))
+    yield ('unihan', unihan)
 
-    s = time.time()
-    with gzip.open('dict/fk.json.gz') as fd:
-        fk = json.load(fd)
-    e = time.time()
-    print('装入佛光山词典，用时%s' % (e - s))
+    for k in dicts:
+        s = time.time()
+        path = f'dict/{dicts[k][1]}'
+        if not os.path.exists(path):
+            continue
 
-    s = time.time()
-    with gzip.open('dict/dfb.json.gz') as fd:
-        dfb = json.load(fd)
-    e = time.time()
-    print('装入丁福宝词典，用时%s' % (e - s))
+        if path.endswith('gz'):
+            with gzip.open(path) as fd:
+                v = json.load(fd)
+        else:
+            with open(path) as fd:
+                v = json.load(fd)
+        # for k1 in v:
+        #     if k1 in aio:
+        #         aio[k1].update({dicts[k][0]: v[k1]})
+        #     #     aio[k1].append()
+        #     else:
+        #         aio[k1] = {dicts[k][0]: v[k1]}
+        e = time.time()
+        print('装入%s，用时%s' % (dicts[k][0], e - s))
+        yield (k, v)
 
-    s = time.time()
-    with open('dict/ccc.json') as fd:
-        ccc = json.load(fd)
-    e = time.time()
-    print('装入庄春江词典，用时%s' % (e - s))
+    yield ('aio', aio)
 
-    s = time.time()
-    with open('dict/nvd.json') as fd:
-        nvd = json.load(fd)
-    e = time.time()
-    print('装入南山律学词典，用时%s' % (e - s))
-
-    s = time.time()
-    with open('dict/cxy.json') as fd:
-        cxy = json.load(fd)
-    e = time.time()
-    print('装入佛學常見詞彙（陳義孝），用时%s' % (e - s))
-
-    s = time.time()
-    with open('dict/ylb.json') as fd:
-        ylb = json.load(fd)
-    e = time.time()
-    print('装入於凌波，用时%s' % (e - s))
-
-    s = time.time()
-    with gzip.open('dict/fxcd.json.gz') as fd:
-        fxcd = json.load(fd)
-    e = time.time()
-    print('装入法相詞典，用时%s' % (e - s))
-
-    print('装入于凌波唯识名词白话新解，用时%s' % (e - s))
-    return {'kangxi':kangxi, 'unihan':unihan, 'fk':fk, 'dfb': dfb, 'ccc': ccc, 'nvd': nvd, 'cxy': cxy, 'ylb': ylb, 'fxcd': fxcd,
-        'sa_hant': sa_hant, 'sa_en': sa_en, 'yat': yat}
+    # return {'kangxi':kangxi, 'unihan':unihan,
+    #         'fk':fk, 'dfb': dfb, 'ccc': ccc, 'nvd': nvd, 'cxy': cxy, 'ylb': ylb, 'fxcd': fxcd,
+    #         'szfs': szfs, 'fymyj': fymyj,
+    #     'sa_hant': sa_hant, 'sa_en': sa_en, 'yat': yat}
 
 
 
@@ -348,6 +345,80 @@ def lookinsa(word):
             definition = '|'.join(definition)
             _from = "YAT"
             pinyin = "YAT"
+
+
+# 装入各种词典
+dd = dict(load_dict())
+sa_hant = dd['sa_hant']
+sa_en = dd['sa_en']
+yat = dd['yat']
+kangxi = dd['kangxi']
+unihan = dd['unihan']
+fk = dd['fk']
+dfb = dd['dfb']
+ccc = dd['ccc']
+nvd = dd['nvd']
+cxy = dd['cxy']
+ylb = dd['ylb']
+fxcd = dd['fxcd']
+szfs = dd['szfs']
+# aio = dd['aio']
+
+def lookup(word, dictionary=None, lang='hant', mohu=False):
+    '''查字典, dictionary=None表示所有词典, lang表示被查询的语言'''
+    pt = re.compile(r'\[|\]|\d')  # 应该在前端过滤
+    word = pt.sub('', word)
+    print('发过来一个字:%s' % word)
+
+    if TSDinst.detect(word)['confidence'] == 's':
+        word = convert2t(word)
+
+    pinyin = ''
+    _from = ''
+    definition = ''
+    if word in fk:
+        _from = "佛光山"
+        definition = fk[word]
+    elif word in dfb:
+        _from = dfb[word][0]['usg']
+        definition = dfb[word][0]['def']
+    elif word in fxcd:
+        _from = "于沛煌"
+    elif word in ccc:
+        _from = "庄春江"
+        definition = ccc[word]
+    elif word in nvd:
+        _from = "南山律"
+        definition = nvd[word]
+    elif word in cxy:
+        _from = "陈孝义"
+        definition = cxy[word]
+    elif word in ylb:
+        _from = "于凌波"
+        definition = ylb[word]
+    elif word in szfs:
+        _from = "三藏法数"
+        definition = szfs[word]
+    elif word in fymyj:
+        _from = "翻譯名義集"
+        definition = fymyj[word]
+    elif word in wdhy:
+        _from = "五燈會元"
+        definition = fymyj[word]
+    elif word in ldms:
+        _from = "歷代名僧辭典"
+        definition = ldms[word]
+    elif word in yzzj:
+        _from = "閱藏知津"
+        definition = yzzj[word]
+    elif word in bkqs:
+        _from = "百科全书"
+        definition = bkqs[word]
+
+    if not _from and mohu:
+        pass
+
+    return {'word': word, 'pinyin': pinyin, 'definition': definition, 'from': _from}
 
 
 class Search:

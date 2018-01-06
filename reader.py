@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-01-06 11:19:52
+# Last Modified: 2018-01-06 15:35:39
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -35,7 +35,7 @@ import psycopg2
 # import opencc
 
 import pprint
-from libhan import hk2sa, read_menu_file, load_dict
+from libhan import hk2sa, read_menu_file
 from libhan import get_all_juan
 from libhan import Search
 from libhan import TSDetect
@@ -44,20 +44,9 @@ from libhan import convert2s
 from libhan import normyitizi
 from libhan import fullsearch
 
-# 装入各种词典
-dd = load_dict()
-sa_hant = dd['sa_hant']
-sa_en = dd['sa_en']
-yat = dd['yat']
-kangxi = dd['kangxi']
-unihan = dd['unihan']
-fk = dd['fk']
-dfb = dd['dfb']
-ccc = dd['ccc']
-nvd = dd['nvd']
-cxy = dd['cxy']
-ylb = dd['ylb']
-fxcd = dd['fxcd']
+from libhan import lookup
+from libhan import kangxi, unihan
+
 # from xsltproc import xsltproc, XSLT
 
 # XSLT_FILE = 'static/tei.xsl'
@@ -362,25 +351,12 @@ def dict_get(word):
             _from = "unicode"
             definition = unihan.get(word, {}).get('kDefinition', '')
             pinyin = unihan.get(word, {}).get('kMandarin', '')
-    elif word in fk:
-        _from = "佛光山"
-        definition = fk[word]
-    elif word in dfb:
-        _from = dfb[word][0]['usg']
-        definition = dfb[word][0]['def']
-    elif word in ccc:
-        _from = "庄春江"
-        definition = ccc[word]
-    elif word in nvd:
-        _from = "南山律"
-        definition = nvd[word]
-    elif word in cxy:
-        _from = "陈孝义"
-        definition = cxy[word]
-    elif word in ylb:
-        _from = "于凌波"
-        definition = ylb[word]
     else:
+        rr = lookup(word)
+        _from = rr['from']
+        definition = rr['definition']
+
+    if not _from:
         definition = sa_hant.get(hk2sa(word).lower(), '')
         if definition:
             _from = "文理学院"
