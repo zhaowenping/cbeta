@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-01-06 15:31:36
+# Last Modified: 2018-01-06 15:41:09
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -362,6 +362,12 @@ cxy = dd['cxy']
 ylb = dd['ylb']
 fxcd = dd['fxcd']
 szfs = dd['szfs']
+fymyj = dd['fymyj']
+wdhy = dd['wdhy']
+ldms = dd['ldms']
+yzzj = dd['yzzj']
+bkqs = dd['bkqs']
+
 # aio = dd['aio']
 
 def lookup(word, dictionary=None, lang='hant', mohu=False):
@@ -404,7 +410,7 @@ def lookup(word, dictionary=None, lang='hant', mohu=False):
         definition = fymyj[word]
     elif word in wdhy:
         _from = "五燈會元"
-        definition = fymyj[word]
+        definition = wdhy[word]
     elif word in ldms:
         _from = "歷代名僧辭典"
         definition = ldms[word]
