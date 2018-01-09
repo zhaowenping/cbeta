@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-01-06 15:41:09
+# Last Modified: 2018-01-09 11:43:33
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -302,7 +302,12 @@ def load_dict(dictionary=None):
 
 
 def lookinkangxi(word):
+    '''查询康熙字典'''
+    if word not in kangxi:
+        word = normyitizi(word)
+
     if word in kangxi:
+        _from = "康熙字典"
         definition = []
         kxword = kangxi[word]
         if "說文解字" in kxword:
@@ -312,11 +317,15 @@ def lookinkangxi(word):
         if "宋本廣韻" in kxword:
             definition.append(kxword["宋本廣韻"])
         if definition:
-            definition = '|'.join(definition)
+            definition = '<br><br>'.join(definition)
         else:
             definition = kxword.get('英文翻譯', '')
         pinyin = kxword.get('國語發音', '')
-    return pinyin, definition
+    else:
+        _from = "unicode"
+        definition = unihan.get(word, {}).get('kDefinition', '')
+        pinyin = unihan.get(word, {}).get('kMandarin', '')
+    return {'word': word, 'pinyin': pinyin, 'def': definition, 'from': _from}
 
 
 def lookinsa(word):

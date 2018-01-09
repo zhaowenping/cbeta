@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-01-06 15:35:39
+# Last Modified: 2018-01-09 11:46:41
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -44,8 +44,8 @@ from libhan import convert2s
 from libhan import normyitizi
 from libhan import fullsearch
 
-from libhan import lookup
-from libhan import kangxi, unihan
+from libhan import lookup, lookinkangxi
+from libhan import unihan
 
 # from xsltproc import xsltproc, XSLT
 
@@ -299,6 +299,8 @@ def kx_dict_get(word):
     pinyin = ''
     _from = ''
     definition = ''
+    # {'word': word, 'pinyin': pinyin, 'def': definition, 'from': _from}
+    # lookinkangxi(word)
     if len(word) == 1:
         if word in kangxi:
             _from = "康熙字典"
@@ -330,27 +332,10 @@ def dict_get(word):
     _from = ''
     definition = ''
     if len(word) == 1:
-        # if word not in kangxi:
-        #     word2 = normyitizi(word)
-        if word in kangxi:
-            _from = "康熙字典"
-            definition = []
-            kxword = kangxi[word]
-            if "說文解字" in kxword:
-                definition.append(kxword["說文解字"])
-            if "康熙字典" in kxword:
-                definition.append(kxword["康熙字典"])
-            if "宋本廣韻" in kxword:
-                definition.append(kxword["宋本廣韻"])
-            if definition:
-                definition = '<br><br>'.join(definition)
-            else:
-                definition = kxword.get('英文翻譯', '')
-            pinyin = kxword.get('國語發音', '')
-        else:
-            _from = "unicode"
-            definition = unihan.get(word, {}).get('kDefinition', '')
-            pinyin = unihan.get(word, {}).get('kMandarin', '')
+        result = lookinkangxi(word)
+        _from = result['from']
+        definition = result['def']
+        pinyin = result['pinyin']
     else:
         rr = lookup(word)
         _from = rr['from']

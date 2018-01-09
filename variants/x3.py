@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-27 12:59:56
+# Last Modified: 2018-01-09 09:42:52
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -49,7 +49,8 @@ for c1 in rk:
     cc = sorted([i for i in rr[c1]], key=lambda x: ord(x))
     for c2 in cc:
         # if c1 in edu and c2 in edu:
-        print(c1, c2, "U+%X" % ord(c1), "U+%X" % ord(c2))
+        if c1 != c2:
+            print(c1, c2, "U+%X" % ord(c1), "U+%X" % ord(c2))
 
 # print(data)
 
