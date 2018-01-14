@@ -11,9 +11,11 @@
 
     <!--当前经集的名字, 形如: T20n1167 -->
     <xsl:variable name="current_sutra" select="/TEI[1]/@xml:id"/>
-    <xsl:variable name="current_han" select="substring(substring-before($current_sutra, 'n'), 2)"/>  <!--XXX T20-->
+    <xsl:variable name="current_han" select="substring-before($current_sutra, 'n')"/>  <!--XXX T20-->
     <xsl:variable name="current_ce" select="substring-after($current_sutra, 'n')"/> <!---1167-->
     <xsl:variable name="title" select="substring-after(substring-after(/TEI/teiHeader/fileDesc/titleStmt/title, 'No. '), ' ')"/>
+    <!--目录文件所在路径-->
+    <xsl:variable name="toc_path" select="concat('/static/toc/', $current_han, '.toc')"/>
     <!--当前文件的卷数, 形如: 001; 目前只能靠猜了-->
     <!--xsl:variable name="juan" select="/TEI[1]/text/body//cb:juan[1]/@n|/TEI/text/body//milestone[@unit='juan']/@n|/TEI/text/body//cb:mulu[@type='卷']/@n"/-->
     <xsl:variable name="juan" select="/TEI/text/body//milestone[@unit='juan']/@n"/>
@@ -217,6 +219,20 @@
             <br/>
         </xsl:if>
 
+            <!--div class="span2 col-xs-12 col-sm-3 col-md-2 navbar-inverse">
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                    <li><a href="#">Practice Editor </a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div-->
+
+            <!--div>
+                xYx
+                <xsl:apply-templates select="document($toc_path)"/>
+            </div-->
         <!--正文内容-->
         <div class="contentx">
             <xsl:apply-templates/>
@@ -533,9 +549,9 @@
         </rt>
         </ruby>
     </xsl:template>
-    <xsl:template match="cb:t/g">
+    <!--xsl:template match="cb:t/g">
         <xsl:apply-templates select="key('char_id', substring(@ref, 2))/charProp[localName='Romanized form in Unicode transcription']/value"/>
-    </xsl:template>
+    </xsl:template-->
 
     <!--xsl:template match="cb:tt">
         <xsl:variable name="header" select="generate-id(.)"/>
@@ -863,7 +879,7 @@
     <!--xsl:template match="cb:div[@type='orig']"-->
     <xsl:template match="cb:div[@type='commentary']">
         <div class="commentary panel-collapse">
-            <a data-toggle="collapse" data-parent="#accordion" href="#{generate-id()}">點擊閱讀/關閉註疏：</a>
+            <a data-toggle="collapse" data-parent="#accordion" href="#{generate-id()}"><span class="caret"/>註疏：</a>
             <div id="{generate-id()}" class="panel-collapse collapse">
               <div class="panel-body">
                 <xsl:apply-templates/>
