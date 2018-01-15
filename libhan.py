@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-01-09 11:43:33
+# Last Modified: 2018-01-15 18:56:20
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -330,6 +330,8 @@ def lookinkangxi(word):
 
 def lookinsa(word):
     definition = sa_hant.get(hk2sa(word).lower(), '')
+    pinyin = ""
+    _from = ""
     if definition:
         _from = "文理学院"
         pinyin = "文理学院"
@@ -354,6 +356,7 @@ def lookinsa(word):
             definition = '|'.join(definition)
             _from = "YAT"
             pinyin = "YAT"
+    return {'word': word, 'pinyin': pinyin, 'def': definition, 'from': _from}
 
 
 # 装入各种词典
@@ -429,6 +432,8 @@ def lookup(word, dictionary=None, lang='hant', mohu=False):
     elif word in bkqs:
         _from = "百科全书"
         definition = bkqs[word]
+
+    pinyin = ' '.join(lookinkangxi(zi)['pinyin'] for zi in word)
 
     if not _from and mohu:
         pass
