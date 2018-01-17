@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-01-14 12:35:17
+# Last Modified: 2018-01-17 12:42:23
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -17,6 +17,8 @@ import json
 with open('../../cipin.json') as fd:
     cipin = json.load(fd)
 
+# with open('z2all.txt') as fd:
+# with open('ytz.txt') as fd:
 with open('z2all.txt') as fd:
     for line in fd:
         line = line.split()

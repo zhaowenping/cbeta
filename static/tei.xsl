@@ -1009,7 +1009,11 @@
     <!-- 经录的标题: TODO 做一个超链接到应该的文件 -->
     <xsl:template match="cb:jl_title">
         <cite>
-            <a href="#TODO">
+            <a>
+                <xsl:attribute name="href">
+                    <xsl:text>/searchmulu?title=</xsl:text>
+                    <xsl:apply-templates/>
+                </xsl:attribute>
             <xsl:apply-templates/>
             </a>
         </cite>
