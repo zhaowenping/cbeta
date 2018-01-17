@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-01-17 20:46:09
+# Last Modified: 2018-01-17 21:15:26
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -178,10 +178,8 @@ ts = TSDetect()
 @post('/searchmulu')
 @view('temp/search.jinja2')
 def searchmulu():
-    '''搜索标题, GET方法为目录部所用'''
-    print('xxxxxxxxxxxxxxxxx')
-    print(request.method)
-    if request.method = "GET":
+    '''搜索标题, GET方法为目录部典籍查找所用'''
+    if request.method == "GET":
         title = request.GET.title
     else:
         title = request.forms.content
@@ -196,7 +194,8 @@ def searchmulu():
         juan = get_all_juan(idx)[0]           # 001
         an = f"/xml/{zang}/{idx}_{juan}.xml"  # T01n0002_001.xml
         results.append({'hl': hl, 'an':an, 'title':title0, 'author':''})
-    if request.method = "GET":
+    if request.method == "GET":
+        # 一个结果页面不动,多个结果自己选择
         if len(results) == 0:
             abort(304)
         if len(results) == 1:
