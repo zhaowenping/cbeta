@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-01-18 10:18:12
+# Last Modified: 2018-01-18 10:32:58
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -183,6 +183,7 @@ def searchmulu():
         title = request.GET.title
         # 去除注释
         title = re.sub(r'\(.*?\)', '', title)
+        title = re.sub(r'\[.*?\]', '', title)
     else:
         title = request.forms.content
     if ts.detect(title)['confidence'] == 's':
