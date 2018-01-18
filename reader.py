@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-01-18 10:32:58
+# Last Modified: 2018-01-18 10:40:04
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -181,9 +181,10 @@ def searchmulu():
     '''搜索标题, GET方法为目录部典籍查找所用'''
     if request.method == "GET":
         title = request.GET.title
-        # 去除注释
+        # 去除注释和卷数, 留下标题
         title = re.sub(r'\(.*?\)', '', title)
         title = re.sub(r'\[.*?\]', '', title)
+        title = re.sub(r'[一二三四五六七八九十]+卷', '', title)
     else:
         title = request.forms.content
     if ts.detect(title)['confidence'] == 's':
