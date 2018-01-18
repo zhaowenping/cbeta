@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-01-18 10:40:04
+# Last Modified: 2018-01-18 15:25:27
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -181,9 +181,10 @@ def searchmulu():
     '''搜索标题, GET方法为目录部典籍查找所用'''
     if request.method == "GET":
         title = request.GET.title
-        # 去除注释和卷数, 留下标题
+        # 去除HTML标签、注释、卷数, 留下标题
+        title = re.sub(r'<.*?>', '', title)  # title=[34]<span style="color:red">阿</span>差末菩薩經
         title = re.sub(r'\(.*?\)', '', title)
-        title = re.sub(r'\[.*?\]', '', title)
+        title = re.sub(r'\[\w*?\]', '', title)
         title = re.sub(r'[一二三四五六七八九十]+卷', '', title)
     else:
         title = request.forms.content
@@ -199,7 +200,7 @@ def searchmulu():
         an = f"/xml/{zang}/{idx}_{juan}.xml"  # T01n0002_001.xml
         results.append({'hl': hl, 'an':an, 'title':title0, 'author':''})
     if request.method == "GET":
-        # 一个结果页面不动,多个结果自己选择
+        # 0个结果页面不动,多个结果自己选择
         if len(results) == 0:
             abort(304)
         if len(results) == 1:
