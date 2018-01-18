@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-01-17 21:15:26
+# Last Modified: 2018-01-18 10:18:12
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -181,6 +181,8 @@ def searchmulu():
     '''搜索标题, GET方法为目录部典籍查找所用'''
     if request.method == "GET":
         title = request.GET.title
+        # 去除注释
+        title = re.sub(r'\(.*?\)', '', title)
     else:
         title = request.forms.content
     if ts.detect(title)['confidence'] == 's':

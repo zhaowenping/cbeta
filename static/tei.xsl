@@ -773,6 +773,7 @@
         <xsl:text>&#8658;</xsl:text>
     </xsl:template>
 
+    <!--lem是版本, corr是勘误-->
     <xsl:template match="lem|corr">
         <xsl:apply-templates/>
         <xsl:if test="@wit">
@@ -1007,12 +1008,12 @@
         </span>
     </xsl:template>
     <!-- 经录的标题: TODO 做一个超链接到应该的文件 -->
-    <xsl:template match="cb:jl_title">
+    <xsl:template match="cb:jl_title|item/title">
         <cite>
             <a>
                 <xsl:attribute name="href">
                     <xsl:text>/searchmulu?title=</xsl:text>
-                    <xsl:apply-templates/>
+                    <xsl:apply-templates/>   <!--TODO 应该去掉这里的注释-->
                 </xsl:attribute>
             <xsl:apply-templates/>
             </a>
