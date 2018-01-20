@@ -229,10 +229,9 @@
                 </ul>
             </div-->
 
-            <!--div>
-                xYx
-                <xsl:apply-templates select="document($toc_path)"/>
-            </div-->
+        <!--左侧目录-->
+        <!--xsl:copy-of select="document(concat('/static/toc/', $current_han, '.xml'))"/-->
+        <xsl:copy-of select="document('/static/t.xml')"/>
         <!--正文内容-->
         <div class="contentx">
             <xsl:apply-templates/>
@@ -323,7 +322,12 @@
             </xsl:if>
             <xsl:if test="@rows">
             <xsl:attribute name="rowspan">
+                <xsl:if test="$firefox">
+                <xsl:value-of select="@rows+1"/>
+                </xsl:if>
+                <xsl:if test="not($firefox)">
                 <xsl:value-of select="@rows"/>
+                </xsl:if>
             </xsl:attribute>
             </xsl:if>
             <xsl:apply-templates/>
@@ -362,7 +366,8 @@
     <xsl:template match="lb">
         <span class="lb">
          <xsl:attribute name="id">
-             <xsl:value-of select="concat($current_sutra, '_p', @n)" />
+             <!--xsl:value-of select="concat($current_sutra, '_p', @n)" /-->
+             <xsl:value-of select="@n" />
          </xsl:attribute>
         </span>
     </xsl:template>
