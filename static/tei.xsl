@@ -231,7 +231,7 @@
 
         <!--左侧目录-->
         <!--xsl:copy-of select="document(concat('/static/toc/', $current_han, '.xml'))"/-->
-        <xsl:copy-of select="document('/static/t.xml')"/>
+        <!--xsl:copy-of select="document('/static/t.xml')"/-->
         <!--正文内容-->
         <div class="contentx">
             <xsl:apply-templates/>
@@ -490,7 +490,7 @@
 
     <!--处理note-->
     <xsl:template match="note[@place='inline']|note[@type='inline']">
-        <span style="color:#A9A9A9">(<xsl:apply-templates/>)</span>
+        <span class="note"><xsl:apply-templates/></span>
     </xsl:template>
 
     <xsl:template match="space">
@@ -537,6 +537,7 @@
         </rt>
     </xsl:template-->
 
+    <!--TODO 需要使用rtc修改成三行-->
     <xsl:template match="cb:tt">
         <ruby>
         <rb>
