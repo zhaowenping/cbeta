@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-01-15 18:56:20
+# Last Modified: 2018-01-29 18:43:29
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -117,17 +117,52 @@ def read_menu_file(sutra_list):
                 continue
         return menu
 
-def get_all_juan(sutra):
+def ls(pattern):
+    result = []
+    for path in os.listdir(pattern):
+        if path.startswith(sutra) and re.match(pattern, path):
+            result.append(path.split('_')[1][:-4])
+    return result
+
+from functools import total_ordering
+
+@total_ordering
+class Number:
+    '''经号类: T01n0002'''
+    def __init__(self, n):
+        self.book, self.sutra = n.split('n')
+    def __eq__(self, other):
+        self.book, self.sutra = n.split('n')
+    def __lt__(self, other):
+        self.book, self.sutra = n.split('n')
+
+
+def get_all_juan(number):
     '''给定经号T01n0002，返回所有排序后的卷['001', '002', ...]'''
-    ye = sutra.split('n')[0]
+    book, sutra = number.split('n')
     # 查找第一卷(有些不是从第一卷开始的)
     juan = []
-    for path in os.listdir('xml/{ye}'.format(**locals())):
-        if path.startswith(sutra):
-            print(path)
+    for path in os.listdir(f'xml/{book}'):
+        if path.startswith(number):
             juan.append(path.split('_')[1][:-4])
-            # juan.append(path)
-    juan.sort()
+    juan.sort(key=lambda x: int(re.sub(r'[a-zA-Z]*', '', f'{x:0<5}'), 16))
+    return juan
+
+def get_next_page(number):
+    '''给定经号T01n0002_001，返回T01n0002_002'''
+    sn = number.split('_')[0]
+    book, sutra = sn.split('n')
+    # 查找第一卷(有些不是从第一卷开始的)
+    juan = []
+    for path in os.listdir(f'xml/{book}'):
+        if path.startswith(sn):
+            juan.append(path[:-4].split('_'))
+    juan.sort(key=lambda x: (int(re.sub(r'[a-zA-Z]*', '', f'{x[0]:0<5}'), 16), int(x[1])))
+    juan = ['_'.join(i) for i in juan]
+
+    if number != juan[-1]:
+        return juan[juan.index(number) + 1]
+    # ye = sutra.split('n')[0]
     return juan
 
 # FROM: https://en.wikipedia.org/wiki/International_Alphabet_of_Sanskrit_Transliteration
@@ -730,6 +765,34 @@ def test():
 
 if __name__ == "__main__":
     # main()
-    test()
+    # test()
+    # print(get_all_juan('T02n0099'))
+    # print(get_all_juan('GA031n0032'))
+    # print(get_all_juan('J31nB269'))
+    # print(get_all_juan('T19n0974A'))
+    # print(get_next_page('T02n0099_001'))
+    # print(get_next_page('T01n0002_001'))
+    with gzip.open('dict/kangxi.json.gz') as fd:
+        kangxi = json.load(fd)
+
+    with open('cipin.json') as fd:
+        cipin = json.load(fd)
+
+    for word in kangxi:
+        kxword = kangxi[word]
+        pinyin = kxword.get('國語發音', '')
+        if not pinyin:
+            word2 = normyitizi(word)
+            kxword2 = kangxi.get(word2, {})
+            pinyin2 = kxword2.get('國語發音', '')
+            if pinyin2:
+                # print(word, word2, pinyin2)
+                pass
+            else:
+                cp = cipin.get(word, 0)
+                if cp > 0:
+                    print(word, word2, cipin.get(word, 0), "%X" % ord(word))
+                pass
+
 
 

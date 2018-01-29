@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-01-18 15:25:27
+# Last Modified: 2018-01-29 15:39:12
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -344,6 +344,7 @@ def dict_get(word):
     '''查字典'''
     pt = re.compile(r'\[|\]|\d')  # 应该在前端过滤
     word = pt.sub('', word)
+    # word = re.sub(r'\[\d*\]', '', word)
     print('发过来一个字:%s' % word)
     pinyin = ''
     _from = ''
@@ -364,39 +365,11 @@ def dict_get(word):
         definition = result['def']
         pinyin = result['pinyin']
 
-    # if not _from:
-    #     definition = sa_hant.get(hk2sa(word).lower(), '')
-    #     if definition:
-    #         _from = "文理学院"
-    #         pinyin = "文理学院"
-    # if not definition:
-    #     # 使用Harvard-Kyoto转写查找字典
-    #     definition = sa_en.get(hk2sa(word), '')
-    #     # 使用缩写查找字典
-    #     if not definition:
-    #         w = word.replace('1', '').replace("'", '').replace('4', '').replace('7', '').replace('8', '').replace('9', '').replace('0', '').replace('-', '').lower()
-    #         definition = sa_en.get(w, '')
-    #     if definition:
-    #         definition = '|'.join(definition)
-    #         _from = "威廉梵英词典"
-    #         pinyin = "威廉梵英词典"
-    # if not definition:
-    #     print(hk2sa(word))
-    #     definition = yat.get(hk2sa(word), '')
-    #     if not definition:
-    #         w = word.replace('-', '').lower()
-    #         definition = yat.get(w, '')
-    #     if definition:
-    #         definition = '|'.join(definition)
-    #         _from = "YAT"
-    #         pinyin = "YAT"
-
     # 用Unicode数据库注音
     if _from and not pinyin:
-        pinyin = ' '.join([unihan.get(x, {}).get('kMandarin', '').split()[0] for x in word])
-    # print(pinyin, definition)
+        pinyin = [unihan.get(x, {}).get('kMandarin', '') for x in word]
+        pinyin = ' '.join([x.split()[0] if x else '' for x in pinyin])
 
-    # else:
     with open('yoga.dict', 'a+') as fd:
         fd.write(datetime.datetime.now().strftime("%Y%m%dT%T ") + word + '\n')
 
