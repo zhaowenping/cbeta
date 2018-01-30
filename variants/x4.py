@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2017-12-22 12:17:16
+# Last Modified: 2018-01-30 19:23:25
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -24,9 +24,10 @@ with open('tw_edu.json') as fd:
 
 
 result = set()
+r1 = set()
+r2 = set()
 rr = dict()
 with open('variants.txt') as fd:
-# with open('zzz.txt') as fd:
     for line in fd:
         if line.startswith('#'): continue
         line = line.strip()
@@ -39,12 +40,26 @@ with open('variants.txt') as fd:
             rr[c1].append(c2)
         else:
             rr[c1] = [c2,]
+        r1.add(c1)
+        if c1 not in edu and c2 in edu:
+            print(c1, c2)
+        # result.add((c1, c2))
+        # else:
+        #     print(c2)
 
 # result = sorted(list(result), key=lambda x: ord(x[0]))
+rk = sorted(rr.keys(), key=lambda x: ord(x))
 
-for c1 in rr:
-    # print(c1, * rr[c1])
-    print(c1, * rr[c1])
+# for c1 in rk:
+#     cc = sorted([i for i in rr[c1]], key=lambda x: ord(x))
+#     for c2 in cc:
+#         # if c1 in edu and c2 in edu:
+#         if c1 != c2:
+#             print(c1, c2, "U+%X" % ord(c1), "U+%X" % ord(c2))
+
+for c1 in r1:
+    if c1 in r2:
+        print(c1, rr[c1])
 
 # print(data)
 
