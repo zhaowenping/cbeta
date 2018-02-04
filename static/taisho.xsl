@@ -404,7 +404,8 @@
 
     <!--清除文档中无用空格, 替换错误的人名分割符号-->
     <xsl:template match="text()|@*">
-        <xsl:value-of select="translate(normalize-space(.), '&#xff0e;', '&#x00b7;')"/>
+        <!--xsl:value-of select="translate(normalize-space(.), '&#xff0e;', '&#x00b7;')"/-->
+        <xsl:value-of select="normalize-space(.)"/>
             <!--xsl:call-template name="zhuyin">
                 <xsl:with-param name="string" select="."/>
             </xsl:call-template-->
@@ -679,17 +680,17 @@
             <xsl:when test="$nor and not($term1[@rend='no_nor'])">
                 <span class="gaiji_nor"><xsl:value-of select="$nor"/></span>
             </xsl:when>
+            <xsl:when test="$char/mapping[@type='unicode']">
+                <span class="gaiji_uni">
+                    <!--xsl:value-of disable-output-escaping='yes' select="concat('&amp;#x', substring($char/mapping[@type='unicode'], 3), ';')"/-->
+                    <xsl:value-of select="."/>
+                </span>
+            </xsl:when>
             <!--使用xml实体输出显示，不能用于搜索,ff无效, 形如: &#x25F9D;-->
             <xsl:when test="$char/mapping[@type='normal_unicode']">
                 <span class="gaiji_nor">
                     <xsl:value-of disable-output-escaping='yes' select="concat('&amp;#x', substring($char/mapping[@type='normal_unicode'], 3), ';')"/>
                 </span>
-            </xsl:when>
-            <xsl:when test="$char/mapping[@type='unicode']">
-                <span class="gaiji_uni">
-                    <xsl:value-of disable-output-escaping='yes' select="concat('&amp;#x', substring($char/mapping[@type='unicode'], 3), ';')"/>
-                </span>
-                <!--xsl:value-of select="."/ 部分字不符和这个规律-->
             </xsl:when>
             <xsl:when test="$char/charProp[localName='composition']/value">
                 <span class="gaiji_nor">
