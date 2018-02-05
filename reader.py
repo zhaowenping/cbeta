@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-01-29 15:39:12
+# Last Modified: 2018-02-05 09:30:40
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -497,14 +497,17 @@ def gaiji_sd_post():
 @route('/zh/:filename#.+#')
 def zh(filename):
     '''简体版'''
+    print(filename)
     with open(filename) as fd:
         content = fd.read()
-    content = content.replace("<TEI ", "<TEI xml:lang='lzh-Hans' ")
+    # content = content.replace("<TEI ", "<TEI xml:lang='lzh-Hans' ")
+    content = content.replace('xml:lang="lzh-Hant"', 'xml:lang="lzh-Hans"')
     # 简体繁体双引号, 单引号切换
     content = content.translate({0x300c: 0x201c, 0x300d: 0x201d, 0x300e: 0x2018, 0x300f: 0x2019})
     response.content_type = 'text/xml'
     # content = opencc.convert(content, config='t2s.json')
     content = convert2s(content)
+    print(filename)
     return content
 
 @route('/zhx/:filename')
