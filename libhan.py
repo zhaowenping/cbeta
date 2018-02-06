@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-02-06 20:17:47
+# Last Modified: 2018-02-06 21:09:09
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -685,12 +685,12 @@ def pagerank(filename):
     '''对xml文件名评分'''
     pt = re.compile(r'\d+')  # 应该在前端过滤
     if filename[0] == 'T':
-        r = 1
-    else:
         r = 0
+    else:
+        r = 1
     x = pt.findall(filename)
     x = [int(i) for i in x]
-    return r, *x
+    return r, x[0], x[1], x[2]
 
 def fullsearch(ct):
     '''全文搜索'''
@@ -751,7 +751,8 @@ def fullsearch(ct):
             result.append({'hl': highlight(ct, _source['content']), 'an': f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', 'title':_source['title'], 'author': author,
                 'filename': _source["filename"]})
 
-    sorted(result, key=lambda x: pagerank(x['filename']), reverse=True)
+    # sorted(result, key=lambda x: pagerank(x['filename']), reverse=True)
+    result.sort(key=lambda x: pagerank(x['filename']))
         # else:
         #     import pprint
         #     pprint.pprint(('||'.join(_source['content']), f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', _source['title'], author))
@@ -785,27 +786,29 @@ if __name__ == "__main__":
     # print(get_all_juan('T19n0974A'))
     # print(get_next_page('T02n0099_001'))
     # print(get_next_page('T01n0002_001'))
-    with gzip.open('dict/kangxi.json.gz') as fd:
-        kangxi = json.load(fd)
 
-    with open('cipin.json') as fd:
-        cipin = json.load(fd)
+    # with gzip.open('dict/kangxi.json.gz') as fd:
+    #     kangxi = json.load(fd)
 
-    for word in kangxi:
-        kxword = kangxi[word]
-        pinyin = kxword.get('國語發音', '')
-        if not pinyin:
-            word2 = normyitizi(word)
-            kxword2 = kangxi.get(word2, {})
-            pinyin2 = kxword2.get('國語發音', '')
-            if pinyin2:
-                # print(word, word2, pinyin2)
-                pass
-            else:
-                cp = cipin.get(word, 0)
-                if cp > 0:
-                    print(word, word2, cipin.get(word, 0), "%X" % ord(word))
-                pass
+    # with open('cipin.json') as fd:
+    #     cipin = json.load(fd)
+
+    # for word in kangxi:
+    #     kxword = kangxi[word]
+    #     pinyin = kxword.get('國語發音', '')
+    #     if not pinyin:
+    #         word2 = normyitizi(word)
+    #         kxword2 = kangxi.get(word2, {})
+    #         pinyin2 = kxword2.get('國語發音', '')
+    #         if pinyin2:
+    #             # print(word, word2, pinyin2)
+    #             pass
+    #         else:
+    #             cp = cipin.get(word, 0)
+    #             if cp > 0:
+    #                 print(word, word2, cipin.get(word, 0), "%X" % ord(word))
+    #             pass
+    print(pagerank('T14n0563_001.xml'))
 
 
 
