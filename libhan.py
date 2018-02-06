@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-01-29 18:43:29
+# Last Modified: 2018-02-06 20:17:47
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -681,6 +681,16 @@ def highlight(ss, ct):
         ct = ct.replace(zi, f'<em>{zi}</em>')
     return ct
 
+def pagerank(filename):
+    '''对xml文件名评分'''
+    pt = re.compile(r'\d+')  # 应该在前端过滤
+    if filename[0] == 'T':
+        r = 1
+    else:
+        r = 0
+    x = pt.findall(filename)
+    x = [int(i) for i in x]
+    return r, *x
 
 def fullsearch(ct):
     '''全文搜索'''
@@ -738,7 +748,10 @@ def fullsearch(ct):
         juan = _source["filename"].split('n')[0]
         # result.append((''.join(i['highlight']['content']), f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', _source['title'], author))
         if zi_order(ct, _source['content']):
-            result.append({'hl': highlight(ct, _source['content']), 'an': f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', 'title':_source['title'], 'author': author})
+            result.append({'hl': highlight(ct, _source['content']), 'an': f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', 'title':_source['title'], 'author': author,
+                'filename': _source["filename"]})
+
+    sorted(result, key=lambda x: pagerank(x['filename']), reverse=True)
         # else:
         #     import pprint
         #     pprint.pprint(('||'.join(_source['content']), f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', _source['title'], author))
