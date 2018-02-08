@@ -682,7 +682,6 @@
             </xsl:when>
             <xsl:when test="$char/mapping[@type='unicode']">
                 <span class="gaiji_uni">
-                    <!--xsl:value-of disable-output-escaping='yes' select="concat('&amp;#x', substring($char/mapping[@type='unicode'], 3), ';')"/-->
                     <xsl:value-of select="."/>
                 </span>
             </xsl:when>
@@ -1027,6 +1026,12 @@
         </cite>
     </xsl:template>
 
+    <!--敬语-->
+    <xsl:template match="persName">
+        <span class="honorific">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
 
     <!--string-split函数: 空格分割后取值witness@id-->
     <xsl:template match="text/text()" name="tokenize">

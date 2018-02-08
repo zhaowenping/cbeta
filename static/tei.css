@@ -1247,6 +1247,11 @@ sub {
     bottom: -.25em;
 }
 
+/*赤金色*/
+.honorific {
+    color:#F2BE45;
+}
+
 html
 {
     -ms-font-feature-settings: "liga";

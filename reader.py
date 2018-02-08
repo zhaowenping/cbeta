@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-02-05 09:30:40
+# Last Modified: 2018-02-08 20:41:36
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -497,16 +497,21 @@ def gaiji_sd_post():
 @route('/zh/:filename#.+#')
 def zh(filename):
     '''简体版'''
-    print(filename)
+    print('简体版本', filename)
+    honorific = {'如來', '應供', '正遍知', '明行足', '善逝', '世間解', '無上士', '調御丈夫', '天人師', '佛', '世尊', '薄伽梵', '婆伽婆'}
     with open(filename) as fd:
         content = fd.read()
     # content = content.replace("<TEI ", "<TEI xml:lang='lzh-Hans' ")
     content = content.replace('xml:lang="lzh-Hant"', 'xml:lang="lzh-Hans"')
     # 简体繁体双引号, 单引号切换
+    for i in honorific:
+        print(i, i in content)
+        content = content.replace(i, f'<persName>{i}</persName>')
     content = content.translate({0x300c: 0x201c, 0x300d: 0x201d, 0x300e: 0x2018, 0x300f: 0x2019})
     response.content_type = 'text/xml'
     # content = opencc.convert(content, config='t2s.json')
     content = convert2s(content)
+    # 添加敬语染色 honorific  如來、應供、正遍知、明行足、善逝、世間解、無上士、調御丈夫、天人師、佛、世尊
     print(filename)
     return content
 
