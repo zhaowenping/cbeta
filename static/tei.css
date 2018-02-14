@@ -449,12 +449,15 @@ span.note{
     color:#A9A9A9;
     font-size:smaller;
 }
+
+/* 无法在目录部文件中去除括号中的注释
 span.note:before{
     content:" (";
 }
 span.note:after{
     content:") ";
 }
+*/
 
 /* address */
 span.address {

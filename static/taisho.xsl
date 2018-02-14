@@ -491,7 +491,7 @@
 
     <!--处理note-->
     <xsl:template match="note[@place='inline']|note[@type='inline']">
-        <span class="note"><xsl:apply-templates/></span>
+        <span class="note">(<xsl:apply-templates/>)</span>
     </xsl:template>
 
     <xsl:template match="space">
