@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-02-08 20:41:36
+# Last Modified: 2018-02-15 07:03:58
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -498,21 +498,26 @@ def gaiji_sd_post():
 def zh(filename):
     '''简体版'''
     print('简体版本', filename)
-    honorific = {'如來', '應供', '正遍知', '明行足', '善逝', '世間解', '無上士', '調御丈夫', '天人師', '佛', '世尊', '薄伽梵', '婆伽婆'}
     with open(filename) as fd:
         content = fd.read()
-    # content = content.replace("<TEI ", "<TEI xml:lang='lzh-Hans' ")
-    content = content.replace('xml:lang="lzh-Hant"', 'xml:lang="lzh-Hans"')
-    # 简体繁体双引号, 单引号切换
+    # 修改语言为简体
+    # content = content.replace('xml:lang="lzh-Hant"', 'xml:lang="lzh-Hans"')
+    content = content.replace('Hant', 'Hans')
+    # 添加敬语染色 honorific  如來、應供、正遍知、明行足、善逝、世間解、無上士、調御丈夫、天人師、佛、世尊
+    honorific = {'多陀怛伽度', '多陀竭', '多陀阿伽度', '多陀阿伽陀', '多陀阿伽馱', '如來', '怛他蘗多', '怛他蘗多夜', '怛薩阿竭', '怛闥阿竭', '陀多竭多',
+                 '阿羅訶', '阿羅呵', # '三藐三佛陀', '三耶三佛', '三耶三佛檀',
+                 '正徧知', '正徧覺', '等正覺', '三藐三菩陀',
+                 '如來', '應供', '正遍知', '明行足', '善逝', '世間解', '無上士', '調御丈夫', '天人師', '世尊', '薄伽梵', '婆伽婆', }
+    content = re.sub(r'(?!辟支|仿)(佛陀?)', r'<persName>\1</persName>', content)
     for i in honorific:
         print(i, i in content)
         content = content.replace(i, f'<persName>{i}</persName>')
+    # 简体繁体双引号, 单引号切换
     content = content.translate({0x300c: 0x201c, 0x300d: 0x201d, 0x300e: 0x2018, 0x300f: 0x2019})
-    response.content_type = 'text/xml'
     # content = opencc.convert(content, config='t2s.json')
     content = convert2s(content)
-    # 添加敬语染色 honorific  如來、應供、正遍知、明行足、善逝、世間解、無上士、調御丈夫、天人師、佛、世尊
     print(filename)
+    response.content_type = 'text/xml'
     return content
 
 @route('/zhx/:filename')
