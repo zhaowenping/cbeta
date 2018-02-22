@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-02-15 07:03:58
+# Last Modified: 2018-02-22 11:26:51
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -389,7 +389,8 @@ def g_get():
         else:
             cur.execute('select * from cb where nor = %s or val = %s or position(%s in des)>0 order by cipin desc', (q, q, q))
     else:
-        cur.execute('select * from cb where nor is null or val is null')
+        # cur.execute('select * from cb where nor is null or val is null order by cipin desc')
+        cur.execute('select * from cb where nor is null and val is null  and info is not null order by cipin desc')
     data = cur.fetchall()
     result = []
     for i in data:
