@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-02-06 21:09:09
+# Last Modified: 2018-02-23 10:59:47
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -338,12 +338,13 @@ def load_dict(dictionary=None):
 
 def lookinkangxi(word):
     '''查询康熙字典'''
+    definition = []
     if word not in kangxi:
         word = normyitizi(word)
+        definition.append(f'同{word}')
 
     if word in kangxi:
         _from = "康熙字典"
-        definition = []
         kxword = kangxi[word]
         if "說文解字" in kxword:
             definition.append(kxword["說文解字"])
