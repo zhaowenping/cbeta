@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-02-23 10:59:47
+# Last Modified: 2018-02-25 17:08:40
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -29,6 +29,28 @@ import requests
 
 print('调用函数库')
 
+
+def readdb(path, trans=False, reverse=False):
+    '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
+    result = dict()
+    with open(path) as fd:
+        for line in fd:
+            line = line.strip()
+            if line.startswith('#') or not line: continue
+            c0, c1, *cc = line.strip().split()
+            if trans:
+                if reverse:
+                    result[ord(c1)] = ord(c0)
+                else:
+                    result[ord(c0)] = ord(c1)
+            else:
+                if reverse:
+                    result[c1] = c0
+                else:
+                    result[c0] = c1
+    return result
+
+
 class TSDetect:
     '''简体繁体检测'''
     def __init__(self):
@@ -36,16 +58,19 @@ class TSDetect:
         self.p = re.compile(r'[\u4e00-\u9fa5]')
 
         # 纯繁体字集合
-        self.tt = set()
+        # self.tt = set()
         # 纯简体字集合
-        self.ss = set()
-        with open('cc/TSCharacters.txt') as fd:
-            for line in fd:
-                line = line.strip().split()
-                # print(line.split())
-                self.tt.add(line[0])
-                for zi in line[1:]:
-                    self.ss.add(zi)
+        # self.ss = set()
+        # with open('cc/TSCharacters.txt') as fd:
+        #     for line in fd:
+        #         line = line.strip().split()
+        #         # print(line.split())
+        #         self.tt.add(line[0])
+        #         for zi in line[1:]:
+        #             self.ss.add(zi)
+        tsdb = readdb('cc/TSCharacters.txt')
+        self.tt = set(tsdb.keys())
+        self.ss = set(tsdb.values())
 
         xx = self.tt & self.ss
         self.tt = self.tt - xx
@@ -555,48 +580,21 @@ def re_search(pattern, string):
 
 def __init_cc__():
     '''读取简体繁体转换数据库'''
-    # 读取繁体转简体短语字典
-    tsptable = dict()
-    with open('cc/TSPhrases.txt') as fd:
-        for line in fd:
-            if line.startswith('#'): continue
-            line = line.strip().split()
-            tsptable[line[0]] = line[1:][0]
-
-    # 读取简体转繁体转简体短语字典
-    stptable = dict()
-    with open('cc/STPhrases.txt') as fd:
-        for line in fd:
-            if line.startswith('#'): continue
-            line = line.strip().split()
-            stptable[line[0]] = line[1:][0]
-    # print('|'.join(sorted(tsptable.keys(), key=lambda x: len(x), reverse=True)))
+    # 读取繁体转简体短语词典
+    tsptable = readdb('cc/TSPhrases.txt')
+    # 读取简体转繁体短语词典
+    stptable = readdb('cc/STPhrases.txt')
+    # # print('|'.join(sorted(tsptable.keys(), key=lambda x: len(x), reverse=True)))
+    # 读取繁体转简体字典
+    tstable = readdb('cc/TSCharacters.txt', trans=True)
+    # 读取简体转繁体字典
+    sttable = readdb('cc/STCharacters.txt', trans=True)
 
     # 简体繁体转换pattern
     tsp = re.compile('|'.join(tsptable.keys()))
     stp = re.compile('|'.join(stptable.keys()))
 
-    tstable = dict()
-    with open('cc/TSCharacters.txt') as fd:
-        for line in fd:
-            if line.startswith('#'): continue
-            line = line.strip().split()
-            tstable[ord(line[0])] = ord(line[1:][0])
-
-    sttable = dict()
-    with open('cc/STCharacters.txt') as fd:
-        for line in fd:
-            if line.startswith('#'): continue
-            line = line.strip().split()
-            sttable[ord(line[0])] = ord(line[1:][0])
     return tsp, tstable, tsptable, stp, sttable, stptable
-
-    # self.tsp = tsp
-    # self.tstable = tstable
-    # self.tsptable = tsptable
-    # self.stp = stp
-    # self.sttable = sttable
-    # self.stptable = stptable
 
 tsp, tstable, tsptable, stp, sttable, stptable = __init_cc__()
 
@@ -614,13 +612,14 @@ def convert2s(string, punctuation=True, region=False, autonorm=True, onlyURO=Tru
         string = string.translate({0x300c: 0x201c, 0x300d: 0x201d, 0x300e: 0x2018, 0x300f: 0x2019})
 
     # 类推简化字处理
-    tstable2 = copy.deepcopy(tstable)
+    tst2 = copy.deepcopy(tstable)
     if onlyURO:
-        tstable2 = {k:tstable[k] for k in tstable if not (k < 0x20000 and tstable[k] > 0x20000)}
+        tst2 = {k:tstable[k] for k in tstable if not (k < 0x20000 and tstable[k] > 0x20000)}
 
-    content = ''.join(i[0].translate(tstable2) if not i[1] else tsptable[i[0]] for i in re_search(tsp, string))
+    content = ''.join(i[0].translate(tst2) if not i[1] else tsptable[i[0]] for i in re_search(tsp, string))
 
     return content
+
 
 def convert2t(string, punctuation=True, region=False):
     '''简体转繁体, punctuation是否转换单双引号
@@ -640,12 +639,13 @@ def convert2t(string, punctuation=True, region=False):
 # 异体字处理
 
 # 读入异体字对照表
-yitizi = dict()
-with open('dict/variants.txt') as fd:
-    for line in fd:
-        if line.startswith('#'): continue
-        line = line.strip().split()
-        yitizi[ord(line[1])] = ord(line[0])
+yitizi = readdb('dict/variants.txt', True, True)
+# yitizi = dict()
+# with open('dict/variants.txt') as fd:
+#     for line in fd:
+#         if line.startswith('#'): continue
+#         line = line.strip().split()
+#         yitizi[ord(line[1])] = ord(line[0])
 
 def normyitizi(string, level=0):
     '''异体字规范化为标准繁体字'''
