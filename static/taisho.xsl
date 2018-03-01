@@ -240,9 +240,10 @@
         <!--版權資訊-->
         <div>
             <hr style=" height:2px;border:none;border-top:2px solid #185598;" />
-            <div>【經文資訊】卍新續藏第 <xsl:value-of select="concat(substring-before($current_sutra, 'n'), ' 冊 No. ', substring-after($current_sutra, 'n'), ' ', $title)"/><br/>
-            【版本記錄】CBETA 電子佛典 2016.06，完成日期：2016/06/15 <br/>
+            <div>【經文資訊】XXX藏第 <xsl:value-of select="concat(substring-before($current_sutra, 'n'), ' 冊 No. ', substring-after($current_sutra, 'n'), ' ', $title)"/><br/>
+                <!--【版本記錄】CBETA 電子佛典 2016.06，完成日期：2016/06/15 <br/>
             【編輯說明】本資料庫由中華電子佛典協會（CBETA）依卍新續藏所編輯 <br/>
+            -->
             【原始資料】<xsl:value-of select="/TEI/teiHeader/encodingDesc/projectDesc/p[@xml:lang='zh']"/><br/>
             【其他事項】本資料庫可自由免費流通，詳細內容請參閱【中華電子佛典協會資料庫版權宣告】 </div>
             <hr style=" height:2px;border:none;border-top:2px solid #185598;" />
