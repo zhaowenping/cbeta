@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-03-02 19:01:40
+# Last Modified: 2018-03-02 20:31:00
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -860,6 +860,7 @@ def tools_get():
 @view('temp/dict.jinja2')
 def new_dict1(page):
     q = request.GET.q
+    page = int(page)
     pp = 800
     with gzip.open('dict/fxcd.json.gz') as fd:
         data = json.load(fd)
@@ -869,12 +870,13 @@ def new_dict1(page):
     if q:
         # 查字典
         fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
-        result = fxcd.get(q, {})
+        result = {q: fxcd.get(q, '没找到')}
+        prevpage = max(page - 1, 1)
+        nextpage = page + 1
     else:
         #fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
         fxcd = [(item, (c.strip() for c in re.split(r'\n *', data[item])[1:])) for item in data]
         total = len(fxcd)
-        page = int(page)
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
         result = dict(fxcd[pp*(page-1):pp*page])
@@ -885,6 +887,7 @@ def new_dict1(page):
 @view('temp/dict.jinja2')
 def new_dict2(page):
     q = request.GET.q
+    page = int(page)
     pp = 800
     with gzip.open('dict/fk.json.gz') as fd:
         data = json.load(fd)
@@ -894,12 +897,13 @@ def new_dict2(page):
     if q:
         # 查字典
         fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
-        result = fxcd.get(q, {})
+        result = {q: fxcd.get(q, '没找到')}
+        prevpage = max(page - 1, 1)
+        nextpage = page + 1
     else:
         # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
         fxcd = [(item, (data[item],)) for item in data]
         total = len(fxcd)
-        page = int(page)
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
         result = dict(fxcd[pp*(page-1):pp*page])
@@ -911,6 +915,7 @@ def new_dict2(page):
 @view('temp/dict.jinja2')
 def new_dict3(page):
     q = request.GET.q
+    page = int(page)
     pp = 800
     with open('dict/nvd.json') as fd:
         data = json.load(fd)
@@ -920,7 +925,9 @@ def new_dict3(page):
     if q:
         # 查字典
         fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
-        result = fxcd.get(q, {})
+        result = {q: fxcd.get(q, '没找到')}
+        prevpage = max(page - 1, 1)
+        nextpage = page + 1
     else:
         # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
         fxcd = [(item, (data[item],)) for item in data]
@@ -936,6 +943,7 @@ def new_dict3(page):
 @view('temp/dict.jinja2')
 def new_dict4(page):
     q = request.GET.q
+    page = int(page)
     pp = 800
     with open('dict/cyx.json') as fd:
         data = json.load(fd)
@@ -945,12 +953,13 @@ def new_dict4(page):
     if q:
         # 查字典
         fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
-        result = fxcd.get(q, {})
+        result = {q: fxcd.get(q, '没找到')}
+        prevpage = max(page - 1, 1)
+        nextpage = page + 1
     else:
         # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
         fxcd = [(item, (data[item],)) for item in data]
         total = len(fxcd)
-        page = int(page)
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
         result = dict(fxcd[pp*(page-1):pp*page])
@@ -961,6 +970,7 @@ def new_dict4(page):
 @view('temp/dict.jinja2')
 def new_dict5(page):
     q = request.GET.q
+    page = int(page)
     pp = 800
     with open('dict/ccc.json') as fd:
         data = json.load(fd)
@@ -970,12 +980,13 @@ def new_dict5(page):
     if q:
         # 查字典
         fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
-        result = fxcd.get(q, {})
+        result = {q: fxcd.get(q, '没找到')}
+        prevpage = max(page - 1, 1)
+        nextpage = page + 1
     else:
         # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
         fxcd = [(item, (data[item],)) for item in data]
         total = len(fxcd)
-        page = int(page)
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
         result = dict(fxcd[pp*(page-1):pp*page])
@@ -1079,6 +1090,7 @@ def new_dict6(page):
 @view('temp/dict.jinja2')
 def new_dict7(page):
     q = request.GET.q
+    page = int(page)
     pp = 800
     with gzip.open('dict/pali-hant.json.gz') as fd:
         data = json.load(fd)
@@ -1088,7 +1100,9 @@ def new_dict7(page):
     if q:
         # 查字典
         fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
-        result = fxcd.get(q, {})
+        result = {q: fxcd.get(q, '没找到')}
+        prevpage = max(page - 1, 1)
+        nextpage = page + 1
     else:
         # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
         fxcd = [(item, data[item]) for item in data]
@@ -1104,6 +1118,7 @@ def new_dict7(page):
 @view('temp/dict.jinja2')
 def new_dict8(page):
     q = request.GET.q
+    page = int(page)
     pp = 800
     with open('dict/pali-dama.json') as fd:
         data = json.load(fd)
@@ -1113,12 +1128,13 @@ def new_dict8(page):
     if q:
         # 查字典
         fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
-        result = fxcd.get(q, {})
+        result = {q: fxcd.get(q, '没找到')}
+        prevpage = max(page - 1, 1)
+        nextpage = page + 1
     else:
         # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
         fxcd = [(item, (data[item],)) for item in data]
         total = len(fxcd)
-        page = int(page)
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
         result = dict(fxcd[pp*(page-1):pp*page])
@@ -1129,6 +1145,7 @@ def new_dict8(page):
 @view('temp/dict.jinja2')
 def new_dict8(page):
     q = request.GET.q
+    page = int(page)
     pp = 800
     with gzip.open('dict/sa-hant.json.gz') as fd:
         data = json.load(fd)
@@ -1138,12 +1155,13 @@ def new_dict8(page):
     if q:
         # 查字典
         fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
-        result = fxcd.get(q, {})
+        result = {q: fxcd.get(q, '没找到')}
+        prevpage = max(page - 1, 1)
+        nextpage = page + 1
     else:
         # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
         fxcd = [(item, (data[item],)) for item in data]
         total = len(fxcd)
-        page = int(page)
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
         result = dict(fxcd[pp*(page-1):pp*page])
