@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="lzh-Hant">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+        <meta name="description" content="印刷品般的经典阅读"/>
+        <meta name="keywords" content="大正藏, 中文, 排版, 排版規範, 阅藏, 大藏经"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+        <!--link rel="stylesheet" href="http://han-css.herokuapp.com/style.css"/-->
+        <link rel="stylesheet" href="/static/jquery.webui-popover.min.css"/>
+        <link rel="stylesheet" href="/static/tei.css"/>
+        <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Han/3.2.7/han.min.css"/-->
+        <title>
+            <xsl:value-of select="concat($current_sutra, ' ', $title)"/>
+        </title>
+        <!--script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script-->
+        <script src="/static/jquery-3.3.1.min.js"></script>
+        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!--script src="/static/bootstrap.min.js"></script-->
+        <script src="/static/jquery.webui-popover.min.js"></script>
+        <!--script src="https://cdnjs.cloudflare.com/ajax/libs/Han/3.2.7/han.min.js"></script-->
+        <!--[if lt IE9]> 
+        <script src="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+        <![endif]-->
+        <script src="/static/my.js"></script>
+
+        </head>
+
+        <!--firefox浏览器特有的菜单-->
+        <body class="contenttext" contextmenu="supermenu">
+            <!--header class="layout">
+                <div><div class="logo">
+                    <h1><a href="/manual/">漢字標準格式</a></h1>
+                    <p class="desc">印刷品般的漢字排版框架</p>
+                    </div>
+                    <ul><li><a id="github-repo" href="https://github.com/ethantw/Han">GitHub Project</a></li>
+                    <li><button id="trad2simp">繁簡切換</button></li></ul><button id="toggle-nav" hidden="">選單開關</button></div>
+            </header-->
+
+        <!--a href="#">&#128266;</a>
+        <a href="https://www.sejda.com/html-to-pdf?save-link" target="_blank">Save to PDF</a-->
+        <!--xsl:value-of select="function-available('codepoints-to-string')"/>
+        <xsl:value-of select="function-available('str:tokenize')"/-->
+        <!--xsl:value-of select="str:tokenize('2001-06-03T11:40:23', '-T:')"/-->
+
+        <menu id="supermenu" type="context">
+            <menuitem label="报告错误" onclick="alert('step1')"/>
+            <menuitem label="保存书签" onclick="imageRotation('rotate-90')" icon="img/arrow-return-090.png"/>
+            <menuitem label="拼音标注" onclick="alert('此功能暂时不开放')" icon="img/arrow-return-180.png"/>
+            <menuitem label="简繁切换" onclick="alert('此功能暂时不开放')" icon="img/arrow-return-180.png"/>
+            <menuitem label="横排竖排" onclick="alert('此功能暂时不开放')" icon="img/arrow-stop-180.png"/>
+            <menuitem label="引用复制" onclick="alert('此功能暂时不开放')" icon="img/arrow-stop-270.png"/>
+            <menuitem label="导出PDF"  onclick="alert('此功能暂时不开放')" icon="img/arrow-stop-270.png"/>
+            <menuitem label="导出epub" onclick="alert('此功能暂时不开放')" icon="img/arrow-stop-270.png"/>
+            <menuitem label="导出txt"  onclick="alert('此功能暂时不开放')" icon="img/arrow-stop-270.png"/>
+        </menu>
+
+            <!--ul class="pagination pagination-sm"-->
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <!--div class="navbar-header">  
+                <a class="navbar-brand">&#9776;</a>  
+            </div--> 
+            <div class="container">
+                <!--ul id="pagination"></ul-->
+                <ul class="nav navbar-nav">
+                <li>
+                    <a class="navbar-brand" href="{{prevpage}}">上一卷</a>
+                </li>
+                <li>
+                    <a class="navbar-brand" href="/mulu">目錄</a>
+                </li>
+                <li>
+                    <a class="navbar-brand" href="{{nextpage}}">下一卷</a>
+                </li>
+            </ul>
+            <!--input id="shupaictl" type="button" value="竖" onclick="shupai(this);"/-->
+            <a>
+                <!--xsl:attribute name="href">
+                    <xsl:value-of select="concat('/zh', $dir, $current_sutra, '_')"/>
+                    <xsl:number format="001" value="$juan"/>
+                    <xsl:text>.xml</xsl:text>
+                </xsl:attribute-->
+                简
+            </a>
+            <!--form class="collspae navbar-collspae navbar-form navbar-left" role="search">
+               <div class="form-group">
+                  <input type="search" class="form-control" placeholder="Search"/>
+               </div>
+               <button type="submit" class="btn btn-default">直达</button>
+            </form-->    
+            </div>
+        </nav>
+
+        <!--侧边栏目录 max(level)=28-->
+        <nav>
+            <ul class="toc">
+            <!--Affix附加导航-->
+            <!--ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="125"-->
+            <!--生成目录-->
+                <!--xsl:with-param name="pos" select="document($prev_filepath)//cb:mulu|//cb:mulu|document($next_filepath)//cb:mulu"/-->
+            <!--xsl:call-template name="make_catalog">
+                <xsl:with-param name="pos" select="//cb:mulu"/>
+            </xsl:call-template-->
+            </ul>
+        </nav>
+
+            <br/>
+
+        <div id="topAnchor"/>
+        <a href="#topAnchor" style="position:fixed;right:0;bottom:0" rel="bookmark">&#x21c8;</a>  <!--回到顶部-->
+        <a href="#bottomAnchor" style="position:fixed;right:0;top:70" rel="bookmark">&#x21ca;</a> <!--回到底部-->
+        <div id="allcontent" class="content"> <!-- style="writing-mode:vertical-rl;"-->
+        <!--补上南传等经典的标题以及作者-->
+        <xsl:if test="not(//cb:jhead)">
+            <h1 class="title">
+              {{title}}
+            </h1>
+            <br/>
+            <div class="byline">
+              {{author}}
+            </div>
+            <br/>
+            <br/>
+        </xsl:if>
+
+            <!--div class="span2 col-xs-12 col-sm-3 col-md-2 navbar-inverse">
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                    <li><a href="#">Practice Editor </a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div-->
+
+        <!--左侧目录-->
+        <!--xsl:copy-of select="document(concat('/static/toc/', $current_han, '.xml'))"/-->
+        <!--xsl:copy-of select="document('/static/t.xml')"/-->
+        <!--正文内容-->
+        <div class="contentx">
+          {%for entry in result%}
+             <dl>
+             <dt>
+             {{entry}}
+             </dt>
+            {%for item in result[entry]%}
+             <dd style="text-indent: 2em;">
+             {{item}}
+             </dd>
+            {%endfor%}
+             </dl>
+          {%endfor%}
+        </div>
+        <div id="bottomAnchor"/>
+        <!--版權資訊-->
+        <div>
+            <hr style=" height:2px;border:none;border-top:2px solid #185598;" />
+            <div>【經文資訊】XXX藏第 <xsl:value-of select="concat(substring-before($current_sutra, 'n'), ' 冊 No. ', substring-after($current_sutra, 'n'), ' ', $title)"/><br/>
+                <!--【版本記錄】CBETA 電子佛典 2016.06，完成日期：2016/06/15 <br/>
+            【編輯說明】本資料庫由中華電子佛典協會（CBETA）依卍新續藏所編輯 <br/>
+            -->
+            【原始資料】<xsl:value-of select="/TEI/teiHeader/encodingDesc/projectDesc/p[@xml:lang='zh']"/><br/>
+            【其他事項】本資料庫可自由免費流通，詳細內容請參閱【中華電子佛典協會資料庫版權宣告】 </div>
+            <hr style=" height:2px;border:none;border-top:2px solid #185598;" />
+        </div>
+
+        <!--底栏目录-->
+        <nav class="navbar-sm navbar-default" role="navigation">
+            <ul class="nav navbar-nav">
+             <li>
+                <a class="navbar-brand" href="{{prevpage}}">上一卷</a>
+             </li>
+             <li>
+                <a href="/mulu">返回目录</a>
+             </li>
+             <li>
+                <a class="navbar-brand" href="{{nextpage}}">下一卷</a>
+             </li>
+             </ul>
+        </nav>
+    </div>
+
+    </body>
+</html>

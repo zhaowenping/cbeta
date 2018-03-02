@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-02-22 11:26:51
+# Last Modified: 2018-03-02 17:42:58
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -349,15 +349,21 @@ def dict_get(word):
     pinyin = ''
     _from = ''
     definition = ''
-    if len(word) == 1:
-        result = lookinkangxi(word)
-        _from = result['from']
-        definition = result['def']
-        pinyin = result['pinyin']
-    else:
+
+    if len(word) != 1:
         rr = lookup(word)
         _from = rr['from']
         definition = rr['definition']
+        print(definition)
+
+    if len(word) == 1:
+        result = lookinkangxi(word)
+        _from = result['from']
+        if definition:
+            definition = '<br>'.join((definition, result['def']))
+        else:
+            definition = result['def']
+        pinyin = result['pinyin']
 
     if not _from:
         result = lookinsa(word)
@@ -843,6 +849,144 @@ def keyifayin_post():
 @get('/page')
 def page_get():
     return []
+
+@get('/tools')
+@view('temp/tools.jinja2')
+def tools_get():
+    return {}
+
+# 法相词典
+@get('/fxcd/:page')
+@view('temp/dict.jinja2')
+def new_dict1(page):
+    q = request.GET.q
+    pp = 800
+    with gzip.open('dict/fxcd.json.gz') as fd:
+        data = json.load(fd)
+    header = data.pop('header', {})
+    title = header['title']
+    author = header['author']
+    if q:
+        # 查字典
+        fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
+        result = fxcd.get(q, {})
+    else:
+        #fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
+        fxcd = [(item, (c.strip() for c in re.split(r'\n *', data[item])[1:])) for item in data]
+        total = len(fxcd)
+        page = int(page)
+        prevpage = max(page - 1, 1)
+        nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
+        result = dict(fxcd[pp*(page-1):pp*page])
+    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+
+# 佛光山词典
+@get('/fk/:page')
+@view('temp/dict.jinja2')
+def new_dict2(page):
+    q = request.GET.q
+    pp = 800
+    with gzip.open('dict/fk.json.gz') as fd:
+        data = json.load(fd)
+    header = data.pop('header', {})
+    title = header['title']
+    author = header['author']
+    if q:
+        # 查字典
+        fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
+        result = fxcd.get(q, {})
+    else:
+        # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
+        fxcd = [(item, (data[item],)) for item in data]
+        total = len(fxcd)
+        page = int(page)
+        prevpage = max(page - 1, 1)
+        nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
+        result = dict(fxcd[pp*(page-1):pp*page])
+    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+
+
+# 南山律学词典
+@get('/nvd/:page')
+@view('temp/dict.jinja2')
+def new_dict3(page):
+    q = request.GET.q
+    pp = 800
+    with open('dict/nvd.json') as fd:
+        data = json.load(fd)
+    header = data.pop('header', {})
+    title = header['title']
+    author = header['author']
+    if q:
+        # 查字典
+        fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
+        result = fxcd.get(q, {})
+    else:
+        # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
+        fxcd = [(item, (data[item],)) for item in data]
+        total = len(fxcd)
+        page = int(page)
+        prevpage = max(page - 1, 1)
+        nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
+        result = dict(fxcd[pp*(page-1):pp*page])
+    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+
+# 佛學常見詞彙（陳義孝)
+@get('/cxy/:page')
+@view('temp/dict.jinja2')
+def new_dict4(page):
+    q = request.GET.q
+    pp = 800
+    with open('dict/cxy.json') as fd:
+        data = json.load(fd)
+    header = data.pop('header', {})
+    title = header['title']
+    author = header['author']
+    if q:
+        # 查字典
+        fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
+        result = fxcd.get(q, {})
+    else:
+        # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
+        fxcd = [(item, (data[item],)) for item in data]
+        total = len(fxcd)
+        page = int(page)
+        prevpage = max(page - 1, 1)
+        nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
+        result = dict(fxcd[pp*(page-1):pp*page])
+    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+
+# 阿含经词典
+@get('/ccc/:page')
+@view('temp/dict.jinja2')
+def new_dict5(page):
+    q = request.GET.q
+    pp = 800
+    with open('dict/ccc.json') as fd:
+        data = json.load(fd)
+    header = data.pop('header', {})
+    title = header['title']
+    author = header['author']
+    if q:
+        # 查字典
+        fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
+        result = fxcd.get(q, {})
+    else:
+        # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
+        fxcd = [(item, (data[item],)) for item in data]
+        total = len(fxcd)
+        page = int(page)
+        prevpage = max(page - 1, 1)
+        nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
+        result = dict(fxcd[pp*(page-1):pp*page])
+    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+
+
+# GeventServer.run(host = '0.0.0.0', port = 8081)
+
+# GeventServer.run(host = '0.0.0.0', port = 8081)
+
+# GeventServer.run(host = '0.0.0.0', port = 8081)
 
 # GeventServer.run(host = '0.0.0.0', port = 8081)
 app = default_app()

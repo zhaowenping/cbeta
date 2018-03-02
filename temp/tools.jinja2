@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="lzh-Hant">
+<head>
+  <meta charset="utf-8"> 
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="revised" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>大藏經</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">  
+  <!--link rel="stylesheet" type="text/css" href="/static/tei.css"-->
+  <!--script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script-->
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  li.list-group-item {
+    float:left;
+    width:50%; 
+    display : block;
+    }
+    @media screen and (max-width: 736px) {
+      li.list-group-item {
+        width:100%; 
+        }
+    }
+    .odd{
+    //background-color: #99cc66;
+    //background-color: #ccff66;
+    // background-color: #99cc99;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <nav>
+     <h1 style="text-align:center;">{{yiju}}目錄</h1>
+  
+     <ol class="breadcrumb">
+      <li><a href="/">回首頁</a></li>
+      <li><a href="root">總目錄</a></li>
+      {#% for url, content in nav %}
+      <li><a href="{{url}}">{{content}}</a></li>
+      {% endfor %#}
+     </ol>
+    </nav>
+  
+    <ul class="list-group">
+        {#% for key in menus %}
+         <li class="list-group-item {{ loop.cycle('odd', 'even') }}">
+          <a href="{{request.path}}/{{key}}">{{ key }}</a>
+          {% if not menus[key] %}
+          <!--span class="badge"><a href="{{key}}">简体版</a></span-->
+          <!--a href="/dharani/{{key}}" class="badge"><span class="badge">陀罗尼注音<span></a-->
+          <a href="/zhx/{{key}}" class="badge"><span class="badge">简体版<span></a>
+          {% endif %}
+         </li>
+        {% endfor%#}
+         <li class="list-group-item odd }}">
+          <a href="/xml/dfb.xml">丁福保佛學大辭典</a>
+          <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
+         </li>
+         <li class="list-group-item even}}">
+          <a href="/fk/1">佛光大辭典</a>
+          <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
+         </li>
+         <li class="list-group-item odd }}">
+          <a href="/fxcd/1">法相词典</a>
+          <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
+         </li>
+         <li class="list-group-item even}}">
+          <a href="/nvd/1">南山律學辭典</a>
+          <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
+         </li>
+         <li class="list-group-item odd}}">
+          <a href="/cxy/1">佛學常見詞彙（陳義孝)</a>
+          <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
+         </li>
+         <li class="list-group-item even}}">
+          <a href="/ccc/1">汉译阿含经词典（莊春江)</a>
+          <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
+         </li>
+    </ul>
+  </div>
+  <hr>
+  版本: 2018-02-24
+
+</body>
+</html>
+
+
