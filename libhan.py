@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-02-25 17:08:40
+# Last Modified: 2018-03-02 19:14:12
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -248,7 +248,7 @@ def load_dict(dictionary=None):
 
     # 词典列表
     dicts = {'fk': ('佛光山', 'fk.json.gz'), 'dfb': ('丁福保', 'dfb.json.gz'), 'ccc': ('庄春江', 'ccc.json'), 'fxcd': ('法相詞典', 'fxcd.json.gz'),
-            'nvd': ('南山律学词典', 'nvd.json'), 'cxy': ('佛學常見詞彙（陳義孝）', 'cxy.json'), 'ylb': ('唯识名词白话新解', 'ylb.json'),
+            'nvd': ('南山律学词典', 'nvd.json'), 'cyx': ('佛學常見詞彙（陳義孝）', 'cyx.json'), 'ylb': ('唯识名词白话新解', 'ylb.json'),
             'szfs': ('三藏法数', 'szfs.json'), 'fymyj': ('翻譯名義集', 'fymyj.json'), 'wdhy': ('五燈會元', 'wdhy.json.gz'), 'yzzj': ('閱藏知津', 'yzzj.json.gz'),
             'ldms': ('歷代名僧辭典', 'ldms.json.gz'), 'syfy': ('俗語佛源', 'syfy.json.gz'), 'bkqs': ('中华佛教百科全书','bkqs.json.gz')}
 
@@ -431,7 +431,7 @@ fk = dd['fk']
 dfb = dd['dfb']
 ccc = dd['ccc']
 nvd = dd['nvd']
-cxy = dd['cxy']
+cyx = dd['cyx']
 ylb = dd['ylb']
 fxcd = dd['fxcd']
 szfs = dd['szfs']
@@ -469,9 +469,9 @@ def lookup(word, dictionary=None, lang='hant', mohu=False):
     elif word in nvd:
         _from = "南山律"
         definition = nvd[word]
-    elif word in cxy:
-        _from = "陈孝义"
-        definition = cxy[word]
+    elif word in cyx:
+        _from = "陈义孝"
+        definition = cyx[word]
     elif word in ylb:
         _from = "于凌波"
         definition = ylb[word]
