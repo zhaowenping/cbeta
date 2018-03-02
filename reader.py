@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-03-02 17:42:58
+# Last Modified: 2018-03-02 19:01:40
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -932,12 +932,12 @@ def new_dict3(page):
     return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
 
 # 佛學常見詞彙（陳義孝)
-@get('/cxy/:page')
+@get('/cyx/:page')
 @view('temp/dict.jinja2')
 def new_dict4(page):
     q = request.GET.q
     pp = 800
-    with open('dict/cxy.json') as fd:
+    with open('dict/cyx.json') as fd:
         data = json.load(fd)
     header = data.pop('header', {})
     title = header['title']
@@ -981,6 +981,176 @@ def new_dict5(page):
         result = dict(fxcd[pp*(page-1):pp*page])
     return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
 
+# 威廉梵英词典
+@get('/wm/:page')
+@view('temp/dict.jinja2')
+def new_dict6(page):
+    q = request.GET.q
+    pp = 800
+    with gzip.open('dict/sa-en.json.gz') as fd:
+        data = json.load(fd)
+
+    header = data.pop('header', {})
+    title = header['title']
+    author = header['author']
+
+    mwpatten = re.compile(r'(%\{.+?})')
+    sa_en = dict()
+    for key in data:
+        k = key.replace('1', '').replace("'", '').replace('4', '').replace('7', '').replace('8', '').replace('9', '').replace('0', '').replace('-', '').lower()
+        sa_en.update({k: data[key]})
+
+    for key in data:
+        vals = data[key]
+        res = []
+        for val in vals:
+            x = mwpatten.findall(val)
+            if x:
+                for ff in x:
+                    val = val.replace(ff, hk2sa(ff))
+            res.append(val)
+        # 不知道以下这两行那个对
+        sa_en.update({hk2sa(key): res})
+        # sa_en.update({hk2sa(key, 2): res})
+
+    if q:
+        # 查字典
+        fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
+        result = fxcd.get(q, {})
+    else:
+        # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
+        fxcd = [(item, sa_en[item]) for item in sa_en]
+        total = len(fxcd)
+        page = int(page)
+        prevpage = max(page - 1, 1)
+        nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
+        result = dict(fxcd[pp*(page-1):pp*page])
+    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+
+# yates梵英词典
+@get('/yates/:page')
+@view('temp/dict.jinja2')
+def new_dict6(page):
+    q = request.GET.q
+    pp = 800
+    with gzip.open('dict/yat.json.gz') as fd:
+        data = json.load(fd)
+
+    header = data.pop('header', {})
+    title = header['title']
+    author = header['author']
+
+    mwpatten = re.compile(r'(%\{.+?})')
+    sa_en = dict()
+    for key in data:
+        k = key.replace('1', '').replace("'", '').replace('4', '').replace('7', '').replace('8', '').replace('9', '').replace('0', '').replace('-', '').lower()
+        sa_en.update({k: data[key]})
+
+    for key in data:
+        vals = data[key]
+        res = []
+        for val in vals:
+            x = mwpatten.findall(val)
+            if x:
+                for ff in x:
+                    val = val.replace(ff, hk2sa(ff))
+            res.append(val)
+        # 不知道以下这两行那个对
+        sa_en.update({hk2sa(key): res})
+        # sa_en.update({hk2sa(key, 2): res})
+
+    if q:
+        # 查字典
+        fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
+        result = fxcd.get(q, {})
+    else:
+        # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
+        fxcd = [(item, sa_en[item]) for item in sa_en]
+        total = len(fxcd)
+        page = int(page)
+        prevpage = max(page - 1, 1)
+        nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
+        result = dict(fxcd[pp*(page-1):pp*page])
+    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+
+
+# 15部巴利语英语词典
+@get('/pali/:page')
+@view('temp/dict.jinja2')
+def new_dict7(page):
+    q = request.GET.q
+    pp = 800
+    with gzip.open('dict/pali-hant.json.gz') as fd:
+        data = json.load(fd)
+    header = data.pop('header', {})
+    title = header['title']
+    author = header['author']
+    if q:
+        # 查字典
+        fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
+        result = fxcd.get(q, {})
+    else:
+        # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
+        fxcd = [(item, data[item]) for item in data]
+        total = len(fxcd)
+        page = int(page)
+        prevpage = max(page - 1, 1)
+        nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
+        result = dict(fxcd[pp*(page-1):pp*page])
+    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+
+# 巴利语汉语词典
+@get('/pahant/:page')
+@view('temp/dict.jinja2')
+def new_dict8(page):
+    q = request.GET.q
+    pp = 800
+    with open('dict/pali-dama.json') as fd:
+        data = json.load(fd)
+    header = data.pop('header', {})
+    title = header['title']
+    author = header['author']
+    if q:
+        # 查字典
+        fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
+        result = fxcd.get(q, {})
+    else:
+        # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
+        fxcd = [(item, (data[item],)) for item in data]
+        total = len(fxcd)
+        page = int(page)
+        prevpage = max(page - 1, 1)
+        nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
+        result = dict(fxcd[pp*(page-1):pp*page])
+    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+
+# 梵汉词典
+@get('/sahant/:page')
+@view('temp/dict.jinja2')
+def new_dict8(page):
+    q = request.GET.q
+    pp = 800
+    with gzip.open('dict/sa-hant.json.gz') as fd:
+        data = json.load(fd)
+    header = data.pop('header', {})
+    title = header['title']
+    author = header['author']
+    if q:
+        # 查字典
+        fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
+        result = fxcd.get(q, {})
+    else:
+        # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
+        fxcd = [(item, (data[item],)) for item in data]
+        total = len(fxcd)
+        page = int(page)
+        prevpage = max(page - 1, 1)
+        nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
+        result = dict(fxcd[pp*(page-1):pp*page])
+    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+
+
+# GeventServer.run(host = '0.0.0.0', port = 8081)
 
 # GeventServer.run(host = '0.0.0.0', port = 8081)
 
