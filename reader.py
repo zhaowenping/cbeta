@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-03-02 20:31:00
+# Last Modified: 2018-03-02 21:52:34
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -875,7 +875,8 @@ def new_dict1(page):
         nextpage = page + 1
     else:
         #fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
-        fxcd = [(item, (c.strip() for c in re.split(r'\n *', data[item])[1:])) for item in data]
+        # fxcd = [(item, (c.strip() for c in re.split(r'\n *', data[item])[1:])) for item in data]
+        fxcd = [(item, data[item].split('\n')[1:]) for item in data]
         total = len(fxcd)
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
