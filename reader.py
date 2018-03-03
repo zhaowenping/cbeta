@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-03-03 09:26:33
+# Last Modified: 2018-03-03 17:52:30
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -869,8 +869,8 @@ def new_dict1(page):
     author = header['author']
     if q:
         # 查字典
-        fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
-        result = {q: fxcd.get(q, '没找到')}
+        fxcd = {item: data[item].split('\n')[1:] for item in data}
+        result = {(q, ''): fxcd.get(q, '没找到')}
         prevpage = max(page - 1, 1)
         nextpage = page + 1
     else:
@@ -896,8 +896,8 @@ def new_dict2(page):
     author = header['author']
     if q:
         # 查字典
-        fxcd = {item: data[item] for item in data}
-        result = {q: fxcd.get(q, '没找到')}
+        fxcd = {item: (data[item],) for item in data}
+        result = {(q, ''): fxcd.get(q, '没找到')}
         prevpage = max(page - 1, 1)
         nextpage = page + 1
     else:
@@ -925,8 +925,8 @@ def new_dict3(page):
     author = header['author']
     if q:
         # 查字典
-        fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
-        result = {q: fxcd.get(q, '没找到')}
+        fxcd = {item: (data[item],) for item in data}
+        result = {(q, ''): fxcd.get(q, '没找到')}
         prevpage = max(page - 1, 1)
         nextpage = page + 1
     else:
@@ -954,8 +954,8 @@ def new_dict4(page):
     author = header['author']
     if q:
         # 查字典
-        fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
-        result = {q: fxcd.get(q, '没找到')}
+        fxcd = {item: (data[item],) for item in data}
+        result = {(q, ''): fxcd.get(q, '没找到')}
         prevpage = max(page - 1, 1)
         nextpage = page + 1
     else:
@@ -982,8 +982,8 @@ def new_dict5(page):
     author = header['author']
     if q:
         # 查字典
-        fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
-        result = {q: fxcd.get(q, '没找到')}
+        fxcd = {item: (data[item],) for item in data}
+        result = {(q, ''): fxcd.get(q, '没找到')}
         prevpage = max(page - 1, 1)
         nextpage = page + 1
     else:
@@ -1104,8 +1104,8 @@ def new_dict7(page):
     author = header['author']
     if q:
         # 查字典
-        fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
-        result = {q: fxcd.get(q, '没找到')}
+        fxcd = {item: data[item] for item in data}
+        result = {(q, ''): fxcd.get(q, '没找到')}
         prevpage = max(page - 1, 1)
         nextpage = page + 1
     else:
@@ -1133,8 +1133,8 @@ def new_dict8(page):
     author = header['author']
     if q:
         # 查字典
-        fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
-        result = {q: fxcd.get(q, '没找到')}
+        fxcd = {item: (data[item],) for item in data}
+        result = {(q, ''): fxcd.get(q, '没找到')}
         prevpage = max(page - 1, 1)
         nextpage = page + 1
     else:
@@ -1160,8 +1160,8 @@ def new_dict8(page):
     author = header['author']
     if q:
         # 查字典
-        fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
-        result = {q: fxcd.get(q, '没找到')}
+        fxcd = {item: (data[item],) for item in data}
+        result = {(q, ''): fxcd.get(q, '没找到')}
         prevpage = max(page - 1, 1)
         nextpage = page + 1
     else:
