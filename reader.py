@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-03-03 17:52:30
+# Last Modified: 2018-03-03 19:42:53
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1172,6 +1172,234 @@ def new_dict8(page):
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
         result = dict(fxcd[pp*(page-1):pp*page])
     return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+
+#  阅藏知津
+@get('/yzzj/:page')
+@view('temp/dict.jinja2')
+def new_dict9(page):
+    q = request.GET.q
+    page = int(page)
+    pp = 800
+    with gzip.open('dict/yzzj.json.gz') as fd:
+        data = json.load(fd)
+    header = data.pop('header', {})
+    title = header['title']
+    author = header['author']
+    if q:
+        # 查字典
+        fxcd = {item: (data[item],) for item in data}
+        result = {(q, ''): fxcd.get(q, '没找到')}
+        prevpage = max(page - 1, 1)
+        nextpage = page + 1
+    else:
+        # fxcd = [(item, (data[item],)) for item in data]
+        fxcd = [((item, ''), (data[item],)) for item in data]
+        total = len(fxcd)
+        prevpage = max(page - 1, 1)
+        nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
+        result = dict(fxcd[pp*(page-1):pp*page])
+    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+
+#  三藏法数
+@get('/szfs/:page')
+@view('temp/dict.jinja2')
+def new_dict10(page):
+    q = request.GET.q
+    page = int(page)
+    pp = 800
+    with open('dict/szfs.json') as fd:
+        data = json.load(fd)
+    header = data.pop('header', {})
+    title = header['title']
+    author = header['author']
+    if q:
+        # 查字典
+        fxcd = {item: (data[item],) for item in data}
+        result = {(q, ''): fxcd.get(q, '没找到')}
+        prevpage = max(page - 1, 1)
+        nextpage = page + 1
+    else:
+        # fxcd = [(item, (data[item],)) for item in data]
+        fxcd = [((item, ''), (data[item]['def'], data[item].get('xr', ''))) for item in data]
+        total = len(fxcd)
+        prevpage = max(page - 1, 1)
+        nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
+        result = dict(fxcd[pp*(page-1):pp*page])
+    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+
+#  翻译名义集
+@get('/fymyj/:page')
+@view('temp/dict.jinja2')
+def new_dict11(page):
+    q = request.GET.q
+    page = int(page)
+    pp = 800
+    with open('dict/fymyj.json') as fd:
+        data = json.load(fd)
+    header = data.pop('header', {})
+    title = header['title']
+    author = header['author']
+    if q:
+        # 查字典
+        fxcd = {item: (data[item],) for item in data}
+        result = {(q, ''): fxcd.get(q, '没找到')}
+        prevpage = max(page - 1, 1)
+        nextpage = page + 1
+    else:
+        # fxcd = [(item, (data[item],)) for item in data]
+        fxcd = [((item, ''), (data[item],)) for item in data]
+        total = len(fxcd)
+        prevpage = max(page - 1, 1)
+        nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
+        result = dict(fxcd[pp*(page-1):pp*page])
+    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+
+#  五灯会元
+@get('/wdhy/:page')
+@view('temp/dict.jinja2')
+def new_dict12(page):
+    q = request.GET.q
+    page = int(page)
+    pp = 800
+    with gzip.open('dict/wdhy.json.gz') as fd:
+        data = json.load(fd)
+    header = data.pop('header', {})
+    title = header['title']
+    author = header['author']
+    if q:
+        # 查字典
+        fxcd = {item: (data[item],) for item in data}
+        result = {(q, ''): fxcd.get(q, '没找到')}
+        prevpage = max(page - 1, 1)
+        nextpage = page + 1
+    else:
+        # fxcd = [(item, (data[item],)) for item in data]
+        fxcd = [((item, ''), (data[item],)) for item in data]
+        total = len(fxcd)
+        prevpage = max(page - 1, 1)
+        nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
+        result = dict(fxcd[pp*(page-1):pp*page])
+    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+
+#  俗语佛源
+@get('/syfy/:page')
+@view('temp/dict.jinja2')
+def new_dict12(page):
+    q = request.GET.q
+    page = int(page)
+    pp = 800
+    with gzip.open('dict/syfy.json.gz') as fd:
+        data = json.load(fd)
+    header = data.pop('header', {})
+    title = header['title']
+    author = header['author']
+    if q:
+        # 查字典
+        fxcd = {item: (data[item],) for item in data}
+        result = {(q, ''): fxcd.get(q, '没找到')}
+        prevpage = max(page - 1, 1)
+        nextpage = page + 1
+    else:
+        # fxcd = [(item, (data[item],)) for item in data]
+        fxcd = [((item, ''), (data[item],)) for item in data]
+        total = len(fxcd)
+        prevpage = max(page - 1, 1)
+        nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
+        result = dict(fxcd[pp*(page-1):pp*page])
+    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+
+#  于凌波
+@get('/ylb/:page')
+@view('temp/dict.jinja2')
+def new_dict12(page):
+    q = request.GET.q
+    page = int(page)
+    pp = 800
+    with open('dict/ylb.json') as fd:
+        data = json.load(fd)
+    header = data.pop('header', {})
+    title = header['title']
+    author = header['author']
+    if q:
+        # 查字典
+        fxcd = {item: (data[item],) for item in data}
+        result = {(q, ''): fxcd.get(q, '没找到')}
+        prevpage = max(page - 1, 1)
+        nextpage = page + 1
+    else:
+        # fxcd = [(item, (data[item],)) for item in data]
+        fxcd = [((item, ''), (data[item],)) for item in data]
+        total = len(fxcd)
+        prevpage = max(page - 1, 1)
+        nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
+        result = dict(fxcd[pp*(page-1):pp*page])
+    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+
+# 历代名僧
+@get('/ldms/:page')
+@view('temp/dict.jinja2')
+def new_dict12(page):
+    q = request.GET.q
+    page = int(page)
+    pp = 800
+    with gzip.open('dict/ldms.json.gz') as fd:
+        data = json.load(fd)
+    header = data.pop('header', {})
+    title = header['title']
+    author = header['author']
+    if q:
+        # 查字典
+        fxcd = {item: (data[item],) for item in data}
+        result = {(q, ''): fxcd.get(q, '没找到')}
+        prevpage = max(page - 1, 1)
+        nextpage = page + 1
+    else:
+        # fxcd = [(item, (data[item],)) for item in data]
+        fxcd = [((item, ''), (data[item],)) for item in data]
+        total = len(fxcd)
+        prevpage = max(page - 1, 1)
+        nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
+        result = dict(fxcd[pp*(page-1):pp*page])
+    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+
+# 百科全书
+@get('/bkqs/:page')
+@view('temp/dict.jinja2')
+def new_dict12(page):
+    q = request.GET.q
+    page = int(page)
+    pp = 800
+    with gzip.open('dict/bkqs.json.gz') as fd:
+        data = json.load(fd)
+    header = data.pop('header', {})
+    title = header['title']
+    author = header['author']
+    if q:
+        # 查字典
+        fxcd = {item: (data[item],) for item in data}
+        result = {(q, ''): fxcd.get(q, '没找到')}
+        prevpage = max(page - 1, 1)
+        nextpage = page + 1
+    else:
+        # fxcd = [(item, (data[item],)) for item in data]
+        fxcd = [((item, ''), (data[item],)) for item in data]
+        total = len(fxcd)
+        prevpage = max(page - 1, 1)
+        nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
+        result = dict(fxcd[pp*(page-1):pp*page])
+    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+
+# GeventServer.run(host = '0.0.0.0', port = 8081)
+
+# GeventServer.run(host = '0.0.0.0', port = 8081)
+
+# GeventServer.run(host = '0.0.0.0', port = 8081)
+
+# GeventServer.run(host = '0.0.0.0', port = 8081)
+
+# GeventServer.run(host = '0.0.0.0', port = 8081)
+
+# GeventServer.run(host = '0.0.0.0', port = 8081)
 
 
 # GeventServer.run(host = '0.0.0.0', port = 8081)
