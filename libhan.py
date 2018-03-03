@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-03-02 19:14:12
+# Last Modified: 2018-03-03 21:13:41
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -248,7 +248,7 @@ def load_dict(dictionary=None):
 
     # 词典列表
     dicts = {'fk': ('佛光山', 'fk.json.gz'), 'dfb': ('丁福保', 'dfb.json.gz'), 'ccc': ('庄春江', 'ccc.json'), 'fxcd': ('法相詞典', 'fxcd.json.gz'),
-            'nvd': ('南山律学词典', 'nvd.json'), 'cyx': ('佛學常見詞彙（陳義孝）', 'cyx.json'), 'ylb': ('唯识名词白话新解', 'ylb.json'),
+            'nvd': ('南山律学词典', 'nvd.json.gz'), 'cyx': ('佛學常見詞彙（陳義孝）', 'cyx.json'), 'ylb': ('唯识名词白话新解', 'ylb.json'),
             'szfs': ('三藏法数', 'szfs.json'), 'fymyj': ('翻譯名義集', 'fymyj.json'), 'wdhy': ('五燈會元', 'wdhy.json.gz'), 'yzzj': ('閱藏知津', 'yzzj.json.gz'),
             'ldms': ('歷代名僧辭典', 'ldms.json.gz'), 'syfy': ('俗語佛源', 'syfy.json.gz'), 'bkqs': ('中华佛教百科全书','bkqs.json.gz')}
 
@@ -338,7 +338,11 @@ def load_dict(dictionary=None):
 
         if path.endswith('gz'):
             with gzip.open(path) as fd:
-                v = json.load(fd)
+                try:
+                    v = json.load(fd)
+                except:
+                    print(path)
+                    raise
         else:
             with open(path) as fd:
                 v = json.load(fd)
@@ -460,11 +464,11 @@ def lookup(word, dictionary=None, lang='hant', mohu=False):
         definition = fk[word]
     elif word in dfb:
         _from = dfb[word][0]['usg']
-        definition = dfb[word][0]['def']
+        definition = '丁福保[{}]'.format(dfb[word][0]['def'])
     elif word in fxcd:
-        _from = "于沛煌"
+        _from = "朱芾煌"
     elif word in ccc:
-        _from = "庄春江"
+        _from = "莊春江"
         definition = ccc[word]
     elif word in nvd:
         _from = "南山律"

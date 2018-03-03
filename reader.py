@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-03-03 19:42:53
+# Last Modified: 2018-03-03 21:13:21
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -918,7 +918,7 @@ def new_dict3(page):
     q = request.GET.q
     page = int(page)
     pp = 800
-    with open('dict/nvd.json') as fd:
+    with gzip.open('dict/nvd.json.gz') as fd:
         data = json.load(fd)
     header = data.pop('header', {})
     title = header['title']
