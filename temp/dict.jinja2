@@ -142,7 +142,12 @@
           {%for entry in result%}
              <dl>
              <dt>
-             {{entry}}
+             {{entry[0]}}
+             <rt>
+             {{entry[1]}}
+             </rt>
+             <ruby>
+             <ruby>
              </dt>
             {%for item in result[entry]%}
              <dd style="text-indent: 2em;">

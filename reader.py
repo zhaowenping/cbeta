@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-03-02 21:52:34
+# Last Modified: 2018-03-03 09:12:40
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -876,7 +876,8 @@ def new_dict1(page):
     else:
         #fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
         # fxcd = [(item, (c.strip() for c in re.split(r'\n *', data[item])[1:])) for item in data]
-        fxcd = [(item, data[item].split('\n')[1:]) for item in data]
+        # fxcd = [(item, data[item].split('\n')[1:]) for item in data]
+        fxcd = [((item, ' '.join(lookinkangxi(i)['pinyin'].split(' ')[0] for i in item)), data[item].split('\n')[1:]) for item in data]
         total = len(fxcd)
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
@@ -897,13 +898,14 @@ def new_dict2(page):
     author = header['author']
     if q:
         # 查字典
-        fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
+        fxcd = {item: data[item] for item in data}
         result = {q: fxcd.get(q, '没找到')}
         prevpage = max(page - 1, 1)
         nextpage = page + 1
     else:
         # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
-        fxcd = [(item, (data[item],)) for item in data]
+        # fxcd = [(item, (data[item],)) for item in data]
+        fxcd = [((item, ' '.join(lookinkangxi(i)['pinyin'].split(' ')[0] for i in item)), (data[item],)) for item in data]
         total = len(fxcd)
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
@@ -931,7 +933,8 @@ def new_dict3(page):
         nextpage = page + 1
     else:
         # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
-        fxcd = [(item, (data[item],)) for item in data]
+        # fxcd = [(item, (data[item],)) for item in data]
+        fxcd = [((item, ' '.join(lookinkangxi(i)['pinyin'].split(' ')[0] for i in item)), (data[item],)) for item in data]
         total = len(fxcd)
         page = int(page)
         prevpage = max(page - 1, 1)
@@ -959,7 +962,8 @@ def new_dict4(page):
         nextpage = page + 1
     else:
         # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
-        fxcd = [(item, (data[item],)) for item in data]
+        # fxcd = [(item, (data[item],)) for item in data]
+        fxcd = [((item, ' '.join(lookinkangxi(i)['pinyin'].split(' ')[0] for i in item)), (data[item],)) for item in data]
         total = len(fxcd)
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
@@ -986,7 +990,8 @@ def new_dict5(page):
         nextpage = page + 1
     else:
         # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
-        fxcd = [(item, (data[item],)) for item in data]
+        # fxcd = [(item, (data[item],)) for item in data]
+        fxcd = [((item, ' '.join(lookinkangxi(i)['pinyin'].split(' ')[0] for i in item)), (data[item],)) for item in data]
         total = len(fxcd)
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
@@ -1031,7 +1036,8 @@ def new_dict6(page):
         result = fxcd.get(q, {})
     else:
         # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
-        fxcd = [(item, sa_en[item]) for item in sa_en]
+        # fxcd = [(item, sa_en[item]) for item in sa_en]
+        fxcd = [((item, ''), sa_en[item]) for item in sa_en]
         total = len(fxcd)
         page = int(page)
         prevpage = max(page - 1, 1)
@@ -1076,8 +1082,8 @@ def new_dict6(page):
         fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
         result = fxcd.get(q, {})
     else:
-        # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
-        fxcd = [(item, sa_en[item]) for item in sa_en]
+        # fxcd = [(item, sa_en[item]) for item in sa_en]
+        fxcd = [((item, ''), sa_en[item]) for item in sa_en]
         total = len(fxcd)
         page = int(page)
         prevpage = max(page - 1, 1)
@@ -1106,7 +1112,8 @@ def new_dict7(page):
         nextpage = page + 1
     else:
         # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
-        fxcd = [(item, data[item]) for item in data]
+        # fxcd = [(item, data[item]) for item in data]
+        fxcd = [((item, ''), data[item]) for item in data]
         total = len(fxcd)
         page = int(page)
         prevpage = max(page - 1, 1)
@@ -1133,8 +1140,8 @@ def new_dict8(page):
         prevpage = max(page - 1, 1)
         nextpage = page + 1
     else:
-        # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
-        fxcd = [(item, (data[item],)) for item in data]
+        # fxcd = [(item, (data[item],)) for item in data]
+        fxcd = [((item, ''), (data[item],)) for item in data]
         total = len(fxcd)
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
@@ -1160,8 +1167,8 @@ def new_dict8(page):
         prevpage = max(page - 1, 1)
         nextpage = page + 1
     else:
-        # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
-        fxcd = [(item, (data[item],)) for item in data]
+        # fxcd = [(item, (data[item],)) for item in data]
+        fxcd = [((item, ''), (data[item],)) for item in data]
         total = len(fxcd)
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
