@@ -290,7 +290,7 @@
             <xsl:value-of select="@xml:id"/>
           </xsl:attribute>
           <xsl:attribute name="href">
-              <xsl:value-of select="concat('/static/img/00', substring(@xml:id, 10, 12), '.jpg')"/>
+              <xsl:value-of select="concat('/static/img/00', substring(@xml:id, 10, 4), '.jpg')"/>
           </xsl:attribute>
           [IMG]
         </a>
