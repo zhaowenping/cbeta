@@ -101,7 +101,7 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
         <meta name="description" content="印刷品般的经典阅读"/>
-        <meta name="keywords" content="漢字標準格式, 中文, 排版, 排版規範, 日文, 字體排印, 文字設計, CLReq, CSS, Sass, typography"/>
+        <meta name="keywords" content="大正藏, 中文, 排版, 排版規範, 阅藏, 大藏经"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
         <!--link rel="stylesheet" href="http://han-css.herokuapp.com/style.css"/-->
@@ -111,8 +111,10 @@
         <title>
             <xsl:value-of select="concat($current_sutra, ' ', $title)"/>
         </title>
-        <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+        <!--script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script-->
+        <script src="/static/jquery-3.3.1.min.js"></script>
         <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!--script src="/static/bootstrap.min.js"></script-->
         <script src="/static/jquery.webui-popover.min.js"></script>
         <!--script src="https://cdnjs.cloudflare.com/ajax/libs/Han/3.2.7/han.min.js"></script-->
         <!--[if lt IE9]> 
@@ -283,11 +285,15 @@
 
     <!--不能切换段落, 否则显示不正常-->
     <xsl:template match="pb">
-        <span>
+        <a>
           <xsl:attribute name="id">
             <xsl:value-of select="@xml:id"/>
           </xsl:attribute>
-        </span>
+          <xsl:attribute name="href">
+              <xsl:value-of select="concat('/static/img/00', substring(@xml:id, 10, 4), '.jpg')"/>
+          </xsl:attribute>
+          [IMG]
+        </a>
     </xsl:template>
 
     <!--不在正文显示目录-->
