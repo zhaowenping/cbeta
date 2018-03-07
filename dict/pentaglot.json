@@ -1,0 +1,5275 @@
+{
+    "header": {"title": "五譯合璧集要", "author": "鄭寶蓮",
+    "desc": ["Raghu Vira (Ed.): Pentaglot Dictionary of Buddhist Terms - In Sanskrit, Tibetan, Manchurian, Mongolian and Chinese. Delhi: 1961.",
+             "This is a reprint of the Wuyi hebi jiyao 五譯合璧集要. We were not able to trace the provenance of this work."]},
+    "佛通號名": {
+        "san": "[buddha paryāya - nāmāni]",
+        "mnc": "fucihi i gebu",
+        "mon": "burkhan u ner e inu"
+    },
+    "佛": {
+        "san": "buddhaḥ",
+        "mnc": "fucihi",
+        "mon": "burkhan"
+    },
+    "出有壞": {
+        "san": "bhagavān",
+        "mnc": "eteme yongkiyafi colgo-roko",
+        "mon": "ilejü tekhün nögchigsen"
+    },
+    "如來": {
+        "san": "tathāgataḥ",
+        "mnc": "ineku jihe",
+        "mon": "tekhüchilen iregsen"
+    },
+    "應供": {
+        "san": "arhat",
+        "mnc": "bata be etehe",
+        "mon": "daiin ig darugsan"
+    },
+    "正遍知": {
+        "san": "samyaksaṃbuddhaḥ",
+        "mnc": "unenggi hafuka fucihi",
+        "mon": "ünekher dugulugsan burkhan"
+    },
+    "明行足": {
+        "san": "vidyācaraṇasaṃpannnaḥ",
+        "mnc": "ulhisu yabun yongkiyaha",
+        "mon": "ukhagan khiged khöl tekhüldör"
+    },
+    "善逝": {
+        "san": "sugataḥ",
+        "mnc": "sain i yabungga",
+        "mon": "saiibar odogsan"
+    },
+    "世間解": {
+        "san": "lokavit",
+        "mnc": "jalan be bulekušere",
+        "mon": "yeirtintsy ig aiiladugchi"
+    },
+    "無上士": {
+        "san": "anuttaraḥ",
+        "mnc": "duibulen akū",
+        "mon": "tengsel ygeï"
+    },
+    "調御丈夫": {
+        "san": "puruṣadamyasārathiḥ",
+        "mnc": "ergengge be bilume dasara",
+        "mon": "törölkhiten ig nomokhatgakh jilogadugchi"
+    },
+    "世尊": {
+        "san": "lokajyeṣṭhaḥ",
+        "mnc": "jalan i wesihun",
+        "mon": "yeirtintsy iin erkhie"
+    },
+    "普知或徧知": {
+        "san": "sarvaṃjñaḥ",
+        "mnc": "eiten be sara eici bireme sara",
+        "mon": "khamug ig aiiladugchi ba khotola iig aiiladugchi"
+    },
+    "常擁護": {
+        "san": "trāyī",
+        "mnc": "karmacun",
+        "mon": "abural"
+    },
+    "天中天": {
+        "san": "devātidevaḥ",
+        "mnc": "abkai abka",
+        "mon": "tengri iig tengri"
+    },
+    "大覺仙": {
+        "san": "maharṣiḥ",
+        "mnc": "amba endurin",
+        "mon": "yeekhe arshi"
+    },
+    "法王尊": {
+        "san": "dharmasvāmi",
+        "mnc": "nomun i wesihun",
+        "mon": "nom un bogda"
+    },
+    "眾中尊": {
+        "san": "ṛṣabhaḥ",
+        "mnc": "feniyen ci colgoroko",
+        "mon": "sürüg un manglai"
+    },
+    "導引師": {
+        "san": "nāyakaḥ",
+        "mnc": "yarhūdara baksi",
+        "mon": "uduridugchi"
+    },
+    "談不二法": {
+        "san": "advayavādi",
+        "mnc": "juwede akūi giyangnara",
+        "mon": "khotar ygei nomlagchi"
+    },
+    "淨飯王太子": {
+        "san": "śauddhodani",
+        "mnc": "bolgo amusungga han i jui",
+        "mon": "arigun X iin khübekhün"
+    },
+    "十力": {
+        "san": "daśabalaḥ",
+        "mnc": "juwan hūsungga",
+        "mon": "arban khüchütü"
+    },
+    "伏魔": {
+        "san": "mārajit",
+        "mnc": "ari be dahabure",
+        "mon": "shimnug ig nomokhatagagchi"
+    },
+    "大聖": {
+        "san": "mahātmā",
+        "mnc": "amba enduringge",
+        "mon": "yeekhe tosboril tu"
+    },
+    "普勝": {
+        "san": "vijayi",
+        "mnc": "umesi etengge",
+        "mon": "mashida ilagugchi"
+    },
+    "普尊": {
+        "san": "vibhaḥ",
+        "mnc": "uherilehe ejen",
+        "mon": "\"X\" ezen"
+    },
+    "普度": {
+        "san": "viśvantaraḥ",
+        "mnc": "biretei doobure",
+        "mon": "khamug ig getüsgegchi"
+    },
+    "諸法自在": {
+        "san": "sarvadharmeśvaraḥ",
+        "mnc": "eiten nomun i toosengga",
+        "mon": "khamug nom  un erkhtü"
+    },
+    "德海": {
+        "san": "guṇasāgaraḥ",
+        "mnc": "erdemu i mederi",
+        "mon": "erden un dalai"
+    },
+    "總持": {
+        "san": "śaraṇam",
+        "mnc": "akdacun",
+        "mon": "itegel"
+    },
+    "說法師": {
+        "san": "vādisiṃhaḥ",
+        "mnc": "hafukiyangga arsalan",
+        "mon": "ügülekhü iin arslan"
+    },
+    "人中最上": {
+        "san": "narottamaḥ",
+        "mnc": "niyalmai susultungga",
+        "mon": "khümün u degedü"
+    },
+    "威力降魔": {
+        "san": "mārābhibhūḥ",
+        "mnc": "ari be horon i gidara",
+        "mon": "shimnun ig sür iier darugchi"
+    },
+    "無上壽者": {
+        "san": "apratipud galaḥ",
+        "mnc": "jergi akū budg’ali",
+        "mon": "tengsel ygeï bodgali"
+    },
+    "無愆": {
+        "san": "vantadoṣaḥ",
+        "mnc": "ufaracun getereke",
+        "mon": "gem ig arilgagchi"
+    },
+    "除壞": {
+        "san": "hataviṣaḥ",
+        "mnc": "kokirakū be geterembure",
+        "mon": "khüür ig darugchi"
+    },
+    "度無相": {
+        "san": "anaṅgajit",
+        "mnc": "beye akūngge be dahabure",
+        "mon": "bei e ügei ig nomokhatkhagchi"
+    },
+    "具六神通": {
+        "san": "ṣaḍabhijñaḥ",
+        "mnc": "ninggun šenggei yongki-yangga",
+        "mon": "jirgugan zöng bilig tu"
+    },
+    "世出世間": {
+        "san": "bhavāntakṛt",
+        "mnc": "jalan be duhembuhe",
+        "mon": "sansar ig ajuunggchi"
+    },
+    "離一切業": {
+        "san": "agahantā",
+        "mnc": "sui be mayambure",
+        "mon": "nigül ig darugchi"
+    },
+    "成就": {
+        "san": "siddhārthaḥ",
+        "mnc": "tusa be mutebure",
+        "mon": "tusa büdügsen"
+    },
+    "釋迦獅子": {
+        "san": "śākyasiṃhaḥ",
+        "mnc": "šagiya i arsalan",
+        "mon": "shahi a iig arslan"
+    },
+    "最上施": {
+        "san": "varadaḥ",
+        "mnc": "wesihun be bure",
+        "mon": "degedü üglige tu"
+    },
+    "大雄": {
+        "san": "vīraḥ",
+        "mnc": "baturu",
+        "mon": "bagatur"
+    },
+    "無過": {
+        "san": "niravadyaḥ",
+        "mnc": "endebuku akū",
+        "mon": "magusaiil ügei"
+    },
+    "無欲": {
+        "san": "vītatṛṣṇaḥ",
+        "mnc": "buyen ci aljaha",
+        "mon": "khurichal asa khagachakhsan"
+    },
+    "無取": {
+        "san": "nirādānaḥ",
+        "mnc": "gonggibu akū",
+        "mon": "abkhui ygei"
+    },
+    "最上名稱": {
+        "san": "viśrutaḥ",
+        "mnc": "umesi algika",
+        "mon": "mashi aldarshikhsan"
+    },
+    "善法根本": {
+        "san": "śubhadharmākaraḥ",
+        "mnc": "huturi nomun i sekiyen",
+        "mon": "bükh tu nom khargui iin oron"
+    },
+    "清淨": {
+        "san": "śuciḥ",
+        "mnc": "bolgonggo",
+        "mon": "arigun"
+    },
+    "無比": {
+        "san": "anūpamaḥ",
+        "mnc": "teheren akū",
+        "mon": "üligerleshi ygei"
+    },
+    "徧知三世": {
+        "san": "trikālajñaḥ",
+        "mnc": "ilan forgon be sara",
+        "mon": "gurban chag ig aiiladugchi"
+    },
+    "無垢": {
+        "san": "nirmalaḥ",
+        "mnc": "icihi akū",
+        "mon": "ngkhir ügei"
+    },
+    "無病": {
+        "san": "nirjvaraḥ",
+        "mnc": "nimeku akū",
+        "mon": "ebchin ügei"
+    },
+    "日姓": {
+        "san": "sūryavaṃśaḥ",
+        "mnc": "šun i halangga",
+        "mon": "naran u ijagur tu"
+    },
+    "月族": {
+        "san": "āṅgirasaḥ",
+        "mnc": "šun i hūncihingga",
+        "mon": "naran u ündüsü tu"
+    },
+    "瞿曇": {
+        "san": "gautamaḥ",
+        "mnc": "goodam",
+        "mon": "kodma"
+    },
+    "悅甘蔗姓": {
+        "san": "ikṣvāku kulanandanaḥ",
+        "mnc": "jancuhūnje fulehengge de urgunjere",
+        "mon": "burma modotu iin ijagur dor baiasugchi"
+    },
+    "主持": {
+        "san": "prabhuḥ",
+        "mnc": "salihangga ejen",
+        "mon": "aug a ezen"
+    },
+    "三身名": {
+        "san": "[trikāyāḥ]",
+        "mnc": "ilan beye i gebu",
+        "mon": "gurban bie e iin ner e inu"
+    },
+    "法身": {
+        "san": "dharmakāyaḥ",
+        "mnc": "nomun beye",
+        "mon": "nom a un bei e"
+    },
+    "報身": {
+        "san": "sambhogakāyaḥ",
+        "mnc": "jirgacun yongkiyaha beye",
+        "mon": "tabun jirgalang un bei e"
+    },
+    "化身": {
+        "san": "nirmāṇakāyaḥ",
+        "mnc": "kubulin beye",
+        "mon": "khubulagan u bei e"
+    },
+    "三十二相名": {
+        "san": "[dvātriṃśallakṣaṇāni]",
+        "mnc": "gūsin juwe lakšan i gebu",
+        "mon": "guchin khoiar mansan u ner e inu"
+    },
+    "項肉髻相": {
+        "san": "uṣṇīṣaśiraskatā",
+        "mnc": "usnika yongkiyangga uju",
+        "mon": "terigün osanir nom a tegülder"
+    },
+    "髮旋好": {
+        "san": "pradakṣiṇāvartakeśaḥ",
+        "mnc": "šurdere ijishūn funiyehe",
+        "mon": "terigün osanir zöbshiierkhü da ergekhsen"
+    },
+    "指纖長相": {
+        "san": "dīrghāṅguliḥ",
+        "mnc": "narhūn golmingga simhun",
+        "mon": "khurugun inu urtu"
+    },
+    "眉間白毫相": {
+        "san": "ūrṇākeśaḥ",
+        "mnc": "šošohon funiyengge šenggin",
+        "mon": "\"X\" song un östö"
+    },
+    "眼色如青金": {
+        "san": "abhinīlanetraḥ",
+        "mnc": "yacin erimbutu yisa",
+        "mon": "nidün inu khükhemtükhe erdeni mety"
+    },
+    "眼睫如象王": {
+        "san": "gopakṣmā",
+        "mnc": "sufan gesengge solmin",
+        "mon": "khagan u \"X\" metü"
+    },
+    "齒四十相": {
+        "san": "catvāriṃśaddantaḥ",
+        "mnc": "dehi tongga weihe",
+        "mon": "döchin shidütü"
+    },
+    "齒齊相": {
+        "san": "samadantaḥ",
+        "mnc": "teksingge weihe",
+        "mon": "tegshi shidütü"
+    },
+    "齒密相": {
+        "san": "aviraladantaḥ",
+        "mnc": "teksin faidangga weihe",
+        "mon": "nigun saiin shidütü"
+    },
+    "齒白淨相": {
+        "san": "suśukladantaḥ",
+        "mnc": "der seme šeyen weihe",
+        "mon": "shidü inu mashi chagan"
+    },
+    "咽中津液得上味相": {
+        "san": "rasarasāgratā",
+        "mnc": "wesihun amtangga silenggi",
+        "mon": "erkhen amtan agusdahui luga degüsükhsen"
+    },
+    "獅子頰車相": {
+        "san": "siṃhahanuḥ",
+        "mnc": "arsalangga šakšaha",
+        "mon": "khatsar inu arslan u metü"
+    },
+    "廣長舌相": {
+        "san": "prabhūtatanujihvaḥ",
+        "mnc": "golmin bime nekeliyengge",
+        "mon": "khelen inu mashi urtu bögöde nimgen"
+    },
+    "梵音相": {
+        "san": "brahmasvaraḥ",
+        "mnc": "esrun i mudangga",
+        "mon": "\"XXX\""
+    },
+    "兩臂圓滿相": {
+        "san": "susaṃvṛttaskandhaḥ",
+        "mnc": "umesi muheliyengge dabsi",
+        "mon": ""
+    },
+    "七處滿相": {
+        "san": "saptotsadaḥ",
+        "mnc": "nadan ba jalu den",
+        "mon": "dologan odoi tu"
+    },
+    "兩肩圓滿": {
+        "san": "citāntarāṃsaḥ",
+        "mnc": "meiren letehun",
+        "mon": "delger mörötü"
+    },
+    "皮膚柔軟": {
+        "san": "sūkṣmacchaviḥ",
+        "mnc": "sukū nekeliyen",
+        "mon": "arasun inu nimgen"
+    },
+    "紫摩金色相": {
+        "san": "suvarṇacchaviḥ",
+        "mnc": "aisin boconggo",
+        "mon": "altan öönge metü"
+    },
+    "胸如獅子相": {
+        "san": "siṃhapūrvārdhakāyaḥ",
+        "mnc": "arsalangga cejen",
+        "mon": "chegji inu arslan metü"
+    },
+    "容儀滿足": {
+        "san": "nyagrodhaparimaṇḍalaḥ",
+        "mnc": "beye naijoda moo i gese ler seme teksin",
+        "mon": "ni e \"X\" modon metü eng torokh sachagu"
+    },
+    "毛右旋": {
+        "san": "ekaikaromapradakṣiṇāvartaḥ",
+        "mnc": "nei funiyehe teisu teisu ijishūn i foroho",
+        "mon": "üüsün inu nijegüdelen uunukhad jübshiierkhü ergengsen"
+    },
+    "毛向上旋相": {
+        "san": "ūrdhvagaromaḥ",
+        "mnc": "beyei funiyehe wesihun ici foroho",
+        "mon": "bei e iin üsün tegengshite züglegsen"
+    },
+    "馬陰藏相": {
+        "san": "kośopagatavastiguhyaḥ",
+        "mnc": "somishūn ba dosi singge-buhe",
+        "mon": "nigüde inu dotogshi daliidukhsan"
+    },
+    "兩股圓滿相": {
+        "san": "su vartitoruḥ",
+        "mnc": "muheliyen saikangga suksaha",
+        "mon": "gui a inu saiikhan mökhüring"
+    },
+    "膝骨堅著圓滿好相": {
+        "san": "ucchaṅgapādaḥ",
+        "mnc": "tobgiya dukduhun akū",
+        "mon": "ebüdüg un toig un yi e ilerkhi busu"
+    },
+    "手足軟相": {
+        "san": "mṛdutaruṇahastapādatalaḥ",
+        "mnc": "gala bethe i falanggū uhuken nemeyen",
+        "mon": "gar un alag a khöl un ula inu zögelen böged mirii e tu"
+    },
+    "手足網縵相": {
+        "san": "jālāvanaddhahastapādaḥ",
+        "mnc": "gala bethe i faju yashan i gese sirenehe",
+        "mon": "gar khiged khöl un khurugud inu tuur iiar kholboldokhsan"
+    },
+    "手足千輻輪相": {
+        "san": "cakrāṅkitahastapādatalaḥ",
+        "mnc": "gala bethe i falanggū de kurdun temgetungge",
+        "mon": "gar un alag a khöl un ula inu khürdün iier belgetü"
+    },
+    "足下平滿相": {
+        "san": "supratiṣṭhitapādaḥ",
+        "mnc": "fatan jalungga",
+        "mon": "khöl mashi dügüreng"
+    },
+    "足根滿足相": {
+        "san": "āyatapādapārṣṇiḥ",
+        "mnc": "bethei guye muheliyen jalu",
+        "mon": "khöl un ösögei inu örgön"
+    },
+    "鹿王腨相": {
+        "san": "aiṇeyajaṅgha",
+        "mnc": "sailha da uya gurgui adali",
+        "mon": "\"X\" inu \"X\" khürügesün metü"
+    },
+    "八十種好名": {
+        "san": "[aśityanuvyañjanāni]",
+        "mnc": "jakūnju sain nairak i gebu",
+        "mon": "naian naiirag un ner e inu"
+    },
+    "爪如赤銅色": {
+        "san": "ātāmranakhaḥ",
+        "mnc": "hitahūn giowan i boconggo",
+        "mon": "khimusun inu zis un öngge metü"
+    },
+    "指爪光潤": {
+        "san": "snigdhanakhaḥ",
+        "mnc": "hitahūn i boco giltahūn",
+        "mon": "khimusun u öngge inu khilkhürügsen"
+    },
+    "指爪顯明": {
+        "san": "tuṅganakhaḥ",
+        "mnc": "hitahūn dekdehun",
+        "mon": "khimusun inu toboljakhsan"
+    },
+    "指節圓滿": {
+        "san": "vṛttāṅguliḥ",
+        "mnc": "simhun tulejen",
+        "mon": " khuruguda inu delger"
+    },
+    "指長纖圓": {
+        "san": "anupūrvāṅguliḥ",
+        "mnc": "simhun ulhiyen i narhūn",
+        "mon": "khuruguda inu narin"
+    },
+    "指圓": {
+        "san": "pariaṅguliḥ",
+        "mnc": "simhun muheliyen",
+        "mon": "khurugu mohuring"
+    },
+    "脉深不現": {
+        "san": "nigūḍhaśiraḥ",
+        "mnc": "sudala dukduhun akū",
+        "mon": "sudal inu ilerhi busu"
+    },
+    "筋脉無結": {
+        "san": "nirgranthiśiraḥ",
+        "mnc": "sudala mampingga akū",
+        "mon": "sudal inu zangkhikhe ühehü"
+    },
+    "踝不現": {
+        "san": "gūḍhagulphaḥ",
+        "mnc": "gacuha giranggi dukdu-hun akū",
+        "mon": "shigai inu dalda"
+    },
+    "手足如意": {
+        "san": "aviṣamapādaḥ",
+        "mnc": "bethe neigen teksin",
+        "mon": "höl inu tegshikhen"
+    },
+    "威儀如獅子": {
+        "san": "siṃhavikrāntagāmī",
+        "mnc": "arsalan i adali feliyengge",
+        "mon": "arslan yabudal iar ajiragchi"
+    },
+    "回身如象王": {
+        "san": "nāgavikrāntagāmī",
+        "mnc": "sufan adali feliyengge",
+        "mon": "zagan u yabudal iar ajiragchi"
+    },
+    "行法如鵞王": {
+        "san": "haṃsavikrāntagāmī",
+        "mnc": "niongniyaha adali feliyengge",
+        "mon": "galagun u yabudal iar ajiragchi"
+    },
+    "進行如牛王": {
+        "san": "vṛṣabhavikrāntagāmī",
+        "mnc": "feniyen i wesihun i adali feliyengge",
+        "mon": "sürüg un manglai iin yabudal iar ajiragchi"
+    },
+    "顧視右旋": {
+        "san": "pradakṣiṇāvartagāmī",
+        "mnc": "ijishūn feliyengge",
+        "mon": "zöbshiyeerkhü ajiragchi"
+    },
+    "行步嚴肅": {
+        "san": "cārugāmī",
+        "mnc": "fujurungga feliyengge",
+        "mon": "yjesgyleng tai ajiragchi"
+    },
+    "行步端正": {
+        "san": "avakragāmī",
+        "mnc": "urhu akū feliyengge",
+        "mon": "khüdölöl ügegüi e ajiragchi"
+    },
+    "身潤澤": {
+        "san": "vṛttagātraḥ",
+        "mnc": "beye ambalinggū hocikon",
+        "mon": "dügüreng guu a bei e tu"
+    },
+    "身光明離垢": {
+        "san": "mṛṣṭagātraḥ",
+        "mnc": "beye gu i gese icihi akū",
+        "mon": "bei e inu jilhu ajiragchi metü"
+    },
+    "身體相稱": {
+        "san": "anupūrvagātraḥ",
+        "mnc": "beye ilhi aname icangga",
+        "mon": "bei e inu üi e erkhe ber tegshi"
+    },
+    "身體清潔": {
+        "san": "śucigātraḥ",
+        "mnc": "beye bolgo",
+        "mon": "bei e inu tseberi"
+    },
+    "身柔軟": {
+        "san": "mṛdugātraḥ",
+        "mnc": "beye nilukan",
+        "mon": "bei e inu zögeleng"
+    },
+    "清淨身": {
+        "san": "viśuddhagātraḥ",
+        "mnc": "beye umesi bolgo",
+        "mon": "bei e inu mashida arilugsan"
+    },
+    "身滿足": {
+        "san": "paripūrṇavyañjanaḥ",
+        "mnc": "lakšan yongkiyaha",
+        "mon": "langshan tegüsegsen"
+    },
+    "身廣狹相稱": {
+        "san": "pṛthucārumaṇḍalagātraḥ",
+        "mnc": "beye lergiyen saikan",
+        "mon": "bei e saiikhan bekhe tu"
+    },
+    "行步齊整": {
+        "san": "samakramaḥ",
+        "mnc": "okson neigen",
+        "mon": "X alkhugchi"
+    },
+    "目廣清淨": {
+        "san": "śuddhanetraḥ",
+        "mnc": "yasa bolgo",
+        "mon": "arilugsan nidütü"
+    },
+    "容顏奇妙常若少年": {
+        "san": "sukumāragātraḥ",
+        "mnc": "beye umesi asihan ci-rangga",
+        "mon": "bei e inu mashi X önggetü"
+    },
+    "身體不曲": {
+        "san": "adīnagātraḥ",
+        "mnc": "beye sibsihūn akū",
+        "mon": "shobtogori ygei bei e tu"
+    },
+    "如意滿足": {
+        "san": "utsadagātraḥ",
+        "mnc": "beye hūsungge",
+        "mon": "yikhe inu delger"
+    },
+    "身堅實": {
+        "san": "susaṃhitagātraḥ",
+        "mnc": "beye kiyangdu",
+        "mon": "mashi chigireg bei e tu"
+    },
+    "骨際如鉤鎖": {
+        "san": "suvibhaktāṅgapratyaṅgaḥ",
+        "mnc": "gargan oyonggo gargan umesi ilgabuha",
+        "mon": "geshigün higede chakhula inu mashi ilgaralduksan"
+    },
+    "目洞徹分明": {
+        "san": "vitimiraviśuddhālokaḥ",
+        "mnc": "yasa buruhūn akū bime umesi genggiyen",
+        "mon": "aiiladakhu inu börökhüljekhü ygei bögde mashi arigun "
+    },
+    "兩跨圓滿": {
+        "san": "vṛttakukṣiḥ",
+        "mnc": "sihali muheliyen",
+        "mon": "duguring belgekhüsütü"
+    },
+    "兩跨平正": {
+        "san": "mṛṣṭakukṣiḥ",
+        "mnc": "sihali leli",
+        "mon": "belgekhüsün tegshi"
+    },
+    "跨形勻等": {
+        "san": "abhugnakukṣiḥ",
+        "mnc": "sihail golmin akū",
+        "mon": "belgekhüsün ondogolig busu"
+    },
+    "腹不現": {
+        "san": "kṣāmodaraḥ",
+        "mnc": "hefeli teksin",
+        "mon": "tegshi khebli tu"
+    },
+    "臍深圓好": {
+        "san": "gambhīranābhiḥ",
+        "mnc": "ulenggu šumin",
+        "mon": "khüilsün inu gün"
+    },
+    "臍輪右旋": {
+        "san": "pradakṣiṇāvartanābhiḥ",
+        "mnc": "ijishūn šurdere ulenggu",
+        "mon": "khüilsün inu zobshiierkhü erkhingsen"
+    },
+    "妙好端嚴": {
+        "san": "samantaprāsādikaḥ",
+        "mnc": "gubci yangsangga",
+        "mon": "khodlan asa üzesgüleng tu"
+    },
+    "手摩膝相": {
+        "san": "sthitānavanatapralambabāhutā",
+        "mnc": "mehurakū ilihai tobgiya de isinara meiren",
+        "mon": "büikheiil ügei \"X\" gar anu ebüdüg dori khürügsen"
+    },
+    "行步無碍": {
+        "san": "śucisamācāraḥ",
+        "mnc": "gubci yabun bolgo",
+        "mon": "khodlan yabudal inu tseber"
+    },
+    "身無斑痣": {
+        "san": "vyapagatatilakakālagātraḥ",
+        "mnc": "beye de samha mersen akū",
+        "mon": "bei e dor mengge khiged sebkhe ügkhü"
+    },
+    "手如兜羅錦": {
+        "san": "tūlasadṛśasukumārapāṇiḥ",
+        "mnc": "gala kubun i gese uhuken",
+        "mon": "mutur inu modon u ügeneril metü zöglen"
+    },
+    "手文明直": {
+        "san": "snigdhapāṇilekhaḥ",
+        "mnc": "galai hergen getuken",
+        "mon": "gar un ar inu todorkhai"
+    },
+    "手文深": {
+        "san": "gambhīrapāṇilekhaḥ",
+        "mnc": "galai hergen šumin",
+        "mon": "gar inu gün ar tu"
+    },
+    "手文長": {
+        "san": "āyatapāṇilekhaḥ",
+        "mnc": "galai hergen golmin",
+        "mon": "gar inu urtugulig ar tu"
+    },
+    "面門圓滿": {
+        "san": "nātyāyatavadanaḥ",
+        "mnc": "dere asuru golmin akū",
+        "mon": "tsarai inu asuru urtugulig busu"
+    },
+    "唇如頻婆菓": {
+        "san": "bimbapratibimbadarśanacchadanaḥ",
+        "mnc": "femen bimba tubihe i adali fulgiyan",
+        "mon": "urugul inu bilbe metü ulagan"
+    },
+    "舌柔軟": {
+        "san": "mṛdujihvaḥ",
+        "mnc": "ilenggu dahaskūn",
+        "mon": "khelen inu ieldeb"
+    },
+    "舌薄廣": {
+        "san": "tanujihvaḥ",
+        "mnc": "ilenggu nekeliyen",
+        "mon": "khelen inu nimgen"
+    },
+    "舌赤色": {
+        "san": "raktajihvaḥ",
+        "mnc": "ilenggu fulgiyan",
+        "mon": "khelen inu ulagan"
+    },
+    "發聲威震": {
+        "san": "jīmūtaghoṣaḥ",
+        "mnc": "akjan jilgangga",
+        "mon": "luu iin dagutu"
+    },
+    "音韻美妙": {
+        "san": "cārusvaraḥ",
+        "mnc": "mudan nesuken icangga",
+        "mon": "zarlig inu önegenetü"
+    },
+    "牙圓": {
+        "san": "vṛttadaṃṣḍraḥ",
+        "mnc": "weihe muheliyen",
+        "mon": "shüden e inu bögerenkhei"
+    },
+    "牙利": {
+        "san": "tīkṣṇadaṃṣḍraḥ",
+        "mnc": "weihe dacun",
+        "mon": "shüden e inu khurcha"
+    },
+    "牙白": {
+        "san": "śukladaṃṣḍraḥ",
+        "mnc": "weihe šeyen",
+        "mon": "shüden e inu chagan"
+    },
+    "牙齊": {
+        "san": "samadaṃṣḍraḥ",
+        "mnc": "weihe teksin",
+        "mon": "shüden e inu tegshi"
+    },
+    "牙漸細": {
+        "san": "anupūrvadaṃṣḍraḥ",
+        "mnc": "weihe ulhiyen i narhūn",
+        "mon": "shüden e inu ulma narin"
+    },
+    "鼻高": {
+        "san": "tuṅganāsaḥ",
+        "mnc": "oforo den",
+        "mon": "khanbar \"X\" inu öndöri"
+    },
+    "鼻修直": {
+        "san": "śucināsaḥ",
+        "mnc": "oforo bolgo",
+        "mon": "khanbar inu arigun"
+    },
+    "目清淨": {
+        "san": "viśuddhanetraḥ",
+        "mnc": "yasa umesi bolgo",
+        "mon": "nidün inu mashi arigun"
+    },
+    "目廣": {
+        "san": "viśālanetraḥ",
+        "mnc": "yasa golmin",
+        "mon": "nidün inu \"X\""
+    },
+    "眼睫稠密": {
+        "san": "citrapakṣmā",
+        "mnc": "solmin fisin",
+        "mon": "nig sormusutu"
+    },
+    "目黑白分明如青蓮花辦": {
+        "san": "sitāsitakamaladalaśakalanayanaḥ",
+        "mnc": "yasai faha šanggiyan sahaliyan ilgabumbime šuilhai fiyentehe i adali",
+        "mon": "nidün inu gar a chagan ilkheren liangkhu a iin nabchi metü"
+    },
+    "雙眉修長": {
+        "san": "āyatabhrūḥ",
+        "mnc": "faitan golmin",
+        "mon": "ötögölig sumagan khömösge tu"
+    },
+    "雙眉細軟": {
+        "san": "ślakṣṇabhrūḥ",
+        "mnc": "faitan haihūngga",
+        "mon": "khömösge inu zögelen"
+    },
+    "雙眉整齊": {
+        "san": "samaromabhrūḥ",
+        "mnc": "faitan i funiyehe neigen teksin",
+        "mon": "khömösge u üsün sachagu"
+    },
+    "耳乖厚長": {
+        "san": "pīnāyatakarṇaḥ",
+        "mnc": "šan i hoho jiramin golmin",
+        "mon": "chikhin u khormai zuzagan bögede \"X\""
+    },
+    "兩耳齊平": {
+        "san": "samakarṇaḥ",
+        "mnc": "šan teksin",
+        "mon": "chikhin inu satsagu"
+    },
+    "耳根全妙": {
+        "san": "anupahatakarṇendriyaḥ",
+        "mnc": "šan i fulehe eden akū",
+        "mon": "chikhin inu erkheten ese baguragsan"
+    },
+    "額廣圓滿": {
+        "san": "supariṇatalalāṭaḥ",
+        "mnc": "šenggin onco amba",
+        "mon": "manglai inu iekhde ilgarakhsan"
+    },
+    "項相高妙": {
+        "san": "pṛthulalāṭaḥ",
+        "mnc": "uju umesi fujurungga",
+        "mon": "terigün inu mashi delger"
+    },
+    "髮色青珠": {
+        "san": "suparipūrṇottamāṅgaḥ",
+        "mnc": "funiyehe rasiwar wehei gese sahaliyan",
+        "mon": "usnir inu rasivar metü kharabdur"
+    },
+    "髮稠密": {
+        "san": "citakeśaḥ",
+        "mnc": "ujui funiyehe fisin",
+        "mon": "üsün inu nigta"
+    },
+    "髮柔軟": {
+        "san": "ślakṣṇakeśa",
+        "mnc": "ujui funiyehe uhuken",
+        "mon": "usnir inu jögelen"
+    },
+    "髮不亂": {
+        "san": "asṃlulitakeśaḥ",
+        "mnc": "ujui funiyehe sirenehakū",
+        "mon": "usnir inu ese magakhiraldugsan"
+    },
+    "髮不著塵垢": {
+        "san": "aparuṣakeśaḥ",
+        "mnc": "ujui funiyehe idun akū",
+        "mon": "usnir inu shirügün busu"
+    },
+    "髮香潔": {
+        "san": "surabhikeṣaḥ",
+        "mnc": "ujui funiyehe sur sere wangga",
+        "mon": "usnir inu saiin ünür tü"
+    },
+    "手足胸臆吉祥德相妙好具足": {
+        "san": "śrīvatsasvastikanandyāvartalalitapāṇipādaḥ",
+        "mnc": "gale bethe de horonggo jijun bime hūturingga temgetu enteheme to-ronggo(sic) i yongkiyaha",
+        "mon": "gar khöl inu chag un jirukhai khiged ölzei tu tamag a ber belgedegsen"
+    },
+    "佛果十方": {
+        "san": "[daśabalāni]",
+        "mnc": "fucihi i juwan hūsun i gebu",
+        "mon": "burkhan u arban khüchün u ner e inu"
+    },
+    "是處非處智力": {
+        "san": "sthānāsthānajñānabalam",
+        "mnc": "giyangga giyan akū be sara būsun",
+        "mon": "oron khigede oron busu ig aiiladakhu iin khüchün"
+    },
+    "業智力": {
+        "san": "karmavipākajñānabalam",
+        "mnc": "karulan acabun be sara hūsun",
+        "mon": "üilen u bolbasoral ig aiiladakhu iin khüchün"
+    },
+    "欲智力": {
+        "san": "viśvaśraddhājñānabalam",
+        "mnc": "eiten buyen be sara hūsun",
+        "mon": "eldeb khüsel ig aiiladakhu iin khüchün"
+    },
+    "界智力": {
+        "san": "nānādhātujñānabalam",
+        "mnc": "eiten fulehe be sara hūsun",
+        "mon": "eldeb oron ig aiiladakhu iin khüchün"
+    },
+    "根智力": {
+        "san": "indriyavarāvarajñānabalam",
+        "mnc": "wesihun fukihūn(for fusihūn)saligan be sara hūsun",
+        "mon": "dakhidu ba dakhidu busu erkhiten ig aiiladakhu iin khüchün"
+    },
+    "定智力": {
+        "san": "sarvadhyānavimokṣasamādhisamāpattijñānabalam",
+        "mnc": "cib seme neigen de dosire be sara hūsun",
+        "mon": "tegshi orokhui ig aiiladakhu iin khüchün"
+    },
+    "至處智力": {
+        "san": "saṃkleśavyavadānavyutthānajñānabalam",
+        "mnc": "ehelinggu cisu jai umesi bolgo be sara hūsun",
+        "mon": "khotala nisetenin khiged mashi arilugsan bügüde ig aiiladakhu iin khüchün"
+    },
+    "宿命智力": {
+        "san": "pūrvanivāsānusmṛtijñānabalam",
+        "mnc": "nenehe forgon be jondoro be sara hūsun",
+        "mon": "arda u oron ig dagan duridun aiiladakhu iin khüchün"
+    },
+    "天眼智力": {
+        "san": "cyutyupapattijñānabalam",
+        "mnc": "bucere banjire be sara hūsun",
+        "mon": "ögün zegüdegekhü khiged törökhü ig aiiladakhu iin khüchün"
+    },
+    "漏盡智力": {
+        "san": "āsravakṣayajñānabalam",
+        "mnc": "efujen wajiha be sara hūsun",
+        "mon": "tsuburil baragsan ig aiiladakhu iin khüchün"
+    },
+    "五智名": {
+        "san": "[pañcajñāni]",
+        "mnc": "sunja hafu sure i gebu",
+        "mon": "tabun belge bilig un ner e inu"
+    },
+    "大圓鏡智": {
+        "san": "ādarśajñānam",
+        "mnc": "buleku i gese hafu sure",
+        "mon": "toli metü belge bilig"
+    },
+    "平等性智": {
+        "san": "samatājñānam",
+        "mnc": "teksin neigen i hafu sure",
+        "mon": "tegshi chinar un belge bilig"
+    },
+    "妙觀察智": {
+        "san": "pratyavekṣaṇājñānam",
+        "mnc": "teisu teisu ulhire hafu sure",
+        "mon": "öber e öber e onokhoi belge bilig"
+    },
+    "成所作智": {
+        "san": "kṛtyānuṣṭhānajñānam",
+        "mnc": "tusa mutebure hafu sure",
+        "mon": "üile bütegegchi belge bilig"
+    },
+    "法性徧智": {
+        "san": "dharmadhātujñānam",
+        "mnc": "nomun i banin i hafu sure",
+        "mon": "nom un chinar un bilge bilig"
+    },
+    "五分法身名": {
+        "san": "[pañcajinaskandhāḥ]",
+        "mnc": "etengge i sunja iktan i gebu",
+        "mon": "ilagugsan u tabun chogcha iin ner e inu"
+    },
+    "戒身": {
+        "san": "śīlaskandhaḥ",
+        "mnc": "targacun i iktan",
+        "mon": "\"X\" chogcha"
+    },
+    "定身": {
+        "san": "samādhiskandhaḥ",
+        "mnc": "samadi i iktan",
+        "mon": "samadi iin chogcha"
+    },
+    "慧身": {
+        "san": "prajñāskandhaḥ",
+        "mnc": "sure i iktan",
+        "mon": "bilig un chogcha"
+    },
+    "解脫身": {
+        "san": "vimuktiskandhaḥ",
+        "mnc": "umesi ukcara iktan",
+        "mon": "mashida durulakhu iin chagcha"
+    },
+    "解脫知見身": {
+        "san": "vimuktijñānadarśanaskandhaḥ",
+        "mnc": "umesi ukcara hafu sure be bulekušere iktan",
+        "mon": "mashida tonilakhui belge bilig ig üjekhü iin chogcha"
+    },
+    "菩薩通號名": {
+        "san": "[bodhisattvanāmāni]",
+        "mnc": "fusa (BN fusa i) gebu",
+        "mon": "bodisadu iin nere inu"
+    },
+    "菩薩": {
+        "san": "bodhisattvaḥ",
+        "mnc": "fusa",
+        "mon": "bodisadu"
+    },
+    "摩訶薩": {
+        "san": "mahāsattvaḥ",
+        "mnc": "amba fusa",
+        "mon": "\"X\""
+    },
+    "智慧滿足": {
+        "san": "dhīmān",
+        "mnc": "ulhisungge",
+        "mon": "tegün orodu"
+    },
+    "樂勝": {
+        "san": "vijetā",
+        "mnc": "umesi eterengge",
+        "mon": "mashida ilagugchi"
+    },
+    "佛因": {
+        "san": "jinādhāraḥ",
+        "mnc": "fucihi hethe",
+        "mon": "ilagugsan u shidügen"
+    },
+    "佛苗": {
+        "san": "jināṅkuraḥ",
+        "mnc": "fucihi i fulhuren",
+        "mon": "ilagugsan u noggog a"
+    },
+    "全智能": {
+        "san": "vikrāntaḥ",
+        "mnc": "ben yongkiyangga",
+        "mon": "tegün khüchütü"
+    },
+    "妙聖": {
+        "san": "paramāryaḥ",
+        "mnc": "wesihun enduringge",
+        "mon": "tegedü khutug tu"
+    },
+    "大商主": {
+        "san": "sārthavāhaḥ",
+        "mnc": "doobure ejen",
+        "mon": "sardavakhi"
+    },
+    "普仁": {
+        "san": "kṛpāluḥ",
+        "mnc": "gosingga",
+        "mon": "nikhülsekhüi tu"
+    },
+    "權衡": {
+        "san": "īśvaraḥ",
+        "mnc": "toosengga",
+        "mon": "erkhitü"
+    },
+    "法具足": {
+        "san": "dhārmikaḥ",
+        "mnc": "nomun yongkiyangga",
+        "mon": "nom lug a tegüsügsen"
+    },
+    "佛子": {
+        "san": "jinaurasaḥ",
+        "mnc": "fucihi i jui",
+        "mon": "ilagugsan u setekhil un khöbekhün"
+    },
+    "從法化生": {
+        "san": "dharmatonirgataḥ",
+        "mnc": "nomun ci banjihangge",
+        "mon": "nom asa garukhsan"
+    },
+    "從佛口生": {
+        "san": "mukhatojataḥ",
+        "mnc": "nomun doro i jui",
+        "mon": "aman asa törögsen"
+    },
+    "各菩薩名": {
+        "san": "[nānā-bodhisattvanāmāni]",
+        "mnc": "fusa i meni meni gebu",
+        "mon": "öber e öber e bodisadu iin ner e inu"
+    },
+    "觀世音": {
+        "san": "avalokiteśvaraḥ",
+        "mnc": "jilan i bulekušere too-sengga",
+        "mon": "erkhetü khomshim bodisadu"
+    },
+    "虛空藏": {
+        "san": "ākāśagarbhaḥ",
+        "mnc": "abkai niyaman",
+        "mon": "ogtargui iin jirükhen"
+    },
+    "大勢至": {
+        "san": "mahāsthāmaprāptaḥ",
+        "mnc": "amba hūsun bahangge",
+        "mon": "yekhe khüchün ig ologsan"
+    },
+    "寶檀花": {
+        "san": "ratnapāṇiḥ",
+        "mnc": "boobai jafahangge",
+        "mon": "gartagan edeni tu"
+    },
+    "寶印": {
+        "san": "ratnamudrāhastaḥ",
+        "mnc": "boobai mudara jafahangge",
+        "mon": "gartagan motor a erdeni tu"
+    },
+    "寶冠": {
+        "san": "ratnamukuṭaḥ",
+        "mnc": "boobai ujui miyamihangga",
+        "mon": "manjilga erdeni tu"
+    },
+    "寶頂": {
+        "san": "ratnacūḍaḥ",
+        "mnc": "boobai usnika yongki-yangga",
+        "mon": "oroi dagan erdeni tu"
+    },
+    "寶積": {
+        "san": "ratnakūṭaḥ",
+        "mnc": "boobai dabkūringga",
+        "mon": "erdeni dabkhurlagsan"
+    },
+    "解脫月": {
+        "san": "vimukticandraḥ",
+        "mnc": "umesi ukcaha biya",
+        "mon": "mashi tonilogson saran"
+    },
+    "青蓮目": {
+        "san": "padmanetraḥ",
+        "mnc": "šu ilhai yasangga",
+        "mon": "linkhau a iin nidütü"
+    },
+    "廣目": {
+        "san": "viśālanetra",
+        "mnc": "onco yasangga",
+        "mon": "agtu nidütü"
+    },
+    "普恒": {
+        "san": "samanteryāpathaḥ",
+        "mnc": "enteheme sain yabungga",
+        "mon": "khotala saiin yabudal tu"
+    },
+    "普妙": {
+        "san": "samantaprāsādikaḥ",
+        "mnc": "umesi fujurungga",
+        "mon": "khotala asa üzeskhüleng tu"
+    },
+    "圓智": {
+        "san": "jñānavatī",
+        "mnc": "hafu sure yongkiyangga",
+        "mon": "tegün belge bilig tu"
+    },
+    "大智普行": {
+        "san": "samantacāritramatiḥ",
+        "mnc": "enteheme sain yabun i ulhisungge",
+        "mon": "khotala saiin yabudal un orodu"
+    },
+    "獅子遊戲": {
+        "san": "siṃhavikrīḍitaḥ",
+        "mnc": "arsalan umesi sebjelerengge",
+        "mon": "arslan mashi chengegchi"
+    },
+    "妙音王": {
+        "san": "mahāghoṣasvararājaḥ",
+        "mnc": "amba sain jilgan muten han",
+        "mon": "iekhe  \"X\" dagun u khan"
+    },
+    "獅吼": {
+        "san": "siṃhanādanādī",
+        "mnc": "arsalan guwenderengge",
+        "mon": "arslan dagun ig dagurisgagchi"
+    },
+    "無染": {
+        "san": "anupaliptaḥ",
+        "mnc": "iceburakūngge",
+        "mon": "khaldakhu ügei"
+    },
+    "童子": {
+        "san": "dārakaḥ",
+        "mnc": "ajige jui",
+        "mon": "öchükhen khöbegün"
+    },
+    "光明": {
+        "san": "jyotiṣmatī",
+        "mnc": "eldengge",
+        "mon": "gerel tu"
+    },
+    "無盡意": {
+        "san": "akṣayamatiḥi",
+        "mnc": "mohon akū ulhisungge",
+        "mon": "bargadashi ügei orodu"
+    },
+    "日光遍照": {
+        "san": "ādityagarbhaḥ",
+        "mnc": "šun i eldengge",
+        "mon": "naran u gerel tu"
+    },
+    "金剛藏": {
+        "san": "vajrasāraḥ",
+        "mnc": "wacir niyaman",
+        "mon": "yeör un jiruge"
+    },
+    "微妙香": {
+        "san": "āśugandhaḥ",
+        "mnc": "ferguwecuke wangga",
+        "mon": "tangsug üner tu"
+    },
+    "洞隱": {
+        "san": "guhaguptaḥ",
+        "mnc": "dung de somihangge",
+        "mon": "ünür dor daldlagchi"
+    },
+    "星光或火光": {
+        "san": "jyotiṣprabhaḥ",
+        "mnc": "usihai eldengge eici tuwai eldengge",
+        "mon": "odon u gerel ba gal un gerel tu"
+    },
+    "無盡具": {
+        "san": "akṣayakaraṇḍaḥ",
+        "mnc": "mohon akū hithen",
+        "mon": "barashi ügei gagurchag tu"
+    },
+    "五信行位名": {
+        "san": "[pañca bhūmayaḥ]",
+        "mnc": "hukšeme yabure sunja tangkan i gebu",
+        "mon": "bishirel un yabudal tu tegün gazari un ner e inu"
+    },
+    "發心": {
+        "san": "adhimukticaryābhūmiḥi",
+        "mnc": "hukšeme yabure tangkan",
+        "mon": "bishirel un yabudal tu iin gazari"
+    },
+    "得明": {
+        "san": "ālokalabdhaḥ",
+        "mnc": "genggiren be baharangge",
+        "mon": "gegen ologsan"
+    },
+    "明朗": {
+        "san": "ālokavṛddhiḥ",
+        "mnc": "genggiyen be badaram-burengge",
+        "mon": "gegen tügemel"
+    },
+    "入空性際": {
+        "san": "tattvārthaikadeśānuprakeśaḥ",
+        "mnc": "untuhun banin i emu ujan de dosiksngge",
+        "mon": "tere khümün uug a iin nigen züg dor dagan orogson"
+    },
+    "無碍光明三昧": {
+        "san": "ānantaryasamādhiḥ",
+        "mnc": "tookan akū genggiyen samadi",
+        "mon": "üüekhdel zeteger üge iin samadi"
+    },
+    "十地名": {
+        "san": "[daśa bhūmayaḥ]",
+        "mnc": "juwan tangkan i gebu",
+        "mon": "arban gazar un ner e inu"
+    },
+    "歡喜地": {
+        "san": "pramuditā",
+        "mnc": "umesi urgungge",
+        "mon": " mashi bayasgulan tu"
+    },
+    "離垢地": {
+        "san": "vimalā",
+        "mnc": "icihi akūngge",
+        "mon": "nkhir ügei"
+    },
+    "發光地": {
+        "san": "prabhākarī",
+        "mnc": "eldemburengge",
+        "mon": "gerel üiledegchi"
+    },
+    "燄慧地": {
+        "san": "arciṣmatī",
+        "mnc": "badaraka eldengge",
+        "mon": "gerel satsuragchi"
+    },
+    "難勝地": {
+        "san": "sudurjayā",
+        "mnc": "anaburakūngge",
+        "mon": "\"X\" berkhe"
+    },
+    "現前地": {
+        "san": "abhimukhī",
+        "mnc": "iletulehengge",
+        "mon": "ilete bologson"
+    },
+    "遠行地": {
+        "san": "dūraṃgamā",
+        "mnc": "goro yabuhangge",
+        "mon": "gorolan odokhson"
+    },
+    "不動地": {
+        "san": "acalā",
+        "mnc": "aššan akūngge",
+        "mon": "ülü khelberegchi"
+    },
+    "善慧地": {
+        "san": "sādhumatī",
+        "mnc": "sain ulhisungge",
+        "mon": "saiin oitu"
+    },
+    "法雲地": {
+        "san": "dharmeghā",
+        "mnc": "nomun i tugingge",
+        "mon": "nom un egülen"
+    },
+    "十波羅密名": {
+        "san": "[daśa pāramitāḥ]",
+        "mnc": "cargi dalin de akūnaha juwan hacin i gebu",
+        "mon": "arban baramid un ner e inu"
+    },
+    "布施": {
+        "san": "dānam",
+        "mnc": "fulehun",
+        "mon": "öglige"
+    },
+    "持戒": {
+        "san": "śīlapāramitā",
+        "mnc": "targacun baramit",
+        "mon": "shagsha bat baramid"
+    },
+    "忍辱": {
+        "san": "kṣāntipāramitā",
+        "mnc": "kiricun baramit",
+        "mon": "khülichengkhüi baramid"
+    },
+    "精進": {
+        "san": "vīryamārabhate",
+        "mnc": "kiceme faššambi",
+        "mon": "khichiiengkhüi in togorbimoi"
+    },
+    "禪定": {
+        "san": "cittaṃ pragṛhṇāti",
+        "mnc": "mujilen be teng seme toktobumbi",
+        "mon": "setegil ig saiitur togtagamoi"
+    },
+    "智慧": {
+        "san": "prajñāpāramitā",
+        "mnc": "sure baramit",
+        "mon": "bilig baramid"
+    },
+    "方便": {
+        "san": "upāyapāramitā",
+        "mnc": "arga baramit",
+        "mon": "arg a baramid"
+    },
+    "願": {
+        "san": "praṇidhānapāramitā",
+        "mnc": "forobun baramit",
+        "mon": "irüger baramid"
+    },
+    "力": {
+        "san": "balapāramitā",
+        "mnc": "hūsun baramit",
+        "mon": "khüchün baramid"
+    },
+    "智": {
+        "san": "jñānapāramitā",
+        "mnc": "hafu sure baramit",
+        "mon": "belge bilig un baramid"
+    },
+    "十種法師名": {
+        "san": "[daśa dharmacaryāḥ]",
+        "mnc": "juwan nomun i yabun i gebu",
+        "mon": "arban nom un yabudal un ner e inu"
+    },
+    "書寫": {
+        "san": "lekhanā",
+        "mnc": "bitheleme arara",
+        "mon": "bichig bichikhüi"
+    },
+    "供養": {
+        "san": "pūjanā",
+        "mnc": "juktere",
+        "mon": "takhikhui"
+    },
+    "施他": {
+        "san": "dānam",
+        "mnc": "fulehun bure",
+        "mon": "öglige ögkhüi"
+    },
+    "聽聞": {
+        "san": "śravaṇam",
+        "mnc": "donjire",
+        "mon": "sonosakhui"
+    },
+    "披讀": {
+        "san": "vacanam",
+        "mnc": "hūlara",
+        "mon": "urikhui"
+    },
+    "受持": {
+        "san": "udgrahaṇam",
+        "mnc": "šejilere",
+        "mon": "barikhui"
+    },
+    "開演": {
+        "san": "prakāśanā",
+        "mnc": "tecibure",
+        "mon": "saitur üjükhülkhüi"
+    },
+    "諷誦": {
+        "san": "svādhyāyaḥ",
+        "mnc": "erileme hūlara",
+        "mon": "amabar ungshikhui"
+    },
+    "思惟": {
+        "san": "cintanā",
+        "mnc": "seolere",
+        "mon": "setekhikhüi"
+    },
+    "修習": {
+        "san": "bhāvanā",
+        "mnc": "urebume gunire",
+        "mon": "bisilgakhui"
+    },
+    "四無量心名": {
+        "san": "[catvāri apramāṇāni]",
+        "mnc": "duin mohon akū i gebu",
+        "mon": "dürben tsaglashi ügei iin ner e inu"
+    },
+    "慈": {
+        "san": "maitrī",
+        "mnc": "jilan",
+        "mon": "asarakhui"
+    },
+    "悲": {
+        "san": "karuṇā",
+        "mnc": "gosin",
+        "mon": "nigülesekhü"
+    },
+    "喜": {
+        "san": "muditā",
+        "mnc": "urgun",
+        "mon": "bayasgulang"
+    },
+    "捨": {
+        "san": "upekṣā",
+        "mnc": "teksin",
+        "mon": "tegshi"
+    },
+    "三解脫門名": {
+        "san": "[trīṇi vimokṣamukhāni]",
+        "mnc": "ilan umesi ukcara duka i gebu",
+        "mon": "gurban mashi tonilkhoi iin ner e inu"
+    },
+    "空": {
+        "san": "śūnyam",
+        "mnc": "untuhun",
+        "mon": "khogoson"
+    },
+    "無相": {
+        "san": "animittam",
+        "mnc": "arbun akū",
+        "mon": "belge ügei"
+    },
+    "無願": {
+        "san": "apraṇihitam",
+        "mnc": "buyen akū",
+        "mon": "khüsekhüi ügei"
+    },
+    "三智慧名": {
+        "san": "[trividhāḥ prajñāḥ]",
+        "mnc": "ilan sure i gebu",
+        "mon": "gurban bilig un ner e inu"
+    },
+    "聞智慧": {
+        "san": "śrutamayī prajñā",
+        "mnc": "donjire ci bahaea sure",
+        "mon": "sonosakhui asa bolokhsan bilig"
+    },
+    "思智慧": {
+        "san": "cintāmayī prajñā",
+        "mnc": "gūnire ci bahara sure",
+        "mon": "setekhikhüi asa bolokhsan bilig"
+    },
+    "修智慧": {
+        "san": "bhāvanāmayī prajñā",
+        "mnc": "urebure ci bahara sure",
+        "mon": "bisilgakhui asa bolokhson bilig"
+    },
+    "四攝法名": {
+        "san": "[catvāri saṁgrahavastūni]",
+        "mnc": "duin bargiyara nomun i gebu",
+        "mon": "dörben khoreekhay boda iin ner e inu"
+    },
+    "愛語": {
+        "san": "priyavāditā",
+        "mnc": "icangga gisun",
+        "mon": "iragu öglige"
+    },
+    "利行": {
+        "san": "arthacaryā",
+        "mnc": "tusangga yabun",
+        "mon": "tusa edlekhülkhü"
+    },
+    "同事": {
+        "san": "samānārthatā",
+        "mnc": "uhelere yabun",
+        "mon": "tusa zokhildokhu"
+    },
+    "十八空名": {
+        "san": "[aṣṭādaśa śūnyatāḥ]",
+        "mnc": "juwan jakūn untuhun banin i gebu",
+        "mon": "arban naiman khogoson u ner e inu"
+    },
+    "內空": {
+        "san": "adhyātmaśūnyatā",
+        "mnc": "dorgi untuhun banin",
+        "mon": "dotogadu khogoson"
+    },
+    "外空": {
+        "san": "bahirdhāśūnyatā",
+        "mnc": "tulergi untuhun banin",
+        "mon": "gadagadu khogoson"
+    },
+    "內外空": {
+        "san": "adhyātmabahirdhāśūnyatā",
+        "mnc": "dorgi tulergi untuhun banin",
+        "mon": "gadai dotor khogoson"
+    },
+    "空空": {
+        "san": "śūnyatāśūnyatā",
+        "mnc": "untuhun banin i untuhun banin",
+        "mon": "khogoson u khogoson"
+    },
+    "大空": {
+        "san": "mahāśūnyatā",
+        "mnc": "amba untuhun banin",
+        "mon": "iekhe khogoson"
+    },
+    "勝義空": {
+        "san": "paramārthaśūnyatā",
+        "mnc": "unenggi untuhun banin",
+        "mon": "ünemelekhüi khogoson"
+    },
+    "有為空": {
+        "san": "saṃskṛtaśūnyatā",
+        "mnc": "weilen bisire untuhun banin",
+        "mon": "khoran egüdükhsen khogoson"
+    },
+    "無為空": {
+        "san": "asaṃskṛtaśūnyatā",
+        "mnc": "weilen akū untuhun banin",
+        "mon": "khoran ese egüdükhsen khogoson"
+    },
+    "畢竟空": {
+        "san": "atyantaśūnyatā",
+        "mnc": "jecen akū untuhun banin",
+        "mon": "khijagar asas nökhchikhsen khogoson"
+    },
+    "無際空": {
+        "san": "anavarāgraśūnyatā",
+        "mnc": "deribun duben akū untu-hun banin",
+        "mon": "terigün achta ügei khogoson"
+    },
+    "無變異空": {
+        "san": "anavakāraśūnyatā",
+        "mnc": "waliyarakū i untuhun banin",
+        "mon": "gegegdekhüi ügei khogoson"
+    },
+    "本性空": {
+        "san": "prakṛtiśūnyatā",
+        "mnc": "da banin i untuhun banin",
+        "mon": "öberchilen ügei khogoson"
+    },
+    "一切法空": {
+        "san": "sarvadharmaśūnyatā",
+        "mnc": "eiten nomun i untuhun banin",
+        "mon": "khamug nom khogoson"
+    },
+    "自性空": {
+        "san": "svalakṣaṇaśūnyatā",
+        "mnc": "ini cisui banin giyan i untuhun banin",
+        "mon": "öber belge chinari khogoson"
+    },
+    "不可得空": {
+        "san": "anulambhaśūnyatā",
+        "mnc": "jorigan akū i untuhun banin",
+        "mon": "zorigdashi ügei khogoson"
+    },
+    "無性空": {
+        "san": "abhāvaśūnyatā",
+        "mnc": "jaka akū i untuhun banin",
+        "mon": "boda ügei khogoson"
+    },
+    "無自性空": {
+        "san": "svabhāvaśūnyatā",
+        "mnc": "da banin akū i untuhun banin",
+        "mon": "chinar ügei khogoson"
+    },
+    "無自性自性空": {
+        "san": "abhāvasvabhāvaśūnyatā",
+        "mnc": "jaka akū i da banin i untuhun banin",
+        "mon": "boda ügei chinar khogoson"
+    },
+    "緣覺名": {
+        "san": "[pratyekabuddha]",
+        "mnc": "bradig’ abut i gebu",
+        "mon": "bradigabut un ner e inu"
+    },
+    "麟喻獨覺": {
+        "san": "khaḍgaviṣāṇakalpaḥ",
+        "mnc": "bodi gurgui adalingge",
+        "mon": "gere un eber metü"
+    },
+    "部行獨覺": {
+        "san": "vargacārī",
+        "mnc": "isan de yaburengge",
+        "mon": "chigulgan a yabugchi"
+    },
+    "聲聞名": {
+        "san": "[śrāvakapudgala-nāmāni]",
+        "mnc": "šarwag’a i gebu",
+        "mon": "shirünig un ner e inu"
+    },
+    "須陀洹": {
+        "san": "srota āpannaḥ",
+        "mnc": "surtaban",
+        "mon": "soritban"
+    },
+    "斯陀含": {
+        "san": "sakṛdāgāmī",
+        "mnc": "sag’ardag’am",
+        "mon": "sagardagam"
+    },
+    "阿那含": {
+        "san": "anāgāmī",
+        "mnc": "anag’am",
+        "mon": "anagam"
+    },
+    "一碍補處": {
+        "san": "ekavīcikaḥ",
+        "mnc": "heture emu mudan",
+        "mon": "nigegen sekhete tu"
+    },
+    "禪空昇轉": {
+        "san": "ūrdhvasrotāḥ",
+        "mnc": "wesihun gurirengge",
+        "mon": "degegshite zegütegegchi"
+    },
+    "信解阿羅漢": {
+        "san": "śraddhānusārī",
+        "mnc": "ginggun i daharangge",
+        "mon": "süsüg un khoin a asa dagagchi"
+    },
+    "慧解阿羅漢": {
+        "san": "prajñāvimuktaḥ",
+        "mnc": "surei umesi ukcakangge",
+        "mon": "bilig iier mashida tonilogchi"
+    },
+    "聲聞尊者名": {
+        "san": "[nānāśrāvakanāmāni]",
+        "mnc": "akdun yabungga arhat  i gebu",
+        "mon": "shireven un arkharta asa ner e inu"
+    },
+    "阿說子尊者": {
+        "san": "aśvajit",
+        "mnc": "ašuwatse",
+        "mon": "asuvatsi"
+    },
+    "大名尊者": {
+        "san": "mahānāmaḥ",
+        "mnc": "amba gebungge",
+        "mon": "iekhe neretü"
+    },
+    "目連尊者": {
+        "san": "kolitaḥ",
+        "mnc": "tebeliyen ci banjihangge",
+        "mon": "ebür asa törögchi"
+    },
+    "優樓頻螺迦葉尊者": {
+        "san": "uruvilvākāśyapaḥ",
+        "mnc": "fisembure elden be tuwa-kiyarangge",
+        "mon": "orobile geshib"
+    },
+    "那提迦葉尊者": {
+        "san": "nadīkāśyapaḥ",
+        "mnc": "bira elden be tuwaki-yarangge",
+        "mon": "achti geshib"
+    },
+    "伽耶迦葉尊者": {
+        "san": "gayākāśyapaḥ",
+        "mnc": "g’aya elden be tuwakiya-rangge",
+        "mon": "gi e geshib"
+    },
+    "憍梵波提尊者": {
+        "san": "gavāmpatiḥ",
+        "mnc": "ihan i ejen",
+        "mon": "ögr un ejen"
+    },
+    "巴斯巴尊者": {
+        "san": "bāṣpaḥ",
+        "mnc": "melken",
+        "mon": "besbi"
+    },
+    "莎迦陀尊者": {
+        "san": "cūḍapanthakaḥ",
+        "mnc": "ajige jugūn de tuwabure-ngge",
+        "mon": "üjügen mör ig ügükhülügchi"
+    },
+    "周陀尊者": {
+        "san": "mahāpanthakaḥ",
+        "mnc": "amba jugūn de tuwabu-rengge",
+        "mon": "iekhe mör ig ügükhülügchi"
+    },
+    "準提尊者": {
+        "san": "cundaḥ",
+        "mnc": "jondorongge",
+        "mon": "duradugulugchi"
+    },
+    "郭質畢沙尊者": {
+        "san": "śroṇakoṭīviṃśaḥ",
+        "mnc": "nirehe usiha de banjiha orin jirungga",
+        "mon": "shireven odon a törögkhsen khorin khölti tu"
+    },
+    "優頭夷尊者": {
+        "san": "udayī",
+        "mnc": "mukdengge",
+        "mon": "zerge"
+    },
+    "郭質噶拉納尊者": {
+        "san": "śroṇakoṭīkarṇaḥ",
+        "mnc": "nirehe usiha da banjiha jirun šan",
+        "mon": "shireven odon a törögkhsen khölti chikhitu"
+    },
+    "優波離尊者": {
+        "san": "upāliḥ",
+        "mnc": "hanciki šabi",
+        "mon": "öbeli"
+    },
+    "摩訶阿夷多尊者": {
+        "san": "mahākauṣṭhilaḥ",
+        "mnc": "amba hefelingge",
+        "mon": "mangkhan a khöstili"
+    },
+    "巴姑利尊者": {
+        "san": "vakkulaḥ",
+        "mnc": "bagula",
+        "mon": "bakhula"
+    },
+    "郭巴比丘尼": {
+        "san": "gopā",
+        "mnc": "boihon i banjirengge",
+        "mon": "khöbekhi"
+    },
+    "達摩提那比丘尼": {
+        "san": "dharmadinnā",
+        "mnc": "nomun fulehungge",
+        "mon": "nom un öglige tu"
+    },
+    "十二因緣名": {
+        "san": "[dvādaśa pratītyasamutpādāṁgaḥ]",
+        "mnc": "juwan juwe nikenjere holbogon(BN adds i )gebu",
+        "mon": "arban khoyar sadun shiiltugu iin ner e inu"
+    },
+    "無明": {
+        "san": "avidyā",
+        "mnc": "mentuhun",
+        "mon": "munkhagan"
+    },
+    "行": {
+        "san": "saṁskāraḥ",
+        "mnc": "weilen",
+        "mon": "khoran üiledekhüi"
+    },
+    "識": {
+        "san": "vijñānam",
+        "mnc": "ulhibun",
+        "mon": "sain medekhüi"
+    },
+    "名色": {
+        "san": "nāmarūpam",
+        "mnc": "gebu dursun",
+        "mon": "ner e khiged dürsü"
+    },
+    "六入": {
+        "san": "ṣaḍāyatanam",
+        "mnc": "ninggun banjire akūnan",
+        "mon": "zurgagan dürün tügekhüi"
+    },
+    "觸": {
+        "san": "spraṣṭavyam",
+        "mnc": "aligan",
+        "mon": "khürtekhüi"
+    },
+    "受": {
+        "san": "vedanā",
+        "mnc": "serebun",
+        "mon": "serekhüi"
+    },
+    "愛": {
+        "san": "tṛṣṇā",
+        "mnc": "buyen",
+        "mon": "khurichakhui"
+    },
+    "取": {
+        "san": "upādānam",
+        "mnc": "gonggibu",
+        "mon": "abkhui"
+    },
+    "有": {
+        "san": "bhavaḥ",
+        "mnc": "bisire",
+        "mon": "sansar"
+    },
+    "生": {
+        "san": "prabhavaḥ",
+        "mnc": "umesi banjinara",
+        "mon": "mashi törükhülügchi"
+    },
+    "老死": {
+        "san": "jarāmaraṇam",
+        "mnc": "sakdara bucere",
+        "mon": "ötelkhüi ükhükhüi"
+    },
+    "苦": {
+        "san": "tiktaḥ",
+        "mnc": "gosihon",
+        "mon": "gashigun"
+    },
+    "哀": {
+        "san": "paridevaḥ",
+        "mnc": "uktun nidure",
+        "mon": "enel un shinalakhu"
+    },
+    "難": {
+        "san": "duḥkham",
+        "mnc": "jobolon",
+        "mon": "zobakhu"
+    },
+    "亂心": {
+        "san": "daurmanasyam",
+        "mnc": "gūnin elhe akū",
+        "mon": "setekhil ülü amukhu"
+    },
+    "鬬爭": {
+        "san": "upāyasaḥ",
+        "mnc": "facuhūn",
+        "mon": "khimorakhui"
+    },
+    "四諦十六行觀名": {
+        "san": "[caturṇāṃ satyānāṃ ṣoḍaśākārāḥ]",
+        "mnc": "duin unenggi i juwan ninggun hacin i gebu",
+        "mon": "dörben ünen u arban jirgugan züil un ner e inu"
+    },
+    "無常": {
+        "san": "anityam",
+        "mnc": "enteheme akū",
+        "mon": "möngkhe busu"
+    },
+    "無我": {
+        "san": "anātmakam",
+        "mnc": "bi akū",
+        "mon": "bi ügei"
+    },
+    "因": {
+        "san": "hetuḥ",
+        "mnc": "acabun",
+        "mon": "shiltagan"
+    },
+    "集": {
+        "san": "samudayaḥ",
+        "mnc": "eiten i banjin",
+        "mon": "khamug ig törökhülügchi"
+    },
+    "緣": {
+        "san": "pratyayaḥ",
+        "mnc": "aisilan",
+        "mon": "nükhüchel"
+    },
+    "滅": {
+        "san": "nirodhaḥ",
+        "mnc": "gukubun",
+        "mon": "düridekhüi"
+    },
+    "盡": {
+        "san": "śāntaḥ",
+        "mnc": "cib sere",
+        "mon": "amorlikhsan"
+    },
+    "妙": {
+        "san": "praṇītaḥ",
+        "mnc": "tangsulan",
+        "mon": "tegsün"
+    },
+    "離": {
+        "san": "niḥsaraṇaḥ",
+        "mnc": "yargiyan i tucire",
+        "mon": "magad garukhsan"
+    },
+    "道": {
+        "san": "margaḥ",
+        "mnc": "jugūn",
+        "mon": "mör"
+    },
+    "正": {
+        "san": "nyāyaḥ",
+        "mnc": "ulhisu",
+        "mon": "ukhagan"
+    },
+    "迹": {
+        "san": "pratipattiḥ",
+        "mnc": "mutebure",
+        "mon": "büdügel"
+    },
+    "乘": {
+        "san": "nairyāṇikaḥ",
+        "mnc": "yargiyan i tucibure",
+        "mon": "magad gargagchi"
+    },
+    "三學名": {
+        "san": "[trīṇi śikṣāṇi]",
+        "mnc": "ilan tacin i gebu",
+        "mon": "gurban surtakhun u ner e inu"
+    },
+    "戒": {
+        "san": "adhiśīlam",
+        "mnc": "wesihun targacun",
+        "mon": "ülemji shagshabat"
+    },
+    "定": {
+        "san": "adhicittam",
+        "mnc": "wesihun samadi",
+        "mon": "ülemji samadi"
+    },
+    "慧": {
+        "san": "adhiprajñā",
+        "mnc": "wesihun sure",
+        "mon": "ülemji bilig"
+    },
+    "三十七助道品內四念處名": {
+        "san": "[catvāri smṛtyupasthānāni]",
+        "mnc": "gūsin nadan hacin bodi jugūn i nomun dorgi (BN dorgi i)duin jondon be kiceme tebure                                                                                                  gebu",
+        "mon": "bodi züg un guchin dologon nom asa dörben doradakhui üir e agulkhui iin ner e inu"
+    },
+    "觀身念": {
+        "san": "kāyasmṛtyupasthānam",
+        "mnc": "beye jondome kiceme te-bure",
+        "mon": "bii e doradakhui üir e agulakhui"
+    },
+    "觀受念": {
+        "san": "vedanasmṛtyupasthānam",
+        "mnc": "serebun jondome kiceme tebure",
+        "mon": "serekhüi doradakhui üir e agulakhui"
+    },
+    "觀心念": {
+        "san": "cittasmṛtyupasthānam",
+        "mnc": "gūnijan jondome kiceme tebure",
+        "mon": "setekhil doradakhui üir e agulakhui"
+    },
+    "觀法念": {
+        "san": "dharmasmṛtyupasthānam",
+        "mnc": "nomun jondome kiceme tebure",
+        "mon": "nom doradakhui üir e agulakhui"
+    },
+    "四正勤名": {
+        "san": "[catvāri prahāṇāni]",
+        "mnc": "duin unenggi waliyara gebu",
+        "mon": "dörben ünekher tebchikhüi iin ner e inu"
+    },
+    "未生惡不生": {
+        "san": "anutpannānāṃ pāpakānāmakuśalānāṃ dharmāṇām anutpādāya",
+        "mnc": "ehe sui nomun i deribure undengge be",
+        "mon": "nigül tü nom asa törekhsed ig"
+    },
+    "當起念遮止": {
+        "san": "cchandaṃ janayati",
+        "mnc": "deriburakū i jalin cihalan gūnin deribumbi",
+        "mon": "ülü törökhülkhü iin tula durashil egüsigekhü bolai"
+    },
+    "已生惡令斷當起念決剔": {
+        "san": "utpannānāṃ pāpakānāmakuśalānāṃ dharmāṇāṃ prahāṇāya cchandaṃ janayati",
+        "mnc": "ehe sui nomun i deribuhengge be waliyara jalin cihalan gūnin deribumbi",
+        "mon": "nigül tü nom törögsed ig tebchikhüi iin tula durashil egüsigekhü bolai"
+    },
+    "未生善令生當起念勇猛": {
+        "san": "anutpannānāṃ kuśalānāṃ dharmāṇāmutpādāya cchandaṃ janayati",
+        "mnc": "hūturingga nomun i deribure undengge be deribure  jalin cihalan gūnin deribumbi",
+        "mon": "bükh tü nom ese törögsed ig törögülekhüi iin tula durashil ebsekhü bolai"
+    },
+    "已生善增長當起念不壞": {
+        "san": "utpannānāṃ kuśalānāṃ dharmāṇāṃ sthitaye bhūyobhāvāya asaṃpramoṣāya paripūraṇāya cchandaṃ janayati",
+        "mnc": "hūturingga nomun i deribuhe be enteheme bibufi dasame badarambume efujeburakū",
+        "mon": "bükh tü nom nom törögsed ig oroshigulakhu khiged jichi basa törögülkhüi ba ülü baguragulkhui khiged"
+    },
+    "令其圓滿": {
+        "san": "utpannānāṃ kuśalānāṃ dharmāṇāṃ sthitaye bhūyobhāvāya asaṃpramoṣāya paripūraṇāya cchandaṃ janayati",
+        "mnc": "umesi yongkiyabure jalin cihalan gūnin deribumbi",
+        "mon": "ogogata tegüsgekhü iin tula durashil egüsgekhü bolai"
+    },
+    "勉勵": {
+        "san": "vyāyacchate",
+        "mnc": "facihiyašambi",
+        "mon": "khichiiemoi"
+    },
+    "勝解禪定": {
+        "san": "samyakpradadhāti",
+        "mnc": "unenggileme cib seme bimbi",
+        "mon": "ünekher saiitur agulumoi"
+    },
+    "四如意足名": {
+        "san": "[catvāra ṛddhipādāḥ]",
+        "mnc": "duin ridi kūbulin i bethei gebu",
+        "mon": "dörben ridi khöl un ner e inu"
+    },
+    "": {
+        "san": "catvāra ṛddhipādāḥ",
+        "mnc": "cihalan i samadi",
+        "mon": "durashikhui iin samadi"
+    },
+    "欲如意足": {
+        "san": "chandasamādhiprahāṇasaṃskārasamanvāgata ṛddhipādaḥ",
+        "mnc": "waliyara weilen yongki-yaha ridi kūbulin i bethe",
+        "mon": "tebchkhüi khoran üiledekhüi lüge tegüsügsen ridi khöl"
+    },
+    "念如意足": {
+        "san": "cittasamādhiprahāṇasaṃskārasamanvāgata ṛddhipādaḥ",
+        "mnc": "gūnin i samadi waliyara weilen yongkiyaha ridi kūbulin i bethe",
+        "mon": "setekhil un semedi tebchikhüi khoran üiledekhüi lüge tegüsügsen ridi khöl"
+    },
+    "進如意足": {
+        "san": "vīryasamādhiprahāṇasaṃskārasamanvāgata ṛddhipādaḥ",
+        "mnc": "kicen i samadi waliyara weilen yongkiyaha ridi kūbulin i bethe",
+        "mon": "khichiiengkhüi ig iin semedi tebchikhüi khoran üiledekhü lüge tegüsügsen ridi khöl"
+    },
+    "慧如意足": {
+        "san": "mīmāṃsāsamādhiprahāṇasaṃskārasamanvāgata ṛddhipādaḥ",
+        "mnc": "cincilan i samadi waliyara weilen yongkiyaha ridi kūbulin i bethe be",
+        "mon": "sidilekhüi iin semedi tebchikhüi khoran üiledekhüi lüge tegüsügsen ridi khöl ig"
+    },
+    "離執著觀想": {
+        "san": "anupalambhayogena bhāvayati",
+        "mnc": "jorigan akū doroi urebume gūnimbi",
+        "mon": "setgekhüi ügei iin yosogar bisilgakhu bolai"
+    },
+    "寂靜處坐": {
+        "san": "vivekaniśritam",
+        "mnc": "bolgo de tomombi",
+        "mon": "ekhelekh e agchi"
+    },
+    "觀離欲處": {
+        "san": "virāganiśritam",
+        "mnc": "buyen akū de tomombi",
+        "mon": "dachiyangkhui asa khagatsakhsan a agchi"
+    },
+    "入寂滅定": {
+        "san": "nirodhaniśritam",
+        "mnc": "gukubun de tomombi",
+        "mon": "töriddekhüi dor agchi"
+    },
+    "除妄歸真": {
+        "san": "vyavasargapariṇatam",
+        "mnc": "umesi waliyame unenggi-leme dasambi",
+        "mon": "mashida tebchikhüi bei ogogata khubilgakhu"
+    },
+    "五根名": {
+        "san": "[pañcendriyāṇi]",
+        "mnc": "sunja saligan gebu",
+        "mon": "taban erkhten u ner e inu"
+    },
+    "信根": {
+        "san": "śraddhendriyam",
+        "mnc": "ginggun i saligan",
+        "mon": "süsüg un erkhten"
+    },
+    "進根": {
+        "san": "vīryendriyam",
+        "mnc": "kicen i saligan",
+        "mon": "khichiiengkhüi iin erkhten"
+    },
+    "念根": {
+        "san": "smṛtīndriyam",
+        "mnc": "jondon i saligan",
+        "mon": "duradakhui iin erkhten"
+    },
+    "定根": {
+        "san": "samādhīndriyam",
+        "mnc": "samadi i saligan",
+        "mon": "semedi iin erkhten"
+    },
+    "慧根": {
+        "san": "prajñendriyam",
+        "mnc": "sure i saligan",
+        "mon": "bilig ün erkhten"
+    },
+    "五力名": {
+        "san": "[pañca balāni]",
+        "mnc": "sunja hūsun i gebu",
+        "mon": "taban khüchün ü ner e inu"
+    },
+    "信力": {
+        "san": "śraddhābalam",
+        "mnc": "ginggun i hūsun",
+        "mon": "süsüg ün khüchün"
+    },
+    "進力": {
+        "san": "vīryabalam",
+        "mnc": "kicen i hūsun",
+        "mon": "khichiiengkhüi iin khüchün"
+    },
+    "念力": {
+        "san": "sṃrtibalam",
+        "mnc": "jondon i hūsun",
+        "mon": "duradakhui iin khüchün"
+    },
+    "定力": {
+        "san": "samādhibalam",
+        "mnc": "samadi i hūsun",
+        "mon": "semedi iin khüchün"
+    },
+    "慧力": {
+        "san": "prajñābalam",
+        "mnc": "sure i hūsun",
+        "mon": "bilig ün khüchün"
+    },
+    "七覺支名": {
+        "san": "[sapta saṃbodhyaṅgāni]",
+        "mnc": "nadan bodi i tangkan i gebu",
+        "mon": "dologan bodi geshigün ü ner e inu"
+    },
+    "念覺支": {
+        "san": "sṃtisaṃbodhyaṅgam",
+        "mnc": "unenggi jondoro bodi i tangkan",
+        "mon": "duragagchi ünekher bodi iin geshigün"
+    },
+    "擇法覺支": {
+        "san": "dharmapravicayasaṃbodhyaṅgam",
+        "mnc": "unenggi nomun be umesi faksalara bodi i tangkan",
+        "mon": "nom ig saiitur ilgagchi ünekher bodi iin geshigün"
+    },
+    "精進覺支": {
+        "san": "vīryasaṃbodhyaṅgam",
+        "mnc": "unenggi kicen bodi i tangkan",
+        "mon": "khichiiengkhüi ünekher bodi iin geshigün"
+    },
+    "喜覺支": {
+        "san": "prītisaṃbodhyaṅgam",
+        "mnc": "unenggi urgun bodi i tangkan",
+        "mon": "bayasgulang ünekher bodi iin geshigün"
+    },
+    "輕安覺支": {
+        "san": "prasrabdhisaṃbodhyaṅgam",
+        "mnc": "unenggi umesi urebure bodi i tangkan",
+        "mon": "mashi sudulukhsan ünekher bodi iin geshigün"
+    },
+    "定覺支": {
+        "san": "samādhisaṃbodhyaṅgam",
+        "mnc": "unenggi samadi bodi i tangkan",
+        "mon": "semedi ünekher bodi iin geshigün"
+    },
+    "捨覺支": {
+        "san": "upekṣāsaṃbodhyaṅgam",
+        "mnc": "unenggi teksin bodi i tangkan",
+        "mon": "tegshi ünekher bodi iin geshigün"
+    },
+    "八正道名": {
+        "san": "[āryāṣṭāṅgamārga-nāmāni]",
+        "mnc": "jakūn enduringge jugūn i tangkan i gebu",
+        "mon": "khutug tan u naiman geshigüdü mör ün ner e inu"
+    },
+    "正見": {
+        "san": "samyaksaṃdṛṣṭi",
+        "mnc": "unenggi sabun",
+        "mon": "ünekher üzel"
+    },
+    "正思惟": {
+        "san": "samyaksaṃkalpaḥ",
+        "mnc": "unenggi seolen",
+        "mon": "ünekher onol"
+    },
+    "正語": {
+        "san": "samyagvāk",
+        "mnc": "unenggi gisun",
+        "mon": "ünekher tükhen"
+    },
+    "正業": {
+        "san": "samyakkarmāntaḥ",
+        "mnc": "unenggi weilen",
+        "mon": "ünekher üile iin \"X\""
+    },
+    "正命": {
+        "san": "samyagājīvaḥ",
+        "mnc": "unenggi banjin",
+        "mon": "ünekher amidural"
+    },
+    "正精進": {
+        "san": "samyagvyāyāmaḥ",
+        "mnc": "unenggi kicen",
+        "mon": "ünekher khichiiel"
+    },
+    "正念": {
+        "san": "samyaksmṛtiḥ",
+        "mnc": "unenggi jondon",
+        "mon": "ünekher duradakhui"
+    },
+    "正定": {
+        "san": "samyaksamādhiḥ",
+        "mnc": "unenggi samadi",
+        "mon": "ünekher semedi"
+    },
+    "二禪定名": {
+        "san": "[dhyānadvayam]",
+        "mnc": "juwe samadi i gebu",
+        "mon": "khoyar daiin u ner e inu"
+    },
+    "止": {
+        "san": "śamathaḥ",
+        "mnc": "nesuken i toktoro",
+        "mon": "amurlin agu"
+    },
+    "觀": {
+        "san": "vipaśyanā",
+        "mnc": "hafu ulhire",
+        "mon": "ülemji üjekhü"
+    },
+    "五藴名": {
+        "san": "[pañca skandhāḥ]",
+        "mnc": "sunja iktan i gebu",
+        "mon": "tabun tsogtsa iin ner e inu"
+    },
+    "色藴": {
+        "san": "rūpaskandhaḥ",
+        "mnc": "dursun i iktan",
+        "mon": "dürsü iin tsogtsa"
+    },
+    "受藴": {
+        "san": "vedanāskandhaḥ",
+        "mnc": "serebun i iktan",
+        "mon": "serekhüi iin tsogtsa"
+    },
+    "想藴": {
+        "san": "saṃjñāskandhaḥ",
+        "mnc": "gūnijan i iktan",
+        "mon": "khoran medekhüi iin tsogtsa"
+    },
+    "行藴": {
+        "san": "saṃskāraskandhaḥ",
+        "mnc": "weilen i iktan",
+        "mon": "khoran üiledekhüi iin tsogtsa"
+    },
+    "識藴": {
+        "san": "vijñānaskandhaḥ",
+        "mnc": "ulhibun i iktan",
+        "mon": "daiin medekhüi iin tsogtsa"
+    },
+    "眼根": {
+        "san": "cakṣurindriyam",
+        "mnc": "yasai saligan",
+        "mon": "nidun u erkhten"
+    },
+    "耳根": {
+        "san": "śrotrendriyam",
+        "mnc": "šan i saligan",
+        "mon": "chikhin u erkhten"
+    },
+    "鼻根": {
+        "san": "ghrāṇendriyam",
+        "mnc": "oforo i saligan",
+        "mon": "khabar un erkhten"
+    },
+    "舌根": {
+        "san": "jihvendriyam",
+        "mnc": "ilenggui saligan",
+        "mon": "khelen u erkhten"
+    },
+    "身根": {
+        "san": "kāyendriyam",
+        "mnc": "beyei saligan",
+        "mon": "bei e iin erkhten"
+    },
+    "五塵名": {
+        "san": "[pañca viṣayāḥ]",
+        "mnc": "sunja teisulen i gebu",
+        "mon": "tabun züle iin ner e inu"
+    },
+    "色": {
+        "san": "rūpam",
+        "mnc": "dursun",
+        "mon": "dürsü"
+    },
+    "聲": {
+        "san": "śabdaḥ",
+        "mnc": "jilgan",
+        "mon": "dagun"
+    },
+    "香": {
+        "san": "gandhaḥ",
+        "mnc": "wa",
+        "mon": "ünür"
+    },
+    "味": {
+        "san": "rasaḥ",
+        "mnc": "amtan",
+        "mon": "amtan"
+    },
+    "五明名": {
+        "san": "[pañca vighāsthānāni]",
+        "mnc": "sunja šu tacin i gebu",
+        "mon": "tabun ukhagan u oron u ner e inu"
+    },
+    "聲明": {
+        "san": "śabdavidyā",
+        "mnc": "jilgan mudan i tacin",
+        "mon": "dagun ukhagan"
+    },
+    "因明": {
+        "san": "hetuvidyā",
+        "mnc": "turgun giyan i tacin",
+        "mon": "uchir shiltagan ukhagan"
+    },
+    "內明": {
+        "san": "adhyātmavidyā",
+        "mnc": "dorgi doro(BN doro i tacin)",
+        "mon": "dotogadu ukhagan"
+    },
+    "醫明": {
+        "san": "cikitsāvidyā",
+        "mnc": "oktosi i tacin",
+        "mon": "tejigekhü ukhagan"
+    },
+    "工明": {
+        "san": "śilpasthānavidyā",
+        "mnc": "faksi i tacin",
+        "mon": "uralagchi ukhagan"
+    },
+    "七德財名": {
+        "san": "[sapta dhanāni]",
+        "mnc": "enduringge i nadan ulin i gebu",
+        "mon": "khutug tan u dologon ede un ner e inu"
+    },
+    "信財": {
+        "san": "śraddhānam",
+        "mnc": "ginggun i ulin",
+        "mon": "süsüg un ide"
+    },
+    "戒財": {
+        "san": "śīladhanam",
+        "mnc": "targacun i ulin",
+        "mon": "shagshabat un ede"
+    },
+    "慚財": {
+        "san": "hrīdhanam",
+        "mnc": "girucun i ulin",
+        "mon": "ichigüri medekhüi iin ede"
+    },
+    "愧財": {
+        "san": "apatrāpyadhanam",
+        "mnc": "yertecun i ulin",
+        "mon": "süjigüritü iin ede"
+    },
+    "聞財": {
+        "san": "śrutathanam",
+        "mnc": "donjin i ulin",
+        "mon": "sonosakhui iin ede"
+    },
+    "捨財": {
+        "san": "tyāgadhanam",
+        "mnc": "fulehun i ulin",
+        "mon": "ögkhüi iin ede"
+    },
+    "慧財": {
+        "san": "prajñādhanam",
+        "mnc": "sure i ulin",
+        "mon": "bilig un ede"
+    },
+    "四攝授名": {
+        "san": "[catvāryadhiṣṭhānāni]",
+        "mnc": "duin adistit i gebu",
+        "mon": "dürben adistid un ner e inu"
+    },
+    "真諦攝授": {
+        "san": "satyādhiṣṭhānam",
+        "mnc": "unenggi i adistit",
+        "mon": "ünen u adistid"
+    },
+    "布施攝授": {
+        "san": "tyāgādhiṣṭhānam",
+        "mnc": "fulehun i adistit",
+        "mon": "ögkhüi iin adistid"
+    },
+    "禪定攝授": {
+        "san": "upaśamādhiṣṭhānam",
+        "mnc": "umesi cib sere adistit",
+        "mon": "chigula amurlakhu iin adistid"
+    },
+    "智慧攝授": {
+        "san": "prajñādhiṣṭhānam",
+        "mnc": "sure i adistit",
+        "mon": "bilig un adistid"
+    },
+    "壽者名": {
+        "san": "[pudnalanāmāni]",
+        "mnc": "butg’ ali i gebu",
+        "mon": "bügkheli iin ner e inu"
+    },
+    "柔善": {
+        "san": "damaḥ",
+        "mnc": "nomhon",
+        "mon": "nomokhan"
+    },
+    "苦行": {
+        "san": "tapasvī",
+        "mnc": "katungga",
+        "mon": "khatagujil"
+    },
+    "功行": {
+        "san": "vratī",
+        "mnc": "doro yosonggo",
+        "mon": "törö yosotu"
+    },
+    "瑜伽行": {
+        "san": "yogācāraḥ",
+        "mnc": "yog ’a yabungga",
+        "mon": "yovege iin yabudal tu"
+    },
+    "瑜伽行者": {
+        "san": "yogī",
+        "mnc": "yog ’a doronggo",
+        "mon": "yovegeziri"
+    },
+    "瑜伽": {
+        "san": "yogaḥ",
+        "mnc": "yog ’a",
+        "mon": "ayovage"
+    },
+    "三自性名": {
+        "san": "[trīṇi lakṣaṇāni]",
+        "mnc": "ilan banin giyan i gebu",
+        "mon": "gurban belge chinar un ner e inu"
+    },
+    "徧計所執自性": {
+        "san": "parikalpitalakṣaṇam",
+        "mnc": "eiten gebulengge banin giyan",
+        "mon": "khotala mereiitegel un bilig chinar"
+    },
+    "依他起自性": {
+        "san": "paratantralakṣaṇam",
+        "mnc": "gūwa de nikenduhe banin giyan",
+        "mon": "busud un erkhetü iin berge chinar"
+    },
+    "圓成實自性": {
+        "san": "pariniṣpannalakṣaṇam",
+        "mnc": "unenggi mutebuhe banin giyan",
+        "mon": "ogogada büdügsen u belge chinar"
+    },
+    "修福四法名": {
+        "san": "[catvāri puṇyakriyāvastūni]",
+        "mnc": "hūturi be isabure duin nomun i gebu",
+        "mon": "dörben khuriiakhu buyan u ner e inu"
+    },
+    "布施生福": {
+        "san": "dānamayaṃ puṇyagriyāvastu",
+        "mnc": "fulehun ci banjinaha hūturi be isabure dur-sungga",
+        "mon": "öglege asa bologsan buyan tu üile iin buda"
+    },
+    "持戒生福": {
+        "san": "śīlamayaṃ puṇyakriyāvastu",
+        "mnc": "targacun ci banjinaha hūturi be isabure dursungga",
+        "mon": "shagshabat asa bologsan buyan tu üile iin buda"
+    },
+    "修行生福": {
+        "san": "bhāvanamayaṃ puṇyakriyāvastu",
+        "mnc": "urebun ci banjinaha hūturi be isabure dur-sungga",
+        "mon": "bisilgakhui asa bologsan buyan tu üile iin buda"
+    },
+    "財產生福": {
+        "san": "aupadhikaṃ puṇyakriyāvastu",
+        "mnc": "ulin ci banjinaha hūturi be isabure dursungga",
+        "mon": "ede asa bologsan buyan tu üile iin buda"
+    },
+    "空性名": {
+        "san": "[śūnyatānāmāni]",
+        "mnc": "untuhun banin i gebu",
+        "mon": "khogoson chinar un ner e inu"
+    },
+    "真諦": {
+        "san": "paramārthaḥ",
+        "mnc": "unenggi jurgan",
+        "mon": "ünemlekhüi"
+    },
+    "本性": {
+        "san": "tattvam",
+        "mnc": "da banin",
+        "mon": "terekhü chinar"
+    },
+    "如性": {
+        "san": "tathātā",
+        "mnc": "ineku banin",
+        "mon": "tegünchilen chinar"
+    },
+    "涅槃": {
+        "san": "nirvāṇam",
+        "mnc": "gasacun ci duleke",
+        "mon": "gasalang asa nögchikhsen"
+    },
+    "正覺": {
+        "san": "abhisamayaḥ",
+        "mnc": "iletu hafuka",
+        "mon": "ilete ogokhsan"
+    },
+    "經名": {
+        "san": "[pravacananāmāni]",
+        "mnc": "nomun i gebu",
+        "mon": "saiin zarlig un ner e inu"
+    },
+    "菩薩藏": {
+        "san": "bodhisattvapiṭakam",
+        "mnc": "fusa i aimak tetun",
+        "mon": "bodisadu iin aiimag sebe"
+    },
+    "楞伽經": {
+        "san": "laṅgāvatāram",
+        "mnc": "langg ’a de enggelenehe nomun",
+        "mon": "langga dor ajiragsan sudur"
+    },
+    "密林經": {
+        "san": "ghanavyūhaḥ",
+        "mnc": "fik sere bujan i nomun",
+        "mon": "zujagan zokhiial tu sudur"
+    },
+    "大力普勝問經": {
+        "san": "suvikrāntavikrāmī",
+        "mnc": "unenggi bengse i umesi gidara nomun",
+        "mon": "ünen u khüchün iier mashi darugsan sudur"
+    },
+    "佛說稲稈經": {
+        "san": "śālistambakam",
+        "mnc": "šalu bele i fulhuren i no mun",
+        "mon": "salu nogoga khemekhü sudur"
+    },
+    "大寶積經": {
+        "san": "ratnolkā",
+        "mnc": "boobai dengjan i nomun",
+        "mon": "erdeni iin zula"
+    },
+    "佛說貝達因緣經": {
+        "san": "sarvakaidalyasaṃgrahaḥ",
+        "mnc": "umesi niyeleme gubci be šošoho nomun",
+        "mon": "mashi degermegdegchi bügüde ig khuriiaggsan sudur"
+    },
+    "佛說僧伽吒經": {
+        "san": "saṅghāṭasūtram",
+        "mnc": "juru nomun",
+        "mon": "khon sudur"
+    },
+    "佛說阿毘達摩經": {
+        "san": "abhidharma",
+        "mnc": "iletu nomun",
+        "mon": "abkhi dkharm a"
+    },
+    "佛說毘奈耶經": {
+        "san": "vinayaḥ",
+        "mnc": "wembure nomun",
+        "mon": "zinai"
+    },
+    "佛說名句經": {
+        "san": "prajñāptiśāstram",
+        "mnc": "gebulengge leolen",
+        "mon": "nereiidügsen shastir"
+    },
+    "續藏": {
+        "san": "śāstram",
+        "mnc": "tuwabume dasaha nomun",
+        "mon": "shastir"
+    },
+    "相宗八要": {
+        "san": "dhātukāyaḥ",
+        "mnc": "fulehe i isan",
+        "mon": "makhabod un chigulgan"
+    },
+    "小部律": {
+        "san": "vinayakṣudrakam",
+        "mnc": "buyarame wambure nomun",
+        "mon": "bag a sag a zinai"
+    },
+    "大部律": {
+        "san": "uttaragranthaḥ",
+        "mnc": "wesihun ciktan nomun",
+        "mon": "degedü khuul"
+    },
+    "經傳": {
+        "san": "ārṣaḥ",
+        "mnc": "bithe cagan",
+        "mon": "shastir"
+    },
+    "阿含": {
+        "san": "āgamaḥ",
+        "mnc": "biwanggirit",
+        "mon": "odoiikhulsun"
+    },
+    "妙語": {
+        "san": "pravacanam",
+        "mnc": "wesihun hese",
+        "mon": "saiin erlig"
+    },
+    "教": {
+        "san": "śāsanam",
+        "mnc": "šajin",
+        "mon": "shashin"
+    },
+    "宗印": {
+        "san": "siddaṃāntaḥ",
+        "mnc": "toktoho den",
+        "mon": "togtagasan tagalal"
+    },
+    "理": {
+        "san": "matam",
+        "mnc": "doro",
+        "mon": "yoson"
+    },
+    "禮": {
+        "san": "samayaḥ",
+        "mnc": "ciktan doro",
+        "mon": "khuul yoson"
+    },
+    "偈": {
+        "san": "gāthā",
+        "mnc": "irgebun",
+        "mon": "silüg"
+    },
+    "字句": {
+        "san": "pādhaḥ",
+        "mnc": "gisun",
+        "mon": "badag"
+    },
+    "賦": {
+        "san": "miśrakam",
+        "mnc": "fujurun",
+        "mon": "kholbag a tu"
+    },
+    "純文": {
+        "san": "gadyam",
+        "mnc": "ikiri bithe",
+        "mon": "kholitsal ügei üge"
+    },
+    "協韻": {
+        "san": "chandaṇ",
+        "mnc": "acabure mudan",
+        "mon": "nairagulun kholbakhu"
+    },
+    "長文": {
+        "san": "daṇḍakam",
+        "mnc": "golmin irgebun",
+        "mon": "ürhüljilel"
+    },
+    "將禪": {
+        "san": "samantakm",
+        "mnc": "oyonggo belhen",
+        "mon": "chikhula beletegel"
+    },
+    "正禪": {
+        "san": "maulam",
+        "mnc": "dursungga",
+        "mon": "bodatu"
+    },
+    "十二分教名": {
+        "san": "[dvādaśa pravacanāṅgāni]",
+        "mnc": "sain hese i juwan juwe gargan i gebu",
+        "mon": "saiin zarlig un arban khoyar geshigün u ner e inu"
+    },
+    "法本": {
+        "san": "sūtram",
+        "mnc": "suduri aimak",
+        "mon": "sudur un aiimag"
+    },
+    "重頌": {
+        "san": "geyam",
+        "mnc": "mudan i giyangnara aimak",
+        "mon": "egshig iier ögülekhü iin aiimag"
+    },
+    "授記": {
+        "san": "vyākaraṇam",
+        "mnc": "biwanggirit bure aimak",
+        "mon": "zivangkhirit üzügügsen aiimag"
+    },
+    "孤起頌": {
+        "san": "gāthā",
+        "mnc": "irgebun i aimak",
+        "mon": "silüglegsen u aiimag"
+    },
+    "無問自說": {
+        "san": "udānam",
+        "mnc": "cohotoi giyangnara aimak",
+        "mon": "tusgaiilan ögülekhü iin"
+    },
+    "因緣": {
+        "san": "nidānam",
+        "mnc": "turgun be gisurere aimak",
+        "mon": "shiltagan ig ögülekhü iin aiimag"
+    },
+    "譬喻": {
+        "san": "avadānm",
+        "mnc": "duibuleme gisurere aimak",
+        "mon": "tomokh ig ögülekhü iin aiimag"
+    },
+    "本事": {
+        "san": "itivṛttakam",
+        "mnc": "tere gese acabun be gisurere aimak",
+        "mon": "dara metü bologson u aiimag"
+    },
+    "本生": {
+        "san": "jātakam",
+        "mnc": "jalan jalan de banjiha babe gisurere aimak",
+        "mon": "tsadig un aiimag"
+    },
+    "方廣": {
+        "san": "vaipulyam",
+        "mnc": "umesi badarambure aimak",
+        "mon": "mashi delgeregsen u aiimag"
+    },
+    "未曾有": {
+        "san": "adbhutadharmaḥ",
+        "mnc": "ferguwecuke nomun i aimak",
+        "mon": "tangsug bologson u aiimag"
+    },
+    "論議": {
+        "san": "upadeśaḥ",
+        "mnc": "nashūlame leolere aimak",
+        "mon": "nüdete bagulgan üzügülügsen u aiimag"
+    },
+    "十二頭陀行名": {
+        "san": "[dvādaśa dhūtaguṇāḥ]",
+        "mnc": "urebume bolgomire juwan juwe erdemu i gebu",
+        "mon": "arban khoyar sudulkhu iin erdem un ner e inu"
+    },
+    "著糞掃衣": {
+        "san": "pāṃsukūlikaḥ",
+        "mnc": "hūmarkan etukungge",
+        "mon": "bug sag dotorkhi ig edlegchi"
+    },
+    "但三衣": {
+        "san": "traicīvarikaḥ",
+        "mnc": "ilan nommun i etukungge",
+        "mon": "gurban nom tu debel tu"
+    },
+    "著壞色衣": {
+        "san": "nāmatikaḥ",
+        "mnc": "efu (sic for jafu) etu-kungge",
+        "mon": "esegei tu"
+    },
+    "常行乞食": {
+        "san": "paiṇḍpātikaḥ",
+        "mnc": "badirilame yabure",
+        "mon": "bavadachi"
+    },
+    "一食": {
+        "san": "ekāsanikaḥ",
+        "mnc": "emu sektefungge",
+        "mon": "nigen debisger tu"
+    },
+    "節量食": {
+        "san": "khalupaścādbhaktikaḥ",
+        "mnc": "jefi dasame jeterakū",
+        "mon": "khoidu idegen ig ülü abugchi"
+    },
+    "住阿蘭若處": {
+        "san": "āraṇyakaḥ",
+        "mnc": "šehun bade tere",
+        "mon": "aglagchi"
+    },
+    "樹下坐": {
+        "san": "vakṣamūlikaḥ",
+        "mnc": "moo i fejile tere",
+        "mon": "modon u dergede agchi"
+    },
+    "露地坐": {
+        "san": "ābhyavakāśikaḥ",
+        "mnc": "daniyan akū bade tere",
+        "mon": "degelbür khalkhabchi ügei"
+    },
+    "塚間坐": {
+        "san": "śmāśānikaḥ",
+        "mnc": "eifu de tere",
+        "mon": "ügegerchi"
+    },
+    "但坐不臥": {
+        "san": "naiṣadikaḥ",
+        "mnc": "dedurakū tere",
+        "mon": "tsomtsoiigchi"
+    },
+    "次第乞食": {
+        "san": "yāthāsaṃstarikaḥ",
+        "mnc": "ilhi aname badirilame yabure",
+        "mon": "oron yosogar"
+    },
+    "世界名": {
+        "san": "[lokadhātunāmāni]",
+        "mnc": "jalan i gebu",
+        "mon": "ieirtintsü iin ner e inu"
+    },
+    "小千世界": {
+        "san": "sāhasraścaūḍiko lokadhātuḥ",
+        "mnc": "ajige minggan jalan i bana",
+        "mon": "degeji mingan ieitintsü iin oron"
+    },
+    "中千世界": {
+        "san": "dvisāhasro madhyamo lokadhātuḥ",
+        "mnc": "dulimbai minggan jalan i ba na",
+        "mon": "khöndüger dumdadu mingan ieirtintsü iin oron"
+    },
+    "三千大千世界": {
+        "san": "trisāhasro mahān lokadhātuḥ",
+        "mnc": "ilan minggan amba ming-gan jalan i ba na",
+        "mon": "gurban mingan iekhe mingan ieirtintsü iin oron"
+    },
+    "娑婆世界": {
+        "san": "sahālokadhātuḥ",
+        "mnc": "dosombure mangga jalan i ba na",
+        "mon": "debedgededü ieirtintsü iin oron"
+    },
+    "四部洲名": {
+        "san": "[catvāro dvīpāḥ]",
+        "mnc": "duin tib i gebu",
+        "mon": "dörben mid un ner e inu"
+    },
+    "東勝身洲": {
+        "san": "pūrvavidehaḥ",
+        "mnc": "dergi ambalinggū be-yengge tib",
+        "mon": "doron a ülemji bei e tu"
+    },
+    "小勝身洲": {
+        "san": "dehaḥ",
+        "mnc": "beyengge tib",
+        "mon": "bei e tu"
+    },
+    "勝勝身洲": {
+        "san": "videhaḥ",
+        "mnc": "ambalinggū beyengge tib",
+        "mon": "ülemji bei e tu"
+    },
+    "南贍部洲": {
+        "san": "cāmaraḥ",
+        "mnc": "julergi tsambu tib",
+        "mon": "zambu tib"
+    },
+    "小拂洲": {
+        "san": "cāmaraḥ",
+        "mnc": "arfa tib",
+        "mon": "shirbegül"
+    },
+    "妙拂洲": {
+        "san": "aparacāmaraḥ",
+        "mnc": "gūwa arfa tib",
+        "mon": "busu shirbegül"
+    },
+    "西牛貨洲": {
+        "san": "aparagodānīyaḥ",
+        "mnc": "wargi ihan baitalara tib",
+        "mon": "örön e ükher edlegchi"
+    },
+    "小行洲": {
+        "san": "śāthā",
+        "mnc": "aššara tib",
+        "mon": "gelberil tu"
+    },
+    "勝道行洲": {
+        "san": "uttaramantriṇaḥ",
+        "mnc": "amba jugūn yabure tib",
+        "mon": "degedü dergekhür iier odogchi"
+    },
+    "北俱盧洲": {
+        "san": "uttarakuruḥ",
+        "mnc": "amargi ehe jilgangga tib",
+        "mon": "umar a makhu dagutu"
+    },
+    "諂勝洲": {
+        "san": "kuravaḥ",
+        "mnc": "ehe jilgangga tib",
+        "mon": "makhu dagutu"
+    },
+    "最勝洲": {
+        "san": "kauravaḥ",
+        "mnc": "ehe jilgangga i gucu tib",
+        "mon": "makhu dagutu iin nökhör"
+    },
+    "三界洲": {
+        "san": "[trayo dhātavaḥ]",
+        "mnc": "ilan jalan i gebu",
+        "mon": "gurban oron u ner e inu"
+    },
+    "欲界": {
+        "san": "kāmadhātuḥ",
+        "mnc": "buyen jalan",
+        "mon": "amarmag un oron"
+    },
+    "色界": {
+        "san": "rūpadhātu",
+        "mnc": "dursun jalan",
+        "mon": "dürsü tu iin oron"
+    },
+    "無色界": {
+        "san": "arūpadhatu",
+        "mnc": "dursun akū jalan",
+        "mon": "dürsü ügei iin oron"
+    },
+    "欲界六天名": {
+        "san": "[ṣaṭ kāmadhātudevāḥ]",
+        "mnc": "buyen jalan i ninggun abka i gebu",
+        "mon": "amarmag un jirgugan tegri iin ner e inu"
+    },
+    "四天王天": {
+        "san": "cāturmahārājakāyikāḥ",
+        "mnc": "duin abkai amba han",
+        "mon": "dörben makharanza iin aiimag"
+    },
+    "忉利天": {
+        "san": "trāyastriṃśāḥ",
+        "mnc": "gūsin ilan abka",
+        "mon": "khuchin gurban tegin"
+    },
+    "夜摩天": {
+        "san": "yāmāḥ",
+        "mnc": "dain akū abka",
+        "mon": "baildugan asa khagatsagsan"
+    },
+    "兜率陀天": {
+        "san": "tuṣitāḥ",
+        "mnc": "urgungge abka",
+        "mon": "tegün bayasgulan tu"
+    },
+    "化樂天": {
+        "san": "nirmāṇaratayaḥ",
+        "mnc": "kūbulin i urgunjere abka",
+        "mon": "khubilgan dor bayasugchi"
+    },
+    "他化天": {
+        "san": "paranirmitavaśavartinaḥ",
+        "mnc": "weri be kūbulibure toos-engga abka",
+        "mon": "busud un khubilgan ig erkheber bolgagchi"
+    },
+    "色界初禪三天名": {
+        "san": "[traya prathamadhyānabhūmidevāḥ]",
+        "mnc": "dursun jalan i sucungga samadi(BN samadi i) ilan abka i gebu",
+        "mon": "angkhan a daiin u gurban tegri inu"
+    },
+    "梵眾天": {
+        "san": "brahmapāriṣadyāḥ",
+        "mnc": "esrun i aimak",
+        "mon": "esrün nökhör"
+    },
+    "梵輔天": {
+        "san": "brahmapurohitāḥ",
+        "mnc": "esrun i amban",
+        "mon": "esrün borogid"
+    },
+    "大梵天": {
+        "san": "mahābrahmāṇaḥ",
+        "mnc": "amba esrun",
+        "mon": "iekhe esrün"
+    },
+    "二禪三天名": {
+        "san": "[trayo dvitīyadhyānabhūmidevāḥ]",
+        "mnc": "jaici samadi i ilan abka i gebu",
+        "mon": "khoiadugar daiin u gurban tegri tu"
+    },
+    "少光天": {
+        "san": "parīttābhāḥ",
+        "mnc": "ajige eldengge abka",
+        "mon": "öchükhen gerel tu"
+    },
+    "無量光天": {
+        "san": "apramāṇābhāḥ",
+        "mnc": "mohon akū eldengge abka",
+        "mon": "tsaglashi ügei gerel tu"
+    },
+    "光音天": {
+        "san": "ābhāsvarāḥ",
+        "mnc": "genggiyen eldengge abka",
+        "mon": "gegen gerel tu"
+    },
+    "三禪三天名": {
+        "san": "[trayasvṛtīyadhyānabhūmidevāḥ]",
+        "mnc": "ilaci samadi i ilan abka i gebu",
+        "mon": "gutagar daiin u gurban tegri inu"
+    },
+    "少淨天": {
+        "san": "parīttaśubhāḥ",
+        "mnc": "ajige hūturingga abka",
+        "mon": "öchükhen buyan tu"
+    },
+    "無量淨天": {
+        "san": "śupramāṇaśubhāḥ",
+        "mnc": "mohon akū hūturingga abka",
+        "mon": "tsaglashi ügei buyan tu"
+    },
+    "徧淨天": {
+        "san": "śubhakṛtsnāḥ",
+        "mnc": "biretei hūturingga abka",
+        "mon": "\"X\" buyan tu"
+    },
+    "四禪九天名": {
+        "san": "[nava caturthadhyānabhūmidevāḥ]",
+        "mnc": "duici samadi i uyun abka i gebu",
+        "mon": "dötüger daiin u iisün tegri inu"
+    },
+    "無雲天": {
+        "san": "anabhrakāḥ",
+        "mnc": "tugi akū abka",
+        "mon": "egülen ügei"
+    },
+    "福生天": {
+        "san": "puṇyaprasavāḥ",
+        "mnc": "hūturi banjire abka",
+        "mon": "buyan asa törögsen"
+    },
+    "廣果天": {
+        "san": "vṛhatphalāḥ",
+        "mnc": "amba šanggan i abka",
+        "mon": "iekhe ür e tu"
+    },
+    "無想天": {
+        "san": "abṛhāḥ",
+        "mnc": "amba gūnijan akū abka",
+        "mon": "iekhe busu"
+    },
+    "無煩天": {
+        "san": "atapāḥ",
+        "mnc": "nasacun akū abka",
+        "mon": "ülü enelügchi"
+    },
+    "善見天": {
+        "san": "sudṛśāḥ",
+        "mnc": "ferguwecuke genggiyen abka",
+        "mon": "tengsüg tu"
+    },
+    "善現天": {
+        "san": "sudarśanāḥ",
+        "mnc": "umesi sabure abka",
+        "mon": "mashida üzegchi"
+    },
+    "色究竟天": {
+        "san": "aghaniṣṭhāḥ",
+        "mnc": "ujuaha dergi abka",
+        "mon": "engeniste"
+    },
+    "大自在天": {
+        "san": "mahāmaheśvarāyatanam",
+        "mnc": "amba toosengga abka",
+        "mon": "makh sovari iin oron"
+    },
+    "無色界四天名": {
+        "san": "[catvāra śārūpyadhātavaḥ]",
+        "mnc": "dursun akū jalan i duin abka i gebu",
+        "mon": "dürsü ügei iin dörben tegri inu"
+    },
+    "空無邊處天": {
+        "san": "ākāśānantyāyatanam",
+        "mnc": "jecen akū untuhun i banjire akūnan",
+        "mon": "ogtargui khizagalashi ügei törön tügekhü"
+    },
+    "識無邊處天": {
+        "san": "vijñānānantyāyatanam",
+        "mnc": "jecen akū ulhicun banjire akūnan",
+        "mon": "daiin medekhüi khizagalashi ügei törön tügekhü"
+    },
+    "無所有處天": {
+        "san": "ākiñcanyāyatanam",
+        "mnc": "umai akū i banjire akūnan",
+        "mon": "zagukhan bar ügei törön tügekhü"
+    },
+    "非想非非想處天": {
+        "san": "naivasaṃjñā-nāsaṃjñāyatanam",
+        "mnc": "gūnijan akū gunijan akū-ngge akū i banjire akū-nan",
+        "mon": "khoran medekhüi ügei khoran medekhüi ügei busu iin törön tügekhü"
+    },
+    "四大名": {
+        "san": "[catvāri mahābhūtāni]",
+        "mnc": "duin feten i gebu",
+        "mon": "dörben makhabod un ner e inu"
+    },
+    "地大": {
+        "san": "pṛthivīdhātuḥ",
+        "mnc": "boihon i feten",
+        "mon": "shiroi makhabod"
+    },
+    "水大": {
+        "san": "abdhātuḥ",
+        "mnc": "muke i feten",
+        "mon": "usun makhabod"
+    },
+    "火大": {
+        "san": "tejodhātuḥ",
+        "mnc": "tuwa i feten",
+        "mon": "gal makhabod"
+    },
+    "風大": {
+        "san": "vāyudhātuḥ",
+        "mnc": "edun i feten",
+        "mon": "khei makhabod"
+    },
+    "四大色名": {
+        "san": "[catvāro mūlavarṇāḥ]",
+        "mnc": "duin fulehe i boco i gebu",
+        "mon": "ündüsün u dörben öngge inu"
+    },
+    "青": {
+        "san": "nīlaṃ",
+        "mnc": "lamun",
+        "mon": "khökhe"
+    },
+    "黃": {
+        "san": "pītam",
+        "mnc": "suwayan",
+        "mon": "shar a"
+    },
+    "赤": {
+        "san": "lohitam",
+        "mnc": "fulgiyan",
+        "mon": "ulagan"
+    },
+    "白": {
+        "san": "avadātam",
+        "mnc": "šanggiyan",
+        "mon": "tsagan"
+    },
+    "八小色名": {
+        "san": "[aṣḍāvupavarṇāḥ]",
+        "mnc": "jakūn gargan i boco i gebu",
+        "mon": "geshigün u naiman öngge iin ner e inu"
+    },
+    "雲": {
+        "san": "abhram",
+        "mnc": "tugi",
+        "mon": "egülen"
+    },
+    "煙": {
+        "san": "dhūmaḥ",
+        "mnc": "šanggiyan",
+        "mon": "utagan"
+    },
+    "塵": {
+        "san": "rajaḥ",
+        "mnc": "buraki",
+        "mon": "togoson"
+    },
+    "霧": {
+        "san": "mahikā",
+        "mnc": "ya",
+        "mon": "üniier"
+    },
+    "影": {
+        "san": "chāyā",
+        "mnc": "helmen",
+        "mon": "següder"
+    },
+    "日": {
+        "san": "ātapaḥ",
+        "mnc": "šun",
+        "mon": "naran"
+    },
+    "明": {
+        "san": "ālokaḥ",
+        "mnc": "genggiyen",
+        "mon": "gegegen"
+    },
+    "暗": {
+        "san": "andhakāraḥ",
+        "mnc": "farhūn",
+        "mon": "kharankhui"
+    },
+    "九類色名": {
+        "san": "[nava saṃsthānarūpāṇi]",
+        "mnc": "uyun murn i dursun i gebu",
+        "mon": "iisün kheb un dürsü iin ner e inu"
+    },
+    "長": {
+        "san": "dīrgham",
+        "mnc": "golmin",
+        "mon": "urtu"
+    },
+    "短": {
+        "san": "hrasvam",
+        "mnc": "foholon",
+        "mon": "okhor"
+    },
+    "匾": {
+        "san": "vṛttam",
+        "mnc": "halfiyan",
+        "mon": "habtagai"
+    },
+    "圓": {
+        "san": "parimaṇḍalam",
+        "mnc": "muheliyen",
+        "mon": "mögörig"
+    },
+    "平": {
+        "san": "śātam",
+        "mnc": "necin",
+        "mon": "tegshi"
+    },
+    "不平": {
+        "san": "asamam",
+        "mnc": "necin akū",
+        "mon": "tegshi busu"
+    },
+    "高": {
+        "san": "unnatam",
+        "mnc": "den",
+        "mon": "öndör"
+    },
+    "低": {
+        "san": "avanatam",
+        "mnc": "fangkala",
+        "mon": "bogoni"
+    },
+    "方": {
+        "san": "dik",
+        "mnc": "dere",
+        "mon": "züg"
+    },
+    "四香名": {
+        "san": "[catvāro gandhāḥ]",
+        "mnc": "duin wa i gebu",
+        "mon": "dörben ünür un ner e inu"
+    },
+    "馨香": {
+        "san": "sugandhaḥ",
+        "mnc": "sur sere wa",
+        "mon": "saiin ünür"
+    },
+    "齅香": {
+        "san": "durgandhaḥ",
+        "mnc": "wahūn",
+        "mon": "magu ünür"
+    },
+    "平等香": {
+        "san": "samagandhaḥ",
+        "mnc": "taksin wa",
+        "mon": "tegshi ünür"
+    },
+    "不平等香": {
+        "san": "viṣamagandhaḥ",
+        "mnc": "alhata wa",
+        "mon": "tegshi busu ünür"
+    },
+    "六味名": {
+        "san": "[ṣaḍ rasāḥ]",
+        "mnc": "ninggun amtan i gebu",
+        "mon": "jirgugan amtan u ner e inu"
+    },
+    "甘": {
+        "san": "madhuraḥ",
+        "mnc": "jancuhūn",
+        "mon": "amtaiigan"
+    },
+    "酸": {
+        "san": "āmlaḥ",
+        "mnc": "jušuhun",
+        "mon": "isgüleng"
+    },
+    "醎": {
+        "san": "lavaṇaḥ",
+        "mnc": "hatuhūn",
+        "mon": "shorbog"
+    },
+    "辛": {
+        "san": "kaḍukaḥ",
+        "mnc": "furgin",
+        "mon": "khalagun"
+    },
+    "澀": {
+        "san": "karkaśatvam",
+        "mnc": "idun",
+        "mon": "shirügün"
+    },
+    "七觸名": {
+        "san": "[sapta sparśāḥ]",
+        "mnc": "nadan aligan i gebu",
+        "mon": "dologan khürültsehüi iin ner e inu"
+    },
+    "膩": {
+        "san": "ślakṣṇatvam",
+        "mnc": "nilukan",
+        "mon": "zögelen"
+    },
+    "重": {
+        "san": "gurutvam",
+        "mnc": "ujen",
+        "mon": "khündü"
+    },
+    "輕": {
+        "san": "laghutvam",
+        "mnc": "weihuken",
+        "mon": "khönggen"
+    },
+    "寒": {
+        "san": "śītatvam",
+        "mnc": "beiguwen",
+        "mon": "khüiiten"
+    },
+    "飢": {
+        "san": "jighatsā",
+        "mnc": "yadahūšara",
+        "mon": "ölöskhü"
+    },
+    "渴": {
+        "san": "pipāsā",
+        "mnc": "kangkara",
+        "mon": "umdagaskhu"
+    },
+    "四生名": {
+        "san": "[catvāro yonayaḥ]",
+        "mnc": "duin banjin i oron i gebu",
+        "mon": "dörben töröl un ner e inu"
+    },
+    "胎生": {
+        "san": "jarayujāḥ",
+        "mnc": "tebku ci banjire",
+        "mon": "umai asa törökhü"
+    },
+    "卵生": {
+        "san": "aṇḍajāḥ",
+        "mnc": "umhan ci banjire",
+        "mon": "ömdegen asa törökhü"
+    },
+    "濕生": {
+        "san": "saṃsvedajāḥ",
+        "mnc": "derbehun ci banjire",
+        "mon": "jukhiin mulagan asa törökhü"
+    },
+    "化生": {
+        "san": "upapādukāḥ",
+        "mnc": "kūbulime banjire",
+        "mon": "khubilju törökhü"
+    },
+    "人類名": {
+        "san": "[manuṣyakramāḥ]",
+        "mnc": "niyalmai hacin i gebu",
+        "mon": "khümün u züiil un ner e inu"
+    },
+    "帝": {
+        "san": "rājā",
+        "mnc": "han",
+        "mon": "khagan"
+    },
+    "灌頂王": {
+        "san": "rājā kṣatriyo mūrdhābhiṣiktaḥ",
+        "mnc": "gurun i forgon toose be aliha ejen",
+        "mon": "olon un ejen erkhe ögdegsen"
+    },
+    "小王": {
+        "san": "māṇḍalikarājā",
+        "mnc": "ajige han",
+        "mon": "öchükhen khan"
+    },
+    "藩王": {
+        "san": "sāmantarājā",
+        "mnc": "goloi wang",
+        "mon": "muji iin khan"
+    },
+    "諸侯": {
+        "san": "koṭṭarājā",
+        "mnc": "goloi beise",
+        "mon": "muji iin noyan"
+    },
+    "冡宰": {
+        "san": "rājāmātyaḥ",
+        "mnc": "ujulaha amban",
+        "mon": "terigün saiid"
+    },
+    "內大臣": {
+        "san": "mantriparṣadadhyakṣaḥ",
+        "mnc": "dorgi amban",
+        "mon": "dotogadu saiid"
+    },
+    "統領大臣": {
+        "san": "mahāmātraḥ",
+        "mnc": "dalaha amban",
+        "mon": "terigülegchi saiid"
+    },
+    "文臣": {
+        "san": "mantrī",
+        "mnc": "bithei amban",
+        "mon": "bichig un saiid"
+    },
+    "丞相": {
+        "san": "purohitaḥ",
+        "mnc": "aisilakū amban",
+        "mon": "tusalagchi saiid"
+    },
+    "戚臣": {
+        "san": "rājānakaḥ",
+        "mnc": "niyaman daribuha amban",
+        "mon": "töröl un saiid"
+    },
+    "王": {
+        "san": "daṇḍamukhyaḥ",
+        "mnc": "wang",
+        "mon": "vang"
+    },
+    "官": {
+        "san": "amātyaḥ",
+        "mnc": "hafan",
+        "mon": "tüshimel"
+    },
+    "將軍": {
+        "san": "senāpatiḥ",
+        "mnc": "jiyanggiyūn",
+        "mon": "tsereg un noyan"
+    },
+    "山林總管": {
+        "san": "āṭavikaḥ",
+        "mnc": "alin bujan be kadalara amban",
+        "mon": "oi shigui iin ejen"
+    },
+    "家臣": {
+        "san": "antarvāsikaḥ",
+        "mnc": "booi amban",
+        "mon": "ger un saiid"
+    },
+    "欽差大臣": {
+        "san": "sāndhivigrahikaḥ",
+        "mnc": "takūraha amban",
+        "mon": "zarugsan saiid"
+    },
+    "詳算大臣": {
+        "san": "gaṇanāpatiḥ",
+        "mnc": "bodoro cincilara be kada-lara amban",
+        "mon": "bodokhu ig zakhirkhu tüshimel"
+    },
+    "詳算官": {
+        "san": "gaṇaka-mahāmātraḥ",
+        "mnc": "bodoro cincilara hafan",
+        "mon": "bodokhu shinjilkhü tüshimel"
+    },
+    "度支官": {
+        "san": "ākṣapaṭalikaḥ",
+        "mnc": "dosira tucire be bodoro hafan",
+        "mon": "garkhu orokhu ig baiitsagakhu tüshimel"
+    },
+    "司閽大臣": {
+        "san": "pratihāraḥ",
+        "mnc": "duka be kadalara amban",
+        "mon": "khagalga zakhirugchi saiid"
+    },
+    "整理大臣": {
+        "san": "dharmādhikaraṇam",
+        "mnc": "tuwancihiyame icihiyara amban",
+        "mon": "shidurgutagang shigitegekhü saiid"
+    },
+    "推官": {
+        "san": "pradeṣṭā",
+        "mnc": "beidere hafan",
+        "mon": "shigükhü tüshimel"
+    },
+    "部落長": {
+        "san": "nāyakaḥ",
+        "mnc": "aiman i da",
+        "mon": "aiimag un darug a"
+    },
+    "馬廐長": {
+        "san": "aśvapatiḥ",
+        "mnc": "adun i da",
+        "mon": "adagun u darug a"
+    },
+    "象廐長": {
+        "san": "pīlupatiḥ",
+        "mnc": "sufan i da",
+        "mon": "zagan u darug a"
+    },
+    "庫長": {
+        "san": "gañjapatiḥ",
+        "mnc": "ulin i da",
+        "mon": "ed un darug a"
+    },
+    "使令官": {
+        "san": "khambharapatiḥ",
+        "mnc": "takūrsara hafan",
+        "mon": "zarulg a iin tüshimel"
+    },
+    "頭目": {
+        "san": "koṭṭapālaḥ",
+        "mnc": "da",
+        "mon": "darug a"
+    },
+    "巡哨頭目": {
+        "san": "antapālaḥ",
+        "mnc": "karun i da",
+        "mon": "kharagul un darug a"
+    },
+    "護城頭目": {
+        "san": "durgapālaḥ",
+        "mnc": "hoton i da",
+        "mon": "khotan u darug a"
+    },
+    "管商頭目": {
+        "san": "śreṣṭhī",
+        "mnc": "hūdai da",
+        "mon": "khudaldugan u darug a"
+    },
+    "籓臣": {
+        "san": "viṣayapatiḥ",
+        "mnc": "goloi amban",
+        "mon": "orod un noyan"
+    },
+    "省臣": {
+        "san": "nagarapatiḥ",
+        "mnc": "ba na i amban",
+        "mon": "beser ig zakhirugchi saiid"
+    },
+    "地方官": {
+        "san": "grāmapatiḥ",
+        "mnc": "ba na i hafan",
+        "mon": "balgad un tüshimel"
+    },
+    "鄉長": {
+        "san": "pauravyavahārikaḥ",
+        "mnc": "gašan i da",
+        "mon": "aiil un darug a"
+    },
+    "首領": {
+        "san": "niyuktakaḥ",
+        "mnc": "dalabuha",
+        "mon": "terigülen zakhirugchi"
+    },
+    "翼長": {
+        "san": "bhaṭabalāgraḥ",
+        "mnc": "galai da",
+        "mon": "eteged un darug a"
+    },
+    "課長": {
+        "san": "samāhartā",
+        "mnc": "šulere hafan",
+        "mon": "khüiiekhü tüshimel"
+    },
+    "序班官": {
+        "san": "praśāstā",
+        "mnc": "faidan be teksilere hafan",
+        "mon": "jigsagal ig tegshilekhü tüshimel"
+    },
+    "查庫官": {
+        "san": "sannidhātā",
+        "mnc": "ulin be baicara hafan",
+        "mon": "ed ig baitsagakhu tüshimel"
+    },
+    "倉長": {
+        "san": "bhāṇḍārikaḥ",
+        "mnc": "calu i da",
+        "mon": "khüü sang un darug a"
+    },
+    "巡城官": {
+        "san": "rājadvārikaḥ",
+        "mnc": "hoton be giyarire hafan",
+        "mon": "khoton ig ergetsekhü tüshimel"
+    },
+    "算官": {
+        "san": "gaṇakaḥ",
+        "mnc": "ton be bodoro niyalma",
+        "mon": "tog a ig bodokhu khümün"
+    },
+    "星士": {
+        "san": "jyautiṣaḥ",
+        "mnc": "usiha be cincilara niyalma",
+        "mon": "odod ig shinjilekhü khümün"
+    },
+    "醫": {
+        "san": "bhiṣak",
+        "mnc": "oktosi",
+        "mon": "emchi"
+    },
+    "儒士": {
+        "san": "vaidyaḥ",
+        "mnc": "bithei niyalma",
+        "mon": "eid shastirchi"
+    },
+    "侍衞": {
+        "san": "talavargaḥ",
+        "mnc": "hiya",
+        "mon": "gei e"
+    },
+    "執纛人": {
+        "san": "pāridhvajikaḥ",
+        "mnc": "turun jafara niyalma",
+        "mon": "tug barigchi khümün"
+    },
+    "執傘人": {
+        "san": "chatradharaḥ",
+        "mnc": "sara jafara niyalma",
+        "mon": "sekhüi barigchi khümün"
+    },
+    "執大刀人": {
+        "san": "kāravālikaḥ",
+        "mnc": "amba jangkū jafara niyal-ma",
+        "mon": "tam ildü barigchi khümün"
+    },
+    "執劍人": {
+        "san": "khaḍgikaḥ",
+        "mnc": "loho jafara niyalma",
+        "mon": "ildü barigchi khümün"
+    },
+    "執槍人": {
+        "san": "prasikaḥ",
+        "mnc": "gida jafara niyalma",
+        "mon": "ide barigchi khümün"
+    },
+    "執銊人": {
+        "san": "pāraśvadhikaḥ",
+        "mnc": "amba suhe jafara niyalma",
+        "mon": "belde barigchi khümün"
+    },
+    "執輪人": {
+        "san": "cākrikaḥ",
+        "mnc": "kurdun jafara niyalma",
+        "mon": "khürdü barigchi khümün"
+    },
+    "執牌人": {
+        "san": "sphārikaḥ",
+        "mnc": "kalka jafara niyalma",
+        "mon": "bambai barigchi khümün"
+    },
+    "執什物人": {
+        "san": "caitradaṇḍikaḥ",
+        "mnc": "jaka hacin jafara niyalma",
+        "mon": "kheregten barigchi khümün"
+    },
+    "執棒人": {
+        "san": "yāṣṭikaḥ",
+        "mnc": "mukšan jafara niyalma",
+        "mon": "berikhe barigchi khümün"
+    },
+    "守門人": {
+        "san": "dvārapālaḥ",
+        "mnc": "duka be tuwakiyara niyalma",
+        "mon": "khagalga sakhigchi khümün"
+    },
+    "把門人": {
+        "san": "dauvārikaḥ",
+        "mnc": "duka jafara niyalma",
+        "mon": "khagalga barigchi khümün"
+    },
+    "管家": {
+        "san": "śeṣapatiḥ",
+        "mnc": "booi da",
+        "mon": "ger un darug a"
+    },
+    "考選官": {
+        "san": "sūcakaḥ",
+        "mnc": "simnere hafan",
+        "mon": "songokhu tüshimel"
+    },
+    "防禦官": {
+        "san": "daṇḍavāsikaḥ",
+        "mnc": "ba na be tuwakiyara hafan",
+        "mon": "khör oron I sakhigchi khümün"
+    },
+    "近侍": {
+        "san": "sevakaḥ",
+        "mnc": "gocika",
+        "mon": "shivarchi"
+    },
+    "隨侍": {
+        "san": "bhaṭaḥ",
+        "mnc": "hanci dahalara",
+        "mon": "dagalta khöbegüüd"
+    },
+    "孜射師": {
+        "san": "iṣvastrācāryaḥ",
+        "mnc": "gabtara be tacibure baksi",
+        "mon": "kharbukhu ig surgagchi bagshi"
+    },
+    "戲法人": {
+        "san": "māyākāraḥ",
+        "mnc": "wali efire niyalma",
+        "mon": "jilbagchi"
+    },
+    "家主": {
+        "san": "āryaḥ",
+        "mnc": "booi ejen",
+        "mon": "ger un ezen"
+    },
+    "方士": {
+        "san": "mantravādī",
+        "mnc": "fangga niyalma",
+        "mon": "tarnichi khümün"
+    },
+    "方術士": {
+        "san": "kriyāvādī",
+        "mnc": "arga i eiterere niyalma",
+        "mon": "mekhe zalichi"
+    },
+    "識礦人": {
+        "san": "khanyavādī",
+        "mnc": "na i nemu be cincilara niyalma",
+        "mon": "tör un sang ig shinjilekhü khümün"
+    },
+    "生財人": {
+        "san": "dhātuvādī",
+        "mnc": "ulin madabuere niyalma",
+        "mon": "ed khölösölekhülkhü khümün"
+    },
+    "虞人": {
+        "san": "lubdhakaḥ",
+        "mnc": "gurgu buthašara niyalma",
+        "mon": "abachin"
+    },
+    "漁人": {
+        "san": "mātsikaḥ",
+        "mnc": "nimaha butara niyalma",
+        "mon": "zagasuchi"
+    },
+    "捕禽人": {
+        "san": "śākuntikaḥ",
+        "mnc": "gasha cecike be uncara niyalma",
+        "mon": "shibaguchi"
+    },
+    "屠劊": {
+        "san": "aurabhrikaḥ",
+        "mnc": "ergengge be wara niyalma",
+        "mon": "zaragchi"
+    },
+    "賣豬人": {
+        "san": "saukarikaḥ",
+        "mnc": "ulgiyan uncara niyalma",
+        "mon": "gakhai khudalduchi"
+    },
+    "屠牛人": {
+        "san": "goghātakaḥ",
+        "mnc": "ihan be wara niyalma",
+        "mon": "ükher alagchi"
+    },
+    "賣雞人": {
+        "san": "kaukkuṭikaḥ",
+        "mnc": "coko be uncara(BN adds niyalma)",
+        "mon": "takhi a khudalduchi"
+    },
+    "執象人": {
+        "san": "nāgabandhakaḥ",
+        "mnc": "sufan be jafara niyalma",
+        "mon": "zagan ig barigchi khümün"
+    },
+    "司茶人": {
+        "san": "bhraiḍgārikaḥ",
+        "mnc": "cai i niyalma",
+        "mon": "umdagachi"
+    },
+    "司厨人": {
+        "san": "sūpakāraḥ",
+        "mnc": "budai niyalma",
+        "mon": "tsab zasagchi"
+    },
+    "染匠": {
+        "san": "rajakaḥ",
+        "mnc": "icere faksi",
+        "mon": "bodogchi"
+    },
+    "木匠": {
+        "san": "takṣakaḥ",
+        "mnc": "moo i faksi",
+        "mon": "modochi"
+    },
+    "墨線匠": {
+        "san": "sūtradhāraḥ",
+        "mnc": "mishalara faksi",
+        "mon": "shigumchi"
+    },
+    "賣草人": {
+        "san": "yāvasikaḥ",
+        "mnc": "orho uncara niyalma",
+        "mon": "ebesün khudalduchi"
+    },
+    "樵夫": {
+        "san": "kāṣṭhahārakaḥ",
+        "mnc": "moo sacire niyalma",
+        "mon": "tulii a tegügchi"
+    },
+    "穿珠匠": {
+        "san": "mālākāraḥ",
+        "mnc": "nicuhe ulire faksi",
+        "mon": "setseng un erekhe khelkhegechi"
+    },
+    "賣酒人": {
+        "san": "śauṇḍikaḥ",
+        "mnc": "arki uncara niyalma",
+        "mon": "arikhi khudalduchi"
+    },
+    "賣兵器人": {
+        "san": "āyudhajīvī",
+        "mnc": "agūra hajun uncara ni-yalma",
+        "mon": "masa khudaldugchi"
+    },
+    "賣香人": {
+        "san": "gāndhikaḥ",
+        "mnc": "hiyan uncara niyalma",
+        "mon": "khüji khudalduchi"
+    },
+    "畫匠": {
+        "san": "citrakāraḥ",
+        "mnc": "nirure faksi",
+        "mon": "zarugachi"
+    },
+    "石匠": {
+        "san": "śilākuṭṭaḥ",
+        "mnc": "wehei faksi",
+        "mon": "chilaguchi"
+    },
+    "織匠": {
+        "san": "tantuvāyaḥ",
+        "mnc": "jodoro faksi",
+        "mon": "ezgegchi"
+    },
+    "捶金匠": {
+        "san": "suvarṇakāraḥ",
+        "mnc": "aisin dabtara faksi",
+        "mon": "altan ig dabtakhu darkhan"
+    },
+    "識金匠": {
+        "san": "sauvarṇikaḥ",
+        "mnc": "aisin be takara niyalma",
+        "mon": "altan ig tanigchi khümün"
+    },
+    "鐵匠": {
+        "san": "lohakāraḥ",
+        "mnc": "selei faksi",
+        "mon": "temür un darkhan"
+    },
+    "玉匠": {
+        "san": "maṇikāraḥ",
+        "mnc": "erimbu wehei faksi",
+        "mon": "chandamanichi"
+    },
+    "鋸匠": {
+        "san": "patracchedakaḥ",
+        "mnc": "fufun i faksi",
+        "mon": "khirügechi"
+    },
+    " 占卜人": {
+        "san": "naimittikaḥ",
+        "mnc": "sabi tuwara niyalma",
+        "mon": "irugchi"
+    },
+    "卜卦人": {
+        "san": "sthapatiḥ",
+        "mnc": "jijuhan tuwara niyalma",
+        "mon": "belgechi"
+    },
+    "相士": {
+        "san": "vaipañcikaḥ",
+        "mnc": "cira cincilara niyalma",
+        "mon": "tsirai shinjichi"
+    },
+    "皮毛匠": {
+        "san": "carmakāraḥ",
+        "mnc": "sukū ufire faksi",
+        "mon": "arisut u uran"
+    },
+    "皮匠": {
+        "san": "mocikaḥ",
+        "mnc": "gūlha i faksi",
+        "mon": "khudulchi"
+    },
+    "車匠": {
+        "san": "rathakāraḥ",
+        "mnc": "sejen i faksi",
+        "mon": "tergechi"
+    },
+    "編竹匠": {
+        "san": "veṇukāraḥ",
+        "mnc": "cuse mooi faksi",
+        "mon": "kholosochi"
+    },
+    "刻匠": {
+        "san": "khātarūpakāraḥ",
+        "mnc": "foloro faksi",
+        "mon": "saiilugchi"
+    },
+    "瓦匠": {
+        "san": "kumbhakāraḥ",
+        "mnc": "wasei faksi",
+        "mon": "shiberchi"
+    },
+    "商人": {
+        "san": "vaṇik",
+        "mnc": "hūdai niyalma",
+        "mon": "khudalduchi"
+    },
+    "司稅人": {
+        "san": "śaulkikaḥ",
+        "mnc": "cifun bargiyara niyalma",
+        "mon": "khaiili khuriiakhu khümün"
+    },
+    "司山課人": {
+        "san": "gaulmikaḥ",
+        "mnc": "alin i cifun be bargiyara niyalma",
+        "mon": "agulan u ün e khuriiakhu khümün"
+    },
+    "司船課人": {
+        "san": "tārapaṇyikaḥ",
+        "mnc": "jahūdai i cifun be bar-giyara niyalma",
+        "mon": "onggotsa iin ün e khuriiakhu khümün"
+    },
+    "間諜": {
+        "san": "heriḥ",
+        "mnc": "gūldsi",
+        "mon": "takhagulchi"
+    },
+    "驛夫": {
+        "san": "apacarakaḥ",
+        "mnc": "serki",
+        "mon": "dobtolkhu khümün"
+    },
+    "鏇匠": {
+        "san": "mauṣṭikaḥ",
+        "mnc": "šurure faksi",
+        "mon": "erkhigülgegchi"
+    },
+    "恢諧": {
+        "san": "vidūṣakaḥ",
+        "mnc": "yobo niyalma",
+        "mon": "iniian nagadugchi"
+    },
+    "寫字人": {
+        "san": "maudrikaḥ",
+        "mnc": "bithe arara niyalma",
+        "mon": "bichigchi"
+    },
+    "浮水人": {
+        "san": "plavitam",
+        "mnc": "muke niyerere niyalma",
+        "mon": "khombagchi"
+    },
+    "馴象人": {
+        "san": "hastigrīvā",
+        "mnc": "sufan be ijilebure niyalma",
+        "mon": "zagan unugsan"
+    },
+    "馴馬人": {
+        "san": "aśvapṛṣṭhaḥ",
+        "mnc": "morin be ijilebure niyalma",
+        "mon": "mörin unugsan"
+    },
+    "角觝人": {
+        "san": "bāhuvyāyamaḥ",
+        "mnc": "jafu see sub efu (sic) jafunure buku",
+        "mon": "barildukhu bökhe"
+    },
+    "舞棒人": {
+        "san": "ācīrṇadaṇḍatā",
+        "mnc": "mukšan maksire niyalma",
+        "mon": "bilekhü bar büjikhü khümün"
+    },
+    "使役": {
+        "san": "dūtaḥ",
+        "mnc": "takūrsi",
+        "mon": "zarudasun"
+    },
+    "使者": {
+        "san": "lehariḥ",
+        "mnc": "elcin",
+        "mon": "elchi"
+    },
+    "家僕": {
+        "san": "lekhahārakaḥ",
+        "mnc": "booi takūrsi",
+        "mon": "ger un zarucha"
+    },
+    "夫婦": {
+        "san": "kuṭumbikaḥ",
+        "mnc": "haha hehe",
+        "mon": "gergegtei"
+    },
+    "閹人": {
+        "san": "kuṭumbaḥ",
+        "mnc": "taigiyan",
+        "mon": "darkhan"
+    },
+    "農夫": {
+        "san": "kārṣikaḥ",
+        "mnc": "nsen i niyalma",
+        "mon": "\"X\""
+    },
+    "護衞": {
+        "san": "śarīrarakṣakaḥ",
+        "mnc": "giyajan",
+        "mon": "bei e sakhigchi"
+    },
+    "奴": {
+        "san": "parivāraḥ",
+        "mnc": "aha",
+        "mon": "bogol"
+    },
+    "僕": {
+        "san": "dāsaḥ",
+        "mnc": "aha haha",
+        "mon": "zarugasun"
+    },
+    "婢": {
+        "san": "dāsī",
+        "mnc": "nehu",
+        "mon": "shibigchin"
+    },
+    "執事人": {
+        "san": "karmakaraḥ",
+        "mnc": "baita de jafaha niyalma",
+        "mon": "khereg tushiialsan khümün"
+    },
+    "生息人": {
+        "san": "pauruṣeyaḥ",
+        "mnc": "juwen usen sindara niyalma",
+        "mon": "khölösü ber amiduragchi"
+    },
+    "僱工": {
+        "san": "bhutyaḥ",
+        "mnc": "turihe hūsun",
+        "mon": "khölösölegsen khümün"
+    },
+    "賊": {
+        "san": "cauraḥ",
+        "mnc": "hūlha",
+        "mon": "khulagaiichi"
+    },
+    "民": {
+        "san": "kalpikāraḥ",
+        "mnc": "irgen",
+        "mon": "irgen"
+    },
+    "婆羅門子": {
+        "san": "maṇavakaḥ",
+        "mnc": "biraman i jui",
+        "mon": "birman u khöbegün"
+    },
+    "水手": {
+        "san": "nāvikaḥ",
+        "mnc": "šururci",
+        "mon": "\"X\""
+    },
+    "父母親族名": {
+        "san": "[bandhunāmāni]",
+        "mnc": "ama eme niyaman hūnci-hin i gebu",
+        "mon": "etsige ekhe urug sadun u ner e inu"
+    },
+    "父": {
+        "san": "pitā",
+        "mnc": "ama",
+        "mon": "etsige"
+    },
+    "母": {
+        "san": "mātā",
+        "mnc": "eme",
+        "mon": "ekhe"
+    },
+    "祖": {
+        "san": "janayitrī",
+        "mnc": "mafa",
+        "mon": "ebüge"
+    },
+    "曾祖": {
+        "san": "pitāmahaḥ",
+        "mnc": "unggu mafa",
+        "mon": "elüntse"
+    },
+    "高祖": {
+        "san": "prapitāmahaḥ",
+        "mnc": "da mafa",
+        "mon": "khuluntsa"
+    },
+    "始祖": {
+        "san": "prapitāmahī",
+        "mnc": "deribuhe mafa",
+        "mon": "bogda"
+    },
+    "子": {
+        "san": "putraḥ",
+        "mnc": "jui",
+        "mon": "khöbegün"
+    },
+    "女": {
+        "san": "duhitā",
+        "mnc": "sargan jui",
+        "mon": "okhin"
+    },
+    "兄": {
+        "san": "jyeṣṭhabhrātā",
+        "mnc": "ahūn",
+        "mon": "akh a"
+    },
+    "弟": {
+        "san": "kanīyān bhrātā",
+        "mnc": "deu",
+        "mon": "degüü"
+    },
+    "兄弟": {
+        "san": "bhrātā",
+        "mnc": "ahūn deu",
+        "mon": "akh a degüü"
+    },
+    "姐": {
+        "san": "bhaginī",
+        "mnc": "eyun",
+        "mon": "egechi"
+    },
+    "孫": {
+        "san": "naptā",
+        "mnc": "omolo",
+        "mon": "achi"
+    },
+    "孫女": {
+        "san": "nptrī",
+        "mnc": "omolo sargan jui",
+        "mon": "achi okhin"
+    },
+    "岳父": {
+        "san": "śvaśuraḥ",
+        "mnc": "amha",
+        "mon": "khadum etsige"
+    },
+    "岳母": {
+        "san": "śvaśrūḥ",
+        "mnc": "emhe",
+        "mon": "khadum ekhe"
+    },
+    "舅": {
+        "san": "mātulaḥ",
+        "mnc": "nakcu",
+        "mon": "nagatsu"
+    },
+    "妻": {
+        "san": "bhāryā",
+        "mnc": "sargan",
+        "mon": "em e"
+    },
+    "嫂": {
+        "san": "mātṛṣvasā",
+        "mnc": "aša",
+        "mon": "bergen"
+    },
+    "姨": {
+        "san": "pitṛṣvasā",
+        "mnc": "deheme",
+        "mon": "nagatsu ekhe"
+    },
+    "妻妾": {
+        "san": "sapatnī",
+        "mnc": "gucihi",
+        "mon": "jidüger"
+    },
+    "使女": {
+        "san": "antaḥ puram",
+        "mnc": "nehūji",
+        "mon": "inji"
+    },
+    "夫妻": {
+        "san": "jampatī",
+        "mnc": "eigen sargan",
+        "mon": "er e em e"
+    },
+    "孿生": {
+        "san": "yamalakaḥ",
+        "mnc": "ikiri jui",
+        "mon": "eikher e khöbegün"
+    },
+    "母家": {
+        "san": "sālohitaḥ",
+        "mnc": "dancan",
+        "mon": "töröl un salbii a"
+    },
+    "親戚": {
+        "san": "mitram",
+        "mnc": "niyaman hūncihin",
+        "mon": "urug sadun"
+    },
+    "宗族": {
+        "san": "jñātiḥ",
+        "mnc": "uksun mukūn",
+        "mon": "urug tarig"
+    },
+    "親人": {
+        "san": "svajanaḥ",
+        "mnc": "niyamangga niyalama",
+        "mon": "urug un khümün"
+    },
+    "族黨": {
+        "san": "bandhuḥ",
+        "mnc": "uksura",
+        "mon": "urug sadun"
+    },
+    "朋友": {
+        "san": "sakhā",
+        "mnc": "gucu",
+        "mon": "nökhör"
+    },
+    "家人": {
+        "san": "antarjanaḥ",
+        "mnc": "booi niyalma",
+        "mon": "ger un khümün"
+    },
+    "元妃": {
+        "san": "agramahiṣī",
+        "mnc": "amba fujin",
+        "mon": "iekhe khatun"
+    },
+    "媳婦": {
+        "san": "navavadhūḥ",
+        "mnc": "urun",
+        "mon": "biri"
+    },
+    "男": {
+        "san": "naraḥ",
+        "mnc": "haha",
+        "mon": "er e"
+    },
+    "婦": {
+        "san": "nārī",
+        "mnc": "hehe",
+        "mon": "em e"
+    },
+    "乳母": {
+        "san": "dhātrī",
+        "mnc": "huhun i eme",
+        "mon": "khökhül tu ekhe"
+    },
+    "懷孕": {
+        "san": "strī gurviṇī",
+        "mnc": "beye jursu",
+        "mon": "jirmüsün"
+    },
+    "身體名": {
+        "san": "[śarīrāṅgapratyaṅgāni]",
+        "mnc": "beye gargan i gebu",
+        "mon": "bei e iin üi e geshigün u ner e inu"
+    },
+    "身": {
+        "san": "kāyaḥ",
+        "mnc": "beye",
+        "mon": "bei e"
+    },
+    "頭": {
+        "san": "śiraḥ",
+        "mnc": "uju",
+        "mon": "tologai"
+    },
+    "腦": {
+        "san": "mastakaḥ",
+        "mnc": "fehi",
+        "mon": "tarikhi"
+    },
+    "滿腦皮": {
+        "san": "mastakakuṅgaḥ",
+        "mnc": "fehi i alhūwa",
+        "mon": "terigün u ger"
+    },
+    "頂": {
+        "san": "mūrdhā",
+        "mnc": "giyolo",
+        "mon": "oroi"
+    },
+    "髮": {
+        "san": "keśaḥ",
+        "mnc": "funiyehe",
+        "mon": "üsün"
+    },
+    "貌": {
+        "san": "sukhamaṇḍalam",
+        "mnc": "cira",
+        "mon": "tsirai"
+    },
+    "鼻梁": {
+        "san": "vaktram",
+        "mnc": "kangsiri",
+        "mon": "khangshiiar"
+    },
+    "額": {
+        "san": "lalāṭaḥ",
+        "mnc": "šenggin",
+        "mon": "manglai"
+    },
+    "眉": {
+        "san": "bhrūḥ",
+        "mnc": "faitan",
+        "mon": "khömüsge"
+    },
+    "睫": {
+        "san": "pakṣam",
+        "mnc": "solmin",
+        "mon": "sormisun"
+    },
+    "曈": {
+        "san": "tārakaḥ",
+        "mnc": "hojo faha",
+        "mon": "nigün u tsetsegei"
+    },
+    "口": {
+        "san": "mukham",
+        "mnc": "angga",
+        "mon": "aman"
+    },
+    "口角": {
+        "san": "sṛkkvam",
+        "mnc": "anggai hošo",
+        "mon": "aman u zabji"
+    },
+    "颏": {
+        "san": "cibukam",
+        "mnc": "sencehe",
+        "mon": "eregüü"
+    },
+    "脖": {
+        "san": "grīvā",
+        "mnc": "monggon",
+        "mon": "khogolai"
+    },
+    "腮": {
+        "san": "kapolam",
+        "mnc": "šakšaha",
+        "mon": "zajigur"
+    },
+    "顴": {
+        "san": "gaṇḍaḥ",
+        "mnc": "fulcin",
+        "mon": "ger e khachir"
+    },
+    "頰": {
+        "san": "hanuḥ",
+        "mnc": "muliyan",
+        "mon": "khachir"
+    },
+    "膀": {
+        "san": "bāhuḥ",
+        "mnc": "dabsi",
+        "mon": "tsarbagun"
+    },
+    "齒": {
+        "san": "dantaḥ",
+        "mnc": "weihe",
+        "mon": "shidün"
+    },
+    "巧舌": {
+        "san": "tāluḥ",
+        "mnc": "heheri",
+        "mon": "tenkhlei"
+    },
+    "唇": {
+        "san": "auṣṭhaḥ",
+        "mnc": "femen",
+        "mon": "urugul"
+    },
+    "牙": {
+        "san": "daṃṣṭraḥ",
+        "mnc": "sidu weihe",
+        "mon": "soioga"
+    },
+    "鬍鬚": {
+        "san": "śmaśru",
+        "mnc": "salu",
+        "mon": "sakhal"
+    },
+    "項": {
+        "san": "kaṇṭhaḥ",
+        "mnc": "meifen",
+        "mon": "khüzügün"
+    },
+    "喉": {
+        "san": "kaṇṭhanālikā",
+        "mnc": "bilha",
+        "mon": "khogolai"
+    },
+    "結喉": {
+        "san": "kaṇṭhamaṇiḥ",
+        "mnc": "gungkan",
+        "mon": "töbön"
+    },
+    "心": {
+        "san": "hṛdayam",
+        "mnc": "niyaman",
+        "mon": "zirükhen"
+    },
+    "辮": {
+        "san": "kṛkāṭikā",
+        "mnc": "soncoho",
+        "mon": "gezigen"
+    },
+    "手": {
+        "san": "hastaḥ",
+        "mnc": "gala",
+        "mon": "gar"
+    },
+    "肩": {
+        "san": "aṃsaḥ",
+        "mnc": "meiren",
+        "mon": "mörü"
+    },
+    "背": {
+        "san": "pṛṣṭham",
+        "mnc": "fisa",
+        "mon": "aru"
+    },
+    "臂": {
+        "san": "bāhuśikharam",
+        "mnc": "dabsi i dube",
+        "mon": "tsarbagun u terigüü"
+    },
+    "腋": {
+        "san": "kakṣaḥ",
+        "mnc": "oho",
+        "mon": "suguu"
+    },
+    "肘": {
+        "san": "kūrparakam",
+        "mnc": "mayan",
+        "mon": "tokhoi"
+    },
+    "手背": {
+        "san": "hastapṛṣṭham",
+        "mnc": "galai huru",
+        "mon": "gar un aru"
+    },
+    "指": {
+        "san": "aṅguliḥ",
+        "mnc": "simhun",
+        "mon": "khurugu"
+    },
+    "大指": {
+        "san": "aṅguṣṭham",
+        "mnc": "ferhe",
+        "mon": "erekhei"
+    },
+    "食指": {
+        "san": "tarjanī",
+        "mnc": "moco simhun",
+        "mon": "khomokhai khurugu"
+    },
+    "中指": {
+        "san": "madhyāṅguliḥ",
+        "mnc": "dulimbai simhun",
+        "mon": "dumdadu khurugu"
+    },
+    "無名指": {
+        "san": "anāmikā",
+        "mnc": "gebu akū simhun",
+        "mon": "ner e ügei khurugu"
+    },
+    "小指": {
+        "san": "kaniṣṭhikā",
+        "mnc": "fiyanggū simhun",
+        "mon": "igechi"
+    },
+    "拳": {
+        "san": "muṣṭiḥ",
+        "mnc": "nujan",
+        "mon": "nidurg a"
+    },
+    "掌": {
+        "san": "capeṭaḥ",
+        "mnc": "falanggū",
+        "mon": "alag a"
+    },
+    "指甲": {
+        "san": "nakhaḥ",
+        "mnc": "hitahūn",
+        "mon": "khimusu"
+    },
+    "手面": {
+        "san": "hastatalam",
+        "mnc": "galai falanggū",
+        "mon": "gar un alag a"
+    },
+    "骨節": {
+        "san": "sandhiḥ",
+        "mnc": "jalan",
+        "mon": "üi e"
+    },
+    "軟筋": {
+        "san": "naharuḥ",
+        "mnc": "uyan sube",
+        "mon": "bülege"
+    },
+    "筋": {
+        "san": "sanāyaḥ",
+        "mnc": "sube",
+        "mon": "shirbüsün"
+    },
+    "脉": {
+        "san": "śirā",
+        "mnc": "sudala",
+        "mon": "sudal"
+    },
+    "胸": {
+        "san": "uraḥ",
+        "mnc": "tunggen",
+        "mon": "ebchigün"
+    },
+    "乳": {
+        "san": "stanaḥ",
+        "mnc": "huhun",
+        "mon": "khökhen"
+    },
+    "心窩": {
+        "san": "hṛdayapradeśaḥ",
+        "mnc": "niyaman jaka",
+        "mon": "zirükhen tun"
+    },
+    "腹": {
+        "san": "udaram",
+        "mnc": "hefeli",
+        "mon": "khebeli"
+    },
+    "臍": {
+        "san": "nābhiḥ",
+        "mnc": "ulenggu",
+        "mon": "khüilsün"
+    },
+    "臍竅": {
+        "san": "nābhimaṣḍalam",
+        "mnc": "ulenggu i sangga",
+        "mon": "khüilsün u nükhe"
+    },
+    "胯": {
+        "san": "vastiḥ",
+        "mnc": "sargiya",
+        "mon": "ala"
+    },
+    "腰": {
+        "san": "jadhanam",
+        "mnc": "dara",
+        "mon": "nirugun"
+    },
+    "脊骨": {
+        "san": "pṛṣṭhavaṃśaḥ",
+        "mnc": "darama giranggi jalan",
+        "mon": "nirugun u üi e"
+    },
+    "肋": {
+        "san": "pārśvikaḥ",
+        "mnc": "ebci",
+        "mon": "khabirga"
+    },
+    "臀": {
+        "san": "buliḥ",
+        "mnc": "ura",
+        "mon": "khoid mör"
+    },
+    "足": {
+        "san": "pādaḥ",
+        "mnc": "bethe",
+        "mon": "khöl"
+    },
+    "大腿": {
+        "san": "ūruḥ",
+        "mnc": "",
+        "mon": "gui a"
+    },
+    "髀": {
+        "san": "jānu",
+        "mnc": "buhi",
+        "mon": "ebüdüg"
+    },
+    "膝": {
+        "san": "jānumaṇḍalam",
+        "mnc": "tobgiya",
+        "mon": "ebüdüg un toiig"
+    },
+    "踝": {
+        "san": "kulphaḥ",
+        "mnc": "sailha",
+        "mon": "shagai"
+    },
+    "踵": {
+        "san": "pārṣṇī",
+        "mnc": "guye",
+        "mon": "ösökhei"
+    },
+    "足底": {
+        "san": "pādatalam",
+        "mnc": "fatan",
+        "mon": "khöl un ula"
+    },
+    "肺": {
+        "san": "klomakaḥ",
+        "mnc": "ufuku(sic？for ufuhu)",
+        "mon": "ieiushkhi"
+    },
+    "脾": {
+        "san": "yakṛt",
+        "mnc": "delihun",
+        "mon": "deleigüü"
+    },
+    "肝": {
+        "san": "plīhā",
+        "mnc": "fahūn",
+        "mon": "elige"
+    },
+    "膽": {
+        "san": "pittaḥ",
+        "mnc": "silhi",
+        "mon": "sösön"
+    },
+    "腎": {
+        "san": "vṛkkaḥ",
+        "mnc": "bosho",
+        "mon": "böger e"
+    },
+    "腸": {
+        "san": "antram",
+        "mnc": "duha",
+        "mon": "gedesün"
+    },
+    "臟根": {
+        "san": "antraguṇaḥ",
+        "mnc": "teru",
+        "mon": "khoshkhinag"
+    },
+    "胃": {
+        "san": "āmāśyaḥ",
+        "mnc": "guwejihe",
+        "mon": "khandugatun"
+    },
+    "大腸": {
+        "san": "pakvāśayaḥ",
+        "mnc": "muwa duha",
+        "mon": "ulajgai"
+    },
+    "膀胱": {
+        "san": "audarīyakam",
+        "mnc": "sifulu",
+        "mon": "debeskhen"
+    },
+    "肉": {
+        "san": "māṃsam",
+        "mnc": "yali",
+        "mon": "mikh a"
+    },
+    "胯骨": {
+        "san": "kukṣiḥ",
+        "mnc": "du",
+        "mon": "sübikhe"
+    },
+    "皮": {
+        "san": "tvak",
+        "mnc": "sukū",
+        "mon": "arisun"
+    },
+    "骨": {
+        "san": "asthi",
+        "mnc": "giranggi",
+        "mon": "iasun"
+    },
+    "血": {
+        "san": "rudhiram",
+        "mnc": "senggi",
+        "mon": "chisun"
+    },
+    "髓": {
+        "san": "majjā",
+        "mnc": "umgan",
+        "mon": "chimüge"
+    },
+    "牙腭": {
+        "san": "dantamāṃsam",
+        "mnc": "weihe ilha",
+        "mon": "buiila"
+    },
+    "支": {
+        "san": "aṅgam",
+        "mnc": "gargan",
+        "mon": "üien geshigün"
+    },
+    "小支": {
+        "san": "pratyaṅgam",
+        "mnc": "",
+        "mon": "chikhula geshigün"
+    },
+    "胎": {
+        "san": "garbhaḥ",
+        "mnc": "tebku",
+        "mon": "umai"
+    },
+    "油": {
+        "san": "vasā",
+        "mnc": "nimenggi",
+        "mon": "khorikhon"
+    },
+    "肥油": {
+        "san": "medaḥ",
+        "mnc": "tarhūn nimenggi",
+        "mon": "ükhükhe"
+    },
+    "膿": {
+        "san": "pūyam",
+        "mnc": "niyaki",
+        "mon": "ükheri"
+    },
+    "鼻涕": {
+        "san": "siṅghāṇagam",
+        "mnc": "oforo i niyaki",
+        "mon": "nisun"
+    },
+    "唾": {
+        "san": "kheṭaḥ",
+        "mnc": "cifenggu",
+        "mon": "nilbusun"
+    },
+    "痰": {
+        "san": "śleṣmā",
+        "mnc": "dalhūn cifenggu",
+        "mon": "betege"
+    },
+    "牙垢": {
+        "san": "dantamalam",
+        "mnc": "weilhei icihi",
+        "mon": "shidün ü khag"
+    },
+    "液": {
+        "san": "lasīkā",
+        "mnc": "šugi",
+        "mon": "shir a usun"
+    },
+    "淚": {
+        "san": "aśru",
+        "mnc": "yasai muke",
+        "mon": "nidün u nilmusun"
+    },
+    "眼眵": {
+        "san": "cakṣurmalam",
+        "mnc": "heye",
+        "mon": "luug a"
+    },
+    "耳垂": {
+        "san": "camasaḥ",
+        "mnc": "hoho",
+        "mon": "chikhin u getel"
+    },
+    "汗毛": {
+        "san": "roma",
+        "mnc": "nei funiyehe",
+        "mon": "üsün"
+    },
+    "毛孔": {
+        "san": "romakūpaḥ",
+        "mnc": "funiyehe sen",
+        "mon": "shir a üsün u nükhe"
+    },
+    "耳屑": {
+        "san": "karṇamalam",
+        "mnc": "hosori",
+        "mon": "khülgetü"
+    },
+    "汗": {
+        "san": "svedaḥ",
+        "mnc": "nei",
+        "mon": "khölüsün"
+    },
+    "嚏噴": {
+        "san": "chikkā",
+        "mnc": "yacihiyara",
+        "mon": "naiitakhu"
+    },
+    "呃": {
+        "san": "hikkā",
+        "mnc": "kekerembi",
+        "mon": "zogsokhu"
+    },
+    "呵欠": {
+        "san": "vijṛmbhā",
+        "mnc": "habgiyara",
+        "mon": "ebshiiekhüi"
+    },
+    "垢": {
+        "san": "malam",
+        "mnc": "icihi",
+        "mon": "gikhir"
+    },
+    "痣": {
+        "san": "tilakaḥ",
+        "mnc": "samha",
+        "mon": "mengge"
+    },
+    "溺": {
+        "san": "mūtram",
+        "mnc": "sike",
+        "mon": "shigesün"
+    },
+    "糞": {
+        "san": "gūtham",
+        "mnc": "hamu",
+        "mon": "bagasun"
+    },
+    "皺紋": {
+        "san": "valipracuratā",
+        "mnc": "šufan",
+        "mon": "khuniiasun"
+    },
+    "八難名": {
+        "san": "[aṣṭau akṣaṇāḥ]",
+        "mnc": "jakūn šolo akū i gebu",
+        "mon": "naiman chilüge ügei iin ner e inu"
+    },
+    "地獄": {
+        "san": "narakaḥ",
+        "mnc": "na i gindana",
+        "mon": "tamu"
+    },
+    "畜生": {
+        "san": "tiryañcaḥ",
+        "mnc": "ulha",
+        "mon": "adugusun"
+    },
+    "餓鬼": {
+        "san": "pratāḥ",
+        "mnc": "omihon hutu",
+        "mon": "birid"
+    },
+    "長壽天": {
+        "san": "dīrdhāyuṣo devāḥ",
+        "mnc": "jalgan golmin enduri",
+        "mon": "urtu nasutu tegri"
+    },
+    "邊地下賤": {
+        "san": "pratyantajanapadam",
+        "mnc": "dubei jecen",
+        "mon": "khijagar oron u khümün"
+    },
+    "六根不全": {
+        "san": "indriyavaikalyam",
+        "mnc": "ninggun fulehe eden ekiyehun",
+        "mon": "erkheten ese büridügsen"
+    },
+    "世智辯聰": {
+        "san": "mithyādarśanam",
+        "mnc": "miosihon ulbun",
+        "mon": "burugu üzel tu"
+    },
+    "佛前佛後": {
+        "san": "tathāgatānāmanutpādatā",
+        "mnc": "fucihi tucikekū forgon de banjiha",
+        "mon": "degüjilün eregsen ese ügede bologsan"
+    },
+    "六煩惱名": {
+        "san": "[ṣaṇ mūlakleśāḥ]",
+        "mnc": "ninggun fulehe ehelinggu cisu i gebu",
+        "mon": "ündüsün zirgugan nisvania ner e inu"
+    },
+    "貪": {
+        "san": "rāgaḥ",
+        "mnc": "buyen",
+        "mon": "tachiianggui"
+    },
+    "嗔": {
+        "san": "pratighaḥ",
+        "mnc": "jili",
+        "mon": "khiling"
+    },
+    "慢": {
+        "san": "mānaḥ",
+        "mnc": "cokto",
+        "mon": "omog"
+    },
+    "癡": {
+        "san": "avidyā",
+        "mnc": "mentuhun",
+        "mon": "munkhag"
+    },
+    "惡見": {
+        "san": "dṛṣṭiḥ",
+        "mnc": "ehe ulbun",
+        "mon": "üzel"
+    },
+    "疑": {
+        "san": "vicikitsā",
+        "mnc": "kenehunjen",
+        "mon": "sashig"
+    },
+    "二十隨煩惱名": {
+        "san": "[viṃśatirupakleśāḥ]",
+        "mnc": "orin ajige ehelinggu cisu i gebu",
+        "mon": "khorin uiresgel nisvania un ner e inu"
+    },
+    "忿": {
+        "san": "krodhaḥ",
+        "mnc": "ushara",
+        "mon": "agurlakhu"
+    },
+    "恨": {
+        "san": "upanāhaḥ",
+        "mnc": "kimulere",
+        "mon": "öslekhü"
+    },
+    "覆": {
+        "san": "mrakṣaḥ",
+        "mnc": "butemji",
+        "mon": "nigukhu"
+    },
+    "惱": {
+        "san": "pradāsaḥ",
+        "mnc": "fancara",
+        "mon": "undugutsal"
+    },
+    "嫉": {
+        "san": "īrṣyā",
+        "mnc": "silhidara",
+        "mon": "naiidanggui"
+    },
+    "慳": {
+        "san": "mātsaryam",
+        "mnc": "burgiyen",
+        "mon": "kharma"
+    },
+    "誑": {
+        "san": "māyā",
+        "mnc": "jalidara",
+        "mon": "zali"
+    },
+    "諂": {
+        "san": "śāṭhyam",
+        "mnc": "eiterere",
+        "mon": "khagurmag"
+    },
+    "憍": {
+        "san": "madaḥ",
+        "mnc": "kangsanggi",
+        "mon": "omorkhag"
+    },
+    "害": {
+        "san": "vihiṃsā",
+        "mnc": "nungnere",
+        "mon": "khönögekhüi"
+    },
+    "無慚": {
+        "san": "āhrīkyam",
+        "mnc": "girucun akū",
+        "mon": "ichigüri ügei"
+    },
+    "無愧": {
+        "san": "anapatrapyam",
+        "mnc": "yertecun akū",
+        "mon": "sonjiguri ügei"
+    },
+    "昏沉": {
+        "san": "styānam",
+        "mnc": "liyeliyehunjere",
+        "mon": "balarakhu"
+    },
+    "掉舉": {
+        "san": "auddhatyam",
+        "mnc": "sofidara",
+        "mon": "dogshirgakhui"
+    },
+    "不信": {
+        "san": "āśraddyam",
+        "mnc": "ginggun akū",
+        "mon": "ülü süsülügchi"
+    },
+    "懈怠": {
+        "san": "kauddhatyam",
+        "mnc": "banuhūn",
+        "mon": "zalikhai"
+    },
+    "放逸": {
+        "san": "pramādaḥ",
+        "mnc": "olhoba akū",
+        "mon": "seremji ügei"
+    },
+    "失念": {
+        "san": "muṣitasmṛtitā",
+        "mnc": "onggoro mangga",
+        "mon": "umarukhui"
+    },
+    "散亂": {
+        "san": "vikṣepaḥ",
+        "mnc": "farfabun",
+        "mon": "alhasangkhui"
+    },
+    "不正知": {
+        "san": "asaṃprajanyam",
+        "mnc": "sarangge toktohon akū",
+        "mon": "seremjitü busu"
+    },
+    "方隅名": {
+        "san": "[digvidiṅnāmāni]",
+        "mnc": "dere hošo i gebu",
+        "mon": "züg zobkhil un ner e inu"
+    },
+    "東": {
+        "san": "pūrvā",
+        "mnc": "dergi",
+        "mon": "doron a"
+    },
+    "南": {
+        "san": "dikṣigā",
+        "mnc": "julergi",
+        "mon": "emün e"
+    },
+    "西": {
+        "san": "paśicamā",
+        "mnc": "wargi",
+        "mon": "örön e"
+    },
+    "北": {
+        "san": "uttarā",
+        "mnc": "amargi",
+        "mon": "umar a"
+    },
+    "東南": {
+        "san": "pūrvadakṣiṇā",
+        "mnc": "dergi julergi",
+        "mon": "doron a emün e"
+    },
+    "西南": {
+        "san": "dakṣiṇapaścimā",
+        "mnc": "wargi julergi",
+        "mon": "emün e örön e"
+    },
+    "西北": {
+        "san": "paścimottarā",
+        "mnc": "wargi amargi",
+        "mon": "örön e umar a"
+    },
+    "東北": {
+        "san": "uttarapūrvā",
+        "mnc": "dergi amargi",
+        "mon": "umar a doron a"
+    },
+    "上": {
+        "san": "ūrdhvam",
+        "mnc": "dergi",
+        "mon": "deger e"
+    },
+    "下": {
+        "san": "adhaḥ",
+        "mnc": "fejergi",
+        "mon": "door a"
+    },
+    "大自在天隅": {
+        "san": "eśānī",
+        "mnc": "toosengga dere",
+        "mon": "tegün erkhetü iin züg"
+    },
+    "火天隅": {
+        "san": "āgneyī",
+        "mnc": "tuwai enduri dere",
+        "mon": "gal tengri iin züg"
+    },
+    "風天隅": {
+        "san": "vāyavī",
+        "mnc": "edun i enduri dere",
+        "mon": "gel tengri iin züg"
+    },
+    "羅剎隅": {
+        "san": "nairkṣatī",
+        "mnc": "unenggi ci aljaha dere",
+        "mon": "üile asa angkhjiragsan züg"
+    },
+    "帝釋方": {
+        "san": "endrī",
+        "mnc": "hormosda i dere",
+        "mon": "erkhetü iin züg"
+    },
+    "焰摩羅方": {
+        "san": "yāmyā",
+        "mnc": "ilmun han i dere",
+        "mon": "erlig un züg"
+    },
+    "水天方": {
+        "san": "vāruṇī",
+        "mnc": "mukei enduri i dere",
+        "mon": "usun tengri iin züg"
+    },
+    "藥叉方": {
+        "san": "kauverī",
+        "mnc": "yakca i dere",
+        "mon": "magu bekhe tu iin züg"
+    },
+    "大小高低名": {
+        "san": "[bṛhatparīttādayaḥ]",
+        "mnc": "amba ajige den fangkala i gebu",
+        "mon": "iekhe bag a khiged öndör bogoni iin ner e inu"
+    },
+    "縱": {
+        "san": "āyāmaḥ",
+        "mnc": "undu",
+        "mon": "kholdu"
+    },
+    "橫或粗": {
+        "san": "viṣkambheṇa",
+        "mnc": "hetu bime muwa ici",
+        "mon": "khöndelen ba büdügün"
+    },
+    "橫或寬": {
+        "san": "vistāraḥ",
+        "mnc": "hetu bime onco ici",
+        "mon": "khöndelen ba aguu"
+    },
+    "長或高": {
+        "san": "dairdhyam",
+        "mnc": "golmin ici bime den ici",
+        "mon": "urtu dor ba öndör dor"
+    },
+    "縱橫": {
+        "san": "ārohapariṇāhasampannaḥ",
+        "mnc": "hetu undu yongkiyaha",
+        "mon": "kholdu khöndelen tegüsügsen"
+    },
+    "高或長": {
+        "san": "ārohaḥ",
+        "mnc": "den bime golmin",
+        "mon": "öndör ba urtu"
+    },
+    "寬或粗或廣": {
+        "san": "pariṇāhaḥ",
+        "mnc": "onco bime muwa leli",
+        "mon": "örgön ba büdügün iig tu"
+    },
+    "六合整齊": {
+        "san": "ārohapariṇāhau",
+        "mnc": "ninggun teksin",
+        "mon": "ang torog satsagu"
+    },
+    "具足": {
+        "san": "sampannaḥ",
+        "mnc": "yooni yongkiyaha",
+        "mon": "khotalan tegüsügsen"
+    },
+    "廣大": {
+        "san": "vistīrṇam",
+        "mnc": "onco amba",
+        "mon": "akhui iekhe"
+    },
+    "大力": {
+        "san": "udāraḥ",
+        "mnc": "amba hūsungge",
+        "mon": "zakhengkhi"
+    },
+    "寬闊": {
+        "san": "viśālam",
+        "mnc": "onco",
+        "mon": "aguu"
+    },
+    "廣廓": {
+        "san": "vipulam",
+        "mnc": "badaraka",
+        "mon": "delgerengkhüi"
+    },
+    "大槩": {
+        "san": "audarikam",
+        "mnc": "amba muru",
+        "mon": "iekhe tölöv"
+    },
+    "甚小": {
+        "san": "alpataram",
+        "mnc": "umesi ajige",
+        "mon": "asuru bag a"
+    },
+    "甚多": {
+        "san": "bahutaram",
+        "mnc": "umesi labdu",
+        "mon": "asuru olan"
+    },
+    "多": {
+        "san": "bhūyiṣṭham",
+        "mnc": "labdu",
+        "mon": "olan"
+    },
+    "大": {
+        "san": "mahattamam",
+        "mnc": "amba",
+        "mon": "iekhe"
+    },
+    "末": {
+        "san": "itvaram",
+        "mnc": "dube",
+        "mon": "etsün"
+    },
+    "歹": {
+        "san": "lūhaḥ",
+        "mnc": "ehe",
+        "mon": "magu"
+    },
+    "前後": {
+        "san": "caramam",
+        "mnc": "nenden amaga",
+        "mon": "uridu khoidu"
+    },
+    "細或密": {
+        "san": "paurvāparyam",
+        "mnc": "narhūn eici fisin",
+        "mon": "narin ba nigta"
+    },
+    "粗": {
+        "san": "sthūlam",
+        "mnc": "muwa",
+        "mon": "büdügün"
+    },
+    "少或小": {
+        "san": "dabhram",
+        "mnc": "komsoo eici ajige",
+        "mon": "tsögen dund öchükhen"
+    },
+    "崗窊或凸凹或高低": {
+        "san": "utkūla-nikūlam",
+        "mnc": "nuhu nuhaliyan eici gukdu gakda eici dele wala",
+        "mon": "khotogar khurbi ba aduru baduru ba öndör bogoni"
+    },
+    "福德吉祥名": {
+        "san": "[kuśalādayaḥ]",
+        "mnc": "hūturi fengšen i gebu",
+        "mon": "ölzei iin ner e inu"
+    },
+    "吉言": {
+        "san": "āśīrvādaḥ",
+        "mnc": "hūturi firuren",
+        "mon": "ölzei ögülekhüi"
+    },
+    "普願": {
+        "san": "āśiṣaḥ",
+        "mnc": "sain de jorime forobure",
+        "mon": "saiitur khüsekhüi"
+    },
+    "稱讚": {
+        "san": "varṇavādī",
+        "mnc": "saišame gisurere",
+        "mon": "saiishiian ezigülekhüi"
+    },
+    "福或幸": {
+        "san": "śrīḥ",
+        "mnc": "hūturi jai kesi",
+        "mon": "tsog ba geshig"
+    },
+    "吉祥或兆": {
+        "san": "maṅgalam",
+        "mnc": "hūturi fengšen jai todolo",
+        "mon": "ölzei khutug ba irbe"
+    },
+    "吉祥或瑞": {
+        "san": "kutūhalam",
+        "mnc": "sain sabi jai ferguwecun",
+        "mon": "saiin belge ba gaiikhal"
+    },
+    "增福": {
+        "san": "praśastaḥ",
+        "mnc": "hūturi toktokini",
+        "mon": "buian togodakhai"
+    },
+    "康泰或福": {
+        "san": "svasti",
+        "mnc": "elhe sain jai hūturi",
+        "mon": "enkhe esen ba buian"
+    },
+    "清寧": {
+        "san": "svastyayanam",
+        "mnc": "sain elhe okini",
+        "mon": "enkhe asan boltugai"
+    },
+    "好": {
+        "san": "ślādhyam",
+        "mnc": "sain",
+        "mon": "saiin"
+    },
+    "賢": {
+        "san": "kuśalam",
+        "mnc": "mergen",
+        "mon": "mergen"
+    },
+    "永不滅": {
+        "san": "vaṣaṭ",
+        "mnc": "oron ekiy niyerakū",
+        "mon": "oron bagurakhu ügei"
+    },
+    "深美": {
+        "san": "aum",
+        "mnc": "šumin saikan",
+        "mon": "mashi saiishagakhsan"
+    },
+    "結文": {
+        "san": "svāhā",
+        "mnc": "sain toktoho",
+        "mon": "shitügen togtadokhui"
+    }
+}

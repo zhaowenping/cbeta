@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-03-03 21:13:21
+# Last Modified: 2018-03-07 08:35:50
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -865,8 +865,6 @@ def new_dict1(page):
     with gzip.open('dict/fxcd.json.gz') as fd:
         data = json.load(fd)
     header = data.pop('header', {})
-    title = header['title']
-    author = header['author']
     if q:
         # 查字典
         fxcd = {item: data[item].split('\n')[1:] for item in data}
@@ -880,7 +878,7 @@ def new_dict1(page):
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
         result = dict(fxcd[pp*(page-1):pp*page])
-    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+    return {'result': result, 'header': header, 'prevpage': prevpage, 'nextpage': nextpage}
 
 # 佛光山词典
 @get('/fk/:page')
@@ -892,8 +890,6 @@ def new_dict2(page):
     with gzip.open('dict/fk.json.gz') as fd:
         data = json.load(fd)
     header = data.pop('header', {})
-    title = header['title']
-    author = header['author']
     if q:
         # 查字典
         fxcd = {item: (data[item],) for item in data}
@@ -908,7 +904,7 @@ def new_dict2(page):
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
         result = dict(fxcd[pp*(page-1):pp*page])
-    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+    return {'result': result, 'header': header, 'prevpage': prevpage, 'nextpage': nextpage}
 
 
 # 南山律学词典
@@ -921,8 +917,6 @@ def new_dict3(page):
     with gzip.open('dict/nvd.json.gz') as fd:
         data = json.load(fd)
     header = data.pop('header', {})
-    title = header['title']
-    author = header['author']
     if q:
         # 查字典
         fxcd = {item: (data[item],) for item in data}
@@ -938,7 +932,7 @@ def new_dict3(page):
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
         result = dict(fxcd[pp*(page-1):pp*page])
-    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+    return {'result': result, 'header': header, 'prevpage': prevpage, 'nextpage': nextpage}
 
 # 佛學常見詞彙（陳義孝)
 @get('/cyx/:page')
@@ -966,7 +960,7 @@ def new_dict4(page):
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
         result = dict(fxcd[pp*(page-1):pp*page])
-    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+    return {'result': result, 'header': header, 'prevpage': prevpage, 'nextpage': nextpage}
 
 # 阿含经词典
 @get('/ccc/:page')
@@ -978,8 +972,6 @@ def new_dict5(page):
     with open('dict/ccc.json') as fd:
         data = json.load(fd)
     header = data.pop('header', {})
-    title = header['title']
-    author = header['author']
     if q:
         # 查字典
         fxcd = {item: (data[item],) for item in data}
@@ -994,7 +986,7 @@ def new_dict5(page):
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
         result = dict(fxcd[pp*(page-1):pp*page])
-    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+    return {'result': result, 'header': header, 'prevpage': prevpage, 'nextpage': nextpage}
 
 # 威廉梵英词典
 @get('/wm/:page')
@@ -1006,8 +998,6 @@ def new_dict6(page):
         data = json.load(fd)
 
     header = data.pop('header', {})
-    title = header['title']
-    author = header['author']
 
     mwpatten = re.compile(r'(%\{.+?})')
     sa_en = dict()
@@ -1041,7 +1031,7 @@ def new_dict6(page):
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
         result = dict(fxcd[pp*(page-1):pp*page])
-    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+    return {'result': result, 'header': header, 'prevpage': prevpage, 'nextpage': nextpage}
 
 # yates梵英词典
 @get('/yates/:page')
@@ -1053,8 +1043,6 @@ def new_dict6(page):
         data = json.load(fd)
 
     header = data.pop('header', {})
-    title = header['title']
-    author = header['author']
 
     mwpatten = re.compile(r'(%\{.+?})')
     sa_en = dict()
@@ -1087,7 +1075,7 @@ def new_dict6(page):
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
         result = dict(fxcd[pp*(page-1):pp*page])
-    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+    return {'result': result, 'header': header, 'prevpage': prevpage, 'nextpage': nextpage}
 
 
 # 15部巴利语英语词典
@@ -1100,8 +1088,6 @@ def new_dict7(page):
     with gzip.open('dict/pali-hant.json.gz') as fd:
         data = json.load(fd)
     header = data.pop('header', {})
-    title = header['title']
-    author = header['author']
     if q:
         # 查字典
         fxcd = {item: data[item] for item in data}
@@ -1117,7 +1103,7 @@ def new_dict7(page):
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
         result = dict(fxcd[pp*(page-1):pp*page])
-    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+    return {'result': result, 'header': header, 'prevpage': prevpage, 'nextpage': nextpage}
 
 # 巴利语汉语词典
 @get('/pahant/:page')
@@ -1129,8 +1115,6 @@ def new_dict8(page):
     with open('dict/pali-dama.json') as fd:
         data = json.load(fd)
     header = data.pop('header', {})
-    title = header['title']
-    author = header['author']
     if q:
         # 查字典
         fxcd = {item: (data[item],) for item in data}
@@ -1144,7 +1128,7 @@ def new_dict8(page):
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
         result = dict(fxcd[pp*(page-1):pp*page])
-    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+    return {'result': result, 'header': header, 'prevpage': prevpage, 'nextpage': nextpage}
 
 # 梵汉词典
 @get('/sahant/:page')
@@ -1156,8 +1140,6 @@ def new_dict8(page):
     with gzip.open('dict/sa-hant.json.gz') as fd:
         data = json.load(fd)
     header = data.pop('header', {})
-    title = header['title']
-    author = header['author']
     if q:
         # 查字典
         fxcd = {item: (data[item],) for item in data}
@@ -1171,7 +1153,7 @@ def new_dict8(page):
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
         result = dict(fxcd[pp*(page-1):pp*page])
-    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+    return {'result': result, 'header': header, 'prevpage': prevpage, 'nextpage': nextpage}
 
 #  阅藏知津
 @get('/yzzj/:page')
@@ -1183,8 +1165,6 @@ def new_dict9(page):
     with gzip.open('dict/yzzj.json.gz') as fd:
         data = json.load(fd)
     header = data.pop('header', {})
-    title = header['title']
-    author = header['author']
     if q:
         # 查字典
         fxcd = {item: (data[item],) for item in data}
@@ -1198,7 +1178,7 @@ def new_dict9(page):
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
         result = dict(fxcd[pp*(page-1):pp*page])
-    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+    return {'result': result, 'header': header, 'prevpage': prevpage, 'nextpage': nextpage}
 
 #  三藏法数
 @get('/szfs/:page')
@@ -1210,8 +1190,6 @@ def new_dict10(page):
     with open('dict/szfs.json') as fd:
         data = json.load(fd)
     header = data.pop('header', {})
-    title = header['title']
-    author = header['author']
     if q:
         # 查字典
         fxcd = {item: (data[item],) for item in data}
@@ -1225,7 +1203,7 @@ def new_dict10(page):
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
         result = dict(fxcd[pp*(page-1):pp*page])
-    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+    return {'result': result, 'header': header, 'prevpage': prevpage, 'nextpage': nextpage}
 
 #  翻译名义集
 @get('/fymyj/:page')
@@ -1237,8 +1215,6 @@ def new_dict11(page):
     with open('dict/fymyj.json') as fd:
         data = json.load(fd)
     header = data.pop('header', {})
-    title = header['title']
-    author = header['author']
     if q:
         # 查字典
         fxcd = {item: (data[item],) for item in data}
@@ -1252,7 +1228,7 @@ def new_dict11(page):
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
         result = dict(fxcd[pp*(page-1):pp*page])
-    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+    return {'result': result, 'header': header, 'prevpage': prevpage, 'nextpage': nextpage}
 
 #  五灯会元
 @get('/wdhy/:page')
@@ -1264,8 +1240,6 @@ def new_dict12(page):
     with gzip.open('dict/wdhy.json.gz') as fd:
         data = json.load(fd)
     header = data.pop('header', {})
-    title = header['title']
-    author = header['author']
     if q:
         # 查字典
         fxcd = {item: (data[item],) for item in data}
@@ -1279,7 +1253,7 @@ def new_dict12(page):
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
         result = dict(fxcd[pp*(page-1):pp*page])
-    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+    return {'result': result, 'header': header, 'prevpage': prevpage, 'nextpage': nextpage}
 
 #  俗语佛源
 @get('/syfy/:page')
@@ -1291,8 +1265,6 @@ def new_dict12(page):
     with gzip.open('dict/syfy.json.gz') as fd:
         data = json.load(fd)
     header = data.pop('header', {})
-    title = header['title']
-    author = header['author']
     if q:
         # 查字典
         fxcd = {item: (data[item],) for item in data}
@@ -1306,7 +1278,7 @@ def new_dict12(page):
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
         result = dict(fxcd[pp*(page-1):pp*page])
-    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+    return {'result': result, 'header': header, 'prevpage': prevpage, 'nextpage': nextpage}
 
 #  于凌波
 @get('/ylb/:page')
@@ -1318,8 +1290,6 @@ def new_dict12(page):
     with open('dict/ylb.json') as fd:
         data = json.load(fd)
     header = data.pop('header', {})
-    title = header['title']
-    author = header['author']
     if q:
         # 查字典
         fxcd = {item: (data[item],) for item in data}
@@ -1333,7 +1303,7 @@ def new_dict12(page):
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
         result = dict(fxcd[pp*(page-1):pp*page])
-    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+    return {'result': result, 'header': header, 'prevpage': prevpage, 'nextpage': nextpage}
 
 # 历代名僧
 @get('/ldms/:page')
@@ -1345,8 +1315,6 @@ def new_dict12(page):
     with gzip.open('dict/ldms.json.gz') as fd:
         data = json.load(fd)
     header = data.pop('header', {})
-    title = header['title']
-    author = header['author']
     if q:
         # 查字典
         fxcd = {item: (data[item],) for item in data}
@@ -1360,7 +1328,7 @@ def new_dict12(page):
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
         result = dict(fxcd[pp*(page-1):pp*page])
-    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+    return {'result': result, 'header': header, 'prevpage': prevpage, 'nextpage': nextpage}
 
 # 百科全书
 @get('/bkqs/:page')
@@ -1372,8 +1340,6 @@ def new_dict12(page):
     with gzip.open('dict/bkqs.json.gz') as fd:
         data = json.load(fd)
     header = data.pop('header', {})
-    title = header['title']
-    author = header['author']
     if q:
         # 查字典
         fxcd = {item: (data[item],) for item in data}
@@ -1387,7 +1353,42 @@ def new_dict12(page):
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
         result = dict(fxcd[pp*(page-1):pp*page])
-    return {'result': result, 'title': title, 'author': author, 'prevpage': prevpage, 'nextpage': nextpage}
+    return {'result': result, 'header': header, 'prevpage': prevpage, 'nextpage': nextpage}
+
+# 五译合璧
+@get('/pentaglot/:page')
+@view('temp/dict.jinja2')
+def new_dict12(page):
+    q = request.GET.q
+    page = int(page)
+    pp = 800
+    with open('dict/pentaglot.json') as fd:
+        data = json.load(fd)
+    header = data.pop('header', {})
+    if q:
+        # 查字典
+        fxcd = {item: (data[item],) for item in data}
+        result = {(q, ''): fxcd.get(q, '没找到')}
+        prevpage = max(page - 1, 1)
+        nextpage = page + 1
+    else:
+        fxcd = []
+        for item in data:
+            content = []
+            if 'san' in data[item]:
+                content.append(f"梵語: {data[item]['san']}")
+            if 'bod' in data[item]:
+                content.append(f"泰語: {data[item]['bod']}")
+            if 'mnc' in data[item]:
+                content.append(f"满語: {data[item]['mnc']}")
+            if 'mon' in data[item]:
+                content.append(f"蒙語: {data[item]['mon']}")
+            fxcd.append(((item, ''), content))
+        total = len(fxcd)
+        prevpage = max(page - 1, 1)
+        nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
+        result = dict(fxcd[pp*(page-1):pp*page])
+    return {'result': result, 'header': header, 'prevpage': prevpage, 'nextpage': nextpage}
 
 # GeventServer.run(host = '0.0.0.0', port = 8081)
 

@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="/static/tei.css"/>
         <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Han/3.2.7/han.min.css"/-->
         <title>
-            {{title}}
+            {{header.title}}
         </title>
         <!--script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script-->
         <script src="/static/jquery-3.3.1.min.js"></script>
@@ -113,11 +113,11 @@
         <div id="allcontent" class="content"> <!-- style="writing-mode:vertical-rl;"-->
         <!--补上南传等经典的标题以及作者-->
             <h1 class="title">
-              {{title}}
+              {{header.title}}
             </h1>
             <br/>
             <div class="byline">
-              {{author}}
+              {{header.author}}
             </div>
             <br/>
             <br/>
@@ -137,6 +137,14 @@
         <!--xsl:copy-of select="document('/static/t.xml')"/-->
         <!--正文内容-->
         <div class="contentx">
+          {%for entry in header['desc']%}
+          <p lang="en">
+          {{entry}}
+          </p>
+          {%endfor%}
+          <br/>
+          <br/>
+
           {%for entry in result%}
              <dl>
              <dt>
