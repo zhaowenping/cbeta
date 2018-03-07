@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-03-03 21:13:41
+# Last Modified: 2018-03-07 15:24:50
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -687,7 +687,10 @@ def highlight(ss, ct):
     return ct
 
 def pagerank(filename):
-    '''对xml文件名评分'''
+    '''对xml文件名评分
+    A,B,C,D,F,G,GA,GB,I,J,K,L,M,N,P,S,T,U,X,ZW
+    '''
+    pr = ("A", "B", "C", "D", "F", "G" , "GA", "GB", "I", "J", "K", "L", "M", "N", "P", "S", "T", "U", "X", "ZW")
     pt = re.compile(r'\d+')  # 应该在前端过滤
     if filename[0] == 'T':
         r = 0
@@ -764,6 +767,24 @@ def fullsearch(ct):
 
     return result
 
+with gzip.open('dict/cipin.json.gz') as fd:
+    cipind = json.load(fd)
+
+def zhuyin(txt, ruby=False, cipin=50):
+    '''對txt文本注音, ruby是否使用ruby語法'''
+    if not ruby:
+        content = ' '.join(lookinkangxi(i)['pinyin'].split(' ')[0] for i in txt)
+    else:
+        result = []
+        for zi in txt:
+            if cipind.get(zi, 0) < cipin:
+                pinyin = lookinkangxi(zi)['pinyin'].split(' ')[0]
+                if pinyin:
+                    zi = f"<ruby>{zi}<rt>{pinyin}</rt></ruby>"
+            result.append(zi)
+        content = ''.join(result)
+    return content
+
 def main():
     ''''''
     ss = Search()
@@ -814,6 +835,7 @@ if __name__ == "__main__":
     #                 print(word, word2, cipin.get(word, 0), "%X" % ord(word))
     #             pass
     print(pagerank('T14n0563_001.xml'))
+    print(zhuyin('你好', True))
 
 
 

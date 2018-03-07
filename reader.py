@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-03-07 08:35:50
+# Last Modified: 2018-03-07 15:33:35
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -44,7 +44,7 @@ from libhan import convert2s
 from libhan import normyitizi
 from libhan import fullsearch
 
-from libhan import lookup, lookinkangxi, lookinsa
+from libhan import lookup, lookinkangxi, lookinsa, zhuyin
 from libhan import unihan
 
 # from xsltproc import xsltproc, XSLT
@@ -860,8 +860,9 @@ def tools_get():
 @view('temp/dict.jinja2')
 def new_dict1(page):
     q = request.GET.q
+    pp = int(request.GET.pp or 800)  # 每頁詞條數量
+    cp = min(int(request.GET.cp or 500), 500000) # 注音詞頻, 默認50, 最大不超過50萬
     page = int(page)
-    pp = 800
     with gzip.open('dict/fxcd.json.gz') as fd:
         data = json.load(fd)
     header = data.pop('header', {})
@@ -873,7 +874,8 @@ def new_dict1(page):
         nextpage = page + 1
     else:
         # fxcd = [(item, data[item].split('\n')[1:]) for item in data]
-        fxcd = [((item, ' '.join(lookinkangxi(i)['pinyin'].split(' ')[0] for i in item)), data[item].split('\n')[1:]) for item in data]
+        # fxcd = [((item, zhuyin(item)), data[item].split('\n')[1:]) for item in data]
+        fxcd = [((item, zhuyin(item)), (zhuyin(i, True, cp) for i in data[item].split('\n')[1:])) for item in data]
         total = len(fxcd)
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
