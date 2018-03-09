@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-03-07 15:24:50
+# Last Modified: 2018-03-09 18:04:29
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -507,7 +507,7 @@ def lookup(word, dictionary=None, lang='hant', mohu=False):
 
 
 class Search:
-    def __init__(self):
+    def __init__(self, norm=True):
         mulu = read_menu_file("static/sutra_sch.lst")
         #pprint.pprint(m['T 大正藏'])
         # d = mulu['T 大正藏']
@@ -522,8 +522,13 @@ class Search:
 
 
         result = walk(mulu)
+        import pprint
         result = [i.split(maxsplit=2) for i in result]
-        titles = [(i[0], ' '.join((i[1], i[2]))) for i in result]
+        if norm:
+            titles = [(i[0], ' '.join((normyitizi(i[1]), i[2]))) for i in result]
+        else:
+            titles = [(i[0], ' '.join((i[1], i[2]))) for i in result]
+        # pprint.pprint(titles)
         # titles 是经号和title的对照表
         # 生成索引表
         self.index = {}
@@ -550,10 +555,11 @@ class Search:
             self.index.update({i: r})
         self.titles = dict(titles)
 
-
-    def search(self, title):
+    def search(self, title, norm=True):
         # title = opencc.convert(title, config='s2t.json')
         # ( for zi in index)
+        if norm:
+            title = normyitizi(title)
         a = (set(self.index.get(tt, {}).keys()) for tt in list(title))
         return reduce(lambda x, y: x & y, a)
 
@@ -690,7 +696,7 @@ def pagerank(filename):
     '''对xml文件名评分
     A,B,C,D,F,G,GA,GB,I,J,K,L,M,N,P,S,T,U,X,ZW
     '''
-    pr = ("A", "B", "C", "D", "F", "G" , "GA", "GB", "I", "J", "K", "L", "M", "N", "P", "S", "T", "U", "X", "ZW")
+    pr = ("T", "A", "B", "C", "D", "F", "G" , "GA", "GB", "I", "J", "K", "L", "M", "N", "P", "S", "U", "X", "ZW")
     pt = re.compile(r'\d+')  # 应该在前端过滤
     if filename[0] == 'T':
         r = 0

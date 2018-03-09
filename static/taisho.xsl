@@ -292,7 +292,7 @@
           <xsl:attribute name="href">
               <xsl:value-of select="concat('/static/img/00', substring(@xml:id, 10, 4), '.jpg')"/>
           </xsl:attribute>
-          &#128065;
+          &#x1F5BB;
         </a>
     </xsl:template>
 
@@ -329,12 +329,12 @@
             </xsl:if>
             <xsl:if test="@rows">
             <xsl:attribute name="rowspan">
-                <xsl:if test="$firefox">
+                <!--xsl:if test="$firefox">
                 <xsl:value-of select="@rows+1"/>
                 </xsl:if>
-                <xsl:if test="not($firefox)">
+                <xsl:if test="not($firefox)"-->
                 <xsl:value-of select="@rows"/>
-                </xsl:if>
+                <!--/xsl:if-->
             </xsl:attribute>
             </xsl:if>
             <xsl:apply-templates/>

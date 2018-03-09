@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-03-07 15:33:35
+# Last Modified: 2018-03-09 17:50:39
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -185,7 +185,7 @@ def searchmulu():
         title = re.sub(r'<.*?>', '', title)  # title=[34]<span style="color:red">阿</span>差末菩薩經
         title = re.sub(r'\(.*?\)', '', title)
         title = re.sub(r'\[\w*?\]', '', title)
-        title = re.sub(r'[一二三四五六七八九十]+卷', '', title)
+        title = re.sub(r'[一二三四五六七八九十百]+卷', '', title)
     else:
         title = request.forms.content
     if ts.detect(title)['confidence'] == 's':
@@ -200,7 +200,7 @@ def searchmulu():
         an = f"/xml/{zang}/{idx}_{juan}.xml"  # T01n0002_001.xml
         results.append({'hl': hl, 'an':an, 'title':title0, 'author':''})
     if request.method == "GET":
-        # 0个结果页面不动,多个结果自己选择
+        # 0个结果页面不动, 多个结果自己选择
         if len(results) == 0:
             abort(304)
         if len(results) == 1:
@@ -511,14 +511,14 @@ def zh(filename):
     # content = content.replace('xml:lang="lzh-Hant"', 'xml:lang="lzh-Hans"')
     content = content.replace('Hant', 'Hans')
     # 添加敬语染色 honorific  如來、應供、正遍知、明行足、善逝、世間解、無上士、調御丈夫、天人師、佛、世尊
-    honorific = {'多陀怛伽度', '多陀竭', '多陀阿伽度', '多陀阿伽陀', '多陀阿伽馱', '如來', '怛他蘗多', '怛他蘗多夜', '怛薩阿竭', '怛闥阿竭', '陀多竭多',
-                 '阿羅訶', '阿羅呵', # '三藐三佛陀', '三耶三佛', '三耶三佛檀',
-                 '正徧知', '正徧覺', '等正覺', '三藐三菩陀',
+    honorific = {'多陀怛伽度', '多陀竭', '多陀阿伽[度陀馱]', '如來', '怛他蘗多夜?', '怛薩阿竭', '怛闥阿竭', '陀多竭多',
+            '阿羅訶', '阿羅呵', '(?:三藐三)?佛陀?', '三耶三佛檀?', # '三藐三佛陀', '三耶三佛', '三耶三佛檀',
+                 '正[徧遍][知覺]', '等正覺', '三藐三菩陀',
                  '如來', '應供', '正遍知', '明行足', '善逝', '世間解', '無上士', '調御丈夫', '天人師', '世尊', '薄伽梵', '婆伽婆', }
-    content = re.sub(r'(?!辟支|仿)(佛陀?)', r'<persName>\1</persName>', content)
-    for i in honorific:
-        print(i, i in content)
-        content = content.replace(i, f'<persName>{i}</persName>')
+    # content = re.sub(r'(?!辟支|仿)(佛陀?)', r'<persName>\1</persName>', content)
+    honorific = '|'.join(sorted(honorific, key=len, reverse=True))
+    # print(honorific)
+    content = re.sub(f'({honorific})', r'<persName>\1</persName>', content)
     # 简体繁体双引号, 单引号切换
     content = content.translate({0x300c: 0x201c, 0x300d: 0x201d, 0x300e: 0x2018, 0x300f: 0x2019})
     # content = opencc.convert(content, config='t2s.json')
@@ -899,7 +899,6 @@ def new_dict2(page):
         prevpage = max(page - 1, 1)
         nextpage = page + 1
     else:
-        # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
         # fxcd = [(item, (data[item],)) for item in data]
         fxcd = [((item, ' '.join(lookinkangxi(i)['pinyin'].split(' ')[0] for i in item)), (data[item],)) for item in data]
         total = len(fxcd)
@@ -926,7 +925,6 @@ def new_dict3(page):
         prevpage = max(page - 1, 1)
         nextpage = page + 1
     else:
-        # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
         # fxcd = [(item, (data[item],)) for item in data]
         fxcd = [((item, ' '.join(lookinkangxi(i)['pinyin'].split(' ')[0] for i in item)), (data[item],)) for item in data]
         total = len(fxcd)
@@ -955,7 +953,6 @@ def new_dict4(page):
         prevpage = max(page - 1, 1)
         nextpage = page + 1
     else:
-        # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
         # fxcd = [(item, (data[item],)) for item in data]
         fxcd = [((item, ' '.join(lookinkangxi(i)['pinyin'].split(' ')[0] for i in item)), (data[item],)) for item in data]
         total = len(fxcd)
@@ -981,7 +978,6 @@ def new_dict5(page):
         prevpage = max(page - 1, 1)
         nextpage = page + 1
     else:
-        # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
         # fxcd = [(item, (data[item],)) for item in data]
         fxcd = [((item, ' '.join(lookinkangxi(i)['pinyin'].split(' ')[0] for i in item)), (data[item],)) for item in data]
         total = len(fxcd)

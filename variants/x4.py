@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-01-30 23:18:54
+# Last Modified: 2018-03-09 10:44:30
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -41,12 +41,15 @@ with open('variants.txt') as fd:
         else:
             rr[c1] = [c2,]
         r1.add(c1)
+        r2.add(c2)
         # if c1 in edu and c2 in edu:
         #     if cipin.get(c1, 0) < cipin.get(c2, 0):
         #         print(c1, c2, cipin.get(c1, 0), cipin.get(c2, 0))
-        if c1 not in edu and c2 not in edu:
-            if cipin.get(c1, 0) < cipin.get(c2, 0):
-                print(c1, c2, cipin.get(c1, 0), cipin.get(c2, 0), "%X" % ord(c1), "%X" % ord(c2))
+
+        # if c1 not in edu and c2 not in edu:
+        #     if cipin.get(c1, 0) < cipin.get(c2, 0):
+        #         print(c1, c2, cipin.get(c1, 0), cipin.get(c2, 0), "%X" % ord(c1), "%X" % ord(c2))
+
         # result.add((c1, c2))
         # else:
         #     print(c2)
@@ -54,15 +57,19 @@ with open('variants.txt') as fd:
 # result = sorted(list(result), key=lambda x: ord(x[0]))
 rk = sorted(rr.keys(), key=lambda x: ord(x))
 
-# for c1 in rk:
-#     cc = sorted([i for i in rr[c1]], key=lambda x: ord(x))
-#     for c2 in cc:
-#         # if c1 in edu and c2 in edu:
-#         if c1 != c2:
-#             print(c1, c2, "U+%X" % ord(c1), "U+%X" % ord(c2))
+for c1 in rk:
+    cc = sorted([i for i in rr[c1]], key=lambda x: ord(x))
+    for c2 in cc:
+        if c1 not in edu and c2 in edu:
+        # if c1 != c2:
+            print(c1, c2, "U+%X" % ord(c1), "U+%X" % ord(c2), cipin.get(c1, 0), cipin.get(c2, 0))
 
 for c1 in r1:
     if c1 in r2:
+        print(c1, rr[c1])
+
+for c2 in r2:
+    if c2 in r1:
         print(c1, rr[c1])
 
 # print(data)
