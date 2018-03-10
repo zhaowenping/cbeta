@@ -59,6 +59,7 @@
   {% for it in results %}
   <li>
     <div>
+    {{it.filename}}
     <a href="{{it.an}}">{{it.title}}</a>{%if it.author is defined%} <span>{{it.author}}</span>{% endif%}<br>
     <div>
     {{it.hl}}

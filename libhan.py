@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-03-11 07:42:49
+# Last Modified: 2018-03-11 07:49:57
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -779,7 +779,7 @@ def fullsearch(sentence):
         if zi_order(sentence, _source['content']):
             result.append({'hl': highlight(sentence, _source['content']), 'an': f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}',
                 'title':_source['title'], 'author': author, 'content': _source['content'],
-                'filename': _source["filename"]})
+                'filename': _source["filename"].split('.')[0]})
 
     # sorted(result, key=lambda x: pagerank(x['filename']), reverse=True)
     result.sort(key=lambda x: pagerank(x['filename'], sentence, x['content']))
