@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-03-10 22:00:41
+# Last Modified: 2018-03-11 07:29:54
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -701,10 +701,12 @@ def highlight(ss, ct):
         ct = ct.replace(zi, f'<em>{zi}</em>')
     return ct
 
-def pagerank(filename):
+def pagerank(filename, sentence, content):
     '''对xml文件名评分, filename 为 T20n1060 或者 T20n1060_001.xml 形式
     A,B,C,D,F,G,GA,GB,I,J,K,L,M,N,P,S,T,U,X,ZW
     '''
+    sentence = sentence.split()
+    sentence_value = [{True:0, False:1}[s in content] for s in sentence]
     pr = ("T", "B", "ZW", "A", "C", "D", "F", "G" , "GA", "GB", "I", "J", "K", "L", "M", "N", "P", "S", "U", "X")
     pt = re.compile(r'\d+')  # 应该在前端过滤
     if filename[0] == 'T':
@@ -715,9 +717,10 @@ def pagerank(filename):
     x = [int(i) for i in x]
     # return r, x[0], x[1], x[2]
     x.insert(0, r)
+    x.insert(0, sentence_value)
     return x
 
-def fullsearch(ct):
+def fullsearch(sentence):
     '''全文搜索'''
     url = "http://127.0.0.1:9200/cbeta/fulltext/_search?"#创建一个文档，如果该文件已经存在，则返回失败
     queryParams = "pretty&size=50"
@@ -726,7 +729,7 @@ def fullsearch(ct):
      "query": {
         "match": {
             "content": {
-                "query": ct,
+                "query": sentence,
             }
         }
     },
@@ -741,7 +744,7 @@ def fullsearch(ct):
     data = {
   "query": {
     "match": {
-      "content": ct
+      "content": sentence
     }
   },
   "rescore" : {
@@ -750,7 +753,7 @@ def fullsearch(ct):
       "rescore_query" : {
         "match_phrase" : {
           "content" : {
-            "query" : ct,
+            "query" : sentence,
             "slop" : 50
           }
         }
@@ -772,12 +775,13 @@ def fullsearch(ct):
         author = _source['author'].split('\u3000')[0]
         juan = _source["filename"].split('n')[0]
         # result.append((''.join(i['highlight']['content']), f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', _source['title'], author))
-        if zi_order(ct, _source['content']):
-            result.append({'hl': highlight(ct, _source['content']), 'an': f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', 'title':_source['title'], 'author': author,
+        if zi_order(sentence, _source['content']):
+            result.append({'hl': highlight(sentence, _source['content']), 'an': f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}',
+                'title':_source['title'], 'author': author, 'content': _source['content'],
                 'filename': _source["filename"]})
 
     # sorted(result, key=lambda x: pagerank(x['filename']), reverse=True)
-    result.sort(key=lambda x: pagerank(x['filename']))
+    result.sort(key=lambda x: pagerank(x['filename'], sentence, x['content']))
         # else:
         #     import pprint
         #     pprint.pprint(('||'.join(_source['content']), f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', _source['title'], author))
