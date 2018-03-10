@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-03-11 07:30:49
+# Last Modified: 2018-03-11 07:34:10
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -706,7 +706,7 @@ def pagerank(filename, sentence, content):
     A,B,C,D,F,G,GA,GB,I,J,K,L,M,N,P,S,T,U,X,ZW
     '''
     sentence = sentence.strip().split()
-    sentence_value = [{True:0, False:1}[s in content] for s in sentence]
+    sentence_value = sum([{True:0, False:1}[s in content] for s in sentence])
     pr = ("T", "B", "ZW", "A", "C", "D", "F", "G" , "GA", "GB", "I", "J", "K", "L", "M", "N", "P", "S", "U", "X")
     pt = re.compile(r'\d+')  # 应该在前端过滤
     if filename[0] == 'T':
