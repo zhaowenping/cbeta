@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-03-11 07:49:57
+# Last Modified: 2018-03-11 07:52:43
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -701,7 +701,7 @@ def highlight(ss, ct):
         ct = ct.replace(zi, f'<em>{zi}</em>')
     return ct
 
-def pagerank(filename, sentence, content):
+def pagerank(filename, sentence='', content=''):
     '''对xml文件名评分, filename 为 T20n1060 或者 T20n1060_001.xml 形式
     A,B,C,D,F,G,GA,GB,I,J,K,L,M,N,P,S,T,U,X,ZW
     '''
@@ -782,7 +782,7 @@ def fullsearch(sentence):
                 'filename': _source["filename"].split('.')[0]})
 
     # sorted(result, key=lambda x: pagerank(x['filename']), reverse=True)
-    result.sort(key=lambda x: pagerank(x['filename'], sentence, x['content']))
+    result.sort(key=lambda x: pagerank(x['filename']))  #, sentence, x['content']))
         # else:
         #     import pprint
         #     pprint.pprint(('||'.join(_source['content']), f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', _source['title'], author))
