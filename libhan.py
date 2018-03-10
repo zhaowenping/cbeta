@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-03-09 18:04:29
+# Last Modified: 2018-03-10 22:00:41
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -367,29 +367,38 @@ def load_dict(dictionary=None):
 
 def lookinkangxi(word):
     '''查询康熙字典'''
-    definition = []
-    if word not in kangxi:
-        word = normyitizi(word)
-        definition.append(f'同{word}')
 
-    if word in kangxi:
-        _from = "康熙字典"
-        kxword = kangxi[word]
-        if "說文解字" in kxword:
-            definition.append(kxword["說文解字"])
-        if "康熙字典" in kxword:
-            definition.append(kxword["康熙字典"])
-        if "宋本廣韻" in kxword:
-            definition.append(kxword["宋本廣韻"])
-        if definition:
-            definition = '<br><br>'.join(definition)
+    def sub(word):
+        definition = []
+        _from = ""
+        pinyin = ""
+        if word in kangxi:
+            _from = "康熙字典"
+            kxword = kangxi[word]
+            if "說文解字" in kxword:
+                definition.append(kxword["說文解字"])
+            if "康熙字典" in kxword:
+                definition.append(kxword["康熙字典"])
+            if "宋本廣韻" in kxword:
+                definition.append(kxword["宋本廣韻"])
+            if definition:
+                definition = '<br><br>'.join(definition)
+            else:
+                definition = kxword.get('英文翻譯', '')
+            pinyin = kxword.get('國語發音', '')
         else:
-            definition = kxword.get('英文翻譯', '')
-        pinyin = kxword.get('國語發音', '')
-    else:
-        _from = "unicode"
-        definition = unihan.get(word, {}).get('kDefinition', '')
-        pinyin = unihan.get(word, {}).get('kMandarin', '')
+            _from = "unicode"
+            definition = unihan.get(word, {}).get('kDefinition', '')
+            pinyin = unihan.get(word, {}).get('kMandarin', '')
+        return pinyin, definition, _from
+
+    pinyin, definition, _from = sub(word)
+
+    if not pinyin:
+        word2 = normyitizi(word)
+        pinyin, definition, _from = sub(word2)
+        if definition:
+            definition = f'同{word2}<br>' + definition
     return {'word': word, 'pinyin': pinyin, 'def': definition, 'from': _from}
 
 
@@ -560,8 +569,8 @@ class Search:
         # ( for zi in index)
         if norm:
             title = normyitizi(title)
-        a = (set(self.index.get(tt, {}).keys()) for tt in list(title))
-        return reduce(lambda x, y: x & y, a)
+        result = (set(self.index.get(tt, {}).keys()) for tt in list(title))
+        return sorted(reduce(lambda x, y: x & y, result), key=pagerank)
 
 
 
@@ -693,10 +702,10 @@ def highlight(ss, ct):
     return ct
 
 def pagerank(filename):
-    '''对xml文件名评分
+    '''对xml文件名评分, filename 为 T20n1060 或者 T20n1060_001.xml 形式
     A,B,C,D,F,G,GA,GB,I,J,K,L,M,N,P,S,T,U,X,ZW
     '''
-    pr = ("T", "A", "B", "C", "D", "F", "G" , "GA", "GB", "I", "J", "K", "L", "M", "N", "P", "S", "U", "X", "ZW")
+    pr = ("T", "B", "ZW", "A", "C", "D", "F", "G" , "GA", "GB", "I", "J", "K", "L", "M", "N", "P", "S", "U", "X")
     pt = re.compile(r'\d+')  # 应该在前端过滤
     if filename[0] == 'T':
         r = 0
@@ -704,7 +713,9 @@ def pagerank(filename):
         r = 1
     x = pt.findall(filename)
     x = [int(i) for i in x]
-    return r, x[0], x[1], x[2]
+    # return r, x[0], x[1], x[2]
+    x.insert(0, r)
+    return x
 
 def fullsearch(ct):
     '''全文搜索'''
@@ -840,8 +851,9 @@ if __name__ == "__main__":
     #             if cp > 0:
     #                 print(word, word2, cipin.get(word, 0), "%X" % ord(word))
     #             pass
-    print(pagerank('T14n0563_001.xml'))
-    print(zhuyin('你好', True))
+    # print(pagerank('T14n0563_001.xml'))
+    # print(zhuyin('你好', True))
+    print(lookinkangxi('𢾛'))
 
 
 
