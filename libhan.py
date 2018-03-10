@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-03-11 07:34:10
+# Last Modified: 2018-03-11 07:37:36
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -722,6 +722,7 @@ def pagerank(filename, sentence, content):
 
 def fullsearch(sentence):
     '''全文搜索'''
+    sentence2 = sentence.replace(' ', '')
     url = "http://127.0.0.1:9200/cbeta/fulltext/_search?"#创建一个文档，如果该文件已经存在，则返回失败
     queryParams = "pretty&size=50"
     url = url + queryParams
@@ -729,7 +730,7 @@ def fullsearch(sentence):
      "query": {
         "match": {
             "content": {
-                "query": sentence,
+                "query": sentence2,
             }
         }
     },
@@ -744,7 +745,7 @@ def fullsearch(sentence):
     data = {
   "query": {
     "match": {
-      "content": sentence
+      "content": sentence2
     }
   },
   "rescore" : {
@@ -753,7 +754,7 @@ def fullsearch(sentence):
       "rescore_query" : {
         "match_phrase" : {
           "content" : {
-            "query" : sentence,
+            "query" : sentence2,
             "slop" : 50
           }
         }
