@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-03-11 07:29:54
+# Last Modified: 2018-03-11 07:30:49
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -705,7 +705,7 @@ def pagerank(filename, sentence, content):
     '''对xml文件名评分, filename 为 T20n1060 或者 T20n1060_001.xml 形式
     A,B,C,D,F,G,GA,GB,I,J,K,L,M,N,P,S,T,U,X,ZW
     '''
-    sentence = sentence.split()
+    sentence = sentence.strip().split()
     sentence_value = [{True:0, False:1}[s in content] for s in sentence]
     pr = ("T", "B", "ZW", "A", "C", "D", "F", "G" , "GA", "GB", "I", "J", "K", "L", "M", "N", "P", "S", "U", "X")
     pt = re.compile(r'\d+')  # 应该在前端过滤
