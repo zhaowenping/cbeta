@@ -38,11 +38,12 @@
   unicode-range: U+11580-115FF;
 }
 
-/* F區漢字 */
+/* F區漢字使用抽取出來的花園明朝字體 */
 @font-face {
     font-family: 'hanaminsat';
-    src: /*url('/static/satextf.eot') format('eot'),*/
-         url('/static/satextf.woff') format('woff');
+    src: local(HanaMinB),
+        url('/static/satextf.woff') format('woff');
+    unicode-range: U+2CEEC-2EBCF;
 }
 
 /* 用于显示等宽英文和拼音, 拼音a的显示还存在问题 */
