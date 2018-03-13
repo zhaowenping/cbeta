@@ -38,6 +38,12 @@
   unicode-range: U+11580-115FF;
 }
 
+/* F區漢字 */
+@font-face {
+    font-family: 'hanaminsat';
+    src: /*url('/static/satextf.eot') format('eot'),*/
+         url('/static/satextf.woff') format('woff');
+}
 
 /* 用于显示等宽英文和拼音, 拼音a的显示还存在问题 */
 @font-face {
@@ -365,6 +371,7 @@ span.gaiji_nor{
 
 /* 未规范化异体字 */
 span.gaiji_uni{
+    font-family: hanaminsat;
     color:#1685a9;
 }
 
@@ -579,7 +586,6 @@ p.box{
 
 /* verse */
 div.lg {
-/*p.lg{*/
    /* margin-left:10px;
     margin-bottom:10px; */
    /* text-indent:-1em;*/
@@ -588,13 +594,13 @@ div.lg {
     margin-left: 4em;
     text-indent: 0;
     color: #10AA10;
-
 }
 span.l {
     margin-left:1em;
     color: #10AA10;
 
 }
+
 /*在小屏幕设备上居中显示偈颂*/
 @media screen and (max-width: 736px) {
     body {
