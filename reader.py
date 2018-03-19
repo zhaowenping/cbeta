@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-03-09 17:50:39
+# Last Modified: 2018-03-19 10:52:55
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -226,6 +226,7 @@ def search_post():
     # content = request.forms.content
     if ts.detect(content)['confidence'] == 's':
         content = convert2t(content)
+    content = normyitizi(content)
     # stop_words = frozenset("不無一是有之者如法為故生此佛所三以二人云也於中若得心大")
     # content = ''.join(set(content)-stop_words)
     print(('content', content))
