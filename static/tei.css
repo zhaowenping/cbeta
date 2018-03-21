@@ -367,6 +367,7 @@ span.gaiji_rj{
 
 /* 规范化异体字 */
 span.gaiji_nor{
+    font-family: hanaminsat;
     color:#00d7ff;
 }
 
