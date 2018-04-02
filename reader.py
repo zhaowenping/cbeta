@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-03-19 10:52:55
+# Last Modified: 2018-04-02 10:29:01
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -173,6 +173,13 @@ def submenu(bulei):
 
 ss = Search()
 ts = TSDetect()
+
+@get('/jt2ft')
+def jiantifanti():
+    content = request.GET.content
+    if ts.detect(content)['confidence'] == 's':
+        content = convert2t(content)
+    return {'content': content}
 
 @get('/searchmulu')
 @post('/searchmulu')
