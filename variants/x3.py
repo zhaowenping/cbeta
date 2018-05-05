@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-01-09 09:42:52
+# Last Modified: 2018-04-30 12:02:26
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -46,7 +46,11 @@ with open('variants.txt') as fd:
 rk = sorted(rr.keys(), key=lambda x: ord(x))
 
 for c1 in rk:
-    cc = sorted([i for i in rr[c1]], key=lambda x: ord(x))
+    try:
+        cc = sorted([i for i in rr[c1]], key=lambda x: ord(x))
+    except:
+        print(c1, rr[c1])
+        raise
     for c2 in cc:
         # if c1 in edu and c2 in edu:
         if c1 != c2:
