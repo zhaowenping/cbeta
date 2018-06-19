@@ -174,6 +174,14 @@
             <!--input id="shupaictl" type="button" value="竖" onclick="shupai(this);"/-->
             <a>
                 <xsl:attribute name="href">
+                    <xsl:value-of select="concat('/zh_TW', $dir, $current_sutra, '_')"/>
+                    <xsl:number format="001" value="$juan"/>
+                    <xsl:text>.xml</xsl:text>
+                </xsl:attribute>
+                正
+            </a>
+            <a>
+                <xsl:attribute name="href">
                     <xsl:value-of select="concat('/zh', $dir, $current_sutra, '_')"/>
                     <xsl:number format="001" value="$juan"/>
                     <xsl:text>.xml</xsl:text>
@@ -220,6 +228,7 @@
             <br/>
             <br/>
         </xsl:if>
+        <span>写<span>好&#x20de;很</span>写&#x20dd;</span>
 
             <!--div class="span2 col-xs-12 col-sm-3 col-md-2 navbar-inverse">
                 <ul class="nav nav-pills nav-stacked">
@@ -319,7 +328,8 @@
             <xsl:apply-templates/>
         </tr>
     </xsl:template>
-    <!--处理表格cell-->
+
+    <!--处理表格cell FIXME: firefox表格錯位-->
     <xsl:template match="cell">
         <td>
             <xsl:if test="@cols">
@@ -694,7 +704,7 @@
             </xsl:when>
             <!--使用xml实体输出显示，不能用于搜索,ff无效, 形如: &#x25F9D;-->
             <xsl:when test="$char/mapping[@type='normal_unicode']">
-                <span class="gaiji_nor">
+                <span class="gaiji_nun">
                     <xsl:value-of disable-output-escaping='yes' select="concat('&amp;#x', substring($char/mapping[@type='normal_unicode'], 3), ';')"/>
                 </span>
             </xsl:when>

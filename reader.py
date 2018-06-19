@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-04-02 10:29:01
+# Last Modified: 2018-06-19 19:13:51
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -534,6 +534,33 @@ def zh(filename):
     print(filename)
     response.content_type = 'text/xml'
     return content
+
+@route('/zh_TW/:filename#.+#')
+def zh_TW(filename):
+    '''正字版'''
+    print('正字版本', filename)
+    with open(filename) as fd:
+        content = fd.read()
+    # 修改语言为简体
+    # content = content.replace('Hant', 'Hans')
+    # 添加敬语染色 honorific  如來、應供、正遍知、明行足、善逝、世間解、無上士、調御丈夫、天人師、佛、世尊
+    honorific = {'多陀怛伽度', '多陀竭', '多陀阿伽[度陀馱]', '如來', '怛他蘗多夜?', '怛薩阿竭', '怛闥阿竭', '陀多竭多',
+            '阿羅訶', '阿羅呵', '(?:三藐三)?佛陀?', '三耶三佛檀?', # '三藐三佛陀', '三耶三佛', '三耶三佛檀',
+                 '正[徧遍][知覺]', '等正覺', '三藐三菩陀',
+                 '如來', '應供', '正遍知', '明行足', '善逝', '世間解', '無上士', '調御丈夫', '天人師', '世尊', '薄伽梵', '婆伽婆', }
+    # content = re.sub(r'(?!辟支|仿)(佛陀?)', r'<persName>\1</persName>', content)
+    honorific = '|'.join(sorted(honorific, key=len, reverse=True))
+    # print(honorific)
+    content = re.sub(f'({honorific})', r'<persName>\1</persName>', content)
+    # 简体繁体双引号, 单引号切换
+    # content = content.translate({0x300c: 0x201c, 0x300d: 0x201d, 0x300e: 0x2018, 0x300f: 0x2019})
+    # content = opencc.convert(content, config='t2s.json')
+    content = normyitizi(content)
+    # content = convert2s(content)
+    print(filename)
+    response.content_type = 'text/xml'
+    return content
+
 
 @route('/zhx/:filename')
 def zhx(filename):
