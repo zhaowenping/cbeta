@@ -228,7 +228,7 @@
             <br/>
             <br/>
         </xsl:if>
-        <span>写<span>好&#x20de;很</span>写&#x20dd;</span>
+        <!--span>写<span>好&#x20de;很</span>写&#x20dd;</span-->
 
             <!--div class="span2 col-xs-12 col-sm-3 col-md-2 navbar-inverse">
                 <ul class="nav nav-pills nav-stacked">
