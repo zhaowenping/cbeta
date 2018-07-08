@@ -1529,6 +1529,5 @@
 𤫩 (same as U+73B2 玲
 𤯳 same as 甦 U+7526
 𧗗 same as 衄 U+8844
-𨢥 (same as 䤍
 𩣑 (same as U+978D 鞍
 𩷸 (same as U+9B74 魴
