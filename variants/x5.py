@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-06-20 22:08:40
+# Last Modified: 2018-07-10 10:20:56
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
-
+生字表
 """
 
 __all__ = []
