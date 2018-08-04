@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-06-19 19:13:51
+# Last Modified: 2018-07-29 19:24:26
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -28,11 +28,12 @@ from bottle import jinja2_view as view
 from bottle import request
 from bottle import GeventServer
 
-from whoosh.index import open_dir
-from whoosh.qparser import QueryParser
-from whoosh.query import *
+# from whoosh.index import open_dir
+# from whoosh.qparser import QueryParser
+# from whoosh.query import *
 import psycopg2
 # import opencc
+# import jieba
 
 import pprint
 from libhan import hk2sa, read_menu_file
@@ -96,32 +97,29 @@ def listdir():
 #
 
 # 显示菜单
-sch_a = "static/sutra_sch.lst"
-sch_b = "static/bulei_sutra_sch.lst"
-sch_c = "static/long.lst"
+sch_a = read_menu_file("static/sutra_sch.lst")
+sch_b = read_menu_file("static/bulei_sutra_sch.lst")
+sch_c = read_menu_file("static/long.lst")
 
 @route('/mulu')
 @view('temp/menu.jinja2')
 def menu():
-    menu = read_menu_file(sch_b)
-    return {'menus': menu, 'request':request, 'yiju': '大正藏部類'}
+    return {'menus': sch_b, 'request':request, 'yiju': '大正藏部類'}
 
 @route('/qianlong')
 @view('temp/menu.jinja2')
 def menu():
-    menu = read_menu_file(sch_c)
-    return {'menus': menu, 'request':request, 'yiju': '乾隆藏'}
+    return {'menus': sch_c, 'request':request, 'yiju': '乾隆藏'}
 
 @route('/cebie')
 @view('temp/menu.jinja2')
 def menu():
-    menu = read_menu_file(sch_a)
-    return {'menus': menu, 'request':request, 'yiju': '大正藏冊別'}
+    return {'menus': sch_a, 'request':request, 'yiju': '大正藏冊別'}
 
 @route('/mulu/:bulei#.+#')
 @view('temp/menu.jinja2')
 def submenu(bulei):
-    menu = read_menu_file(sch_b)
+    menu = sch_b
     bulei = bulei.split('/')
     root = '/mulu'
 
@@ -145,8 +143,7 @@ def submenu(bulei):
 @route('/cebie/:bulei#.+#')
 @view('temp/menu.jinja2')
 def submenu(bulei):
-    menu = read_menu_file(sch_a)
-    #pprint.pprint(menu)
+    menu = (sch_a)
     bulei = bulei.split('/')
     root = '/cebie'
 
@@ -163,8 +160,9 @@ def submenu(bulei):
         sutra = bulei[-1].split()[0]  # T01n0002
         zang = sutra.split('n')[0]              # T01
         # 查找第一卷(有些不是从第一卷开始的)
-        juan = get_all_juan(sutra)[0]           # 001
-        url = f"/xml/{zang}/{sutra}_{juan}.xml"  # T01n0002_001.xml
+        juan = get_all_juan(sutra)              # 001
+        if not juan: abort(404, f'没找到文件: /xml/{zang}/{sutra}_*.xml')
+        url = f"/xml/{zang}/{sutra}_{juan[0]}.xml"  # T01n0002_001.xml
         redirect(url)
     return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大正藏冊別', 'root': root}
 
@@ -628,7 +626,6 @@ def diff_get():
 import difflib
 from difflib import *
 import chardet
-import jieba
 # chardet.detect(r.content)['encoding']
 @post('/diff')
 @view('temp/diff.jinja2')
@@ -1423,26 +1420,6 @@ def new_dict12(page):
         result = dict(fxcd[pp*(page-1):pp*page])
     return {'result': result, 'header': header, 'prevpage': prevpage, 'nextpage': nextpage}
 
-# GeventServer.run(host = '0.0.0.0', port = 8081)
-
-# GeventServer.run(host = '0.0.0.0', port = 8081)
-
-# GeventServer.run(host = '0.0.0.0', port = 8081)
-
-# GeventServer.run(host = '0.0.0.0', port = 8081)
-
-# GeventServer.run(host = '0.0.0.0', port = 8081)
-
-# GeventServer.run(host = '0.0.0.0', port = 8081)
-
-
-# GeventServer.run(host = '0.0.0.0', port = 8081)
-
-# GeventServer.run(host = '0.0.0.0', port = 8081)
-
-# GeventServer.run(host = '0.0.0.0', port = 8081)
-
-# GeventServer.run(host = '0.0.0.0', port = 8081)
 
 # GeventServer.run(host = '0.0.0.0', port = 8081)
 app = default_app()

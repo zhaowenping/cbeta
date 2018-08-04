@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-03-11 07:52:43
+# Last Modified: 2018-07-29 18:56:18
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -33,7 +33,7 @@ print('调用函数库')
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    with open(path) as fd:
+    with open(path, encoding='utf8') as fd:
         for line in fd:
             line = line.strip()
             if line.startswith('#') or not line: continue
@@ -101,8 +101,9 @@ TSDinst = TSDetect()
 def read_menu_file(sutra_list):
     '''读取tab分隔的菜单文件，返回树状字典'''
     menu = dict()
+    print('''读取tab分隔的菜单文件，返回树状字典''')
 
-    with open(sutra_list) as fd:
+    with open(sutra_list, encoding='utf8') as fd:
         for line in fd:
             line = line.rstrip()
             # if line.startswith('\t\t\t\t\t'):
@@ -167,6 +168,8 @@ def get_all_juan(number):
     book, sutra = number.split('n')
     # 查找第一卷(有些不是从第一卷开始的)
     juan = []
+    if not os.path.exists(f'xml/{book}'):
+        return None
     for path in os.listdir(f'xml/{book}'):
         if path.startswith(number):
             juan.append(path.split('_')[1][:-4])
@@ -344,7 +347,7 @@ def load_dict(dictionary=None):
                     print(path)
                     raise
         else:
-            with open(path) as fd:
+            with open(path, encoding='utf8') as fd:
                 v = json.load(fd)
         # for k1 in v:
         #     if k1 in aio:
