@@ -694,9 +694,6 @@
             <xsl:variable name="term1" select=".."/>
             <xsl:variable name="nor" select="$char/charProp[localName='normalized form']/value"/>
             <xsl:choose>
-            <xsl:when test="$nor and not($term1[@rend='no_nor'])">
-                <span class="gaiji_nor"><xsl:value-of select="$nor"/></span>
-            </xsl:when>
             <xsl:when test="$char/mapping[@type='unicode']">
                 <span class="gaiji_uni">
                     <xsl:value-of select="."/>
@@ -707,6 +704,9 @@
                 <span class="gaiji_nun">
                     <xsl:value-of disable-output-escaping='yes' select="concat('&amp;#x', substring($char/mapping[@type='normal_unicode'], 3), ';')"/>
                 </span>
+            </xsl:when>
+            <xsl:when test="$nor and not($term1[@rend='no_nor'])">
+                <span class="gaiji_nor"><xsl:value-of select="$nor"/></span>
             </xsl:when>
             <xsl:when test="$char/charProp[localName='composition']/value">
                 <span class="gaiji_nor">
@@ -827,6 +827,7 @@
 
     <xsl:template match="anchor">
         <xsl:variable name="Ref" select="concat('#', @xml:id)"/>
+        <!--注释使用花青色-->
         <xsl:if test="not($firefox) and starts-with(@xml:id, 'beg')">
             <xsl:text disable-output-escaping="yes">&lt;span style="color:red"&gt;</xsl:text>
         </xsl:if>
