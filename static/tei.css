@@ -26,15 +26,32 @@
         local("Source Han Sans JP"),local("Source Han Sans CN"),local("Source Han Sans HK"),local("Source Han Sans TW"), local("Source Han Sans TWHK");
 }
 
+/* 给汉字加外圈 */
+@font-face {
+  font-family:"ENCLOSING_CIRCLE";
+  src:local("Source Han Serif TC");
+  unicode-range: U+20DD-20DE;
+}
+
+/* 正常显示缺字方块大小, 冬青黑和雅黑不能随着字体大小变化 */
+@font-face {
+  font-family: WSQUARE;
+  src: local('Source Han Serif TC'),
+       local('PingFang HK'),
+       local('PingFang SC'),
+       local('PMingLiU'),
+       local('SimSun');
+  unicode-range: U+25A1;
+}
+
 /* 悉昙体字体 */
 @font-face {
   font-family: 'siddham';
   font-style: normal;
   font-weight: normal;
-  src:  
-  local(ApDevaSanskrit),
-  local(ApDevaSiddham),
-        url(/static/siddham.woff) format('woff');
+  src:  local('siddham'), url(/static/siddham.woff) format('woff');
+  // local(ApDevaSanskrit),
+  // local(ApDevaSiddham),
   unicode-range: U+11580-115FF;
 }
 
@@ -54,17 +71,6 @@
   src: local('Inconsolata'),
        local('Consolas'),
        local('Monaco');
-}
-
-/* 正常显示缺字方块大小, 冬青黑和雅黑不能随着字体大小变化 */
-@font-face {
-  font-family: WSQUARE;
-  src: local('Source Han Serif TC'),
-       local('PingFang HK'),
-       local('PingFang SC'),
-       local('PMingLiU'),
-       local('SimSun');
-  unicode-range: U+25A1;
 }
 
 /* 使用SimSun字体以便正确显示小蝌蚪符号: 引号、逗号、分号等、顿号,需要做一个排查, 标点符号显示需要使用light字重 */
@@ -113,7 +119,7 @@ body{
     padding:2em;
     padding-top:100px;
     /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;*/
-    font-family: WSQUARE, quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", "PingFang HK", "PingFang SC", "PMingLiU", "Microsoft YaHei", siddham;
+    font-family: ENCLOSING_CIRCLE, WSQUARE, quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", "PingFang HK", "PingFang SC", "PMingLiU", "Microsoft YaHei", siddham;
     font-size: large;
     /* font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;*/
 }
@@ -367,6 +373,11 @@ span.gaiji_rj{
 
 /* 规范化异体字 */
 span.gaiji_nor{
+    font-family: hanaminsat;
+    color:#00d7ff;
+}
+
+span.gaiji_nun{
     font-family: hanaminsat;
     color:#00d7ff;
 }
@@ -1258,7 +1269,7 @@ sub {
     bottom: -.25em;
 }
 
-/*赤金色*/
+/* 敬语: 赤金色 */
 .honorific {
     color:#F2BE45;
 }
