@@ -84,7 +84,7 @@
         </xsl:choose>
     </xsl:variable>
 
-    <!--开始页面根元素-->
+    <!--开始页面根元素: 默认使用繁体文言文-->
     <xsl:template match="/">
         <html>
           <xsl:attribute name="lang">
@@ -467,10 +467,10 @@
 
     <!--XXX 这里两段重复了-->
     <xsl:template match="p[@cb:type='dharani']">
-        <p class="dharani">
+        <div class="dharani">
             <p lang="sa-Sidd"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-Sidd']"/></p>
-            <p class="dharani"><xsl:apply-templates/></p>
-        </p>
+            <p lang="zh-Hant"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='zh-Hant']"/></p>
+        </div>
     </xsl:template>
 
     <xsl:template match="p[@cb:type='pre']">
@@ -904,7 +904,7 @@
     </xsl:template>
 
 
-    <!--处理div 折叠式注释 TODO-->
+    <!--处理div 折叠式注释 TODO, 里面的异体字处理有些问题D47n8936_002-->
     <!--xsl:template match="cb:div[@type='orig']"-->
     <xsl:template match="cb:div[@type='commentary']">
         <div class="commentary panel-collapse">
@@ -917,6 +917,7 @@
         </div>
         <br/>
     </xsl:template>
+
 
     <!--生成导航目录 max(cb:mulu@level)=28, XXX: 不能显示cb:mulu中的异体字:K34n1257_007.xml-->
     <xsl:template name="make_catalog">
@@ -1013,6 +1014,11 @@
     <!--'sa-x-rj', 'en', 'sa-Sidd', 'zh', 'san-tr', 'sa', 'x-unknown', 'pi', 'zh-x-yy'-->
     <!--sa, pi, x-unknown-->
     <xsl:template match="foreign">
+        <!--span>
+            <xsl:attribute name="lang">
+              <xsl:value-of select="@xml:lang"/>
+            </xsl:attribute>
+        </span-->
         <xsl:choose>
             <xsl:when test="@xml:lang='sa'">
                 <xsl:text>[梵語]</xsl:text>
