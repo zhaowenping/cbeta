@@ -465,12 +465,17 @@
         </xsl:element>
     </xsl:template>
 
-    <!--XXX 这里两段重复了-->
+    <!--咒语段落, 分成悉昙体和汉语两个段落表现 -->
     <xsl:template match="p[@cb:type='dharani']">
-        <div class="dharani">
+        <p class="dharani">
+          <xsl:if test="cb:tt">
             <p lang="sa-Sidd"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-Sidd']"/></p>
             <p lang="zh-Hant"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='zh-Hant']"/></p>
-        </div>
+          </xsl:if>
+          <xsl:if test="not(cb:tt)">
+            <xsl:apply-templates/>
+          </xsl:if>
+        </p>
     </xsl:template>
 
     <xsl:template match="p[@cb:type='pre']">
@@ -487,17 +492,6 @@
                 <xsl:value-of select="@xml:id"/>
               </xsl:attribute>
           </xsl:if>
-          <!--xsl:if test="@cb:type='dharani'">
-            <xsl:attribute name="class">
-                <xsl:text>dharani</xsl:text>
-            </xsl:attribute>
-            <a href="#">&#128362;</a>
-          </xsl:if-->
-          <!--xsl:if test="contains(@rend, 'inline')">
-            <xsl:attribute name="style">
-                <xsl:text>display:inline</xsl:text>
-            </xsl:attribute>
-          </xsl:if-->
           <xsl:apply-templates/>
         </p>
     </xsl:template>
