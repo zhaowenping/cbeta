@@ -465,6 +465,7 @@
         </xsl:element>
     </xsl:template>
 
+    <!--XXX 这里两段重复了-->
     <xsl:template match="p[@cb:type='dharani']">
         <p class="dharani">
             <p lang="sa-Sidd"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-Sidd']"/></p>
@@ -559,17 +560,17 @@
     <xsl:template match="cb:tt">
         <ruby>
         <rb>
-            <xsl:apply-templates select="cb:t[@xml:lang='zh']"/>
-        </rb>
-        <rt>
             <xsl:choose>
-            <xsl:when test="cb:t[@xml:lang='sa-Latn']">
-                <xsl:apply-templates select="cb:t[@xml:lang='sa-Latn']"/>
+            <xsl:when test="cb:t[@xml:lang='zh']">
+                <xsl:apply-templates select="cb:t[@xml:lang='zh']"/>
             </xsl:when>
             <xsl:when test="cb:t[@xml:lang='sa-Sidd']">
                 <xsl:apply-templates select="cb:t[@xml:lang='sa-Sidd']"/>
             </xsl:when>
             </xsl:choose>
+        </rb>
+        <rt>
+            <xsl:apply-templates select="cb:t[@xml:lang='sa-Latn']"/>
         </rt>
         </ruby>
     </xsl:template>
@@ -643,6 +644,9 @@
             <xsl:choose>
                 <xsl:when test="$char/mapping[@type='unicode']">
                     <xsl:value-of select="$char/mapping[@type='unicode']"/>
+                    <!--span class="gaiji_sd">
+                        <xsl:value-of select="."/>
+                    </span-->
                 </xsl:when>
                 <xsl:otherwise>
                 <img>
