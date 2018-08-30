@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-08-30 17:51:14
+# Last Modified: 2018-08-30 19:01:01
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -190,6 +190,84 @@ class SA:
     '''梵语字符串类, 可以使用HK转写和iast转写输入, 使用天城体, 悉檀体, 拉丁输出'''
     pass
 
+def hk2iastdeve(str_in):
+    '''hk哈佛-京都系统转IAST梵语(天城体)'''
+    sonorants  = {
+            # Sonorants:
+            'R': 'ऋ',
+            'RR': 'ॠ',
+            'lR': 'ऌ',
+            'lRR': 'ॡ ',
+        }
+
+    t1 = {
+            # Anusvāra and visarg:
+            'aM': 'अं',
+            'aH': 'अः',
+        # Consonants:
+            'ai': 'ऐ',
+            'au': 'औ',
+            'kh': 'ख',
+            'gh': 'घ',
+            'ch': 'छ',
+            'jh': 'झ',
+            'ph': 'फ',
+            'Th': 'ठ',
+            'Dh': 'ढ',
+            'th': 'थ',
+            'dh': 'ध',
+            'bh': 'भ',
+            }
+
+    t2 = {
+            # Vowels:
+            'a': 'अ',
+            'A': 'आ',    # ā
+            'i': 'इ',
+            'I':'ई',
+            'u': 'उ',
+            'U':'ऊ',
+            'e': 'ए',
+            'o': 'ओ',
+
+        # Consonants:
+            'k': 'क',
+            'g': 'ग',
+            'G': 'ङ',
+            'c': 'च',
+            'j': 'ज',
+            'J': 'ञ',
+            'T': 'ट',
+            'D': 'ड',
+            'N': 'ण',
+            't': 'त',
+            'd': 'द',
+            'n': 'न',
+            'p': 'प',
+            'b': 'ब',
+            'm': 'म',
+            'y': 'य',
+            'r': 'र',
+            'l': 'ल',
+            'v': 'व',
+            'z': 'श',
+            'S': 'ष',
+            's': 'स',
+            'h': 'ह',
+            }
+
+        # '@':' ',
+
+    # usedt = {ord(k): ord(t1[k]) for k in t1}
+    str_out = str_in.replace('RR', sonorants['RR']).replace('lR', sonorants['lR']).replace('lRR', sonorants['lRR'])
+    for zi in t1:
+        str_out = str_out.replace(zi, t1[zi])
+    for zi in t2:
+        str_out = str_out.replace(zi, t2[zi])
+    # str_out = str_out.translate(usedt)
+    return str_out
+
+
 def hk2iast(str_in):
     '''hk哈佛-京都系统转IAST梵语'''
     x = {'S':'sh',
@@ -247,7 +325,9 @@ def HKdict2iast(hkdict):
 
     for key in hkdict:
         vals = hkdict[key]
+        devkey = hk2iastdeve(key)
         key = hk2iast(key)  # .replace('1', '').replace("'", '').replace('4', '').replace('7', '').replace('8', '').replace('9', '').replace('0', '').replace('-', '') #.lower()
+        key = ' '.join((key, devkey))
         res = []
         for val in vals:
             x = mwpatten.findall(val)
@@ -872,5 +952,6 @@ if __name__ == "__main__":
 
     str_in = "a-kAra"
     print(hk2iast(str_in))
+    print(hk2iastdeve(str_in))
 
 
