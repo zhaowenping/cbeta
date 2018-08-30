@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-07-29 19:24:26
+# Last Modified: 2018-08-30 17:50:01
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -36,7 +36,7 @@ import psycopg2
 # import jieba
 
 import pprint
-from libhan import hk2sa, read_menu_file
+from libhan import hk2iast, read_menu_file, HKdict2iast
 from libhan import get_all_juan
 from libhan import Search
 from libhan import TSDetect
@@ -57,10 +57,11 @@ from libhan import unihan
 def index():
     return {'Hello World!':''}
 
-@route('/tools')
-@view('temp/tools.html')
-def tools():
-    return {'Hello World!':''}
+@get('/tools')
+@view('temp/tools.jinja2')
+def tools_get():
+    return {}
+
 
 @route('/zhouyu/:filename#.+#')
 def server_zhouyu(filename):
@@ -533,6 +534,17 @@ def zh(filename):
     response.content_type = 'text/xml'
     return content
 
+def rm_ditto_mark(ctx):
+    # 去除三个叠字符号: 〃 U+3003 2227 /々 U+3005 6415/ 亽 U+4EBD 151
+    idx = ctx.find('〃')
+    if -1 == idx:
+        return ctx
+    ctx[idx] = 'x'  # TODO: 找到一个合法的重复字符
+    return rm_ditto_mark(ctx)
+
+def rm_iter_mark(ctx):
+    pass
+
 @route('/zh_TW/:filename#.+#')
 def zh_TW(filename):
     '''正字版'''
@@ -882,11 +894,6 @@ def keyifayin_post():
 def page_get():
     return []
 
-@get('/tools')
-@view('temp/tools.jinja2')
-def tools_get():
-    return {}
-
 # 法相词典
 @get('/fxcd/:page')
 @view('temp/dict.jinja2')
@@ -1029,31 +1036,14 @@ def new_dict6(page):
 
     header = data.pop('header', {})
 
-    mwpatten = re.compile(r'(%\{.+?})')
-    sa_en = dict()
-    for key in data:
-        k = key.replace('1', '').replace("'", '').replace('4', '').replace('7', '').replace('8', '').replace('9', '').replace('0', '').replace('-', '').lower()
-        sa_en.update({k: data[key]})
-
-    for key in data:
-        vals = data[key]
-        res = []
-        for val in vals:
-            x = mwpatten.findall(val)
-            if x:
-                for ff in x:
-                    val = val.replace(ff, hk2sa(ff))
-            res.append(val)
-        # 不知道以下这两行那个对
-        sa_en.update({hk2sa(key): res})
-        # sa_en.update({hk2sa(key, 2): res})
+    sa_en = HKdict2iast(data)
 
     if q:
         # 查字典
-        fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
+        fxcd = {item: re.split(r'\n *', sa_en[item])[1:] for item in sa_en}
         result = fxcd.get(q, {})
     else:
-        # fxcd = [(item, re.split(r'\n *', data[item])[1:]) for item in data]
+        # fxcd = [(item, re.split(r'\n *', sa_en[item])[1:]) for item in sa_en]
         # fxcd = [(item, sa_en[item]) for item in sa_en]
         fxcd = [((item, ''), sa_en[item]) for item in sa_en]
         total = len(fxcd)
@@ -1073,29 +1063,11 @@ def new_dict6(page):
         data = json.load(fd)
 
     header = data.pop('header', {})
-
-    mwpatten = re.compile(r'(%\{.+?})')
-    sa_en = dict()
-    for key in data:
-        k = key.replace('1', '').replace("'", '').replace('4', '').replace('7', '').replace('8', '').replace('9', '').replace('0', '').replace('-', '').lower()
-        sa_en.update({k: data[key]})
-
-    for key in data:
-        vals = data[key]
-        res = []
-        for val in vals:
-            x = mwpatten.findall(val)
-            if x:
-                for ff in x:
-                    val = val.replace(ff, hk2sa(ff))
-            res.append(val)
-        # 不知道以下这两行那个对
-        sa_en.update({hk2sa(key): res})
-        # sa_en.update({hk2sa(key, 2): res})
+    sa_en = HKdict2iast(data)
 
     if q:
         # 查字典
-        fxcd = {item: re.split(r'\n *', data[item])[1:] for item in data}
+        fxcd = {item: re.split(r'\n *', sa_en[item])[1:] for item in sa_en}
         result = fxcd.get(q, {})
     else:
         # fxcd = [(item, sa_en[item]) for item in sa_en]

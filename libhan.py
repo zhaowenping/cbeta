@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-07-29 18:56:18
+# Last Modified: 2018-08-30 17:51:14
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -38,16 +38,14 @@ def readdb(path, trans=False, reverse=False):
             line = line.strip()
             if line.startswith('#') or not line: continue
             c0, c1, *cc = line.strip().split()
-            if trans:
-                if reverse:
-                    result[ord(c1)] = ord(c0)
-                else:
-                    result[ord(c0)] = ord(c1)
-            else:
-                if reverse:
-                    result[c1] = c0
-                else:
-                    result[c0] = c1
+            if trans and reverse:
+                result[ord(c1)] = ord(c0)
+            if trans and not reverse:
+                result[ord(c0)] = ord(c1)
+            if not trans and reverse:
+                result[c1] = c0
+            if not trans and not reverse:
+                result[c0] = c1
     return result
 
 
@@ -57,24 +55,15 @@ class TSDetect:
 
         self.p = re.compile(r'[\u4e00-\u9fa5]')
 
-        # 纯繁体字集合
-        # self.tt = set()
-        # 纯简体字集合
-        # self.ss = set()
-        # with open('cc/TSCharacters.txt') as fd:
-        #     for line in fd:
-        #         line = line.strip().split()
-        #         # print(line.split())
-        #         self.tt.add(line[0])
-        #         for zi in line[1:]:
-        #             self.ss.add(zi)
+        # self.tt: 纯繁体字集合
+        # self.ss: 纯简体字集合
         tsdb = readdb('cc/TSCharacters.txt')
-        self.tt = set(tsdb.keys())
-        self.ss = set(tsdb.values())
+        tt = set(tsdb.keys())
+        ss = set(tsdb.values())
+        xx = tt & ss
 
-        xx = self.tt & self.ss
-        self.tt = self.tt - xx
-        self.ss = self.ss - xx
+        self.tt = tt - xx
+        self.ss = ss - xx
 
     def detect(self, s0):
         '''粗略判断一段文本是简体还是繁体的概率'''
@@ -176,6 +165,7 @@ def get_all_juan(number):
     juan.sort(key=lambda x: int(re.sub(r'[a-zA-Z]*', '', f'{x:0<5}'), 16))
     return juan
 
+
 def get_next_page(number):
     '''给定经号T01n0002_001，返回T01n0002_002'''
     sn = number.split('_')[0]
@@ -246,6 +236,29 @@ def hk2iast(str_in):
     return str_out
 
 hk2sa = hk2iast
+
+def HKdict2iast(hkdict):
+    # 将HK系统梵文词典转为IAST系统梵文词典
+    mwpatten = re.compile(r'(%\{.+?})')
+    sa_en = dict()
+    # for key in data:
+    #     k = key.replace('1', '').replace("'", '').replace('4', '').replace('7', '').replace('8', '').replace('9', '').replace('0', '').replace('-', '').lower()
+    #     sa_en.update({k: data[key]})
+
+    for key in hkdict:
+        vals = hkdict[key]
+        key = hk2iast(key)  # .replace('1', '').replace("'", '').replace('4', '').replace('7', '').replace('8', '').replace('9', '').replace('0', '').replace('-', '') #.lower()
+        res = []
+        for val in vals:
+            x = mwpatten.findall(val)
+            if x:
+                for ff in x:
+                    val = val.replace(ff, hk2iast(ff))
+            res.append(val)
+        # 不知道以下这两行那个对
+        sa_en.update({key: res})
+    return sa_en
+
 
 def load_dict(dictionary=None):
 
@@ -662,12 +675,6 @@ def convert2t(string, punctuation=True, region=False):
 
 # 读入异体字对照表
 yitizi = readdb('dict/variants.txt', True, True)
-# yitizi = dict()
-# with open('dict/variants.txt') as fd:
-#     for line in fd:
-#         if line.startswith('#'): continue
-#         line = line.strip().split()
-#         yitizi[ord(line[1])] = ord(line[0])
 
 def normyitizi(string, level=0):
     '''异体字规范化为标准繁体字'''
@@ -863,5 +870,7 @@ if __name__ == "__main__":
     # print(zhuyin('你好', True))
     print(lookinkangxi('𢾛'))
 
+    str_in = "a-kAra"
+    print(hk2iast(str_in))
 
 
