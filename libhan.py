@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-08-30 19:01:01
+# Last Modified: 2018-08-30 19:07:44
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -194,7 +194,6 @@ def hk2iastdeve(str_in):
     '''hk哈佛-京都系统转IAST梵语(天城体)'''
     sonorants  = {
             # Sonorants:
-            'R': 'ऋ',
             'RR': 'ॠ',
             'lR': 'ऌ',
             'lRR': 'ॡ ',
@@ -220,6 +219,7 @@ def hk2iastdeve(str_in):
             }
 
     t2 = {
+            'R': 'ऋ',
             # Vowels:
             'a': 'अ',
             'A': 'आ',    # ā
@@ -327,6 +327,7 @@ def HKdict2iast(hkdict):
         vals = hkdict[key]
         devkey = hk2iastdeve(key)
         key = hk2iast(key)  # .replace('1', '').replace("'", '').replace('4', '').replace('7', '').replace('8', '').replace('9', '').replace('0', '').replace('-', '') #.lower()
+        # 将天城体附加在罗马体后面
         key = ' '.join((key, devkey))
         res = []
         for val in vals:
