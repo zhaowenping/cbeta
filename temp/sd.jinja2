@@ -59,7 +59,7 @@
 <table>
 <tr><td>名称</td><td>romanu</td><td>romanu</td><td>原字</td><td>xxx</td><td>图片</td></tr>
 {% for name, romanu, romanc, value, sd, pic in result %}
-<tr><td>{{name}}</td><td>{{romanu}}</td><td>{{romanc}}</td><td class="uni">{{value}}</td><td class="sd">{{sd}}</td><td><img src="{{pic}}"/></td></tr>
+<tr><td>{{loop.index}}</td><td>{{name}}</td><td>{{romanu}}</td><td>{{romanc}}</td><td class="uni">{{value}}</td><td class="sd">{{sd}}</td><td><img src="{{pic}}"/></td></tr>
 {% endfor %}
 </table>
   <!--script src="jquery.js"></script-->
