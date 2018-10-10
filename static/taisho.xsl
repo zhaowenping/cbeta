@@ -113,7 +113,8 @@
         </title>
         <!--script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script-->
         <script src="/static/jquery-3.3.1.min.js"></script>
-        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!--script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script-->
+        <script src="/static/bootstrap.min.js"></script>
         <!--script src="/static/bootstrap.min.js"></script-->
         <script src="/static/jquery.webui-popover.min.js"></script>
         <!--script src="https://cdnjs.cloudflare.com/ajax/libs/Han/3.2.7/han.min.js"></script-->
