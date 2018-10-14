@@ -976,13 +976,19 @@
 
     <!-- <ref target="#PTS.Ja.3.227" type="PTS_hide"> -->
     <!-- <ref target="#PTS.Ja.3.153"> -->
+    <!-- <ref cRef="PTS.Ja.1.1"/> -->
     <!-- <ref target="../T31/T31n1585.xml#xpath2(//0041b09)"> -->
     <!-- <ref target="../T31/T31n1585_008.xml#0041b09)"> TODO -->
     <xsl:template match="ref">
         <a>
             <xsl:attribute name="href">
                <!--xsl:value-of select="concat($current_sutra, '_p', @n)" /-->
-              <xsl:value-of select="@target"/>
+                <xsl:if test="@target">
+                <xsl:value-of select="@target"/>
+                </xsl:if>
+                <xsl:if test="@cRef">
+                <xsl:value-of select="@cRef"/>
+                </xsl:if>
             </xsl:attribute>
             <!--xsl:value-of select="."/-->
             <xsl:choose>
