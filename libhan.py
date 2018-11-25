@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-08-30 19:07:44
+# Last Modified: 2018-11-25 12:21:27
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -694,6 +694,7 @@ def re_search(pattern, string):
     if string:
         yield (string, False)
 
+
 def __init_cc__():
     '''读取简体繁体转换数据库'''
     # 读取繁体转简体短语词典
@@ -714,6 +715,7 @@ def __init_cc__():
 
 tsp, tstable, tsptable, stp, sttable, stptable = __init_cc__()
 
+
 def convert2s(string, punctuation=True, region=False, autonorm=True, onlyURO=True):
     '''繁体转简体, punctuation是否转换单双引号
     region 是否执行区域转换
@@ -730,7 +732,9 @@ def convert2s(string, punctuation=True, region=False, autonorm=True, onlyURO=Tru
     # 类推简化字处理
     tst2 = copy.deepcopy(tstable)
     if onlyURO:
-        tst2 = {k:tstable[k] for k in tstable if not (k < 0x20000 and tstable[k] > 0x20000)}
+        # 只要简化字不在BMP，就是类推简化字
+        # tst2 = {k:tstable[k] for k in tstable if not (k < 0x20000 and tstable[k] > 0x20000)}
+        tst2 = {k:tstable[k] for k in tstable if 0x4E00 <= tstable[k] < 0x20000}
 
     content = ''.join(i[0].translate(tst2) if not i[1] else tsptable[i[0]] for i in re_search(tsp, string))
 
