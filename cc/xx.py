@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-11-25 12:17:41
+# Last Modified: 2018-11-30 20:59:56
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -21,26 +21,29 @@ with open('TSCharacters.txt') as fd:
             continue
         line = line.split()
         if len(line) == 2 and line[0] == line[1]:
+            a = line[0]
+            b = line[1]
+            #print(a, b, 'U+%X' % ord(a), 'U+%X' % ord(b), 0)
             pass
         elif len(line) == 2:
             result.append(line)
             pass
         elif len(line) > 2:
-            # print(line)
+            print(line)
             pass
 
-result = sorted(result, key=lambda x :ord(x[0]))
-for line in result:
-    a, b = line
-    # if ord(a) < 0x20000 and ord(b) > 0x20000:
-    #$ if ord(b) > 0x20000:
-    #$     print(a, b, 'U+%X' % ord(a), 'U+%X' % ord(b), 1)
-    #$ else:
-    #$     print(a, b, 'U+%X' % ord(a), 'U+%X' % ord(b), 0)
-    # if not (ord(a) < 0x20000 and ord(b) > 0x20000):
-    if not (ord(b) < 0x4E00 or ord(b) > 0x20000):
-        print(a, b, 'U+%X' % ord(a), 'U+%X' % ord(b), 0)
-
+# result = sorted(result, key=lambda x :ord(x[0]))
+# for line in result:
+#     a, b = line
+#     # if ord(a) < 0x20000 and ord(b) > 0x20000:
+#     #$ if ord(b) > 0x20000:
+#     #$     print(a, b, 'U+%X' % ord(a), 'U+%X' % ord(b), 1)
+#     #$ else:
+#     #$     print(a, b, 'U+%X' % ord(a), 'U+%X' % ord(b), 0)
+#     # if not (ord(a) < 0x20000 and ord(b) > 0x20000):
+#     if not (ord(b) < 0x4E00 or ord(b) > 0x20000):
+#         print(a, b, 'U+%X' % ord(a), 'U+%X' % ord(b), 0)
+#
 
 def main():
     ''''''
