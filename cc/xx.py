@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-11-30 20:59:56
+# Last Modified: 2018-12-01 10:05:18
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -23,7 +23,8 @@ with open('TSCharacters.txt') as fd:
         if len(line) == 2 and line[0] == line[1]:
             a = line[0]
             b = line[1]
-            #print(a, b, 'U+%X' % ord(a), 'U+%X' % ord(b), 0)
+            # print(a, b, 'U+%X' % ord(a), 'U+%X' % ord(b), 0)
+            result.append(line)
             pass
         elif len(line) == 2:
             result.append(line)
@@ -32,7 +33,7 @@ with open('TSCharacters.txt') as fd:
             print(line)
             pass
 
-# result = sorted(result, key=lambda x :ord(x[0]))
+# result = sorted(result, key=lambda x :ord(x[1]))
 # for line in result:
 #     a, b = line
 #     # if ord(a) < 0x20000 and ord(b) > 0x20000:
@@ -41,8 +42,10 @@ with open('TSCharacters.txt') as fd:
 #     #$ else:
 #     #$     print(a, b, 'U+%X' % ord(a), 'U+%X' % ord(b), 0)
 #     # if not (ord(a) < 0x20000 and ord(b) > 0x20000):
-#     if not (ord(b) < 0x4E00 or ord(b) > 0x20000):
+#     if not (ord(b) < 0x4E00 or ord(b) > 0x9FAC):
 #         print(a, b, 'U+%X' % ord(a), 'U+%X' % ord(b), 0)
+#     else:
+#         print(a, b, 'U+%X' % ord(a), 'U+%X' % ord(b), 1)
 #
 
 def main():
