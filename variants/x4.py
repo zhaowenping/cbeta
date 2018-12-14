@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-03-09 10:44:30
+# Last Modified: 2018-12-14 18:36:00
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
-
+检测文件合法性
 """
 
 __all__ = []
