@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-12-14 18:36:00
+# Last Modified: 2018-12-15 12:40:52
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -40,6 +40,8 @@ with open('variants.txt') as fd:
             rr[c1].append(c2)
         else:
             rr[c1] = [c2,]
+        if c1 in r2 or c2 in r1 or c2 in r2:
+            print(c1, c2)
         r1.add(c1)
         r2.add(c2)
         # if c1 in edu and c2 in edu:
