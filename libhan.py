@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-11-27 22:00:05
+# Last Modified: 2019-01-05 18:59:22
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -23,11 +23,48 @@ import copy
 import gzip
 import json
 import time
+import array
 from functools import reduce
 import requests
 
 
 print('调用函数库')
+
+
+def rm_ditto_mark(ctx):
+    # 去除三个叠字符号: ⺀ U+2E80 0 /〃 U+3003 2227 /々 U+3005 6415/ 亽 U+4EBD 151
+    ctx = array.array('u', ctx)
+    dittos = (chr(0x3003), chr(0x3005), chr(0x4ebd))
+    for ditto in dittos:
+        while True:
+            try:
+                idx = ctx.index(ditto)
+            except ValueError as e:
+                break
+            for i in range(idx-1, -1, -1):
+                if ishanzi(ctx[i]):
+                    # 找到一个合法的重复字符进行替换
+                    ctx[idx] = ctx[i]
+                    break
+    return ctx.tounicode()
+
+
+def ishanzi(zi):
+    '''判断一个字是否是汉字'''
+    # BCDEF: 0x20007-0x2EBD6
+    zi = ord(zi)
+    if 0x20000 <= zi <= 0x2EBE0:
+        return True
+    # A区
+    if 0x3400 <= zi <= 0x4DB5:
+        return True
+    # 主区
+    if 0x4E00 <= zi <= 0x9FEF:
+        return True
+    # 一些兼容汉字
+    if zi in (0xFA1F, 0x2F804, 0x2F83B):
+        return True
+    return False
 
 
 def readdb(path, trans=False, reverse=False):

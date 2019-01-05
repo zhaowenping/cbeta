@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-08-30 17:50:01
+# Last Modified: 2019-01-05 19:00:47
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -44,6 +44,7 @@ from libhan import convert2t
 from libhan import convert2s
 from libhan import normyitizi
 from libhan import fullsearch
+from libhan import rm_ditto_mark
 
 from libhan import lookup, lookinkangxi, lookinsa, zhuyin
 from libhan import unihan
@@ -530,20 +531,11 @@ def zh(filename):
     content = content.translate({0x300c: 0x201c, 0x300d: 0x201d, 0x300e: 0x2018, 0x300f: 0x2019})
     # content = opencc.convert(content, config='t2s.json')
     content = convert2s(content)
+    content = rm_ditto_mark(content)
     print(filename)
     response.content_type = 'text/xml'
     return content
 
-def rm_ditto_mark(ctx):
-    # 去除三个叠字符号: 〃 U+3003 2227 /々 U+3005 6415/ 亽 U+4EBD 151
-    idx = ctx.find('〃')
-    if -1 == idx:
-        return ctx
-    ctx[idx] = 'x'  # TODO: 找到一个合法的重复字符
-    return rm_ditto_mark(ctx)
-
-def rm_iter_mark(ctx):
-    pass
 
 @route('/zh_TW/:filename#.+#')
 def zh_TW(filename):
@@ -566,7 +558,7 @@ def zh_TW(filename):
     # content = content.translate({0x300c: 0x201c, 0x300d: 0x201d, 0x300e: 0x2018, 0x300f: 0x2019})
     # content = opencc.convert(content, config='t2s.json')
     content = normyitizi(content)
-    # content = convert2s(content)
+    content = rm_ditto_mark(content)
     print(filename)
     response.content_type = 'text/xml'
     return content
