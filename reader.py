@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-01-12 15:08:19
+# Last Modified: 2019-01-12 22:07:44
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1180,7 +1180,7 @@ def new_dict9(page):
 def new_dict10(page):
     q = request.GET.q
     page = int(page)
-    pp = 800
+    pp = 300
     with open('dict/szfsb.json') as fd:
         data = json.load(fd)
     header = data.pop('header', {})
