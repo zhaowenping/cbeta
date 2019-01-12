@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-01-05 19:00:47
+# Last Modified: 2019-01-12 15:08:19
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1181,7 +1181,7 @@ def new_dict10(page):
     q = request.GET.q
     page = int(page)
     pp = 800
-    with open('dict/szfs.json') as fd:
+    with open('dict/szfsb.json') as fd:
         data = json.load(fd)
     header = data.pop('header', {})
     if q:
@@ -1192,7 +1192,8 @@ def new_dict10(page):
         nextpage = page + 1
     else:
         # fxcd = [(item, (data[item],)) for item in data]
-        fxcd = [((item, ''), (data[item]['def'], data[item].get('xr', ''))) for item in data]
+        # fxcd = [((item, ''), (data[item]['def'], data[item].get('xr', ''))) for item in data]
+        fxcd = [((item, ''), ('<br>'.join(data[item]), )) for item in data]
         total = len(fxcd)
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
