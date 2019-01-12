@@ -132,7 +132,7 @@
 |    | 《南山律學辭典》               | nvd.json                     |   6025   |            |
 |    | 威廉梵英词典                   | sa-en.json.gz                | 160625   |            |
 |    | 15部巴利语词典                 | pali-hant.json.gz            |  49111   |            |
-|    | 三藏法数                       | szfs.json                    |   1413   |            |
+|    | 三藏法数                       | szfs.json                    |   1405   |已校对      |
 |    | Yates梵英词典                  | yat.json.gz                  |  44720   |            |
 |    | 于凌波唯识名词白话新解         | ylb.json                     |   1506   |            |
 |    | 朱芾煌《法相辭典》             | fxcd.json.gz                 |  14687   |            | 
