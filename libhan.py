@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-01-05 22:56:26
+# Last Modified: 2019-01-17 00:21:59
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -44,11 +44,34 @@ def rm_ditto_mark(ctx):
     return ctx.tounicode()
 
 
+def rm_ditto_mark(ctx):
+    # 在xml中去除三个叠字符号: ⺀ U+2E80 0 /〃 U+3003 2227 /々 U+3005 6415/ 亽 U+4EBD 151
+    ctx = array.array('u', ctx)
+    dittos = (chr(0x3003), chr(0x3005), chr(0x4ebd))
+    cc = 0  # 叠字符号的重复次数
+    for idx, zi in enumerate(ctx):
+        if zi in dittos:
+            cc = cc + 1
+            if len(ctx) > idx and ctx[idx+1] in dittos:
+                continue
+        if cc == 0:
+            continue
+        j = 0
+        for i in range(idx-cc, -1, -1):
+            if ishanzi(ctx[i]):
+                ctx[idx-j] = ctx[i]  # 找到一个合法的重复字符进行替换
+                j = j + 1
+                cc = cc - 1
+                if cc == 0:
+                    break
+    return ctx.tounicode()
+
+
 def ishanzi(zi):
-    '''判断一个字是否是汉字'''
+    '''判断一个字是否是非叠字汉字'''
     zi = ord(zi)
     # 主区
-    if 0x4E00 <= zi <= 0x9FEF:
+    if 0x4E00 <= zi <= 0x9FEF and zi != 0x4EBD:
         return True
     # A区
     if 0x3400 <= zi <= 0x4DB5:
