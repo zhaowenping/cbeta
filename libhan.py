@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-01-17 00:21:59
+# Last Modified: 2019-01-17 08:48:14
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -49,10 +49,11 @@ def rm_ditto_mark(ctx):
     ctx = array.array('u', ctx)
     dittos = (chr(0x3003), chr(0x3005), chr(0x4ebd))
     cc = 0  # 叠字符号的重复次数
+    len_ctx = len(ctx)
     for idx, zi in enumerate(ctx):
         if zi in dittos:
             cc = cc + 1
-            if len(ctx) > idx and ctx[idx+1] in dittos:
+            if len_ctx > idx and ctx[idx+1] in dittos:
                 continue
         if cc == 0:
             continue
