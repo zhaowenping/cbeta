@@ -698,7 +698,8 @@
             <!--使用xml实体输出显示，不能用于搜索,ff无效, 形如: &#x25F9D;-->
             <xsl:when test="$char/mapping[@type='normal_unicode']">
                 <span class="gaiji_nun">
-                    <xsl:value-of disable-output-escaping='yes' select="concat('&amp;#x', substring($char/mapping[@type='normal_unicode'], 3), ';')"/>
+                    <!--xsl:value-of disable-output-escaping='yes' select="concat('&amp;#x', substring($char/mapping[@type='normal_unicode'], 3), ';')"/-->
+                    <xsl:value-of select="."/>
                 </span>
             </xsl:when>
             <xsl:when test="$nor and not($term1[@rend='no_nor'])">
