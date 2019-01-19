@@ -843,7 +843,8 @@
             <xsl:when test="@type='cb-app' and key('app_from', $Ref)">
             <!--xsl:when test="key('app_from', $Ref)"-->
                 <xsl:attribute name="data-title">
-                    <xsl:text>CBETA修訂註解</xsl:text>
+                    <!--xsl:text>CBETA修訂註解</xsl:text-->
+                    <xsl:value-of select="key('app_from', $Ref)/../../head"></xsl:value-of>
                 </xsl:attribute>
                 <xsl:attribute name="data-content">
                     <xsl:apply-templates select="key('app_from', $Ref)"/>
@@ -852,7 +853,8 @@
             </xsl:when>
             <xsl:when test="@type='cb-app' and key('choice_from', $Ref)/sic">
                 <xsl:attribute name="data-title">
-                    <xsl:text>勘誤</xsl:text>
+                    <!--xsl:text>勘誤</xsl:text-->
+                    <xsl:value-of select="key('choice_from', $Ref)/../../head"></xsl:value-of>
                 </xsl:attribute>
                 <xsl:attribute name="data-content">
                     <!--xsl:apply-templates select="key('choice_from', $Ref)"/-->
@@ -871,7 +873,8 @@
             </xsl:when>
             <xsl:when test="@type='star' and key('app_from', $Ref)">
                 <xsl:attribute name="data-title">
-                    <xsl:text>註解</xsl:text>
+                    <!--xsl:text>註解</xsl:text-->
+                    <xsl:value-of select="key('app_from', $Ref)/../../head"></xsl:value-of>
                 </xsl:attribute>
                 <xsl:attribute name="data-content">
                     <xsl:apply-templates select="key('app_from', $Ref)"/>,
@@ -882,7 +885,8 @@
             </xsl:when>
             <xsl:when test="key('note_target', $Ref)">
                 <xsl:attribute name="data-title">
-                    <xsl:text>註釋</xsl:text>
+                    <!--xsl:text>註釋xx</xsl:text-->
+                    <xsl:value-of select="key('note_target', $Ref)/../../head"></xsl:value-of>
                 </xsl:attribute>
                 <xsl:attribute name="data-content">
                     <xsl:apply-templates select="key('note_target', $Ref)"/>
