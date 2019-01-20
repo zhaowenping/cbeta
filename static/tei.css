@@ -569,7 +569,7 @@ p {
      * "Source Han Serif TC";*/
     font-size: normal;
     font-weight: normal;
-    letter-spacing: 0.12em; /* 字母间空白0.12em */
+    letter-spacing: 0em; /* 字母间空白0.12em */
     //vertical-align: text-bottom;
    padding: 0.1em 0 0.3em 0;
 }
