@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-01-17 08:48:14
+# Last Modified: 2019-02-07 20:18:50
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -875,6 +875,7 @@ def pagerank(filename, sentence='', content=''):
     x.insert(0, r)
     # x.insert(0, sentence_value)
     return x
+
 
 def fullsearch(sentence):
     '''全文搜索'''
