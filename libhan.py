@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-02-07 20:18:50
+# Last Modified: 2019-02-08 19:14:12
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -857,12 +857,28 @@ def highlight(ss, ct):
         ct = ct.replace(zi, f'<em>{zi}</em>')
     return ct
 
+# 读取标点数据库
+pun = dict()
+with open('dict/punctuation.txt') as fd:
+    for line in fd:
+        line = line.strip()
+        if not line: continue
+        c1 = line[0]
+        pun[ord(c1)] = ord(' ')
+
+def hanziin(sentence='', content=''):
+    '''判断一段话中是否包含一句话'''
+    # 1. 去除标点符号
+    sentence = sentence.translate(pun).replace(' ', '')
+    content = content.translate(pun).replace(' ', '')
+    return sentence in content
+
 def pagerank(filename, sentence='', content=''):
     '''对xml文件名评分, filename 为 T20n1060 或者 T20n1060_001.xml 形式
     A,B,C,D,F,G,GA,GB,I,J,K,L,M,N,P,S,T,U,X,ZW
     '''
-    sentence = sentence.strip().split()
-    sentence_value = sum([{True:0, False:1}[s in content] for s in sentence])
+    # sentence = sentence.strip().split()
+    # sentence_value = sum([{True:0, False:1}[s in content] for s in sentence])
     pr = ("T", "B", "ZW", "A", "C", "D", "F", "G" , "GA", "GB", "I", "J", "K", "L", "M", "N", "P", "S", "U", "X")
     pt = re.compile(r'\d+')  # 应该在前端过滤
     if filename[0] == 'T':

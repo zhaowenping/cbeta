@@ -560,14 +560,14 @@ p {
 /*   margin-right: 2em;
    margin-left: 2em;
    */
-    line-height: 1.7em;
+    line-height: 1.9em;
     text-indent: 2em;
     text-align: justify;
     white-space: normal; /* 单词间空白,对中文无效 */
     font-family: quote, "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", "PMingLiU";
     /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", SimSun, "宋体", "Microsoft YaHei", "微软雅黑", "PMingLiU",
      * "Source Han Serif TC";*/
-    font-size: normal;
+    font-size: 125%;
     font-weight: normal;
     letter-spacing: 0em; /* 字母间空白0.12em */
     //vertical-align: text-bottom;
