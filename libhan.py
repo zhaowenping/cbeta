@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-02-08 19:14:12
+# Last Modified: 2019-02-09 21:45:52
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -10,6 +10,7 @@ from __future__ import unicode_literals, division, absolute_import, print_functi
 2. 简体繁体转换
 3. 注音 phonetic notation
 4. 注音格式转换
+5. 去除'〡'
 """
 
 __all__ = []
@@ -45,7 +46,7 @@ def rm_ditto_mark(ctx):
 
 
 def rm_ditto_mark(ctx):
-    # 在xml中去除三个叠字符号: ⺀ U+2E80 0 /〃 U+3003 2227 /々 U+3005 6415/ 亽 U+4EBD 151
+    # 在xml中去除三个叠字符号(默认叠字符号始终相连): ⺀ U+2E80 0 /〃 U+3003 2227 /々 U+3005 6415/ 亽 U+4EBD 151
     ctx = array.array('u', ctx)
     dittos = (chr(0x3003), chr(0x3005), chr(0x4ebd))
     cc = 0  # 叠字符号的重复次数
