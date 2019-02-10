@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-12-15 12:40:52
+# Last Modified: 2019-02-09 23:57:40
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -44,9 +44,11 @@ with open('variants.txt') as fd:
             print(c1, c2)
         r1.add(c1)
         r2.add(c2)
-        # if c1 in edu and c2 in edu:
-        #     if cipin.get(c1, 0) < cipin.get(c2, 0):
-        #         print(c1, c2, cipin.get(c1, 0), cipin.get(c2, 0))
+        # if c1 not in edu and c2 in edu:
+        #     print(c1, c2, cipin.get(c1, 0), cipin.get(c2, 0), "%X" % ord(c1), "%X" % ord(c2))
+        if c1 in edu and c2 in edu:
+            if cipin.get(c1, 0) < cipin.get(c2, 0):
+                print(c1, c2, cipin.get(c1, 0), cipin.get(c2, 0))
 
         # if c1 not in edu and c2 not in edu:
         #     if cipin.get(c1, 0) < cipin.get(c2, 0):
