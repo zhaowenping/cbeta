@@ -390,12 +390,14 @@
     <xsl:template match="lg/l">
        <span class="l">
          <xsl:attribute name="class">
+           <xsl:choose>
            <xsl:when test="starts-with(., '「')">
              <xsl:text>ll</xsl:text>
-             <xsl:otherwise>
-               <xsl:text>l</xsl:text>
-             </xsl:otherwise>
            </xsl:when>
+           <xsl:otherwise>
+               <xsl:text>l</xsl:text>
+           </xsl:otherwise>
+           </xsl:choose>
          </xsl:attribute>
          <!--xsl:attribute name="class">
            <xsl:choose>
