@@ -391,7 +391,7 @@
        <span class="l">
          <xsl:attribute name="class">
            <xsl:choose>
-           <xsl:when test="starts-with(., '&#12300;') or starts-with(., '&#8220;') ort starts-with(., '&#8756;')">
+           <xsl:when test="starts-with(., '「') or starts-with(., '“') ort starts-with(., '∴')">
              <xsl:text>ll</xsl:text>
            </xsl:when>
            <xsl:otherwise>
