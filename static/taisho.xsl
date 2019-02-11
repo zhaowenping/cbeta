@@ -389,6 +389,11 @@
 
     <xsl:template match="lg/l">
        <span class="l">
+         <xsl:attribute name="class">
+           <xsl:if test="starts-with(., '「')">
+             <xsl:text>l0</xsl:text>
+           </xsl:if>
+         </xsl:attribute>
          <!--xsl:attribute name="class">
            <xsl:choose>
              <xsl:when test="@rend='Alignr'">

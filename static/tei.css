@@ -611,6 +611,11 @@ div.lg {
     text-indent: 0;
     color: #10AA10;
 }
+span.l0 {
+    margin-left:0em;
+    color: #10AA10;
+
+}
 span.l {
     margin-left:1em;
     color: #10AA10;
@@ -623,7 +628,7 @@ span.l {
         //margin: 10px;
         padding: 0.3em;
     }
-    p.lg {
+    div.lg {
         //margin: 0 0 0 0;
         margin-left: 0;
         // text-align:left;
