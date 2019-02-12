@@ -611,10 +611,16 @@ div.lg {
     text-indent: 0;
     color: #10AA10;
 }
-span.ll {
-    margin-left:0em;
-    color: #10AA10;
 
+div.ll {
+   /* margin-left:10px;
+    margin-bottom:10px; */
+   /* text-indent:-1em;*/
+    margin-bottom:1em;
+    margin-top:0;
+    margin-left: 4em;
+    text-indent: -1em;
+    color: #10AA10;
 }
 span.l {
     margin-left:1em;

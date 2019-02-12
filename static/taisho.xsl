@@ -358,6 +358,16 @@
                     <xsl:value-of select="@xml:id"/>
                 </xsl:attribute>
             </xsl:if>
+         <xsl:attribute name="class">
+           <xsl:choose>
+           <xsl:when test="starts-with(child::l[1], '「') or starts-with(child::l[1], '“') or starts-with(child::l[1], '∴')">
+             <xsl:text>ll</xsl:text>
+           </xsl:when>
+           <xsl:otherwise>
+               <xsl:text>lg</xsl:text>
+           </xsl:otherwise>
+           </xsl:choose>
+         </xsl:attribute>
             <!--xsl:choose>
                 <xsl:when test="@rend">
                     <xsl:attribute name="style">
@@ -389,16 +399,6 @@
 
     <xsl:template match="lg/l">
        <span class="l">
-         <xsl:attribute name="class">
-           <xsl:choose>
-           <xsl:when test="starts-with(., '「') or starts-with(., '“') or starts-with(., '∴')">
-             <xsl:text>ll</xsl:text>
-           </xsl:when>
-           <xsl:otherwise>
-               <xsl:text>l</xsl:text>
-           </xsl:otherwise>
-           </xsl:choose>
-         </xsl:attribute>
          <!--xsl:attribute name="class">
            <xsl:choose>
              <xsl:when test="@rend='Alignr'">
