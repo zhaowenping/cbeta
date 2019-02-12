@@ -622,6 +622,16 @@ div.ll {
     text-indent: -1em;
     color: #10AA10;
 }
+div.lll {
+   /* margin-left:10px;
+    margin-bottom:10px; */
+   /* text-indent:-1em;*/
+    margin-bottom:1em;
+    margin-top:0;
+    margin-left: 4em;
+    text-indent: -2em;
+    color: #10AA10;
+}
 span.l {
     margin-left:1em;
     color: #10AA10;
@@ -646,6 +656,13 @@ span.l {
         // text-align:left;
         text-align:center;
         text-indent: -1em;
+    }
+    div.lll {
+        //margin: 0 0 0 0;
+        margin-left: 0;
+        // text-align:left;
+        text-align:center;
+        text-indent: -2em;
     }
     span.l {
         margin-left:1em;
