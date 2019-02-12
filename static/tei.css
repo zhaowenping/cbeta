@@ -640,6 +640,13 @@ span.l {
         // text-align:left;
         text-align:center;
     }
+    div.ll {
+        //margin: 0 0 0 0;
+        margin-left: 0;
+        // text-align:left;
+        text-align:center;
+        text-indent: -1em;
+    }
     span.l {
         margin-left:1em;
        /* margin-left: 0;*/
