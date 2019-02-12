@@ -292,7 +292,7 @@
 
     <!--不能切换段落, 否则显示不正常-->
     <xsl:template match="pb">
-        <a>
+        <!--a>
           <xsl:attribute name="id">
             <xsl:value-of select="@xml:id"/>
           </xsl:attribute>
@@ -300,7 +300,7 @@
               <xsl:value-of select="concat('/static/img/00', substring(@xml:id, 10, 4), '.jpg')"/>
           </xsl:attribute>
           &#x1F5BB;
-        </a>
+        </a-->
     </xsl:template>
 
     <!--不在正文显示目录-->
