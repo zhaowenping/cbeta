@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-02-09 21:45:52
+# Last Modified: 2019-02-14 21:05:43
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -858,6 +858,8 @@ def highlight(ss, ct):
         ct = ct.replace(zi, f'<em>{zi}</em>')
     return ct
 
+# pun = string.punctuation + '\u00b7\u2013-\u2027\u2e3a\u3000-\u301f\ufe30-\ufe6b\uff01-\uff0f\uff1a-\uff5e'
+# pun = re.compile('['+string.punctuation+']')
 # 读取标点数据库
 pun = dict()
 with open('dict/punctuation.txt') as fd:

@@ -392,12 +392,11 @@
     </xsl:template>
 
     <xsl:template match="lb">
-        <span class="lb">
-         <xsl:attribute name="id">
-             <!--xsl:value-of select="concat($current_sutra, '_p', @n)" /-->
-             <xsl:value-of select="@n" />
-         </xsl:attribute>
-        </span>
+        <!--span class="lb">
+          <xsl:attribute name="id">
+            <xsl:value-of select="@n"/>
+          </xsl:attribute>
+        </span-->
     </xsl:template>
 
     <xsl:template match="lg/l">
