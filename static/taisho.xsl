@@ -89,12 +89,12 @@
         <html>
           <xsl:attribute name="lang">
             <xsl:choose>
-            <xsl:when test="/TEI/@xml:lang">
+              <xsl:when test="/TEI/@xml:lang">
                 <xsl:value-of select="/TEI/@xml:lang"/>
-            </xsl:when>
-            <xsl:otherwise>
-            <xsl:text>lzh-Hant</xsl:text>
-            </xsl:otherwise>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:text>lzh-Hant</xsl:text>
+              </xsl:otherwise>
             </xsl:choose>
           </xsl:attribute>
         <head>
@@ -119,9 +119,6 @@
         <script src="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
         <![endif]-->
         <script src="/static/my.js"></script>
-        <script type="text/javascript">
-            var msg_desc = "XXXX";
-        </script>
 
         </head>
 
