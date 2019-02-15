@@ -119,6 +119,9 @@
         <script src="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
         <![endif]-->
         <script src="/static/my.js"></script>
+        <script type="text/javascript">
+            var msg_desc = "XXXX";
+        </script>
 
         </head>
 
