@@ -477,7 +477,7 @@
 
     <!--咒语段落, 分成悉昙体和汉语两个段落表现 -->
     <xsl:template match="p[@cb:type='dharani']">
-        <p class="dharani">
+        <div class="dharani">
           <xsl:if test="cb:tt">
             <p lang="sa-Sidd"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-Sidd']"/></p>
             <p lang="zh-Hant"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='zh-Hant']"/></p>
@@ -485,7 +485,7 @@
           <xsl:if test="not(cb:tt)">
             <xsl:apply-templates/>
           </xsl:if>
-        </p>
+        </div>
     </xsl:template>
 
     <xsl:template match="p[@cb:type='pre']">

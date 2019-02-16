@@ -574,8 +574,8 @@ p {
    padding: 0.1em 0 0.3em 0;
 }
 
-p.dharani {
-     text-indent: 2em;
+.dharani {
+     /*text-indent: 2em;*/
      /*margin-left: 2em; */
     /*line-height: 2.7em;*/
     color:#990099;
