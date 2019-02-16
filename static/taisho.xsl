@@ -391,6 +391,10 @@
         </xsl:if>
     </xsl:template>
 
+    <xsl:template match="lb[@type='honorific']">
+        <br>
+    </xsl:template>
+
     <xsl:template match="lb">
         <!--span class="lb">
           <xsl:attribute name="id">
@@ -477,20 +481,17 @@
 
     <!--咒语段落, 分成悉昙体和汉语两个段落表现 -->
     <xsl:template match="p[@cb:type='dharani']">
-        <div class="dharani">
-          <xsl:if test="cb:tt">
-            <p lang="sa-Sidd"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-Sidd']"/></p>
-            <p lang="zh-Hant"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='zh-Hant']"/></p>
-          </xsl:if>
-          <xsl:if test="not(cb:tt)">
+        <xsl:if test="cb:tt">
+            <p lang="sa-Sidd" class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-Sidd']"/></p>
+            <p lang="zh-Hant" class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='zh-Hant']"/></p>
+        </xsl:if>
+        <xsl:if test="not(cb:tt)">
             <xsl:apply-templates/>
-          </xsl:if>
-        </div>
+        </xsl:if>
     </xsl:template>
 
     <xsl:template match="p[@cb:type='pre']">
         <pre>
-          <!--xsl:apply-templates/-->
           <xsl:value-of select="."/>
         </pre>
     </xsl:template>
@@ -757,9 +758,6 @@
     <xsl:template match="cb:jhead">
         <h1 class="title">
             <xsl:apply-templates/>
-            <!--xsl:if test="$fake">
-                <sup style="color:red"><xsl:text>[疑偽經]</xsl:text></sup>
-            </xsl:if-->
         </h1>
         <!--br/-->
     </xsl:template>
@@ -774,6 +772,7 @@
          <br/>
         </xsl:if>
     </xsl:template>
+
     <!--列表中的作者译者不另外换行,应该清洗掉这种标志 XXX-->
     <xsl:template match="list//byline|cb:jl_byline">
         <span class="byline">
