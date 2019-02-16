@@ -392,7 +392,7 @@
     </xsl:template>
 
     <xsl:template match="lb[@type='honorific']">
-        <br>
+        <br/>
     </xsl:template>
 
     <xsl:template match="lb">
