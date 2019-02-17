@@ -34,7 +34,7 @@
     <xsl:variable name="dir" select="concat('/xml/', substring-before($current_sutra, 'n'), '/')"/>
 
     <!--计算上一页-->
-    <xsl:variable name="prev_filepath">
+    <!--xsl:variable name="prev_filepath">
         <xsl:variable name="prevvol">
           <xsl:value-of select="concat($dir, $current_sutra, '_')"/>
           <xsl:number format="001" value="$juan - 1"/>
@@ -43,7 +43,7 @@
     <xsl:if test="$MSIE or document($prevvol)">
         <xsl:value-of select="$prevvol"/>
     </xsl:if>
-    </xsl:variable>
+    </xsl:variable-->
 
     <!--计算下一页 TODO 太复杂了, 还是交给后台计算吧-->
     <xsl:variable name="next_filepath">
@@ -160,7 +160,8 @@
                 <!--ul id="pagination"></ul-->
                 <ul class="nav navbar-nav">
                 <li>
-                    <a class="navbar-brand" href="{$prev_filepath}">上一卷</a>
+                    <!--a class="navbar-brand" href="{$prev_filepath}">上一卷</a-->
+                    <a class="navbar-brand" href="/prev/{$current_sutra}_{$juan}">上一卷</a>
                 </li>
                 <li>
                     <a class="navbar-brand" href="/mulu">目錄</a>
@@ -262,7 +263,8 @@
         <nav class="navbar-sm navbar-default" role="navigation">
             <ul class="nav navbar-nav">
              <li>
-                <a class="navbar-brand" href="{$prev_filepath}">上一卷</a>
+                <!--a class="navbar-brand" href="{$prev_filepath}">上一卷</a-->
+                <a class="navbar-brand" href="/prev/{$current_sutra}_{$juan}">上一卷</a>
              </li>
              <li>
                 <a href="/mulu">返回目录</a>
