@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-02-17 22:48:47
+# Last Modified: 2019-02-17 22:57:16
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -229,6 +229,9 @@ def get_all_juan(number):
 def get_next_juan(number):
     '''给定经号T01n0002_001，返回T01n0002_002'''
     book = number.split('n')[0]
+    # 重新生成标准经号
+    jinghao, juan = number.split('_')
+    number = f'{jinghao}_{juan:0>3}'
     # 对所有的book下的卷排序
     juanlist = []
     for path in os.listdir(f'xml/{book}'):
@@ -247,6 +250,9 @@ def get_next_juan(number):
 def get_prev_juan(number):
     '''给定经号T01n0002_002，返回T01n0002_001'''
     book = number.split('n')[0]
+    # 重新生成标准经号
+    jinghao, juan = number.split('_')
+    number = f'{jinghao}_{juan:0>3}'
     # 对所有的book下的卷排序
     juanlist = []
     for path in os.listdir(f'xml/{book}'):
