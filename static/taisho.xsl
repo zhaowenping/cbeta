@@ -168,7 +168,7 @@
                 </li>
                 <li>
                     <!--a class="navbar-brand" href="{$next_filepath}">下一卷</a-->
-                    <a class="navbar-brand" href="/next/{$current_sutra}_{$juan}">上一卷</a>
+                    <a class="navbar-brand" href="/next/{$current_sutra}_{$juan}">下一卷</a>
                 </li>
             </ul>
             <!--input id="shupaictl" type="button" value="竖" onclick="shupai(this);"/-->
@@ -272,7 +272,7 @@
              </li>
              <li>
                 <!--a class="navbar-brand" href="{$next_filepath}">下一卷</a-->
-                <a class="navbar-brand" href="/next/{$current_sutra}_{$juan}">上一卷</a>
+                <a class="navbar-brand" href="/next/{$current_sutra}_{$juan}">下一卷</a>
              </li>
              </ul>
         </nav>
