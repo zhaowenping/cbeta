@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-02-17 09:00:27
+# Last Modified: 2019-02-17 22:26:37
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -226,22 +226,41 @@ def get_all_juan(number):
     return juan
 
 
-def get_next_page(number):
+def get_next_juan(number):
     '''给定经号T01n0002_001，返回T01n0002_002'''
-    sn = number.split('_')[0]
-    book, sutra = sn.split('n')
-    # 查找第一卷(有些不是从第一卷开始的)
-    juan = []
+    book = number.split('n')[0]
+    # 对所有的book下的卷排序
+    juanlist = []
     for path in os.listdir(f'xml/{book}'):
-        if path.startswith(sn):
-            juan.append(path[:-4].split('_'))
-    juan.sort(key=lambda x: (int(re.sub(r'[a-zA-Z]*', '', f'{x[0]:0<5}'), 16), int(x[1])))
-    juan = ['_'.join(i) for i in juan]
+        sutra, juan = path[:-4].split('_')
+        sutra = sutra.split('n')[1]
+        juanlist.append((sutra, juan))
+    juanlist.sort(key=lambda x: (int(f'{x[0]:0<5}', 16), int(x[1])))
+    juanlist = [f'{book}n{i[0]}_{i[1]}' for i in juanlist]
 
-    if number != juan[-1]:
-        return juan[juan.index(number) + 1]
-    # ye = sutra.split('n')[0]
-    return juan
+    if number != juanlist[-1]:
+        return juanlist[juanlist.index(number) + 1]
+    # else: book + 1
+    return juanlist
+
+
+def get_prev_juan(number):
+    '''给定经号T01n0002_002，返回T01n0002_001'''
+    book = number.split('n')[0]
+    # 对所有的book下的卷排序
+    juanlist = []
+    for path in os.listdir(f'xml/{book}'):
+        sutra, juan = path[:-4].split('_')
+        sutra = sutra.split('n')[1]
+        juanlist.append((sutra, juan))
+    juanlist.sort(key=lambda x: (int(f'{x[0]:0<5}', 16), int(x[1])))
+    juanlist = [f'{book}n{i[0]}_{i[1]}' for i in juanlist]
+
+    if number != juanlist[0]:
+        return juanlist[juanlist.index(number) - 1]
+    # else: book + 1
+    return juanlist
+
 
 # FROM: https://en.wikipedia.org/wiki/International_Alphabet_of_Sanskrit_Transliteration
 

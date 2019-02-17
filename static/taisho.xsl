@@ -11,17 +11,17 @@
 
     <!--当前经集的名字, 形如: T20n1167 -->
     <xsl:variable name="current_sutra" select="/TEI[1]/@xml:id"/>
-    <xsl:variable name="current_han" select="substring-before($current_sutra, 'n')"/>  <!--XXX T20-->
-    <xsl:variable name="current_ce" select="substring-after($current_sutra, 'n')"/> <!---1167-->
+    <xsl:variable name="current_book" select="substring-before($current_sutra, 'n')"/>  <!--XXX T20-->
+    <xsl:variable name="current_juan" select="substring-after($current_sutra, 'n')"/> <!---1167-->
     <xsl:variable name="title" select="substring-after(substring-after(/TEI/teiHeader/fileDesc/titleStmt/title, 'No. '), ' ')"/>
     <!--目录文件所在路径-->
-    <xsl:variable name="toc_path" select="concat('/static/toc/', $current_han, '.toc')"/>
+    <xsl:variable name="toc_path" select="concat('/static/toc/', $current_book, '.toc')"/>
     <!--当前文件的卷数, 形如: 001; 目前只能靠猜了-->
     <!--xsl:variable name="juan" select="/TEI[1]/text/body//cb:juan[1]/@n|/TEI/text/body//milestone[@unit='juan']/@n|/TEI/text/body//cb:mulu[@type='卷']/@n"/-->
     <xsl:variable name="juan" select="/TEI/text/body//milestone[@unit='juan']/@n"/>
     <!--是否属于疑伪部-->
     <!--xsl:variable name="fake">
-        <xsl:variable name="nn" select="number(substring($current_ce, 1, 4))"/>
+        <xsl:variable name="nn" select="number(substring($current_juan, 1, 4))"/>
         <xsl:variable name="n2" select="($nn >= 8 and 15 >= $nn) or $nn = 31 or $nn = 43 or $nn = 63 or $nn = 64 or $nn = 69"/>
         <xsl:value-of select="starts-with($current_sutra, 'T85') or (starts-with($current_sutra, 'W') and $n2)"/>
     </xsl:variable-->
@@ -239,7 +239,7 @@
             </div-->
 
         <!--左侧目录-->
-        <!--xsl:copy-of select="document(concat('/static/toc/', $current_han, '.xml'))"/-->
+        <!--xsl:copy-of select="document(concat('/static/toc/', $current_book, '.xml'))"/-->
         <!--xsl:copy-of select="document('/static/t.xml')"/-->
         <!--正文内容-->
         <div class="contentx">
