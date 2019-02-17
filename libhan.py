@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-02-14 21:05:43
+# Last Modified: 2019-02-17 09:00:27
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -72,6 +72,9 @@ def rm_ditto_mark(ctx):
 def ishanzi(zi):
     '''判断一个字是否是非叠字汉字'''
     zi = ord(zi)
+    # 〇
+    if 0x3007 == zi:
+        return True
     # 主区
     if 0x4E00 <= zi <= 0x9FEF and zi != 0x4EBD:
         return True
