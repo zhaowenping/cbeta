@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-01-12 22:07:44
+# Last Modified: 2019-02-17 22:52:41
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -48,6 +48,7 @@ from libhan import rm_ditto_mark
 
 from libhan import lookup, lookinkangxi, lookinsa, zhuyin
 from libhan import unihan
+from libhan import get_prev_juan, get_next_juan
 
 # from xsltproc import xsltproc, XSLT
 
@@ -83,6 +84,14 @@ def listdir():
         if path.startswith(sutra):
             sutras.append(path)
     sutra.sort()
+
+#get_next_juan
+@route('/prev/:sutra#.+#')
+def getf_prev_juan(sutra):
+    book = sutra.split('n')[0]
+    sutra = get_prev_juan(sutra)
+    url = f"/xml/{book}/{sutra}.xml"  # T01n0002_001.xml
+    redirect(url)
 
 # # 浏览器渲染，也可以
 # @route('/xml/:n')

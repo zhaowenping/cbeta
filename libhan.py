@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-02-17 22:26:37
+# Last Modified: 2019-02-17 22:48:47
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -236,7 +236,7 @@ def get_next_juan(number):
         sutra = sutra.split('n')[1]
         juanlist.append((sutra, juan))
     juanlist.sort(key=lambda x: (int(f'{x[0]:0<5}', 16), int(x[1])))
-    juanlist = [f'{book}n{i[0]}_{i[1]}' for i in juanlist]
+    juanlist = [f'{book}n{i[0]}_{i[1]:0>3}' for i in juanlist]
 
     if number != juanlist[-1]:
         return juanlist[juanlist.index(number) + 1]
@@ -254,7 +254,7 @@ def get_prev_juan(number):
         sutra = sutra.split('n')[1]
         juanlist.append((sutra, juan))
     juanlist.sort(key=lambda x: (int(f'{x[0]:0<5}', 16), int(x[1])))
-    juanlist = [f'{book}n{i[0]}_{i[1]}' for i in juanlist]
+    juanlist = [f'{book}n{i[0]}_{i[1]:0>3}' for i in juanlist]
 
     if number != juanlist[0]:
         return juanlist[juanlist.index(number) - 1]
