@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-02-17 22:52:41
+# Last Modified: 2019-02-17 23:01:32
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -85,11 +85,18 @@ def listdir():
             sutras.append(path)
     sutra.sort()
 
-#get_next_juan
+# 跳转上一卷/下一卷
 @route('/prev/:sutra#.+#')
 def getf_prev_juan(sutra):
     book = sutra.split('n')[0]
     sutra = get_prev_juan(sutra)
+    url = f"/xml/{book}/{sutra}.xml"  # T01n0002_001.xml
+    redirect(url)
+
+@route('/next/:sutra#.+#')
+def getf_next_juan(sutra):
+    book = sutra.split('n')[0]
+    sutra = get_next_juan(sutra)
     url = f"/xml/{book}/{sutra}.xml"  # T01n0002_001.xml
     redirect(url)
 

@@ -46,7 +46,7 @@
     </xsl:variable-->
 
     <!--计算下一页 TODO 太复杂了, 还是交给后台计算吧-->
-    <xsl:variable name="next_filepath">
+    <!--xsl:variable name="next_filepath">
         <xsl:variable name="nextvol">
           <xsl:value-of select="concat($dir, $current_sutra, '_')"/>
           <xsl:number format="001" value="$juan + 1"/>
@@ -82,7 +82,7 @@
               <xsl:text>#</xsl:text>
           </xsl:otherwise>
         </xsl:choose>
-    </xsl:variable>
+    </xsl:variable-->
 
     <!--开始页面根元素: 默认使用繁体文言文-->
     <xsl:template match="/">
@@ -167,7 +167,8 @@
                     <a class="navbar-brand" href="/mulu">目錄</a>
                 </li>
                 <li>
-                    <a class="navbar-brand" href="{$next_filepath}">下一卷</a>
+                    <!--a class="navbar-brand" href="{$next_filepath}">下一卷</a-->
+                    <a class="navbar-brand" href="/next/{$current_sutra}_{$juan}">上一卷</a>
                 </li>
             </ul>
             <!--input id="shupaictl" type="button" value="竖" onclick="shupai(this);"/-->
@@ -270,7 +271,8 @@
                 <a href="/mulu">返回目录</a>
              </li>
              <li>
-                <a class="navbar-brand" href="{$next_filepath}">下一卷</a>
+                <!--a class="navbar-brand" href="{$next_filepath}">下一卷</a-->
+                <a class="navbar-brand" href="/next/{$current_sutra}_{$juan}">上一卷</a>
              </li>
              </ul>
         </nav>
