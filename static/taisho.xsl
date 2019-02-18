@@ -12,7 +12,7 @@
     <!--当前经集的名字, 形如: T20n1167 -->
     <xsl:variable name="current_sutra" select="/TEI[1]/@xml:id"/>
     <xsl:variable name="current_book" select="substring-before($current_sutra, 'n')"/>  <!--XXX T20-->
-    <xsl:variable name="current_juan" select="substring-after($current_sutra, 'n')"/> <!---1167-->
+    <!--xsl:variable name="current_juan" select="substring-after($current_sutra, 'n')"/--> <!---1167-->
     <xsl:variable name="title" select="substring-after(substring-after(/TEI/teiHeader/fileDesc/titleStmt/title, 'No. '), ' ')"/>
     <!--目录文件所在路径-->
     <xsl:variable name="toc_path" select="concat('/static/toc/', $current_book, '.toc')"/>
@@ -324,6 +324,7 @@
             <xsl:apply-templates/>
         </table>
     </xsl:template>
+
     <!--处理表格row-->
     <xsl:template match="row">
         <tr>

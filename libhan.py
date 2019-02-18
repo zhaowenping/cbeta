@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-02-17 22:57:16
+# Last Modified: 2019-02-18 19:34:07
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -226,12 +226,8 @@ def get_all_juan(number):
     return juan
 
 
-def get_next_juan(number):
-    '''给定经号T01n0002_001，返回T01n0002_002'''
-    book = number.split('n')[0]
-    # 重新生成标准经号
-    jinghao, juan = number.split('_')
-    number = f'{jinghao}_{juan:0>3}'
+def get_sorted_juan(book):
+    '''获得book(T01)下的所有排序好的经卷号(T01n0002_001)'''
     # 对所有的book下的卷排序
     juanlist = []
     for path in os.listdir(f'xml/{book}'):
@@ -240,10 +236,33 @@ def get_next_juan(number):
         juanlist.append((sutra, juan))
     juanlist.sort(key=lambda x: (int(f'{x[0]:0<5}', 16), int(x[1])))
     juanlist = [f'{book}n{i[0]}_{i[1]:0>3}' for i in juanlist]
+    return juanlist
+
+
+def get_next_juan(number):
+    '''给定经号T01n0002_001，返回T01n0002_002'''
+    book = number.split('n')[0]
+    # 重新生成标准经号
+    jinghao, juan = number.split('_')
+    number = f'{jinghao}_{juan:0>3}'
+    # # 对所有的book下的卷排序
+    juanlist = get_sorted_juan(book)
 
     if number != juanlist[-1]:
         return juanlist[juanlist.index(number) + 1]
     # else: book + 1
+    booklist = []
+    bookhead = re.sub('[0-9]*', '', book)
+    for path in os.listdir(f'xml'):
+        if path.startswith(bookhead):
+            booklist.append(path.strip(bookhead))
+    booklist.sort(key=int)
+    booklist = [f'{bookhead}{i}' for i in booklist]
+    if book != booklist[-1]:
+        nextbook = booklist[booklist.index(book) + 1]
+        booklist = get_sorted_juan(nextbook)
+        return booklist[0]
+    # else:
     return juanlist
 
 
@@ -254,17 +273,23 @@ def get_prev_juan(number):
     jinghao, juan = number.split('_')
     number = f'{jinghao}_{juan:0>3}'
     # 对所有的book下的卷排序
-    juanlist = []
-    for path in os.listdir(f'xml/{book}'):
-        sutra, juan = path[:-4].split('_')
-        sutra = sutra.split('n')[1]
-        juanlist.append((sutra, juan))
-    juanlist.sort(key=lambda x: (int(f'{x[0]:0<5}', 16), int(x[1])))
-    juanlist = [f'{book}n{i[0]}_{i[1]:0>3}' for i in juanlist]
+    juanlist = get_sorted_juan(book)
 
     if number != juanlist[0]:
         return juanlist[juanlist.index(number) - 1]
-    # else: book + 1
+    # else: book - 1
+    booklist = []
+    bookhead = re.sub('[0-9]*', '', book)
+    for path in os.listdir(f'xml'):
+        if path.startswith(bookhead):
+            booklist.append(path.strip(bookhead))
+    booklist.sort(key=int)
+    booklist = [f'{bookhead}{i}' for i in booklist]
+    if book != booklist[0]:
+        prevbook = booklist[booklist.index(book) - 1]
+        booklist = get_sorted_juan(prevbook)
+        return booklist[-1]
+    # else:
     return juanlist
 
 
