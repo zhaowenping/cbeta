@@ -19,6 +19,17 @@
     <!--当前文件的卷数, 形如: 001; 目前只能靠猜了-->
     <!--xsl:variable name="juan" select="/TEI[1]/text/body//cb:juan[1]/@n|/TEI/text/body//milestone[@unit='juan']/@n|/TEI/text/body//cb:mulu[@type='卷']/@n"/-->
     <xsl:variable name="juan" select="/TEI/text/body//milestone[@unit='juan']/@n"/>
+    <!--当前文件的语言, 默认繁体文言文-->
+    <xsl:variable name="lang">
+      <xsl:choose>
+        <xsl:when test="/TEI/@xml:lang">
+          <xsl:value-of select="/TEI/@xml:lang"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:text>lzh-Hant</xsl:text>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
     <!--是否属于疑伪部-->
     <!--xsl:variable name="fake">
         <xsl:variable name="nn" select="number(substring($current_juan, 1, 4))"/>
@@ -86,17 +97,7 @@
 
     <!--开始页面根元素: 默认使用繁体文言文-->
     <xsl:template match="/">
-        <html>
-          <xsl:attribute name="lang">
-            <xsl:choose>
-              <xsl:when test="/TEI/@xml:lang">
-                <xsl:value-of select="/TEI/@xml:lang"/>
-              </xsl:when>
-              <xsl:otherwise>
-                <xsl:text>lzh-Hant</xsl:text>
-              </xsl:otherwise>
-            </xsl:choose>
-          </xsl:attribute>
+        <html lang="{$lang}">
         <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
@@ -160,14 +161,14 @@
                 <!--ul id="pagination"></ul-->
                 <ul class="nav navbar-nav">
                 <li>
-                    <!--a class="navbar-brand" href="{$prev_filepath}">上一卷</a-->
+                    <!--a class="navbar-brand" href="/prev/{$current_sutra}_{$juan}/{$lang}">上一卷</a-->
                     <a class="navbar-brand" href="/prev/{$current_sutra}_{$juan}">上一卷</a>
                 </li>
                 <li>
                     <a class="navbar-brand" href="/mulu">目錄</a>
                 </li>
                 <li>
-                    <!--a class="navbar-brand" href="{$next_filepath}">下一卷</a-->
+                    <!--a class="navbar-brand" href="/next/{$current_sutra}_{$juan}/{$lang}">下一卷</a-->
                     <a class="navbar-brand" href="/next/{$current_sutra}_{$juan}">下一卷</a>
                 </li>
             </ul>
@@ -264,14 +265,14 @@
         <nav class="navbar-sm navbar-default" role="navigation">
             <ul class="nav navbar-nav">
              <li>
-                <!--a class="navbar-brand" href="{$prev_filepath}">上一卷</a-->
+                <!--a class="navbar-brand" href="/prev/{$current_sutra}_{$juan}/{$lang}">上一卷</a-->
                 <a class="navbar-brand" href="/prev/{$current_sutra}_{$juan}">上一卷</a>
              </li>
              <li>
                 <a href="/mulu">返回目录</a>
              </li>
              <li>
-                <!--a class="navbar-brand" href="{$next_filepath}">下一卷</a-->
+                <!--a class="navbar-brand" href="/next/{$current_sutra}_{$juan}/{$lang}">下一卷</a-->
                 <a class="navbar-brand" href="/next/{$current_sutra}_{$juan}">下一卷</a>
              </li>
              </ul>
