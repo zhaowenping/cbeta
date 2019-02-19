@@ -168,3 +168,20 @@ function shupai(evt){
     ipt1.value = "竖";
     }
 }
+
+function norm(evt){
+    if(evt.value == "原") {
+    //获取div1,改显示方式为原来方式
+    var div1 = document.getElementById('allcontent');
+    div1.style.writingMode="vertical-rl";
+    var ipt1 = document.getElementById('shupaictl');
+    ipt1.value = "正";
+    }
+    else if(evt.value == "正") {
+    ////获取div1
+    var div1 = document.getElementById('allcontent');
+    div1.style.writingMode="horizontal-tb";
+    var ipt1 = document.getElementById('shupaictl');
+    ipt1.value = "原";
+    }
+}
