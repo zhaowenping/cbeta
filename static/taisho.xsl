@@ -491,7 +491,9 @@
             <p lang="zh-Hant" class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='zh-Hant']"/></p>
         </xsl:if>
         <xsl:if test="not(cb:tt)">
-            <xsl:apply-templates/>
+            <p lang="zh-Hant" class="dharani">
+              <xsl:apply-templates/>
+            </p>
         </xsl:if>
     </xsl:template>
 
