@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-02-19 12:08:12
+# Last Modified: 2019-02-20 19:49:44
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -87,7 +87,7 @@ def listdir():
 
 # 跳转上一卷/下一卷
 @route('/prev/:sutra')
-def getf_prev_juan(sutra, lang):
+def getf_prev_juan(sutra):
     sutra = get_prev_juan(sutra)
     book = sutra.split('n')[0]
     url = f"/xml/{book}/{sutra}.xml"  # T01n0002_001.xml
