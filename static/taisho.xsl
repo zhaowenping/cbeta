@@ -498,6 +498,7 @@
               <span lang="sa-Sidd" class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-Sidd']"/></span>
               <span lang="sa-x-rj" class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-x-rj']"/></span>
               <span lang="zh-Hant" class="dharani">(<xsl:apply-templates select="cb:tt/cb:t[@xml:lang='zh-Hant']"/>)</span>
+              <xsl:apply-templates/>
             </p>
         </xsl:when>
         <xsl:otherwise>
