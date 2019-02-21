@@ -1241,6 +1241,7 @@ rt {
     transform-origin: left center;
     -ms-transform: scale(.8);
     -ms-transform-origin: left center;
+    font-family: consola, Arial, Helvetica, sans-serif;
 }
 
 rt:empty{
