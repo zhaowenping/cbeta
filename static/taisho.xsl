@@ -487,21 +487,25 @@
 
     <!--咒语段落, 分成悉昙体和汉语两个段落表现 -->
     <xsl:template match="p[@cb:type='dharani']">
-        <xsl:if test="cb:tt[@place='inline']">
-            <span lang="sa-Sidd" class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-Sidd']"/></span>
-            <span lang="sa-x-rj" class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-x-rj']"/></span>
-            <span lang="zh-Hant" class="dharani">(<xsl:apply-templates select="cb:tt/cb:t[@xml:lang='zh-Hant']"/>)</span>
-        </xsl:if>
-        <xsl:if test="cb:tt[@place!='inline']">
-            <p lang="sa-Sidd" class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-Sidd']"/></p>
-            <p lang="sa-x-rj" class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-x-rj']"/></p>
-            <p lang="zh-Hant" class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='zh-Hant']"/></p>
-        </xsl:if>
-        <xsl:if test="not(cb:tt)">
+        <xsl:choose>
+        <xsl:when test="cb:tt[@place='inline']">
+            <p class="dharani">
+              <span lang="sa-Sidd" class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-Sidd']"/></span>
+              <span lang="sa-x-rj" class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-x-rj']"/></span>
+              <span lang="zh-Hant" class="dharani">(<xsl:apply-templates select="cb:tt/cb:t[@xml:lang='zh-Hant']"/>)</span>
+            </p>
+        </xsl:when>
+        <xsl:when test="not(cb:tt)">
             <p lang="zh-Hant" class="dharani">
               <xsl:apply-templates/>
             </p>
-        </xsl:if>
+        </xsl:when>
+        <xsl:otherwise>
+            <p lang="sa-Sidd" class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-Sidd']"/></p>
+            <p lang="sa-x-rj" class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-x-rj']"/></p>
+            <p lang="zh-Hant" class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='zh-Hant']"/></p>
+        </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 
     <xsl:template match="p[@cb:type='pre']">
