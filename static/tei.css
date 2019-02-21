@@ -1221,7 +1221,8 @@ ruby rtc rt {
     -webkit-text-emphasis: none;
     text-emphasis: none;
     /*font-size: inherit;*/
-    font-family: Arial, Helvetica, sans-serif, consola;
+    /*font-family: Arial, Helvetica, sans-serif, consola;*/
+    font-family: consola, Arial, Helvetica, sans-serif;
 }
 
 ruby.mps,ruby.zhuyin {
