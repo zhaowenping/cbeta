@@ -49,7 +49,8 @@
   font-family: 'siddham';
   font-style: normal;
   font-weight: normal;
-  src:  local('siddham'), url(/static/siddham.woff) format('woff');
+  /*src:  local('siddham'), url(/static/siddham.woff) format('woff');*/
+  src:  url(/static/Muktamsiddham.otf) format('opentype');
   // local(ApDevaSanskrit),
   // local(ApDevaSiddham),
   unicode-range: U+11580-115FF;
