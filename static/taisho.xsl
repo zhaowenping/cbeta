@@ -489,6 +489,7 @@
     <xsl:template match="p[@cb:type='dharani']">
         <xsl:if test="cb:tt">
             <p lang="sa-Sidd" class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-Sidd']"/></p>
+            <p lang="sa-x-rj" class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-x-rj']"/></p>
             <p lang="zh-Hant" class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='zh-Hant']"/></p>
         </xsl:if>
         <xsl:if test="not(cb:tt)">
