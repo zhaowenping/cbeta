@@ -489,16 +489,16 @@
     <xsl:template match="p[@cb:type='dharani']">
         <xsl:choose>
         <xsl:when test="not(cb:tt)">
-            <p lang="zh-Hant" class="dharani">
+            <p class="dharani">
               <xsl:apply-templates/>
             </p>
         </xsl:when>
         <xsl:when test="cb:tt[@place='inline']">
             <p class="dharani">
-              <span lang="sa-Sidd" class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-Sidd']"/></span>
-              <!--span lang="sa-x-rj" class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-x-rj']"/></span-->
-              <span lang="zh-Hant" class="dharani">(<xsl:apply-templates select="cb:tt/cb:t[@xml:lang='zh-Hant']"/>)</span>
-              <!--span lang="zh-Hant" class="dharani">(<xsl:apply-templates select="cb:tt/cb:t[@xml:lang='zh-x-yy']"/>)</span-->
+              <span lang="sa-Sidd"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-Sidd']"/></span>
+              <!--span lang="sa-x-rj"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-x-rj']"/></span-->
+              <span lang="zh-Hant">(<xsl:apply-templates select="cb:tt/cb:t[@xml:lang='zh-Hant']"/>)</span>
+              <!--span lang="zh-Hant">(<xsl:apply-templates select="cb:tt/cb:t[@xml:lang='zh-x-yy']"/>)</span-->
               <xsl:apply-templates/>
             </p>
         </xsl:when>
