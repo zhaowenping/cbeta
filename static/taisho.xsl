@@ -601,6 +601,12 @@
             <xsl:when test="cb:t[@xml:lang='sa-Sidd']">
                 <xsl:apply-templates select="cb:t[@xml:lang='sa-Sidd']"/>
             </xsl:when>
+            <xsl:when test="cb:t[@xml:lang='sa-x-rj']">
+                <xsl:apply-templates select="cb:t[@xml:lang='sa-x-rj']"/>
+            </xsl:when>
+            <xsl:when test="cb:t[@xml:lang='sa']">
+                <xsl:apply-templates select="cb:t[@xml:lang='sa']"/>
+            </xsl:when>
             </xsl:choose>
         </rb>
         <rt>
