@@ -595,15 +595,12 @@
         <ruby>
         <rb>
             <xsl:choose>
-            <!--xsl:when test="cb:t[@xml:lang='zh']"-->
-            <xsl:when test="starts-with(cb:t[@xml:lang], 'zh')">
-                <!--xsl:apply-templates select="cb:t[@xml:lang='zh']"/-->
-                <xsl:apply-templates select="starts-with(cb:t[@xml:lang], 'zh')"/>
+            <xsl:when test="cb:t[@xml:lang='zh']">
+                <xsl:apply-templates select="cb:t[@xml:lang='zh']"/>
             </xsl:when>
             <!--xsl:when test="cb:t[@xml:lang='sa-Sidd']"-->
             <xsl:when test="starts-with(cb:t[@xml:lang, 'sa')">
-                <!--xsl:apply-templates select="cb:t[@xml:lang='sa-Sidd']"/-->
-                <xsl:apply-templates select="starts-with(cb:t[@xml:lang], 'sa')"/>
+                <xsl:apply-templates select="cb:t[@xml:lang='sa-Sidd']"/>
             </xsl:when>
             </xsl:choose>
         </rb>
