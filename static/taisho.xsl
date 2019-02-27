@@ -591,23 +591,10 @@
     </xsl:template-->
 
     <!--TODO 需要使用rtc修改成三行-->
-    <xsl:template match="cb:tt">
+            <!--zh-x-yy-->
+    <!--xsl:template match="cb:tt">
         <ruby>
         <rb>
-            <!--xsl:choose>
-            <xsl:when test="cb:t[@xml:lang='zh']">
-                <xsl:apply-templates select="cb:t[@xml:lang='zh']"/>
-            </xsl:when>
-            <xsl:when test="cb:t[@xml:lang='sa-Sidd']">
-                <xsl:apply-templates select="cb:t[@xml:lang='sa-Sidd']"/>
-            </xsl:when>
-            <xsl:when test="cb:t[@xml:lang='sa-x-rj']">
-                <xsl:apply-templates select="cb:t[@xml:lang='sa-x-rj']"/>
-            </xsl:when>
-            <xsl:when test="cb:t[@xml:lang='sa']">
-                <xsl:apply-templates select="cb:t[@xml:lang='sa']"/>
-            </xsl:when>
-            </xsl:choose-->
             <xsl:if test="cb:t[@xml:lang='zh']">
                 <xsl:apply-templates select="cb:t[@xml:lang='zh']"/>
             </xsl:if>
@@ -625,7 +612,7 @@
             <xsl:apply-templates select="cb:t[@xml:lang='sa-Latn']"/>
         </rt>
         </ruby>
-    </xsl:template>
+    </xsl:template-->
 
     <!--xsl:template match="cb:t/g">
         <xsl:apply-templates select="key('char_id', substring(@ref, 2))/charProp[localName='Romanized form in Unicode transcription']/value"/>
