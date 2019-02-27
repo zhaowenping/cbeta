@@ -594,7 +594,7 @@
     <xsl:template match="cb:tt">
         <ruby>
         <rb>
-            <xsl:choose>
+            <!--xsl:choose>
             <xsl:when test="cb:t[@xml:lang='zh']">
                 <xsl:apply-templates select="cb:t[@xml:lang='zh']"/>
             </xsl:when>
@@ -607,7 +607,19 @@
             <xsl:when test="cb:t[@xml:lang='sa']">
                 <xsl:apply-templates select="cb:t[@xml:lang='sa']"/>
             </xsl:when>
-            </xsl:choose>
+            </xsl:choose-->
+            <xsl:if test="cb:t[@xml:lang='zh']">
+                <xsl:apply-templates select="cb:t[@xml:lang='zh']"/>
+            </xsl:if>
+            <xsl:if test="cb:t[@xml:lang='sa-Sidd']">
+                <xsl:apply-templates select="cb:t[@xml:lang='sa-Sidd']"/>
+            </xsl:if>
+            <xsl:if test="cb:t[@xml:lang='sa-x-rj']">
+                <xsl:apply-templates select="cb:t[@xml:lang='sa-x-rj']"/>
+            </xsl:if>
+            <xsl:if test="cb:t[@xml:lang='sa']">
+                <xsl:apply-templates select="cb:t[@xml:lang='sa']"/>
+            </xsl:if>
         </rb>
         <rt>
             <xsl:apply-templates select="cb:t[@xml:lang='sa-Latn']"/>
