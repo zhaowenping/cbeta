@@ -42,69 +42,71 @@
     <xsl:variable name="firefox" select="system-property('xsl:vendor')='Transformiix'"/>
 
     <xsl:variable name="copyright">
-        <xsl:if test="starts-with($current_sutra, 'T')">
+        <xsl:choose>
+        <xsl:when test="starts-with($current_sutra, 'T')">
             <xsl:text>《大正新脩大藏經》（大藏出版株式會社 ©）</xsl:text>
-        </xsl:if>
-        <xsl:if test="starts-with($current_sutra, 'X')">
+        </xsl:when>
+        <xsl:when test="starts-with($current_sutra, 'X')">
             <xsl:text>《卍新纂續藏經》（株式會社國書刊行會 ©）</xsl:text>
-        </xsl:if>
-        <xsl:if test="starts-with($current_sutra, 'A')">
+        </xsl:when>
+        <xsl:when test="starts-with($current_sutra, 'A')">
             <xsl:text>《趙城金藏》</xsl:text>
-        </xsl:if>
-        <xsl:if test="starts-with($current_sutra, 'C')">
+        </xsl:when>
+        <xsl:when test="starts-with($current_sutra, 'C')">
             <xsl:text>《中華藏》</xsl:text>
-        </xsl:if>
-        <xsl:if test="starts-with($current_sutra, 'F')">
+        </xsl:when>
+        <xsl:when test="starts-with($current_sutra, 'F')">
             <xsl:text>《房山石經》</xsl:text>
-        </xsl:if>
-        <xsl:if test="starts-with($current_sutra, 'G')">
-            <xsl:text>《佛教大藏經》</xsl:text>
-        </xsl:if>
-        <xsl:if test="starts-with($current_sutra, 'J')">
+        </xsl:when>
+        <xsl:when test="starts-with($current_sutra, 'J')">
             <xsl:text>《嘉興大藏經》（新文豐出版公司）</xsl:text>
-        </xsl:if>
-        <xsl:if test="starts-with($current_sutra, 'K')">
+        </xsl:when>
+        <xsl:when test="starts-with($current_sutra, 'K')">
             <xsl:text>《高麗藏》（新文豐出版公司）</xsl:text>
-        </xsl:if>
-        <xsl:if test="starts-with($current_sutra, 'L')">
+        </xsl:when>
+        <xsl:when test="starts-with($current_sutra, 'L')">
             <xsl:text>《乾隆藏》</xsl:text>
-        </xsl:if>
-        <xsl:if test="starts-with($current_sutra, 'M')">
+        </xsl:when>
+        <xsl:when test="starts-with($current_sutra, 'M')">
             <xsl:text>《卍正藏經》（新文豐出版公司）</xsl:text>
-        </xsl:if>
-        <xsl:if test="starts-with($current_sutra, 'P')">
+        </xsl:when>
+        <xsl:when test="starts-with($current_sutra, 'P')">
             <xsl:text>《永樂北藏》</xsl:text>
-        </xsl:if>
-        <xsl:if test="starts-with($current_sutra, 'S')">
+        </xsl:when>
+        <xsl:when test="starts-with($current_sutra, 'S')">
             <xsl:text>《宋藏遺珍》</xsl:text>
-        </xsl:if>
-        <xsl:if test="starts-with($current_sutra, 'U')">
+        </xsl:when>
+        <xsl:when test="starts-with($current_sutra, 'U')">
             <xsl:text>《洪武南藏》</xsl:text>
-        </xsl:if>
-        <xsl:if test="starts-with($current_sutra, 'D')">
+        </xsl:when>
+        <xsl:when test="starts-with($current_sutra, 'D')">
             <xsl:text>國家圖書館善本佛典</xsl:text>
-        </xsl:if>
-        <xsl:if test="starts-with($current_sutra, 'N')">
+        </xsl:when>
+        <xsl:when test="starts-with($current_sutra, 'N')">
             <xsl:text>《漢譯南傳大藏經》（元亨寺 ©）</xsl:text>
-        </xsl:if>
-        <xsl:if test="starts-with($current_sutra, 'I')">
+        </xsl:when>
+        <xsl:when test="starts-with($current_sutra, 'I')">
             <xsl:text>《北朝佛教石刻拓片百品》（中央研究院歷史語言研究所 ©）</xsl:text>
-        </xsl:if>
-        <xsl:if test="starts-with($current_sutra, 'ZW')">
+        </xsl:when>
+        <xsl:when test="starts-with($current_sutra, 'ZW')">
             <xsl:text>《藏外佛教文獻》（方廣錩 ©）</xsl:text>
-        </xsl:if>
-        <xsl:if test="starts-with($current_sutra, 'GA')">
+        </xsl:when>
+        <xsl:when test="starts-with($current_sutra, 'GA')">
             <xsl:text>《中國佛寺史志彙刊》（杜潔祥主編）</xsl:text>
-        </xsl:if>
-        <xsl:if test="starts-with($current_sutra, 'ZW')">
+        </xsl:when>
+        <xsl:when test="starts-with($current_sutra, 'ZW')">
             <xsl:text>《藏外佛教文獻》（方廣錩 ©）</xsl:text>
-        </xsl:if>
-        <xsl:if test="starts-with($current_sutra, 'GB')">
+        </xsl:when>
+        <xsl:when test="starts-with($current_sutra, 'GB')">
             <xsl:text>《中國佛寺志叢刊》（張智等編輯）</xsl:text>
-        </xsl:if>
-        <xsl:if test="starts-with($current_sutra, 'Y')">
+        </xsl:when>
+        <xsl:when test="starts-with($current_sutra, 'Y')">
             <xsl:text>《印順法師佛學著作集》（印順文教基金會©）</xsl:text>
-        </xsl:if>
+        </xsl:when>
+        <xsl:when test="starts-with($current_sutra, 'G')">
+            <xsl:text>《佛教大藏經》</xsl:text>
+        </xsl:when>
+        </xsl:choose>
     </xsl:variable>
 
     <!--xml所在目录前缀, 形如: /xml/T01/-->
