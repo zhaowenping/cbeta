@@ -48,14 +48,62 @@
         <xsl:if test="starts-with($current_sutra, 'X')">
             <xsl:text>《卍新纂續藏經》（株式會社國書刊行會 ©）</xsl:text>
         </xsl:if>
-        <xsl:if test="starts-with($current_sutra, 'B')">
-            <xsl:text></xsl:text>
+        <xsl:if test="starts-with($current_sutra, 'A')">
+            <xsl:text>《趙城金藏》</xsl:text>
         </xsl:if>
-        <xsl:if test="starts-with($current_sutra, 'B')">
-            <xsl:text></xsl:text>
+        <xsl:if test="starts-with($current_sutra, 'C')">
+            <xsl:text>《中華藏》</xsl:text>
         </xsl:if>
-        <xsl:if test="starts-with($current_sutra, 'B')">
-            <xsl:text></xsl:text>
+        <xsl:if test="starts-with($current_sutra, 'F')">
+            <xsl:text>《房山石經》</xsl:text>
+        </xsl:if>
+        <xsl:if test="starts-with($current_sutra, 'G')">
+            <xsl:text>《佛教大藏經》</xsl:text>
+        </xsl:if>
+        <xsl:if test="starts-with($current_sutra, 'J')">
+            <xsl:text>《嘉興大藏經》（新文豐出版公司）</xsl:text>
+        </xsl:if>
+        <xsl:if test="starts-with($current_sutra, 'K')">
+            <xsl:text>《高麗藏》（新文豐出版公司）</xsl:text>
+        </xsl:if>
+        <xsl:if test="starts-with($current_sutra, 'L')">
+            <xsl:text>《乾隆藏》</xsl:text>
+        </xsl:if>
+        <xsl:if test="starts-with($current_sutra, 'M')">
+            <xsl:text>《卍正藏經》（新文豐出版公司）</xsl:text>
+        </xsl:if>
+        <xsl:if test="starts-with($current_sutra, 'P')">
+            <xsl:text>《永樂北藏》</xsl:text>
+        </xsl:if>
+        <xsl:if test="starts-with($current_sutra, 'S')">
+            <xsl:text>《宋藏遺珍》</xsl:text>
+        </xsl:if>
+        <xsl:if test="starts-with($current_sutra, 'U')">
+            <xsl:text>《洪武南藏》</xsl:text>
+        </xsl:if>
+        <xsl:if test="starts-with($current_sutra, 'D')">
+            <xsl:text>國家圖書館善本佛典</xsl:text>
+        </xsl:if>
+        <xsl:if test="starts-with($current_sutra, 'N')">
+            <xsl:text>《漢譯南傳大藏經》（元亨寺 ©）</xsl:text>
+        </xsl:if>
+        <xsl:if test="starts-with($current_sutra, 'I')">
+            <xsl:text>《北朝佛教石刻拓片百品》（中央研究院歷史語言研究所 ©）</xsl:text>
+        </xsl:if>
+        <xsl:if test="starts-with($current_sutra, 'ZW')">
+            <xsl:text>《藏外佛教文獻》（方廣錩 ©）</xsl:text>
+        </xsl:if>
+        <xsl:if test="starts-with($current_sutra, 'GA')">
+            <xsl:text>《中國佛寺史志彙刊》（杜潔祥主編）</xsl:text>
+        </xsl:if>
+        <xsl:if test="starts-with($current_sutra, 'ZW')">
+            <xsl:text>《藏外佛教文獻》（方廣錩 ©）</xsl:text>
+        </xsl:if>
+        <xsl:if test="starts-with($current_sutra, 'GB')">
+            <xsl:text>《中國佛寺志叢刊》（張智等編輯）</xsl:text>
+        </xsl:if>
+        <xsl:if test="starts-with($current_sutra, 'Y')">
+            <xsl:text>《印順法師佛學著作集》（印順文教基金會©）</xsl:text>
         </xsl:if>
     </xsl:variable>
 
@@ -270,7 +318,7 @@
         <!--版權資訊-->
         <div>
             <hr style=" height:2px;border:none;border-top:2px solid #185598;" />
-            <div>【經文資訊】<xsl:value-of select="$copyright"/> 藏第 <xsl:value-of select="concat(substring-before($current_sutra, 'n'), ' 冊 No. ', substring-after($current_sutra, 'n'), ' ', $title)"/><br/>
+            <div>【經文資訊】<xsl:value-of select="$copyright"/> 第 <xsl:value-of select="concat(substring-before($current_sutra, 'n'), ' 冊 No. ', substring-after($current_sutra, 'n'), ' ', $title)"/><br/>
                 <!--【版本記錄】CBETA 電子佛典 2016.06，完成日期：2016/06/15 <br/>
             【編輯說明】本資料庫由中華電子佛典協會（CBETA）依卍新續藏所編輯 <br/>
             -->
