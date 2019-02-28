@@ -41,6 +41,24 @@
     <xsl:variable name="MSIE" select="system-property('xsl:vendor')='Microsoft'"/>
     <xsl:variable name="firefox" select="system-property('xsl:vendor')='Transformiix'"/>
 
+    <xsl:variable name="copyright">
+        <xsl:if test="starts-with(current_sutra, 'T')">
+            <xsl:text>《大正新脩大藏經》（大藏出版株式會社 ©）</xsl:text>
+        </xsl:if>
+        <xsl:if test="starts-with(current_sutra, 'X')">
+            <xsl:text>《卍新纂續藏經》（株式會社國書刊行會 ©）</xsl:text>
+        </xsl:if>
+        <xsl:if test="starts-with(current_sutra, 'T')">
+            <xsl:text></xsl:text>
+        </xsl:if>
+        <xsl:if test="starts-with(current_sutra, 'T')">
+            <xsl:text></xsl:text>
+        </xsl:if>
+        <xsl:if test="starts-with(current_sutra, 'T')">
+            <xsl:text></xsl:text>
+        </xsl:if>
+    </xsl:variable>
+
     <!--xml所在目录前缀, 形如: /xml/T01/-->
     <xsl:variable name="dir" select="concat('/xml/', substring-before($current_sutra, 'n'), '/')"/>
 
@@ -252,7 +270,7 @@
         <!--版權資訊-->
         <div>
             <hr style=" height:2px;border:none;border-top:2px solid #185598;" />
-            <div>【經文資訊】XXX藏第 <xsl:value-of select="concat(substring-before($current_sutra, 'n'), ' 冊 No. ', substring-after($current_sutra, 'n'), ' ', $title)"/><br/>
+            <div>【經文資訊】{$copyright} 藏第 <xsl:value-of select="concat(substring-before($current_sutra, 'n'), ' 冊 No. ', substring-after($current_sutra, 'n'), ' ', $title)"/><br/>
                 <!--【版本記錄】CBETA 電子佛典 2016.06，完成日期：2016/06/15 <br/>
             【編輯說明】本資料庫由中華電子佛典協會（CBETA）依卍新續藏所編輯 <br/>
             -->
