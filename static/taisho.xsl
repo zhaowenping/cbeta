@@ -42,19 +42,19 @@
     <xsl:variable name="firefox" select="system-property('xsl:vendor')='Transformiix'"/>
 
     <xsl:variable name="copyright">
-        <xsl:if test="starts-with(current_sutra, 'T')">
+        <xsl:if test="starts-with($current_sutra, 'T')">
             <xsl:text>《大正新脩大藏經》（大藏出版株式會社 ©）</xsl:text>
         </xsl:if>
-        <xsl:if test="starts-with(current_sutra, 'X')">
+        <xsl:if test="starts-with($current_sutra, 'X')">
             <xsl:text>《卍新纂續藏經》（株式會社國書刊行會 ©）</xsl:text>
         </xsl:if>
-        <xsl:if test="starts-with(current_sutra, 'T')">
+        <xsl:if test="starts-with($current_sutra, 'B')">
             <xsl:text></xsl:text>
         </xsl:if>
-        <xsl:if test="starts-with(current_sutra, 'T')">
+        <xsl:if test="starts-with($current_sutra, 'B')">
             <xsl:text></xsl:text>
         </xsl:if>
-        <xsl:if test="starts-with(current_sutra, 'T')">
+        <xsl:if test="starts-with($current_sutra, 'B')">
             <xsl:text></xsl:text>
         </xsl:if>
     </xsl:variable>
