@@ -270,7 +270,7 @@
         <!--版權資訊-->
         <div>
             <hr style=" height:2px;border:none;border-top:2px solid #185598;" />
-            <div>【經文資訊】{$copyright} 藏第 <xsl:value-of select="concat(substring-before($current_sutra, 'n'), ' 冊 No. ', substring-after($current_sutra, 'n'), ' ', $title)"/><br/>
+            <div>【經文資訊】<xsl:value-of select="$copyright"/> 藏第 <xsl:value-of select="concat(substring-before($current_sutra, 'n'), ' 冊 No. ', substring-after($current_sutra, 'n'), ' ', $title)"/><br/>
                 <!--【版本記錄】CBETA 電子佛典 2016.06，完成日期：2016/06/15 <br/>
             【編輯說明】本資料庫由中華電子佛典協會（CBETA）依卍新續藏所編輯 <br/>
             -->
