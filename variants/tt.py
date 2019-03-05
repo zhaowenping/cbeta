@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-03-03 08:06:38
+# Last Modified: 2019-03-04 23:18:45
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -37,9 +37,16 @@ with open('variants.txt') as fd:
         data = line.split()
         c1 = data[0]
         c2 = data[1]
-        result.append((c1, c2, cipin.get(c2, 0)))
+        c1cp = cipin.get(c1, 0)
+        c2cp = cipin.get(c2, 0)
+        if c1cp == 0:
+            x = -100
+        else:
+            x = c2cp/c1cp
+        if c2cp > c1cp:
+            result.append((c1, c2, c1cp, c2cp, x))
 
-result = sorted(result, key = lambda x:x[2], reverse=True)
+result = sorted(result, key = lambda x:x[4], reverse=True)
 for zi in result:
     print(zi)
 
