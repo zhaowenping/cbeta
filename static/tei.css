@@ -1294,6 +1294,10 @@ h-ruby.zhuyin h-diao h-char,ruby.mps h-diao h-char,ruby.zhuyin h-diao h-char
 }
 */
 
+:lang(*=Hant)+:lang(en), :lang(*=Hant)+:lang(*-Latn), :lang(*=Hant)+:lang(sa*){
+    margin:0.5em;
+}
+
 
 sub,sup {
     font-family: consola;
