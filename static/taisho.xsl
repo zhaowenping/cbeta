@@ -746,7 +746,7 @@
     <xsl:choose>
         <!--悉檀字-->
         <xsl:when test="starts-with($Ref, 'SD')">
-        <span class="gaiji_sd">
+        <span lang="sa-Sidd" class="gaiji_sd">
             <ruby>
             <!--xsl:value-of select="."/-->
             <xsl:choose>
@@ -770,7 +770,7 @@
             </xsl:choose>
             <!--装cbeta字库用这句, 没装用上面的图片-->
             <!--xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='Character in the Siddham font']/value"/-->
-                <rt>
+                <rt lang="sa-Latn">
                     <xsl:value-of select="key('char_id', $Ref)/charProp[localName='Romanized form in Unicode transcription']/value"/>
                 </rt>
             </ruby>
@@ -779,7 +779,7 @@
 
         <!--蘭札字-->
         <xsl:when test="starts-with($Ref, 'RJ')">
-        <span class="gaiji_rj">
+        <span lang="sa-x-rj" class="gaiji_rj">
             <ruby>
                 <img>
                 <xsl:attribute name="src">
@@ -792,7 +792,7 @@
                 </img>
             <!-- 安装了cbeta的蘭扎字库，使用这句，不推荐-->
             <!--xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='rjchar']/value"/-->
-                <rt>
+                <rt lang="sa-Latn">
                     <xsl:value-of select="key('char_id', $Ref)/charProp[localName='Romanized form in Unicode transcription']/value"/>
                 </rt>
             </ruby>
