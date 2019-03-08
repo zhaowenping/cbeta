@@ -594,7 +594,7 @@
     </xsl:template>
 
     <xsl:template match="p">
-        <p>
+        <p lang="lzh-Hant">
           <xsl:if test="@xml:id">
               <xsl:attribute name="id">      
                 <xsl:value-of select="@xml:id"/>
@@ -611,7 +611,7 @@
 
     <!--处理note-->
     <xsl:template match="note[@place='inline']|note[@type='inline']">
-        <span class="note">(<xsl:apply-templates/>)</span>
+        <span lang="lzh-Hant" class="note">(<xsl:apply-templates/>)</span>
     </xsl:template>
 
     <xsl:template match="space">
