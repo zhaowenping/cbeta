@@ -117,8 +117,9 @@ body{
     -moz-osx-font-smoothing: grayscale;
     /*-webkit-font-smoothing: antialiased;*/
     color:#000000;
-    /*background-color: #E7F4FE;*/
-    background-color: #F1EDCC;
+    /*background-color: #E7F4FE;
+    background-color: #F1EDCC;*/
+    background-color: #E0F0C0;
     padding:2em;
     padding-top:100px;
     /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;*/
