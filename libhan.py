@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-02-18 19:34:07
+# Last Modified: 2019-04-13 17:37:34
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -785,6 +785,7 @@ class Search:
 def re_search(pattern, string):
     '''对re模块search的改进；把输入字符串使用pattern分割, 每个字符串附带一个标志，表示该字符串是否短语匹配'''
     rr = pattern.search(string)
+    print(pattern, string, rr)
     if not rr:
         yield (string, False)
         raise StopIteration()
