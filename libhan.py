@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-04-13 17:37:34
+# Last Modified: 2019-04-17 16:09:01
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1093,5 +1093,6 @@ if __name__ == "__main__":
     str_in = "a-kAra"
     print(hk2iast(str_in))
     print(hk2iastdeve(str_in))
+    print(convert2t('大佛顶'))
 
 
