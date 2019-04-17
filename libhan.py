@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-04-17 20:25:59
+# Last Modified: 2019-04-17 20:52:22
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -777,6 +777,8 @@ class Search:
         if norm:
             title = normyitizi(title)
         result = (set(self.index.get(tt, {}).keys()) for tt in list(title))
+        import pprint
+        # pprint.pprint(list(result))
         return sorted(reduce(lambda x, y: x & y, result), key=pagerank)
 
 
@@ -787,6 +789,7 @@ def re_search(pattern, string):
     rr = pattern.search(string)
     if not rr:
         return (string, False)
+        # raise StopIteration()
     start, end = rr.span()
     if start !=0:
         yield (string[0:start], False)
@@ -1092,5 +1095,8 @@ if __name__ == "__main__":
     print(hk2iast(str_in))
     print(hk2iastdeve(str_in))
     print(convert2t('大佛顶'))
+    ss = Search()
+    for idx in ss.search('大佛頂'):
+        print(idx)
 
 
