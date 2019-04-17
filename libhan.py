@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-04-17 20:52:22
+# Last Modified: 2019-04-17 21:02:52
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -777,7 +777,7 @@ class Search:
         if norm:
             title = normyitizi(title)
         result = (set(self.index.get(tt, {}).keys()) for tt in list(title))
-        import pprint
+        # import pprint
         # pprint.pprint(list(result))
         return sorted(reduce(lambda x, y: x & y, result), key=pagerank)
 
@@ -788,7 +788,8 @@ def re_search(pattern, string):
     '''对re模块search的改进；把输入字符串使用pattern分割, 每个字符串附带一个标志，表示该字符串是否短语匹配'''
     rr = pattern.search(string)
     if not rr:
-        return (string, False)
+        yield (string, False)
+        return
         # raise StopIteration()
     start, end = rr.span()
     if start !=0:
@@ -1091,12 +1092,12 @@ if __name__ == "__main__":
     # print(zhuyin('你好', True))
     print(lookinkangxi('𢾛'))
 
-    str_in = "a-kAra"
-    print(hk2iast(str_in))
-    print(hk2iastdeve(str_in))
+    #str_in = "a-kAra"
+    #print(hk2iast(str_in))
+    #print(hk2iastdeve(str_in))
     print(convert2t('大佛顶'))
-    ss = Search()
-    for idx in ss.search('大佛頂'):
-        print(idx)
+    # ss = Search()
+    # for idx in ss.search('大佛頂'):
+    #     print(idx)
 
 
