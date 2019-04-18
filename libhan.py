@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-04-17 21:02:52
+# Last Modified: 2019-04-17 21:09:27
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -777,8 +777,6 @@ class Search:
         if norm:
             title = normyitizi(title)
         result = (set(self.index.get(tt, {}).keys()) for tt in list(title))
-        # import pprint
-        # pprint.pprint(list(result))
         return sorted(reduce(lambda x, y: x & y, result), key=pagerank)
 
 
