@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-04-25 20:19:18
+# Last Modified: 2019-04-25 20:44:50
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -31,9 +31,9 @@ from bottle import GeventServer
 # from whoosh.index import open_dir
 # from whoosh.qparser import QueryParser
 # from whoosh.query import *
-import psycopg2
+# import psycopg2
 # import opencc
-# import jieba
+import jieba
 
 import pprint
 from libhan import hk2iast, read_menu_file, HKdict2iast
@@ -638,7 +638,7 @@ def ytz():
 
 punct = re.compile(r"([\u3000-\u303f\ufe10-\uff0f\uff1a-\uffee])")
 
-for libhan import diff_ctx
+from libhan import diff_ctx
 
 @get('/diff')
 @view('temp/diff.jinja2')
@@ -657,10 +657,9 @@ def diff_get():
         return {}
 
 
-# import difflib
-# from difflib import *
 import chardet
 # chardet.detect(r.content)['encoding']
+
 @post('/diff')
 @view('temp/diff.jinja2')
 def diff_post():
@@ -674,8 +673,8 @@ def diff_post():
     if encoding.startswith('GB'):
         encoding = 'GB18030'
     lfile = lfile.decode(encoding, 'replace')
-    print(request.forms.punct)
-    print(request.forms.punct == 'true')
+    # print(request.forms.punct)
+    # print(request.forms.punct == 'true')
     if request.forms.punct == 'true':
         lfile = punct.sub('', lfile)
     with open('lfile.tmp', 'w') as fd:
@@ -691,51 +690,8 @@ def diff_post():
     with open('rfile.tmp', 'w') as fd:
         fd.write(rfile)
 
+    redirect(f'/diff')
 
-    # lfile.save('lfile.tmp', overwrite=True)
-    # rfile.save('rfile.tmp', overwrite=True)
-    # from subprocess import Popen, PIPE
-    # p2 = Popen(["diff", "lfile.tmp", "rfile.tmp"], stdin=PIPE, stdout=PIPE)
-    # output = p2.communicate()[0]
-    # output = output.decode('utf8')
-
-    # ll = output.splitlines()[1::4]
-    # rr = output.splitlines()[3::4]
-    # lfile = open('lfile.tmp').read()
-    # rfile = open('rfile.tmp').read()
-    # print(''.join(list(difflib.Differ().compare(lfile, rfile))))
-
-    d = Differ()
-    with open('lfile.tmp') as fd:
-        lfile = fd.read()
-        # lfiles = [line.strip() for line in lfile.splitlines()]
-
-    with open('rfile.tmp') as fd:
-        rfile = fd.read()
-        # rfiles = [line.strip() for line in rfile.splitlines()]
-
-    # result = list(d.compare(lfiles, rfiles))
-    result = list(d.compare(lfile, rfile))
-
-    lfile = []
-    rfile = []
-    for line in result:
-        if line.startswith(' '):
-            line = line[2:]
-            lfile.append(f'<span class="orig">{line}</span>')
-            rfile.append(f'<span class="orig">{line}</span>')
-        elif line.startswith('- '):
-            line = line[2:]
-            lfile.append(f'<span class="red">{line}</span>')
-        elif line.startswith('+ '):
-            line = line[2:]
-            rfile.append(f'<span class="red">{line}</span>')
-        elif line.startswith('?'):
-            continue
-    lfile = ''.join(lfile)
-    rfile = ''.join(rfile)
-
-    return {'lfile': lfile, 'rfile': rfile}
 
 # jieba.load_userdict('dict/terms.txt')
 @get('/diff/word')
@@ -753,28 +709,30 @@ def diff_word_get():
         rfile = list(jieba.cut(rfile))
         # rfiles = [line.strip() for line in rfile.splitlines()]
 
-    # result = list(d.compare(lfiles, rfiles))
-    result = list(d.compare(lfile, rfile))
+    return diff_ctx(lfile, rfile)
+    # result = list(d.compare(lfile, rfile))
 
-    lfile = []
-    rfile = []
-    for line in result:
-        if line.startswith(' '):
-            line = line[2:]
-            lfile.append(f'<span class="orig">{line}</span>')
-            rfile.append(f'<span class="orig">{line}</span>')
-        elif line.startswith('- '):
-            line = line[2:]
-            lfile.append(f'<span class="red">{line}</span>')
-        elif line.startswith('+ '):
-            line = line[2:]
-            rfile.append(f'<span class="red">{line}</span>')
-        elif line.startswith('?'):
-            continue
-    lfile = ''.join(lfile)
-    rfile = ''.join(rfile)
+    # lfile = []
+    # rfile = []
+    # for line in result:
+    #     if line.startswith(' '):
+    #         line = line[2:]
+    #         # lfile.append(f'<span class="orig">{line}</span>')
+    #         # rfile.append(f'<span class="orig">{line}</span>')
+    #         lfile.append({line)
+    #         rfile.append(line)
+    #     elif line.startswith('- '):
+    #         line = line[2:]
+    #         lfile.append(f'<span class="red">{line}</span>')
+    #     elif line.startswith('+ '):
+    #         line = line[2:]
+    #         rfile.append(f'<span class="red">{line}</span>')
+    #     elif line.startswith('?'):
+    #         continue
+    # lfile = ''.join(lfile)
+    # rfile = ''.join(rfile)
 
-    return {'lfile': lfile, 'rfile': rfile}
+    # return {'lfile': lfile, 'rfile': rfile}
 
 @get('/diff/line')
 @view('temp/diff.jinja2')
@@ -789,28 +747,29 @@ def diff_line_get():
         rfile = fd.read()
         rfiles = [line.strip() for line in rfile.splitlines()]
 
-    result = list(d.compare(lfiles, rfiles))
-    # result = list(d.compare(lfile, rfile))
+    return diff_ctx(lfile, rfile)
+    # result = list(d.compare(lfiles, rfiles))
+    # # result = list(d.compare(lfile, rfile))
 
-    lfile = []
-    rfile = []
-    for line in result:
-        if line.startswith(' '):
-            line = line[2:]
-            lfile.append(f'<span class="orig">{line}</span>')
-            rfile.append(f'<span class="orig">{line}</span>')
-        elif line.startswith('- '):
-            line = line[2:]
-            lfile.append(f'<span class="red">{line}</span>')
-        elif line.startswith('+ '):
-            line = line[2:]
-            rfile.append(f'<span class="red">{line}</span>')
-        elif line.startswith('?'):
-            continue
-    lfile = ''.join(lfile)
-    rfile = ''.join(rfile)
+    # lfile = []
+    # rfile = []
+    # for line in result:
+    #     if line.startswith(' '):
+    #         line = line[2:]
+    #         lfile.append(f'<span class="orig">{line}</span>')
+    #         rfile.append(f'<span class="orig">{line}</span>')
+    #     elif line.startswith('- '):
+    #         line = line[2:]
+    #         lfile.append(f'<span class="red">{line}</span>')
+    #     elif line.startswith('+ '):
+    #         line = line[2:]
+    #         rfile.append(f'<span class="red">{line}</span>')
+    #     elif line.startswith('?'):
+    #         continue
+    # lfile = ''.join(lfile)
+    # rfile = ''.join(rfile)
 
-    return {'lfile': lfile, 'rfile': rfile}
+    # return {'lfile': lfile, 'rfile': rfile}
 
 
 # xml/T13/T13n0423_001.xml

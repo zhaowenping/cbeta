@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-04-25 20:15:13
+# Last Modified: 2019-04-25 20:46:46
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1058,18 +1058,20 @@ def diff_ctx(lctx, rctx):
     '''比较两个文本的不同'''
 
     d = Differ()
-    result = list(d.compare(lctx, rctx))
+    result = d.compare(lctx, rctx)
 
     lctx = []
     rctx = []
     for line in result:
         if line.startswith(' '):
             line = line[2:]
-            lctx.append(f'<span class="orig">{line}</span>')
-            rctx.append(f'<span class="orig">{line}</span>')
+            # lctx.append(f'<span class="orig">{line}</span>')
+            # rctx.append(f'<span class="orig">{line}</span>')
+            lctx.append(line)
+            rctx.append(line)
         elif line.startswith('- '):
             line = line[2:]
-            lctx.append(f'<span class="blue">{line}</span>')
+            lctx.append(f'<span class="red">{line}</span>')
         elif line.startswith('+ '):
             line = line[2:]
             rctx.append(f'<span class="red">{line}</span>')
@@ -1077,6 +1079,8 @@ def diff_ctx(lctx, rctx):
             continue
     lctx = ''.join(lctx)
     rctx = ''.join(rctx)
+    lctx = '<br>'.join(lctx.splitlines())
+    rctx = '<br>'.join(rctx.splitlines())
 
     return {'lfile': lctx, 'rfile': rctx}
 
