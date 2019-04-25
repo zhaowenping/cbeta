@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-04-13 17:30:31
+# Last Modified: 2019-04-25 20:19:18
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -638,13 +638,27 @@ def ytz():
 
 punct = re.compile(r"([\u3000-\u303f\ufe10-\uff0f\uff1a-\uffee])")
 
+for libhan import diff_ctx
+
 @get('/diff')
 @view('temp/diff.jinja2')
 def diff_get():
-    return {}
 
-import difflib
-from difflib import *
+    try:
+        with open('lfile.tmp') as fd:
+            lfile = fd.read()
+
+        with open('rfile.tmp') as fd:
+            rfile = fd.read()
+
+        return diff_ctx(lfile, rfile)
+
+    except:
+        return {}
+
+
+# import difflib
+# from difflib import *
 import chardet
 # chardet.detect(r.content)['encoding']
 @post('/diff')

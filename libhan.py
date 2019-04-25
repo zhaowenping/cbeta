@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-04-17 21:09:27
+# Last Modified: 2019-04-25 20:15:13
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1049,6 +1049,36 @@ def main():
     print(e-s)
     for idx in ss.search(title):
         print(idx, ss.titles[idx])
+
+
+import difflib
+from difflib import *
+
+def diff_ctx(lctx, rctx):
+    '''比较两个文本的不同'''
+
+    d = Differ()
+    result = list(d.compare(lctx, rctx))
+
+    lctx = []
+    rctx = []
+    for line in result:
+        if line.startswith(' '):
+            line = line[2:]
+            lctx.append(f'<span class="orig">{line}</span>')
+            rctx.append(f'<span class="orig">{line}</span>')
+        elif line.startswith('- '):
+            line = line[2:]
+            lctx.append(f'<span class="blue">{line}</span>')
+        elif line.startswith('+ '):
+            line = line[2:]
+            rctx.append(f'<span class="red">{line}</span>')
+        elif line.startswith('?'):
+            continue
+    lctx = ''.join(lctx)
+    rctx = ''.join(rctx)
+
+    return {'lfile': lctx, 'rfile': rctx}
 
 
 def test():
