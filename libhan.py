@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-04-25 20:46:46
+# Last Modified: 2019-04-25 20:50:06
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1065,8 +1065,6 @@ def diff_ctx(lctx, rctx):
     for line in result:
         if line.startswith(' '):
             line = line[2:]
-            # lctx.append(f'<span class="orig">{line}</span>')
-            # rctx.append(f'<span class="orig">{line}</span>')
             lctx.append(line)
             rctx.append(line)
         elif line.startswith('- '):

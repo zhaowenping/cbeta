@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-04-25 20:44:50
+# Last Modified: 2019-04-25 20:50:43
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -698,47 +698,20 @@ def diff_post():
 @view('temp/diff.jinja2')
 def diff_word_get():
     '''按照词比较两个文件不同'''
-    d = Differ()
     with open('lfile.tmp') as fd:
         lfile = fd.read()
         lfile = list(jieba.cut(lfile))
-        # lfiles = [line.strip() for line in lfile.splitlines()]
 
     with open('rfile.tmp') as fd:
         rfile = fd.read()
         rfile = list(jieba.cut(rfile))
-        # rfiles = [line.strip() for line in rfile.splitlines()]
 
     return diff_ctx(lfile, rfile)
-    # result = list(d.compare(lfile, rfile))
-
-    # lfile = []
-    # rfile = []
-    # for line in result:
-    #     if line.startswith(' '):
-    #         line = line[2:]
-    #         # lfile.append(f'<span class="orig">{line}</span>')
-    #         # rfile.append(f'<span class="orig">{line}</span>')
-    #         lfile.append({line)
-    #         rfile.append(line)
-    #     elif line.startswith('- '):
-    #         line = line[2:]
-    #         lfile.append(f'<span class="red">{line}</span>')
-    #     elif line.startswith('+ '):
-    #         line = line[2:]
-    #         rfile.append(f'<span class="red">{line}</span>')
-    #     elif line.startswith('?'):
-    #         continue
-    # lfile = ''.join(lfile)
-    # rfile = ''.join(rfile)
-
-    # return {'lfile': lfile, 'rfile': rfile}
 
 @get('/diff/line')
 @view('temp/diff.jinja2')
 def diff_line_get():
     '''按照行比较两个文件不同'''
-    d = Differ()
     with open('lfile.tmp') as fd:
         lfile = fd.read()
         lfiles = [line.strip() for line in lfile.splitlines()]
@@ -748,28 +721,6 @@ def diff_line_get():
         rfiles = [line.strip() for line in rfile.splitlines()]
 
     return diff_ctx(lfile, rfile)
-    # result = list(d.compare(lfiles, rfiles))
-    # # result = list(d.compare(lfile, rfile))
-
-    # lfile = []
-    # rfile = []
-    # for line in result:
-    #     if line.startswith(' '):
-    #         line = line[2:]
-    #         lfile.append(f'<span class="orig">{line}</span>')
-    #         rfile.append(f'<span class="orig">{line}</span>')
-    #     elif line.startswith('- '):
-    #         line = line[2:]
-    #         lfile.append(f'<span class="red">{line}</span>')
-    #     elif line.startswith('+ '):
-    #         line = line[2:]
-    #         rfile.append(f'<span class="red">{line}</span>')
-    #     elif line.startswith('?'):
-    #         continue
-    # lfile = ''.join(lfile)
-    # rfile = ''.join(rfile)
-
-    # return {'lfile': lfile, 'rfile': rfile}
 
 
 # xml/T13/T13n0423_001.xml
