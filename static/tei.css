@@ -104,7 +104,9 @@
 html {
     height: 100%;
     /*font-family: sans-serif;*/
-    font-family: ENCLOSING_CIRCLE, WSQUARE, quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", "PingFang HK", "PingFang SC", "PMingLiU", "Microsoft YaHei", siddham;
+    font-family: ENCLOSING_CIRCLE, WSQUARE, quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif,
+        "Hiragino Sans GB", "PingFang HK", "PingFang SC", "PMingLiU", "Microsoft YaHei",
+        siddham, hanaminsat;
     margin:10pt;
 }
 
@@ -377,20 +379,20 @@ span.gaiji_rj{
 
 /* 规范化异体字 */
 span.gaiji_nor{
-    font-family: hanaminsat;
+    //font-family: hanaminsat;
     color:#00d7ff;
     letter-spacing: 0;
 }
 
 span.gaiji_nun{
-    font-family: hanaminsat;
+    //font-family: hanaminsat;
     color:#00d7ff;
     letter-spacing: 0;
 }
 
 /* 未规范化异体字 */
 span.gaiji_uni{
-    font-family: hanaminsat;
+    //font-family: hanaminsat;
     color:#1685a9;
     letter-spacing: 0;
 }

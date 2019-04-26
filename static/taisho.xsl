@@ -188,6 +188,12 @@
         <script src="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
         <![endif]-->
         <script src="/static/my.js"></script>
+        <style>
+              @font-face {
+              font-family: 'hanaminsat';
+              src: url('/static/fonts/{$current_sutra}_{$juan}.ttf') format('truetype');
+              }
+        </style>
 
         </head>
 
