@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-04-25 20:56:09
+# Last Modified: 2019-04-26 21:58:21
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1077,8 +1077,8 @@ def diff_ctx(lctx, rctx):
             continue
     lctx = ''.join(lctx)
     rctx = ''.join(rctx)
-    lctx = ''.join(f'<p>{line}</p>' for line in lctx.splitlines())
-    rctx = ''.join(f'<p>{line}</p>' for line in rctx.splitlines())
+    # lctx = ''.join(f'<p>{line}</p>' for line in lctx.splitlines())
+    # rctx = ''.join(f'<p>{line}</p>' for line in rctx.splitlines())
 
     return {'lfile': lctx, 'rfile': rctx}
 
