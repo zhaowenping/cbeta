@@ -193,6 +193,13 @@
               font-family: 'hanaminsat';
               src: url(<xsl:value-of select="concat('/static/fonts/', $current_sutra, '_', $juan, '.ttf')"/>) format('truetype');
               }
+              html{
+                 height: 100%;
+                 font-family: ENCLOSING_CIRCLE, WSQUARE, quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif,
+                     "Hiragino Sans GB", "PingFang HK", "PingFang SC", "PMingLiU", "Microsoft YaHei",
+                     siddham, hanaminsat;
+                 margin:10pt;
+              }
         </style>
 
         </head>
