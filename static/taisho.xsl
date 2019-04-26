@@ -193,6 +193,7 @@
               font-family: 'hanaminsat';
               src: url('/static/fonts/{$current_sutra}_{$juan}.ttf') format('truetype');
               }
+              html{font-family: hanaminsat}
         </style>
 
         </head>
