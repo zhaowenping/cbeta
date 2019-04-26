@@ -188,10 +188,10 @@
         <script src="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
         <![endif]-->
         <script src="/static/my.js"></script>
-        <style>
+        <style type="text/css">
               @font-face {
-              font-family: 'hanaminsat';
-              src: url(<xsl:value-of select="concat('/static/fonts/', $current_sutra, '_', $juan, '.ttf')"/>) format('truetype');
+                font-family: "hanaminsat";
+                src: url("<xsl:value-of select="concat('/static/fonts/', $current_sutra, '_', $juan, '.ttf')"/>") format("truetype");
               }
               html{
                  height: 100%;
