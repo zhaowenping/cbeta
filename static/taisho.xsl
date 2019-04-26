@@ -191,10 +191,14 @@
         <style>
               @font-face {
               font-family: 'hanaminsat';
-              src: url("/static/fonts/{$current_sutra}_{$juan}.ttf") format('truetype');
+              src: url(<xsl:value-of select="concat('/static/fonts/', $current_sutra, '_', $juan, '.ttf')"/>) format('truetype');
               }
               html{font-family: hanaminsat}
         </style>
+
+            <!--
+              src: url("/static/fonts/{$current_sutra}_{$juan}.ttf") format('truetype');
+            -->
 
         </head>
 
