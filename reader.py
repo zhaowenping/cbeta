@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-04-25 20:50:43
+# Last Modified: 2019-04-28 22:17:47
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -215,6 +215,8 @@ def searchmulu():
         # title = opencc.convert(title, config='s2t.json')
         title = convert2t(title)
     results = []
+    if not title:
+        return {'results': results}
     for idx in ss.search(title):
         title0 = idx
         hl = ss.titles[idx]
