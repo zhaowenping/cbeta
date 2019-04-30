@@ -56,12 +56,12 @@
   unicode-range: U+11580-115FF;
 }
 
-/* F區漢字使用抽取出來的花園明朝字體 */
+/* CDEF區漢字使用抽取出來的花園明朝字體 */
 @font-face {
     font-family: 'hanaminsat';
-    src: local(HanaMinB),
-        url('/static/satextf.woff') format('woff');
-    unicode-range: U+2CEEC-2EBCF;
+    src: url('/static/CDEF.woff') format('woff');
+    // local(HanaMinB), url('/static/satextf.woff') format('woff');
+    // unicode-range: U+2CEEC-2EBCF;
 }
 
 /* 用于显示等宽英文和拼音, 拼音a的显示还存在问题 */
@@ -101,15 +101,13 @@
 
 /* main layout */
     /*font-family: sans-serif;*/
-/*
 html {
     height: 100%;
     font-family: ENCLOSING_CIRCLE, WSQUARE, quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif,
         "Hiragino Sans GB", "PingFang HK", "PingFang SC", "PMingLiU", "Microsoft YaHei",
-        siddham;
+        hanaminsat, siddham;
     margin:10pt;
 }
-*/
 
 body{
     height: 100%;

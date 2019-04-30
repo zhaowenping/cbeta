@@ -188,20 +188,7 @@
         <script src="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
         <![endif]-->
         <script src="/static/my.js"></script>
-        <style type="text/css">
-              @font-face {
-                font-family: "hanaminsat";
-                src: url("<xsl:value-of select="concat('/static/fonts/', $current_sutra, '_', $juan, '.ttf')"/>") format("truetype");
-              }
-              html{
-                 height: 100%;
-                 font-family: ENCLOSING_CIRCLE, WSQUARE, quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif,
-                     "Hiragino Sans GB", "PingFang HK", "PingFang SC", "PMingLiU", "Microsoft YaHei",
-                     siddham, hanaminsat;
-                 margin:10pt;
-              }
-        </style>
-
+        <!--src: url("<xsl:value-of select="concat('/static/fonts/', $current_sutra, '_', $juan, '.ttf')"/>") format("truetype");-->
         </head>
 
         <!--firefox浏览器特有的菜单-->
