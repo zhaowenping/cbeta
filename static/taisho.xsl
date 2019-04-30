@@ -188,8 +188,13 @@
         <script src="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
         <![endif]-->
         <script src="/static/my.js"></script>
-        <!--src: url("<xsl:value-of select="concat('/static/fonts/', $current_sutra, '_', $juan, '.ttf')"/>") format("truetype");-->
         </head>
+        <style type="text/css">
+            @font-face {
+                font-family: 'hanaminsat';
+                src: url("<xsl:value-of select="concat('/static/fonts/', $current_sutra, '_', $juan, '.ttf')"/>") format("truetype");
+            }
+        </style>
 
         <!--firefox浏览器特有的菜单-->
         <body class="contenttext" contextmenu="supermenu">
