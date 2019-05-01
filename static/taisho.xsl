@@ -192,7 +192,8 @@
         <style type="text/css">
             @font-face {
                 font-family: 'hanaminsat';
-                src: url("<xsl:value-of select="concat('/static/fonts/', $current_sutra, '_', $juan, '.ttf')"/>") format("truetype");
+                src: url("<xsl:value-of select="concat('/static/fonts/', $current_sutra, '_', $juan, '.woff2')"/>") format("woff2"),
+                url("<xsl:value-of select="concat('/static/fonts/', $current_sutra, '_', $juan, '.woff')"/>") format("woff");
             }
         </style>
 
