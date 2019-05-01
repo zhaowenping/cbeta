@@ -383,20 +383,20 @@ span.gaiji_rj{
 /* 规范化异体字 */
 span.gaiji_nor{
     //font-family: hanaminsat;
-    color:#00d7ff;
+    color:#1685a9;
     letter-spacing: 0;
 }
 
 span.gaiji_nun{
     //font-family: hanaminsat;
-    color:#00d7ff;
+    color:#1685a9;
     letter-spacing: 0;
 }
 
 /* 未规范化异体字 */
 span.gaiji_uni{
     //font-family: hanaminsat;
-    color:#1685a9;
+    color:#065279;
     letter-spacing: 0;
 }
 
