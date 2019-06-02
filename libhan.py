@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-06-02 22:52:14
+# Last Modified: 2019-06-02 22:54:02
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -996,23 +996,23 @@ def fullsearch(sentence):
     return result
 
 
-# with gzip.open('dict/cipin.json.gz') as fd:
-#     cipind = json.load(fd)
-#
-# def zhuyin(txt, ruby=False, cipin=50):
-#     '''對txt文本注音, ruby是否使用ruby語法'''
-#     if not ruby:
-#         content = ' '.join(lookinkangxi(i)['pinyin'].split(' ')[0] for i in txt)
-#     else:
-#         result = []
-#         for zi in txt:
-#             if cipind.get(zi, 0) < cipin:
-#                 pinyin = lookinkangxi(zi)['pinyin'].split(' ')[0]
-#                 if pinyin:
-#                     zi = f"<ruby>{zi}<rt>{pinyin}</rt></ruby>"
-#             result.append(zi)
-#         content = ''.join(result)
-#     return content
+with gzip.open('dict/cipin.json.gz') as fd:
+    cipind = json.load(fd)
+
+def zhuyin(txt, ruby=False, cipin=50):
+    '''對txt文本注音, ruby是否使用ruby語法'''
+    if not ruby:
+        content = ' '.join(lookinkangxi(i)['pinyin'].split(' ')[0] for i in txt)
+    else:
+        result = []
+        for zi in txt:
+            if cipind.get(zi, 0) < cipin:
+                pinyin = lookinkangxi(zi)['pinyin'].split(' ')[0]
+                if pinyin:
+                    zi = f"<ruby>{zi}<rt>{pinyin}</rt></ruby>"
+            result.append(zi)
+        content = ''.join(result)
+    return content
 
 def main():
     ''''''
