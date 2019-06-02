@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-04-26 21:58:21
+# Last Modified: 2019-06-02 22:52:14
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -952,18 +952,18 @@ def pagerank(filename, sentence='', content=''):
 
 def fullsearch(sentence):
     '''全文搜索'''
-    # sentence2 = sentence.replace(' ', '')
-    url = "http://127.0.0.1:9200/cbeta/fulltext/_search?"#创建一个文档，如果该文件已经存在，则返回失败
-    queryParams = "pretty&size=50"
-    url = url + queryParams
+    sentence2 = sentence.split()
+    # 去除标点符号
+    sentence = sentence.translate(pun).replace(' ', '')
+    url = "http://127.0.0.1:9200/cbeta/fulltext/_search"#创建一个文档，如果该文件已经存在，则返回失败
     data = {
      "query": {
         "match": {
-            "content": {
-                "query": sentence,
-            }
-        }
+            "content": sentence,
+        },
     },
+    "size":5000,
+    "from":0,
     "highlight": {
         "fields": {
             "content": {
@@ -972,31 +972,7 @@ def fullsearch(sentence):
         }
     }
 }
-    data = {
-  "query": {
-    "match": {
-      "content": sentence
-    }
-  },
-  "rescore" : {
-    "window_size" : 50,
-    "query" : {
-      "rescore_query" : {
-        "match_phrase" : {
-          "content" : {
-            "query" : sentence,
-            "slop" : 50
-          }
-        }
-      }
-    }
-  }
-}
 
-    # 修改其中的keyword
-    # tempjason = json.loads(QUERY_TEMPLATE)
-    # tempjason["query"]["match"]["content"]["query"] = "天空的雾来的漫不经心"
-    # data = json.dumps(tempjason)
 
     r = requests.get(url, json=data, timeout=10)
     hits = r.json()['hits']['hits']
@@ -1005,37 +981,38 @@ def fullsearch(sentence):
         _source = i["_source"]
         author = _source['author'].split('\u3000')[0]
         juan = _source["filename"].split('n')[0]
+        # 文章内容去除标点符号
+        ctx = _source['content'].translate(pun).replace(' ', '')
         # result.append((''.join(i['highlight']['content']), f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', _source['title'], author))
-        if zi_order(sentence, _source['content']):
+        # if zi_order(sentence, _source['content']):
+        if all(stc in ctx for stc in sentence2):
             result.append({'hl': highlight(sentence, _source['content']), 'an': f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}',
                 'title':_source['title'], 'author': author, 'content': _source['content'],
                 'filename': _source["filename"].split('.')[0]})
 
-    # sorted(result, key=lambda x: pagerank(x['filename']), reverse=True)
     result.sort(key=lambda x: pagerank(x['filename']))  #, sentence, x['content']))
-        # else:
-        #     import pprint
         #     pprint.pprint(('||'.join(_source['content']), f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', _source['title'], author))
 
     return result
 
-with gzip.open('dict/cipin.json.gz') as fd:
-    cipind = json.load(fd)
 
-def zhuyin(txt, ruby=False, cipin=50):
-    '''對txt文本注音, ruby是否使用ruby語法'''
-    if not ruby:
-        content = ' '.join(lookinkangxi(i)['pinyin'].split(' ')[0] for i in txt)
-    else:
-        result = []
-        for zi in txt:
-            if cipind.get(zi, 0) < cipin:
-                pinyin = lookinkangxi(zi)['pinyin'].split(' ')[0]
-                if pinyin:
-                    zi = f"<ruby>{zi}<rt>{pinyin}</rt></ruby>"
-            result.append(zi)
-        content = ''.join(result)
-    return content
+# with gzip.open('dict/cipin.json.gz') as fd:
+#     cipind = json.load(fd)
+#
+# def zhuyin(txt, ruby=False, cipin=50):
+#     '''對txt文本注音, ruby是否使用ruby語法'''
+#     if not ruby:
+#         content = ' '.join(lookinkangxi(i)['pinyin'].split(' ')[0] for i in txt)
+#     else:
+#         result = []
+#         for zi in txt:
+#             if cipind.get(zi, 0) < cipin:
+#                 pinyin = lookinkangxi(zi)['pinyin'].split(' ')[0]
+#                 if pinyin:
+#                     zi = f"<ruby>{zi}<rt>{pinyin}</rt></ruby>"
+#             result.append(zi)
+#         content = ''.join(result)
+#     return content
 
 def main():
     ''''''
