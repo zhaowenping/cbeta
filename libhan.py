@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-06-02 22:54:02
+# Last Modified: 2019-06-09 08:35:13
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1099,10 +1099,12 @@ if __name__ == "__main__":
     # print(zhuyin('你好', True))
     print(lookinkangxi('𢾛'))
 
+    ctx = '五<g ref="#CB22072">說</g>九種命終心三界<g ref="#CB29911">々</g><g ref="#CB29911">々</g>生各潤生心各有三故<note place="inline">已上'
+    print(rm_ditto_mark(ctx))
     #str_in = "a-kAra"
     #print(hk2iast(str_in))
     #print(hk2iastdeve(str_in))
-    print(convert2t('大佛顶'))
+    # print(convert2t('大佛顶'))
     # ss = Search()
     # for idx in ss.search('大佛頂'):
     #     print(idx)

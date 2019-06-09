@@ -825,7 +825,8 @@
                 </span>
             </xsl:when>
             <xsl:when test="$nor and not($term1[@rend='no_nor'])">
-                <span class="gaiji_nor"><xsl:value-of select="$nor"/></span>
+                <!--span class="gaiji_nor"><xsl:value-of select="$nor"/></span-->
+                <span class="gaiji_nor"><xsl:value-of select="."/></span>
             </xsl:when>
             <xsl:when test="$char/charProp[localName='composition']/value">
                 <span class="gaiji_nor">
