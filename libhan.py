@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-06-09 08:35:13
+# Last Modified: 2019-06-20 16:10:44
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -873,9 +873,9 @@ def convert2t(string, punctuation=True, region=False):
 # 读入异体字对照表
 yitizi = readdb('dict/variants.txt', True, True)
 # 读取异体字短语词典
-varptable = readdb('variants/p.txt')
+# varptable = readdb('variants/p.txt')
 # 异体字转换pattern
-varppp = re.compile('|'.join(varptable.keys()))
+# varppp = re.compile('|'.join(varptable.keys()))
 
 def normyitizi(string, level=0):
     '''异体字规范化为标准繁体字'''
