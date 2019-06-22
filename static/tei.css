@@ -130,7 +130,7 @@ body{
     font-family: quote, "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", "PMingLiU", hanaminsat;
     /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;*/
     /*font-family: ENCLOSING_CIRCLE, WSQUARE, quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", "PingFang HK", "PingFang SC", "PMingLiU", "Microsoft YaHei", siddham;*/
-    font-size: large;
+    font-size: 125%;
     /* font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;*/
 }
 
@@ -570,14 +570,14 @@ p {
 /*   margin-right: 2em;
    margin-left: 2em;
    */
-    line-height: 1.9em;
+    line-height: 1.7em;
     text-indent: 2em;
     text-align: justify;
     white-space: normal; /* 单词间空白,对中文无效 */
     /*font-family: quote, "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", "PMingLiU", hanaminsat;*/
     /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", SimSun, "宋体", "Microsoft YaHei", "微软雅黑", "PMingLiU",
      * "Source Han Serif TC";*/
-    font-size: 100%;
+    font-size: 111%;
     font-weight: normal;
     letter-spacing: 0em; /* 字母间空白0.12em */
     //vertical-align: text-bottom;
