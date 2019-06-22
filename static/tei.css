@@ -577,7 +577,7 @@ p {
     /*font-family: quote, "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", "PMingLiU", hanaminsat;*/
     /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", SimSun, "宋体", "Microsoft YaHei", "微软雅黑", "PMingLiU",
      * "Source Han Serif TC";*/
-    font-size: 111%;
+    font-size: 100%;
     font-weight: normal;
     letter-spacing: 0em; /* 字母间空白0.12em */
     //vertical-align: text-bottom;
