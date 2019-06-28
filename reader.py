@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-04-28 22:17:47
+# Last Modified: 2019-06-28 15:41:26
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -118,6 +118,7 @@ def getf_next_juan(sutra):
 sch_a = read_menu_file("static/sutra_sch.lst")
 sch_b = read_menu_file("static/bulei_sutra_sch.lst")
 sch_c = read_menu_file("static/long.lst")
+sch_dzyz = read_menu_file("static/dzyz.lst")
 
 @route('/mulu')
 @view('temp/menu.jinja2')
@@ -133,6 +134,11 @@ def menu():
 @view('temp/menu.jinja2')
 def menu():
     return {'menus': sch_a, 'request':request, 'yiju': '大正藏冊別'}
+
+@route('/dzyz')
+@view('temp/menu.jinja2')
+def menu():
+    return {'menus': sch_a, 'request':request, 'yiju': '大衆閲藏'}
 
 @route('/mulu/:bulei#.+#')
 @view('temp/menu.jinja2')
@@ -185,6 +191,33 @@ def submenu(bulei):
     return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大正藏冊別', 'root': root}
 
 
+@route('/dzyz/:bulei#.+#')
+@view('temp/menu.jinja2')
+def submenu(bulei):
+    menu = sch_dzyz
+    bulei = bulei.split('/')
+    root = '/dzyz'
+
+    nav = [(root, '总目录')]
+    for b in bulei:
+        if b not in menu: abort(404)
+        menu = menu[b]
+        t = '/'.join((nav[-1][0], b))
+        nav.append((t, b))
+    nav.pop(0)
+
+    # 跳转到正文
+    if not menu:
+        sutra = bulei[-1].split()[0]  # T01n0002
+        zang = sutra.split('n')[0]              # T01
+        juan = get_all_juan(sutra)[0]           # 001
+        url = f"/xml/{zang}/{sutra}_{juan}.xml"  # T01n0002_001.xml
+        redirect(url)
+    return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大衆閲藏', 'root':root}
+
+
+@route('/cebie/:bulei#.+#')
+@view('temp/menu.jinja2')
 # 处理搜索
 
 ss = Search()
