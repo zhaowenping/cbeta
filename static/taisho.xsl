@@ -566,6 +566,11 @@
         </p>
     </xsl:template-->
 
+    <!--XXX-->
+    <xsl:template match="cb:t[@xml:lang='zh-x-yy']">
+        [<xsl:apply-templates/>]
+    </xsl:template>
+
     <xsl:template match="p[@cb:type='dharani']">
         <xsl:choose>
         <xsl:when test="not(cb:tt)">
