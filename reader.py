@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-06-28 15:41:26
+# Last Modified: 2019-06-28 15:44:19
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -216,8 +216,6 @@ def submenu(bulei):
     return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大衆閲藏', 'root':root}
 
 
-@route('/cebie/:bulei#.+#')
-@view('temp/menu.jinja2')
 # 处理搜索
 
 ss = Search()
