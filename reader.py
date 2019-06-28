@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-06-28 15:44:19
+# Last Modified: 2019-06-28 16:04:43
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -117,32 +117,26 @@ def getf_next_juan(sutra):
 # 显示菜单
 sch_a = read_menu_file("static/sutra_sch.lst")
 sch_b = read_menu_file("static/bulei_sutra_sch.lst")
-sch_c = read_menu_file("static/long.lst")
 sch_dzyz = read_menu_file("static/dzyz.lst")
 
 @route('/mulu')
 @view('temp/menu.jinja2')
-def menu():
+def menu1():
     return {'menus': sch_b, 'request':request, 'yiju': '大正藏部類'}
-
-@route('/qianlong')
-@view('temp/menu.jinja2')
-def menu():
-    return {'menus': sch_c, 'request':request, 'yiju': '乾隆藏'}
 
 @route('/cebie')
 @view('temp/menu.jinja2')
-def menu():
+def menu2():
     return {'menus': sch_a, 'request':request, 'yiju': '大正藏冊別'}
 
 @route('/dzyz')
 @view('temp/menu.jinja2')
-def menu():
-    return {'menus': sch_a, 'request':request, 'yiju': '大衆閲藏'}
+def menu3():
+    return {'menus': sch_dzyz, 'request':request, 'yiju': '大衆閲藏'}
 
 @route('/mulu/:bulei#.+#')
 @view('temp/menu.jinja2')
-def submenu(bulei):
+def submenu1(bulei):
     menu = sch_b
     bulei = bulei.split('/')
     root = '/mulu'
@@ -166,7 +160,7 @@ def submenu(bulei):
 
 @route('/cebie/:bulei#.+#')
 @view('temp/menu.jinja2')
-def submenu(bulei):
+def submenu2(bulei):
     menu = (sch_a)
     bulei = bulei.split('/')
     root = '/cebie'
@@ -193,7 +187,7 @@ def submenu(bulei):
 
 @route('/dzyz/:bulei#.+#')
 @view('temp/menu.jinja2')
-def submenu(bulei):
+def submenu3(bulei):
     menu = sch_dzyz
     bulei = bulei.split('/')
     root = '/dzyz'
