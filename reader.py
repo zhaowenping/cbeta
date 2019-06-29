@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-06-28 16:04:43
+# Last Modified: 2019-06-29 16:25:36
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -132,7 +132,7 @@ def menu2():
 @route('/dzyz')
 @view('temp/menu.jinja2')
 def menu3():
-    return {'menus': sch_dzyz, 'request':request, 'yiju': '大衆閲藏'}
+    return {'menus': sch_dzyz, 'request':request, 'yiju': '大衆閲藏5.4版'}
 
 @route('/mulu/:bulei#.+#')
 @view('temp/menu.jinja2')
@@ -207,7 +207,7 @@ def submenu3(bulei):
         juan = get_all_juan(sutra)[0]           # 001
         url = f"/xml/{zang}/{sutra}_{juan}.xml"  # T01n0002_001.xml
         redirect(url)
-    return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大衆閲藏', 'root':root}
+    return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大衆閲藏5.4版', 'root':root}
 
 
 # 处理搜索
