@@ -1,0 +1,1 @@
+wget -c http://cbeta.buddhism.org.hk/static/HERE/2019%E5%B9%B4%E5%8C%97%E4%BA%AC%E5%85%B8%E7%B1%8D%E4%B8%8E%E8%80%81%E5%94%B1%E7%89%87%E6%95%B0%E5%AD%97%E5%8C%96%E5%87%BA%E7%89%88%E9%A1%B9%E7%9B%AE.part2.rar
