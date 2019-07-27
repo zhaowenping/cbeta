@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-07-27 18:14:59
+# Last Modified: 2019-07-27 18:26:31
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -187,9 +187,7 @@ def read_menu_file(sutra_list):
                 continue
             line = line[1:]
 
-
             if not line.startswith('\t'):
-                print(line)
                 menu[key1][key2][key3][key4][key5].update({line: {}})
                 continue
         return menu
