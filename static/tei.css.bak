@@ -115,15 +115,6 @@ html {
     /*font-variant-ligatures: contextual;*/
     /*font-variant-ligatures: discretionary-ligatures;*/
     /*font-variant-ligatures: historical-ligatures;*/
-    font-size: 140%;
-    /*font-family: ENCLOSING_CIRCLE, WSQUARE, quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif,
-        "Hiragino Sans GB", "PingFang HK", "PingFang SC", "PMingLiU", "Microsoft YaHei",
-        hanaminsat, siddham;
-        */
-    font-family: quote, "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", "PMingLiU", hanaminsat;
-    /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;*/
-    /*font-family: ENCLOSING_CIRCLE, WSQUARE, quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", "PingFang HK", "PingFang SC", "PMingLiU", "Microsoft YaHei", siddham;*/
-    /* font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;*/
 
 }
 
@@ -143,6 +134,15 @@ body{
     background-color: #fffbf0;  /*象牙白*/
     padding:2em;
     padding-top:100px;
+    /*font-family: ENCLOSING_CIRCLE, WSQUARE, quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif,
+        "Hiragino Sans GB", "PingFang HK", "PingFang SC", "PMingLiU", "Microsoft YaHei",
+        hanaminsat, siddham;
+        */
+    font-family: quote, "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", "PMingLiU", hanaminsat;
+    /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;*/
+    /*font-family: ENCLOSING_CIRCLE, WSQUARE, quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", "PingFang HK", "PingFang SC", "PMingLiU", "Microsoft YaHei", siddham;*/
+    font-size: 140%;
+    /* font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;*/
 }
 
 pre {
@@ -278,7 +278,6 @@ div.breadcrumb{
     display:inline;
 }
 
-/*
 .tocontent{
     color:#000066;
     display:none;
@@ -287,7 +286,6 @@ div.breadcrumb{
 .hide{
     display:none;
 }
-*/
 
 a:hover
 {
@@ -345,7 +343,7 @@ li.toc{
 }
 
 /* table of contents links */
-/*
+
 a.inlinetoc:link,
 a.inlinetoc:visited
 {
@@ -372,7 +370,6 @@ a.inlinetoc-sub:link
     font-size:smaller;
 }
 
-*/
 /* 错误更正 */
 span.corr{
     color: #FF0000;
@@ -381,6 +378,9 @@ span.corr{
 /* 悉昙体 */
 span.gaiji_sd{
     font-family: 'siddham';
+    // font-kerning: normal;  // 具有字距调整信息的OpenType字体才有用
+    // <span style="width:0;height:0;float:left;">
+    // color:#00d7ff;
     color:#990099;
     letter-spacing: 0;
 
@@ -394,22 +394,25 @@ span.gaiji_rj{
 
 /* 规范化异体字 */
 span.gaiji_nor{
+    //font-family: hanaminsat;
     color:#1685a9;
-    // letter-spacing: 0;
+    letter-spacing: 0;
 }
 
 span.gaiji_nun{
+    //font-family: hanaminsat;
     color:#1685a9;
-    // letter-spacing: 0;
+    letter-spacing: 0;
 }
 
 /* 未规范化异体字 */
 span.gaiji_uni{
+    //font-family: hanaminsat;
     color:#065279;
-    // letter-spacing: 0;
+    letter-spacing: 0;
 }
 
-/*
+
 
 span.toclist{
     font-size:smaller;
@@ -456,10 +459,8 @@ a.toclist:link
     color:#000000;
     text-decoration:none;
 }
-*/
 
 /* notes */
-/*
 div.noteHeading{
     margin-top:9pt;
     border:0;
@@ -484,8 +485,8 @@ div.note{
 span.noteLabel{
     vertical-align:super;
     font-size:smaller;
+    /*font-style:italic;*/
 }
-*/
 
 /* 行内注释 */
 span.note{
@@ -601,7 +602,7 @@ p {
     color:#990099;
  }
 
-/*
+
 span.p,
 div.p{
     margin-top:0.3em;
@@ -619,7 +620,6 @@ div.p blockquote p{
 p.box{
     border:1pt solid #000000;
 }
-*/
 
 /* verse */
 div.lg {
@@ -663,11 +663,13 @@ span.l {
 /*在小屏幕设备上居中显示偈颂*/
 @media screen and (max-width: 736px) {
     body {
+        //margin: 10px;
         padding: 0.3em;
     }
     div.lg {
         //margin: 0 0 0 0;
         margin-left: 0;
+        // text-align:left;
         text-align:center;
     }
     div.ll {
@@ -678,6 +680,7 @@ span.l {
         text-indent: -1em;
     }
     div.lll {
+        //margin: 0 0 0 0;
         margin-left: 0;
         // text-align:left;
         text-align:center;
@@ -685,7 +688,9 @@ span.l {
     }
     span.l {
         margin-left:1em;
+       /* margin-left: 0;*/
         text-align:center;
+        /* text-align:left;*/
     }
     sup{
         display: none;
