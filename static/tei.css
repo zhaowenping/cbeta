@@ -330,29 +330,29 @@ a.navbar:hover{
 }
 
 
-div.pre,
-div.pre_eg,
-pre.eg,
-div.eg{
-    clear:both;
-    margin-top:1em;
-    margin-bottom:1em;
-    border-top-width:4px;
-    border-bottom-width:4px;
-    border-left-width:2px;
-    border-right-width:2px;
-    border-style:solid;
-    padding-top:10px;
-    padding-right:10px;
-    padding-bottom:10px;
-    padding-left:10px;
-    color:#000000;
-    line-height:1.1em;
-    font-family:monospace;
-    //font-size:10pt;
-    /*white-space:pre;*/
-    white-space: nowrap;
-}
+// div.pre,
+// div.pre_eg,
+// pre.eg,
+// div.eg{
+//     clear:both;
+//     margin-top:1em;
+//     margin-bottom:1em;
+//     border-top-width:4px;
+//     border-bottom-width:4px;
+//     border-left-width:2px;
+//     border-right-width:2px;
+//     border-style:solid;
+//     padding-top:10px;
+//     padding-right:10px;
+//     padding-bottom:10px;
+//     padding-left:10px;
+//     color:#000000;
+//     line-height:1.1em;
+//     font-family:monospace;
+//     //font-size:10pt;
+//     /*white-space:pre;*/
+//     white-space: nowrap;
+// }
 
 /* table of contents */
 ul.toc{
@@ -660,6 +660,7 @@ span.l {
 @media screen and (max-width: 736px) {
     body {
         padding: 0.3em;
+        font-size: 140%;
     }
     div.lg {
         //margin: 0 0 0 0;
