@@ -103,10 +103,10 @@
 
 /* main layout */
     /*font-family: sans-serif;*/
-//html {
-//    height: 100%;
-//    margin:10pt;
-//}
+html {
+    height: 100%;
+    margin:10pt;
+}
 
 body{
     height: 100%;
@@ -658,9 +658,9 @@ span.l {
 /*在小屏幕设备上居中显示偈颂*/
 @media screen and (max-width: 736px) {
     body {
-        //font-family: quote, "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", "PMingLiU", hanaminsat;
+        font-family: quote, "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", "PMingLiU", hanaminsat;
         padding: 0.3em;
-       // font-size: 100%;
+        font-size: 100%;
     }
     div.lg {
         //margin: 0 0 0 0;
