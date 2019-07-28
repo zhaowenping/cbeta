@@ -103,9 +103,21 @@
 
 /* main layout */
     /*font-family: sans-serif;*/
-html {
+//html {
+//    height: 100%;
+//    margin:10pt;
+//}
+
+body{
     height: 100%;
-    margin:10pt;
+    // line-height: 1.3em;
+    color:#000000;
+    /*background-color: #E7F4FE;
+    background-color: #F1EDCC;*/
+    /*background-color: #D0D0D0;  *//*150秒开始,使用40秒缓慢切换到此数值CCCCCC*/
+    background-color: #fffbf0;  /*象牙白*/
+    padding:2em;
+    padding-top:100px;
     -ms-font-feature-settings: "liga";
     /*-moz-font-feature-settings: "liga";
     -webkit-font-feature-settings: "liga";*/
@@ -130,19 +142,6 @@ html {
     /*font-family: ENCLOSING_CIRCLE, WSQUARE, quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", "PingFang HK", "PingFang SC", "PMingLiU", "Microsoft YaHei", siddham;*/
     /* font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;*/
 
-}
-
-
-body{
-    height: 100%;
-    // line-height: 1.3em;
-    color:#000000;
-    /*background-color: #E7F4FE;
-    background-color: #F1EDCC;*/
-    /*background-color: #D0D0D0;  *//*150秒开始,使用40秒缓慢切换到此数值CCCCCC*/
-    background-color: #fffbf0;  /*象牙白*/
-    padding:2em;
-    padding-top:100px;
 }
 
 /* paragraphs */
@@ -659,9 +658,9 @@ span.l {
 /*在小屏幕设备上居中显示偈颂*/
 @media screen and (max-width: 736px) {
     body {
-        font-family: quote, "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", "PMingLiU", hanaminsat;
+        //font-family: quote, "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", "PMingLiU", hanaminsat;
         padding: 0.3em;
-        font-size: 100%;
+       // font-size: 100%;
     }
     div.lg {
         //margin: 0 0 0 0;
