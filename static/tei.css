@@ -660,7 +660,7 @@ span.l {
 @media screen and (max-width: 736px) {
     body {
         padding: 0.3em;
-        font-size: 120%;
+        font-size: 100%;
     }
     div.lg {
         //margin: 0 0 0 0;
