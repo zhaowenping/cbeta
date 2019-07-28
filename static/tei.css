@@ -155,7 +155,7 @@ p {
     /*font-family: quote, "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", "PMingLiU", hanaminsat;*/
     /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", SimSun, "宋体", "Microsoft YaHei", "微软雅黑", "PMingLiU",
      * "Source Han Serif TC";*/
-    /*font-size: 100%;*/
+    font-size: 100%;
     // font-weight: normal;
     letter-spacing: 0em; /* 字母间空白0.12em */
     //vertical-align: text-bottom;
@@ -657,36 +657,36 @@ span.l {
 }
 
 /*在小屏幕设备上居中显示偈颂*/
-//@media screen and (max-width: 736px) {
-//    body {
-//        padding: 0.3em;
-//    }
-//    div.lg {
-//        //margin: 0 0 0 0;
-//        margin-left: 0;
-//        text-align:center;
-//    }
-//    div.ll {
-//        //margin: 0 0 0 0;
-//        margin-left: 0;
-//        // text-align:left;
-//        text-align:center;
-//        text-indent: -1em;
-//    }
-//    div.lll {
-//        margin-left: 0;
-//        // text-align:left;
-//        text-align:center;
-//        text-indent: -2em;
-//    }
-//    span.l {
-//        margin-left:1em;
-//        text-align:center;
-//    }
-//    sup{
-//        display: none;
-//    }
-//}
+@media screen and (max-width: 736px) {
+    body {
+        padding: 0.3em;
+    }
+    div.lg {
+        //margin: 0 0 0 0;
+        margin-left: 0;
+        text-align:center;
+    }
+    div.ll {
+        //margin: 0 0 0 0;
+        margin-left: 0;
+        // text-align:left;
+        text-align:center;
+        text-indent: -1em;
+    }
+    div.lll {
+        margin-left: 0;
+        // text-align:left;
+        text-align:center;
+        text-indent: -2em;
+    }
+    span.l {
+        margin-left:1em;
+        text-align:center;
+    }
+    sup{
+        display: none;
+    }
+}
 
 // /* misc */
 // div.epigraph{
