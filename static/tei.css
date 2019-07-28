@@ -659,6 +659,7 @@ span.l {
 /*在小屏幕设备上居中显示偈颂*/
 @media screen and (max-width: 736px) {
     body {
+        font-family: quote, "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", "PMingLiU", hanaminsat;
         padding: 0.3em;
         font-size: 100%;
     }
