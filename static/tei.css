@@ -115,6 +115,11 @@ html {
     /*font-variant-ligatures: contextual;*/
     /*font-variant-ligatures: discretionary-ligatures;*/
     /*font-variant-ligatures: historical-ligatures;*/
+    // -ms-text-size-adjust: 100%;
+    // -webkit-text-size-adjust: 100%;
+    /*-webkit-font-smoothing: antialiased;*/
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: grayscale;
     font-size: 140%;
     /*font-family: ENCLOSING_CIRCLE, WSQUARE, quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif,
         "Hiragino Sans GB", "PingFang HK", "PingFang SC", "PMingLiU", "Microsoft YaHei",
@@ -130,12 +135,7 @@ html {
 
 body{
     height: 100%;
-    line-height: 1.3;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    -webkit-font-smoothing: subpixel-antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    /*-webkit-font-smoothing: antialiased;*/
+    // line-height: 1.3em;
     color:#000000;
     /*background-color: #E7F4FE;
     background-color: #F1EDCC;*/
@@ -143,6 +143,23 @@ body{
     background-color: #fffbf0;  /*象牙白*/
     padding:2em;
     padding-top:100px;
+}
+
+/* paragraphs */
+p {
+/*   margin-left: 0.5em; */
+    line-height: 1.7em;
+    text-indent: 2em;
+    text-align: justify;
+    white-space: normal; /* 单词间空白,对中文无效 */
+    /*font-family: quote, "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", "PMingLiU", hanaminsat;*/
+    /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", SimSun, "宋体", "Microsoft YaHei", "微软雅黑", "PMingLiU",
+     * "Source Han Serif TC";*/
+    /*font-size: 100%;*/
+    // font-weight: normal;
+    letter-spacing: 0em; /* 字母间空白0.12em */
+    //vertical-align: text-bottom;
+    padding: 0.1em 0 0.3em 0;
 }
 
 pre {
@@ -202,6 +219,7 @@ h1.maintitle{
     font-size: small;
     font-style: normal;
 }
+
 h1.title{
     /*margin-left:100px;*/
     text-align:center;
@@ -331,7 +349,7 @@ div.eg{
     color:#000000;
     line-height:1.1em;
     font-family:monospace;
-    font-size:10pt;
+    //font-size:10pt;
     /*white-space:pre;*/
     white-space: nowrap;
 }
@@ -535,7 +553,7 @@ div.titlepage{
     border-bottom:2pt solid #000000;
     padding-top:6pt;
     padding-bottom:6pt;
-    font-size:larger;
+    // font-size:larger;
     text-align:center;
 }
 div.docImprint{
@@ -571,28 +589,6 @@ div.dateline{
     text-align:right;
 }
 
-/* paragraphs */
-
-p {
-/*   margin-left: 0.5em; */
-/*   margin-top: 1pt;
-   margin-bottom: 3pt; */
-/*   margin-right: 2em;
-   margin-left: 2em;
-   */
-    line-height: 1.7em;
-    text-indent: 2em;
-    text-align: justify;
-    white-space: normal; /* 单词间空白,对中文无效 */
-    /*font-family: quote, "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", "PMingLiU", hanaminsat;*/
-    /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", SimSun, "宋体", "Microsoft YaHei", "微软雅黑", "PMingLiU",
-     * "Source Han Serif TC";*/
-    /*font-size: 100%;*/
-    font-weight: normal;
-    letter-spacing: 0em; /* 字母间空白0.12em */
-    //vertical-align: text-bottom;
-    padding: 0.1em 0 0.3em 0;
-}
 
 .dharani {
      /*text-indent: 2em;*/
