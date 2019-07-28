@@ -688,120 +688,122 @@ span.l {
     }
 }
 
-/* misc */
-div.epigraph{
-    margin:20pt;
-}
-div.numbering{
-    float:left;
-    font-size:smaller;
-    width:2em;
-}
-
-div.linenumber{
-}
-
-div.signed{
-    text-align:left;
-}
-div.salute{
-    text-align:left;
-}
-div.indent1{
-    margin-left:1em;
-}
-div.indent2{
-    margin-left:2em;
-}
-div.indent3{
-    margin-left:3em;
-}
-div.indent4{
-    margin-left:4em;
-}
-div.indent5{
-    margin-left:5em;
-}
-div.indent6{
-    margin-left:6em;
-}
-
-td.label{
-    font-weight:bold;
-    background-color:#AAAAAA;
-}
-tr.label td{
-    font-weight:bold;
-    background-color:#AAAAAA;
-}
-
-span.label{
-    font-weight:bold;
-}
-
-h5{
-    font-size:100%;
-}
-h6{
-    font-size:100%;
-}
-
-div.tocFront{
-    border-bottom:1pt solid #000000;
-}
-div.tocBack{
-    border-bottom:1pt solid #000000;
-}
-div.tocBody{
-    border-bottom:1pt solid #000000;
-}
-/* a listBibl rend='labels' */
-div.listBibl{
-    margin-top:6pt;
-    margin-bottom:6pt;
-}
-div.listBibl{
-    margin-top:6pt;
-    margin-bottom:6pt;
-}
-span.bibl{
-    /*font-style:italic;*/
-}
-div.bibl{
-    margin-left:0.5em;
-    text-indent:-0.5em;
-}
-div.biblfree{
-    font-size:smaller;
-    margin-left:0.5em;
-    text-indent:-0.5em;
-    margin-bottom:6pt;
-}
-
-span.biblLabel{
-    font-weight:bold;
-    margin-right:1em;
-}
-
-/* a <bibl> inside a <cit> */
-div.citbibl:before{
-    content:"(";
-}
-div.citbibl:after{
-    content:")";
-}
-div.citbibl{
-    /*font-style:italic;*/
-    font-size:smaller;
-}
+// /* misc */
+// div.epigraph{
+//     margin:20pt;
+// }
+// div.numbering{
+//     float:left;
+//     font-size:smaller;
+//     width:2em;
+// }
+// 
+// div.linenumber{
+// }
+// 
+// div.signed{
+//     text-align:left;
+// }
+// div.salute{
+//     text-align:left;
+// }
+// div.indent1{
+//     margin-left:1em;
+// }
+// div.indent2{
+//     margin-left:2em;
+// }
+// div.indent3{
+//     margin-left:3em;
+// }
+// div.indent4{
+//     margin-left:4em;
+// }
+// div.indent5{
+//     margin-left:5em;
+// }
+// div.indent6{
+//     margin-left:6em;
+// }
+// 
+// td.label{
+//     font-weight:bold;
+//     background-color:#AAAAAA;
+// }
+// tr.label td{
+//     font-weight:bold;
+//     background-color:#AAAAAA;
+// }
+// 
+// span.label{
+//     font-weight:bold;
+// }
+// 
+// h5{
+//     font-size:100%;
+// }
+// h6{
+//     font-size:100%;
+// }
+// 
+// div.tocFront{
+//     border-bottom:1pt solid #000000;
+// }
+// div.tocBack{
+//     border-bottom:1pt solid #000000;
+// }
+// div.tocBody{
+//     border-bottom:1pt solid #000000;
+// }
+// /* a listBibl rend='labels' */
+// div.listBibl{
+//     margin-top:6pt;
+//     margin-bottom:6pt;
+// }
+// div.listBibl{
+//     margin-top:6pt;
+//     margin-bottom:6pt;
+// }
+// span.bibl{
+//     /*font-style:italic;*/
+// }
+// div.bibl{
+//     margin-left:0.5em;
+//     text-indent:-0.5em;
+// }
+// div.biblfree{
+//     font-size:smaller;
+//     margin-left:0.5em;
+//     text-indent:-0.5em;
+//     margin-bottom:6pt;
+// }
+// 
+// span.biblLabel{
+//     font-weight:bold;
+//     margin-right:1em;
+// }
+// 
+// /* a <bibl> inside a <cit> */
+// div.citbibl:before{
+//     content:"(";
+// }
+// div.citbibl:after{
+//     content:")";
+// }
+// div.citbibl{
+//     /*font-style:italic;*/
+//     font-size:smaller;
+// }
 
 /*add*/
-div.commentary p{
+// div.commentary p{
+div.commentary{
     //font-style:italic;
-    font-size:smaller;
+    font-size: smaller;
     font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "PMingLiU", SimSun;
     font-weight:light;
 }
+
 /* a <quote> inside a <cit> */
 div.citquote{
     margin-left:10pt;
@@ -840,155 +842,155 @@ div.q{
     display:block;
     /*font-style:italic;*/
 }
-/* inline quote */
-span.q{
-}
-
-/* from drama */
-/* speeches in drama */
-.p-in-sp{
-    margin-left:1em;
-}
-div.sp{
-    margin-top:4pt;
-}
-div.spProse{
-    text-indent:-1em;
-    margin-left:1em;
-}
-div.speaker{
-    /*font-style:italic;*/
-}
-span.speaker{
-   /* font-style:italic;*/
-}
-
-span.actor{
-    /*font-style:italic;*/
-}
-span.camera{
-    /*font-style:italic;*/
-}
-span.role{
-    /*font-style:italic;*/
-}
-span.set{
-    /*font-style:italic;*/
-}
-span.sound{
-    /*font-style:italic;*/
-}
-span.stage{
-    /*font-style:italic;*/
-}
-span.tech{
-    /*font-style:italic;*/
-}
-span.view{
-    /*font-style:italic;*/
-}
-span.nextLink{
-    /*font-style:italic;*/
-}
-span.previousLink{
-    /*font-style:italic;*/
-}
-span.upLink{
-    /*font-style:italic;*/
-}
-/* bibl */
-span.titlem{
-    /*font-style:italic;*/
-}
-span.titlej{
-    /*font-style:italic;*/
-}
-span.titleu{
-}
-span.titles{
-}
-
-aside,
-span.notemargin,
-span.notemarginOuter,
-span.notemarginLeft,
-span.notemarginRight,
-span.notemargin,
-div.notemargin{
-    display:block;
-    font-size:smaller;
-    clear:right;
-    padding:4pt;
-    /*font-style:italic;*/
-    width:10%;
-    border:solid green 1pt;
-    margin:6pt;
-}
-span.notemargin,
-span.notemarginOuter,
-span.notemarginRight,
-span.notemargin,
-div.notemargin{
-    float:right;
-}
-span.notemarginLeft{
-    float:left;
-}
-
-div.floatingText_back{
-    border-top:solid black 1pt;
-}
-div.floatingText_front{
-    border-top:solid black 1pt;
-}
-div.floatingText{
-    margin:6pt;
-    border:solid black 1pt;
-}
-div.pagebreak,
-span.pagebreak{
-    display:block;
-    color:grey;
-    float:right;
-}
-span.element{
-    font-weight:bold;
-    color:black;
-}
-span.unclear{
-   /* font-style:italic;*/
-}
-span.wordtypeNN,
-span.wordtypeNNS{
-    color:green;
-}
-span.wordtypeVVD,
-span.wordtypeVVN,
-span.wordtypeVVN,
-span.wordtypeVVZ,
-span.wordtypeVVG,
-span.wordtypeVV{
-    color:red;
-}
-
-li.headless{
-    display:none;
-}
-
-div.footer{
-    border-top:solid black 1pt;
-}
-
-div.stdfooter{
-    clear:both;
-    border-top:solid black 1pt;
-    border-bottom:solid black 1pt;
-}
-
-div.altfigure{
-    border-top:solid black 1pt;
-    border-bottom:solid black 1pt;
-}
+// /* inline quote */
+// span.q{
+// }
+// 
+// /* from drama */
+// /* speeches in drama */
+// .p-in-sp{
+//     margin-left:1em;
+// }
+// div.sp{
+//     margin-top:4pt;
+// }
+// div.spProse{
+//     text-indent:-1em;
+//     margin-left:1em;
+// }
+// div.speaker{
+//     /*font-style:italic;*/
+// }
+// span.speaker{
+//    /* font-style:italic;*/
+// }
+// 
+// span.actor{
+//     /*font-style:italic;*/
+// }
+// span.camera{
+//     /*font-style:italic;*/
+// }
+// span.role{
+//     /*font-style:italic;*/
+// }
+// span.set{
+//     /*font-style:italic;*/
+// }
+// span.sound{
+//     /*font-style:italic;*/
+// }
+// span.stage{
+//     /*font-style:italic;*/
+// }
+// span.tech{
+//     /*font-style:italic;*/
+// }
+// span.view{
+//     /*font-style:italic;*/
+// }
+// span.nextLink{
+//     /*font-style:italic;*/
+// }
+// span.previousLink{
+//     /*font-style:italic;*/
+// }
+// span.upLink{
+//     /*font-style:italic;*/
+// }
+// /* bibl */
+// span.titlem{
+//     /*font-style:italic;*/
+// }
+// span.titlej{
+//     /*font-style:italic;*/
+// }
+// span.titleu{
+// }
+// span.titles{
+// }
+// 
+// aside,
+// span.notemargin,
+// span.notemarginOuter,
+// span.notemarginLeft,
+// span.notemarginRight,
+// span.notemargin,
+// div.notemargin{
+//     display:block;
+//     font-size:smaller;
+//     clear:right;
+//     padding:4pt;
+//     /*font-style:italic;*/
+//     width:10%;
+//     border:solid green 1pt;
+//     margin:6pt;
+// }
+//span.notemargin,
+//span.notemarginOuter,
+//span.notemarginRight,
+//span.notemargin,
+//div.notemargin{
+//    float:right;
+//}
+//span.notemarginLeft{
+//    float:left;
+//}
+//
+//div.floatingText_back{
+//    border-top:solid black 1pt;
+//}
+//div.floatingText_front{
+//    border-top:solid black 1pt;
+//}
+//div.floatingText{
+//    margin:6pt;
+//    border:solid black 1pt;
+//}
+//div.pagebreak,
+//span.pagebreak{
+//    display:block;
+//    color:grey;
+//    float:right;
+//}
+//span.element{
+//    font-weight:bold;
+//    color:black;
+//}
+//span.unclear{
+//   /* font-style:italic;*/
+//}
+//span.wordtypeNN,
+//span.wordtypeNNS{
+//    color:green;
+//}
+//span.wordtypeVVD,
+//span.wordtypeVVN,
+//span.wordtypeVVN,
+//span.wordtypeVVZ,
+//span.wordtypeVVG,
+//span.wordtypeVV{
+//    color:red;
+//}
+//
+//li.headless{
+//    display:none;
+//}
+//
+//div.footer{
+//    border-top:solid black 1pt;
+//}
+//
+//div.stdfooter{
+//    clear:both;
+//    border-top:solid black 1pt;
+//    border-bottom:solid black 1pt;
+//}
+//
+//div.altfigure{
+//    border-top:solid black 1pt;
+//    border-bottom:solid black 1pt;
+//}
 
 // table.table {
 //     /*margin: 0 auto; */ /*添加了居中*/
