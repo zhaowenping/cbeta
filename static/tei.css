@@ -1007,43 +1007,44 @@ div.altfigure{
 // table.table td{
 //     padding:1ex 1ex 1ex 1ex;
 // }
-p.mainAuthor{
-    display:block;
-    margin:1ex 0ex 1ex 0ex;
-}
-p.mainEditor{
-    display:block;
-    margin:1ex 0ex 1ex 0ex;
-}
-
-/* for ePub */
-div.EpubCoverPage{
-    -webkit-hyphens:none;
-    font-family:serif;
-    height:860pt;
-    font-size:30pt;
-    font-weight:bold;
-    padding-top:15pt;
-    margin:12pt;
-    border:solid red 1pt;
-    text-align:center;
-}
-/* general purpose block aligns */
-.centerbold{
-    text-align:center;
-    font-weight:bold;
-}
-.center{
-    text-align:center;
-}
-.right{
-    text-align:right;
-}
-.left{
-    text-align:left;
-}
+//p.mainAuthor{
+//    display:block;
+//    margin:1ex 0ex 1ex 0ex;
+//}
+//p.mainEditor{
+//    display:block;
+//    margin:1ex 0ex 1ex 0ex;
+//}
+//
+///* for ePub */
+//div.EpubCoverPage{
+//    -webkit-hyphens:none;
+//    font-family:serif;
+//    height:860pt;
+//    font-size:30pt;
+//    font-weight:bold;
+//    padding-top:15pt;
+//    margin:12pt;
+//    border:solid red 1pt;
+//    text-align:center;
+//}
+///* general purpose block aligns */
+//.centerbold{
+//    text-align:center;
+//    font-weight:bold;
+//}
+//.center{
+//    text-align:center;
+//}
+//.right{
+//    text-align:right;
+//}
+//.left{
+//    text-align:left;
+//}
 
 /* <hi> rend values */
+/*
 span.typewriter{
     font-family:monospace;
 }
@@ -1057,7 +1058,7 @@ span.bold{
     font-weight:bold;
 }
 span.italic{
-    /*font-style:italic;*/
+    font-style:italic;
 }
 span.allcaps{
     text-transform:uppercase;
@@ -1096,6 +1097,7 @@ span.numberParagraph{
     font-size:smaller;
     color:grey;
 }
+*/
 
 /* misc inline*/
 
@@ -1108,97 +1110,97 @@ span.distinct{
 }
 
 /* generic rendition */
-.plain{
-    text-decoration:none;
-}
-
-.small{
-    font-size:small;
-}
-.term{
-    /*font-style:italic;*/
-    font-style:normal;
-    font-weight:bold;
-}
-.hi{
-    /*font-style:italic;*/
-}
-.emph{
-    font-weight:bold;
-}
-.label{
-    font-weight:bold;
-}
-.mentioned{
-    /*font-style:italic;*/
-}
-
-/* transcription */
-
-div.sourceDoc{
-}
-
-div.surfaceGrp{
-    border-bottom-width:1pt;
-    border-bottom-color:green;
-    border-bottom-style:solid;
-    clear:both;
-}
-
-div.surface{
-    clear:both;
-    border-width:1pt;
-    border-style:solid;
-    border-color:grey;
-    margin-bottom:1ex;
-}
-
-div.zone{
-    border-width:1pt;
-    border-style:solid;
-    border-color:lightgrey;
-    margin-bottom:0.5ex;
-}
-
-div.line{
-}
-
-div.facsimage{
-    float:right;
-}
-div.facsimage img{
-    max-height:100%;
-    width:auto
-}
-
-span.damage{
-    border-bottom:1px dashed red;
-}
-/* app crit */
-div.appcrit{
-    border-top:solid black 1pt;
-    margin-top:2pt;
-    padding-top:2pt;
-    margin-bottom:2pt;
-    margin-left:1em;
-}
-div.app{
-    margin-top:1pt;
-    font-size:smaller;
-}
-span.lemma{
-}
-span.lemmawitness{
-    font-weight:bold;
-}
-span.listhead{
-    display:block;
-    margin-top:0em;
-    margin-right:1em;
-    padding-left:3px;
-    padding-right:3px;
-    font-weight:bold;
-}
+// .plain{
+//     text-decoration:none;
+// }
+// 
+// .small{
+//     font-size:small;
+// }
+// .term{
+//     /*font-style:italic;*/
+//     font-style:normal;
+//     font-weight:bold;
+// }
+// .hi{
+//     /*font-style:italic;*/
+// }
+// .emph{
+//     font-weight:bold;
+// }
+// .label{
+//     font-weight:bold;
+// }
+// .mentioned{
+//     /*font-style:italic;*/
+// }
+// 
+// /* transcription */
+// 
+// div.sourceDoc{
+// }
+// 
+// div.surfaceGrp{
+//     border-bottom-width:1pt;
+//     border-bottom-color:green;
+//     border-bottom-style:solid;
+//     clear:both;
+// }
+// 
+// div.surface{
+//     clear:both;
+//     border-width:1pt;
+//     border-style:solid;
+//     border-color:grey;
+//     margin-bottom:1ex;
+// }
+// 
+// div.zone{
+//     border-width:1pt;
+//     border-style:solid;
+//     border-color:lightgrey;
+//     margin-bottom:0.5ex;
+// }
+// 
+// div.line{
+// }
+// 
+// div.facsimage{
+//     float:right;
+// }
+// div.facsimage img{
+//     max-height:100%;
+//     width:auto
+// }
+// 
+// span.damage{
+//     border-bottom:1px dashed red;
+// }
+// /* app crit */
+// div.appcrit{
+//     border-top:solid black 1pt;
+//     margin-top:2pt;
+//     padding-top:2pt;
+//     margin-bottom:2pt;
+//     margin-left:1em;
+// }
+// div.app{
+//     margin-top:1pt;
+//     font-size:smaller;
+// }
+// span.lemma{
+// }
+// span.lemmawitness{
+//     font-weight:bold;
+// }
+// span.listhead{
+//     display:block;
+//     margin-top:0em;
+//     margin-right:1em;
+//     padding-left:3px;
+//     padding-right:3px;
+//     font-weight:bold;
+// }
 
 /*td:last-child {
     text-align:right;
