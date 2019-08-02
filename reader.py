@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-07-28 21:24:18
+# Last Modified: 2019-08-02 13:29:26
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -183,10 +183,15 @@ def submenu2(bulei):
     if not menu:
         sutra = bulei[-1].split()[0]  # T01n0002
         zang = sutra.split('n')[0]              # T01
-        # 查找第一卷(有些不是从第一卷开始的)
-        juan = get_all_juan(sutra)              # 001
-        if not juan: abort(404, f'没找到文件: /xml/{zang}/{sutra}_*.xml')
-        url = f"/xml/{zang}/{sutra}_{juan[0]}.xml"  # T01n0002_001.xml
+        if '_' in sutra:
+            sutra, juan = sutra.split('_')
+        else:
+            # 查找第一卷(有些不是从第一卷开始的)
+            juan = get_all_juan(sutra)              # 001
+            if not juan:
+                abort(404, f'没找到文件: /xml/{zang}/{sutra}_*.xml')
+            juan = juan[0]
+        url = f"/xml/{zang}/{sutra}_{juan}.xml"  # T01n0002_001.xml
         redirect(url)
     return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大正藏冊別', 'root': root}
 
@@ -234,8 +239,22 @@ def submenu4(bulei):
     if not menu:
         sutra = bulei[-1].split()[0]  # T01n0002
         zang = sutra.split('n')[0]              # T01
-        juan = get_all_juan(sutra)[0]           # 001
-        url = f"/xml/{zang}/{sutra}_{juan}.xml"  # T01n0002_001.xml
+
+        if '_' in sutra:
+            sutra, juan = sutra.split('_')
+        else:
+            # 查找第一卷(有些不是从第一卷开始的)
+            juan = get_all_juan(sutra)              # 001
+            if not juan:
+                abort(404, f'没找到文件: /xml/{zang}/{sutra}_*.xml')
+            juan = juan[0]
+
+        if '#' in juan:
+            juan, para = sutra.split('#')
+            url = f"/xml/{zang}/{sutra}_{juan}.xml#{para}"  # T01n0002_001.xml
+        else:
+            url = f"/xml/{zang}/{sutra}_{juan}.xml"  # T01n0002_001.xml
+
         redirect(url)
     return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '福嚴精舍三年閱經目錄（印順導師擬）', 'root':root}
 
