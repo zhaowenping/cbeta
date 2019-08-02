@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-08-02 13:29:26
+# Last Modified: 2019-08-02 21:45:21
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -256,7 +256,7 @@ def submenu4(bulei):
             url = f"/xml/{zang}/{sutra}_{juan}.xml"  # T01n0002_001.xml
 
         redirect(url)
-    return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '福嚴精舍三年閱經目錄（印順導師擬）', 'root':root}
+    return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大德長老居士推薦目錄', 'root':root}
 
 
 # 处理搜索
