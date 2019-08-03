@@ -1090,7 +1090,7 @@
     </xsl:template>
 
     <!--cb:yin><cb:zi>得浪</cb:zi><cb:sg>二合</cb:sg></cb:yin-->
-    <xsl:template match="cb:sg">(<xsl:apply-templates/>)</xsl:template>
+    <xsl:template match="cb:sg"><span class="note"><xsl:apply-templates/></span></xsl:template>
 
     <!--公式强调角标-->
     <xsl:template match="hi">
