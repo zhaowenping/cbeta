@@ -19,8 +19,11 @@
 </head>
 <body>
 <form action="/t2s" method="post">
-繁体: <input type="text" name="tcontent" value="{{tcontent}}"><input><br />
-简体: <input type="text" name="scontent" value="{{scontent}}"><input><br/>
+<!--繁体: <input type="text" name="tcontent" value="{{tcontent}}"><br />
+简体: <input type="text" name="scontent" value="{{scontent}}"><br/>
+-->
+繁体: <textarea name="tcontent">{{tcontent}}</textarea><br/>
+简体: <textarea name="scontent">{{scontent}}</textarea><br/>
 <!--textarea-->
 <input type="submit" />
 </form>
