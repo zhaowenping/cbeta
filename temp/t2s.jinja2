@@ -14,19 +14,27 @@
   </script>
   <style>
   <!--
+  .panel{
+    overflow: auto;
+    height:100vh;
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+}
   -->
   </style>
 </head>
-<body style="width:95%;height:90%">
+<body>
+<div class="pannel">
 <form action="/t2s" method="post" style="width:100%">
 <!--繁体: <input type="text" name="tcontent" value="{{tcontent}}"><br />
 简体: <input type="text" name="scontent" value="{{scontent}}"><br/>
 -->
-繁体: <textarea name="tcontent" style="width:95%;height:40%">{{tcontent}}</textarea><br/>
-简体: <textarea name="scontent" style="width:95%;height:40%">{{scontent}}</textarea><br/>
+繁体: <textarea name="tcontent" style="width:95%;height:auto">{{tcontent}}</textarea><br/>
+简体: <textarea name="scontent" style="width:95%;height:inherit">{{scontent}}</textarea><br/>
 <!--textarea-->
 <input type="submit" />
 </form>
+</div>
 <br />
   <!--script src="jquery.js"></script-->
   <!--script src="http://code.jquery.com/jquery-1.4.2.min.js"></script-->
