@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-08-02 21:45:21
+# Last Modified: 2019-08-07 23:01:47
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -622,12 +622,26 @@ def zh(filename):
     # 简体繁体双引号, 单引号切换
     content = content.translate({0x300c: 0x201c, 0x300d: 0x201d, 0x300e: 0x2018, 0x300f: 0x2019})
     # content = opencc.convert(content, config='t2s.json')
-    content = convert2s(content)
     content = rm_ditto_mark(content)
+    content = convert2s(content)
     print(filename)
     response.content_type = 'text/xml'
     return content
 
+@get('/t2s')
+@view('temp/t2s.jinja2')
+def t2s_get():
+    '''繁体转简体'''
+    return {"tcontent": "", "scontent": ""}
+
+@post('/t2s')
+@view('temp/t2s.jinja2')
+def t2s_post():
+    '''繁体转简体'''
+    tcontent = request.forms.tcontent
+    scontent = rm_ditto_mark(tcontent)
+    scontent = convert2s(scontent)
+    return {"tcontent": tcontent, "scontent": scontent}
 
 @route('/zh_TW/:filename#.+#')
 def zh_TW(filename):
