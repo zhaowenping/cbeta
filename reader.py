@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-08-07 23:01:47
+# Last Modified: 2019-08-08 11:38:52
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -641,6 +641,9 @@ def t2s_post():
     tcontent = request.forms.tcontent
     scontent = rm_ditto_mark(tcontent)
     scontent = convert2s(scontent)
+    with open('t2s.txt', 'a+') as fd:
+        fd.write(tcontent)
+
     return {"tcontent": tcontent, "scontent": scontent}
 
 @route('/zh_TW/:filename#.+#')
