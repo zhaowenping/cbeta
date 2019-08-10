@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-08-08 11:38:52
+# Last Modified: 2019-08-10 19:28:50
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -658,7 +658,8 @@ def zh_TW(filename):
     honorific = {'多陀怛伽度', '多陀竭', '多陀阿伽[度陀馱]', '如來', '怛他蘗多夜?', '怛薩阿竭', '怛闥阿竭', '陀多竭多',
             '阿羅訶', '阿羅呵', '(?:三藐三)?佛陀?', '三耶三佛檀?', # '三藐三佛陀', '三耶三佛', '三耶三佛檀',
                  '正[徧遍][知覺]', '等正覺', '三藐三菩陀',
-                 '如來', '應供', '正遍知', '明行足', '善逝', '世間解', '無上士', '調御丈夫', '天人師', '世尊', '薄伽梵', '婆伽婆', }
+                 '如來', '應供', '正遍知', '明行足', '善逝', '世間解', '無上士', '調御丈夫', '天人師', '世尊', '薄伽梵', '婆伽婆',
+                 '無上丈夫調御士', '道法御', '至真'}
     # content = re.sub(r'(?!辟支|仿)(佛陀?)', r'<persName>\1</persName>', content)
     honorific = '|'.join(sorted(honorific, key=len, reverse=True))
     # print(honorific)

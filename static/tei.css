@@ -1241,7 +1241,7 @@ ruby rtc rt {
     font-family: consola, Arial, Helvetica, sans-serif;
 }
 
-ruby.mps,ruby.zhuyin {
+ruby.mps, ruby.zhuyin {
     display: ruby;
     -webkit-ruby-position: inter-character;
     ruby-position: inter-character;
