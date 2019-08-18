@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-08-17 10:32:53
+# Last Modified: 2019-08-17 23:30:35
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -991,7 +991,7 @@ def search_title(title):
 
 def fullsearch(sentence):
     '''全文搜索'''
-    sentence2 = sentence.split()
+    sentence2 = sentence.replace('\u3000', ' ').split()
     # 去除标点符号
     sentence = sentence.translate(pun).replace(' ', '')
     url = "http://127.0.0.1:9200/cbeta/fulltext/_search"#创建一个文档，如果该文件已经存在，则返回失败
