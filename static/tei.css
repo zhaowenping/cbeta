@@ -325,29 +325,6 @@ a.navbar:hover{
 }
 
 
-// div.pre,
-// div.pre_eg,
-// pre.eg,
-// div.eg{
-//     clear:both;
-//     margin-top:1em;
-//     margin-bottom:1em;
-//     border-top-width:4px;
-//     border-bottom-width:4px;
-//     border-left-width:2px;
-//     border-right-width:2px;
-//     border-style:solid;
-//     padding-top:10px;
-//     padding-right:10px;
-//     padding-bottom:10px;
-//     padding-left:10px;
-//     color:#000000;
-//     line-height:1.1em;
-//     font-family:monospace;
-//     //font-size:10pt;
-//     /*white-space:pre;*/
-//     white-space: nowrap;
-// }
 
 /* table of contents */
 ul.toc{
@@ -565,6 +542,7 @@ div.docTitle{
     font-weight:bold;
     margin-bottom:18pt;
 }
+
 div.docAuthor{
     /*font-style:italic;*/
 }
@@ -592,25 +570,6 @@ div.dateline{
     color:#990099;
  }
 
-/*
-span.p,
-div.p{
-    margin-top:0.3em;
-}
-span.p{
-    display:block;
-}
-div.p blockquote p{
-    margin-top:0.0em;
-    -webkit-margin-before:0em;
-    -webkit-margin-after:0em;
-    -webkit-margin-start:0px;
-    -webkit-margin-end:p0px;
-}
-p.box{
-    border:1pt solid #000000;
-}
-*/
 
 /* verse */
 div.lg {
@@ -685,115 +644,8 @@ span.l {
     }
 }
 
-// /* misc */
-// div.epigraph{
-//     margin:20pt;
-// }
-// div.numbering{
-//     float:left;
-//     font-size:smaller;
-//     width:2em;
-// }
-// 
-// div.linenumber{
-// }
-// 
-// div.signed{
-//     text-align:left;
-// }
-// div.salute{
-//     text-align:left;
-// }
-// div.indent1{
-//     margin-left:1em;
-// }
-// div.indent2{
-//     margin-left:2em;
-// }
-// div.indent3{
-//     margin-left:3em;
-// }
-// div.indent4{
-//     margin-left:4em;
-// }
-// div.indent5{
-//     margin-left:5em;
-// }
-// div.indent6{
-//     margin-left:6em;
-// }
-// 
-// td.label{
-//     font-weight:bold;
-//     background-color:#AAAAAA;
-// }
-// tr.label td{
-//     font-weight:bold;
-//     background-color:#AAAAAA;
-// }
-// 
-// span.label{
-//     font-weight:bold;
-// }
-// 
-// h5{
-//     font-size:100%;
-// }
-// h6{
-//     font-size:100%;
-// }
-// 
-// div.tocFront{
-//     border-bottom:1pt solid #000000;
-// }
-// div.tocBack{
-//     border-bottom:1pt solid #000000;
-// }
-// div.tocBody{
-//     border-bottom:1pt solid #000000;
-// }
-// /* a listBibl rend='labels' */
-// div.listBibl{
-//     margin-top:6pt;
-//     margin-bottom:6pt;
-// }
-// div.listBibl{
-//     margin-top:6pt;
-//     margin-bottom:6pt;
-// }
-// span.bibl{
-//     /*font-style:italic;*/
-// }
-// div.bibl{
-//     margin-left:0.5em;
-//     text-indent:-0.5em;
-// }
-// div.biblfree{
-//     font-size:smaller;
-//     margin-left:0.5em;
-//     text-indent:-0.5em;
-//     margin-bottom:6pt;
-// }
-// 
-// span.biblLabel{
-//     font-weight:bold;
-//     margin-right:1em;
-// }
-// 
-// /* a <bibl> inside a <cit> */
-// div.citbibl:before{
-//     content:"(";
-// }
-// div.citbibl:after{
-//     content:")";
-// }
-// div.citbibl{
-//     /*font-style:italic;*/
-//     font-size:smaller;
-// }
 
 /*add*/
-// div.commentary p{
 div.commentary{
     //font-style:italic;
     font-size: smaller;
@@ -801,298 +653,24 @@ div.commentary{
     font-weight:light;
 }
 
-/* a <quote> inside a <cit> */
-div.citquote{
-    margin-left:10pt;
-    margin-right:10pt;
-}
-
 /* gloss lists with bold labels */
 dt{
     font-weight:bold;
 }
-/* quotation */
-div.blockquote
-{
-    margin-top:10pt;
-    margin-bottom:10pt;
-    margin-left:40px;
-    margin-right:40px;
-}
-/* opener */
-div.opener
-{
-    margin:10pt;
-}
-div.q{
-    margin:10pt;
-}
+
 /* figures */
 .figure{
     display:block;
     border-top:solid 1pt blue;
     border-bottom:solid 1pt blue;
 }
+
 .caption{
     margin-top:6pt;
     margin-bottom:12pt;
     display:block;
-    /*font-style:italic;*/
 }
-// /* inline quote */
-// span.q{
-// }
-// 
-// /* from drama */
-// /* speeches in drama */
-// .p-in-sp{
-//     margin-left:1em;
-// }
-// div.sp{
-//     margin-top:4pt;
-// }
-// div.spProse{
-//     text-indent:-1em;
-//     margin-left:1em;
-// }
-// div.speaker{
-//     /*font-style:italic;*/
-// }
-// span.speaker{
-//    /* font-style:italic;*/
-// }
-// 
-// span.actor{
-//     /*font-style:italic;*/
-// }
-// span.camera{
-//     /*font-style:italic;*/
-// }
-// span.role{
-//     /*font-style:italic;*/
-// }
-// span.set{
-//     /*font-style:italic;*/
-// }
-// span.sound{
-//     /*font-style:italic;*/
-// }
-// span.stage{
-//     /*font-style:italic;*/
-// }
-// span.tech{
-//     /*font-style:italic;*/
-// }
-// span.view{
-//     /*font-style:italic;*/
-// }
-// span.nextLink{
-//     /*font-style:italic;*/
-// }
-// span.previousLink{
-//     /*font-style:italic;*/
-// }
-// span.upLink{
-//     /*font-style:italic;*/
-// }
-// /* bibl */
-// span.titlem{
-//     /*font-style:italic;*/
-// }
-// span.titlej{
-//     /*font-style:italic;*/
-// }
-// span.titleu{
-// }
-// span.titles{
-// }
-// 
-// aside,
-// span.notemargin,
-// span.notemarginOuter,
-// span.notemarginLeft,
-// span.notemarginRight,
-// span.notemargin,
-// div.notemargin{
-//     display:block;
-//     font-size:smaller;
-//     clear:right;
-//     padding:4pt;
-//     /*font-style:italic;*/
-//     width:10%;
-//     border:solid green 1pt;
-//     margin:6pt;
-// }
-//span.notemargin,
-//span.notemarginOuter,
-//span.notemarginRight,
-//span.notemargin,
-//div.notemargin{
-//    float:right;
-//}
-//span.notemarginLeft{
-//    float:left;
-//}
-//
-//div.floatingText_back{
-//    border-top:solid black 1pt;
-//}
-//div.floatingText_front{
-//    border-top:solid black 1pt;
-//}
-//div.floatingText{
-//    margin:6pt;
-//    border:solid black 1pt;
-//}
-//div.pagebreak,
-//span.pagebreak{
-//    display:block;
-//    color:grey;
-//    float:right;
-//}
-//span.element{
-//    font-weight:bold;
-//    color:black;
-//}
-//span.unclear{
-//   /* font-style:italic;*/
-//}
-//span.wordtypeNN,
-//span.wordtypeNNS{
-//    color:green;
-//}
-//span.wordtypeVVD,
-//span.wordtypeVVN,
-//span.wordtypeVVN,
-//span.wordtypeVVZ,
-//span.wordtypeVVG,
-//span.wordtypeVV{
-//    color:red;
-//}
-//
-//li.headless{
-//    display:none;
-//}
-//
-//div.footer{
-//    border-top:solid black 1pt;
-//}
-//
-//div.stdfooter{
-//    clear:both;
-//    border-top:solid black 1pt;
-//    border-bottom:solid black 1pt;
-//}
-//
-//div.altfigure{
-//    border-top:solid black 1pt;
-//    border-bottom:solid black 1pt;
-//}
 
-// table.table {
-//     /*margin: 0 auto; */ /*添加了居中*/
-//     border:solid black 1pt;
-//     border-top:2px solid ;
-// }
-//
-// table.table tr,
-// table.table td{
-//     border:solid black 1pt;
-// }
-// table.table td{
-//     padding:1ex 1ex 1ex 1ex;
-// }
-//p.mainAuthor{
-//    display:block;
-//    margin:1ex 0ex 1ex 0ex;
-//}
-//p.mainEditor{
-//    display:block;
-//    margin:1ex 0ex 1ex 0ex;
-//}
-//
-///* for ePub */
-//div.EpubCoverPage{
-//    -webkit-hyphens:none;
-//    font-family:serif;
-//    height:860pt;
-//    font-size:30pt;
-//    font-weight:bold;
-//    padding-top:15pt;
-//    margin:12pt;
-//    border:solid red 1pt;
-//    text-align:center;
-//}
-///* general purpose block aligns */
-//.centerbold{
-//    text-align:center;
-//    font-weight:bold;
-//}
-//.center{
-//    text-align:center;
-//}
-//.right{
-//    text-align:right;
-//}
-//.left{
-//    text-align:left;
-//}
-
-/* <hi> rend values */
-/*
-span.typewriter{
-    font-family:monospace;
-}
-span.normalweight{
-    font-weight:normal;
-}
-span.smallcaps{
-    font-variant:small-caps;
-}
-span.bold{
-    font-weight:bold;
-}
-span.italic{
-    font-style:italic;
-}
-span.allcaps{
-    text-transform:uppercase;
-}
-span.strikethrough{
-    text-decoration:line-through;
-}
-span.doublestrikethrough{
-    text-decoration:line-through;
-}
-span.underline{
-    text-decoration:underline;
-}
-span.wavyunderline{
-    text-decoration-line:underline;
-    text-decoration-style:wavy;
-}
-span.doubleunderline{
-    text-decoration:underline;
-}
-span.superscript{
-    vertical-align:super;
-    font-size:smaller;
-}
-span.subscript{
-    vertical-align:bottom;
-    font-size:smaller;
-}
-span.numberParagraph:before{
-    content:"[";
-}
-span.numberParagraph:after{
-    content:"] ";
-}
-span.numberParagraph{
-    font-size:smaller;
-    color:grey;
-}
-*/
 
 /* misc inline*/
 
@@ -1104,102 +682,11 @@ span.distinct{
   /*font-style: italic;*/
 }
 
-/* generic rendition */
-// .plain{
-//     text-decoration:none;
-// }
-// 
-// .small{
-//     font-size:small;
-// }
-// .term{
-//     /*font-style:italic;*/
-//     font-style:normal;
-//     font-weight:bold;
-// }
-// .hi{
-//     /*font-style:italic;*/
-// }
-// .emph{
-//     font-weight:bold;
-// }
-// .label{
-//     font-weight:bold;
-// }
-// .mentioned{
-//     /*font-style:italic;*/
-// }
-// 
-// /* transcription */
-// 
-// div.sourceDoc{
-// }
-// 
-// div.surfaceGrp{
-//     border-bottom-width:1pt;
-//     border-bottom-color:green;
-//     border-bottom-style:solid;
-//     clear:both;
-// }
-// 
-// div.surface{
-//     clear:both;
-//     border-width:1pt;
-//     border-style:solid;
-//     border-color:grey;
-//     margin-bottom:1ex;
-// }
-// 
-// div.zone{
-//     border-width:1pt;
-//     border-style:solid;
-//     border-color:lightgrey;
-//     margin-bottom:0.5ex;
-// }
-// 
-// div.line{
-// }
-// 
-// div.facsimage{
-//     float:right;
-// }
-// div.facsimage img{
-//     max-height:100%;
-//     width:auto
-// }
-// 
-// span.damage{
-//     border-bottom:1px dashed red;
-// }
-// /* app crit */
-// div.appcrit{
-//     border-top:solid black 1pt;
-//     margin-top:2pt;
-//     padding-top:2pt;
-//     margin-bottom:2pt;
-//     margin-left:1em;
-// }
-// div.app{
-//     margin-top:1pt;
-//     font-size:smaller;
-// }
-// span.lemma{
-// }
-// span.lemmawitness{
-//     font-weight:bold;
-// }
-// span.listhead{
-//     display:block;
-//     margin-top:0em;
-//     margin-right:1em;
-//     padding-left:3px;
-//     padding-right:3px;
-//     font-weight:bold;
-// }
 
-/*td:last-child {
+td:last-child {
     text-align:right;
-}*/
+}
+
 /*border: 0px solid transparent !important;*/
 /*
 table.border td{
@@ -1215,6 +702,7 @@ table.border{
     border-collapse:collapse;
     border-spacing:0;
 }*/
+
 .del{
     text-decoration:line-through;
 }
@@ -1233,7 +721,6 @@ ruby rtc rt {
     -webkit-text-emphasis: none;
     text-emphasis: none;
     /*font-size: inherit;*/
-    /*font-family: Arial, Helvetica, sans-serif, consola;*/
     font-family: consola, Arial, Helvetica, sans-serif;
 }
 
@@ -1265,29 +752,9 @@ ruby {
     letter-spacing: 0;
 }
 
-/*h-ruby.zhuyin h-diao,ruby.mps h-diao,ruby.zhuyin h-diao
-    position: absolute;
-    right: -.9em;
-    bottom: .5em;
-    display: block;
-    font-size: 1.5em;
-}
-h-ruby.zhuyin h-diao h-char,ruby.mps h-diao h-char,ruby.zhuyin h-diao h-char
-{
-    -webkit-writing-mode: horizontal-tb;
-    writing-mode: horizontal-tb;
-}
-{
-    top: -.3em;
-    right: auto;
-    bottom: auto;
-    left: 0;
-    font-size: 1em;
-}
-*/
 
-:lang(*=Hant){
-}
+// :lang(*=Hant){
+// }
 
 :lang(en){
     font-family: consola;
@@ -1343,3 +810,26 @@ sub {
 /*html5*/
 article,aside,dialog,footer,header,section,footer,nav,figure,menu{ display:block }
 
+// div.pre,
+// div.pre_eg,
+// pre.eg,
+// div.eg{
+//     clear:both;
+//     margin-top:1em;
+//     margin-bottom:1em;
+//     border-top-width:4px;
+//     border-bottom-width:4px;
+//     border-left-width:2px;
+//     border-right-width:2px;
+//     border-style:solid;
+//     padding-top:10px;
+//     padding-right:10px;
+//     padding-bottom:10px;
+//     padding-left:10px;
+//     color:#000000;
+//     line-height:1.1em;
+//     font-family:monospace;
+//     //font-size:10pt;
+//     /*white-space:pre;*/
+//     white-space: nowrap;
+// }
