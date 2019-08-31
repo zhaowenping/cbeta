@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-08-10 19:28:50
+# Last Modified: 2019-08-30 19:48:00
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -639,6 +639,22 @@ def t2s_get():
 def t2s_post():
     '''繁体转简体'''
     tcontent = request.forms.tcontent
+    # 去除行间注释
+    tcontent = re.sub(r'\[\w*?\]|\[\*\]', '', tcontent)
+    # 去除组字式
+    # conn = psycopg2.connect(database="buddha", user="postgres", password="1234", host="127.0.0.1", port="5432")
+    # cur = conn.cursor()
+    # for zuzishi in re.findall(r'\[[^\[\]]*?\]', tcontent):
+    #     cur.execute("select uni, nu, nor from cb2 where des='%s'", (zuzishi,))
+    #     data = cur.fetchone()
+    #     zi = data[0] or data[1] or data[2]
+    #     if zi:
+    #         tcontent = tcontent.replace(zuzishi, zi)
+    # conn.commit()
+    # cur.close()
+    # conn.close()
+
+    # 去除重复符号
     scontent = rm_ditto_mark(tcontent)
     scontent = convert2s(scontent)
     with open('t2s.txt', 'a+') as fd:
