@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-09-15 08:12:40
+# Last Modified: 2019-09-16 14:48:50
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -638,7 +638,8 @@ def t2s_get():
 @view('temp/t2s.jinja2')
 def t2s_post():
     '''繁体转简体'''
-    tcontent = request.forms.tcontent
+    # tcontent = request.forms.tcontent
+    tcontent = request.forms.text
     # 去除行间注释
     tcontent = re.sub(r'\[\w*?\]|\[\*\]', '', tcontent)
     # 去除组字式

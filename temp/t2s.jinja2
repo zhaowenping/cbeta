@@ -200,12 +200,15 @@
             var textDom = document.getElementById('text_input');
             var Ajax={
                 post: function (url, data, fn) {
+                  console.log(data);
                   var xhr = new XMLHttpRequest();
                   xhr.open("POST", url);
                   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+                  console.log('text='+JSON.stringify(data)+'&seg='+seg);
                   xhr.send('text='+JSON.stringify(data)+'&seg='+seg);
                   xhr.onreadystatechange = function() {
                     if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 304)) {
+                      console.log(xhr.responseText);
                       fn.call(this, xhr.responseText);
                     }
                   };
@@ -220,7 +223,7 @@
         };
         getResult('quan');
 
-        document.getElementById('github_button').hidden='';
+        // document.getElementById('github_button').hidden='';
     </script>
 </body>
 </html>
