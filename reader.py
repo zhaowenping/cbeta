@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-09-16 14:48:50
+# Last Modified: 2019-09-16 15:19:49
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -661,6 +661,7 @@ def t2s_post():
     with open('t2s.txt', 'a+') as fd:
         fd.write(tcontent)
 
+    response.content_type = 'application/json'
     return {"tcontent": tcontent, "scontent": scontent}
 
 @route('/zh_TW/:filename#.+#')
