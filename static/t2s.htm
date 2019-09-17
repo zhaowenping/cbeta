@@ -220,7 +220,7 @@
             Ajax.post('/t2s', {
                 "text": textDom.value
             }, function (responseText) {
-                document.getElementById('text_output').innerHTML = responseText;
+                document.getElementById('text_output').innerHTML = responseText.scontent;
             })
         };
         getResult('quan');
