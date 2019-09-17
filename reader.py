@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-09-16 15:19:49
+# Last Modified: 2019-09-17 04:25:59
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -629,13 +629,11 @@ def zh(filename):
     return content
 
 @get('/t2s')
-@view('temp/t2s.jinja2')
 def t2s_get():
     '''繁体转简体'''
-    return {"tcontent": "", "scontent": ""}
+    return static_file('t2s.htm', root='static')
 
 @post('/t2s')
-@view('temp/t2s.jinja2')
 def t2s_post():
     '''繁体转简体'''
     # tcontent = request.forms.tcontent
