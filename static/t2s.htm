@@ -200,18 +200,13 @@
             var textDom = document.getElementById('text_input');
             var Ajax={
                 post: function (url, data, fn) {
-                  console.log('data.text:'+data.text);
                   var xhr = new XMLHttpRequest();
                   xhr.open("POST", url);
                   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-                  console.log('text='+data.text+'&seg='+seg);
-                  // xhr.send('text='+JSON.stringify(data)+'&seg='+seg);
-                  xhr.send('text='+data.text+'&seg='+seg);
+                  xhr.send('text='+JSON.stringify(data)+'&seg='+seg);
                   xhr.onreadystatechange = function() {
                     if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 304)) {
-                      console.log(xhr.responseText);
-                      console.log(xhr.responseText.scontent);
-                      fn.call(this, xhr.responseText);
+                      fn.call(this, JSON.parse(xhr.responseText).scontent);
                     }
                   };
                 }
@@ -220,7 +215,7 @@
             Ajax.post('/t2s', {
                 "text": textDom.value
             }, function (responseText) {
-                document.getElementById('text_output').innerHTML = responseText.scontent;
+                document.getElementById('text_output').innerHTML = responseText;
             })
         };
         getResult('quan');
