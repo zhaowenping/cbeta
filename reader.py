@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-09-17 04:46:40
+# Last Modified: 2019-09-25 08:50:49
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -636,7 +636,7 @@ def t2s_get():
 @post('/t2s')
 def t2s_post():
     '''繁体转简体'''
-    tcontent = json.loads(request.forms.text)
+    tcontent = json.loads(request.forms.text).get('text', '')
     # 去除行间注释
     tcontent = re.sub(r'\[\w*?\]|\[\*\]', '', tcontent)
     # 去除组字式
