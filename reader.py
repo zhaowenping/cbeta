@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-09-27 08:45:26
+# Last Modified: 2019-09-27 08:48:23
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -141,7 +141,7 @@ def menu3():
 def menu4():
     return {'menus': sch_fyjs, 'request':request, 'yiju': '大德長老目錄'}
 
-@route('/pali')
+@route('/palimulu')
 @view('temp/menu.jinja2')
 def menu5():
     return {'menus': sch_pali, 'request':request, 'yiju': '巴利三藏(CSCD)'}
