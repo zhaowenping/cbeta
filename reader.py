@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-09-25 08:50:49
+# Last Modified: 2019-09-27 08:37:58
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -119,6 +119,7 @@ sch_a = read_menu_file("static/sutra_sch.lst")
 sch_b = read_menu_file("static/bulei_sutra_sch.lst")
 sch_dzyz = read_menu_file("static/dzyz.lst")
 sch_fyjs = read_menu_file("static/fyjs.lst")
+sch_pali = read_menu_file("static/pali.lst")
 
 @route('/mulu')
 @view('temp/menu.jinja2')
@@ -138,7 +139,12 @@ def menu3():
 @route('/fyjs')
 @view('temp/menu.jinja2')
 def menu4():
-    return {'menus': sch_fyjs, 'request':request, 'yiju': '福嚴精舍三年閱經目錄（印順導師擬）'}
+    return {'menus': sch_fyjs, 'request':request, 'yiju': '大德長老目錄'}
+
+@route('/pali')
+@view('temp/menu.jinja2')
+def menu5():
+    return {'menus': sch_pali, 'request':request, 'yiju': '巴利三藏(CSCD)'}
 
 @route('/mulu/:bulei#.+#')
 @view('temp/menu.jinja2')
@@ -257,6 +263,45 @@ def submenu4(bulei):
 
         redirect(url)
     return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大德長老居士推薦目錄', 'root':root}
+
+
+@route('/palimulu/:bulei#.+#')
+@view('temp/menu.jinja2')
+def submenu4(bulei):
+    menu = sch_pali
+    bulei = bulei.split('/')
+    root = '/palimulu'
+
+    nav = [(root, '总目录')]
+    for b in bulei:
+        if b not in menu: abort(404)
+        menu = menu[b]
+        t = '/'.join((nav[-1][0], b))
+        nav.append((t, b))
+    nav.pop(0)
+
+    # 跳转到正文
+    if not menu:
+        sutra = bulei[-1].split()[0]  # T01n0002
+        zang = sutra.split('n')[0]              # T01
+
+        if '_' in sutra:
+            sutra, juan = sutra.split('_')
+        else:
+            # 查找第一卷(有些不是从第一卷开始的)
+            juan = get_all_juan(sutra)              # 001
+            if not juan:
+                abort(404, f'没找到文件: /xml/{zang}/{sutra}_*.xml')
+            juan = juan[0]
+
+        if '#' in juan:
+            juan, para = sutra.split('#')
+            url = f"/xml/{zang}/{sutra}_{juan}.xml#{para}"  # T01n0002_001.xml
+        else:
+            url = f"/xml/{zang}/{sutra}_{juan}.xml"  # T01n0002_001.xml
+
+        redirect(url)
+    return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '巴利三藏目錄', 'root':root}
 
 
 # 处理搜索
