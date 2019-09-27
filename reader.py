@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-09-27 08:37:58
+# Last Modified: 2019-09-27 08:45:26
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -267,7 +267,7 @@ def submenu4(bulei):
 
 @route('/palimulu/:bulei#.+#')
 @view('temp/menu.jinja2')
-def submenu4(bulei):
+def submenu5(bulei):
     menu = sch_pali
     bulei = bulei.split('/')
     root = '/palimulu'
