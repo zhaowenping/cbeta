@@ -1,5 +1,5 @@
 01. Tipiṭaka (Mūla)  三藏
-	01. Vinayapiṭaka
+	01. Vinayapiṭaka 律藏
 		01. vin01m Pārājikapāḷi
 			Verañjakaṇḍaṃ" action="cscd/vin01m.mul0.xml"
 			1. Pā rā jikakaṇḍaṃ" action="cscd/vin01m.mul1.xml"
@@ -88,7 +88,7 @@
 			09. s0404m2.mul.toc.xml" text="Navakanipātapāḷi
 			10. s0404m3.mul.toc.xml" text="Dasakanipātapāḷi
 			11. s0404m4.mul.toc.xml" text="Ekādasakanipātapāḷi
-		05. Khuddakanikāya  經藏:小部
+		05. Khuddakanikāya  小部
 			01. s0501m.mul.toc.xml" text="Khuddakapāṭhapāḷi  小誦經
 			02. s0502m.mul.toc.xml" text="Dhammapadapāḷi  法句經
 			03. s0503m.mul.toc.xml" text="Udānapāḷi  自說經
@@ -110,7 +110,7 @@
 			19. s0519m.mul.toc.xml" text="Nettippakaraṇapāḷi  
 			20. s0518m.nrf.toc.xml" text="Milindapañhapāḷi
 			21. s0520m.nrf.toc.xml" text="Peṭakopadesapāḷi
-	03. Abhidhammapiṭaka
+	03. Abhidhammapiṭaka 論藏
 		01. abh01m.mul.toc.xml" text="Dhammasaṅgaṇīpāḷi  法集論
 		02. abh02m.mul.toc.xml" text="Vibhaṅgapāḷi  分別論
 		03. abh03m1.mul.toc.xml" text="Dhātukathāpāḷi  界論
