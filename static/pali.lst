@@ -7,60 +7,60 @@
 			3. Aniyatakaṇḍaṃ" action="cscd/vin01m.mul3.xml" 二不定法
 			4. Nissaggiyakaṇḍaṃ" action="cscd/vin01m.mul4.xml" 三十捨墮
 		02. Pācittiyapāḷi 經分別波逸提
-			5. Pā cittiyakaṇḍaṃ" action="cscd/vin02m1.mul0.xml" target="text"
-			6. Pā ṭidesanī yakaṇḍaṃ" action="cscd/vin02m1.mul1.xml" target="text"
-			7. Sekhiyakaṇḍaṃ" action="cscd/vin02m1.mul2.xml" target="text"
-			8. Adhikaraṇasamathā " action="cscd/vin02m1.mul3.xml" target="text"
-			1. Pā rā jikakaṇḍaṃ (bhikkhunī vibhaṅgo)" action="cscd/vin02m1.mul4.xml" target="text"
-			2. Saṅghā disesakaṇḍaṃ (bhikkhunī vibhaṅgo)" action="cscd/vin02m1.mul5.xml" target="text"
-			3. Nissaggiyakaṇḍaṃ (bhikkhunī vibhaṅgo)" action="cscd/vin02m1.mul6.xml" target="text"
-			4. Pā cittiyakaṇḍaṃ (bhikkhunī vibhaṅgo)" action="cscd/vin02m1.mul7.xml" target="text"
-			5. Pā ṭidesanī yakaṇḍaṃ (bhikkhunī vibhaṅgo)" action="cscd/vin02m1.mul8.xml" target="text"
-			6. Sekhiyakaṇḍaṃ (bhikkhunī vibhaṅgo)" action="cscd/vin02m1.mul9.xml" target="text"
-			7. Adhikaraṇasamathā  (bhikkhunī vibhaṅgo)" action="cscd/vin02m1.mul10.xml" target="text"
+			5. Pā cittiyakaṇḍaṃ" action="cscd/vin02m1.mul0.xml" target="text" 波逸提
+			6. Pā ṭidesanī yakaṇḍaṃ" action="cscd/vin02m1.mul1.xml" target="text" 波羅提舍尼
+			7. Sekhiyakaṇḍaṃ" action="cscd/vin02m1.mul2.xml" target="text" 衆學處
+			8. Adhikaraṇasamathā " action="cscd/vin02m1.mul3.xml" target="text" 附隨
+			1. Pā rā jikakaṇḍaṃ (bhikkhunī vibhaṅgo)" action="cscd/vin02m1.mul4.xml" target="text" 比丘尼驅擯
+			2. Saṅghā disesakaṇḍaṃ (bhikkhunī vibhaṅgo)" action="cscd/vin02m1.mul5.xml" target="text" 比丘尼僧殘
+			3. Nissaggiyakaṇḍaṃ (bhikkhunī vibhaṅgo)" action="cscd/vin02m1.mul6.xml" target="text" 比丘尼捨墮
+			4. Pā cittiyakaṇḍaṃ (bhikkhunī vibhaṅgo)" action="cscd/vin02m1.mul7.xml" target="text" 比丘尼波逸提
+			5. Pā ṭidesanī yakaṇḍaṃ (bhikkhunī vibhaṅgo)" action="cscd/vin02m1.mul8.xml" target="text" 比丘尼波羅提舍尼
+			6. Sekhiyakaṇḍaṃ (bhikkhunī vibhaṅgo)" action="cscd/vin02m1.mul9.xml" target="text" 比丘尼學處
+			7. Adhikaraṇasamathā  (bhikkhunī vibhaṅgo)" action="cscd/vin02m1.mul10.xml" target="text" 比丘尼附隨
 		03. Mahāvaggapāḷi 犍度大品
-			1. Mahā khandhako" action="cscd/vin02m2.mul0.xml" target="text"
-			2. Uposathakkhandhako" action="cscd/vin02m2.mul1.xml" target="text"
-			3. Vassū panā yikakkhandhako" action="cscd/vin02m2.mul2.xml" target="text"
-			4. Pavā raṇā kkhandhako" action="cscd/vin02m2.mul3.xml" target="text"
-			5. Cammakkhandhako" action="cscd/vin02m2.mul4.xml" target="text"
-			6. Bhesajjakkhandhako" action="cscd/vin02m2.mul5.xml" target="text"
-			7. Kathinakkhandhako" action="cscd/vin02m2.mul6.xml" target="text"
-			8. Cī varakkhandhako" action="cscd/vin02m2.mul7.xml" target="text"
-			9. Campeyyakkhandhako" action="cscd/vin02m2.mul8.xml" target="text"
-			10. Kosambakakkhandhako" action="cscd/vin02m2.mul9.xml" target="text"
+			1. Mahā khandhako" action="cscd/vin02m2.mul0.xml" target="text" 大犍度: 出家受戒
+			2. Uposathakkhandhako" action="cscd/vin02m2.mul1.xml" target="text" 布薩犍度: 半月誦戒
+			3. Vassū panā yikakkhandhako" action="cscd/vin02m2.mul2.xml" target="text" 雨安居犍度: 雨季安居
+			4. Pavā raṇā kkhandhako" action="cscd/vin02m2.mul3.xml" target="text" 自恣犍度: 有關每年雨安居結束時, 僧眾自揭犯戒及懺悔的規定
+			5. Cammakkhandhako" action="cscd/vin02m2.mul4.xml" target="text" 皮革犍度: 有關穿鞋和使用皮革的規定
+			6. Bhesajjakkhandhako" action="cscd/vin02m2.mul5.xml" target="text" 葯犍度: 有關葯物及食物的規定
+			7. Kathinakkhandhako" action="cscd/vin02m2.mul6.xml" target="text" 迦絺那衣犍度: 有關雨安居結束後, 僧眾接受迦絺那衣的規定
+			8. Cī varakkhandhako" action="cscd/vin02m2.mul7.xml" target="text" 衣犍度: 有關比丘所穿袈裟的規定
+			9. Campeyyakkhandhako" action="cscd/vin02m2.mul8.xml" target="text" 尖波犍度: 有關僧團活動合法或非法的規定
+			10. Kosambakakkhandhako" action="cscd/vin02m2.mul9.xml" target="text" 憍賞彌犍度: 有關比丘分裂和合的規定
 		04. Cūḷavaggapāḷi 犍度小品
-			1. Kammakkhandhakaṃ" action="cscd/vin02m3.mul0.xml" target="text"
-			2. Pā rivā sikakkhandhakaṃ" action="cscd/vin02m3.mul1.xml" target="text"
-			3. Samuccayakkhandhakaṃ" action="cscd/vin02m3.mul2.xml" target="text"
-			4. Samathakkhandhakaṃ" action="cscd/vin02m3.mul3.xml" target="text"
-			5. Khuddakavatthukkhandhakaṃ" action="cscd/vin02m3.mul4.xml" target="text"
-			6. Senā sanakkhandhakaṃ" action="cscd/vin02m3.mul5.xml" target="text"
-			7. Saṅghabhedakakkhandhakaṃ" action="cscd/vin02m3.mul6.xml" target="text"
-			8. Vattakkhandhakaṃ" action="cscd/vin02m3.mul7.xml" target="text"
-			9. Pā timokkhaṭṭhapanakkhandhakaṃ" action="cscd/vin02m3.mul8.xml" target="text"
-			10. Bhikkhunikkhandhakaṃ" action="cscd/vin02m3.mul9.xml" target="text"
-			11. Pañcasatikakkhandhakaṃ" action="cscd/vin02m3.mul10.xml" target="text"
-			12. Sattasatikakkhandhakaṃ" action="cscd/vin02m3.mul11.xml" target="text"
+			1. Kammakkhandhakaṃ" action="cscd/vin02m3.mul0.xml" target="text" 羯磨犍度: 有關責駡與處分犯戒比丘的規定
+			2. Pā rivā sikakkhandhakaṃ" action="cscd/vin02m3.mul1.xml" target="text" 別位犍度: 有關比丘接受別住處分的規定
+			3. Samuccayakkhandhakaṃ" action="cscd/vin02m3.mul2.xml" target="text" 集犍度: 有關處分犯僧殘比丘的規定
+			4. Samathakkhandhakaṃ" action="cscd/vin02m3.mul3.xml" target="text" 滅諍犍度: 有關平息比丘紛爭的規定
+			5. Khuddakavatthukkhandhakaṃ" action="cscd/vin02m3.mul4.xml" target="text" 小犍度: 有關比丘日常生活用品的規定
+			6. Senā sanakkhandhakaṃ" action="cscd/vin02m3.mul5.xml" target="text" 臥坐具犍度: 有關房舍和臥坐具的規定
+			7. Saṅghabhedakakkhandhakaṃ" action="cscd/vin02m3.mul6.xml" target="text" 破僧犍度: 有關提婆達多破僧的判定
+			8. Vattakkhandhakaṃ" action="cscd/vin02m3.mul7.xml" target="text" 威儀犍度 
+			9. Pā timokkhaṭṭhapanakkhandhakaṃ" action="cscd/vin02m3.mul8.xml" target="text" 遮說戒犍度: 有關犯戒比丘不參加布薩的規定
+			10. Bhikkhunikkhandhakaṃ" action="cscd/vin02m3.mul9.xml" target="text" 比丘尼犍度
+			11. Pañcasatikakkhandhakaṃ" action="cscd/vin02m3.mul10.xml" target="text" 五百結集犍度
+			12. Sattasatikakkhandhakaṃ" action="cscd/vin02m3.mul11.xml" target="text" 七百結集犍度
 		05. Parivārapāḷi  附隨
-			Soḷasamahā vā ro" action="cscd/vin02m4.mul0.xml" target="text"
-			Samuṭṭhā nasī sasaṅkhepo" action="cscd/vin02m4.mul1.xml" target="text"
-			Antarapeyyā laṃ" action="cscd/vin02m4.mul2.xml" target="text"
-			Khandhakapucchā vā ro" action="cscd/vin02m4.mul3.xml" target="text"
-			Ekuttarikanayo" action="cscd/vin02m4.mul4.xml" target="text"
-			Uposathā dipucchā vissajjanā " action="cscd/vin02m4.mul5.xml" target="text"
-			Gā thā saṅgaṇikaṃ" action="cscd/vin02m4.mul6.xml" target="text"
-			Adhikaraṇabhedo" action="cscd/vin02m4.mul7.xml" target="text"
-			Aparagā thā saṅgaṇikaṃ" action="cscd/vin02m4.mul8.xml" target="text"
-			Codanā kaṇḍaṃ" action="cscd/vin02m4.mul9.xml" target="text"
-			Cū ḷasaṅgā mo" action="cscd/vin02m4.mul10.xml" target="text"
-			Mahā saṅgā mo" action="cscd/vin02m4.mul11.xml" target="text"
-			Kathinabhedo" action="cscd/vin02m4.mul12.xml" target="text"
-			Upā lipañcakaṃ" action="cscd/vin02m4.mul13.xml" target="text"
-			Atthā pattisamuṭṭhā naṃ" action="cscd/vin02m4.mul14.xml" target="text"
-			Dutiyagā thā saṅgaṇikaṃ" action="cscd/vin02m4.mul15.xml" target="text"
-			Sedamocanagā thā " action="cscd/vin02m4.mul16.xml" target="text"
-			Pañcavaggo" action="cscd/vin02m4.mul17.xml" target="text"
+			Soḷasamahā vā ro" action="cscd/vin02m4.mul0.xml" target="text" 十六章
+			Samuṭṭhā nasī sasaṅkhepo" action="cscd/vin02m4.mul1.xml" target="text" 等起攝頌: 關於比丘、比丘尼兩部的各戒, 其罪依如何的等起法
+			Antarapeyyā laṃ" action="cscd/vin02m4.mul2.xml" target="text" 無間省略
+			Khandhakapucchā vā ro" action="cscd/vin02m4.mul3.xml" target="text" 問犍度章
+			Ekuttarikanayo" action="cscd/vin02m4.mul4.xml" target="text" 增一法: 依增一法, 說明律藏中所說的諸事項
+			Uposathā dipucchā vissajjanā " action="cscd/vin02m4.mul5.xml" target="text" 布薩初中後解答章
+			Gā thā saṅgaṇikaṃ" action="cscd/vin02m4.mul6.xml" target="text" 偈集: 制戒處七城, 於各城所說戒的數及其他事項
+			Adhikaraṇabhedo" action="cscd/vin02m4.mul7.xml" target="text" 諍事分解: 四種諍事, 由各方解說
+			Aparagā thā saṅgaṇikaṃ" action="cscd/vin02m4.mul8.xml" target="text" 別偈集
+			Codanā kaṇḍaṃ" action="cscd/vin02m4.mul9.xml" target="text" 呵責品: 說明呵責及檢問
+			Cū ḷasaṅgā mo" action="cscd/vin02m4.mul10.xml" target="text" 小諍: 關於僧伽諍論, 裁決者的注意
+			Mahā saṅgā mo" action="cscd/vin02m4.mul11.xml" target="text" 大諍: 敘述裁決者的儀法
+			Kathinabhedo" action="cscd/vin02m4.mul12.xml" target="text" 迦絺那衣分解: 說明迦絺那衣之受持、捨棄等法
+			Upā lipañcakaṃ" action="cscd/vin02m4.mul13.xml" target="text" 優婆離問五法: 佛陀答優婆離關於戒律的問題, 有十四品
+			Atthā pattisamuṭṭhā naṃ" action="cscd/vin02m4.mul14.xml" target="text" 等起: 關於比丘戒之各條, 說明犯罪等起法
+			Dutiyagā thā saṅgaṇikaṃ" action="cscd/vin02m4.mul15.xml" target="text" 偈集第二: 問關於戒律上事項的數
+			Sedamocanagā thā " action="cscd/vin02m4.mul16.xml" target="text" 發汗偈: 集問難的偈而不提出解答
+			Pañcavaggo" action="cscd/vin02m4.mul17.xml" target="text" 五品: 1.羯磨品 2.義利品 3.制戒品 4.所製品 5.九聚會品
 	02. Suttapiṭaka  修多羅藏
 		01. Dīghanikāya 長部
 			01. Sīlakkhandhavaggapāḷi 戒蘊(集)品
