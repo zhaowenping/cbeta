@@ -1,247 +1,247 @@
 01. Tipiṭaka (Mūla)  三藏
 	01. Vinayapiṭaka 毘奈耶藏
 		01. Pārājikapāḷi 經分別波羅夷
-			Verañjakaṇḍaṃ" action="cscd/vin01m.mul0.xml"
-			1. Pā rā jikakaṇḍaṃ" action="cscd/vin01m.mul1.xml" 四波羅夷
-			2. Saṅghā disesakaṇḍaṃ" action="cscd/vin01m.mul2.xml" 十三僧殘
-			3. Aniyatakaṇḍaṃ" action="cscd/vin01m.mul3.xml" 二不定法
-			4. Nissaggiyakaṇḍaṃ" action="cscd/vin01m.mul4.xml" 三十捨墮
+			vin01m.mul0 Verañjakaṇḍaṃ
+			vin01m.mul1 1. Pā rā jikakaṇḍaṃ 四波羅夷
+			vin01m.mul2 2. Saṅghā disesakaṇḍaṃ 十三僧殘
+			vin01m.mul3 3. Aniyatakaṇḍaṃ 二不定法
+			vin01m.mul4 4. Nissaggiyakaṇḍaṃ 三十捨墮
 		02. Pācittiyapāḷi 經分別波逸提
-			5. Pā cittiyakaṇḍaṃ" action="cscd/vin02m1.mul0.xml" target="text" 波逸提
-			6. Pā ṭidesanī yakaṇḍaṃ" action="cscd/vin02m1.mul1.xml" target="text" 波羅提舍尼
-			7. Sekhiyakaṇḍaṃ" action="cscd/vin02m1.mul2.xml" target="text" 衆學處
-			8. Adhikaraṇasamathā " action="cscd/vin02m1.mul3.xml" target="text" 附隨
-			1. Pā rā jikakaṇḍaṃ (bhikkhunī vibhaṅgo)" action="cscd/vin02m1.mul4.xml" target="text" 比丘尼驅擯
-			2. Saṅghā disesakaṇḍaṃ (bhikkhunī vibhaṅgo)" action="cscd/vin02m1.mul5.xml" target="text" 比丘尼僧殘
-			3. Nissaggiyakaṇḍaṃ (bhikkhunī vibhaṅgo)" action="cscd/vin02m1.mul6.xml" target="text" 比丘尼捨墮
-			4. Pā cittiyakaṇḍaṃ (bhikkhunī vibhaṅgo)" action="cscd/vin02m1.mul7.xml" target="text" 比丘尼波逸提
-			5. Pā ṭidesanī yakaṇḍaṃ (bhikkhunī vibhaṅgo)" action="cscd/vin02m1.mul8.xml" target="text" 比丘尼波羅提舍尼
-			6. Sekhiyakaṇḍaṃ (bhikkhunī vibhaṅgo)" action="cscd/vin02m1.mul9.xml" target="text" 比丘尼學處
-			7. Adhikaraṇasamathā  (bhikkhunī vibhaṅgo)" action="cscd/vin02m1.mul10.xml" target="text" 比丘尼附隨
+			vin02m1.mul0 5. Pā cittiyakaṇḍaṃ 波逸提
+			vin02m1.mul1 6. Pā ṭidesanī yakaṇḍaṃ 提舍尼
+			vin02m1.mul2 7. Sekhiyakaṇḍaṃ 衆學處
+			vin02m1.mul3 8. Adhikaraṇasamathā 附隨
+			vin02m1.mul4 1. Pā rā jikakaṇḍaṃ (bhikkhunī vibhaṅgo) 比丘尼驅擯
+			vin02m1.mul5 2. Saṅghā disesakaṇḍaṃ (bhikkhunī vibhaṅgo) 比丘尼僧殘
+			vin02m1.mul6 3. Nissaggiyakaṇḍaṃ (bhikkhunī vibhaṅgo) 比丘尼捨墮
+			vin02m1.mul7 4. Pā cittiyakaṇḍaṃ (bhikkhunī vibhaṅgo) 比丘尼波逸提
+			vin02m1.mul8 5. Pā ṭidesanī yakaṇḍaṃ (bhikkhunī vibhaṅgo) 比丘尼提舍尼
+			vin02m1.mul9 6. Sekhiyakaṇḍaṃ (bhikkhunī vibhaṅgo) 比丘尼學處
+			vin02m1.mul10 7. Adhikaraṇasamathā  (bhikkhunī vibhaṅgo) 比丘尼附隨
 		03. Mahāvaggapāḷi 犍度大品
-			1. Mahā khandhako" action="cscd/vin02m2.mul0.xml" target="text" 大犍度: 出家受戒
-			2. Uposathakkhandhako" action="cscd/vin02m2.mul1.xml" target="text" 布薩犍度: 半月誦戒
-			3. Vassū panā yikakkhandhako" action="cscd/vin02m2.mul2.xml" target="text" 雨安居犍度: 雨季安居
-			4. Pavā raṇā kkhandhako" action="cscd/vin02m2.mul3.xml" target="text" 自恣犍度: 有關每年雨安居結束時, 僧眾自揭犯戒及懺悔的規定
-			5. Cammakkhandhako" action="cscd/vin02m2.mul4.xml" target="text" 皮革犍度: 有關穿鞋和使用皮革的規定
-			6. Bhesajjakkhandhako" action="cscd/vin02m2.mul5.xml" target="text" 葯犍度: 有關葯物及食物的規定
-			7. Kathinakkhandhako" action="cscd/vin02m2.mul6.xml" target="text" 迦絺那衣犍度: 有關雨安居結束後, 僧眾接受迦絺那衣的規定
-			8. Cī varakkhandhako" action="cscd/vin02m2.mul7.xml" target="text" 衣犍度: 有關比丘所穿袈裟的規定
-			9. Campeyyakkhandhako" action="cscd/vin02m2.mul8.xml" target="text" 尖波犍度: 有關僧團活動合法或非法的規定
-			10. Kosambakakkhandhako" action="cscd/vin02m2.mul9.xml" target="text" 憍賞彌犍度: 有關比丘分裂和合的規定
+			vin02m2.mul0 1. Mahā khandhako 大犍度: 出家受戒
+			vin02m2.mul1 2. Uposathakkhandhako 布薩犍度: 半月誦戒
+			vin02m2.mul2 3. Vassū panā yikakkhandhako 雨安居犍度: 雨季安居
+			vin02m2.mul3 4. Pavā raṇā kkhandhako 自恣犍度: 有關每年雨安居結束時, 僧眾自揭犯戒及懺悔的規定
+			vin02m2.mul4 5. Cammakkhandhako 皮革犍度: 有關穿鞋和使用皮革的規定
+			vin02m2.mul5 6. Bhesajjakkhandhako 葯犍度: 有關葯物及食物的規定
+			vin02m2.mul6 7. Kathinakkhandhako 迦絺那衣犍度: 有關雨安居結束後, 僧眾接受迦絺那衣的規定
+			vin02m2.mul7 8. Cī varakkhandhako 衣犍度: 有關比丘所穿袈裟的規定
+			vin02m2.mul8 9. Campeyyakkhandhako 尖波犍度: 有關僧團活動合法或非法的規定
+			vin02m2.mul9 10. Kosambakakkhandhako 憍賞彌犍度: 有關比丘分裂和合的規定
 		04. Cūḷavaggapāḷi 犍度小品
-			1. Kammakkhandhakaṃ" action="cscd/vin02m3.mul0.xml" target="text" 羯磨犍度: 有關責駡與處分犯戒比丘的規定
-			2. Pā rivā sikakkhandhakaṃ" action="cscd/vin02m3.mul1.xml" target="text" 別位犍度: 有關比丘接受別住處分的規定
-			3. Samuccayakkhandhakaṃ" action="cscd/vin02m3.mul2.xml" target="text" 集犍度: 有關處分犯僧殘比丘的規定
-			4. Samathakkhandhakaṃ" action="cscd/vin02m3.mul3.xml" target="text" 滅諍犍度: 有關平息比丘紛爭的規定
-			5. Khuddakavatthukkhandhakaṃ" action="cscd/vin02m3.mul4.xml" target="text" 小犍度: 有關比丘日常生活用品的規定
-			6. Senā sanakkhandhakaṃ" action="cscd/vin02m3.mul5.xml" target="text" 臥坐具犍度: 有關房舍和臥坐具的規定
-			7. Saṅghabhedakakkhandhakaṃ" action="cscd/vin02m3.mul6.xml" target="text" 破僧犍度: 有關提婆達多破僧的判定
-			8. Vattakkhandhakaṃ" action="cscd/vin02m3.mul7.xml" target="text" 威儀犍度 
-			9. Pā timokkhaṭṭhapanakkhandhakaṃ" action="cscd/vin02m3.mul8.xml" target="text" 遮說戒犍度: 有關犯戒比丘不參加布薩的規定
-			10. Bhikkhunikkhandhakaṃ" action="cscd/vin02m3.mul9.xml" target="text" 比丘尼犍度
-			11. Pañcasatikakkhandhakaṃ" action="cscd/vin02m3.mul10.xml" target="text" 五百結集犍度
-			12. Sattasatikakkhandhakaṃ" action="cscd/vin02m3.mul11.xml" target="text" 七百結集犍度
+			vin02m3.mul0 1. Kammakkhandhakaṃ 羯磨犍度: 有關責駡與處分犯戒比丘的規定
+			vin02m3.mul1 2. Pā rivā sikakkhandhakaṃ 別位犍度: 有關比丘接受別住處分的規定
+			vin02m3.mul2 3. Samuccayakkhandhakaṃ 集犍度: 有關處分犯僧殘比丘的規定
+			vin02m3.mul3 4. Samathakkhandhakaṃ 滅諍犍度: 有關平息比丘紛爭的規定
+			vin02m3.mul4 5. Khuddakavatthukkhandhakaṃ 小犍度: 有關比丘日常生活用品的規定
+			vin02m3.mul5 6. Senā sanakkhandhakaṃ 臥坐具犍度: 有關房舍和臥坐具的規定
+			vin02m3.mul6 7. Saṅghabhedakakkhandhakaṃ 破僧犍度: 有關提婆達多破僧的判定
+			vin02m3.mul7 8. Vattakkhandhakaṃ 威儀犍度 
+			vin02m3.mul8 9. Pā timokkhaṭṭhapanakkhandhakaṃ 遮說戒犍度: 有關犯戒比丘不參加布薩的規定
+			vin02m3.mul9 10. Bhikkhunikkhandhakaṃ 比丘尼犍度
+			vin02m3.mul10 11. Pañcasatikakkhandhakaṃ 五百結集犍度
+			vin02m3.mul11 12. Sattasatikakkhandhakaṃ 七百結集犍度
 		05. Parivārapāḷi  附隨
-			Soḷasamahā vā ro" action="cscd/vin02m4.mul0.xml" target="text" 十六章
-			Samuṭṭhā nasī sasaṅkhepo" action="cscd/vin02m4.mul1.xml" target="text" 等起攝頌: 關於比丘、比丘尼兩部的各戒, 其罪依如何的等起法
-			Antarapeyyā laṃ" action="cscd/vin02m4.mul2.xml" target="text" 無間省略
-			Khandhakapucchā vā ro" action="cscd/vin02m4.mul3.xml" target="text" 問犍度章
-			Ekuttarikanayo" action="cscd/vin02m4.mul4.xml" target="text" 增一法: 依增一法, 說明律藏中所說的諸事項
-			Uposathā dipucchā vissajjanā " action="cscd/vin02m4.mul5.xml" target="text" 布薩初中後解答章
-			Gā thā saṅgaṇikaṃ" action="cscd/vin02m4.mul6.xml" target="text" 偈集: 制戒處七城, 於各城所說戒的數及其他事項
-			Adhikaraṇabhedo" action="cscd/vin02m4.mul7.xml" target="text" 諍事分解: 四種諍事, 由各方解說
-			Aparagā thā saṅgaṇikaṃ" action="cscd/vin02m4.mul8.xml" target="text" 別偈集
-			Codanā kaṇḍaṃ" action="cscd/vin02m4.mul9.xml" target="text" 呵責品: 說明呵責及檢問
-			Cū ḷasaṅgā mo" action="cscd/vin02m4.mul10.xml" target="text" 小諍: 關於僧伽諍論, 裁決者的注意
-			Mahā saṅgā mo" action="cscd/vin02m4.mul11.xml" target="text" 大諍: 敘述裁決者的儀法
-			Kathinabhedo" action="cscd/vin02m4.mul12.xml" target="text" 迦絺那衣分解: 說明迦絺那衣之受持、捨棄等法
-			Upā lipañcakaṃ" action="cscd/vin02m4.mul13.xml" target="text" 優婆離問五法: 佛陀答優婆離關於戒律的問題, 有十四品
-			Atthā pattisamuṭṭhā naṃ" action="cscd/vin02m4.mul14.xml" target="text" 等起: 關於比丘戒之各條, 說明犯罪等起法
-			Dutiyagā thā saṅgaṇikaṃ" action="cscd/vin02m4.mul15.xml" target="text" 偈集第二: 問關於戒律上事項的數
-			Sedamocanagā thā " action="cscd/vin02m4.mul16.xml" target="text" 發汗偈: 集問難的偈而不提出解答
-			Pañcavaggo" action="cscd/vin02m4.mul17.xml" target="text" 五品: 1.羯磨品 2.義利品 3.制戒品 4.所製品 5.九聚會品
+			vin02m4.mul0 Soḷasamahā vā ro 十六章
+			vin02m4.mul1 Samuṭṭhā nasī sasaṅkhepo 等起攝頌: 關於比丘、比丘尼兩部的各戒, 其罪依如何的等起法
+			vin02m4.mul2 Antarapeyyā laṃ 無間省略
+			vin02m4.mul3 Khandhakapucchā vā ro 問犍度章
+			vin02m4.mul4 Ekuttarikanayo 增一法: 依增一法, 說明律藏中所說的諸事項
+			vin02m4.mul5 Uposathā dipucchā vissajjanā 布薩初中後解答章
+			vin02m4.mul6 Gā thā saṅgaṇikaṃ 偈集: 制戒處七城, 於各城所說戒的數及其他事項
+			vin02m4.mul7 Adhikaraṇabhedo 諍事分解: 四種諍事, 由各方解說
+			vin02m4.mul8 Aparagā thā saṅgaṇikaṃ 別偈集
+			vin02m4.mul9 Codanā kaṇḍaṃ 呵責品: 說明呵責及檢問
+			vin02m4.mul10 Cū ḷasaṅgā mo 小諍: 關於僧伽諍論, 裁決者的注意
+			vin02m4.mul11 Mahā saṅgā mo 大諍: 敘述裁決者的儀法
+			vin02m4.mul12 Kathinabhedo 迦絺那衣分解: 說明迦絺那衣之受持、捨棄等法
+			vin02m4.mul13 Upā lipañcakaṃ 優婆離問五法: 佛陀答優婆離關於戒律的問題, 有十四品
+			vin02m4.mul14 Atthā pattisamuṭṭhā naṃ 等起: 關於比丘戒之各條, 說明犯罪等起法
+			vin02m4.mul15 Dutiyagā thā saṅgaṇikaṃ 偈集第二: 問關於戒律上事項的數
+			vin02m4.mul16 Sedamocanagā thā 發汗偈: 集問難的偈而不提出解答
+			vin02m4.mul17 Pañcavaggo 五品: 1.羯磨品 2.義利品 3.制戒品 4.所製品 5.九聚會品
 	02. Suttapiṭaka  修多羅藏
 		01. Dīghanikāya 長部
 			01. Sīlakkhandhavaggapāḷi 戒蘊(集)品
-				1. Brahmajā lasuttaṃ" action="cscd/s0101m.mul0.xml" target="text"
-				2. Sā maññaphalasuttaṃ" action="cscd/s0101m.mul1.xml" target="text"
-				3. Ambaṭṭhasuttaṃ" action="cscd/s0101m.mul2.xml" target="text"
-				4. Soṇadaṇḍasuttaṃ" action="cscd/s0101m.mul3.xml" target="text"
-				5. Kū ṭadantasuttaṃ" action="cscd/s0101m.mul4.xml" target="text"
-				6. Mahā lisuttaṃ" action="cscd/s0101m.mul5.xml" target="text"
-				7. Jā liyasuttaṃ" action="cscd/s0101m.mul6.xml" target="text"
-				8. Mahā sī hanā dasuttaṃ" action="cscd/s0101m.mul7.xml" target="text"
-				9. Poṭṭhapā dasuttaṃ" action="cscd/s0101m.mul8.xml" target="text"
-				10. Subhasuttaṃ" action="cscd/s0101m.mul9.xml" target="text"
-				11. Kevaṭṭasuttaṃ" action="cscd/s0101m.mul10.xml" target="text"
-				12. Lohiccasuttaṃ" action="cscd/s0101m.mul11.xml" target="text"
-				13. Tevijjasuttaṃ" action="cscd/s0101m.mul12.xml" target="text"
+				s0101m.mul0 1. Brahmajā lasuttaṃ
+				s0101m.mul1 2. Sā maññaphalasuttaṃ
+				s0101m.mul2 3. Ambaṭṭhasuttaṃ
+				s0101m.mul3 4. Soṇadaṇḍasuttaṃ
+				s0101m.mul4 5. Kū ṭadantasuttaṃ
+				s0101m.mul5 6. Mahā lisuttaṃ
+				s0101m.mul6 7. Jā liyasuttaṃ
+				s0101m.mul7 8. Mahā sī hanā dasuttaṃ
+				s0101m.mul8 9. Poṭṭhapā dasuttaṃ
+				s0101m.mul9 10. Subhasuttaṃ
+				s0101m.mul10 11. Kevaṭṭasuttaṃ
+				s0101m.mul11 12. Lohiccasuttaṃ
+				s0101m.mul12 13. Tevijjasuttaṃ
 			02. Mahāvaggapāḷi 大品
-				1. Mahā padā nasuttaṃ" action="cscd/s0102m.mul0.xml" target="text"
-				2. Mahā nidā nasuttaṃ" action="cscd/s0102m.mul1.xml" target="text"
-				3. Mahā parinibbā nasuttaṃ" action="cscd/s0102m.mul2.xml" target="text"
-				4. Mahā sudassanasuttaṃ" action="cscd/s0102m.mul3.xml" target="text"
-				5. Janavasabhasuttaṃ" action="cscd/s0102m.mul4.xml" target="text"
-				6. Mahā govindasuttaṃ" action="cscd/s0102m.mul5.xml" target="text"
-				7. Mahā samayasuttaṃ" action="cscd/s0102m.mul6.xml" target="text"
-				8. Sakkapañhasuttaṃ" action="cscd/s0102m.mul7.xml" target="text"
-				9. Mahā satipaṭṭhā nasuttaṃ" action="cscd/s0102m.mul8.xml" target="text"
-				10. Pā yā sisuttaṃ" action="cscd/s0102m.mul9.xml" target="text"
+				s0102m.mul0 1. Mahā padā nasuttaṃ
+				s0102m.mul1 2. Mahā nidā nasuttaṃ
+				s0102m.mul2 3. Mahā parinibbā nasuttaṃ
+				s0102m.mul3 4. Mahā sudassanasuttaṃ
+				s0102m.mul4 5. Janavasabhasuttaṃ
+				s0102m.mul5 6. Mahā govindasuttaṃ
+				s0102m.mul6 7. Mahā samayasuttaṃ
+				s0102m.mul7 8. Sakkapañhasuttaṃ
+				s0102m.mul8 9. Mahā satipaṭṭhā nasuttaṃ
+				s0102m.mul9 10. Pā yā sisuttaṃ
 			03. Pāthikavaggapāḷi 波梨品
-				1. Pā thikasuttaṃ" action="cscd/s0103m.mul0.xml" target="text"
-				2. Udumbarikasuttaṃ" action="cscd/s0103m.mul1.xml" target="text"
-				3. Cakkavattisuttaṃ" action="cscd/s0103m.mul2.xml" target="text"
-				4. Aggaññasuttaṃ" action="cscd/s0103m.mul3.xml" target="text"
-				5. Sampasā danī yasuttaṃ" action="cscd/s0103m.mul4.xml" target="text"
-				6. Pā sā dikasuttaṃ" action="cscd/s0103m.mul5.xml" target="text"
-				7. Lakkhaṇasuttaṃ" action="cscd/s0103m.mul6.xml" target="text"
-				8. Siṅgā lasuttaṃ" action="cscd/s0103m.mul7.xml" target="text"
-				9. Āṭā nā ṭiyasuttaṃ" action="cscd/s0103m.mul8.xml" target="text"
-				10. Saṅgī tisuttaṃ" action="cscd/s0103m.mul9.xml" target="text"
-				11. Dasuttarasuttaṃ" action="cscd/s0103m.mul10.xml" target="text"
+				s0103m.mul0 1. Pā thikasuttaṃ
+				s0103m.mul1 2. Udumbarikasuttaṃ
+				s0103m.mul2 3. Cakkavattisuttaṃ
+				s0103m.mul3 4. Aggaññasuttaṃ
+				s0103m.mul4 5. Sampasā danī yasuttaṃ
+				s0103m.mul5 6. Pā sā dikasuttaṃ
+				s0103m.mul6 7. Lakkhaṇasuttaṃ
+				s0103m.mul7 8. Siṅgā lasuttaṃ
+				s0103m.mul8 9. Āṭā nā ṭiyasuttaṃ
+				s0103m.mul9 10. Saṅgī tisuttaṃ
+				s0103m.mul10 11. Dasuttarasuttaṃ
 		02. Majjhimanikāya  中部
 			01. Mūlapaṇṇāsapāḷi 根本分五十經篇
-				1. Mū lapariyā yavaggo" action="cscd/s0201m.mul0.xml" target="text"
-				2. Sī hanā davaggo" action="cscd/s0201m.mul1.xml" target="text"
-				3. Opammavaggo" action="cscd/s0201m.mul2.xml" target="text"
-				4. Mahā yamakavaggo" action="cscd/s0201m.mul3.xml" target="text"
-				5. Cū ḷayamakavaggo" action="cscd/s0201m.mul4.xml" target="text"
+				s0201m.mul0 1. Mū lapariyā yavaggo
+				s0201m.mul1 2. Sī hanā davaggo
+				s0201m.mul2 3. Opammavaggo
+				s0201m.mul3 4. Mahā yamakavaggo
+				s0201m.mul4 5. Cū ḷayamakavaggo
 			02. Majjhimapaṇṇāsapāḷi 中分五十經篇
-				1. Gahapativaggo" action="cscd/s0202m.mul0.xml" target="text"
-				2. Bhikkhuvaggo" action="cscd/s0202m.mul1.xml" target="text"
-				3. Paribbā jakavaggo" action="cscd/s0202m.mul2.xml" target="text"
-				4. Rā javaggo" action="cscd/s0202m.mul3.xml" target="text"
-				5. Brā hmaṇavaggo" action="cscd/s0202m.mul4.xml" target="text"
+				s0202m.mul0 1. Gahapativaggo
+				s0202m.mul1 2. Bhikkhuvaggo
+				s0202m.mul2 3. Paribbā jakavaggo
+				s0202m.mul3 4. Rā javaggo
+				s0202m.mul4 5. Brā hmaṇavaggo
 			03. Uparipaṇṇāsapāḷi 後分五十經篇
-				1. Devadahavaggo" action="cscd/s0203m.mul0.xml" target="text"
-				2. Anupadavaggo" action="cscd/s0203m.mul1.xml" target="text"
-				3. Suññatavaggo" action="cscd/s0203m.mul2.xml" target="text"
-				4. Vibhaṅgavaggo" action="cscd/s0203m.mul3.xml" target="text"
-				5. Saḷā yatanavaggo" action="cscd/s0203m.mul4.xml" target="text"
+				s0203m.mul0 1. Devadahavaggo
+				s0203m.mul1 2. Anupadavaggo
+				s0203m.mul2 3. Suññatavaggo
+				s0203m.mul3 4. Vibhaṅgavaggo
+				s0203m.mul4 5. Saḷā yatanavaggo
 		03. Saṃyuttanikāya  相應部
 			01. Sagāthāvaggapāḷi    有偈品
-				1. Devatā saṃyuttaṃ" action="cscd/s0301m.mul0.xml" target="text" 諸天相應
-				2. Devaputtasaṃyuttaṃ" action="cscd/s0301m.mul1.xml" target="text" 天子相應
-				3. Kosalasaṃyuttaṃ" action="cscd/s0301m.mul2.xml" target="text" 拘薩羅相應
-				4. Mā rasaṃyuttaṃ" action="cscd/s0301m.mul3.xml" target="text" 惡魔相應
-				5. Bhikkhunī saṃyuttaṃ" action="cscd/s0301m.mul4.xml" target="text" 比丘尼相應
-				6. Brahmasaṃyuttaṃ" action="cscd/s0301m.mul5.xml" target="text" 梵天相應
-				7. Brā hmaṇasaṃyuttaṃ" action="cscd/s0301m.mul6.xml" target="text" 婆羅門相應
-				8. Vaṅgī sasaṃyuttaṃ" action="cscd/s0301m.mul7.xml" target="text" 婆耆沙長老相應
-				9. Vanasaṃyuttaṃ" action="cscd/s0301m.mul8.xml" target="text" 森林相應
-				10. Yakkhasaṃyuttaṃ" action="cscd/s0301m.mul9.xml" target="text" 夜叉相應
-				11. Sakkasaṃyuttaṃ" action="cscd/s0301m.mul10.xml" target="text" 帝釋相應
+				s0301m.mul0 1. Devatā saṃyuttaṃ 諸天相應
+				s0301m.mul1 2. Devaputtasaṃyuttaṃ 天子相應
+				s0301m.mul2 3. Kosalasaṃyuttaṃ 拘薩羅相應
+				s0301m.mul3 4. Mā rasaṃyuttaṃ 惡魔相應
+				s0301m.mul4 5. Bhikkhunī saṃyuttaṃ 比丘尼相應
+				s0301m.mul5 6. Brahmasaṃyuttaṃ 梵天相應
+				s0301m.mul6 7. Brā hmaṇasaṃyuttaṃ 婆羅門相應
+				s0301m.mul7 8. Vaṅgī sasaṃyuttaṃ 婆耆沙長老相應
+				s0301m.mul8 9. Vanasaṃyuttaṃ 森林相應
+				s0301m.mul9 10. Yakkhasaṃyuttaṃ 夜叉相應
+				s0301m.mul10 11. Sakkasaṃyuttaṃ 帝釋相應
 			02. Nidānavaggapāḷi  因緣品
-				1. Nidā nasaṃyuttaṃ" action="cscd/s0302m.mul0.xml" target="text" 因緣相應
-				2. Abhisamayasaṃyuttaṃ" action="cscd/s0302m.mul1.xml" target="text" 現觀相應
-				3. Dhā tusaṃyuttaṃ" action="cscd/s0302m.mul2.xml" target="text" 界相應
-				4. Anamataggasaṃyuttaṃ" action="cscd/s0302m.mul3.xml" target="text" 無始相應
-				5. Kassapasaṃyuttaṃ" action="cscd/s0302m.mul4.xml" target="text" 迦葉相應
-				6. Lā bhasakkā rasaṃyuttaṃ" action="cscd/s0302m.mul5.xml" target="text" 利得與供養相應
-				7. Rā hulasaṃyuttaṃ" action="cscd/s0302m.mul6.xml" target="text" 羅睺羅相應
-				8. Lakkhaṇasaṃyuttaṃ" action="cscd/s0302m.mul7.xml" target="text" 勒叉那相應
-				9. Opammasaṃyuttaṃ" action="cscd/s0302m.mul8.xml" target="text" 譬喻相應
-				10. Bhikkhusaṃyuttaṃ" action="cscd/s0302m.mul9.xml" target="text" 比丘相應
+				s0302m.mul0 1. Nidā nasaṃyuttaṃ 因緣相應
+				s0302m.mul1 2. Abhisamayasaṃyuttaṃ 現觀相應
+				s0302m.mul2 3. Dhā tusaṃyuttaṃ 界相應
+				s0302m.mul3 4. Anamataggasaṃyuttaṃ 無始相應
+				s0302m.mul4 5. Kassapasaṃyuttaṃ 迦葉相應
+				s0302m.mul5 6. Lā bhasakkā rasaṃyuttaṃ 利得與供養相應
+				s0302m.mul6 7. Rā hulasaṃyuttaṃ 羅睺羅相應
+				s0302m.mul7 8. Lakkhaṇasaṃyuttaṃ 勒叉那相應
+				s0302m.mul8 9. Opammasaṃyuttaṃ 譬喻相應
+				s0302m.mul9 10. Bhikkhusaṃyuttaṃ 比丘相應
 			03. Khandhavaggapāḷi  諸藴品
-				1. Khandhasaṃyuttaṃ" action="cscd/s0303m.mul0.xml" target="text" 蘊相應
-				2. Rā dhasaṃyuttaṃ" action="cscd/s0303m.mul1.xml" target="text" 羅陀相應
-				3. Diṭṭhisaṃyuttaṃ" action="cscd/s0303m.mul2.xml" target="text" 見相應
-				4. Okkantasaṃyuttaṃ" action="cscd/s0303m.mul3.xml" target="text" 入相應
-				5. Uppā dasaṃyuttaṃ" action="cscd/s0303m.mul4.xml" target="text" 生相應
-				6. Kilesasaṃyuttaṃ" action="cscd/s0303m.mul5.xml" target="text" 煩惱相應
-				7. Sā riputtasaṃyuttaṃ" action="cscd/s0303m.mul6.xml" target="text" 舍利弗相應
-				8. Nā gasaṃyuttaṃ" action="cscd/s0303m.mul7.xml" target="text" 龍相應
-				9. Supaṇṇasaṃyuttaṃ" action="cscd/s0303m.mul8.xml" target="text" 金翅鳥相應
-				10. Gandhabbakā yasaṃyuttaṃ" action="cscd/s0303m.mul9.xml" target="text" 乾達婆相應
-				11. Valā hakasaṃyuttaṃ" action="cscd/s0303m.mul10.xml" target="text" 雲相應
-				12. Vacchagottasaṃyuttaṃ" action="cscd/s0303m.mul11.xml" target="text" 婆蹉種相應
-				13. Jhā nasaṃyuttaṃ" action="cscd/s0303m.mul12.xml" target="text" 禪定相應
+				s0303m.mul0 1. Khandhasaṃyuttaṃ 蘊相應
+				s0303m.mul1 2. Rā dhasaṃyuttaṃ 羅陀相應
+				s0303m.mul2 3. Diṭṭhisaṃyuttaṃ 見相應
+				s0303m.mul3 4. Okkantasaṃyuttaṃ 入相應
+				s0303m.mul4 5. Uppā dasaṃyuttaṃ 生相應
+				s0303m.mul5 6. Kilesasaṃyuttaṃ 煩惱相應
+				s0303m.mul6 7. Sā riputtasaṃyuttaṃ 舍利弗相應
+				s0303m.mul7 8. Nā gasaṃyuttaṃ 龍相應
+				s0303m.mul8 9. Supaṇṇasaṃyuttaṃ 金翅鳥相應
+				s0303m.mul9 10. Gandhabbakā yasaṃyuttaṃ 乾達婆相應
+				s0303m.mul10 11. Valā hakasaṃyuttaṃ 雲相應
+				s0303m.mul11 12. Vacchagottasaṃyuttaṃ 婆蹉種相應
+				s0303m.mul12 13. Jhā nasaṃyuttaṃ 禪定相應
 			04. Saḷāyatanavaggapāḷi    六處品
-				1. Saḷā yatanasaṃyuttaṃ" action="cscd/s0304m.mul0.xml" target="text" 六處相應
-				2. Vedanā saṃyuttaṃ" action="cscd/s0304m.mul1.xml" target="text" 受相應
-				3. Mā tugā masaṃyuttaṃ" action="cscd/s0304m.mul2.xml" target="text" 女人相應
-				4. Jambukhā dakasaṃyuttaṃ" action="cscd/s0304m.mul3.xml" target="text" 閻浮車相應
-				5. Sā maṇḍakasaṃyuttaṃ" action="cscd/s0304m.mul4.xml" target="text" 沙門出家相應
-				6. Moggallā nasaṃyuttaṃ" action="cscd/s0304m.mul5.xml" target="text" 目犍連相應
-				7. Cittasaṃyuttaṃ" action="cscd/s0304m.mul6.xml" target="text" 質多相應
-				8. Gā maṇisaṃyuttaṃ" action="cscd/s0304m.mul7.xml" target="text" 聚落主相應
-				9. Asaṅkhatasaṃyuttaṃ" action="cscd/s0304m.mul8.xml" target="text" 無為相應
-				10. Abyā katasaṃyuttaṃ" action="cscd/s0304m.mul9.xml" target="text" 無記說相應
+				s0304m.mul0 1. Saḷā yatanasaṃyuttaṃ 六處相應
+				s0304m.mul1 2. Vedanā saṃyuttaṃ 受相應
+				s0304m.mul2 3. Mā tugā masaṃyuttaṃ 女人相應
+				s0304m.mul3 4. Jambukhā dakasaṃyuttaṃ 閻浮車相應
+				s0304m.mul4 5. Sā maṇḍakasaṃyuttaṃ 沙門出家相應
+				s0304m.mul5 6. Moggallā nasaṃyuttaṃ 目犍連相應
+				s0304m.mul6 7. Cittasaṃyuttaṃ 質多相應
+				s0304m.mul7 8. Gā maṇisaṃyuttaṃ 聚落主相應
+				s0304m.mul8 9. Asaṅkhatasaṃyuttaṃ 無為相應
+				s0304m.mul9 10. Abyā katasaṃyuttaṃ 無記說相應
 			05. Mahāvaggapāḷi  大品
-				1. Maggasaṃyuttaṃ" action="cscd/s0305m.mul0.xml" target="text" 道相應
-				2. Bojjhaṅgasaṃyuttaṃ" action="cscd/s0305m.mul1.xml" target="text" 覺支相應
-				3. Satipaṭṭhā nasaṃyuttaṃ" action="cscd/s0305m.mul2.xml" target="text" 念處相應
-				4. Indriyasaṃyuttaṃ" action="cscd/s0305m.mul3.xml" target="text" 根相應
-				5. Sammappadhā nasaṃyuttaṃ" action="cscd/s0305m.mul4.xml" target="text" 正勤相應
-				6. Balasaṃyuttaṃ" action="cscd/s0305m.mul5.xml" target="text" 力相應
-				7. Iddhipā dasaṃyuttaṃ" action="cscd/s0305m.mul6.xml" target="text" 神足相應
-				8. Anuruddhasaṃyuttaṃ" action="cscd/s0305m.mul7.xml" target="text" 阿那律相應
-				9. Jhā nasaṃyuttaṃ" action="cscd/s0305m.mul8.xml" target="text" 靜慮相應
-				10. Ānā pā nasaṃyuttaṃ" action="cscd/s0305m.mul9.xml" target="text" 入出息相應
-				11. Sotā pattisaṃyuttaṃ" action="cscd/s0305m.mul10.xml" target="text" 預流相應
-				12. Saccasaṃyuttaṃ" action="cscd/s0305m.mul11.xml" target="text" 諦相應
+				s0305m.mul0 1. Maggasaṃyuttaṃ 道相應
+				s0305m.mul1 2. Bojjhaṅgasaṃyuttaṃ 覺支相應
+				s0305m.mul2 3. Satipaṭṭhā nasaṃyuttaṃ 念處相應
+				s0305m.mul3 4. Indriyasaṃyuttaṃ 根相應
+				s0305m.mul4 5. Sammappadhā nasaṃyuttaṃ 正勤相應
+				s0305m.mul5 6. Balasaṃyuttaṃ 力相應
+				s0305m.mul6 7. Iddhipā dasaṃyuttaṃ 神足相應
+				s0305m.mul7 8. Anuruddhasaṃyuttaṃ 阿那律相應
+				s0305m.mul8 9. Jhā nasaṃyuttaṃ 靜慮相應
+				s0305m.mul9 10. Ānā pā nasaṃyuttaṃ 入出息相應
+				s0305m.mul10 11. Sotā pattisaṃyuttaṃ 預流相應
+				s0305m.mul11 12. Saccasaṃyuttaṃ 諦相應
 		04. Aṅguttaranikāya  增支部
 			01. s0401m Ekakanipātapāḷi 一集
-				1. Rū pā divaggo" action="cscd/s0401m.mul0.xml" target="text"
-				2. Nī varaṇappahā navaggo" action="cscd/s0401m.mul1.xml" target="text"
-				3. Akammaniyavaggo" action="cscd/s0401m.mul2.xml" target="text"
-				4. Adantavaggo" action="cscd/s0401m.mul3.xml" target="text"
-				5. Paṇihitaacchavaggo" action="cscd/s0401m.mul4.xml" target="text"
-				6. Accharā saṅghā tavaggo" action="cscd/s0401m.mul5.xml" target="text"
-				7. Vī riyā rambhā divaggo" action="cscd/s0401m.mul6.xml" target="text"
-				8. Kalyā ṇamittā divaggo" action="cscd/s0401m.mul7.xml" target="text"
-				9. Pamā dā divaggo" action="cscd/s0401m.mul8.xml" target="text"
-				10. Dutiyapamā dā divaggo" action="cscd/s0401m.mul9.xml" target="text"
-				11. Adhammavaggo" action="cscd/s0401m.mul10.xml" target="text"
-				12. Anā pattivaggo" action="cscd/s0401m.mul11.xml" target="text"
-				13. Ekapuggalavaggo" action="cscd/s0401m.mul12.xml" target="text"
-				14. Etadaggavaggo" action="cscd/s0401m.mul13.xml" target="text"
-				15. Aṭṭhā napā ḷi" action="cscd/s0401m.mul14.xml" target="text"
-				16. Ekadhammapā ḷi" action="cscd/s0401m.mul15.xml" target="text"
-				17. Pasā dakaradhammavaggo" action="cscd/s0401m.mul16.xml" target="text"
-				18. Aparaaccharā saṅghā tavaggo" action="cscd/s0401m.mul17.xml" target="text"
-				19. Kā yagatā sativaggo" action="cscd/s0401m.mul18.xml" target="text"
-				20. Amatavaggo" action="cscd/s0401m.mul19.xml" target="text"
+				s0401m.mul0 1. Rū pā divaggo" action="cscd/s0401m.mul0.xml" target="text"
+				s0401m.mul1 2. Nī varaṇappahā navaggo" action="cscd/s0401m.mul1.xml" target="text"
+				s0401m.mul2 3. Akammaniyavaggo" action="cscd/s0401m.mul2.xml" target="text"
+				s0401m.mul3 4. Adantavaggo" action="cscd/s0401m.mul3.xml" target="text"
+				s0401m.mul4 5. Paṇihitaacchavaggo" action="cscd/s0401m.mul4.xml" target="text"
+				s0401m.mul5 6. Accharā saṅghā tavaggo" action="cscd/s0401m.mul5.xml" target="text"
+				s0401m.mul6 7. Vī riyā rambhā divaggo" action="cscd/s0401m.mul6.xml" target="text"
+				s0401m.mul7 8. Kalyā ṇamittā divaggo" action="cscd/s0401m.mul7.xml" target="text"
+				s0401m.mul8 9. Pamā dā divaggo" action="cscd/s0401m.mul8.xml" target="text"
+				s0401m.mul9 10. Dutiyapamā dā divaggo" action="cscd/s0401m.mul9.xml" target="text"
+				s0401m.mul10 11. Adhammavaggo" action="cscd/s0401m.mul10.xml" target="text"
+				s0401m.mul11 12. Anā pattivaggo" action="cscd/s0401m.mul11.xml" target="text"
+				s0401m.mul12 13. Ekapuggalavaggo" action="cscd/s0401m.mul12.xml" target="text"
+				s0401m.mul13 14. Etadaggavaggo" action="cscd/s0401m.mul13.xml" target="text"
+				s0401m.mul14 15. Aṭṭhā napā ḷi" action="cscd/s0401m.mul14.xml" target="text"
+				s0401m.mul15 16. Ekadhammapā ḷi
+				s0401m.mul16 17. Pasā dakaradhammavaggo
+				s0401m.mul17 18. Aparaaccharā saṅghā tavaggo
+				s0401m.mul18 19. Kā yagatā sativaggo
+				s0401m.mul19 20. Amatavaggo
 			02. s0402m1 Dukanipātapāḷi 二集
-				1. Kammakaraṇavaggo" action="cscd/s0402m1.mul0.xml" target="text"
-				2. Adhikaraṇavaggo" action="cscd/s0402m1.mul1.xml" target="text"
-				3. Bā lavaggo" action="cscd/s0402m1.mul2.xml" target="text"
-				4. Samacittavaggo" action="cscd/s0402m1.mul3.xml" target="text"
-				5. Parisavaggo" action="cscd/s0402m1.mul4.xml" target="text"
-				(6) 1. Puggalavaggo" action="cscd/s0402m1.mul5.xml" target="text"
-				(7) 2. Sukhavaggo" action="cscd/s0402m1.mul6.xml" target="text"
-				(8) 3. Sanimittavaggo" action="cscd/s0402m1.mul7.xml" target="text"
-				(9) 4. Dhammavaggo" action="cscd/s0402m1.mul8.xml" target="text"
-				(10) 5. Bā lavaggo" action="cscd/s0402m1.mul9.xml" target="text"
-				(11) 1. Āsā duppajahavaggo" action="cscd/s0402m1.mul10.xml" target="text"
-				(12) 2. Āyā canavaggo" action="cscd/s0402m1.mul11.xml" target="text"
-				(13) 3. Dā navaggo" action="cscd/s0402m1.mul12.xml" target="text"
-				(14) 4. Santhā ravaggo" action="cscd/s0402m1.mul13.xml" target="text"
-				(15) 5. Samā pattivaggo" action="cscd/s0402m1.mul14.xml" target="text"
-				1. Kodhapeyyā laṃ" action="cscd/s0402m1.mul15.xml" target="text"
-				2. Akusalapeyyā laṃ" action="cscd/s0402m1.mul16.xml" target="text"
-				3. Vinayapeyyā laṃ" action="cscd/s0402m1.mul17.xml" target="text"
-				4. Rā gapeyyā laṃ" action="cscd/s0402m1.mul18.xml" target="text"
+				s0402m1.mul0 1. Kammakaraṇavaggo
+				s0402m1.mul1 2. Adhikaraṇavaggo
+				s0402m1.mul2 3. Bā lavaggo
+				s0402m1.mul3 4. Samacittavaggo
+				s0402m1.mul4 5. Parisavaggo
+				s0402m1.mul5 (6) 1. Puggalavaggo
+				s0402m1.mul6 (7) 2. Sukhavaggo
+				s0402m1.mul7 (8) 3. Sanimittavaggo
+				s0402m1.mul8 (9) 4. Dhammavaggo
+				s0402m1.mul9 (10) 5. Bā lavaggo
+				s0402m1.mul10 (11) 1. Āsā duppajahavaggo
+				s0402m1.mul11 (12) 2. Āyā canavaggo
+				s0402m1.mul12 (13) 3. Dā navaggo
+				s0402m1.mul13 (14) 4. Santhā ravaggo
+				s0402m1.mul14 (15) 5. Samā pattivaggo
+				s0402m1.mul15 1. Kodhapeyyā laṃ
+				s0402m1.mul16 2. Akusalapeyyā laṃ
+				s0402m1.mul17 3. Vinayapeyyā laṃ
+				s0402m1.mul18 4. Rā gapeyyā laṃ
 			03. s0402m2 Tikanipātapāḷi 三集
-				1. Bā lavaggo" action="cscd/s0402m2.mul0.xml" target="text"
-				2. Rathakā ravaggo" action="cscd/s0402m2.mul1.xml" target="text"
-				3. Puggalavaggo" action="cscd/s0402m2.mul2.xml" target="text"
-				4. Devadū tavaggo" action="cscd/s0402m2.mul3.xml" target="text"
-				5. Cū ḷavaggo" action="cscd/s0402m2.mul4.xml" target="text"
-				(6) 1. Brā hmaṇavaggo" action="cscd/s0402m2.mul5.xml" target="text"
-				(7) 2. Mahā vaggo" action="cscd/s0402m2.mul6.xml" target="text"
-				(8) 3. Ānandavaggo" action="cscd/s0402m2.mul7.xml" target="text"
-				(9) 4. Samaṇavaggo" action="cscd/s0402m2.mul8.xml" target="text"
-				(10) 5. Loṇakapallavaggo" action="cscd/s0402m2.mul9.xml" target="text"
-				(11) 1. Sambodhavaggo" action="cscd/s0402m2.mul10.xml" target="text"
-				(12) 2. Āpā yikavaggo" action="cscd/s0402m2.mul11.xml" target="text"
-				(13) 3. Kusinā ravaggo" action="cscd/s0402m2.mul12.xml" target="text"
-				(14) 4. Yodhā jī vavaggo" action="cscd/s0402m2.mul13.xml" target="text"
-				(15) 5. Maṅgalavaggo" action="cscd/s0402m2.mul14.xml" target="text"
-				(16) 6. Acelakavaggo" action="cscd/s0402m2.mul15.xml" target="text"
-				(17) 7. Kammapathapeyyā laṃ" action="cscd/s0402m2.mul16.xml" target="text"
-				(18) 8. Rā gapeyyā laṃ" action="cscd/s0402m2.mul17.xml" target="text"
+				s0402m2.mul0 1. Bā lavaggo
+				s0402m2.mul1 2. Rathakā ravaggo
+				s0402m2.mul2 3. Puggalavaggo
+				s0402m2.mul3 4. Devadū tavaggo
+				s0402m2.mul4 5. Cū ḷavaggo
+				s0402m2.mul5 (6) 1. Brā hmaṇavaggo
+				s0402m2.mul6 (7) 2. Mahā vaggo
+				s0402m2.mul7 (8) 3. Ānandavaggo
+				s0402m2.mul8 (9) 4. Samaṇavaggo
+				s0402m2.mul9 (10) 5. Loṇakapallavaggo
+				s0402m2.mul10 (11) 1. Sambodhavaggo
+				s0402m2.mul11 (12) 2. Āpā yikavaggo
+				s0402m2.mul12 (13) 3. Kusinā ravaggo
+				s0402m2.mul13 (14) 4. Yodhā jī vavaggo
+				s0402m2.mul14 (15) 5. Maṅgalavaggo
+				s0402m2.mul15 (16) 6. Acelakavaggo
+				s0402m2.mul16 (17) 7. Kammapathapeyyā laṃ
+				s0402m2.mul17 (18) 8. Rā gapeyyā laṃ
 			04. s0402m3 Catukkanipātapāḷi 四集
 				1. Bhaṇḍagā mavaggo" action="cscd/s0402m3.mul0.xml" target="text"
 				2. Caravaggo" action="cscd/s0402m3.mul1.xml" target="text"
