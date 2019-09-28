@@ -652,19 +652,176 @@
 				s0520m.nrf6 7. Hā rasampā tabhū mi
 				s0520m.nrf7 8. Suttavebhaṅgiyaṃ
 	03. Abhidhammapiṭaka 阿毘達摩藏
-		01. abh01m.mul.toc.xml" text="Dhammasaṅgaṇīpāḷi  法集論
-		02. abh02m.mul.toc.xml" text="Vibhaṅgapāḷi  分別論
-		03. abh03m1.mul.toc.xml" text="Dhātukathāpāḷi  界論
-		04. abh03m2.mul.toc.xml" text="Puggalapaññattipāḷi  人施設論
-		05. abh03m3.mul.toc.xml" text="Kathāvatthupāḷi  論事
-		06.1 abh03m4.mul.toc.xml" text="Yamakapāḷi-1  雙論
-		06.2 abh03m5.mul.toc.xml" text="Yamakapāḷi-2
-		06.3 abh03m6.mul.toc.xml" text="Yamakapāḷi-3
-		07.1. abh03m7.mul.toc.xml" text="Paṭṭhānapāḷi-1  發趣論
-		07.2. abh03m8.mul.toc.xml" text="Paṭṭhānapāḷi-2
-		07.3. abh03m9.mul.toc.xml" text="Paṭṭhānapāḷi-3
-		07.4. abh03m10.mul.toc.xml" text="Paṭṭhānapāḷi-4
+		01. abh01m.mul Dhammasaṅgaṇīpāḷi  法集論
+			abh01m.mul0 Mā tikā
+			abh01m.mul1 1. Cittuppā dakaṇḍaṃ
+			abh01m.mul2 2. Rū pakaṇḍaṃ
+			abh01m.mul3 3. Nikkhepakaṇḍaṃ
+			abh01m.mul4 4. Aṭṭhakathā kaṇḍaṃ
+		02. abh02m.mul Vibhaṅgapāḷi  分別論
+			abh02m.mul0 1. Khandhavibhaṅgo
+			abh02m.mul1 2. Āyatanavibhaṅgo
+			abh02m.mul2 3. Dhā tuvibhaṅgo
+			abh02m.mul3 4. Saccavibhaṅgo
+			abh02m.mul4 5. Indriyavibhaṅgo
+			abh02m.mul5 6. Paṭiccasamuppā davibhaṅgo
+			abh02m.mul6 7. Satipaṭṭhā navibhaṅgo
+			abh02m.mul7 8. Sammappadhā navibhaṅgo
+			abh02m.mul8 9. Iddhipā davibhaṅgo
+			abh02m.mul9 10. Bojjhaṅgavibhaṅgo
+			abh02m.mul10 11. Maggaṅgavibhaṅgo
+			abh02m.mul11 12. Jhā navibhaṅgo
+			abh02m.mul12 13. Appamaññā vibhaṅgo
+			abh02m.mul13 14. Sikkhā padavibhaṅgo
+			abh02m.mul14 15. Paṭisambhidā vibhaṅgo
+			abh02m.mul15 16. Ñā ṇavibhaṅgo
+			abh02m.mul16 17. Khuddakavatthuvibhaṅgo
+			abh02m.mul17 18. Dhammahadayavibhaṅgo
+		03. abh03m1.mul Dhātukathāpāḷi  界論
+			abh03m1.mul0 Uddeso
+			abh03m1.mul1 1. Paṭhamanayo
+			abh03m1.mul2 2. Dutiyanayo
+			abh03m1.mul3 3. Tatiyanayo
+			abh03m1.mul4 4. Catutthanayo
+			abh03m1.mul5 5. Pañcamanayo
+			abh03m1.mul6 6. Chaṭṭhanayo
+			abh03m1.mul7 7. Sattamanayo
+			abh03m1.mul8 8. Aṭṭhamanayo
+			abh03m1.mul9 9. Navamanayo
+			abh03m1.mul10 10. Dasamanayo
+			abh03m1.mul11 11. Ekā dasamanayo
+			abh03m1.mul12 12. Dvā dasamanayo
+			abh03m1.mul13 13. Terasamanayo
+			abh03m1.mul14 14. Cuddasamanayo
+		04. abh03m2.mul Puggalapaññattipāḷi  人施設論
+			abh03m2.mul0 Mā tikā
+			abh03m2.mul1 Niddeso
+		05. abh03m3.mul Kathāvatthupāḷi  論事
+			abh03m3.mul0 1. Puggalakathā
+			abh03m3.mul1 2. Parihā nikathā
+			abh03m3.mul2 3. Brahmacariyakathā
+			abh03m3.mul3 4. Jahatikathā
+			abh03m3.mul4 5. Sabbamatthī tikathā
+			abh03m3.mul5 6. Atī takkhandhā dikathā
+			abh03m3.mul6 7. Ekaccaṃ atthī tikathā
+			abh03m3.mul7 8. Satipaṭṭhā nakathā
+			abh03m3.mul8 9. Hevatthikathā
+			abh03m3.mul9 2. Dutiyavaggo
+			abh03m3.mul10 3. Tatiyavaggo
+			abh03m3.mul11 4. Catutthavaggo
+			abh03m3.mul12 5. Pañcamavaggo
+			abh03m3.mul13 6. Chaṭṭhavaggo
+			abh03m3.mul14 7. Sattamavaggo
+			abh03m3.mul15 8. Aṭṭhamavaggo
+			abh03m3.mul16 9. Navamavaggo
+			abh03m3.mul17 10. Dasamavaggo
+			abh03m3.mul18 11. Ekā dasamavaggo
+			abh03m3.mul19 12. Dvā dasamavaggo
+			abh03m3.mul20 13. Terasamavaggo
+			abh03m3.mul21 14. Cuddasamavaggo
+			abh03m3.mul22 15. Pannarasamavaggo
+			abh03m3.mul23 16. Soḷasamavaggo
+			abh03m3.mul24 17. Sattarasamavaggo
+			abh03m3.mul25 18. Aṭṭhā rasamavaggo
+			abh03m3.mul26 19. Ekū navī satimavaggo
+			abh03m3.mul27 20. Vī satimavaggo
+			abh03m3.mul28 21. Ekavī satimavaggo
+			abh03m3.mul29 22. Bā vī satimavaggo
+			abh03m3.mul30 23. Tevī satimavaggo
+		06.1 abh03m4.mul Yamakapāḷi-1  雙論
+			abh03m4.mul0 1. Mū layamakaṃ
+			abh03m4.mul1 2. Khandhayamakaṃ
+			abh03m4.mul2 3. Āyatanayamakaṃ
+			abh03m4.mul3 4. Dhā tuyamakaṃ
+			abh03m4.mul4 5. Saccayamakaṃ
+		06.2 abh03m5.mul Yamakapāḷi-2
+			abh03m5.mul0 6. Saṅkhā rayamakaṃ
+			abh03m5.mul1 7. Anusayayamakaṃ
+			abh03m5.mul2 8. Cittayamakaṃ
+		06.3 abh03m6.mul Yamakapāḷi-3
+			abh03m6.mul0 9. Dhammayamakaṃ
+			abh03m6.mul1 10. Indriyayamakaṃ
+		07.1. abh03m7.mul Paṭṭhānapāḷi-1  發趣論
+			abh03m7.mul0 (1) Paccayuddeso
+			abh03m7.mul1 (2) Paccayaniddeso
+			abh03m7.mul2 3. Pucchā vā ro
+			abh03m7.mul3 1. Kusalattikaṃ
+			abh03m7.mul4 2. Vedanā ttikaṃ
+			abh03m7.mul5 3. Vipā kattikaṃ
+			abh03m7.mul6 4. Upā dinnattikaṃ
+			abh03m7.mul7 5. Saṃkiliṭṭhattikaṃ
+		07.2. abh03m8.mul Paṭṭhānapāḷi-2
+			abh03m8.mul0 6. Vitakkattikaṃ
+			abh03m8.mul1 7. Pī tittikaṃ
+			abh03m8.mul2 8. Dassanenapahā tabbattikaṃ
+			abh03m8.mul3 9. Dassanenapahā tabbahetukattikaṃ
+			abh03m8.mul4 10. Ācayagā mittikaṃ
+			abh03m8.mul5 11. Sekkhattikaṃ
+			abh03m8.mul6 12. Parittattikaṃ
+			abh03m8.mul7 13. Parittā rammaṇattikaṃ
+			abh03m8.mul8 14. Hī nattikaṃ
+			abh03m8.mul9 15. Micchattaniyatattikaṃ
+			abh03m8.mul10 16. Maggā rammaṇattikaṃ
+			abh03m8.mul11 17. Uppannattikaṃ
+			abh03m8.mul12 18. Atī tattikaṃ
+			abh03m8.mul13 19. Atī tā rammaṇattikaṃ
+			abh03m8.mul14 20. Ajjhattattikaṃ
+			abh03m8.mul15 21. Ajjhattā rammaṇattikaṃ
+			abh03m8.mul16 22. Sanidassanasappaṭighattikaṃ
+		07.3. abh03m9.mul Paṭṭhānapāḷi-3
+			abh03m9.mul0 1. Hetugocchakaṃ
+			abh03m9.mul1 2. Cū ḷantaradukaṃ
+			abh03m9.mul2 3. Āsavagocchakaṃ
+			abh03m9.mul3 4. Saññojanagocchakaṃ
+			abh03m9.mul4 5. Ganthagocchakaṃ
+			abh03m9.mul5 6-7. Oghayogagocchakaṃ
+			abh03m9.mul6 8. Nī varaṇagocchakaṃ
+			abh03m9.mul7 9. Parā mā sagocchakaṃ
+			abh03m9.mul8 10. Mahantaradukaṃ
+			abh03m9.mul9 11. Upā dā nagocchakaṃ
+		07.4. abh03m10.mul Paṭṭhānapāḷi-4
+			abh03m10.mul0 12. Kilesagocchakaṃ
+			abh03m10.mul1 1-1 Hetuduka-kusalattikaṃ
+			abh03m10.mul2 2-1. Sahetukaduka-kusalattikaṃ
+			abh03m10.mul3 7-1. Sappaccayaduka-kusalattikaṃ
+			abh03m10.mul4 14-1. Āsavaduka-kusalattikaṃ
+			abh03m10.mul5 20-1. Saññojanaduka-kusalattikaṃ
+			abh03m10.mul6 26-1. Ganthaduka-kusalattikaṃ
+			abh03m10.mul7 44-1. Nī varaṇaduka-kusalattikaṃ
+			abh03m10.mul8 50-1. Parā mā saduka-kusalattikaṃ
+			abh03m10.mul9 55-1. Sā rammaṇaduka-kusalattikaṃ
+			abh03m10.mul10 69-1. Upā dā naduka-kusalattikaṃ
+			abh03m10.mul11 75-1. Kilesaduka-kusalattikaṃ
+			abh03m10.mul12 83-1. Dassanenapahā tabbaduka-kusalattikaṃ
+			abh03m10.mul13 100-2. Saraṇaduka-vedanā ttikaṃ
+			abh03m10.mul14 1-1. Kusalattika-hetudukaṃ
+			abh03m10.mul15 1-7. Kusalattika-sappaccayadukaṃ
+			abh03m10.mul16 1-14. Kusalattika-ā savadukaṃ
+			abh03m10.mul17 1-55. Kusalattika-sā rammaṇadukaṃ
+			abh03m10.mul18 1-75. Kusalattika-kilesadukaṃ
+			abh03m10.mul19 1-83. Kusalattika-dassanenapahā tabbadukaṃ
+			abh03m10.mul20 1-99. Kusalattika-sauttaradukaṃ
 		07.5. abh03m11.mul.toc.xml" text="Paṭṭhānapāḷi-5
+			abh03m11.mul0 Dhammā nulome tikatikapaṭṭhā naṃ
+			abh03m11.mul1 Dhammā nulome dukadukapaṭṭhā naṃ
+			abh03m11.mul2 Dhammapaccanī ye tikapaṭṭhā naṃ
+			abh03m11.mul3 Dhammapaccanī ye dukapaṭṭhā naṃ
+			abh03m11.mul4 Dhammapaccanī ye dukatikapaṭṭhā naṃ
+			abh03m11.mul5 Dhammapaccanī ye tikadukapaṭṭhā naṃ
+			abh03m11.mul6 Dhammapaccanī ye tikatikapaṭṭhā naṃ
+			abh03m11.mul7 Dhammapaccanī ye dukadukapaṭṭhā naṃ
+			abh03m11.mul8 Dhammā nulomapaccanī ye tikapaṭṭhā naṃ
+			abh03m11.mul9 Dhammā nulomapaccanī ye dukapaṭṭhā naṃ
+			abh03m11.mul10 Dhammā nulomapaccanī ye dukatikapaṭṭhā naṃ
+			abh03m11.mul11 Dhammā nulomapaccanī ye tikadukapaṭṭhā naṃ
+			abh03m11.mul12 Dhammā nulomapaccanī ye tikatikapaṭṭhā naṃ
+			abh03m11.mul13 Dhammā nulomapaccanī ye dukadukapaṭṭhā naṃ
+			abh03m11.mul14 Dhammapaccanī yā nulome tikapaṭṭhā naṃ
+			abh03m11.mul15 Dhammapaccanī yā nulome dukapaṭṭhā naṃ
+			abh03m11.mul16 Dhammapaccanī yā nulome dukatikapaṭṭhā naṃ
+			abh03m11.mul17 Dhammapaccanī yā nulome tikadukapaṭṭhā naṃ
+			abh03m11.mul18 Dhammapaccanī yā nulome tikatikapaṭṭhā naṃ
+			abh03m11.mul19 Dhammapaccanī yā nulome dukadukapaṭṭhā naṃ
 02. Aṭṭhakathā 義註
 	Vinayapiṭaka (aṭṭhakathā)
 		src="./cscd/vin01a.att.toc.xml" text="Pārājikakaṇḍa-aṭṭhakathā"
