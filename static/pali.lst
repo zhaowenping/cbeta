@@ -822,7 +822,13 @@
 			abh03m11.mul19 Dhammapaccanī yā nulome dukadukapaṭṭhā naṃ
 02. Aṭṭhakathā 義註
 	Vinayapiṭaka (aṭṭhakathā)
-		src="./cscd/vin01a.att.toc.xml" text="Pārājikakaṇḍa-aṭṭhakathā"
+		vin01a.att Pārājikakaṇḍa-aṭṭhakathā
+			atthakatha/vin01a.att0 Ganthā rambhakathā
+			atthakatha/vin01a.att1 Verañjakaṇḍavaṇṇanā
+			atthakatha/vin01a.att2 1. Pā rā jikakaṇḍaṃ
+			atthakatha/vin01a.att3 2. Saṅghā disesakaṇḍaṃ
+			atthakatha/vin01a.att4 3. Aniyatakaṇḍaṃ
+			atthakatha/vin01a.att5 4. Nissaggiyakaṇḍaṃ
 		src="./cscd/vin02a1.att.toc.xml" text="Pācittiya-aṭṭhakathā"
 		src="./cscd/vin02a2.att.toc.xml" text="Mahāvagga-aṭṭhakathā"
 		src="./cscd/vin02a3.att.toc.xml" text="Cūḷavagga-aṭṭhakathā"
@@ -928,11 +934,94 @@
 		src="./cscd/abh09t.nrf.toc.xml" text="Abhidhammamātikāpāḷi"
 04. Anya  複複註
 	Visuddhimagga 清淨道論
-		src="./cscd/e0101n.mul.toc.xml" text="Visuddhimagga-1"
-		src="./cscd/e0102n.mul.toc.xml" text="Visuddhimagga-2"
-		src="./cscd/e0103n.att.toc.xml" text="Visuddhimagga-mahāṭīkā-1"
-		src="./cscd/e0104n.att.toc.xml" text="Visuddhimagga-mahāṭīkā-2"
-		src="./cscd/e0105n.nrf.toc.xml" text="Visuddhimagga nidānakathā"
+		e0101n.mul Visuddhimagga
+			anya/e0101n.mul0 Nidā nā dikathā 序論
+			anya/e0101n.mul1 1. Sī laniddeso 第一說戒品
+			anya/e0101n.mul2 2. Dhutaṅganiddeso 第二說頭陀支品
+			anya/e0101n.mul3 3. Kammaṭṭhā naggahaṇaniddeso 第三說取業處品
+			anya/e0101n.mul4 4. Pathavī kasiṇaniddeso 第四說地遍品
+			anya/e0101n.mul5 5. Sesakasiṇaniddeso 第五說餘遍品
+			anya/e0101n.mul6 6. Asubhakammaṭṭhā naniddeso 第六說不淨業處品
+			anya/e0101n.mul7 7. Chaanussatiniddeso 第七說六隨念品
+			anya/e0101n.mul8 8. Anussatikammaṭṭhā naniddeso 第八說隨念業處品
+			anya/e0101n.mul9 9. Brahmavihā raniddeso 第九說梵住品
+			anya/e0101n.mul10 10. Āruppaniddeso 第十說無色品
+			anya/e0101n.mul11 11. Samā dhiniddeso 第十一說定品
+			anya/e0102n.mul0 12. Iddhividhaniddeso 第十二說神變品
+			anya/e0102n.mul1 13. Abhiññā niddeso 第十三說神通品
+			anya/e0102n.mul2 14. Khandhaniddeso 第十四說蘊品
+			anya/e0102n.mul3 15. Āyatanadhā tuniddeso 第十五說處界品
+			anya/e0102n.mul4 16. Indriyasaccaniddeso 第十六說根諦品
+			anya/e0102n.mul5 17. Paññā bhū miniddeso 第十七說慧地品
+			anya/e0102n.mul6 18. Diṭṭhivisuddhiniddeso 第十八說見清淨品
+			anya/e0102n.mul7 19. Kaṅkhā vitaraṇavisuddhiniddeso 第十九說度疑清淨品
+			anya/e0102n.mul8 20. Maggā maggañā ṇadassanavisuddhiniddeso 第二十說道非道智見清淨品
+			anya/e0102n.mul9 21. Paṭipadā ñā ṇadassanavisuddhiniddeso 第二十一說行道智見清淨品
+			anya/e0102n.mul10 22. Ñā ṇadassanavisuddhiniddeso 第二十二說智見清淨品
+			anya/e0102n.mul11 23. Paññā bhā vanā nisaṃsaniddeso 第二十三說修慧功德品
+		e0103n.att Visuddhimagga-mahāṭīkā
+			anya/e0103n.att0 Nidā nā dikathā vaṇṇanā 
+			anya/e0103n.att1 1. Sī laniddesavaṇṇanā 
+			anya/e0103n.att2 2. Dhutaṅganiddesavaṇṇanā 
+			anya/e0103n.att3 3. Kammaṭṭhā naggahaṇaniddesavaṇṇanā 
+			anya/e0103n.att4 4. Pathavī kasiṇaniddesavaṇṇanā 
+			anya/e0103n.att5 5. Sesakasiṇaniddesavaṇṇanā 
+			anya/e0103n.att6 6. Asubhakammaṭṭhā naniddesavaṇṇanā 
+			anya/e0103n.att7 7. Chaanussatiniddesavaṇṇanā 
+			anya/e0103n.att8 8. Anussatikammaṭṭhā naniddesavaṇṇanā 
+			anya/e0103n.att9 9. Brahmavihā raniddesavaṇṇanā 
+			anya/e0103n.att10 10. Āruppaniddesavaṇṇanā 
+			anya/e0103n.att11 11. Samā dhiniddesavaṇṇanā 
+			anya/e0104n.att0 12. Iddhividhaniddesavaṇṇanā 
+			anya/e0104n.att1 13. Abhiññā niddesavaṇṇanā 
+			anya/e0104n.att2 14. Khandhaniddesavaṇṇanā 
+			anya/e0104n.att3 15. Āyatanadhā tuniddesavaṇṇanā 
+			anya/e0104n.att4 16. Indriyasaccaniddesavaṇṇanā 
+			anya/e0104n.att5 17. Paññā bhū miniddesavaṇṇanā 
+			anya/e0104n.att6 18. Diṭṭhivisuddhiniddesavaṇṇanā 
+			anya/e0104n.att7 19. Kaṅkhā vitaraṇavisuddhiniddesavaṇṇanā 
+			anya/e0104n.att8 20. Maggā maggañā ṇadassanavisuddhiniddesavaṇṇanā 
+			anya/e0104n.att9 21. Paṭipadā ñā ṇadassanavisuddhiniddesavaṇṇanā 
+			anya/e0104n.att10 22. Ñā ṇadassanavisuddhiniddesavaṇṇanā 
+			anya/e0104n.att11 23. Paññā bhā vanā nisaṃsaniddesavaṇṇanā 
+		e0105n.nrf Visuddhimagga nidānakathā
+			anya/e0105n.nrf0 Mahā vaṃsa-buddhaghosakathā 
+			anya/e0105n.nrf1 Jā tidesavicā raṇā 
+			anya/e0105n.nrf2 Brā hmaṇakulavicā raṇā 
+			anya/e0105n.nrf3 Patañjalivā davicā raṇā 
+			anya/e0105n.nrf4 Kabbasatthavicā raṇā 
+			anya/e0105n.nrf5 Bā husaccaguṇamakkhanaṃ
+			anya/e0105n.nrf6 Mahā yā nikanayavicā raṇā 
+			anya/e0105n.nrf7 Sā sanappavattikkamo
+			anya/e0105n.nrf8 Abhayagirinikā yuppatti
+			anya/e0105n.nrf9 Dhammarucinikā yuppatti
+			anya/e0105n.nrf10 Piṭakattayassa potthakā ropanaṃ
+			anya/e0105n.nrf11 Adhammavā duppatti
+			anya/e0105n.nrf12 Vetullavā dassa paṭhamaniggaho
+			anya/e0105n.nrf13 Sā galiyanikā yuppatti
+			anya/e0105n.nrf14 Vetullavā dassa dutiyaniggaho
+			anya/e0105n.nrf15 Vetullavā do
+			anya/e0105n.nrf16 Mahā vihā ranā sanaṃ
+			anya/e0105n.nrf17 Jetavanavā sinikā yuppatti
+			anya/e0105n.nrf18 Phā hiyamaddhā nakkamakathā 
+			anya/e0105n.nrf19 Marammaraṭṭhikabhā vakathā 
+			anya/e0105n.nrf20 Dakkhiṇaindiyaraṭṭhikabhā vayutti
+			anya/e0105n.nrf21 Ācariyabuddhaghosattherassa aṭṭhuppatti
+			anya/e0105n.nrf22 Āyā canakā raṇaṃ
+			anya/e0105n.nrf23 Visuddhimaggassa karaṇaṃ
+			anya/e0105n.nrf24 Tannissayo
+			anya/e0105n.nrf25 Takkaraṇappakā ro
+			anya/e0105n.nrf26 Vimuttimaggapakaraṇaṃ
+			anya/e0105n.nrf27 Nissayaṭṭhakathā vibhā vanā 
+			anya/e0105n.nrf28 Porā ṇavacanadassanaṃ
+			anya/e0105n.nrf29 Vinayaṭṭhakathā karaṇaṃ
+			anya/e0105n.nrf30 Āgamaṭṭhakathā karaṇaṃ
+			anya/e0105n.nrf31 Abhidhammaṭṭhakathā karaṇaṃ
+			anya/e0105n.nrf32 Kaṅkhā vitaraṇī aṭṭhakathā karaṇaṃ
+			anya/e0105n.nrf33 Dhammapadaṭṭhakathā karaṇaṃ
+			anya/e0105n.nrf34 Paramatthajotikā ṭṭhakathā karaṇaṃ
+			anya/e0105n.nrf35 Jā takaṭṭhakathā karaṇaṃ
+			anya/e0105n.nrf36 Sakalalokapatthā rakā raṇaṃ
 	Saṅgāyana-puccha vissajjanā
 		src="./cscd/e0901n.nrf.toc.xml" text="Dīghanikāya (pu-vi)"
 		src="./cscd/e0902n.nrf.toc.xml" text="Majjhimanikāya (pu-vi)"
