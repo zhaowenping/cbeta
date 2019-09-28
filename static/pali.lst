@@ -1,12 +1,12 @@
 01. Tipiṭaka (Mūla)  三藏
 	01. Vinayapiṭaka 毘奈耶藏
-		01. Pārājikapāḷi
+		01. Pārājikapāḷi 經分別波羅夷
 			Verañjakaṇḍaṃ" action="cscd/vin01m.mul0.xml"
 			1. Pā rā jikakaṇḍaṃ" action="cscd/vin01m.mul1.xml"
 			2. Saṅghā disesakaṇḍaṃ" action="cscd/vin01m.mul2.xml"
 			3. Aniyatakaṇḍaṃ" action="cscd/vin01m.mul3.xml"
 			4. Nissaggiyakaṇḍaṃ" action="cscd/vin01m.mul4.xml"
-		02. Pācittiyapāḷi
+		02. Pācittiyapāḷi 經分別波逸提
 			5. Pā cittiyakaṇḍaṃ" action="cscd/vin02m1.mul0.xml" target="text"
 			6. Pā ṭidesanī yakaṇḍaṃ" action="cscd/vin02m1.mul1.xml" target="text"
 			7. Sekhiyakaṇḍaṃ" action="cscd/vin02m1.mul2.xml" target="text"
