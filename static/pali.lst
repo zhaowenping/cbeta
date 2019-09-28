@@ -18,7 +18,7 @@
 			5. Pā ṭidesanī yakaṇḍaṃ (bhikkhunī vibhaṅgo)" action="cscd/vin02m1.mul8.xml" target="text"
 			6. Sekhiyakaṇḍaṃ (bhikkhunī vibhaṅgo)" action="cscd/vin02m1.mul9.xml" target="text"
 			7. Adhikaraṇasamathā  (bhikkhunī vibhaṅgo)" action="cscd/vin02m1.mul10.xml" target="text"
-		03. Mahāvaggapāḷi 大品
+		03. Mahāvaggapāḷi 犍度大品
 			1. Mahā khandhako" action="cscd/vin02m2.mul0.xml" target="text"
 			2. Uposathakkhandhako" action="cscd/vin02m2.mul1.xml" target="text"
 			3. Vassū panā yikakkhandhako" action="cscd/vin02m2.mul2.xml" target="text"
@@ -29,7 +29,7 @@
 			8. Cī varakkhandhako" action="cscd/vin02m2.mul7.xml" target="text"
 			9. Campeyyakkhandhako" action="cscd/vin02m2.mul8.xml" target="text"
 			10. Kosambakakkhandhako" action="cscd/vin02m2.mul9.xml" target="text"
-		04. Cūḷavaggapāḷi 小品
+		04. Cūḷavaggapāḷi 犍度小品
 			1. Kammakkhandhakaṃ" action="cscd/vin02m3.mul0.xml" target="text"
 			2. Pā rivā sikakkhandhakaṃ" action="cscd/vin02m3.mul1.xml" target="text"
 			3. Samuccayakkhandhakaṃ" action="cscd/vin02m3.mul2.xml" target="text"
@@ -63,7 +63,7 @@
 			Pañcavaggo" action="cscd/vin02m4.mul17.xml" target="text"
 	02. Suttapiṭaka  修多羅藏
 		01. Dīghanikāya 長部
-			01. Sīlakkhandhavaggapāḷi
+			01. Sīlakkhandhavaggapāḷi 戒蘊(集)品
 				1. Brahmajā lasuttaṃ" action="cscd/s0101m.mul0.xml" target="text"
 				2. Sā maññaphalasuttaṃ" action="cscd/s0101m.mul1.xml" target="text"
 				3. Ambaṭṭhasuttaṃ" action="cscd/s0101m.mul2.xml" target="text"
@@ -77,7 +77,7 @@
 				11. Kevaṭṭasuttaṃ" action="cscd/s0101m.mul10.xml" target="text"
 				12. Lohiccasuttaṃ" action="cscd/s0101m.mul11.xml" target="text"
 				13. Tevijjasuttaṃ" action="cscd/s0101m.mul12.xml" target="text"
-			02. Mahāvaggapāḷi
+			02. Mahāvaggapāḷi 大品
 				1. Mahā padā nasuttaṃ" action="cscd/s0102m.mul0.xml" target="text"
 				2. Mahā nidā nasuttaṃ" action="cscd/s0102m.mul1.xml" target="text"
 				3. Mahā parinibbā nasuttaṃ" action="cscd/s0102m.mul2.xml" target="text"
@@ -88,7 +88,7 @@
 				8. Sakkapañhasuttaṃ" action="cscd/s0102m.mul7.xml" target="text"
 				9. Mahā satipaṭṭhā nasuttaṃ" action="cscd/s0102m.mul8.xml" target="text"
 				10. Pā yā sisuttaṃ" action="cscd/s0102m.mul9.xml" target="text"
-			03. Pāthikavaggapāḷi
+			03. Pāthikavaggapāḷi 波梨品
 				1. Pā thikasuttaṃ" action="cscd/s0103m.mul0.xml" target="text"
 				2. Udumbarikasuttaṃ" action="cscd/s0103m.mul1.xml" target="text"
 				3. Cakkavattisuttaṃ" action="cscd/s0103m.mul2.xml" target="text"
@@ -101,19 +101,19 @@
 				10. Saṅgī tisuttaṃ" action="cscd/s0103m.mul9.xml" target="text"
 				11. Dasuttarasuttaṃ" action="cscd/s0103m.mul10.xml" target="text"
 		02. Majjhimanikāya  中部
-			01. Mūlapaṇṇāsapāḷi
+			01. Mūlapaṇṇāsapāḷi 根本分五十經篇
 				1. Mū lapariyā yavaggo" action="cscd/s0201m.mul0.xml" target="text"
 				2. Sī hanā davaggo" action="cscd/s0201m.mul1.xml" target="text"
 				3. Opammavaggo" action="cscd/s0201m.mul2.xml" target="text"
 				4. Mahā yamakavaggo" action="cscd/s0201m.mul3.xml" target="text"
 				5. Cū ḷayamakavaggo" action="cscd/s0201m.mul4.xml" target="text"
-			02. Majjhimapaṇṇāsapāḷi
+			02. Majjhimapaṇṇāsapāḷi 中分五十經篇
 				1. Gahapativaggo" action="cscd/s0202m.mul0.xml" target="text"
 				2. Bhikkhuvaggo" action="cscd/s0202m.mul1.xml" target="text"
 				3. Paribbā jakavaggo" action="cscd/s0202m.mul2.xml" target="text"
 				4. Rā javaggo" action="cscd/s0202m.mul3.xml" target="text"
 				5. Brā hmaṇavaggo" action="cscd/s0202m.mul4.xml" target="text"
-			03. Uparipaṇṇāsapāḷi
+			03. Uparipaṇṇāsapāḷi 後分五十經篇
 				1. Devadahavaggo" action="cscd/s0203m.mul0.xml" target="text"
 				2. Anupadavaggo" action="cscd/s0203m.mul1.xml" target="text"
 				3. Suññatavaggo" action="cscd/s0203m.mul2.xml" target="text"
@@ -182,7 +182,7 @@
 				11. Sotā pattisaṃyuttaṃ" action="cscd/s0305m.mul10.xml" target="text" 預流相應
 				12. Saccasaṃyuttaṃ" action="cscd/s0305m.mul11.xml" target="text" 諦相應
 		04. Aṅguttaranikāya  增支部
-			01. s0401m Ekakanipātapāḷi
+			01. s0401m Ekakanipātapāḷi 一集
 				1. Rū pā divaggo" action="cscd/s0401m.mul0.xml" target="text"
 				2. Nī varaṇappahā navaggo" action="cscd/s0401m.mul1.xml" target="text"
 				3. Akammaniyavaggo" action="cscd/s0401m.mul2.xml" target="text"
@@ -203,7 +203,7 @@
 				18. Aparaaccharā saṅghā tavaggo" action="cscd/s0401m.mul17.xml" target="text"
 				19. Kā yagatā sativaggo" action="cscd/s0401m.mul18.xml" target="text"
 				20. Amatavaggo" action="cscd/s0401m.mul19.xml" target="text"
-			02. s0402m1 Dukanipātapāḷi
+			02. s0402m1 Dukanipātapāḷi 二集
 				1. Kammakaraṇavaggo" action="cscd/s0402m1.mul0.xml" target="text"
 				2. Adhikaraṇavaggo" action="cscd/s0402m1.mul1.xml" target="text"
 				3. Bā lavaggo" action="cscd/s0402m1.mul2.xml" target="text"
@@ -223,7 +223,7 @@
 				2. Akusalapeyyā laṃ" action="cscd/s0402m1.mul16.xml" target="text"
 				3. Vinayapeyyā laṃ" action="cscd/s0402m1.mul17.xml" target="text"
 				4. Rā gapeyyā laṃ" action="cscd/s0402m1.mul18.xml" target="text"
-			03. s0402m2 Tikanipātapāḷi
+			03. s0402m2 Tikanipātapāḷi 三集
 				1. Bā lavaggo" action="cscd/s0402m2.mul0.xml" target="text"
 				2. Rathakā ravaggo" action="cscd/s0402m2.mul1.xml" target="text"
 				3. Puggalavaggo" action="cscd/s0402m2.mul2.xml" target="text"
@@ -242,7 +242,7 @@
 				(16) 6. Acelakavaggo" action="cscd/s0402m2.mul15.xml" target="text"
 				(17) 7. Kammapathapeyyā laṃ" action="cscd/s0402m2.mul16.xml" target="text"
 				(18) 8. Rā gapeyyā laṃ" action="cscd/s0402m2.mul17.xml" target="text"
-			04. s0402m3 Catukkanipātapāḷi
+			04. s0402m3 Catukkanipātapāḷi 四集
 				1. Bhaṇḍagā mavaggo" action="cscd/s0402m3.mul0.xml" target="text"
 				2. Caravaggo" action="cscd/s0402m3.mul1.xml" target="text"
 				3. Uruvelavaggo" action="cscd/s0402m3.mul2.xml" target="text"
@@ -271,7 +271,7 @@
 				(26) 6. Abhiññā vaggo" action="cscd/s0402m3.mul25.xml" target="text"
 				(27) 7. Kammapathavaggo" action="cscd/s0402m3.mul26.xml" target="text"
 				(28) 8. Rā gapeyyā laṃ" action="cscd/s0402m3.mul27.xml" target="text"
-			05. s0403m1 Pañcakanipātapāḷi
+			05. s0403m1 Pañcakanipātapāḷi 五集
 				1. Sekhabalavaggo" action="cscd/s0403m1.mul0.xml" target="text"
 				2. Balavaggo" action="cscd/s0403m1.mul1.xml" target="text"
 				3. Pañcaṅgikavaggo" action="cscd/s0403m1.mul2.xml" target="text"
@@ -301,7 +301,7 @@
 				1. Sammutipeyyā laṃ" action="cscd/s0403m1.mul26.xml" target="text"
 				2. Sikkhā padapeyyā laṃ" action="cscd/s0403m1.mul27.xml" target="text"
 				3. Rā gapeyyā laṃ" action="cscd/s0403m1.mul28.xml" target="text"
-			06. s0403m2 Chakkanipātapāḷi
+			06. s0403m2 Chakkanipātapāḷi 六集
 				1. Āhuneyyavaggo" action="cscd/s0403m2.mul0.xml" target="text"
 				2. Sā raṇī yavaggo" action="cscd/s0403m2.mul1.xml" target="text"
 				3. Anuttariyavaggo" action="cscd/s0403m2.mul2.xml" target="text"
@@ -315,7 +315,7 @@
 				11. Tikavaggo" action="cscd/s0403m2.mul10.xml" target="text"
 				12. Sā maññavaggo" action="cscd/s0403m2.mul11.xml" target="text"
 				13. Rā gapeyyā laṃ" action="cscd/s0403m2.mul12.xml" target="text"
-			07. s0403m3 Sattakanipātapāḷi
+			07. s0403m3 Sattakanipātapāḷi 七集
 				1. Dhanavaggo" action="cscd/s0403m3.mul0.xml" target="text"
 				2. Anusayavaggo" action="cscd/s0403m3.mul1.xml" target="text"
 				3. Vajjisattakavaggo" action="cscd/s0403m3.mul2.xml" target="text"
@@ -327,7 +327,7 @@
 				9. Samaṇavaggo" action="cscd/s0403m3.mul8.xml" target="text"
 				10. Āhuneyyavaggo" action="cscd/s0403m3.mul9.xml" target="text"
 				11. Rā gapeyyā laṃ" action="cscd/s0403m3.mul10.xml" target="text"
-			08. s0404m1 Aṭṭhakādinipātapāḷi
+			08. s0404m1 Aṭṭhakādinipātapāḷi 八集
 				1. Mettā vaggo" action="cscd/s0404m1.mul0.xml" target="text"
 				2. Mahā vaggo" action="cscd/s0404m1.mul1.xml" target="text"
 				3. Gahapativaggo" action="cscd/s0404m1.mul2.xml" target="text"
@@ -339,7 +339,7 @@
 				(9) 4. Sativaggo" action="cscd/s0404m1.mul8.xml" target="text"
 				(10) 5. Sā maññavaggo" action="cscd/s0404m1.mul9.xml" target="text"
 				(11). Rā gapeyyā laṃ" action="cscd/s0404m1.mul10.xml" target="text"
-			09. s0404m2 Navakanipātapāḷi
+			09. s0404m2 Navakanipātapāḷi 九集
 				1. Sambodhivaggo" action="cscd/s0404m2.mul0.xml" target="text"
 				2. Sī hanā davaggo" action="cscd/s0404m2.mul1.xml" target="text"
 				3. Sattā vā savaggo" action="cscd/s0404m2.mul2.xml" target="text"
@@ -350,7 +350,7 @@
 				(8) 3. Sammappadhā navaggo" action="cscd/s0404m2.mul7.xml" target="text"
 				(9) 4. Iddhipā davaggo" action="cscd/s0404m2.mul8.xml" target="text"
 				(10) 5. Rā gapeyyā laṃ" action="cscd/s0404m2.mul9.xml" target="text"
-			10. s0404m3 Dasakanipātapāḷi
+			10. s0404m3 Dasakanipātapāḷi 十集
 				1. Ānisaṃsavaggo" action="cscd/s0404m3.mul0.xml" target="text"
 				2. Nā thavaggo" action="cscd/s0404m3.mul1.xml" target="text"
 				3. Mahā vaggo" action="cscd/s0404m3.mul2.xml" target="text"
@@ -374,7 +374,7 @@
 				(21) 1. Karajakā yavaggo" action="cscd/s0404m3.mul20.xml" target="text"
 				(22) 2. Sā maññavaggo" action="cscd/s0404m3.mul21.xml" target="text"
 				23. Rā gapeyyā laṃ" action="cscd/s0404m3.mul22.xml" target="text"
-			11. s0404m4 Ekādasakanipātapāḷi
+			11. s0404m4 Ekādasakanipātapāḷi 十一集
 				1. Nissayavaggo" action="cscd/s0404m4.mul0.xml" target="text"
 				2. Anussativaggo" action="cscd/s0404m4.mul1.xml" target="text"
 				3. Sā maññavaggo" action="cscd/s0404m4.mul2.xml" target="text"
