@@ -728,17 +728,15 @@
 			abh03m3.mul28 21. Ekavī satimavaggo
 			abh03m3.mul29 22. Bā vī satimavaggo
 			abh03m3.mul30 23. Tevī satimavaggo
-		06.1 abh03m4.mul Yamakapāḷi-1  雙論
+		06 abh03m4.mul Yamakapāḷi-1  雙論
 			abh03m4.mul0 1. Mū layamakaṃ
 			abh03m4.mul1 2. Khandhayamakaṃ
 			abh03m4.mul2 3. Āyatanayamakaṃ
 			abh03m4.mul3 4. Dhā tuyamakaṃ
 			abh03m4.mul4 5. Saccayamakaṃ
-		06.2 abh03m5.mul Yamakapāḷi-2
 			abh03m5.mul0 6. Saṅkhā rayamakaṃ
 			abh03m5.mul1 7. Anusayayamakaṃ
 			abh03m5.mul2 8. Cittayamakaṃ
-		06.3 abh03m6.mul Yamakapāḷi-3
 			abh03m6.mul0 9. Dhammayamakaṃ
 			abh03m6.mul1 10. Indriyayamakaṃ
 		07.1. abh03m7.mul Paṭṭhānapāḷi-1  發趣論
@@ -801,7 +799,7 @@
 			abh03m10.mul18 1-75. Kusalattika-kilesadukaṃ
 			abh03m10.mul19 1-83. Kusalattika-dassanenapahā tabbadukaṃ
 			abh03m10.mul20 1-99. Kusalattika-sauttaradukaṃ
-		07.5. abh03m11.mul.toc.xml" text="Paṭṭhānapāḷi-5
+		07.5. abh03m11.mul Paṭṭhānapāḷi-5
 			abh03m11.mul0 Dhammā nulome tikatikapaṭṭhā naṃ
 			abh03m11.mul1 Dhammā nulome dukadukapaṭṭhā naṃ
 			abh03m11.mul2 Dhammapaccanī ye tikapaṭṭhā naṃ
