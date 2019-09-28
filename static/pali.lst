@@ -302,83 +302,83 @@
 				s0403m1.mul27 2. Sikkhā padapeyyā laṃ
 				s0403m1.mul28 3. Rā gapeyyā laṃ
 			06. s0403m2 Chakkanipātapāḷi 六集
-				1. Āhuneyyavaggo" action="cscd/s0403m2.mul0.xml" target="text"
-				2. Sā raṇī yavaggo" action="cscd/s0403m2.mul1.xml" target="text"
-				3. Anuttariyavaggo" action="cscd/s0403m2.mul2.xml" target="text"
-				4. Devatā vaggo" action="cscd/s0403m2.mul3.xml" target="text"
-				5. Dhammikavaggo" action="cscd/s0403m2.mul4.xml" target="text"
-				6. Mahā vaggo" action="cscd/s0403m2.mul5.xml" target="text"
-				7. Devatā vaggo" action="cscd/s0403m2.mul6.xml" target="text"
-				8. Arahattavaggo" action="cscd/s0403m2.mul7.xml" target="text"
-				9. Sī tivaggo" action="cscd/s0403m2.mul8.xml" target="text"
-				10. Ānisaṃsavaggo" action="cscd/s0403m2.mul9.xml" target="text"
-				11. Tikavaggo" action="cscd/s0403m2.mul10.xml" target="text"
-				12. Sā maññavaggo" action="cscd/s0403m2.mul11.xml" target="text"
-				13. Rā gapeyyā laṃ" action="cscd/s0403m2.mul12.xml" target="text"
+				s0403m2.mul0 1. Āhuneyyavaggo
+				s0403m2.mul1 2. Sā raṇī yavaggo
+				s0403m2.mul2 3. Anuttariyavaggo
+				s0403m2.mul3 4. Devatā vaggo
+				s0403m2.mul4 5. Dhammikavaggo
+				s0403m2.mul5 6. Mahā vaggo
+				s0403m2.mul6 7. Devatā vaggo
+				s0403m2.mul7 8. Arahattavaggo
+				s0403m2.mul8 9. Sī tivaggo
+				s0403m2.mul9 10. Ānisaṃsavaggo
+				s0403m2.mul10 11. Tikavaggo
+				s0403m2.mul11 12. Sā maññavaggo
+				s0403m2.mul12 13. Rā gapeyyā laṃ
 			07. s0403m3 Sattakanipātapāḷi 七集
-				1. Dhanavaggo" action="cscd/s0403m3.mul0.xml" target="text"
-				2. Anusayavaggo" action="cscd/s0403m3.mul1.xml" target="text"
-				3. Vajjisattakavaggo" action="cscd/s0403m3.mul2.xml" target="text"
-				4. Devatā vaggo" action="cscd/s0403m3.mul3.xml" target="text"
-				5. Mahā yaññavaggo" action="cscd/s0403m3.mul4.xml" target="text"
-				6. Abyā katavaggo" action="cscd/s0403m3.mul5.xml" target="text"
-				7. Mahā vaggo" action="cscd/s0403m3.mul6.xml" target="text"
-				8. Vinayavaggo" action="cscd/s0403m3.mul7.xml" target="text"
-				9. Samaṇavaggo" action="cscd/s0403m3.mul8.xml" target="text"
-				10. Āhuneyyavaggo" action="cscd/s0403m3.mul9.xml" target="text"
-				11. Rā gapeyyā laṃ" action="cscd/s0403m3.mul10.xml" target="text"
+				s0403m3.mul0 1. Dhanavaggo
+				s0403m3.mul1 2. Anusayavaggo
+				s0403m3.mul2 3. Vajjisattakavaggo
+				s0403m3.mul3 4. Devatā vaggo
+				s0403m3.mul4 5. Mahā yaññavaggo
+				s0403m3.mul5 6. Abyā katavaggo
+				s0403m3.mul6 7. Mahā vaggo
+				s0403m3.mul7 8. Vinayavaggo
+				s0403m3.mul8 9. Samaṇavaggo
+				s0403m3.mul9 10. Āhuneyyavaggo
+				s0403m3.mul10 11. Rā gapeyyā laṃ
 			08. s0404m1 Aṭṭhakādinipātapāḷi 八集
-				1. Mettā vaggo" action="cscd/s0404m1.mul0.xml" target="text"
-				2. Mahā vaggo" action="cscd/s0404m1.mul1.xml" target="text"
-				3. Gahapativaggo" action="cscd/s0404m1.mul2.xml" target="text"
-				4. Dā navaggo" action="cscd/s0404m1.mul3.xml" target="text"
-				5. Uposathavaggo" action="cscd/s0404m1.mul4.xml" target="text"
-				(6) 1. Gotamī vaggo" action="cscd/s0404m1.mul5.xml" target="text"
-				(7) 2. Bhū micā lavaggo" action="cscd/s0404m1.mul6.xml" target="text"
-				(8) 3. Yamakavaggo" action="cscd/s0404m1.mul7.xml" target="text"
-				(9) 4. Sativaggo" action="cscd/s0404m1.mul8.xml" target="text"
-				(10) 5. Sā maññavaggo" action="cscd/s0404m1.mul9.xml" target="text"
-				(11). Rā gapeyyā laṃ" action="cscd/s0404m1.mul10.xml" target="text"
+				s0404m1.mul0 1. Mettā vaggo
+				s0404m1.mul1 2. Mahā vaggo
+				s0404m1.mul2 3. Gahapativaggo
+				s0404m1.mul3 4. Dā navaggo
+				s0404m1.mul4 5. Uposathavaggo
+				s0404m1.mul5 (6) 1. Gotamī vaggo
+				s0404m1.mul6 (7) 2. Bhū micā lavaggo
+				s0404m1.mul7 (8) 3. Yamakavaggo
+				s0404m1.mul8 (9) 4. Sativaggo
+				s0404m1.mul9 (10) 5. Sā maññavaggo
+				s0404m1.mul10 (11). Rā gapeyyā laṃ
 			09. s0404m2 Navakanipātapāḷi 九集
-				1. Sambodhivaggo" action="cscd/s0404m2.mul0.xml" target="text"
-				2. Sī hanā davaggo" action="cscd/s0404m2.mul1.xml" target="text"
-				3. Sattā vā savaggo" action="cscd/s0404m2.mul2.xml" target="text"
-				4. Mahā vaggo" action="cscd/s0404m2.mul3.xml" target="text"
-				5. Sā maññavaggo" action="cscd/s0404m2.mul4.xml" target="text"
-				(6) 1. Khemavaggo" action="cscd/s0404m2.mul5.xml" target="text"
-				(7) 2. Satipaṭṭhā navaggo" action="cscd/s0404m2.mul6.xml" target="text"
-				(8) 3. Sammappadhā navaggo" action="cscd/s0404m2.mul7.xml" target="text"
-				(9) 4. Iddhipā davaggo" action="cscd/s0404m2.mul8.xml" target="text"
-				(10) 5. Rā gapeyyā laṃ" action="cscd/s0404m2.mul9.xml" target="text"
+				s0404m2.mul0 1. Sambodhivaggo
+				s0404m2.mul1 2. Sī hanā davaggo
+				s0404m2.mul2 3. Sattā vā savaggo
+				s0404m2.mul3 4. Mahā vaggo
+				s0404m2.mul4 5. Sā maññavaggo
+				s0404m2.mul5 (6) 1. Khemavaggo
+				s0404m2.mul6 (7) 2. Satipaṭṭhā navaggo
+				s0404m2.mul7 (8) 3. Sammappadhā navaggo
+				s0404m2.mul8 (9) 4. Iddhipā davaggo
+				s0404m2.mul9 (10) 5. Rā gapeyyā laṃ
 			10. s0404m3 Dasakanipātapāḷi 十集
-				1. Ānisaṃsavaggo" action="cscd/s0404m3.mul0.xml" target="text"
-				2. Nā thavaggo" action="cscd/s0404m3.mul1.xml" target="text"
-				3. Mahā vaggo" action="cscd/s0404m3.mul2.xml" target="text"
-				4. Upā livaggo" action="cscd/s0404m3.mul3.xml" target="text"
-				5. Akkosavaggo" action="cscd/s0404m3.mul4.xml" target="text"
-				(6) 1. Sacittavaggo" action="cscd/s0404m3.mul5.xml" target="text"
-				(7) 2. Yamakavaggo" action="cscd/s0404m3.mul6.xml" target="text"
-				(8) 3. Ākaṅkhavaggo" action="cscd/s0404m3.mul7.xml" target="text"
-				(9) 4. Theravaggo" action="cscd/s0404m3.mul8.xml" target="text"
-				(10) 5. Upā livaggo" action="cscd/s0404m3.mul9.xml" target="text"
-				(11) 1. Samaṇasaññā vaggo" action="cscd/s0404m3.mul10.xml" target="text"
-				(12) 2. Paccorohaṇivaggo" action="cscd/s0404m3.mul11.xml" target="text"
-				(13) 3. Parisuddhavaggo" action="cscd/s0404m3.mul12.xml" target="text"
-				(14) 4. Sā dhuvaggo" action="cscd/s0404m3.mul13.xml" target="text"
-				(15) 5. Ariyavaggo" action="cscd/s0404m3.mul14.xml" target="text"
-				(16) 1. Puggalavaggo" action="cscd/s0404m3.mul15.xml" target="text"
-				(17) 2. Jā ṇussoṇivaggo" action="cscd/s0404m3.mul16.xml" target="text"
-				(18) 3. Sā dhuvaggo" action="cscd/s0404m3.mul17.xml" target="text"
-				(19) 4. Ariyamaggavaggo" action="cscd/s0404m3.mul18.xml" target="text"
-				(20) 5. Aparapuggalavaggo" action="cscd/s0404m3.mul19.xml" target="text"
-				(21) 1. Karajakā yavaggo" action="cscd/s0404m3.mul20.xml" target="text"
-				(22) 2. Sā maññavaggo" action="cscd/s0404m3.mul21.xml" target="text"
-				23. Rā gapeyyā laṃ" action="cscd/s0404m3.mul22.xml" target="text"
+				s0404m3.mul0 1. Ānisaṃsavaggo
+				s0404m3.mul1 2. Nā thavaggo
+				s0404m3.mul2 3. Mahā vaggo
+				s0404m3.mul3 4. Upā livaggo
+				s0404m3.mul4 5. Akkosavaggo
+				s0404m3.mul5 (6) 1. Sacittavaggo
+				s0404m3.mul6 (7) 2. Yamakavaggo
+				s0404m3.mul7 (8) 3. Ākaṅkhavaggo
+				s0404m3.mul8 (9) 4. Theravaggo
+				s0404m3.mul9 (10) 5. Upā livaggo
+				s0404m3.mul10 (11) 1. Samaṇasaññā vaggo
+				s0404m3.mul11 (12) 2. Paccorohaṇivaggo
+				s0404m3.mul12 (13) 3. Parisuddhavaggo
+				s0404m3.mul13 (14) 4. Sā dhuvaggo
+				s0404m3.mul14 (15) 5. Ariyavaggo
+				s0404m3.mul15 (16) 1. Puggalavaggo
+				s0404m3.mul16 (17) 2. Jā ṇussoṇivaggo
+				s0404m3.mul17 (18) 3. Sā dhuvaggo
+				s0404m3.mul18 (19) 4. Ariyamaggavaggo
+				s0404m3.mul19 (20) 5. Aparapuggalavaggo
+				s0404m3.mul20 (21) 1. Karajakā yavaggo
+				s0404m3.mul21 (22) 2. Sā maññavaggo
+				s0404m3.mul22 23. Rā gapeyyā laṃ
 			11. s0404m4 Ekādasakanipātapāḷi 十一集
-				1. Nissayavaggo" action="cscd/s0404m4.mul0.xml" target="text"
-				2. Anussativaggo" action="cscd/s0404m4.mul1.xml" target="text"
-				3. Sā maññavaggo" action="cscd/s0404m4.mul2.xml" target="text"
-				4. Rā gapeyyā laṃ" action="cscd/s0404m4.mul3.xml" target="text"
+				s0404m4.mul0 1. Nissayavaggo
+				s0404m4.mul1 2. Anussativaggo
+				s0404m4.mul2 3. Sā maññavaggo
+				s0404m4.mul3 4. Rā gapeyyā laṃ
 		05. Khuddakanikāya  小部
 			01. s0501m Khuddakapāṭhapāḷi  小誦經
 				s0501m.mul0 1. Saraṇattayaṃ
