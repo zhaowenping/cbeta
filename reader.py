@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-09-27 08:48:23
+# Last Modified: 2019-09-29 07:47:37
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -144,7 +144,7 @@ def menu4():
 @route('/palimulu')
 @view('temp/menu.jinja2')
 def menu5():
-    return {'menus': sch_pali, 'request':request, 'yiju': '巴利三藏(CSCD)'}
+    return {'menus': sch_pali, 'request':request, 'yiju': '巴利三藏(CST4)'}
 
 @route('/mulu/:bulei#.+#')
 @view('temp/menu.jinja2')
@@ -282,23 +282,12 @@ def submenu5(bulei):
 
     # 跳转到正文
     if not menu:
-        sutra = bulei[-1].split()[0]  # T01n0002
-        zang = sutra.split('n')[0]              # T01
+        src, text = bulei[-1].split(maxsplit=1)  # T01n0002
 
-        if '_' in sutra:
-            sutra, juan = sutra.split('_')
+        if '/' in src:
+            url = f"/xml/cscd/{src}.xml"  # T01n0002_001.xml
         else:
-            # 查找第一卷(有些不是从第一卷开始的)
-            juan = get_all_juan(sutra)              # 001
-            if not juan:
-                abort(404, f'没找到文件: /xml/{zang}/{sutra}_*.xml')
-            juan = juan[0]
-
-        if '#' in juan:
-            juan, para = sutra.split('#')
-            url = f"/xml/{zang}/{sutra}_{juan}.xml#{para}"  # T01n0002_001.xml
-        else:
-            url = f"/xml/{zang}/{sutra}_{juan}.xml"  # T01n0002_001.xml
+            url = f"/xml/cscd/tipitaka/{src}.xml"  # T01n0002_001.xml
 
         redirect(url)
     return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '巴利三藏目錄', 'root':root}
