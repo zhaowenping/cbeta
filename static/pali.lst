@@ -580,7 +580,7 @@
 				s0512m.mul0 1. Akittivaggo
 				s0512m.mul1 2. Hatthinā gavaggo
 				s0512m.mul2 3. Yudhañjayavaggo
-			14. s0513m Jātakapāḷi-1  本生經
+			14. s0513m Jātakapāḷi  本生經
 				s0513m.mul0 1. Ekakanipā to
 				s0513m.mul1 2. Dukanipā to
 				s0513m.mul2 3. Tikanipā to
@@ -597,7 +597,6 @@
 				s0513m.mul13 14. Pakiṇṇakanipā to
 				s0513m.mul14 15. Vī satinipā to
 				s0513m.mul15 16. Tiṃsanipā to
-			15. s0514m Jātakapāḷi-2
 				s0514m.mul0 17. Cattā lī sanipā to
 				s0514m.mul1 18. Paṇṇā sanipā to
 				s0514m.mul2 19. Saṭṭhinipā to
@@ -626,9 +625,9 @@
 				s0516m.mul1 Pā rā yanavagganiddeso
 				s0516m.mul2 Khaggavisā ṇasutto
 			18. s0517m Paṭisambhidāmaggapāḷi 無礙解道
-				s0517m.mul0 1. Mahā vaggo
-				s0517m.mul1 2. Yuganaddhavaggo
-				s0517m.mul2 3. Paññā vaggo
+				s0517m.mul0 1. Mahā vaggo 大品
+				s0517m.mul1 2. Yuganaddhavaggo 俱存品
+				s0517m.mul2 3. Paññā vaggo 慧品
 			19. s0519m Nettippakaraṇapāḷi  導論
 				s0519m.mul0 1. Saṅgahavā ro
 				s0519m.mul1 2. Uddesavā ro
@@ -638,10 +637,10 @@
 				s0519m.mul5 Sā sanapaṭṭhā naṃ
 			20. s0518m.nrf Milindapañhapāḷi 彌蘭王問經
 				s0518m.nrf0 Milindapañhapā ḷi
-				s0518m.nrf1 2-3. Milindapañho
-				s0518m.nrf2 4. Meṇḍakapañho
-				s0518m.nrf3 5. Anumā napañho
-				s0518m.nrf4 6. Opammakathā pañho
+				s0518m.nrf1 2-3. Milindapañho 原問
+				s0518m.nrf2 4. Meṇḍakapañho 別問
+				s0518m.nrf3 5. Anumā napañho 難問
+				s0518m.nrf4 6. Opammakathā pañho 譬喻問
 			21. s0520m.nrf Peṭakopadesapāḷi 藏釋
 				s0520m.nrf0 1. Ariyasaccappakā sanapaṭhamabhū mi
 				s0520m.nrf1 2. Sā sanapaṭṭhā nadutiyabhū mi
