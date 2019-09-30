@@ -1239,19 +1239,109 @@
 			anya_e0703n.nrf61 Dvisaṭṭhimapariccheda
 			anya_e0703n.nrf62 Tisaṭṭhima pariccheda
 	Byākaraṇa gantha-saṅgaho
-		src="./cscd/e0802n.nrf.toc.xml" text="Kaccāyanabyākaraṇaṃ"
-		src="./cscd/e0801n.nrf.toc.xml" text="Moggallānabyākaraṇaṃ"
-		src="./cscd/e0803n.nrf.toc.xml" text="Saddanītippakaraṇaṃ (padamālā)"
-		src="./cscd/e0804n.nrf.toc.xml" text="Saddanītippakaraṇaṃ (dhātumālā)"
-		src="./cscd/e0805n.nrf.toc.xml" text="Padarūpasiddhi"
-		src="./cscd/e0806n.nrf.toc.xml" text="Mogallānapañcikā"
-		src="./cscd/e0807n.nrf.toc.xml" text="Payogasiddhipāṭha"
-		src="./cscd/e0808n.nrf.toc.xml" text="Vuttodayapāṭha"
-		src="./cscd/e0809n.nrf.toc.xml" text="Abhidhānappadīpikāpāṭha"
-		src="./cscd/e0810n.nrf.toc.xml" text="Abhidhānappadīpikāṭīkā"
-		src="./cscd/e0811n.nrf.toc.xml" text="Subodhālaṅkārapāṭha"
-		src="./cscd/e0812n.nrf.toc.xml" text="Subodhālaṅkāraṭīkā"
-		src="./cscd/e0813n.nrf.toc.xml" text="Bālāvatāra gaṇṭhipadatthavinicchayasāra"
+		e0801n.nrf Moggallānabyākaraṇaṃ
+			anya_e0801n.nrf0 Moggallā nasuttapā ṭho
+			anya_e0801n.nrf1 1. Paṭhamo saññā dikaṇḍo
+			anya_e0801n.nrf2 2. Dutiyo kaṇḍo (syā di)
+			anya_e0801n.nrf3 (3) Tatiyo kaṇḍo (samā so)
+			anya_e0801n.nrf4 4. Catuttho kaṇḍo (ṇā di)
+			anya_e0801n.nrf5 5. Pañcamo kaṇḍo (khā di)
+			anya_e0801n.nrf6 6. Chaṭṭho kaṇḍo (tyā di)
+			anya_e0801n.nrf7 7. Sattamo kaṇḍo (ṇvā di)
+		e0802n.nrf Kaccāyanabyākaraṇaṃ
+			anya_e0802n.nrf0 Kaccā yanabyā karaṇaṃ
+			anya_e0802n.nrf1 1. Sandhikappa
+			anya_e0802n.nrf2 2. Nā makappa
+			anya_e0802n.nrf3 3. Kā rakakappa
+			anya_e0802n.nrf4 4. Samā sakappa
+			anya_e0802n.nrf5 5. Taddhitakappa
+			anya_e0802n.nrf6 6. Ākhyā takappa
+			anya_e0802n.nrf7 7. Kibbidhā nakappa
+			anya_e0802n.nrf8 8. Uṇā dikappa
+		e0803n.nrf Saddanītippakaraṇaṃ (padamālā)
+			anya_e0803n.nrf0 Ganthā rambhakathā 
+			anya_e0803n.nrf1 1. Savikaraṇā khyā tavibhā ga
+			anya_e0803n.nrf2 2. Bhavatikriyā padamā lā vibhā ga
+			anya_e0803n.nrf3 3. Pakiṇṇakavinicchaya
+			anya_e0803n.nrf4 4. Bhū dhā tumayanā mikarū pavibhā ga
+			anya_e0803n.nrf5 5. Okā rantapulliṅganā mikapadamā lā 
+			anya_e0803n.nrf6 6. Ākā rantapulliṅganā mikapadamā lā 
+			anya_e0803n.nrf7 7. Niggahī tantapulliṅganā mikapadamā lā 
+			anya_e0803n.nrf8 8. Itthiliṅganā mikapadamā lā 
+			anya_e0803n.nrf9 9. Napuṃsakaliṅganā mikapadamā lā 
+			anya_e0803n.nrf10 10. Liṅgattayamissakanā mikapadamā lā 
+			anya_e0803n.nrf11 11. Vā ccā bhidheyyaliṅgā diparidī pananā mikapadamā lā 
+			anya_e0803n.nrf12 12. Sabbanā mataṃsadisanā manā mikapadamā lā 
+			anya_e0803n.nrf13 13. Savinicchayasaṅkhyā nā manā mikapadamā lā 
+			anya_e0803n.nrf14 14. Atthattikavibhā ga
+		e0804n.nrf Saddanītippakaraṇaṃ (dhātumālā)
+			anya_e0804n.nrf0 15. Saravaggapañcakantika suddhassaradhā tu
+			anya_e0804n.nrf1 16. Bhū vā digaṇikapariccheda
+			anya_e0804n.nrf2 17. Rudhā dichakka
+			anya_e0804n.nrf3 18. Curā digaṇaparidī pana
+			anya_e0804n.nrf4 19. Sabbagaṇavinicchaya
+		e0805n.nrf Padarūpasiddhi
+			anya_e0805n.nrf0 1. Sandhikaṇḍa
+			anya_e0805n.nrf1 2. Nā makaṇḍa
+			anya_e0805n.nrf2 3. Kā rakakaṇḍa
+			anya_e0805n.nrf3 4. Samā sakaṇḍa
+			anya_e0805n.nrf4 5. Taddhitakaṇḍa
+			anya_e0805n.nrf5 6. Ākhyā takaṇḍa
+			anya_e0805n.nrf6 7. Kibbidhā nakaṇḍa
+		e0806n.nrf Mogallānapañcikā
+			anya_e0806n.nrf0 Moggallā na pañcikā  ṭī kā 
+			anya_e0806n.nrf1 1. Paṭhamakaṇḍavaṇṇanā 
+			anya_e0806n.nrf2 2. Dutiyakaṇḍa vaṇṇanā 
+			anya_e0806n.nrf3 3. Tatiyakaṇḍavaṇṇanā 
+			anya_e0806n.nrf4 Catutthakaṇḍa
+			anya_e0806n.nrf5 Pañcamakaṇḍa
+			anya_e0806n.nrf6 Chaṭṭhakaṇḍa
+		e0807n.nrf Payogasiddhipāṭha
+			anya_e0807n.nrf0 1. Saññā dikaṇḍa
+			anya_e0807n.nrf1 2. Nā makaṇḍa
+			anya_e0807n.nrf2 3. Kā rakakaṇḍa
+			anya_e0807n.nrf3 4. Samā sakaṇḍa
+			anya_e0807n.nrf4 5. Ṇā dikaṇḍa
+			anya_e0807n.nrf5 6. Tyā dikaṇḍa
+			anya_e0807n.nrf6 7. Khā dikaṇḍa
+		e0808n.nrf Vuttodayapāṭha
+			anya_e0808n.nrf0 1. Saññā paribhā sā niddesa-paṭhamapariccheda
+			anya_e0808n.nrf1 2. Mattā vuttiniddesa-dutiyapariccheda
+			anya_e0808n.nrf2 3. Samavuttiniddesa-tatiyapariccheda
+			anya_e0808n.nrf3 4. Aḍḍhasamavuttiniddesa-catutthapariccheda
+			anya_e0808n.nrf4 5. Visamavuttiniddesa-pañcamapariccheda
+			anya_e0808n.nrf5 6. Chappaccayavibhā ga-chaṭṭhapariccheda
+		e0809n.nrf Abhidhānappadīpikāpāṭha
+			anya_e0809n.nrf0 Abhidhā nappadī pikā 
+			anya_e0809n.nrf1 1. Saggakaṇḍa
+			anya_e0809n.nrf2 2. Bhū kaṇḍa
+			anya_e0809n.nrf3 2. Bhū kaṇḍa
+			anya_e0809n.nrf4 3. Sā maññakaṇḍa
+			anya_e0809n.nrf5 3. Sā maññakaṇḍa
+		e0810n.nrf Abhidhānappadīpikāṭīkā
+			anya_e0810n.nrf0 Ganthā rambha
+			anya_e0810n.nrf1 1. Saggakaṇḍavaṇṇanā 
+			anya_e0810n.nrf2 2. Bhū kaṇḍa
+			anya_e0810n.nrf3 3. Sā maññakaṇḍa
+		e0811n.nrf Subodhālaṅkārapāṭha
+			anya_e0811n.nrf0 1. Dosā vabodha-paṭhamapariccheda
+			anya_e0811n.nrf1 2. Dosaparihā rā vabodha-dutiyapariccheda
+			anya_e0811n.nrf2 3. Guṇā vabodha-tatiyapariccheda
+			anya_e0811n.nrf3 4. Atthā laṅkā rā vabodha-catutthapariccheda
+			anya_e0811n.nrf4 5. Bhā vā vabodha-pañcamapariccheda
+		e0812n.nrf Subodhālaṅkāraṭīkā
+			anya_e0812n.nrf0 1. Dosā vabodha paṭhamapariccheda
+			anya_e0812n.nrf1 2. Dosaparihā rā vabodhaparicchedavaṇṇanā 
+			anya_e0812n.nrf2 3. Guṇā vabodhapariccheda
+			anya_e0812n.nrf3 4. Atthā laṅkā rā vabodhapariccheda
+			anya_e0812n.nrf4 5. Bhā vā vabodhapariccheda
+			anya_e0812n.nrf5 Ṭhā yī bhā vaniddesa
+		e0813n.nrf Bālāvatāra gaṇṭhipadatthavinicchayasāra
+			anya_e0813n.nrf0 Bā lā vatā ra
+			anya_e0813n.nrf1 1. Sandhi kaṇḍa
+			anya_e0813n.nrf2 2. Nā makaṇḍa
+			anya_e0813n.nrf3 3. Samā sakaṇḍa
+			anya_e0813n.nrf4 4. Taddhitakaṇḍa
 	Nīti-gantha-saṅgaho
 		src="./cscd/e1005n.nrf.toc.xml" text="Lokanīti"
 		src="./cscd/e1006n.nrf.toc.xml" text="Suttantanīti"
