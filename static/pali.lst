@@ -822,12 +822,12 @@
 02. Aṭṭhakathā 義註
 	Vinayapiṭaka (aṭṭhakathā)
 		vin01a.att Pārājikakaṇḍa-aṭṭhakathā
-			atthakatha/vin01a.att0 Ganthā rambhakathā
-			atthakatha/vin01a.att1 Verañjakaṇḍavaṇṇanā
-			atthakatha/vin01a.att2 1. Pā rā jikakaṇḍaṃ
-			atthakatha/vin01a.att3 2. Saṅghā disesakaṇḍaṃ
-			atthakatha/vin01a.att4 3. Aniyatakaṇḍaṃ
-			atthakatha/vin01a.att5 4. Nissaggiyakaṇḍaṃ
+			atthakatha_vin01a.att0 Ganthā rambhakathā
+			atthakatha_vin01a.att1 Verañjakaṇḍavaṇṇanā
+			atthakatha_vin01a.att2 1. Pā rā jikakaṇḍaṃ
+			atthakatha_vin01a.att3 2. Saṅghā disesakaṇḍaṃ
+			atthakatha_vin01a.att4 3. Aniyatakaṇḍaṃ
+			atthakatha_vin01a.att5 4. Nissaggiyakaṇḍaṃ
 		src="./cscd/vin02a1.att.toc.xml" text="Pācittiya-aṭṭhakathā"
 		src="./cscd/vin02a2.att.toc.xml" text="Mahāvagga-aṭṭhakathā"
 		src="./cscd/vin02a3.att.toc.xml" text="Cūḷavagga-aṭṭhakathā"
@@ -1022,31 +1022,222 @@
 			anya_e0105n.nrf35 Jā takaṭṭhakathā karaṇaṃ
 			anya_e0105n.nrf36 Sakalalokapatthā rakā raṇaṃ
 	Saṅgāyana-puccha vissajjanā
-		src="./cscd/e0901n.nrf.toc.xml" text="Dīghanikāya (pu-vi)"
-		src="./cscd/e0902n.nrf.toc.xml" text="Majjhimanikāya (pu-vi)"
-		src="./cscd/e0903n.nrf.toc.xml" text="Saṃyuttanikāya (pu-vi)"
-		src="./cscd/e0904n.nrf.toc.xml" text="Aṅguttaranikāya (pu-vi)"
-		src="./cscd/e0905n.nrf.toc.xml" text="Vinayapiṭaka (pu-vi)"
-		src="./cscd/e0906n.nrf.toc.xml" text="Abhidhammapiṭaka (pu-vi)"
-		src="./cscd/e0907n.nrf.toc.xml" text="Aṭṭhakathā (pu-vi)"
+		e0901n.nrf Dīghanikāya (pu-vi)
+			anya_e0901n.nrf0 Sī lakkhandhavaggasutta
+			anya_e0901n.nrf1 Brahmajā lasutta
+			anya_e0901n.nrf2 Sā maññaphalasutta
+		e0902n.nrf Majjhimanikāya (pu-vi)
+			anya_e0902n.nrf0 Mū lapaṇṇā sapā ḷi
+			anya_e0902n.nrf1 Majjhimapaṇṇā sapā ḷi
+		e0903n.nrf Saṃyuttanikāya (pu-vi)
+			anya_e0903n.nrf0 Sagā thā vaggapā ḷi
+			anya_e0903n.nrf1 Nidā navaggapā ḷi
+			anya_e0903n.nrf2 Khandhavaggasaṃyuttapā ḷi
+			anya_e0903n.nrf3 Saḷā yatanavaggasaṃyuttapā ḷi
+			anya_e0903n.nrf4 Mahā vaggasaṃyuttapā ḷi
+		e0904n.nrf Aṅguttaranikāya (pu-vi)
+			anya_e0904n.nrf Aṅguttaranikā ye
+		e0905n.nrf Vinayapiṭaka (pu-vi)
+			anya_e0905n.nrf0 Vinayapiṭaka
+			anya_e0905n.nrf1 Saṅghā disesa sikkhā pucchā 
+			anya_e0905n.nrf2 Nissaggipā cittiya
+			anya_e0905n.nrf3 Mahā vaggapā ḷi
+			anya_e0905n.nrf4 Cū ḷavaggapā ḷi
+		e0906n.nrf Abhidhammapiṭaka (pu-vi)
+			anya_e0906n.nrf Abhidhammapiṭaka
+		e0907n.nrf Aṭṭhakathā (pu-vi)
+			anya_e0907n.nrf Aṭṭhakathā 
 	Leḍī sayāḍo gantha-saṅgaho
-		src="./cscd/e0201n.nrf.toc.xml" text="Niruttidīpanī"
-		src="./cscd/e0301n.nrf.toc.xml" text="Paramatthadīpanī Saṅgahamahāṭīkāpāṭha"
-		src="./cscd/e0401n.nrf.toc.xml" text="Anudīpanīpāṭha"
-		src="./cscd/e0501n.nrf.toc.xml" text="Paṭṭhānuddesa dīpanīpāṭha"
+		e0201n.nrf Niruttidīpanī
+			anya_e0201n.nrf0 1. Sandhikaṇḍa
+			anya_e0201n.nrf1 2. Nā makaṇḍa
+			anya_e0201n.nrf2 3. Kā rakakaṇḍa
+			anya_e0201n.nrf3 4. Samā sakaṇḍa
+			anya_e0201n.nrf4 5. Taddhita
+			anya_e0201n.nrf5 6. Ākhyā takaṇḍa
+			anya_e0201n.nrf6 7. Kitakaṇḍa
+		e0301n.nrf Paramatthadīpanī Saṅgahamahāṭīkāpāṭha
+			anya_e0301n.nrf0 Ganthā rabbhakathā 
+			anya_e0301n.nrf1 Pathamagā thā -paramatthadī panī 
+			anya_e0301n.nrf2 Dutī yagā thā -paramatthadī panī 
+			anya_e0301n.nrf3 Cittasaṅgaha-paramatthadī panī 
+			anya_e0301n.nrf4 Cetasikasaṅgaha paramatthadī panī 
+			anya_e0301n.nrf5 Pakiṇṇaka saṅgaha paramatthadī panī 
+			anya_e0301n.nrf6 Vī thi saṅgaha paramatthadī panī 
+			anya_e0301n.nrf7 Vī thimutta saṅgaha paramatthadī panī 
+			anya_e0301n.nrf8 Rū pa saṅgaha paramatthadī panī 
+			anya_e0301n.nrf9 Samuccaya saṅgaha paramatthadī panī 
+			anya_e0301n.nrf10 Paccaya saṅgaha paramatthadī panī 
+			anya_e0301n.nrf11 Kammaṭṭhā na saṅgaha paramatthadī panī 
+			anya_e0301n.nrf12 Nigama paramatthadī panī 
+		e0401n.nrf Anudīpanīpāṭha
+			anya_e0401n.nrf0 1. Cittasaṅgahaanudī panā 
+			anya_e0401n.nrf1 2. Cetasikasaṅgahaanudī panā 
+			anya_e0401n.nrf2 3. Pakiṇṇakasaṅgahaanudī panā 
+			anya_e0401n.nrf3 4. Vī thisaṅgahaanudī panā 
+			anya_e0401n.nrf4 5. Vī thimuttasaṅgahaanudī panā 
+			anya_e0401n.nrf5 6. Rū pasaṅgahaanudī panā 
+			anya_e0401n.nrf6 7. Samuccayasaṅgahaanudī panā 
+			anya_e0401n.nrf7 8. Paccayasaṅgahaanudī panā 
+			anya_e0401n.nrf8 9. Kammaṭṭhā nasaṅgahaanudī panā 
+		e0501n.nrf Paṭṭhānuddesa dīpanīpāṭha
+			anya_e0501n.nrf0 1. Hetupaccayo
+			anya_e0501n.nrf1 2. Ārammaṇapaccayo
+			anya_e0501n.nrf2 3. Adhipatipaccayo
+			anya_e0501n.nrf3 4. Anantarapaccayo
+			anya_e0501n.nrf4 5. Samanantarapaccayo
+			anya_e0501n.nrf5 6. Sahajā tapaccayo
+			anya_e0501n.nrf6 7. Aññamaññapaccayo
+			anya_e0501n.nrf7 8. Nissayapaccayo
+			anya_e0501n.nrf8 9. Upanissayapaccayo
+			anya_e0501n.nrf9 10. Purejā tapaccayo
+			anya_e0501n.nrf10 11. Pacchā jā tapaccayo
+			anya_e0501n.nrf11 12. Āsevanapaccayo
+			anya_e0501n.nrf12 13. Kammapaccayo
+			anya_e0501n.nrf13 14. Vipā kapaccayo
+			anya_e0501n.nrf14 15. Āhā rapaccayo
+			anya_e0501n.nrf15 16. Indriyapaccayo
+			anya_e0501n.nrf16 17. Jhā napaccayo
+			anya_e0501n.nrf17 18. Maggapaccayo
+			anya_e0501n.nrf18 19. Sampayuttapaccayo
+			anya_e0501n.nrf19 20. Vippayuttapaccayo
+			anya_e0501n.nrf20 21. Atthipaccayo
+			anya_e0501n.nrf21 22. Natthipaccayo
+			anya_e0501n.nrf22 Paccayasabhā go
 	Buddha-vandanā gantha-saṅgaho
-		src="./cscd/e0601n.nrf.toc.xml" text="Namakkāraṭīkā"
-		src="./cscd/e0602n.nrf.toc.xml" text="Mahāpaṇāmapāṭha"
-		src="./cscd/e0603n.nrf.toc.xml" text="Lakkhaṇāto buddhathomanāgāthā"
-		src="./cscd/e0604n.nrf.toc.xml" text="Sutavandanā"
-		src="./cscd/e0606n.nrf.toc.xml" text="Kamalāñjali"
-		src="./cscd/e0605n.nrf.toc.xml" text="Jinālaṅkāra"
-		src="./cscd/e0607n.nrf.toc.xml" text="Pajjamadhu"
-		src="./cscd/e0608n.nrf.toc.xml" text="Buddhaguṇagāthāvalī"
+		e0601n.nrf Namakkāraṭīkā
+			anya_e0601n.nrf0 Namakkā rapā ḷi
+			anya_e0601n.nrf1 Namakkā raṭī kā 
+		e0602n.nrf Mahāpaṇāmapāṭha
+			anya_e0602n.nrf0 Mahā paṇā mapā ṭha
+			anya_e0602n.nrf1 Tigumbacetiya thomanā 
+			anya_e0602n.nrf2 Vā samā linī kya
+		e0603n.nrf Lakkhaṇāto buddhathomanāgāthā
+			anya_e0603n.nrf0 Buddhathomanā gā thā 
+			anya_e0603n.nrf1 Buddhavandanā 
+			anya_e0603n.nrf2 Uṇṇā lomikanā tha vandanā 
+		e0604n.nrf Sutavandanā
+			anya_e0604n.nrf Suttavandanā 
+		e0605n.nrf Jinālaṅkāra
+			anya_e0605n.nrf0 Paṇā madī panī gā thā 
+			anya_e0605n.nrf1 Yogā vacarasampattidī panī gā thā 
+			anya_e0605n.nrf2 Vatthuvisodhanī gā thā 
+			anya_e0605n.nrf3 Anaññasā dhā raṇadī panī gā thā 
+			anya_e0605n.nrf4 Abhinī hā radī panī gā thā 
+			anya_e0605n.nrf5 Bodhisambhā radī panī gā thā 
+			anya_e0605n.nrf6 Gabbhokkantidī panī gā thā 
+			anya_e0605n.nrf7 Vijā yanamaṅgaladī panī gā thā 
+			anya_e0605n.nrf8 Agā riyasampattidī panī gā thā 
+			anya_e0605n.nrf9 Nekkhammajjhā sayadī panī yamakagā thā 
+			anya_e0605n.nrf10 Pā duddhā ravimhayadī panī gā thā 
+			anya_e0605n.nrf11 Apunarā vattigamanadī panī yamakagā thā 
+			anya_e0605n.nrf12 Dvipā dabyā sayamakagā thā 
+			anya_e0605n.nrf13 Tipā dabyā sayamakagā thā 
+			anya_e0605n.nrf14 Pā dabyā samahā yamakagā thā 
+			anya_e0605n.nrf15 Abyā petā dyantayamakagā thā 
+			anya_e0605n.nrf16 Paṭilomayamakagā thā 
+			anya_e0605n.nrf17 Ekaṭhā nikā diyamakagā thā 
+			anya_e0605n.nrf18 Akkharuttarikayamakagā thā 
+			anya_e0605n.nrf19 Paheḷigā thā 
+			anya_e0605n.nrf20 Byā petā diyamakagā thā 
+			anya_e0605n.nrf21 Mahā padhā nadī panī gā thā 
+			anya_e0605n.nrf22 Mā raparā jayadī panī gā thā 
+			anya_e0605n.nrf23 Abhisambodhidī panī gā thā 
+			anya_e0605n.nrf24 Dhammacakkapavattanadī panī gā thā 
+			anya_e0605n.nrf25 Pā ṭihā riyadī panī gā thā 
+			anya_e0605n.nrf26 Navaguṇadī panī gā thā 
+			anya_e0605n.nrf27 Guṇadī panī gā thā 
+			anya_e0605n.nrf28 Pū jā nidhā nadī panī gā thā 
+			anya_e0605n.nrf29 Patthanā dī panī gā thā 
+		e0606n.nrf Kamalāñjali
+			anya_e0606n.nrf Kamalā ñjali
+		e0607n.nrf Pajjamadhu
+			anya_e0607n.nrf Pajjamadhu
+		e0608n.nrf Buddhaguṇagāthāvalī
+			anya_e0608n.nrf Buddhaguṇagā thā valī 
 	Vaṃsa-gantha-saṅgaho
-		src="./cscd/e0701n.nrf.toc.xml" text="Cūḷaganthavaṃsa"
-		src="./cscd/e0703n.nrf.toc.xml" text="Mahāvaṃsa"
-		src="./cscd/e0702n.nrf.toc.xml" text="Sāsanavaṃsa"
+		e0701n.nrf Cūḷaganthavaṃsa
+			anya_e0701n.nrf0 1. Piṭakattayaparicchedo
+			anya_e0701n.nrf1 2. Ganthakā rakā cariya-paricchedo
+			anya_e0701n.nrf2 3. Ācariyā naṃ sañjā taṭṭhā naparicchedo
+			anya_e0701n.nrf3 4. Āyā yakā cariya-paricchedo
+			anya_e0701n.nrf4 5. Pakiṇṇaka-paricchedo
+		e0702n.nrf Sāsanavaṃsa
+			anya_e0702n.nrf0 Sā sanavaṃsappadī pikā 
+			anya_e0702n.nrf1 1. Navaṭṭhā nā gatasā sanavaṃsakathā maggo
+			anya_e0702n.nrf2 2. Sī haḷadī pikasā sanavaṃsakathā maggo
+			anya_e0702n.nrf3 3. Suvaṇṇabhū misā sanavaṃsakathā maggo
+			anya_e0702n.nrf4 4. Yonakaraṭṭhasā sanavaṃsakathā maggo
+			anya_e0702n.nrf5 5. Navavā sī raṭṭhasā sanavaṃsakathā maggo
+			anya_e0702n.nrf6 6. Aparantaraṭṭhasā sanavaṃsakathā maggo
+			anya_e0702n.nrf7 7. Kasmiragandhā raraṭṭhasā sanavaṃsakathā maggo
+			anya_e0702n.nrf8 8. Mahiṃsakaraṭṭhassā sanavaṃsakathā maggo
+			anya_e0702n.nrf9 9. Mahā raṭṭhasā sanavaṃsakathā maggo
+			anya_e0702n.nrf10 10. Cinaraṭṭhasā sanavaṃsakathā maggo
+		e0703n.nrf Mahāvaṃsa
+			anya_e0703n.nrf0 Pathamapariccheda
+			anya_e0703n.nrf1 Dutiyapariccheda
+			anya_e0703n.nrf2 Tatiya pariccheda
+			anya_e0703n.nrf3 Catuttha pariccheda
+			anya_e0703n.nrf4 Pañcama pariccheda
+			anya_e0703n.nrf5 Chaṭṭhapariccheda
+			anya_e0703n.nrf6 Sattama pariccheda
+			anya_e0703n.nrf7 Aṭṭhama pariccheda
+			anya_e0703n.nrf8 Navama pariccheda
+			anya_e0703n.nrf9 Dasama pariccheda
+			anya_e0703n.nrf10 Ekā dasama pariccheda
+			anya_e0703n.nrf11 Dvā dasama pariccheda
+			anya_e0703n.nrf12 Terasama pariccheda
+			anya_e0703n.nrf13 Cuddasama pariccheda
+			anya_e0703n.nrf14 Pañcadasama pariccheda
+			anya_e0703n.nrf15 Soḷasama pariccheda
+			anya_e0703n.nrf16 Sattarasama pariccheda
+			anya_e0703n.nrf17 Aṭṭhā rasama pariccheda
+			anya_e0703n.nrf18 Ekū navī satima pariccheda
+			anya_e0703n.nrf19 Vī satima pariccheda
+			anya_e0703n.nrf20 Ekavī satima pariccheda
+			anya_e0703n.nrf21 Bā vī satima pariccheda
+			anya_e0703n.nrf22 Tevī satima pariccheda
+			anya_e0703n.nrf23 Catuvī satima pariccheda
+			anya_e0703n.nrf24 Pañcavī satima pariccheda
+			anya_e0703n.nrf25 Chabbī satima pariccheda
+			anya_e0703n.nrf26 Sattavī satima pariccheda
+			anya_e0703n.nrf27 Aṭṭhavī satima pariccheda
+			anya_e0703n.nrf28 Ekū natiṃsatima pariccheda
+			anya_e0703n.nrf29 Tiṃsatima pariccheda
+			anya_e0703n.nrf30 Ekatiṃsatima pariccheda
+			anya_e0703n.nrf31 Dvattiṃsatima pariccheda
+			anya_e0703n.nrf32 Tettiṃsatima pariccheda
+			anya_e0703n.nrf33 Catuttiṃsatima pariccheda
+			anya_e0703n.nrf34 Pañcatiṃsatimapariccheda
+			anya_e0703n.nrf35 Chattiṃsatima pariccheda
+			anya_e0703n.nrf36 Sattatiṃsatima pariccheda
+			anya_e0703n.nrf37 Aṭṭhatiṃsatima pariccheda
+			anya_e0703n.nrf38 Ekū nacattā lī satima pariccheda
+			anya_e0703n.nrf39 Cattā lī satima pariccheda
+			anya_e0703n.nrf40 Ekacattā lī satima pariccheda
+			anya_e0703n.nrf41 Dvicattā lī satima pariccheda
+			anya_e0703n.nrf42 Tecattā lī satima pariccheda
+			anya_e0703n.nrf43 Catucattā lī satima pariccheda
+			anya_e0703n.nrf44 Pañcacattā lī satima pariccheda
+			anya_e0703n.nrf45 Chacattā lī satima pariccheda
+			anya_e0703n.nrf46 Sattacattā lī satima pariccheda
+			anya_e0703n.nrf47 Aṭṭhacattā lī satima pariccheda
+			anya_e0703n.nrf48 Ekū napaññā satima pariccheda
+			anya_e0703n.nrf49 Paññā satima pariccheda
+			anya_e0703n.nrf50 Ekapaññā satima pariccheda
+			anya_e0703n.nrf51 Dvipaññā satima pariccheda
+			anya_e0703n.nrf52 Tivaññā satima paccheda
+			anya_e0703n.nrf53 Catupaññā satima pariccheda
+			anya_e0703n.nrf54 Pañcapaññā satima pariccheda
+			anya_e0703n.nrf55 Chapaññā satima pariccheda
+			anya_e0703n.nrf56 Sattapaññā satima pariccheda
+			anya_e0703n.nrf57 Aṭṭhapaññā satima pariccheda
+			anya_e0703n.nrf58 Ekū nasaṭṭhima pariccheda
+			anya_e0703n.nrf59 Saṭṭhima pariccheda
+			anya_e0703n.nrf60 Ekasaṭṭhima pariccheda
+			anya_e0703n.nrf61 Dvisaṭṭhimapariccheda
+			anya_e0703n.nrf62 Tisaṭṭhima pariccheda
 	Byākaraṇa gantha-saṅgaho
 		src="./cscd/e0802n.nrf.toc.xml" text="Kaccāyanabyākaraṇaṃ"
 		src="./cscd/e0801n.nrf.toc.xml" text="Moggallānabyākaraṇaṃ"
