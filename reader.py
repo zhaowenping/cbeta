@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-09-29 07:47:37
+# Last Modified: 2019-09-29 17:37:35
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -284,7 +284,8 @@ def submenu5(bulei):
     if not menu:
         src, text = bulei[-1].split(maxsplit=1)  # T01n0002
 
-        if '/' in src:
+        if '_' in src:
+            src = src.replace('_', '/')
             url = f"/xml/cscd/{src}.xml"  # T01n0002_001.xml
         else:
             url = f"/xml/cscd/tipitaka/{src}.xml"  # T01n0002_001.xml
