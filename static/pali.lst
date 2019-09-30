@@ -928,7 +928,25 @@
 		src="./cscd/abh04t.nrf.toc.xml" text="Dhammasaṅgaṇī-anuṭīkā"
 		src="./cscd/abh05t.nrf.toc.xml" text="Pañcapakaraṇa-anuṭīkā"
 		src="./cscd/abh06t.nrf.toc.xml" text="Abhidhammāvatāro-nāmarūpaparicchedo"
-		src="./cscd/abh07t.nrf.toc.xml" text="Abhidhammatthasaṅgaho"
+		abh07t.nrf Abhidhammatthasaṅgaho 攝阿毗達摩義論
+			tika_abh07t.nrf0 1. Cittaparicchedo 第一攝心分別品
+			tika_abh07t.nrf1 2. Cetasikaparicchedo 第二攝心所分別品
+			tika_abh07t.nrf2 3. Pakiṇṇakaparicchedo 第三攝雜分別品
+			tika_abh07t.nrf3 4. Vī thiparicchedo 第四攝路分別品
+			tika_abh07t.nrf4 5. Vī thimuttaparicchedo 第五攝離路分別品
+			tika_abh07t.nrf5 6. Rū paparicchedo 第六攝色分別品
+			tika_abh07t.nrf6 7. Samuccayaparicchedo 第七攝集分別品
+			tika_abh07t.nrf7 8. Paccayaparicchedo 第八攝緣分別品
+			tika_abh07t.nrf8 9. Kammaṭṭhā naparicchedo 第九攝業處分別品
+			tika_abh07t.nrf9 1. Cittaparicchedavaṇṇanā 
+			tika_abh07t.nrf10 2. Cetasikaparicchedavaṇṇanā 
+			tika_abh07t.nrf11 3. Pakiṇṇakaparicchedavaṇṇanā 
+			tika_abh07t.nrf12 4. Vī thiparicchedavaṇṇanā 
+			tika_abh07t.nrf13 5. Vī thimuttaparicchedavaṇṇanā 
+			tika_abh07t.nrf14 6. Rū paparicchedavaṇṇanā 
+			tika_abh07t.nrf15 7. Samuccayaparicchedavaṇṇanā 
+			tika_abh07t.nrf16 8. Paccayaparicchedavaṇṇanā 
+			tika_abh07t.nrf17 9. Kammaṭṭhā naparicchedavaṇṇanā 
 		src="./cscd/abh08t.nrf.toc.xml" text="Abhidhammāvatāra-purāṇaṭīkā"
 		src="./cscd/abh09t.nrf.toc.xml" text="Abhidhammamātikāpāḷi"
 04. Anya  複複註
