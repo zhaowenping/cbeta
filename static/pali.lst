@@ -828,10 +828,59 @@
 			atthakatha_vin01a.att3 2. Saṅghā disesakaṇḍaṃ
 			atthakatha_vin01a.att4 3. Aniyatakaṇḍaṃ
 			atthakatha_vin01a.att5 4. Nissaggiyakaṇḍaṃ
-		src="./cscd/vin02a1.att.toc.xml" text="Pācittiya-aṭṭhakathā"
-		src="./cscd/vin02a2.att.toc.xml" text="Mahāvagga-aṭṭhakathā"
-		src="./cscd/vin02a3.att.toc.xml" text="Cūḷavagga-aṭṭhakathā"
-		src="./cscd/vin02a4.att.toc.xml" text="Parivāra-aṭṭhakathā"
+		vin02a1.att Pācittiya-aṭṭhakathā
+			atthakatha_vin02a1.att0 5. Pā cittiyakaṇḍaṃ
+			atthakatha_vin02a1.att1 6. Pā ṭidesanī yakaṇḍaṃ
+			atthakatha_vin02a1.att2 7. Sekhiyakaṇḍaṃ
+			atthakatha_vin02a1.att3 8. Sattā dhikaraṇasamathā 
+			atthakatha_vin02a1.att4 1. Pā rā jikakaṇḍaṃ (bhikkhunī vibhaṅgavaṇṇanā )
+			atthakatha_vin02a1.att5 2. Saṅghā disesakaṇḍaṃ (bhikkhunī vibhaṅgavaṇṇanā )
+			atthakatha_vin02a1.att6 3. Nissaggiyakaṇḍaṃ (bhikkhunī vibhaṅgavaṇṇanā )
+			atthakatha_vin02a1.att7 4. Pā cittiyakaṇḍaṃ (bhikkhunī vibhaṅgavaṇṇanā )
+			atthakatha_vin02a1.att8 5. Pā ṭidesanī yakaṇḍaṃ (bhikkhunī vibhaṅgavaṇṇanā )
+		vin02a2.att Mahāvagga-aṭṭhakathā
+			atthakatha_vin02a2.att0 1. Mahā khandhakaṃ
+			atthakatha_vin02a2.att1 2. Uposathakkhandhakaṃ
+			atthakatha_vin02a2.att2 3. Vassū panā yikakkhandhakaṃ
+			atthakatha_vin02a2.att3 4. Pavā raṇā kkhandhakaṃ
+			atthakatha_vin02a2.att4 5. Cammakkhandhakaṃ
+			atthakatha_vin02a2.att5 6. Bhesajjakkhandhakaṃ
+			atthakatha_vin02a2.att6 7. Kathinakkhandhakaṃ
+			atthakatha_vin02a2.att7 8. Cī varakkhandhakaṃ
+			atthakatha_vin02a2.att8 9. Campeyyakkhandhakaṃ
+			atthakatha_vin02a2.att9 10. Kosambakakkhandhakaṃ
+		vin02a3.att Cūḷavagga-aṭṭhakathā
+			atthakatha_vin02a3.att0 1. Kammakkhandhakaṃ
+			atthakatha_vin02a3.att1 2. Pā rivā sikakkhandhakaṃ
+			atthakatha_vin02a3.att2 3. Samuccayakkhandhakaṃ
+			atthakatha_vin02a3.att3 4. Samathakkhandhakaṃ
+			atthakatha_vin02a3.att4 5. Khuddakavatthukkhandhakaṃ
+			atthakatha_vin02a3.att5 6. Senā sanakkhandhakaṃ
+			atthakatha_vin02a3.att6 7. Saṅghabhedakakkhandhakaṃ
+			atthakatha_vin02a3.att7 8. Vattakkhandhakaṃ
+			atthakatha_vin02a3.att8 9. Pā timokkhaṭṭhapanakkhandhakaṃ
+			atthakatha_vin02a3.att9 10. Bhikkhunikkhandhakaṃ
+			atthakatha_vin02a3.att10 11. Pañcasatikakkhandhakaṃ
+			atthakatha_vin02a3.att11 12. Sattasatikakkhandhakaṃ
+		vin02a4.att Parivāra-aṭṭhakathā
+			atthakatha_vin02a4.att0 Soḷasamahā vā ro
+			atthakatha_vin02a4.att1 Samuṭṭhā nasī savaṇṇanā 
+			atthakatha_vin02a4.att2 Antarapeyyā laṃ
+			atthakatha_vin02a4.att3 Khandhakapucchā vā ro
+			atthakatha_vin02a4.att4 Ekuttarikanayo
+			atthakatha_vin02a4.att5 Uposathā dipucchā vissajjanā 
+			atthakatha_vin02a4.att6 Paṭhamagā thā saṅgaṇikaṃ
+			atthakatha_vin02a4.att7 Adhikaraṇabhedaṃ
+			atthakatha_vin02a4.att8 Dutiyagā thā saṅgaṇikaṃ
+			atthakatha_vin02a4.att9 Codanā kaṇḍaṃ
+			atthakatha_vin02a4.att10 Cū ḷasaṅgā mo
+			atthakatha_vin02a4.att11 Mahā saṅgā mo
+			atthakatha_vin02a4.att12 Kathinabhedaṃ
+			atthakatha_vin02a4.att13 Upā lipañcakaṃ
+			atthakatha_vin02a4.att14 Āpattisamuṭṭhā navaṇṇanā 
+			atthakatha_vin02a4.att15 Aparadutiyagā thā saṅgaṇikaṃ
+			atthakatha_vin02a4.att16 Sedamocanagā thā 
+			atthakatha_vin02a4.att17 Pañcavaggo
 	Suttapiṭaka (aṭṭhakathā)
 		Dīgha nikāya (aṭṭhakathā)
 			src="./cscd/s0101a.att.toc.xml" text="Sīlakkhandhavagga-aṭṭhakathā"
@@ -947,8 +996,71 @@
 			tika_abh07t.nrf15 7. Samuccayaparicchedavaṇṇanā 
 			tika_abh07t.nrf16 8. Paccayaparicchedavaṇṇanā 
 			tika_abh07t.nrf17 9. Kammaṭṭhā naparicchedavaṇṇanā 
-		src="./cscd/abh08t.nrf.toc.xml" text="Abhidhammāvatāra-purāṇaṭīkā"
-		src="./cscd/abh09t.nrf.toc.xml" text="Abhidhammamātikāpāḷi"
+		abh08t.nrf Abhidhammāvatāra-purāṇaṭīkā
+			tika_abh08t.nrf0 1. Paṭhamo paricchedo
+			tika_abh08t.nrf1 2. Dutiyo paricchedo
+			tika_abh08t.nrf2 3. Tatiyo paricchedo
+			tika_abh08t.nrf3 4. Catuttho paricchedo
+			tika_abh08t.nrf4 5. Pañcamo paricchedo
+			tika_abh08t.nrf5 6. Chaṭṭho paricchedo
+			tika_abh08t.nrf6 7. Sattamo paricchedo
+			tika_abh08t.nrf7 8. Aṭṭhamo paricchedo
+			tika_abh08t.nrf8 9. Navamo paricchedo
+			tika_abh08t.nrf9 10. Dasamo paricchedo
+			tika_abh08t.nrf10 11. Ekā dasamo paricchedo
+			tika_abh08t.nrf11 12. Dvā dasamo paricchedo
+			tika_abh08t.nrf12 13. Terasamo paricchedo
+			tika_abh08t.nrf13 14. Cuddasamo paricchedo
+			tika_abh08t.nrf14 15. Pannarasamo paricchedo
+			tika_abh08t.nrf15 16. Soḷasamo paricchedo
+			tika_abh08t.nrf16 17. Sattarasamo paricchedo
+			tika_abh08t.nrf17 18. Aṭṭhā rasamo paricchedo
+			tika_abh08t.nrf18 19. Ekū navī satimo paricchedo
+			tika_abh08t.nrf19 20. Vī satimo paricchedo
+			tika_abh08t.nrf20 21. Ekavī satimo paricchedo
+			tika_abh08t.nrf21 22. Dvā vī satimo paricchedo
+			tika_abh08t.nrf22 23. Tevī satimo paricchedo
+			tika_abh08t.nrf23 24. Catuvī satimo paricchedo
+			tika_abh08t.nrf24 Ganthā rambhakathā vaṇṇanā 
+			tika_abh08t.nrf25 1. Paṭhamo paricchedo
+			tika_abh08t.nrf26 2. Dutiyo paricchedo
+			tika_abh08t.nrf27 3. Tatiyo paricchedo
+			tika_abh08t.nrf28 4. Catuttho paricchedo
+			tika_abh08t.nrf29 5. Pañcamo paricchedo
+			tika_abh08t.nrf30 6. Chaṭṭho paricchedo
+			tika_abh08t.nrf31 7. Sattamo paricchedo
+			tika_abh08t.nrf32 8. Aṭṭhamo paricchedo
+			tika_abh08t.nrf33 9. Navamo paricchedo
+			tika_abh08t.nrf34 10. Dasamo paricchedo
+			tika_abh08t.nrf35 11. Ekā dasamo paricchedo
+			tika_abh08t.nrf36 12. Dvā dasamo paricchedo
+			tika_abh08t.nrf37 13. Terasamo paricchedo
+			tika_abh08t.nrf38 14. Cuddasamo paricchedo
+			tika_abh08t.nrf39 15. Pannarasamo paricchedo
+			tika_abh08t.nrf40 16. Soḷasamo paricchedo
+			tika_abh08t.nrf41 17. Sattarasamo paricchedo
+			tika_abh08t.nrf42 18. Aṭṭhā rasamo paricchedo
+			tika_abh08t.nrf43 19. Ekū navī satimo paricchedo
+			tika_abh08t.nrf44 20. Vī satimo paricchedo
+			tika_abh08t.nrf45 21. Ekavī satimo paricchedo
+			tika_abh08t.nrf46 22. Bā vī satimo paricchedo
+			tika_abh08t.nrf47 23. Tevī satimo paricchedo
+			tika_abh08t.nrf48 24. Catuvī satimo paricchedo
+		abh09t.nrf Abhidhammamātikāpāḷi
+			tika_abh09t.nrf0 1. Dhammasaṅgaṇī mā tikā 
+			tika_abh09t.nrf1 2. Vibhaṅgamā tikā 
+			tika_abh09t.nrf2 3. Dhā tukathā mā tikā 
+			tika_abh09t.nrf3 4. Puggalapaññattimā tikā 
+			tika_abh09t.nrf4 5. Kathā vatthumā tikā 
+			tika_abh09t.nrf5 6. Yamakamā tikā 
+			tika_abh09t.nrf6 7. Paṭṭhā namā tikā 
+			tika_abh09t.nrf7 1. Dhammasaṅgaṇī mā tikā 
+			tika_abh09t.nrf8 2. Vibhaṅgamā tikā 
+			tika_abh09t.nrf9 3. Dhā tukathā mā tikā 
+			tika_abh09t.nrf10 4. Puggalapaññattimā tikā 
+			tika_abh09t.nrf11 5. Kathā vatthumā tikā 
+			tika_abh09t.nrf12 6. Yamakamā tikā 
+			tika_abh09t.nrf13 7. Paṭṭhā namā tikatthavaṇṇanā 
 04. Anya  複複註
 	Visuddhimagga 清淨道論
 		e0101n.mul Visuddhimagga
