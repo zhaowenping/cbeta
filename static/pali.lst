@@ -1122,7 +1122,7 @@
 			anya_e0501n.nrf20 21. Atthipaccayo
 			anya_e0501n.nrf21 22. Natthipaccayo
 			anya_e0501n.nrf22 Paccayasabhā go
-	Buddha-vandanā gantha-saṅgaho
+	Buddha-vandanā gantha-saṅgaho 佛贊集
 		e0601n.nrf Namakkāraṭīkā
 			anya_e0601n.nrf0 Namakkā rapā ḷi
 			anya_e0601n.nrf1 Namakkā raṭī kā 
@@ -1361,33 +1361,138 @@
 			anya_e0813n.nrf3 3. Samā sakaṇḍa
 			anya_e0813n.nrf4 4. Taddhitakaṇḍa
 	Nīti-gantha-saṅgaho
-		src="./cscd/e1005n.nrf.toc.xml" text="Lokanīti"
-		src="./cscd/e1006n.nrf.toc.xml" text="Suttantanīti"
-		src="./cscd/e1007n.nrf.toc.xml" text="Sūrassatinīti"
-		src="./cscd/e1004n.nrf.toc.xml" text="Mahārahanīti"
-		src="./cscd/e1003n.nrf.toc.xml" text="Dhammanīti"
-		src="./cscd/e1001n.nrf.toc.xml" text="Kavidappaṇanīti"
-		src="./cscd/e1002n.nrf.toc.xml" text="Nītimañjarī"
-		src="./cscd/e1009n.nrf.toc.xml" text="Naradakkhadīpanī"
-		src="./cscd/e1010n.nrf.toc.xml" text="Caturārakkhadīpanī"
-		src="./cscd/e1008n.nrf.toc.xml" text="Cāṇakyanīti"
+		e1005n.nrf Lokanīti
+			anya_e1005n.nrf0 1. Paṇḍitakaṇḍo
+			anya_e1005n.nrf1 Sujanakaṇḍo
+			anya_e1005n.nrf2 4. Bā ladujjanakaṇḍo
+			anya_e1005n.nrf3 4. Mittakaṇḍo
+			anya_e1005n.nrf4 5. Itthikaṇḍo
+			anya_e1005n.nrf5 6. Rā jakaṇḍo
+			anya_e1005n.nrf6 7. Pakiṇṇakakaṇḍo
+		e1006n.nrf Suttantanīti
+			anya_e1006n.nrf0 Suttantanī ti
+			anya_e1006n.nrf1 Vasalasutta
+		e1007n.nrf Sūrassatinīti
+			anya_e1007n.nrf0 Paṇā magā thā 
+			anya_e1007n.nrf1 Sū rassatī nī ti
+			anya_e1007n.nrf2 Cā ṇakyanī tilā  gā thā 
+		e1004n.nrf Mahārahanīti
+			anya_e1004n.nrf0 Paṇḍitakathā 
+			anya_e1004n.nrf1 Sambhedakathā 
+			anya_e1004n.nrf2 Mittakathā 
+			anya_e1004n.nrf3 Nā yakakathā 
+			anya_e1004n.nrf4 Itthikathā 
+		e1003n.nrf Dhammanīti
+			anya_e1003n.nrf Dhammanī ti
+		e1001n.nrf Kavidappaṇanīti
+			anya_e1001n.nrf0 Mā tikā 
+			anya_e1001n.nrf1 Ratanattayapaṇā ma
+			anya_e1001n.nrf2 Paṇḍitakaṇḍa
+			anya_e1001n.nrf3 Sujanakaṇḍa
+			anya_e1001n.nrf4 Bā ladujjanakaṇḍa
+			anya_e1001n.nrf5 Rā jakaṇḍa
+			anya_e1001n.nrf6 Nā yaka kaṇḍa
+			anya_e1001n.nrf7 Puttakaṇḍa
+			anya_e1001n.nrf8 Vejjā cariya kaṇḍa
+			anya_e1001n.nrf9 Dā saka kaṇḍa
+			anya_e1001n.nrf10 Itthikaṇḍa
+			anya_e1001n.nrf11 Pakiṇṇakakaṇḍa
+			anya_e1001n.nrf12 Kavidappaṇanī ti
+			anya_e1001n.nrf13 Paṇā ma paṭiññā 
+		e1002n.nrf Nītimañjarī
+			anya_e1002n.nrf Nī timañjarī 
+		e1009n.nrf Naradakkhadīpanī
+			anya_e1009n.nrf1 Paṇā ma
+			anya_e1009n.nrf2 Naradakkhadī pakassa,
+			anya_e1009n.nrf3 Matthanā 
+			anya_e1009n.nrf4 Āsī sa
+			anya_e1009n.nrf5 Abhiyā caka
+			anya_e1009n.nrf6 Paññā -niddesa
+			anya_e1009n.nrf7 Cā ritta-niddesa
+			anya_e1009n.nrf8 Gharā vā sa-niddesa
+			anya_e1009n.nrf9 Sā dhujana-niddesa
+			anya_e1009n.nrf10 Kā yakhamanī ya-niddesa
+			anya_e1009n.nrf11 Pakiṇṇaka-niddesa
+			anya_e1009n.nrf12 Sī la-niddesa
+			anya_e1009n.nrf13 Naradakkha thomanā  ā sī sa
+		e1010n.nrf Caturārakkhadīpanī
+			anya_e1010n.nrf0 Kā yapaccavekkhaṇā 
+			anya_e1010n.nrf1 1. Buddhā nussati niddesa
+			anya_e1010n.nrf2 2. Maraṇassatiniddesa
+			anya_e1010n.nrf3 3. Asubhabhā vanā  niddesa
+			anya_e1010n.nrf4 Appamā dā vaha pakiṇṇakaniddesa
+			anya_e1010n.nrf5 Kā yapaccavekkhaṇā 
+		e1008n.nrf Cāṇakyanīti
+			anya_e1008n.nrf Cā ṇakyanī tipā ḷi
 	Pakiṇṇaka-gantha-saṅgaho
-		src="./cscd/e1101n.nrf.toc.xml" text="Rasavāhinī"
-		src="./cscd/e1102n.nrf.toc.xml" text="Sīmavisodhanīpāṭha"
-		src="./cscd/e1103n.nrf.toc.xml" text="Vessantaragīti"
+		e1101n.nrf Rasavāhinī
+			anya_e1101n.nrf0 Paṇā mā dikathā 
+			anya_e1101n.nrf1 Dhammasoṇḍakavaggo
+			anya_e1101n.nrf2 Nandiyarā javaggo
+			anya_e1101n.nrf3 Yakkhavañcitavaggo
+			anya_e1101n.nrf4 Mahā senavaggo
+		e1102n.nrf Sīmavisodhanīpāṭha
+			anya_e1102n.nrf0 Sī mavisodhanī 
+			anya_e1102n.nrf1 1. Upasampadā kaṇḍo
+			anya_e1102n.nrf2 2. Kappavinā sakaṇḍo
+			anya_e1102n.nrf3 3. Nibbā nakaṇḍo
+			anya_e1102n.nrf4 4. Samasī sikaṇḍo
+			anya_e1102n.nrf5 Pakiṇṇakakaṇḍo
+		e1103n.nrf Vessantaragīti
+			anya_e1103n.nrf Vessantarā gī ti
 	Sihaḷa-gantha-saṅgaho
-		src="./cscd/e1201n.nrf.toc.xml" text="Moggallāna vuttivivaraṇapañcikā"
-		src="./cscd/e1202n.nrf.toc.xml" text="Thūpavaṃsa"
-		src="./cscd/e1203n.nrf.toc.xml" text="Dāṭhāvaṃsa"
-		src="./cscd/e1204n.nrf.toc.xml" text="Dhātupāṭhavilāsiniyā"
-		src="./cscd/e1205n.nrf.toc.xml" text="Dhātuvaṃsa"
-		src="./cscd/e1206n.nrf.toc.xml" text="Hatthavanagallavihāravaṃsa"
-		src="./cscd/e1207n.nrf.toc.xml" text="Jinacaritaya"
-		src="./cscd/e1208n.nrf.toc.xml" text="Jinavaṃsadīpaṃ"
-		src="./cscd/e1209n.nrf.toc.xml" text="Telakaṭāhagāthā"
-		src="./cscd/e1210n.nrf.toc.xml" text="Milidaṭīkā"
-		src="./cscd/e1211n.nrf.toc.xml" text="Padamañjarī"
-		src="./cscd/e1212n.nrf.toc.xml" text="Padasādhanaṃ"
-		src="./cscd/e1213n.nrf.toc.xml" text="Saddabindupakaraṇaṃ"
-		src="./cscd/e1214n.nrf.toc.xml" text="Kaccāyanadhātumañjusā"
-		src="./cscd/e1215n.nrf.toc.xml" text="Sāmantakūṭavaṇṇanā"
+		e1201n.nrf Moggallāna vuttivivaraṇapañcikā
+			anya_e1201n.nrf Moggallā na vuttivivaraṇapañcikā .
+		e1202n.nrf Thūpavaṃsa
+			anya_e1202n.nrf0 Thupavaṃso 
+			anya_e1202n.nrf1 Abhinī hā ra kathā 
+			anya_e1202n.nrf2 Cū ḷā maṇidussa thupadvayakathā 
+			anya_e1202n.nrf3 Dasathū pakathā 
+			anya_e1202n.nrf4 Dhā tunidhā na kathā 
+			anya_e1202n.nrf5 Caturā sī ti sahassa thū pakathā 
+			anya_e1202n.nrf6 Bodhi ā gamanakathā 
+			anya_e1202n.nrf7 Yojanathū pa kathā 
+			anya_e1202n.nrf8 Tadatthadī panatthaṃ ayamanupubbakathā 
+			anya_e1202n.nrf9 Mahiyaṅgana thū pakathā 
+			anya_e1202n.nrf10 Marī cavaṭṭi vihā rakathā 
+			anya_e1202n.nrf11 Thū pasā dhana lā bhakathā 
+			anya_e1202n.nrf12 Thū pā ramha kathā 
+			anya_e1202n.nrf13 Dhā tugabba rū pavaṇṇanā kathā 
+		e1203n.nrf Dāṭhāvaṃsa
+			anya_e1203n.nrf Dā ṭhā vaṃso 
+		e1204n.nrf Dhātupāṭhavilāsiniyā
+			anya_e1204n.nrf Dhā tupā ṭha vilā siniyā 
+		e1205n.nrf Dhātuvaṃsa
+			anya_e1205n.nrf0 1. Tathā gatassā gamanakathā 
+			anya_e1205n.nrf1 2. Parinibbā nakathā 
+			anya_e1205n.nrf2 3. Dhā tuparamparā kathā 
+			anya_e1205n.nrf3 4. Pakiṇṇakakathā 
+			anya_e1205n.nrf4 5. Dhā tunidhā nā dhikā ro
+		e1206n.nrf Hatthavanagallavihāravaṃsa
+			anya_e1206n.nrf Hatthavanagallavihā ra vaṃso
+		e1207n.nrf Jinacaritaya
+			anya_e1207n.nrf Jinacaritaya 
+		e1208n.nrf Jinavaṃsadīpaṃ
+			anya_e1208n.nrf Jinavaṃsadī paṃ 
+		e1209n.nrf Telakaṭāhagāthā
+			anya_e1209n.nrf Telakaṭā hagā thā  
+		e1210n.nrf Milidaṭīkā
+			anya_e1210n.nrf0 Milidaṭī kā 
+			anya_e1210n.nrf1 Pakiṇṇakathavivaraṇaṃ
+		e1211n.nrf Padamañjarī
+			anya_e1211n.nrf Padamañjarī  
+		e1212n.nrf Padasādhanaṃ
+			anya_e1212n.nrf Padasā dhanaṃ 
+		e1213n.nrf Saddabindupakaraṇaṃ
+			anya_e1213n.nrf Saddabindu pakaraṇaṃ
+		e1214n.nrf Kaccāyanadhātumañjusā
+			anya_e1214n.nrf0 Kaccā yana dhā tu mañjū sā 
+			anya_e1214n.nrf1 Tudā dayo avuddhikā 
+			anya_e1214n.nrf2 Juhotyā ’ dayo sadvibhā valuttavikaraṇā .
+			anya_e1214n.nrf3 Rudhā dayo
+			anya_e1214n.nrf4 Divā dayo 
+			anya_e1214n.nrf5 Svā dayo 
+			anya_e1214n.nrf6 Kiyā dayo
+			anya_e1214n.nrf7 Tanā dayo 
+		e1215n.nrf Sāmantakūṭavaṇṇanā
+			anya_e1215n.nrf Samantakū ṭavaṇṇanā  
