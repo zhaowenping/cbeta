@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-09-29 17:37:35
+# Last Modified: 2019-10-02 08:25:15
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -120,6 +120,7 @@ sch_b = read_menu_file("static/bulei_sutra_sch.lst")
 sch_dzyz = read_menu_file("static/dzyz.lst")
 sch_fyjs = read_menu_file("static/fyjs.lst")
 sch_pali = read_menu_file("static/pali.lst")
+sch_san = read_menu_file("static/san.lst")
 
 @route('/mulu')
 @view('temp/menu.jinja2')
@@ -145,6 +146,11 @@ def menu4():
 @view('temp/menu.jinja2')
 def menu5():
     return {'menus': sch_pali, 'request':request, 'yiju': '巴利三藏(CST4)'}
+
+@route('/sanskrit')
+@view('temp/menu.jinja2')
+def menu6():
+    return {'menus': sch_san, 'request':request, 'yiju': '梵文三藏(DSBC)'}
 
 @route('/mulu/:bulei#.+#')
 @view('temp/menu.jinja2')
@@ -292,6 +298,35 @@ def submenu5(bulei):
 
         redirect(url)
     return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '巴利三藏目錄', 'root':root}
+
+
+@route('/sanskrit/:bulei#.+#')
+@view('temp/menu.jinja2')
+def submenu6(bulei):
+    menu = sch_san
+    bulei = bulei.split('/')
+    root = '/sanskrit'
+
+    nav = [(root, '总目录')]
+    for b in bulei:
+        if b not in menu: abort(404)
+        menu = menu[b]
+        t = '/'.join((nav[-1][0], b))
+        nav.append((t, b))
+    nav.pop(0)
+
+    # 跳转到正文
+    if not menu:
+        src, text = bulei[-1].split(maxsplit=1)  # T01n0002
+
+        if '_' in src:
+            src = src.replace('_', '/')
+            url = f"/xml/cscd/{src}.xml"  # T01n0002_001.xml
+        else:
+            url = f"/xml/cscd/tipitaka/{src}.xml"  # T01n0002_001.xml
+
+        redirect(url)
+    return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '梵文三藏目錄', 'root':root}
 
 
 # 处理搜索
