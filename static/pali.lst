@@ -1,5 +1,5 @@
 01. Tipiṭaka (Mūla)  三藏
-	01. Vinayapiṭaka 毘奈耶藏
+	01. Vinaya piṭaka 律藏
 		01. Pārājikapāḷi 經分別波羅夷
 			vin01m.mul0 Verañjakaṇḍaṃ
 			vin01m.mul1 1. Pā rā jikakaṇḍaṃ 四波羅夷
@@ -61,7 +61,7 @@
 			vin02m4.mul15 Dutiyagā thā saṅgaṇikaṃ 偈集第二: 問關於戒律上事項的數
 			vin02m4.mul16 Sedamocanagā thā 發汗偈: 集問難的偈而不提出解答
 			vin02m4.mul17 Pañcavaggo 五品: 1.羯磨品 2.義利品 3.制戒品 4.所製品 5.九聚會品
-	02. Suttapiṭaka  修多羅藏
+	02. Sutta piṭaka  經藏
 		01. Dīghanikāya 長部
 			01. Sīlakkhandhavaggapāḷi 戒蘊(集)品
 				s0101m.mul0 1. Brahmajā lasuttaṃ
@@ -650,7 +650,7 @@
 				s0520m.nrf5 6. Suttatthasamuccayabhū mi
 				s0520m.nrf6 7. Hā rasampā tabhū mi
 				s0520m.nrf7 8. Suttavebhaṅgiyaṃ
-	03. Abhidhammapiṭaka 阿毘達摩藏
+	03. Abhidhamma piṭaka 論藏
 		01. abh01m.mul Dhammasaṅgaṇīpāḷi  法集論
 			abh01m.mul0 Mā tikā
 			abh01m.mul1 1. Cittuppā dakaṇḍaṃ
@@ -820,7 +820,7 @@
 			abh03m11.mul18 Dhammapaccanī yā nulome tikatikapaṭṭhā naṃ
 			abh03m11.mul19 Dhammapaccanī yā nulome dukadukapaṭṭhā naṃ
 02. Aṭṭhakathā 義註
-	Vinayapiṭaka (aṭṭhakathā)
+	Vinaya piṭaka (aṭṭhakathā)
 		vin01a.att Pārājikakaṇḍa-aṭṭhakathā
 			atthakatha_vin01a.att0 Ganthā rambhakathā
 			atthakatha_vin01a.att1 Verañjakaṇḍavaṇṇanā
@@ -881,7 +881,7 @@
 			atthakatha_vin02a4.att15 Aparadutiyagā thā saṅgaṇikaṃ
 			atthakatha_vin02a4.att16 Sedamocanagā thā 
 			atthakatha_vin02a4.att17 Pañcavaggo
-	Suttapiṭaka (aṭṭhakathā)
+	Sutta piṭaka (aṭṭhakathā)
 		Dīgha nikāya (aṭṭhakathā)
 			s0101a.att Sīlakkhandhavagga-aṭṭhakathā
 				atthakatha_s0101a.att0 Ganthā rambhakathā 
@@ -1034,7 +1034,7 @@
 			src="./cscd/s0516a.att.toc.xml" text="Cūḷaniddesa-aṭṭhakathā"
 			src="./cscd/s0517a.att.toc.xml" text="Paṭisambhidāmagga-aṭṭhakathā"
 			src="./cscd/s0519a.att.toc.xml" text="Nettippakaraṇa-aṭṭhakathā"
-	Abhidhammapiṭaka (aṭṭhakathā)
+	Abhidhamma piṭaka (aṭṭhakathā)
 		abh01a.att Dhammasaṅgaṇi-aṭṭhakathā
 			atthakatha_abh01a.att0 Ganthā rambhakathā 
 			atthakatha_abh01a.att1 1. Cittuppā dakaṇḍo
@@ -1131,7 +1131,7 @@
 			atthakatha_abh03a.att64 13-18. Anulomapaccanī yapaṭṭhā navaṇṇanā 
 			atthakatha_abh03a.att65 19-24. Paccanī yā nulomapaṭṭhā navaṇṇanā 
 03. Tīkā 複註
-	Vinayapiṭaka (ṭīkā)
+	Vinaya piṭaka (ṭīkā)
 		src="./cscd/vin01t1.tik.toc.xml" text="Sāratthadīpanī-ṭīkā-1"
 		src="./cscd/vin01t2.tik.toc.xml" text="Sāratthadīpanī-ṭīkā-2"
 		src="./cscd/vin02t.tik.toc.xml" text="Sāratthadīpanī-ṭīkā-3"
@@ -1145,7 +1145,7 @@
 		src="./cscd/vin11t.nrf.toc.xml" text="Vinayavinicchaya-ṭīkā"
 		src="./cscd/vin12t.nrf.toc.xml" text="Pācityādiyojanāpāḷi"
 		src="./cscd/vin13t.nrf.toc.xml" text="Khuddasikkhā-mūlasikkhā"
-	Suttapiṭaka (ṭīkā)
+	Sutta piṭaka (ṭīkā)
 		Dīghanikāya (ṭīkā)
 			src="./cscd/s0101t.tik.toc.xml" text="Sīlakkhandhavagga-ṭīkā"
 			src="./cscd/s0102t.tik.toc.xml" text="Mahāvagga-ṭīkā"
@@ -1170,7 +1170,7 @@
 		Khuddakanikāya (ṭīkā)
 			src="./cscd/s0519t.tik.toc.xml" text="Nettippakaraṇa-ṭīkā"
 			src="./cscd/s0501t.nrf.toc.xml" text="Nettivibhāvinī"
-	Abhidhammapiṭaka (ṭīkā)
+	Abhidhamma piṭaka (ṭīkā)
 		src="./cscd/abh01t.tik.toc.xml" text="Dhammasaṅgaṇī-mūlaṭīkā"
 		src="./cscd/abh02t.tik.toc.xml" text="Vibhaṅga-mūlaṭīkā"
 		src="./cscd/abh03t.tik.toc.xml" text="Pañcapakaraṇa-mūlaṭīkā"
@@ -1367,14 +1367,14 @@
 			anya_e0903n.nrf4 Mahā vaggasaṃyuttapā ḷi
 		e0904n.nrf Aṅguttaranikāya (pu-vi)
 			anya_e0904n.nrf Aṅguttaranikā ye
-		e0905n.nrf Vinayapiṭaka (pu-vi)
-			anya_e0905n.nrf0 Vinayapiṭaka
+		e0905n.nrf Vinaya piṭaka (pu-vi)
+			anya_e0905n.nrf0 Vinaya piṭaka
 			anya_e0905n.nrf1 Saṅghā disesa sikkhā pucchā 
 			anya_e0905n.nrf2 Nissaggipā cittiya
 			anya_e0905n.nrf3 Mahā vaggapā ḷi
 			anya_e0905n.nrf4 Cū ḷavaggapā ḷi
-		e0906n.nrf Abhidhammapiṭaka (pu-vi)
-			anya_e0906n.nrf Abhidhammapiṭaka
+		e0906n.nrf Abhidhamma piṭaka (pu-vi)
+			anya_e0906n.nrf Abhidhamma piṭaka
 		e0907n.nrf Aṭṭhakathā (pu-vi)
 			anya_e0907n.nrf Aṭṭhakathā 
 	Leḍī sayāḍo gantha-saṅgaho
