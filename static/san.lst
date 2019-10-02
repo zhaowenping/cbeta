@@ -132,66 +132,374 @@ vinayapiṭaka
 	15 Upasampadā jñaptiḥ
 śāstrapiṭaka
 	abhidharma
+		1 Abhidharmadīpaḥ
+		2 Abhidharmadīpaṭīkā
+		3 Abhidharmakoṣakārikā
+		4 Abhidharmāmṛta
+		5 Abhidharmasamuccaya
+		6 Abhidharmasamuccaya bhāṣya
+		7 Āryadharmadhātugarbhavivaraṇam
+		8 Daśākuśalakarmapathadeśanā
+		9 Jñānaprasthānam śāstram
+		10 Subodhālaṅkāraḥ
 	advayatantraṭīkā
+		1 Ḍākinījālasaṃvararahasyam
+		2 Sekoddeśaḥ
+		3 Sekoddeśapañjikā
+		4 Sekoddeśaṭīkā (paramārthasaṃgraha)
+		5 Vāṅmaṇḍalanamaskāraślokāḥ
+		6 Baudha pāribhāṣikāḥ śabdāḥ
+		7 Āryamāyājālamahātantroddhṛtamaṇdalagāthāṭippaṇī
 	alaṃkāra
+		1 Chandoratnākaraḥ (svopajña samanvitaḥ)
+		2 vṛttamālāstutiḥ
 	cikitsavidyā
+		1 Svapnādhyāya
 	stotra
 		ādibuddha
+			1 Ādibuddhadvādaśakastotram
+			2 Advayaparamārthā nāmasaṅgītiḥ
+			3 Dvādaśakāranayastotram
 		paṇḍita
+			1 Vikramāraccivaibhavam
 		ākāśagarbha
+			1 Ākāśagarbhanāmāṣṭottaraśatastotram
 		āryatārā
+			1 (Ārya) tārānamaskāraikaviṃśatistotram
+			2 (Ārya)tārāsragdharāstotram
+			3 (Ārya)tārāṣṭottaraśatanāmastotram
+			4 (Ārya)tārāstutiḥ
 		aṣṭamahābodhisattva
+			1 Maṅgalāṣṭakam
 		aṣṭamātṛkā
+			1 Aṣṭamātṛkāstotram
 		avalokiteśvara
+			1 Avadhānastotram (vandanāstavaṃ vā)
+			2 Avalokiteśvarahayagrīvadhāraṇī
+			3 Avalokiteśvarāṣṭakastotram
+			4 Avalokiteśvarastavaḥ (candrakāntābhikṣuṇīkṛtaḥ)
+			5 Avalokiteśvarastotram
+			6 Avalokiteśvarastotram (carapatipādaviracitam)
+			7 Avalokiteśvarāṣṭottaraśatanāmastotram
+			8 Lokanāthastotram
+			9 Lokeśvaraśatakam
+			10 Lokeśvarastotram
+			11 Narakoddhārastotram
+			12 Potalakāṣṭakam
+			13 Rakṣākāla (kara) stavaḥ
+			14 Ratnamālāstotram
+			15 Rūpastavaḥ
+			16 Ṣaḍgatistotram
+			17 Saptākṣarastotram
+			18 Saptavidhānuttarastotram
 		bhagavatī
+			1 Śāradāṣṭakastotram
+			2 Vāgvāṇīstotram
 		bodhisattvacaryā
+			1 Daśabhūmīśvaro nāma mahāyānasūtraratnarājastotram
 		caityabhaṭṭāraka
+			1 Caityavandanāstotram
+			2 Vidyākṣarastotram
 		cakrasaṁvara
+			1 Cakrasaṃvarastutiḥ
+			2 Catuḥṣaṣṭisaṃvarastotram
+			3 Pīṭhastavaḥ
+			4 Ṣaṭtriṃśatsaṃvarastutiḥ
+			5 Vasantatilakāstutiḥ
 		dharmadhātu
+			1 Dharmadhātunāmastavaḥ
+			2 Pañcākṣarastotram
+			3 Dharmadhātustava
 		gaṇḍībhaṭṭāraka
+			1 Buddhagaṇḍīstavaḥ
+			2 Gaṇḍīstavaḥ
 		gaṇeśa
+			1 Gaṇeśastotram
 		hārītī
+			1 Hāratīstotram
 		madhyamaka
+			1 Lokātītastavaḥ
+			2 Madhyamakaśāstrastutiḥ
+			3 Niraupamyastavaḥ
+			4 Paramārthastavaḥ
 		mahācakravartin
+			1 Mahācakravartināmāṣṭottaraśatastotram
 		mahākāla
+			1 Mahākālastotram
+			2 Vajramahākālastotram
 		mañjuśrī
+			1 (Ārya)mañjuśrīnāmāṣṭottaraśatakastotram
+			2 mañjuśrīstotram
 		nairātmā
+			1 Guhyeśvarīstotram
+			2 Nairātmāṣṭakastotram
 		pañcabuddha
+			1 Pañcatathāgatastotram
+			2 Pañcatathāgatastutigāthā
+			3 Sragdharāpañcakastotram
 		pañcarakṣādevī
+			1 Mahāpratisarāstotram
+			2 Pañcarakṣādevīstotrāṇi
+			3 Pratisarāstotram
 		prajñāpāramitā
+			1 Prajñāpāramitāstotram
+			2 Prajñāpāramitāstutiḥ
+			3 Ṣaṭpāramitāstotram
 		śākyamuni
+			1 Adhyardhaśatakaṃ nāma stotram
+			2 Bhaktiśatakam
+			3 Buddhabhaṭṭārakastotram
+			4 Buddhagadyaya
+			5 Buddhastotram
+			6 Nāmāṣṭaśatakaya
+			7 Śākyasiṃhastotram (brahmaṇā kṛtam)
+			8 Śākyasiṃhastotram (chando'mṛtoddhṛtam)
+			9 Śākyasiṃhastotram (durgatipariśodhanoddhṛtam)
+			10 Śākyasiṃhastotram (navagrahakṛtam)
+			11 Śākyasiṃhastotram (śaṅkarakṛtam)
+			12 Śākyasiṃhastotram (surapatikṛtam)
+			13 Śākyasiṃhastotram (viṣṇukṛtam)
+			14 Śākyasiṃhastotram (yaśodharākṛtam)
+			15 Sattvārādhanagāthā
+			16 Suprabhātastotram
 		saptabuddha
+			1 Saptabuddhastotram
+			2 Saptajinastavaḥ
 		sarvatathāgata
+			1 Bhadracarīpraṇidhānastotram
+			2 Kamalākarasarvatathāgatastotram
+			3 Ṣaḍabhijñastotram
+			4 Bhadracaryādeśanā
 		svayambhū
+			1 Kalyāṇapañcaviṃśatistotram
+			2 Maṅgalaṣoḍaśastutiḥ
+			3 Mañjuvajrastotram
+			4 Svayaṃbhūstavaḥ
+			5 Svayambhūstotram
 		triratna
+			1 Gururatnatrayastotram
 		ugratārā
+			1 Caṇḍikādaṇḍakastotram
+			2 Mahogratārāṣṭakastotram
+			3 Mahogratārāstutiḥ
 		vāgīśvara
+			1 Dharmadhātuvāgīśvaramaṇḍalastotram
+			2 Vāgīśvaravarṇanāstotram
 		vajrapāṇi
+			1 Vajrapāṇināmāṣṭottaraśatastotram
 		vajrāsana
+			1 Mahābodhibhaṭṭārakastotram
+			2 Mahābodhivandanāṣṭakam
+			3 Māravijayastotram
 		vajrasattva
+			1 Vajrasattvastotram
+			2 Vajrasattvastutiḥ
 		vajrayoginī
+			1 Kalyāṇatriṃśatikāstotram
+			2 Vajradevīstotram
+			3 Vajravilāsinīsādhanāstavaḥ
+			4 Vajravilāsinīstotram
+			5 Vajrayoginīpraṇāmaikaviśikā
+			6 Vajrayoginyāḥ piṇḍārthastutiḥ
+			7 Vajrayoginyāḥ stutipraṇidhānam
 		vasudhārā
+			1 Vasudhārānāmadhāraṇīstotram
+			2 Vasudhārāstotram
 		Bhagavatstutiḥ
+			1 Bhagavatstutiḥ
 	darśana
+		1 Gurukriyākramaḥ
+		2 Gurupañcāśikā
 	kāvya
+		1 Buddhacarita
+		2 Buddhavijayakāvyam
+		3 Saundaranandam Mahākāvyam
+		4 Siddhārthacaritakāvyam
+		5 Subhāṣitaratnakāraṇḍaka
+		6 Yaśodharācaritam
+		7 Triratnasaundaryagāthā
+		8 Saṅgītamālikā
 	kośa
+		1 Arthaviniścayanibandhana
+		2 Bauddha tantra kośa (I)
+		3 Dharmasaṃgrahaḥ
+		4 Dharmasamuccayaḥ
+		5 Mahāvyutpatti
+		6 Lupta bauddhavacana saṁgraha
+		7 Śabdabhedaprakāśaḥ
+		8 Viśvaprakāśaḥ
 	lekha
+		1 Ratnāvalī
+		2 Śiṣyalekha
+		3 Suhṛllekhaḥ
+		4 Daṇḍikathā
 	madhyamaka
+		1 Akutobhaya
+		2 Catuḥ śatikā
+		3 Hastavālaprakaraṇa
+		4 Hastavālaprakaraṇavṛttiḥ
+		5 Madhyamakahṛdayaḥ
+		6 Madhyamakālokaḥ
+		7 Madhyamakaśāstram
+		8 Madhyamakāvatāraḥ
+		9 Madhyamārthasaṃgrahaḥ
+		10 Mahāyānaviṃśikā
+		11 Prajñāpradīpaḥ
+		12 Prasannapadā (madhyamakavṛtti)
+		13 Pratītyasamutpādahṛdayakārikā
+		14 Pratītyasamutpādahṛdayavyākhyānam
+		15 Śaraṇagamanadeśanā
+		16 Satyadvayāvatāranāma
+		17 Śūnyatāsaptatiḥ
+		18 Sūtrārthasamuccayopadeśaḥ
+		19 Vigrahavyāvartanī
+		20 Yuktiṣaṣṭikārikā
+		21 Svabhāvavādaḥ
 	madhyamaka-yogācāra
+		1 Āpattideśanāvidhiḥ
+		2 Bhāvanākramaḥ
+		3 Bodhicaryāvatāraḥ
+		4 Bodhicaryāvatāraḥ (pañjikā)
+		5 Bodhipathapradīpaḥ
+		6 Bodhisattvādikarmika-mārgāvatāra-deśanā
+		7 Bodhyāpattideśanāvṛttiḥ
+		8 Caryāsaṅgrahapradīpaḥ
+		9 Cittotpādasaṃvaravidhikramaḥ
+		10 Garbha-saṅgrahaḥ
+		11 Mahāyānapathasādhanasaṅgrahaḥ
+		12 Samādhisaṃbhāraparivartaḥ
+		13 Śikṣāsamuccaya kārikā
+		14 Śikṣāsamuccayaḥ
 	nāṭaka
+		1 Buddhamatam
+		2 Nāgānandam nāṭaka
+		3 Nālandādahanam
+		4 Nṛtyaprasūtiḥ
 	nīti
+		1 Nītiśāstram
+		2 Śatagāthā
 	prajñāpāramitā
+		1 Abhisamayālaṇkāraloka
+		2 Abhisamayālaṅkārāntaḥ pātināṃ padārthānāṃ
+		3 Abhisamayālaṅkāravṛttiḥ sphuṭārthā
+		4 Āryaprajñāpāramitāvajracchedikāṭīkā
+		5 Pāramitāsamāsaḥ
+		6 Sāratamākhyā pañjikā
 	pramāṇa
+		1 Vādanyāyaṭīkā
+		2 Ālambanaparīkṣā
+		3 Ālambanaparīkṣāvṛttiḥ
+		4 Antarvyāptisamarthanam
+		5 Apohasiddhiḥ
+		6 Avayavinirākaraṇam
+		7 Hetubinduḥ
+		8 Hetubinduṭīkā
+		9 Hetutattvopadeśaḥ
+		10 Jātinirākṛti
+		11 Kṣaṇabhaṅgasiddhiḥ
+		12 Kṣaṇabhaṅgasidviḥ vyatirekātmikā
+		13 Nyāyabindu prakaraṇakārikā
+		14 Nyāyabinduṭīkā
+		15 Nyāyabinduṭīkāṭippaṇī
+		16 Nyāyapraveśapravṛttiḥ
+		17 Pramāṇavārtikam
+		18 Pramāṇavarttikasvavṛti
+		19 Ratnakīrti nibandhāvalī
+		20 Sāmānyadūṣaṇadikprasāritā
+		21 Sambandhaparīkṣā
+		22 Santānāntarasiddhiḥ
+		23 Santānāntarasiddhiṭīkā
+		24 Tarkaśāstram
+		25 Udayananirākaraṇam
+		26 Upāyahṛdayam
+		27 Vādanyāyaḥ
+		28 Vādarahasya
+		29 Vajrasūcī
+		30 Bauddha manīṣā- Bauddheṣu Pramāṇamīmāṃsā
+		31 Anupalabdhirahasya
+		32 Sarvaśabdabhāvacarcā
 	sautrāntika
+		1 Satyasiddhiśāstram
 	śilpaśāstra
+		1 Ātreyatilakam
+		2 Citrakarmaśāstram
+		3 Citralakṣaṇam
+		4 Kriyāsaṃgrahakārikā
+		5 Pratimālakṣaṇavivaraṇam
+		6 Samyaksambuddhabhāṣitaṃ pratimālakṣaṇam
 	vinaya
+		1 Sphuṭārthā śrīghanācārasaṃgrahaṭīkā
+		2 Śrīghanācārasaṃgrahaḥ
 	vividha
+		1 Āryaśālistambakakārikā
+		2 Āryaśālistambakamahāyānasūtraṭīkā
+		3 Tarkabhāṣā
+		4 Tarkabhāṣāṭīkā
+		5 Śvānastavakāvyam
+		6 Vajrayāna darśana mīmāṁsā
 	yogācāra
+		1 Bāhyarthasiddhikārikānāma
+		2 Bhavasaṅkrāntiparikathā
+		3 Bhavasaṅkrāntiṭīkā
+		4 Bodhicittotpādasūtraśāstra
+		5 Bodhisattvabhūmiḥ
+		6 Cittatatvasaṅgrahaḥ
+		7 Karmavibhaṅgopadeśaḥ
+		8 Madhyāntavibhāga kārikāḥ
+		9 Mahāyānasūtrālaṃkāraḥ (kārikāḥ)
+		10 Mahāyānasutrālaṅkāraḥ
+		11 Pañcaskandhaprakaraṇam
+		12 Ratnagotravibhāgo mahāyānottaratantraśāstram
+		13 Śrāvakabhūmiḥ
+		14 Triṃśikāvijñaptikārikāḥ
+		15 Trisvabhāvanirdeśaḥ
+		16 Viṃśatikā vijñaptimātratāsiddhiḥ
+		17 Viṃśatikākārikā
+		18 Yogācārabhūmiḥ
+		19 Smāhitā Bhūmiḥ
 	yoginītantraṭīkā
+		1 Guhyavajravilāsinīsādhanam
+		2 Guhyāvalī
+		3 Kāṇhapādasya dohākoṣaḥ
+		4 Mahāmāyāsādhanam
+		5 Mahāmāyāsādhanopāyikā
+		6 Mahāmāyātantram [guṇavatīṭīkāsahitam]
+		7 Marmakālikā
+		8 Nityakarmapūjāvidhiḥ
+		9 Sarahapādasya dohākoṣaḥ
+		10 Śrī Vajravārāhisādhana
+		11 Tattvajñānasaṃsiddhiḥ
+		12 Upodghātaḥ
+		13 Śrīcakrasambarābhisamayavyākhyā
+		14 Mantroddhāra
+		15 Prajñopāyaviniścayasiddhiḥ
+		16 Śrīsahajasiddhi
+		17 Tattvaratnāvalī
+		18 Tattvajñānasaṁsiddhiṭīkā
+		19 Adhyātmasāraśatakam(saṭīkam)
+		20 Abhayapaddhati
+		21 Tattvajñānasaṁsiddhi-mahāsukharakāśikā-ṭīkā
 	yogottaratantraṭīkā
+		1 Cittaviśuddhiprakaraṇa
+		2 Pañcakramaḥ
+		3 Piṇḍīkramaḥ
+		4 Śrīguhyasamājamaṇḍalavidhiḥ
+		5 Tattvaratnāvalokaḥ
+		6 Tattvasiddhiḥ
+		7 Samantabhadra nāma sādhana ṭīkā
+		8 Samājasādhanavyavastholi
+		9 Kriyāsaṁgrahapañjikā
 	mahāyogatantraṭīkā
+		1 Guhyāsamājatantrapradīpodyotanaṭīkā ṣaṭkoṭivyākhyā
 	hetuvidyā
+		1 Antarvyāptisamarthanam
 	sveṣṭadevatā
+		1 Balimālikā
+		2 Ādikarmapradīpa
+		3 Munimatālaṁkāra
 	vyākaraṇa
+		1 Paribhāṣāvṛtteh
 	adhunātana
+		1 Bauddhadharme tathā purāṇeṣu karuṇā
 	jyotiḥśāstra
+		1 Kālacakrāvatāraḥ
