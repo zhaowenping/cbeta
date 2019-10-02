@@ -1005,10 +1005,174 @@
 				atthakatha_s0305a.att10 11. Sotā pattisaṃyuttaṃ
 				atthakatha_s0305a.att11 12. Saccasaṃyuttaṃ
 		Aṅguttaranikāya (aṭṭhakathā)
-			src="./cscd/s0401a.att.toc.xml" text="Ekakanipāta-aṭṭhakathā"
-			src="./cscd/s0402a.att.toc.xml" text="Duka-tika-catukkanipāta-aṭṭhakathā"
-			src="./cscd/s0403a.att.toc.xml" text="Pañcaka-chakka-sattakanipāta-aṭṭhakathā"
-			src="./cscd/s0404a.att.toc.xml" text="Aṭṭhakādinipāta-aṭṭhakathā"
+			s0401a.att Ekakanipāta-aṭṭhakathā
+				atthakatha_s0401a.att0 Ganthā rambhakathā 
+				atthakatha_s0401a.att1 1. Rū pā divaggavaṇṇanā 
+				atthakatha_s0401a.att2 2. Nī varaṇappahā navaggavaṇṇanā
+				atthakatha_s0401a.att3 3. Akammaniyavaggavaṇṇanā 
+				atthakatha_s0401a.att4 4. Adantavaggavaṇṇanā 
+				atthakatha_s0401a.att5 5. Paṇihitaacchavaggavaṇṇanā 
+				atthakatha_s0401a.att6 6. Accharā saṅghā tavaggavaṇṇanā 
+				atthakatha_s0401a.att7 7. Vī riyā rambhā divaggavaṇṇanā 
+				atthakatha_s0401a.att8 8. Kalyā ṇamittatā divaggavaṇṇanā 
+				atthakatha_s0401a.att9 9. Pamā dā divaggavaṇṇanā 
+				atthakatha_s0401a.att10 10. Dutiyapamā dā divaggavaṇṇanā 
+				atthakatha_s0401a.att11 11. Adhammavaggavaṇṇanā 
+				atthakatha_s0401a.att12 13. Ekapuggalavaggavaṇṇanā 
+				atthakatha_s0401a.att13 14. Etadaggavaggo
+				atthakatha_s0401a.att14 15. Aṭṭhā napā ḷi
+				atthakatha_s0401a.att15 16. Ekadhammapā ḷi
+				atthakatha_s0401a.att16 17. Pasā dakaradhammavaggavaṇṇanā 
+				atthakatha_s0401a.att17 18. Aparaaccharā saṅghā tavaggavaṇṇanā 
+				atthakatha_s0401a.att18 19. Kā yagatā sativaggavaṇṇanā 
+				atthakatha_s0401a.att19 20. Amatavaggavaṇṇanā 
+			s0402a.att Duka-tika-catukkanipāta-aṭṭhakathā
+				atthakatha_s0402a.att0 1. Kammakā raṇavaggo
+				atthakatha_s0402a.att1 2. Adhikaraṇavaggavaṇṇanā 
+				atthakatha_s0402a.att2 3. Bā lavaggavaṇṇanā 
+				atthakatha_s0402a.att3 4. Samacittavaggavaṇṇanā 
+				atthakatha_s0402a.att4 5. Parisavaggavaṇṇanā 
+				atthakatha_s0402a.att5 (6) 1. Puggalavaggavaṇṇanā 
+				atthakatha_s0402a.att6 (7) 2. Sukhavaggavaṇṇanā 
+				atthakatha_s0402a.att7 (8) 3. Sanimittavaggavaṇṇanā 
+				atthakatha_s0402a.att8 (9) 4. Dhammavaggavaṇṇanā 
+				atthakatha_s0402a.att9 (10) 5. Bā lavaggavaṇṇanā 
+				atthakatha_s0402a.att10 (11) 1. Āsā duppajahavaggavaṇṇanā 
+				atthakatha_s0402a.att11 (12) 2. Āyā canavaggavaṇṇanā 
+				atthakatha_s0402a.att12 (13) 3. Dā navaggavaṇṇanā 
+				atthakatha_s0402a.att13 (14) 4. Santhā ravaggavaṇṇanā 
+				atthakatha_s0402a.att14 (15) 5. Samā pattivaggavaṇṇanā 
+				atthakatha_s0402a.att15 1. Kodhapeyyā laṃ
+				atthakatha_s0402a.att16 2. Akusalapeyyā laṃ
+				atthakatha_s0402a.att17 3. Vinayapeyyā laṃ
+				atthakatha_s0402a.att18 4. Rā gapeyyā laṃ
+				atthakatha_s0402a.att19 1. Bā lavaggo
+				atthakatha_s0402a.att20 2. Rathakā ravaggo
+				atthakatha_s0402a.att21 3. Puggalavaggo
+				atthakatha_s0402a.att22 4. Devadū tavaggo
+				atthakatha_s0402a.att23 5. Cū ḷavaggo
+				atthakatha_s0402a.att24 (6) 1. Brā hmaṇavaggo
+				atthakatha_s0402a.att25 (7) 2. Mahā vaggo
+				atthakatha_s0402a.att26 (8) 3. Ānandavaggo
+				atthakatha_s0402a.att27 (9) 4. Samaṇavaggo
+				atthakatha_s0402a.att28 (10) 5. Loṇakapallavaggo
+				atthakatha_s0402a.att29 (11) 1. Sambodhavaggo
+				atthakatha_s0402a.att30 (12) 2. Āpā yikavaggo
+				atthakatha_s0402a.att31 (13) 3. Kusinā ravaggo
+				atthakatha_s0402a.att32 (14) 4. Yodhā jī vavaggo
+				atthakatha_s0402a.att33 (15) 5. Maṅgalavaggo
+				atthakatha_s0402a.att34 (16) 6. Acelakavaggavaṇṇanā 
+				atthakatha_s0402a.att35 17-18. Peyyā lavaggā divaṇṇanā 
+				atthakatha_s0402a.att36 1. Bhaṇḍagā mavaggo
+				atthakatha_s0402a.att37 2. Caravaggo
+				atthakatha_s0402a.att38 3. Uruvelavaggo
+				atthakatha_s0402a.att39 4. Cakkavaggo
+				atthakatha_s0402a.att40 5. Rohitassavaggo
+				atthakatha_s0402a.att41 (6) 1. Puññā bhisandavaggo
+				atthakatha_s0402a.att42 (7) 2. Pattakammavaggo
+				atthakatha_s0402a.att43 (8) 3. Apaṇṇakavaggo
+				atthakatha_s0402a.att44 (9) 4. Macalavaggo
+				atthakatha_s0402a.att45 (10) 5. Asuravaggo
+				atthakatha_s0402a.att46 (11) 1. Valā hakavaggo
+				atthakatha_s0402a.att47 (12) 2. Kesivaggo
+				atthakatha_s0402a.att48 (13) 3. Bhayavaggo
+				atthakatha_s0402a.att49 (14) 4. Puggalavaggo
+				atthakatha_s0402a.att50 (15) 5. Ābhā vaggo
+				atthakatha_s0402a.att51 (16) 1. Indriyavaggo
+				atthakatha_s0402a.att52 (17) 2. Paṭipadā vaggo
+				atthakatha_s0402a.att53 (18) 3. Sañcetaniyavaggo
+				atthakatha_s0402a.att54 (19) 4. Brā hmaṇavaggo
+				atthakatha_s0402a.att55 (20) 5. Mahā vaggo
+				atthakatha_s0402a.att56 (21) 1. Sappurisavaggo
+				atthakatha_s0402a.att57 (22) 2. Parisā vaggo
+				atthakatha_s0402a.att58 (23) 3. Duccaritavaggavaṇṇanā 
+				atthakatha_s0402a.att59 (24) 4. Kammavaggo
+				atthakatha_s0402a.att60 (25) 5. Āpattibhayavaggo
+				atthakatha_s0402a.att61 (26) 6. Abhiññā vaggo
+				atthakatha_s0402a.att62 (27) 7. Kammapathavaggavaṇṇanā 
+				atthakatha_s0402a.att63 (28) 8. Rā gapeyyā lavaṇṇanā 
+			s0403a.att Pañcaka-chakka-sattakanipāta-aṭṭhakathā
+				atthakatha_s0403a.att0 1. Sekhabalavaggo
+				atthakatha_s0403a.att1 2. Balavaggo
+				atthakatha_s0403a.att2 3. Pañcaṅgikavaggo
+				atthakatha_s0403a.att3 4. Sumanavaggo
+				atthakatha_s0403a.att4 5. Muṇḍarā javaggo
+				atthakatha_s0403a.att5 (6) 1. Nī varaṇavaggo
+				atthakatha_s0403a.att6 (7) 2. Saññā vaggo
+				atthakatha_s0403a.att7 (8) 3. Yodhā jī vavaggo
+				atthakatha_s0403a.att8 (9) 4. Theravaggo
+				atthakatha_s0403a.att9 (10) 5. Kakudhavaggo
+				atthakatha_s0403a.att10 (11) 1. Phā suvihā ravaggo
+				atthakatha_s0403a.att11 (12) 2. Andhakavindavaggo
+				atthakatha_s0403a.att12 (13) 3. Gilā navaggo
+				atthakatha_s0403a.att13 (14) 4. Rā javaggo
+				atthakatha_s0403a.att14 (15) 5. Tikaṇḍakī vaggo
+				atthakatha_s0403a.att15 (16) 1. Saddhammavaggo
+				atthakatha_s0403a.att16 (17) 2. Āghā tavaggo
+				atthakatha_s0403a.att17 (18) 3. Upā sakavaggo
+				atthakatha_s0403a.att18 (19) 4. Araññavaggo
+				atthakatha_s0403a.att19 (20) 5. Brā hmaṇavaggo
+				atthakatha_s0403a.att20 (21) 1. Kimilavaggo
+				atthakatha_s0403a.att21 (22) 2. Akkosakavaggo
+				atthakatha_s0403a.att22 (23) 3. Dī ghacā rikavaggo
+				atthakatha_s0403a.att23 (24) 4. Āvā sikavaggo
+				atthakatha_s0403a.att24 (25) 5. Duccaritavaggo
+				atthakatha_s0403a.att25 (26) 6. Upasampadā vaggo
+				atthakatha_s0403a.att26 1. Āhuneyyavaggo
+				atthakatha_s0403a.att27 2. Sā raṇī yavaggo
+				atthakatha_s0403a.att28 3. Anuttariyavaggo
+				atthakatha_s0403a.att29 4. Devatā vaggo
+				atthakatha_s0403a.att30 5. Dhammikavaggo
+				atthakatha_s0403a.att31 6. Mahā vaggo
+				atthakatha_s0403a.att32 7. Devatā vaggo
+				atthakatha_s0403a.att33 8. Arahattavaggo
+				atthakatha_s0403a.att34 9. Sī tivaggo
+				atthakatha_s0403a.att35 10. Ānisaṃsavaggo
+				atthakatha_s0403a.att36 11. Tikavaggo
+				atthakatha_s0403a.att37 12. Sā maññavaggavaṇṇanā 
+				atthakatha_s0403a.att38 24. Rā gapeyyā lavaṇṇanā 
+				atthakatha_s0403a.att39 1. Dhanavaggo
+				atthakatha_s0403a.att40 2. Anusayavaggo
+				atthakatha_s0403a.att41 3. Vajjisattakavaggo
+				atthakatha_s0403a.att42 4. Devatā vaggo
+				atthakatha_s0403a.att43 5. Mahā yaññavaggo
+				atthakatha_s0403a.att44 6. Abyā katavaggo
+				atthakatha_s0403a.att45 7. Mahā vaggo
+				atthakatha_s0403a.att46 8. Vinayavaggo
+			s0404a.att Aṭṭhakādinipāta-aṭṭhakathā
+				atthakatha_s0404a.att0 1. Mettā vaggo
+				atthakatha_s0404a.att1 2. Mahā vaggo
+				atthakatha_s0404a.att2 3. Gahapativaggo
+				atthakatha_s0404a.att3 4. Dā navaggo
+				atthakatha_s0404a.att4 5. Uposathavaggo
+				atthakatha_s0404a.att5 (6) 1. Gotamī vaggo
+				atthakatha_s0404a.att6 (7) 2. Bhū micā lavaggo
+				atthakatha_s0404a.att7 (8) 3. Yamakavaggo
+				atthakatha_s0404a.att8 (9) 4. Sativaggo
+				atthakatha_s0404a.att9 (10) 5. Sā maññavaggo
+				atthakatha_s0404a.att10 1. Sambodhivaggo
+				atthakatha_s0404a.att11 2. Sī hanā davaggo
+				atthakatha_s0404a.att12 3. Sattā vā savaggo
+				atthakatha_s0404a.att13 4. Mahā vaggo
+				atthakatha_s0404a.att14 5. Sā maññavaggo
+				atthakatha_s0404a.att15 1. Ānisaṃsavaggo
+				atthakatha_s0404a.att16 2. Nā thavaggo
+				atthakatha_s0404a.att17 3. Mahā vaggo
+				atthakatha_s0404a.att18 4. Upā livaggo
+				atthakatha_s0404a.att19 5. Akkosavaggo
+				atthakatha_s0404a.att20 (6) 1. Sacittavaggo
+				atthakatha_s0404a.att21 (7) 2. Yamakavaggo
+				atthakatha_s0404a.att22 (8) 3. Ākaṅkhavaggo
+				atthakatha_s0404a.att23 (9) 4. Theravaggo
+				atthakatha_s0404a.att24 (10) 5. Upā livaggo
+				atthakatha_s0404a.att25 (11) 1. Samaṇasaññā vaggo
+				atthakatha_s0404a.att26 (12) 2. Paccorohaṇivaggo
+				atthakatha_s0404a.att27 (13) 3. Parisuddhavaggavaṇṇanā 
+				atthakatha_s0404a.att28 (14) 4. Sā dhuvaggavaṇṇanā 
+				atthakatha_s0404a.att29 (21) 1. Karajakā yavaggo
+				atthakatha_s0404a.att30 (22) 2. Sā maññavaggavaṇṇanā 
+				atthakatha_s0404a.att31 1. Nissayavaggo
+				atthakatha_s0404a.att32 2. Anussativaggo
 		Khuddakanikāya (aṭṭhakathā)
 			src="./cscd/s0501a.att.toc.xml" text="Khuddakapāṭha-aṭṭhakathā"
 			src="./cscd/s0502a.att.toc.xml" text="Dhammapada-aṭṭhakathā"
