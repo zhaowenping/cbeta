@@ -883,19 +883,127 @@
 			atthakatha_vin02a4.att17 Pañcavaggo
 	Suttapiṭaka (aṭṭhakathā)
 		Dīgha nikāya (aṭṭhakathā)
-			src="./cscd/s0101a.att.toc.xml" text="Sīlakkhandhavagga-aṭṭhakathā"
-			src="./cscd/s0102a.att.toc.xml" text="Mahāvagga-aṭṭhakathā"
-			src="./cscd/s0103a.att.toc.xml" text="Pāthikavagga-aṭṭhakathā"
+			s0101a.att Sīlakkhandhavagga-aṭṭhakathā
+				atthakatha_s0101a.att0 Ganthā rambhakathā 
+				atthakatha_s0101a.att1 1. Brahmajā lasuttavaṇṇanā 
+				atthakatha_s0101a.att2 2. Sā maññaphalasuttavaṇṇanā 
+				atthakatha_s0101a.att3 3. Ambaṭṭhasuttavaṇṇanā 
+				atthakatha_s0101a.att4 4. Soṇadaṇḍasuttavaṇṇanā 
+				atthakatha_s0101a.att5 5. Kū ṭadantasuttavaṇṇanā 
+				atthakatha_s0101a.att6 6. Mahā lisuttavaṇṇanā 
+				atthakatha_s0101a.att7 7. Jā liyasuttavaṇṇanā 
+				atthakatha_s0101a.att8 8. Mahā sī hanā dasuttavaṇṇanā 
+				atthakatha_s0101a.att9 9. Poṭṭhapā dasuttavaṇṇanā 
+				atthakatha_s0101a.att10 10. Subhasuttavaṇṇanā 
+				atthakatha_s0101a.att11 11. Kevaṭṭasuttavaṇṇanā 
+				atthakatha_s0101a.att12 12. Lohiccasuttavaṇṇanā 
+				atthakatha_s0101a.att13 13. Tevijjasuttavaṇṇanā 
+			s0102a.att Mahāvagga-aṭṭhakathā
+				atthakatha_s0102a.att0 1. Mahā padā nasuttavaṇṇanā 
+				atthakatha_s0102a.att1 2. Mahā nidā nasuttavaṇṇanā 
+				atthakatha_s0102a.att2 3. Mahā parinibbā nasuttavaṇṇanā 
+				atthakatha_s0102a.att3 4. Mahā sudassanasuttavaṇṇanā 
+				atthakatha_s0102a.att4 5. Janavasabhasuttavaṇṇanā 
+				atthakatha_s0102a.att5 6. Mahā govindasuttavaṇṇanā 
+				atthakatha_s0102a.att6 7. Mahā samayasuttavaṇṇanā 
+				atthakatha_s0102a.att7 8. Sakkapañhasuttavaṇṇanā 
+				atthakatha_s0102a.att8 9. Mahā satipaṭṭhā nasuttavaṇṇanā 
+				atthakatha_s0102a.att9 10. Pā yā sirā jaññasuttavaṇṇanā 
+			s0103a.att Pāthikavagga-aṭṭhakathā
+				atthakatha_s0103a.att0 1. Pā thikasuttavaṇṇanā 
+				atthakatha_s0103a.att1 2. Udumbarikasuttavaṇṇanā 
+				atthakatha_s0103a.att2 3. Cakkavattisuttavaṇṇanā 
+				atthakatha_s0103a.att3 4. Aggaññasuttavaṇṇanā 
+				atthakatha_s0103a.att4 5. Sampasā danī yasuttavaṇṇanā 
+				atthakatha_s0103a.att5 6. Pā sā dikasuttavaṇṇanā 
+				atthakatha_s0103a.att6 7. Lakkhaṇasuttavaṇṇanā 
+				atthakatha_s0103a.att7 8. Siṅgā lasuttavaṇṇanā 
+				atthakatha_s0103a.att8 9. Āṭā nā ṭiyasuttavaṇṇanā 
+				atthakatha_s0103a.att9 10. Saṅgī tisuttavaṇṇanā 
+				atthakatha_s0103a.att10 11. Dasuttarasuttavaṇṇanā 
 		Majjhimanikāya (aṭṭhakathā)
-			src="./cscd/s0201a.att.toc.xml" text="Mūlapaṇṇāsa-aṭṭhakathā"
-			src="./cscd/s0202a.att.toc.xml" text="Majjhimapaṇṇāsa-aṭṭhakathā"
-			src="./cscd/s0203a.att.toc.xml" text="Uparipaṇṇāsa-aṭṭhakathā"
+			s0201a.att Mūlapaṇṇāsa-aṭṭhakathā
+				atthakatha_s0201a.att0 Ganthā rambhakathā 
+				atthakatha_s0201a.att1 1. Mū lapariyā yavaggo
+				atthakatha_s0201a.att2 2. Sī hanā davaggo
+				atthakatha_s0201a.att3 3. Opammavaggo
+				atthakatha_s0201a.att4 4. Mahā yamakavaggo
+				atthakatha_s0201a.att5 5. Cū ḷayamakavaggo
+			s0202a.att Majjhimapaṇṇāsa-aṭṭhakathā
+				atthakatha_s0202a.att0 1. Gahapativaggo
+				atthakatha_s0202a.att1 2. Bhikkhuvaggo
+				atthakatha_s0202a.att2 3. Paribbā jakavaggo
+				atthakatha_s0202a.att3 4. Rā javaggo
+				atthakatha_s0202a.att4 5. Brā hmaṇavaggo
+			s0203a.att Uparipaṇṇāsa-aṭṭhakathā
+				atthakatha_s0203a.att0 1. Devadahavaggo
+				atthakatha_s0203a.att1 2. Anupadavaggo
+				atthakatha_s0203a.att2 3. Suññatavaggo
+				atthakatha_s0203a.att3 4. Vibhaṅgavaggo
+				atthakatha_s0203a.att4 5. Saḷā yatanavaggo
 		Saṃyuttanikāya (aṭṭhakathā)
-			src="./cscd/s0301a.att.toc.xml" text="Sagāthāvagga-aṭṭhakathā"
-			src="./cscd/s0302a.att.toc.xml" text="Nidānavagga-aṭṭhakathā"
-			src="./cscd/s0303a.att.toc.xml" text="Khandhavagga-aṭṭhakathā"
-			src="./cscd/s0304a.att.toc.xml" text="Saḷāyatanavagga-aṭṭhakathā"
-			src="./cscd/s0305a.att.toc.xml" text="Mahāvagga-aṭṭhakathā"
+			s0301a.att Sagāthāvagga-aṭṭhakathā
+				atthakatha_s0301a.att0 Ganthā rambhakathā 
+				atthakatha_s0301a.att1 1. Devatā saṃyuttaṃ
+				atthakatha_s0301a.att2 2. Devaputtasaṃyuttaṃ
+				atthakatha_s0301a.att3 3. Kosalasaṃyuttaṃ
+				atthakatha_s0301a.att4 4. Mā rasaṃyuttaṃ
+				atthakatha_s0301a.att5 5. Bhikkhunī saṃyuttaṃ
+				atthakatha_s0301a.att6 6. Brahmasaṃyuttaṃ
+				atthakatha_s0301a.att7 7. Brā hmaṇasaṃyuttaṃ
+				atthakatha_s0301a.att8 8. Vaṅgī sasaṃyuttaṃ
+				atthakatha_s0301a.att9 9. Vanasaṃyuttaṃ
+				atthakatha_s0301a.att10 10. Yakkhasaṃyuttaṃ
+				atthakatha_s0301a.att11 11. Sakkasaṃyuttaṃ
+			s0302a.att Nidānavagga-aṭṭhakathā
+				atthakatha_s0302a.att0 1. Nidā nasaṃyuttaṃ
+				atthakatha_s0302a.att1 2. Abhisamayasaṃyuttaṃ
+				atthakatha_s0302a.att2 3. Dhā tusaṃyuttaṃ
+				atthakatha_s0302a.att3 4. Anamataggasaṃyuttaṃ
+				atthakatha_s0302a.att4 5. Kassapasaṃyuttaṃ
+				atthakatha_s0302a.att5 6. Lā bhasakkā rasaṃyuttaṃ
+				atthakatha_s0302a.att6 7. Rā hulasaṃyuttaṃ
+				atthakatha_s0302a.att7 8. Lakkhaṇasaṃyuttaṃ
+				atthakatha_s0302a.att8 9. Opammasaṃyuttaṃ
+				atthakatha_s0302a.att9 10. Bhikkhusaṃyuttaṃ
+			s0303a.att Khandhavagga-aṭṭhakathā
+				atthakatha_s0303a.att0 1. Khandhasaṃyuttaṃ
+				atthakatha_s0303a.att1 2. Rā dhasaṃyuttaṃ
+				atthakatha_s0303a.att2 3. Diṭṭhisaṃyuttaṃ
+				atthakatha_s0303a.att3 4. Okkantasaṃyuttaṃ
+				atthakatha_s0303a.att4 5. Uppā dasaṃyuttavaṇṇanā 
+				atthakatha_s0303a.att5 6. Kilesasaṃyuttavaṇṇanā 
+				atthakatha_s0303a.att6 7. Sā riputtasaṃyuttaṃ
+				atthakatha_s0303a.att7 8. Nā gasaṃyuttaṃ
+				atthakatha_s0303a.att8 9. Supaṇṇasaṃyuttavaṇṇanā 
+				atthakatha_s0303a.att9 10. Gandhabbakā yasaṃyuttavaṇṇanā 
+				atthakatha_s0303a.att10 11. Valā hakasaṃyuttavaṇṇanā 
+				atthakatha_s0303a.att11 12. Vacchagottasaṃyuttavaṇṇanā 
+				atthakatha_s0303a.att12 13. Jhā nasaṃyuttaṃ
+			s0304a.att Saḷāyatanavagga-aṭṭhakathā
+				atthakatha_s0304a.att0 1. Saḷā yatanasaṃyuttaṃ
+				atthakatha_s0304a.att1 2. Vedanā saṃyuttaṃ
+				atthakatha_s0304a.att2 3. Mā tugā masaṃyuttaṃ
+				atthakatha_s0304a.att3 4. Jambukhā dakasaṃyuttaṃ
+				atthakatha_s0304a.att4 5. Sā maṇḍakasaṃyuttavaṇṇanā 
+				atthakatha_s0304a.att5 6. Moggallā nasaṃyuttaṃ
+				atthakatha_s0304a.att6 7. Cittasaṃyuttaṃ
+				atthakatha_s0304a.att7 8. Gā maṇisaṃyuttaṃ
+				atthakatha_s0304a.att8 9. Asaṅkhatasaṃyuttaṃ
+				atthakatha_s0304a.att9 10. Abyā katasaṃyuttaṃ
+			s0305a.att Mahāvagga-aṭṭhakathā
+				atthakatha_s0305a.att0 1. Maggasaṃyuttaṃ
+				atthakatha_s0305a.att1 2. Bojjhaṅgasaṃyuttaṃ
+				atthakatha_s0305a.att2 3. Satipaṭṭhā nasaṃyuttaṃ
+				atthakatha_s0305a.att3 4. Indriyasaṃyuttaṃ
+				atthakatha_s0305a.att4 5. Sammappadhā nasaṃyuttavaṇṇanā 
+				atthakatha_s0305a.att5 6. Balasaṃyuttavaṇṇanā 
+				atthakatha_s0305a.att6 7. Iddhipā dasaṃyuttaṃ
+				atthakatha_s0305a.att7 8. Anuruddhasaṃyuttaṃ
+				atthakatha_s0305a.att8 9. Jhā nasaṃyuttavaṇṇanā 
+				atthakatha_s0305a.att9 10. Ānā pā nasaṃyuttaṃ
+				atthakatha_s0305a.att10 11. Sotā pattisaṃyuttaṃ
+				atthakatha_s0305a.att11 12. Saccasaṃyuttaṃ
 		Aṅguttaranikāya (aṭṭhakathā)
 			src="./cscd/s0401a.att.toc.xml" text="Ekakanipāta-aṭṭhakathā"
 			src="./cscd/s0402a.att.toc.xml" text="Duka-tika-catukkanipāta-aṭṭhakathā"
