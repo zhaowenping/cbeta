@@ -22,10 +22,21 @@ sūtrapiṭaka
 		S0013 5 Avikalpapraveśadhāraṇī
 		S0014 6 Dhvajāgrakeyurā dhāraṇī(null)
 		S0015 7 Ekādaśamukham 佛說十一面觀世音神咒經
-		8 Hayagrīvavidyā
+		S0016 8 Hayagrīvavidyā
 		9 Mahāsannipātaratnaketudhāraṇī sūtraṃ 寶星陀羅尼經
-		10 Nārāyaṇaparipṛcchā āryamahāmāyāvijayavāhinī nāma dhāraṇī
-		11 Ṣaṇmukhī dhāraṇī
+			S0017_209 1  Prathamaḥ parivartaḥ
+			S0017_210 2  Dvitīyaḥ parivartaḥ
+			S0017_211 3  Tṛtīyaḥ parivartaḥ
+			S0017_212 4  Caturthaḥ parivartaḥ
+			S0017_213 5  Pañcamaḥ parivartaḥ
+			S0017_214 6  Ṣaṣṭhaḥ parivartaḥ
+			S0017_215 7  Saptamaḥ parivartaḥ
+			S0017_216 8  Aṣṭamaḥ parivartaḥ
+			S0017_217 9  Navamaḥ parivartaḥ
+			S0017_218 10 Daśamaḥ parivartaḥ
+			S0017_219 11 Ekādaśaḥ parivartaḥ
+		S0018 10 Nārāyaṇaparipṛcchā āryamahāmāyāvijayavāhinī nāma dhāraṇī
+		S0019 11 Ṣaṇmukhī dhāraṇī
 		12 Sitātapatrā dhāraṇī 佛頂大白傘蓋陀羅尼經
 		13 Vasudhārādhāraṇī
 		14 Dhāraṇī Saṃgraha
@@ -50,6 +61,62 @@ sūtrapiṭaka
 		16 catuṣpariṣat sūtram
 		17 Daśabhūmikasūtram 佛說十地經
 		18 Gaṇḍavyūha sūtram 大方廣佛華嚴經
+			S0040_308 1 nidānaparivartaḥ
+			S0040_309 2 samantabhadraḥ
+			S0040_310 3 mañjuśrīḥ
+			S0040_311 4 meghaśrīḥ
+			S0040_312 5 sāgarameghaḥ
+			S0040_313 6 supratiṣṭhitaḥ
+			S0040_314 7 meghaḥ
+			S0040_315 8 muktakaḥ
+			S0040_316 9 sāradhvajaḥ
+			S0040_317 10 āśā
+			S0040_318 11 bhīṣmottaranirghoṣaḥ
+			S0040_319 12 jayoṣmāyatanaḥ
+			S0040_320 13 maitrāyaṇī
+			S0040_321 14 sudarśanaḥ
+			S0040_322 15 indriyeśvaraḥ
+			S0040_323 16 prabhūtā
+			S0040_324 17 vidvān
+			S0040_325 18 ratnacūḍaḥ
+			S0040_326 19 samantanetraḥ
+			S0040_327 20 analaḥ
+			S0040_328 21 mahāprabhaḥ
+			S0040_329 22 acalā
+			S0040_330 23 sarvagāmī
+			S0040_331 24 utpalabhūtiḥ
+			S0040_332 25 vairaḥ
+			S0040_333 26 Jayottamaḥ
+			S0040_334 27 siṁhavijṛmbhitā
+			S0040_335 28 vasumitrā
+			S0040_336 29 veṣṭhilaḥ
+			S0040_337 30 avalokiteśvaraḥ
+			S0040_338 31 ananyagāmī
+			S0040_339 32 mahādevaḥ
+			S0040_340 33 sthāvarā
+			S0040_341 34 vāsantī
+			S0040_342 35 samantagambhīraśrīvimalaprabhā
+			S0040_343 36 pramuditanayanajagadvirocanā
+			S0040_344 37 samantasattvatrāṇojaḥśrīḥ
+			S0040_345 38 praśāntarutasāgaravatī
+			S0040_346 39 sarvanagararakṣāsaṁbhavatejaḥśrīḥ
+			S0040_347 40 sarvavṛkṣapraphullanasukhasaṁvāsā
+			S0040_348 41 sarvajagadrakṣāpraṇidhānavīryaprabhā
+			S0040_349 42 sutejomaṇḍalaratiśrīḥ
+			S0040_350 43 gopā
+			S0040_351 44 māyā
+			S0040_352 45 surendrābhā
+			S0040_353 46 viśvāmitraḥ
+			S0040_354 47 śilpābhijñaḥ
+			S0040_355 48 bhadrottamā
+			S0040_356 49 muktāsāraḥ
+			S0040_357 50 sucandraḥ
+			S0040_358 51 ajitasenaḥ
+			S0040_359 52 śivarāgraḥ
+			S0040_360 53 śrīsaṁbhavaḥ śrīmatiśca
+			S0040_361 54 maitreyaḥ
+			S0040_362 56 samantabhadracaryāpraṇidhānam
+			S0040_363 55 mañjuśrīḥ
 		19 Guṇakāraṇḍavyūha sūtram
 		20 Kāraṇḍavyūhaḥ 佛說大乘莊嚴寶王經
 		21 Karuṇāpuṇḍarīka sūtram 悲華經
@@ -355,7 +422,7 @@ vinayapiṭaka
 		5 Subhāṣitaratnakāraṇḍaka
 		6 Yaśodharācaritam
 		7 Triratnasaundaryagāthā
-		8 Saṅgītamālikā
+		S0848 8 Saṅgītamālikā
 	8 kośa
 		1 Arthaviniścayanibandhana
 		2 Bauddha tantra kośa (I)
@@ -539,4 +606,4 @@ vinayapiṭaka
 	27 adhunātana
 		1 Bauddhadharme tathā purāṇeṣu karuṇā
 	28 jyotiḥśāstra
-		1 Kālacakrāvatāraḥ
+		S0838 1 Kālacakrāvatāraḥ
