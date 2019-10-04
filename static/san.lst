@@ -13,15 +13,15 @@ sūtrapiṭaka
 			s0007_200 8 Aṣṭama adhyāyaḥ
 			s0007_201 9 Navama adhyāyaḥ
 			s0007_202 10 Daśama adhyāyaḥ
-		4 Vṛhat svayambhūpūrāṇa
+		4 Vṛhat svayambhūpūrāṇa(null)
 	2 dhāraṇī 陀羅尼經
 		S0009 1 Ārya amoghapāśahṛdaya nāma mahāyānasūtram 不空罥索神咒心經
 		S0010 2 Āryamahāpratisarāvidyādhāraṇī
 		S0011 3 Āryaśrīmahādevīvyākaraṇam 大吉祥天女十二契一百八名無垢大乘經
 		S0012 4 Āryavajravidāraṇā nāma dhāraṇī 佛說壞相金剛陀羅尼經
 		S0013 5 Avikalpapraveśadhāraṇī
-		6 Dhvajāgrakeyurā dhāraṇī
-		7 Ekādaśamukham 佛說十一面觀世音神咒經
+		S0014 6 Dhvajāgrakeyurā dhāraṇī(null)
+		S0015 7 Ekādaśamukham 佛說十一面觀世音神咒經
 		8 Hayagrīvavidyā
 		9 Mahāsannipātaratnaketudhāraṇī sūtraṃ 寶星陀羅尼經
 		10 Nārāyaṇaparipṛcchā āryamahāmāyāvijayavāhinī nāma dhāraṇī
@@ -64,6 +64,33 @@ sūtrapiṭaka
 		30 Pañcarakṣā sūtram
 		31 Saddharmalaṅkāvatārasūtram 楞伽阿跋多羅寶經
 		32 Saddharmapuṇḍarīkasūtram 妙法蓮華經
+			S0054_458 1 nidānaparivartaḥ
+			S0054_459 2 upāyakauśalyaparivartaḥ
+			S0054_460 3 aupamyaparivartaḥ
+			S0054_461 4 adhimuktiparivartaḥ
+			S0054_462 5 oṣadhīparivartaḥ
+			S0054_463 6 vyākaraṇaparivartaḥ
+			S0054_464 7 pūrvayogaparivartaḥ
+			S0054_465 8 pañcabhikṣuśatavyākaraṇaparivartaḥ
+			S0054_466 9 ānandādivyākaraṇaparivartaḥ
+			S0054_467 10 dharmabhāṇakaparivartaḥ
+			S0054_468 11 stūpasaṁdarśanaparivartaḥ
+			S0054_469 12 utsāhaparivartaḥ
+			S0054_470 13 sukhavihāraparivartaḥ
+			S0054_471 14 bodhisattvapṛthivīvirasamudgamaparivartaḥ
+			S0054_472 15 tathāgatāyuṣpramāṇaparivartaḥ
+			S0054_473 16 puṇyaparyāyaparivartaḥ
+			S0054_474 17 anumodanāpuṇyanirdeśaparivartaḥ
+			S0054_475 18 dharmabhāṇakānuśaṁsāparivartaḥ
+			S0054_476 19 sadāparibhūtaparivartaḥ
+			S0054_477 20 tathāgataddharyabhisaṁskāraparivartaḥ
+			S0054_478 21 dhāraṇīparivartaḥ
+			S0054_479 22 bhaiṣajyarājapūrvayogaparivartaḥ
+			S0054_480 23 gadgadasvaraparivartaḥ
+			S0054_481 24 samantamukhaparivartaḥ
+			S0054_482 25 śubhavyūharājapūrvayogaparivartaḥ
+			S0054_483 26 samantabhadrotsāhanaparivartaḥ
+			S0054_484 27 anuparīndanāparivartaḥ
 		33 Śālistambasūtram
 		34 Samādhirājasūtram 月燈三昧經
 		35 Sarvatathāgatādhiṣṭhānavyūham sūtram
@@ -183,7 +210,7 @@ vinayapiṭaka
 			1 Maṅgalāṣṭakam
 		6 aṣṭamātṛkā
 			1 Aṣṭamātṛkāstotram
-		7 avalokiteśvara
+		7 avalokiteśvara 觀自在菩薩
 			1 Avadhānastotram (vandanāstavaṃ vā)
 			2 Avalokiteśvarahayagrīvadhāraṇī
 			3 Avalokiteśvarāṣṭakastotram
