@@ -37,11 +37,45 @@ sūtrapiṭaka
 			S0017_219 11 Ekādaśaḥ parivartaḥ
 		S0018 10 Nārāyaṇaparipṛcchā āryamahāmāyāvijayavāhinī nāma dhāraṇī
 		S0019 11 Ṣaṇmukhī dhāraṇī
-		12 Sitātapatrā dhāraṇī 佛頂大白傘蓋陀羅尼經
-		13 Vasudhārādhāraṇī
-		14 Dhāraṇī Saṃgraha
+		S0020 12 Sitātapatrā dhāraṇī 佛頂大白傘蓋陀羅尼經
+		S0021 13 Vasudhārādhāraṇī
+		S0820 14 Dhāraṇī Saṃgraha
 	3 jātaka 本生
 		1 Jātakamālā
+			S0022_224 1 vyāghrī-jātakam
+			S0022_224 2 śibi-jātakam
+			S0022_224 3 kulmāṣapiṇḍī-jātakam
+			S0022_224 4 śreṣṭhi-jātakam
+			S0022_224 5 aviṣahyaśreṣṭhi-jātakam
+			S0022_224 6 śaśajātakam
+			S0022_224 7 agastya-jātakam
+			S0022_224 8 maitrībala-jātakam
+			S0022_224 9 viśvantara-jātakam
+			S0022_224 10 yajña-jātakam
+			S0022_224 11 śakra-jātakam
+			S0022_224 12 brāhmaṇa-jātakam
+			S0022_224 13 unmādayantī-jātakam
+			S0022_224 14 supāraga-jātakam
+			S0022_224 15 matsya-jātakam
+			S0022_224 16 vartakāpītaka-jātakam
+			S0022_224 17 kumbha-jātakam
+			S0022_224 18 aputra-jātakam
+			S0022_224 19 bisa-jātakam
+			S0022_224 20 śreṣṭhi-jātakam
+			S0022_224 21 cuḍḍabodhi-jātakam
+			S0022_224 22 haṁsa-jātakam
+			S0022_224 23 mahābodhi-jātakam
+			S0022_224 24 mahākapi-jātakam
+			S0022_224 25 śarabha-jātakam
+			S0022_224 26 ruru-jātakam
+			S0022_224 27 mahākapi-jātakam
+			S0022_224 28 kṣānti-jātakam
+			S0022_224 29 brahma-jātakam
+			S0022_224 30 hasti-jātakam
+			S0022_224 31 sutasoma-jātakam
+			S0022_224 32 ayogṛha-jātakam
+			S0022_224 33 mahiṣa-jātakam
+			S0022_224 34 śatapatra-jātakam
 	4 mahāyānasūtra 摩訶衍那
 		1  Ajitasenavyākaraṇam
 		2  Aparimitāyuḥ nāma mahāyāna sūtram 佛說大乘聖無量壽決定光明王如來陀羅尼經
@@ -129,17 +163,17 @@ sūtrapiṭaka
 		28 Megha sūtram
 		29 Nairātmyaparipṛcchā nāma mahāyānasūtram 尼乾子問無我義經
 		30 Pañcarakṣā sūtram
-		31 Saddharmalaṅkāvatārasūtram 楞伽阿跋多羅寶經
-			S0053_448 1 rāvaṇādhyeṣaṇāparivartaḥ prathamaḥ
-			S0053_449 2 ṣaṭtriṁśatsāhasrasarvadharmasamuccayo nāma dvitīyaḥ parivartaḥ
-			S0053_450 3 anityatāparivarto nāma tṛtīyaḥ
-			S0053_451 4 abhisamayaparivarto nāma caturthaḥ
-			S0053_452 5 tathāgatanityānityaprasaṅgaparivarto nāma pañcamaḥ |
-			S0053_453 6 kṣaṇikaparivarto nāma ṣaṣṭhaḥ
-			S0053_454 7 nairmāṇikaparivarto nāma saptamaḥ
-			S0053_455 8 māṁsabhakṣaṇaparivarto nāmāṣṭamaḥ
-			S0053_456 9 dhāraṇīparivarto nāma navamaḥ
-			S0053_457 10 sagāthakam
+		31 Saddharmalaṅkāvatārasūtram 大乘入楞伽經
+			S0053_448 1 rāvaṇādhyeṣaṇāparivartaḥ prathamaḥ 羅婆那王勸請品
+			S0053_449 2 ṣaṭtriṁśatsāhasrasarvadharmasamuccayo nāma dvitīyaḥ parivartaḥ 集一切法品
+			S0053_450 3 anityatāparivarto nāma tṛtīyaḥ 無常品
+			S0053_451 4 abhisamayaparivarto nāma caturthaḥ 現證品
+			S0053_452 5 tathāgatanityānityaprasaṅgaparivarto nāma pañcamaḥ | 如來常無常品
+			S0053_453 6 kṣaṇikaparivarto nāma ṣaṣṭhaḥ 剎那品
+			S0053_454 7 nairmāṇikaparivarto nāma saptamaḥ 變化品
+			S0053_455 8 māṁsabhakṣaṇaparivarto nāmāṣṭamaḥ 斷食肉品
+			S0053_456 9 dhāraṇīparivarto nāma navamaḥ 陀羅尼品
+			S0053_457 10 sagāthakam 偈頌品
 		32 Saddharmapuṇḍarīkasūtram 妙法蓮華經
 			S0054_458 1 nidānaparivartaḥ 序品
 			S0054_459 2 upāyakauśalyaparivartaḥ 方便品
