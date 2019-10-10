@@ -687,40 +687,40 @@ vinayapiṭaka
 			S0102_796 2 dvitīyaḥ saṁyojanaskaṁdhaḥ
 		S0103 10 Subodhālaṅkāraḥ
 	2 advayatantraṭīkā
-		1 Ḍākinījālasaṃvararahasyam
-		2 Sekoddeśaḥ
-		3 Sekoddeśapañjikā
-		4 Sekoddeśaṭīkā (paramārthasaṃgraha)
-		5 Vāṅmaṇḍalanamaskāraślokāḥ
-		6 Baudha pāribhāṣikāḥ śabdāḥ
-		7 Āryamāyājālamahātantroddhṛtamaṇdalagāthāṭippaṇī
+		S0104 1 Ḍākinījālasaṃvararahasyam
+		S0105 2 Sekoddeśaḥ
+		S0106 3 Sekoddeśapañjikā
+		S0107 4 Sekoddeśaṭīkā (paramārthasaṃgraha)(null)
+		S0745 5 Vāṅmaṇḍalanamaskāraślokāḥ
+		S0749 6 Baudha pāribhāṣikāḥ śabdāḥ
+		S0836 7 Āryamāyājālamahātantroddhṛtamaṇdalagāthāṭippaṇī
 	3 alaṃkāra
-		1 Chandoratnākaraḥ (svopajña samanvitaḥ)
-		2 vṛttamālāstutiḥ
+		S0108 1 Chandoratnākaraḥ (svopajña samanvitaḥ)
+		S0830 2 vṛttamālāstutiḥ
 	4 cikitsavidyā
-		1 Svapnādhyāya
+		S0770 1 Svapnādhyāya
 	5 stotra
 		1 ādibuddha
-			1 Ādibuddhadvādaśakastotram
-			2 Advayaparamārthā nāmasaṅgītiḥ
-			3 Dvādaśakāranayastotram
+			S0109 1 Ādibuddhadvādaśakastotram
+			S0110 2 Advayaparamārthā nāmasaṅgītiḥ
+			S0760 3 Dvādaśakāranayastotram
 		2 paṇḍita
-			1 Vikramāraccivaibhavam
+			S0111 1 Vikramāraccivaibhavam
 		3 ākāśagarbha
-			1 Ākāśagarbhanāmāṣṭottaraśatastotram
+			S0112 1 Ākāśagarbhanāmāṣṭottaraśatastotram
 		4 āryatārā
-			1 (Ārya) tārānamaskāraikaviṃśatistotram
-			2 (Ārya)tārāsragdharāstotram
-			3 (Ārya)tārāṣṭottaraśatanāmastotram
-			4 (Ārya)tārāstutiḥ
+			S0113 1 (Ārya) tārānamaskāraikaviṃśatistotram
+			S0114 2 (Ārya)tārāsragdharāstotram
+			S0115 3 (Ārya)tārāṣṭottaraśatanāmastotram
+			S0116 4 (Ārya)tārāstutiḥ
 		5 aṣṭamahābodhisattva
-			1 Maṅgalāṣṭakam
+			S0117 1 Maṅgalāṣṭakam
 		6 aṣṭamātṛkā
-			1 Aṣṭamātṛkāstotram
+			S0118 1 Aṣṭamātṛkāstotram
 		7 avalokiteśvara 觀自在菩薩
-			1 Avadhānastotram (vandanāstavaṃ vā)
-			2 Avalokiteśvarahayagrīvadhāraṇī
-			3 Avalokiteśvarāṣṭakastotram
+			S0119 1 Avadhānastotram (vandanāstavaṃ vā)
+			S0120 2 Avalokiteśvarahayagrīvadhāraṇī
+			S0121 3 Avalokiteśvarāṣṭakastotram
 			4 Avalokiteśvarastavaḥ (candrakāntābhikṣuṇīkṛtaḥ)
 			5 Avalokiteśvarastotram
 			6 Avalokiteśvarastotram (carapatipādaviracitam)
