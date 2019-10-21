@@ -574,6 +574,15 @@
     <xsl:template match="p[@cb:type='dharani']">
         <xsl:choose>
         <xsl:when test="not(cb:tt)">
+            <xsl:if test="@xml:id">
+              <audio controls preload="auto">
+                <source type="audio/mpeg">
+                  <xsl:attribute name="src">      
+                    <xsl:value-of select="concat(@xml:id, '.m4a')"/>
+                  </xsl:attribute>
+                </source>
+              </audio>
+            </xsl:if>
             <p class="dharani">
               <xsl:apply-templates/>
             </p>
