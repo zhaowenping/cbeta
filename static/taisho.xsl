@@ -578,7 +578,7 @@
               <audio controls="controls" preload="auto">
                 <source type="audio/mpeg">
                   <xsl:attribute name="src">      
-                    <xsl:value-of select="concat(@xml:id, '.m4a')"/>
+                      <xsl:value-of select="concat('/static/m4a/', @xml:id, '.m4a')"/>
                   </xsl:attribute>
                 </source>
               </audio>
