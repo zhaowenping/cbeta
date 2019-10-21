@@ -575,7 +575,7 @@
         <xsl:choose>
         <xsl:when test="not(cb:tt)">
             <xsl:if test="@xml:id">
-              <audio controls="controls" preload="auto">
+              <audio controls="controls" preload="meta">
                 <source type="audio/mpeg">
                   <xsl:attribute name="src">      
                       <xsl:value-of select="concat('/static/m4a/', @xml:id, '.m4a')"/>
