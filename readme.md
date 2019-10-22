@@ -207,14 +207,14 @@
 
 ## DEMO
 
-1. 可以在 [美國DEMO1](http://45.76.171.153:8000) 看到演示效果 (目前只有大正藏的两个目录可以点击)
-2. 可以在 [中國DEMO2](http://cbeta.kepan.org) 看到演示效果 (目前只有大正藏的两个目录可以点击)
+1. 可以在 [美國DEMO1](http://45.76.171.153:8000) 看到演示效果 (暂时挂了)
+2. 可以在 [香港DEMO2](http://cbeta.buddhism.org.hk) 看到演示效果
 
 # 全文搜索使用的语法
 1. 关键字是AND、OR、NOT。搜索域是title、author、content 可以随意组合,使用()
 2. 例如搜索阿含经中的一段话,使用如下语句:  比丘集讲堂 AND title:阿含经
 
-##  感谢
+##  感谢与授权
 
 本程序编写过程中得到了如下机构和个人的支持和赞助，表示感谢！
 
@@ -222,8 +222,10 @@
 2. 庄春江居士的阿含词典已经得到庄春江居士的(非營利用途)授权，但是此词典会持续更新，最新版在 [最新版本](http://agama.buddhason.org) 
 3. [威廉梵英词典](https://github.com/sanskrit-lexicon/Cologne-Sanskrit-Tamil), from http://www.sanskrit-lexicon.uni-koeln.de/
 4. [觉悟之路](http://dhamma.sutta.org/pali-course/Pali-Chinese-English%20Dictionary.html) 提供的15部巴利语词典: pali-hant.json.gz
+6. 申月伟女士 编辑了大众阅藏目录
 5. 微信公众号 梵明院 明泽先生 授权百字明咒语清唱音频
-6. 申月伟 编辑了大众阅藏目录
+7. 杨铁军先生 提供了基于webVTT格式的web音频字幕播放程序
+8. 可善先生 为香港DEMO提供了一个新家
 
 ##  捐助记录
 
