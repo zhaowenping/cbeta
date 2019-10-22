@@ -25,9 +25,6 @@
 7. 法律保障：你把这些拿去使用不会有任何法律上的烦恼，因为采用的一切技术都是free的技术，不需要你购买开发工具，不需要你购买操作系统，不需要你购买数据库，不需要你购买类似java或者VC++这样由商业公司完全控制的软件
 8. 戒律保障：因为全部使用自由软件，所以你可以持最严格的戒律，尤其是盗戒，保持戒律清净，不用担心盗版软件，也不用担心商业公司在你使用一段时间之后修改了软件条款，而你处于闭关状态无法及时响应。这是我唯一可以保障的。
 9. 因为这是自由软件，但是不是免费软件，所以此资源完全可以通过商业途径传播，可以倒找钱、白送、高价、天价或者宇宙价出售光盘/U盘/硬盘, 可以随有价光盘/U盘一起赠送！这些不需要本人的任何授权！也不需要通知本人。
-10. 庄春江居士的阿含词典已经得到庄春江居士的(非營利用途)授权，但是此词典会持续更新，最新版在 [最新版本](http://agama.buddhason.org) 
-11. [威廉梵英词典](https://github.com/sanskrit-lexicon/Cologne-Sanskrit-Tamil), from http://www.sanskrit-lexicon.uni-koeln.de/
-12. [觉悟之路](http://dhamma.sutta.org/pali-course/Pali-Chinese-English%20Dictionary.html) 提供的15部巴利语词典: pali-hant.json.gz
 
 ## 与cbeta阅读器的差异
 1. 快如闪电! 稳如磐石!
@@ -222,7 +219,11 @@
 本程序编写过程中得到了如下机构和个人的支持和赞助，表示感谢！
 
 1. cbeta
-2. 
+2. 庄春江居士的阿含词典已经得到庄春江居士的(非營利用途)授权，但是此词典会持续更新，最新版在 [最新版本](http://agama.buddhason.org) 
+3. [威廉梵英词典](https://github.com/sanskrit-lexicon/Cologne-Sanskrit-Tamil), from http://www.sanskrit-lexicon.uni-koeln.de/
+4. [觉悟之路](http://dhamma.sutta.org/pali-course/Pali-Chinese-English%20Dictionary.html) 提供的15部巴利语词典: pali-hant.json.gz
+5. 微信公众号 梵明院 明泽先生 授权百字明咒语清唱音频
+6. 申月伟 编辑了大众阅藏目录
 
 ##  捐助记录
 
