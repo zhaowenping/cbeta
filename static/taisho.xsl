@@ -615,7 +615,7 @@
 
     <xsl:template match="p">
         <p lang="lzh-Hant">
-        <xsl:number value="position()"/>
+        <xsl:value-of select="position()"/>
           <xsl:if test="@xml:id">
               <xsl:attribute name="id">      
                 <xsl:value-of select="@xml:id"/>
