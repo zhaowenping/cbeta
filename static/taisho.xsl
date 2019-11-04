@@ -581,11 +581,6 @@
                       <xsl:value-of select="concat('/static/m4a/', @xml:id, '.m4a')"/>
                   </xsl:attribute>
                 </source>
-                <source type="audio/mpeg">
-                  <xsl:attribute name="src">      
-                      <xsl:value-of select="concat('/static/m4a/', @xml:id, '.mp3')"/>
-                  </xsl:attribute>
-                </source>
               </audio>
             </xsl:if>
             <p class="dharani">
