@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-11-01 07:40:46
+# Last Modified: 2019-11-07 02:56:53
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -291,6 +291,62 @@ def get_prev_juan(number):
         return booklist[-1]
     # else:
     return juanlist
+
+
+sch_db = []
+with open("static/sutra_sch.lst") as fd:
+    for line in fd:
+        if 'n' in line:
+            line = line.strip().split()[0]
+            sch_db.append(line)
+
+
+# 模式1: t1000, t1000_001, T01n0001, T01n0001_001, T01n0001_p0001a01
+# 模式2: T01,no.1,p.1a1
+# CBETA 2019.Q2, Y25, no. 25, p. 411a5-7
+# 模式0: 100, '100,3'
+jinghaopatten = re.compile(r'([a-zA-Z]+)(?:(\d\d)n)?(\d{4})(?:_(\d{3}))?(?:[_#](p\d{4}[abc]\d\d))?')
+jinghaopatten2 = re.compile(r'([a-zA-Z]+)(\d\d),\s*no\.\s*(\d+),\s*p\.\s*(\d+)([abc])(\d+)')
+def make_url(title):
+    # j1, j2,   j3,  j4, j5
+    #  T, 01, 0001, 001, p0001a01
+    if title.isdigit():
+        j1,j2,j4,j5 = 'T', '', '', ''
+        j3 = '{:04}'.format(int(title))
+    else:
+        jinghao = jinghaopatten.findall(title)
+        if jinghao:
+            j1,j2,j3,j4,j5 = jinghao[0]
+        else:
+            jinghao = jinghaopatten2.findall(title)
+            if not jinghao:
+                return None
+            j4 = ''
+            j1,j2,j3,j5,j6,j7 = jinghao[0]
+            j3 = '{:04}'.format(int(j3))
+            j5 = 'p{:04}{}{:02}'.format(int(j5), j6, int(j7))
+
+    j1 = j1.upper()
+    # 查找册数 TODO
+    if not j2:
+        for line in sch_db:
+            if j1 in line and j3 in line:
+                j2 = line.split('n')[0][len(j1):]
+                break
+    if not j2:
+        return None
+    # 查找卷数 TODO
+    if not j4:
+        j4 = get_all_juan(f'{j1}{j2}n{j3}')
+        if not j4:
+            return None
+        j4 = j4[0]
+    # 如果有锚就添加锚
+    if j5:
+        url = f'xml/{j1}/{j1}{j2}n{j3}_{j4}.xml#{j5}'
+    else:
+        url = f'xml/{j1}/{j1}{j2}n{j3}_{j4}.xml'
+    return url
 
 
 # FROM: https://en.wikipedia.org/wiki/International_Alphabet_of_Sanskrit_Transliteration
@@ -1147,5 +1203,15 @@ if __name__ == "__main__":
     # ss = Search()
     # for idx in ss.search('大佛頂'):
     #     print(idx)
+    # # TODO:搜索t1000, t1000_001, T01n0001, T01n0001_001, T01n0001_p0001a01, T01,no.1,p.1a1
+    titlepatten = re.compile(r'([a-zA-Z][a-zA-Z]?)(\d\dn)?(\d\d\d\d)(_\d\d\d)?')
+    titlepatten.find('t1000')
+    import pprint
+    with open("static/sutra_sch.lst") as fd:
+        for line in fd:
+            if 'n' in line:
+                line = line.strip().split()
+                print(line)
+    #pprint.pprint(mulu)
 
 
