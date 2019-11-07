@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-11-07 02:56:53
+# Last Modified: 2019-11-07 03:01:30
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -343,9 +343,9 @@ def make_url(title):
         j4 = j4[0]
     # 如果有锚就添加锚
     if j5:
-        url = f'xml/{j1}/{j1}{j2}n{j3}_{j4}.xml#{j5}'
+        url = f'xml/{j1}{j2}/{j1}{j2}n{j3}_{j4}.xml#{j5}'
     else:
-        url = f'xml/{j1}/{j1}{j2}n{j3}_{j4}.xml'
+        url = f'xml/{j1}{j2}/{j1}{j2}n{j3}_{j4}.xml'
     return url
 
 
