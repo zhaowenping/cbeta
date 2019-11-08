@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-11-07 18:19:21
+# Last Modified: 2019-11-07 18:48:12
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -313,9 +313,9 @@ with open("static/sutra_sch.lst") as fd:
 # 模式2: T01,no.1,p.1a1
 # CBETA 2019.Q2, Y25, no. 25, p. 411a5-7
 # 模式0: 100, '100,3'
-jinghaopatten0 = re.compile(r'([a-zA-Z]+)?(\d+)\D+(\d+)')
-jinghaopatten = re.compile(r'([a-zA-Z]+)(?:(\d\d)n)?(\d{4})(?:_(\d{3}))?(?:[_#](p\d{4}[abc]\d\d))?')
-jinghaopatten2 = re.compile(r'([a-zA-Z]+)(\d\d),\s*no\.\s*(\d+),\s*p\.\s*(\d+)([abc])(\d+)')
+jinghaopatten = re.compile(r'([a-zA-Z]{1,2})(?:(\d\d)n)?(\d{4})(?:_(\d{3}))?(?:[_#](p\d{4}[abc]\d\d))?')
+jinghaopatten2 = re.compile(r'([a-zA-Z]{1,2})(\d\d),\s*no\.\s*(\d+),\s*p\.\s*(\d+)([abc])(\d+)')
+jinghaopatten0 = re.compile(r'([a-zA-Z]{1,2})?(d+)[ \t\n\r\f\v,.-]+(\d+)')
 def make_url(title):
     j1, j2, j3, j4, j5 = 'T', '', '', '', ''
     # j1, j2,   j3,  j4, j5
@@ -324,13 +324,6 @@ def make_url(title):
     if title.isdigit():
         j3 = '{:04}'.format(int(title))
         found = True
-
-    if not found:
-        jinghao = jinghaopatten0.findall(title)
-        if jinghao:
-            j1,j3,j4 = jinghao[0]
-            j1 = j1 if j1 else 'T'
-            found = True
 
     if not found:
         jinghao = jinghaopatten.findall(title)
@@ -344,6 +337,14 @@ def make_url(title):
             j1,j2,j3,j5,j6,j7 = jinghao[0]
             j3 = '{:04}'.format(int(j3))
             j5 = 'p{:04}{}{:02}'.format(int(j5), j6, int(j7))
+            found = True
+
+    if not found:
+        jinghao = jinghaopatten0.findall(title)
+        if jinghao:
+            j1,j3,j4 = jinghao[0]
+            j1 = j1 if j1 else 'T'
+            found = True
 
     if not found:
             return None
