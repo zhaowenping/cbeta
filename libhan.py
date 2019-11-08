@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-11-07 03:01:30
+# Last Modified: 2019-11-07 18:02:03
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -211,9 +211,17 @@ class Number:
     def __lt__(self, other):
         self.book, self.sutra = n.split('n')
 
+class Sutra:
+    def __init__(self, args):
+        self.title = args[0]  # 经名
+        self.number = args[1] # 经号
+        self.author = args[2] # 作者
+        self.total = args[3] # 卷数/字数, 年代
+
 
 def get_all_juan(number):
-    '''给定经号T01n0002，返回所有排序后的卷['001', '002', ...]'''
+    '''给定经号T01n0002，返回所有排序后的卷['001', '002', ...]
+    返回值是一个数组，如果没有找到则返回空的数组'''
     book, sutra = number.split('n')
     # 查找第一卷(有些不是从第一卷开始的)
     juan = []
@@ -305,29 +313,44 @@ with open("static/sutra_sch.lst") as fd:
 # 模式2: T01,no.1,p.1a1
 # CBETA 2019.Q2, Y25, no. 25, p. 411a5-7
 # 模式0: 100, '100,3'
+jinghaopatten0 = re.compile(r'([a-zA-Z]+)?(\d+)\D+(\d+)')
 jinghaopatten = re.compile(r'([a-zA-Z]+)(?:(\d\d)n)?(\d{4})(?:_(\d{3}))?(?:[_#](p\d{4}[abc]\d\d))?')
 jinghaopatten2 = re.compile(r'([a-zA-Z]+)(\d\d),\s*no\.\s*(\d+),\s*p\.\s*(\d+)([abc])(\d+)')
 def make_url(title):
     # j1, j2,   j3,  j4, j5
     #  T, 01, 0001, 001, p0001a01
+    found = False
     if title.isdigit():
         j1,j2,j4,j5 = 'T', '', '', ''
         j3 = '{:04}'.format(int(title))
-    else:
+        found = True
+
+    if not found:
+        jinghao = jinghaopatten0.findall(title)
+        if jinghao:
+            j1,j3,j4 = jinghao[0]
+            j1 = j1 if j1 else 'T'
+            found = True
+
+    if not found:
         jinghao = jinghaopatten.findall(title)
         if jinghao:
             j1,j2,j3,j4,j5 = jinghao[0]
-        else:
-            jinghao = jinghaopatten2.findall(title)
-            if not jinghao:
-                return None
+            found = True
+
+    if not found:
+        jinghao = jinghaopatten2.findall(title)
+        if jinghao:
             j4 = ''
             j1,j2,j3,j5,j6,j7 = jinghao[0]
             j3 = '{:04}'.format(int(j3))
             j5 = 'p{:04}{}{:02}'.format(int(j5), j6, int(j7))
 
+    if not found:
+            return None
+
     j1 = j1.upper()
-    # 查找册数 TODO
+    # 查找册数
     if not j2:
         for line in sch_db:
             if j1 in line and j3 in line:
@@ -335,12 +358,16 @@ def make_url(title):
                 break
     if not j2:
         return None
-    # 查找卷数 TODO
+
+    # 查找卷数
     if not j4:
         j4 = get_all_juan(f'{j1}{j2}n{j3}')
-        if not j4:
-            return None
-        j4 = j4[0]
+        if j4:
+            j4 = j4[0]
+
+    if not j4:
+        return None
+
     # 如果有锚就添加锚
     if j5:
         url = f'xml/{j1}{j2}/{j1}{j2}n{j3}_{j4}.xml#{j5}'
