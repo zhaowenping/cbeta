@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-11-07 18:02:03
+# Last Modified: 2019-11-07 18:08:20
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -330,6 +330,7 @@ def make_url(title):
         if jinghao:
             j1,j3,j4 = jinghao[0]
             j1 = j1 if j1 else 'T'
+            j2 = ''
             found = True
 
     if not found:
