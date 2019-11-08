@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-11-07 18:08:20
+# Last Modified: 2019-11-07 18:13:08
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -317,11 +317,11 @@ jinghaopatten0 = re.compile(r'([a-zA-Z]+)?(\d+)\D+(\d+)')
 jinghaopatten = re.compile(r'([a-zA-Z]+)(?:(\d\d)n)?(\d{4})(?:_(\d{3}))?(?:[_#](p\d{4}[abc]\d\d))?')
 jinghaopatten2 = re.compile(r'([a-zA-Z]+)(\d\d),\s*no\.\s*(\d+),\s*p\.\s*(\d+)([abc])(\d+)')
 def make_url(title):
+    j1, j2, j3, j4, j5 = 'T', '', '', '', ''
     # j1, j2,   j3,  j4, j5
     #  T, 01, 0001, 001, p0001a01
     found = False
     if title.isdigit():
-        j1,j2,j4,j5 = 'T', '', '', ''
         j3 = '{:04}'.format(int(title))
         found = True
 
@@ -330,7 +330,6 @@ def make_url(title):
         if jinghao:
             j1,j3,j4 = jinghao[0]
             j1 = j1 if j1 else 'T'
-            j2 = ''
             found = True
 
     if not found:
@@ -342,7 +341,6 @@ def make_url(title):
     if not found:
         jinghao = jinghaopatten2.findall(title)
         if jinghao:
-            j4 = ''
             j1,j2,j3,j5,j6,j7 = jinghao[0]
             j3 = '{:04}'.format(int(j3))
             j5 = 'p{:04}{}{:02}'.format(int(j5), j6, int(j7))
