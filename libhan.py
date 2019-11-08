@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-11-07 18:13:08
+# Last Modified: 2019-11-07 18:19:21
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -349,6 +349,7 @@ def make_url(title):
             return None
 
     j1 = j1.upper()
+    j3 = '{:04}'.format(int(j3))
     # 查找册数
     if not j2:
         for line in sch_db:
@@ -367,6 +368,7 @@ def make_url(title):
     if not j4:
         return None
 
+    j4 = '{:03}'.format(int(j4))
     # 如果有锚就添加锚
     if j5:
         url = f'xml/{j1}{j2}/{j1}{j2}n{j3}_{j4}.xml#{j5}'
