@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-11-07 18:48:12
+# Last Modified: 2019-11-07 21:20:39
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -315,16 +315,12 @@ with open("static/sutra_sch.lst") as fd:
 # 模式0: 100, '100,3'
 jinghaopatten = re.compile(r'([a-zA-Z]{1,2})(?:(\d\d)n)?(\d{4})(?:_(\d{3}))?(?:[_#](p\d{4}[abc]\d\d))?')
 jinghaopatten2 = re.compile(r'([a-zA-Z]{1,2})(\d\d),\s*no\.\s*(\d+),\s*p\.\s*(\d+)([abc])(\d+)')
-jinghaopatten0 = re.compile(r'([a-zA-Z]{1,2})?(d+)[ \t\n\r\f\v,.-]+(\d+)')
+jinghaopatten0 = re.compile(r'([a-zA-Z]{1,2})?(d+)[ \t,.-\u3000\uff0c]+(\d+)')
 def make_url(title):
     j1, j2, j3, j4, j5 = 'T', '', '', '', ''
     # j1, j2,   j3,  j4, j5
     #  T, 01, 0001, 001, p0001a01
     found = False
-    if title.isdigit():
-        j3 = '{:04}'.format(int(title))
-        found = True
-
     if not found:
         jinghao = jinghaopatten.findall(title)
         if jinghao:
@@ -335,7 +331,6 @@ def make_url(title):
         jinghao = jinghaopatten2.findall(title)
         if jinghao:
             j1,j2,j3,j5,j6,j7 = jinghao[0]
-            j3 = '{:04}'.format(int(j3))
             j5 = 'p{:04}{}{:02}'.format(int(j5), j6, int(j7))
             found = True
 
@@ -343,15 +338,18 @@ def make_url(title):
         jinghao = jinghaopatten0.findall(title)
         if jinghao:
             j1,j3,j4 = jinghao[0]
-            j1 = j1 if j1 else 'T'
             found = True
+
+    if title.isdigit():
+        j3 = '{:04}'.format(int(title))
+        found = True
 
     if not found:
             return None
 
-    j1 = j1.upper()
+    j1 = j1.upper() if j1 else 'T'
     j3 = '{:04}'.format(int(j3))
-    # 查找册数
+    # 查找册数 # TODO: 根据锚来查找册数
     if not j2:
         for line in sch_db:
             if j1 in line and j3 in line:
