@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-11-07 21:20:39
+# Last Modified: 2019-11-09 04:45:42
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -309,14 +309,16 @@ with open("static/sutra_sch.lst") as fd:
             sch_db.append(line)
 
 
-# 模式1: t1000, t1000_001, T01n0001, T01n0001_001, T01n0001_p0001a01
+# 模式1: T01n0001, T01n0001_001, T01n0001_p0001a01
 # 模式2: T01,no.1,p.1a1
 # CBETA 2019.Q2, Y25, no. 25, p. 411a5-7
-# 模式0: 100, '100,3'
-jinghaopatten = re.compile(r'([a-zA-Z]{1,2})(?:(\d\d)n)?(\d{4})(?:_(\d{3}))?(?:[_#](p\d{4}[abc]\d\d))?')
-jinghaopatten2 = re.compile(r'([a-zA-Z]{1,2})(\d\d),\s*no\.\s*(\d+),\s*p\.\s*(\d+)([abc])(\d+)')
-jinghaopatten0 = re.compile(r'([a-zA-Z]{1,2})?(d+)[ \t,.-\u3000\uff0c]+(\d+)')
+# CBETA, T14, no. 475, pp. 537c8-538a14
+# 模式0: 100, '100,3', t1000, t1000_001
+jinghaopatten = re.compile(r'([a-zA-Z]{1,2})(\d\d)n(\d{4})(?:_(\d{3}))?(?:[_#](p\d{4}[abc]\d\d))?')
+jinghaopatten2 = re.compile(r'([a-zA-Z]{1,2})(\d\d),\s*no\.\s*(\d+),\s*pp?\.\s*(\d+)([abc])(\d+)')
+jinghaopatten0 = re.compile(r'([a-zA-Z]{1,2})?(d+)[ \t,.-_\u3000\u3002\uff0c]+(\d+)')  # 全角逗号句号
 def make_url(title):
+    print(title)
     j1, j2, j3, j4, j5 = 'T', '', '', '', ''
     # j1, j2,   j3,  j4, j5
     #  T, 01, 0001, 001, p0001a01
@@ -1219,10 +1221,10 @@ if __name__ == "__main__":
     #             pass
     # print(pagerank('T14n0563_001.xml'))
     # print(zhuyin('你好', True))
-    print(lookinkangxi('𢾛'))
+    # print(lookinkangxi('𢾛'))
 
-    ctx = '五<g ref="#CB22072">說</g>九種命終心三界<g ref="#CB29911">々</g><g ref="#CB29911">々</g>生各潤生心各有三故<note place="inline">已上'
-    print(rm_ditto_mark(ctx))
+    # ctx = '五<g ref="#CB22072">說</g>九種命終心三界<g ref="#CB29911">々</g><g ref="#CB29911">々</g>生各潤生心各有三故<note place="inline">已上'
+    # print(rm_ditto_mark(ctx))
     #str_in = "a-kAra"
     #print(hk2iast(str_in))
     #print(hk2iastdeve(str_in))
@@ -1231,14 +1233,16 @@ if __name__ == "__main__":
     # for idx in ss.search('大佛頂'):
     #     print(idx)
     # # TODO:搜索t1000, t1000_001, T01n0001, T01n0001_001, T01n0001_p0001a01, T01,no.1,p.1a1
-    titlepatten = re.compile(r'([a-zA-Z][a-zA-Z]?)(\d\dn)?(\d\d\d\d)(_\d\d\d)?')
-    titlepatten.find('t1000')
-    import pprint
-    with open("static/sutra_sch.lst") as fd:
-        for line in fd:
-            if 'n' in line:
-                line = line.strip().split()
-                print(line)
+    #titlepatten = re.compile(r'([a-zA-Z][a-zA-Z]?)(\d\dn)?(\d\d\d\d)(_\d\d\d)?')
+    #titlepatten.find('t1000')
+    #import pprint
+    #with open("static/sutra_sch.lst") as fd:
+    #    for line in fd:
+    #        if 'n' in line:
+    #            line = line.strip().split()
+    #            print(line)
     #pprint.pprint(mulu)
+    print(make_url('CBETA, T14, no. 475, pp. 537c8-538a14'))
+    print(make_url('CBETA 2019.Q2, Y25, no. 25, p. 411a5-7'))
 
 
