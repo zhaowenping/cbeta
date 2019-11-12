@@ -185,3 +185,10 @@ function norm(evt){
     ipt1.value = "原";
     }
 }
+
+function pinyin(evt){
+    var rbs = document.getElementsByTagName('rt');
+    for (i = 0; i < rbs.length; i++){
+        rbs[i].style.display='none';
+    }
+}

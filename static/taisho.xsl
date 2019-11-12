@@ -247,6 +247,7 @@
                 </li>
             </ul>
             <!--input id="shupaictl" type="button" value="竖" onclick="shupai(this);"/-->
+            <input id="pinyinctl" type="button" value="P" onclick="pinyin(this);"/>
             <a>
                 <xsl:attribute name="href">
                     <xsl:value-of select="concat('/zh_TW', $dir, $current_sutra, '_')"/>
