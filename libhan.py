@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-11-09 04:45:42
+# Last Modified: 2019-11-16 06:19:27
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -316,7 +316,7 @@ with open("static/sutra_sch.lst") as fd:
 # 模式0: 100, '100,3', t1000, t1000_001
 jinghaopatten = re.compile(r'([a-zA-Z]{1,2})(\d\d)n(\d{4})(?:_(\d{3}))?(?:[_#](p\d{4}[abc]\d\d))?')
 jinghaopatten2 = re.compile(r'([a-zA-Z]{1,2})(\d\d),\s*no\.\s*(\d+),\s*pp?\.\s*(\d+)([abc])(\d+)')
-jinghaopatten0 = re.compile(r'([a-zA-Z]{1,2})?(d+)[ \t,.-_\u3000\u3002\uff0c]+(\d+)')  # 全角逗号句号
+jinghaopatten0 = re.compile(r'([a-zA-Z]{1,2})?(\d+)[ \t,.-_\u3000\u3002\uff0c]+(\d+)')  # 全角逗号句号
 def make_url(title):
     print(title)
     j1, j2, j3, j4, j5 = 'T', '', '', '', ''

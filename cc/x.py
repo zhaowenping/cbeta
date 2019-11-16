@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-02-25 16:41:05
+# Last Modified: 2019-11-13 06:12:05
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -48,7 +48,7 @@ with open('TSCharacters.txt') as fd:
         #     print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', line)
 
 
-print(readdb('TSCharacters.txt'))
+#print(readdb('TSCharacters.txt'))
 
 
 def main():
