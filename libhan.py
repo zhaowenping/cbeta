@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-11-16 17:15:38
+# Last Modified: 2019-11-18 06:43:14
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -937,6 +937,8 @@ def convert2s(string, punctuation=True, region=False, autonorm=True, onlyURO=Tru
         # tst2 = {k:tstable[k] for k in tstable if not (k < 0x20000 and tstable[k] > 0x20000)}
         # tst2 = {k:tstable[k] for k in tstable if 0x4E00 <= tstable[k] < 0x20000}
         tst2 = {k:tstable[k] for k in tstable if 0x4E00 <= tstable[k] < 0x9FA5}
+    else:
+        tst2 = {k:tstable[k] for k in tstable}
 
     content = ''.join(i[0].translate(tst2) if not i[1] else tsptable[i[0]] for i in re_search(tsp, string))
 

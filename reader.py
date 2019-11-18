@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-11-07 02:59:22
+# Last Modified: 2019-11-18 06:43:47
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -731,7 +731,7 @@ def t2s_post():
 
     # 去除重复符号
     scontent = rm_ditto_mark(tcontent)
-    scontent = convert2s(scontent)
+    scontent = convert2s(scontent, onlyURO=False)
     with open('t2s.txt', 'a+') as fd:
         fd.write(tcontent)
         fd.write('\n--------------------\n')
