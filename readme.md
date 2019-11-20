@@ -226,10 +226,9 @@
 2. 庄春江居士的阿含词典已经得到庄春江居士的(非營利用途)授权，但是此词典会持续更新，最新版在 [最新版本](http://agama.buddhason.org) 
 3. [威廉梵英词典](https://github.com/sanskrit-lexicon/Cologne-Sanskrit-Tamil), from http://www.sanskrit-lexicon.uni-koeln.de/
 4. [觉悟之路](http://dhamma.sutta.org/pali-course/Pali-Chinese-English%20Dictionary.html) 提供的15部巴利语词典: pali-hant.json.gz
-6. 申月伟女士 编辑了大众阅藏目录
-5. 微信公众号 梵明院 明泽先生 授权百字明咒语清唱音频
-7. 杨铁军先生 提供了基于webVTT格式的web音频字幕播放程序
-8. 可善先生 为香港DEMO提供了一个新家
+5. 申月伟女士 编辑了大众阅藏目录
+6. 微信公众号 梵明院 明泽先生 授权百字明咒语清唱音频
+7. 可善先生 为香港DEMO提供了一个新家
 
 ##  捐助记录
 
