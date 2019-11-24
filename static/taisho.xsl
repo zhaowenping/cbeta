@@ -1120,6 +1120,7 @@
     <!-- <ref cRef="PTS.Ja.1.1"/> -->
     <!-- <ref target="../T31/T31n1585.xml#xpath2(//0041b09)"> -->
     <!-- <ref target="../T31/T31n1585_008.xml#0041b09)"> TODO -->
+    <!-- <ref target="#vol:24;page:p900c" type="taisho"> -->
     <xsl:template match="ref">
         <a>
             <xsl:attribute name="href">
@@ -1151,7 +1152,7 @@
     </xsl:template>
 
     <!--'sa-x-rj', 'en', 'sa-Sidd', 'zh', 'san-tr', 'sa', 'x-unknown', 'pi', 'zh-x-yy'-->
-    <!--sa, pi, x-unknown-->
+    <!--sa, pi, x-unknown, x-sa-pi-->
     <xsl:template match="foreign">
         <!--span>
             <xsl:attribute name="lang">
@@ -1159,6 +1160,10 @@
             </xsl:attribute>
         </span-->
         <xsl:choose>
+            <xsl:when test="@xml:lang='x-sa-pi'">
+                <xsl:text>[梵語/巴利語]</xsl:text>
+                <xsl:apply-templates/>
+            </xsl:when>
             <xsl:when test="@xml:lang='sa'">
                 <xsl:text>[梵語]</xsl:text>
                 <xsl:apply-templates/>

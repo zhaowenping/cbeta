@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-11-18 06:43:14
+# Last Modified: 2019-11-24 06:30:48
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -308,6 +308,28 @@ with open("static/sutra_sch.lst") as fd:
             line = line.strip().split()[0]
             sch_db.append(line)
 
+# 大正七〇·四五九中、四六〇下
+# 大正藏第70卷459页b
+def make_url2():
+    # 大正四五·九下
+    # 0009c01
+    # vol:45;page:p9c
+    # vol:30;page:p772c
+    t = { '〇': '0',
+          '一': '1',
+          '二': '2',
+          '三': '3',
+          '四': '4',
+          '五': '5',
+          '六': '6',
+          '七': '7',
+          '八': '8',
+          '九': '9',
+          '上': 'a',
+          '中': 'b',
+          '下': 'c',
+            }
+    pass
 
 # 模式1: T01n0001, T01n0001_001, T01n0001_p0001a01
 # 模式2: T01,no.1,p.1a1
