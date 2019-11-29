@@ -107,7 +107,7 @@
 html {
     height: 100%;
     margin:10pt;
-    font-size: 120%;
+    font-size: 130%;
     /*font-family: ENCLOSING_CIRCLE, WSQUARE, quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif,
         "Hiragino Sans GB", "PingFang HK", "PingFang SC", "PMingLiU", "Microsoft YaHei",
         hanaminsat, siddham;
@@ -148,7 +148,7 @@ body{
 
 /* paragraphs */
 p {
-    line-height: 1.9em;
+    line-height: 1.8em;
     text-indent: 2em;
     text-align: justify;
     white-space: normal; /* 单词间空白,对中文无效 */
