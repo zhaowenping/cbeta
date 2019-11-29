@@ -148,7 +148,7 @@ body{
 
 /* paragraphs */
 p {
-    line-height: 1.7em;
+    line-height: 1.9em;
     text-indent: 2em;
     text-align: justify;
     white-space: normal; /* 单词间空白,对中文无效 */
