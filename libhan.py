@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-11-24 06:30:48
+# Last Modified: 2019-12-01 23:57:46
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -203,13 +203,15 @@ from functools import total_ordering
 
 @total_ordering
 class Number:
-    '''经号类: T01n0002'''
+    '''经号类: T01n0002a'''
     def __init__(self, n):
         self.book, self.sutra = n.split('n')
     def __eq__(self, other):
         self.book, self.sutra = n.split('n')
     def __lt__(self, other):
         self.book, self.sutra = n.split('n')
+    def __str__(self):
+        pass
 
 class Sutra:
     def __init__(self, args):
@@ -246,6 +248,16 @@ def get_sorted_juan(book):
     juanlist = [f'{book}n{i[0]}_{i[1]:0>3}' for i in juanlist]
     return juanlist
 
+def get_sorted_ce(book):
+    # 获得全部book(T01)下的所有排序好的册号列表(T01,T02,T03,T04...)
+    booklist = []
+    bookhead = re.sub('[0-9]*', '', book)
+    for path in os.listdir(f'xml'):
+        if path.startswith(bookhead):
+            booklist.append(path.strip(bookhead))
+    booklist.sort(key=int)
+    booklist = [f'{bookhead}{i}' for i in booklist]
+    return booklist
 
 def get_next_juan(number):
     '''给定经号T01n0002_001，返回T01n0002_002'''
@@ -286,6 +298,7 @@ def get_prev_juan(number):
     if number != juanlist[0]:
         return juanlist[juanlist.index(number) - 1]
     # else: book - 1
+    # 获得全部排序号的book列表
     booklist = []
     bookhead = re.sub('[0-9]*', '', book)
     for path in os.listdir(f'xml'):
