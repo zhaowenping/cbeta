@@ -918,6 +918,8 @@
 
     <!--使用popover显示注释, 链接三个标签，可能有些不对 TODO 使用超链接-->
     <!--跨文件注释？note type="cf1">K19n0663_p0486b18</note-->
+    <!--note type="cf2">T02n0099_p0285c29</note-->
+    <!--note n="0283003" type="cf." place="foot" target="#nkr_note_cf._0283003">[No. 100(20)]</note-->
     <xsl:template match="note[starts-with(@type, 'cf')]">
         (見:<a><xsl:value-of select="."/></a>)
     </xsl:template>
