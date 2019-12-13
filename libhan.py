@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-12-01 23:57:46
+# Last Modified: 2019-12-13 05:06:37
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -43,6 +43,13 @@ def rm_ditto_mark(ctx):
                     ctx[idx] = ctx[i]  # 找到一个合法的重复字符进行替换
                     break
     return ctx.tounicode()
+
+
+def rm_joiner(ctx):
+    '''去除汉字的链接和装饰符号'''
+    tt = {0x200C:0xFFFD, 0x200D:0xFFFD, 0x20DD:0xFFFD, 0x20DE:0xFFFD, 0x20DF:0xFFFD, 0x20E0:0xFFFD}
+    ctx = ctx.translate(tt).replace(chr(0xFFFD), '')
+    return ctx
 
 
 def rm_ditto_mark(ctx):
