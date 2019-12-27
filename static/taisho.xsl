@@ -593,7 +593,7 @@
               <span lang="sa-Sidd"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-Sidd']"/></span>
               <!--span lang="sa-Sidd"><xsl:apply-templates select="starts-with(cb:tt/cb:t[@xml:lang], 'sa')"/></span-->
               <!--span lang="sa-x-rj"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-x-rj']"/></span-->
-              <span lang="zh-Hant">(<xsl:apply-templates select="cb:tt/cb:t[@xml:lang='zh-Hant']"/>)</span>
+              <span>(<xsl:apply-templates select="cb:tt/cb:t[@xml:lang='zh-Hant']"/>)</span>
               <!--span lang="zh-Hant">(<xsl:apply-templates select="starts-with(cb:tt/cb:t[@xml:lang], 'zh')"/>)</span-->
               <!--span lang="zh-Hant">(<xsl:apply-templates select="cb:tt/cb:t[@xml:lang='zh-x-yy']"/>)</span-->
               <xsl:apply-templates/>
@@ -602,7 +602,7 @@
         <xsl:otherwise>
             <p lang="sa-Sidd" class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-Sidd']"/></p>
             <!--p lang="sa-x-rj" class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-x-rj']"/></p-->
-            <p lang="zh-Hant" class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='zh-Hant']"/></p>
+            <p class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='zh-Hant']"/></p>
             <!--p lang="zh-Hant" class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='zh-x-yy']"/></p-->
         </xsl:otherwise>
         </xsl:choose>
@@ -615,7 +615,7 @@
     </xsl:template>
 
     <xsl:template match="p">
-        <p lang="lzh-Hant">
+        <p> <!--lang="lzh-Hant"-->
           <xsl:if test="@xml:id">
               <xsl:attribute name="id">      
                 <xsl:value-of select="@xml:id"/>
@@ -632,7 +632,7 @@
 
     <!--处理note-->
     <xsl:template match="note[@place='inline']|note[@type='inline']">
-        <span lang="lzh-Hant" class="note">(<xsl:apply-templates/>)</span>
+        <span class="note">(<xsl:apply-templates/>)</span>
     </xsl:template>
 
     <xsl:template match="space">
