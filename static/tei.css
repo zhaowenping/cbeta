@@ -732,7 +732,7 @@ ruby.mps, ruby.zhuyin {
 }
 
 rt {
-    display: none; // 默认不显示注音
+    display: inline; // 默认不显示注音
     font-size: .5em;
     -webkit-transform: scale(.8);
     -moz-transform: scale(.8);
