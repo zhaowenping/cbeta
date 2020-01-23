@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-11-18 06:43:47
+# Last Modified: 2020-01-15 07:01:12
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -42,7 +42,7 @@ from libhan import Search
 from libhan import TSDetect
 from libhan import convert2t
 from libhan import convert2s
-from libhan import normyitizi
+from libhan import rm_variant
 from libhan import fullsearch
 from libhan import rm_ditto_mark
 from libhan import make_url
@@ -402,7 +402,7 @@ def search_post():
     # content = request.forms.content
     if ts.detect(content)['confidence'] == 's':
         content = convert2t(content)
-    content = normyitizi(content)
+    content = rm_variant(content)
     # stop_words = frozenset("不無一是有之者如法為故生此佛所三以二人云也於中若得心大")
     # content = ''.join(set(content)-stop_words)
     print(('content', content))
@@ -766,7 +766,7 @@ def zh_TW(filename):
     # 简体繁体双引号, 单引号切换
     # content = content.translate({0x300c: 0x201c, 0x300d: 0x201d, 0x300e: 0x2018, 0x300f: 0x2019})
     # content = opencc.convert(content, config='t2s.json')
-    content = normyitizi(content)
+    content = rm_variant(content)
     content = rm_ditto_mark(content)
     print(filename)
     response.content_type = 'text/xml'

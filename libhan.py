@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-12-13 05:06:37
+# Last Modified: 2020-01-15 18:40:15
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -32,28 +32,53 @@ import requests
 print('调用函数库')
 
 
-def rm_ditto_mark(ctx):
-    # 在xml中去除三个叠字符号: ⺀ U+2E80 0 /〃 U+3003 2227 /々 U+3005 6415/ 亽 U+4EBD 151
-    ctx = array.array('u', ctx)
-    dittos = (chr(0x3003), chr(0x3005), chr(0x4ebd))
-    for idx, zi in enumerate(ctx):
-        if zi in dittos:
-            for i in range(idx-1, -1, -1):
-                if ishanzi(ctx[i]):
-                    ctx[idx] = ctx[i]  # 找到一个合法的重复字符进行替换
-                    break
-    return ctx.tounicode()
+def rm_html_tag(title):
+    # 去除HTML标签、注释、卷数, 留下标题
+    title = re.sub(r'<.*?>', '', title)  # title=[34]<span style="color:red">阿</span>差末菩薩經
+    title = re.sub(r'\(.*?\)', '', title)
+    title = re.sub(r'\[\w*?\]', '', title)
+    title = re.sub(r'[一二三四五六七八九十百]+卷', '', title)
+    return title
+
+def rm_com(ctx):
+    # 删除组字式
+    for com in re.findall(r'\[.*?\]', ctx):
+        pass
+    pass
+
+# 废弃了
+# def rm_ditto_mark(ctx):
+#     # 在xml中去除三个叠字符号: ⺀ U+2E80 0 /〃 U+3003 2227 /々 U+3005 6415/ 亽 U+4EBD 151
+#     ctx = array.array('u', ctx)
+#     dittos = (chr(0x3003), chr(0x3005), chr(0x4ebd))
+#     for idx, zi in enumerate(ctx):
+#         if zi in dittos:
+#             for i in range(idx-1, -1, -1):
+#                 if ishanzi(ctx[i]):
+#                     ctx[idx] = ctx[i]  # 找到一个合法的重复字符进行替换
+#                     break
+#     return ctx.tounicode()
 
 
 def rm_joiner(ctx):
-    '''去除汉字的链接和装饰符号'''
+    '''去除汉字的链接和装饰符号: 外圈加方框或者圆形'''
     tt = {0x200C:0xFFFD, 0x200D:0xFFFD, 0x20DD:0xFFFD, 0x20DE:0xFFFD, 0x20DF:0xFFFD, 0x20E0:0xFFFD}
     ctx = ctx.translate(tt).replace(chr(0xFFFD), '')
     return ctx
 
 
+# _space = re.compile(r'[ \t\n\r\x0b\x0c\u3000]+')
+def normalize_space(ctx):
+    '''去掉字符串两边的空格, 中间连续的多个空格替换为一个'''
+    ctx = ctx.strip()
+    ctx = re.sub(r'\s+', ' ', ctx)
+    return ctx
+
+
 def rm_ditto_mark(ctx):
     # 在xml中去除三个叠字符号(默认叠字符号始终相连): ⺀ U+2E80 0 /〃 U+3003 2227 /々 U+3005 6415/ 亽 U+4EBD 151
+    # 首先删除叠字符号中间的空白
+    ctx = re.sub(r'([\u3003\u3005\u4ebd])\s+([\u3003\u3005\u4ebd])', r'\1\2', ctx)
     ctx = array.array('u', ctx)
     dittos = (chr(0x3003), chr(0x3005), chr(0x4ebd))
     cc = 0  # 叠字符号的重复次数
@@ -205,6 +230,21 @@ def ls(pattern):
         if path.startswith(sutra) and re.match(pattern, path):
             result.append(path.split('_')[1][:-4])
     return result
+
+
+def normalize_text(ctx):
+    '''标准化文本'''
+    # 去除空格
+    ctx = normalize_space(ctx)
+    # 去除汉字链接符号
+    ctx = rm_joiner(ctx)
+    # 去除汉字重复符号
+    ctx = rm_ditto_mark(ctx)
+    # 去除异体字、异体词
+    ctx = rm_variant(ctx)
+    # 去除标点符号?
+    return ctx
+
 
 from functools import total_ordering
 
@@ -734,7 +774,7 @@ def lookinkangxi(word):
     pinyin, definition, _from = sub(word)
 
     if not pinyin:
-        word2 = normyitizi(word)
+        word2 = rm_variant(word)
         pinyin, definition, _from = sub(word2)
         if definition:
             definition = f'同{word2}<br>' + definition
@@ -873,7 +913,7 @@ class Search:
         import pprint
         result = [i.split(maxsplit=2) for i in result]
         if norm:
-            titles = [(i[0], ' '.join((normyitizi(i[1]), i[2]))) for i in result]
+            titles = [(i[0], ' '.join((rm_variant(i[1]), i[2]))) for i in result]
         else:
             titles = [(i[0], ' '.join((i[1], i[2]))) for i in result]
         # pprint.pprint(titles)
@@ -907,7 +947,7 @@ class Search:
         # title = opencc.convert(title, config='s2t.json')
         # ( for zi in index)
         if norm:
-            title = normyitizi(title)
+            title = rm_variant(title)
         result = (set(self.index.get(tt, {}).keys()) for tt in list(title))
         return sorted(reduce(lambda x, y: x & y, result), key=pagerank)
 
@@ -967,7 +1007,7 @@ def convert2s(string, punctuation=True, region=False, autonorm=True, onlyURO=Tru
     onlyURO 不简化低位类推简化字(繁体字处于BMP和扩展A区, 但是简体字处于扩展B,C,D,E,F的汉字)
     '''
     if autonorm:
-        string = normyitizi(string)
+        string = rm_variant(string)
 
     if punctuation:
         string = string.translate({0x300c: 0x201c, 0x300d: 0x201d, 0x300e: 0x2018, 0x300f: 0x2019})
@@ -1011,7 +1051,7 @@ varptable = readdb('variants/p.txt')
 # 异体字转换pattern
 varppp = re.compile('|'.join(varptable.keys()))
 
-def normyitizi(string, level=0):
+def rm_variant(string, level=0):
     '''异体字规范化为标准繁体字'''
     # string = string.translate(yitizi)
     # return string
@@ -1044,6 +1084,7 @@ def zi_order(ss, ct):
             start = min(start)
     return True
 
+
 def highlight(ss, ct):
     for zi in set(ss):
         ct = ct.replace(zi, f'<em>{zi}</em>')
@@ -1056,15 +1097,22 @@ pun = dict()
 with open('dict/punctuation.txt') as fd:
     for line in fd:
         line = line.strip()
-        if not line: continue
+        if line.startswith('~~~~~~~~~'):
+            break
+        if not line or line.startswith('#'): continue
         c1 = line[0]
-        pun[ord(c1)] = ord(' ')
+        pun[ord(c1)] = 0xFFFD
+
+def rm_pun(ctx):
+    '''删除标点符号'''
+    ctx = ctx.translate(pun).replace(chr(0xFFFD), '')
+    return ctx
 
 def hanziin(sentence='', content=''):
     '''判断一段话中是否包含一句话'''
     # 1. 去除标点符号
-    sentence = sentence.translate(pun).replace(' ', '')
-    content = content.translate(pun).replace(' ', '')
+    sentence = sentence.translate(pun).replace(chr(0xFFFD), '')
+    content = content.translate(pun).replace(chr(0xFFFD), '')
     return sentence in content
 
 def pagerank(filename, sentence='', content=''):
@@ -1235,7 +1283,7 @@ def diff_ctx(lctx, rctx):
 
 def test():
     ''''''
-    print(normyitizi('妬'))
+    print(rm_variant('妬'))
 
 if __name__ == "__main__":
     # main()
@@ -1257,7 +1305,7 @@ if __name__ == "__main__":
     #     kxword = kangxi[word]
     #     pinyin = kxword.get('國語發音', '')
     #     if not pinyin:
-    #         word2 = normyitizi(word)
+    #         word2 = rm_variant(word)
     #         kxword2 = kangxi.get(word2, {})
     #         pinyin2 = kxword2.get('國語發音', '')
     #         if pinyin2:
@@ -1293,5 +1341,6 @@ if __name__ == "__main__":
     #pprint.pprint(mulu)
     print(make_url('CBETA, T14, no. 475, pp. 537c8-538a14'))
     print(make_url('CBETA 2019.Q2, Y25, no. 25, p. 411a5-7'))
+    print(normalize_text('說</g>九種命終心三界'))
 
 
