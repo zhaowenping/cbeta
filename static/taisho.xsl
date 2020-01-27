@@ -14,6 +14,7 @@
     <xsl:variable name="current_book" select="substring-before($current_sutra, 'n')"/>  <!--XXX T20-->
     <!--xsl:variable name="current_juan" select="substring-after($current_sutra, 'n')"/--> <!---1167-->
     <xsl:variable name="title" select="substring-after(substring-after(/TEI/teiHeader/fileDesc/titleStmt/title, 'No. '), ' ')"/>
+    <xsl:variable name="copyright" select="/TEI/teiHeader/fileDesc/titleStmt/title[@xml:lang='zh-Hant']"/>
     <!--目录文件所在路径-->
     <xsl:variable name="toc_path" select="concat('/static/toc/', $current_book, '.toc')"/>
     <!--当前文件的卷数, 形如: 001; 目前只能靠猜了-->
@@ -41,7 +42,7 @@
     <xsl:variable name="MSIE" select="system-property('xsl:vendor')='Microsoft'"/>
     <xsl:variable name="firefox" select="system-property('xsl:vendor')='Transformiix'"/>
 
-    <xsl:variable name="copyright">
+    <!--xsl:variable name="copyright">
         <xsl:choose>
         <xsl:when test="starts-with($current_sutra, 'T')">
             <xsl:text>《大正新脩大藏經》（大藏出版株式會社 ©）</xsl:text>
@@ -107,7 +108,7 @@
             <xsl:text>《佛教大藏經》</xsl:text>
         </xsl:when>
         </xsl:choose>
-    </xsl:variable>
+    </xsl:variable-->
 
     <!--xml所在目录前缀, 形如: /xml/T01/-->
     <xsl:variable name="dir" select="concat('/xml/', substring-before($current_sutra, 'n'), '/')"/>
