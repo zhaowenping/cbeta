@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-27 03:55:01
+# Last Modified: 2020-01-27 06:33:22
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -401,7 +401,7 @@ def search_post():
         content = convert2t(content)
     # stop_words = frozenset("不無一是有之者如法為故生此佛所三以二人云也於中若得心大")
     # content = ''.join(set(content)-stop_words)
-    print(('content', content))
+    # print(('content', content))
     s = time.time()
     xx = fullsearch(content)
     e = time.time()
