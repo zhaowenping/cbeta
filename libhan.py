@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-27 03:55:58
+# Last Modified: 2020-01-27 06:24:43
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1174,11 +1174,15 @@ def search_title(title):
 
 def fullsearch(sentence):
     '''全文搜索, sentence是繁体字'''
-    sentence = normalize_text(sentence)
+    # sentence = normalize_text(sentence)
+    print(sentence==normalize_text(sentence))
     sentence2 = sentence.split()
+    print(sentence2)
     # 去除标点符号
     sentence = rm_pun(sentence)
+    print(sentence)
     url = "http://127.0.0.1:9200/cbeta/fulltext/_search"#创建一个文档，如果该文件已经存在，则返回失败
+    url = "http://127.0.0.1:9200/cbeta/para/_search"#创建一个文档，如果该文件已经存在，则返回失败
     data = {
      "query": {
         "match": {
@@ -1199,6 +1203,7 @@ def fullsearch(sentence):
 
     r = requests.get(url, json=data, timeout=10)
     hits = r.json()['hits']['hits']
+    print(hits)
     result = []
     for i  in hits:
         _source = i["_source"]
@@ -1341,8 +1346,9 @@ if __name__ == "__main__":
     #            line = line.strip().split()
     #            print(line)
     #pprint.pprint(mulu)
-    print(make_url('CBETA, T14, no. 475, pp. 537c8-538a14'))
-    print(make_url('CBETA 2019.Q2, Y25, no. 25, p. 411a5-7'))
-    print(normalize_text('說</g>九種命終心三界'))
+    # print(make_url('CBETA, T14, no. 475, pp. 537c8-538a14'))
+    # print(make_url('CBETA 2019.Q2, Y25, no. 25, p. 411a5-7'))
+    # print(normalize_text('說</g>九種命終心三界'))
+    print(fullsearch('九種命終心三界'))
 
 
