@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-26 20:15:51
+# Last Modified: 2020-01-27 03:55:58
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -125,7 +125,7 @@ def ishanzi(zi):
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    # path = os.path.join('/home/zhaowp/cbeta/cbeta', path)
+    path = os.path.join('/home/zhaowp/cbeta/cbeta', path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
             line = line.strip()
@@ -1173,10 +1173,11 @@ def search_title(title):
 
 
 def fullsearch(sentence):
-    '''全文搜索'''
-    sentence2 = sentence.replace('\u3000', ' ').split()
+    '''全文搜索, sentence是繁体字'''
+    sentence = normalize_text(sentence)
+    sentence2 = sentence.split()
     # 去除标点符号
-    sentence = sentence.translate(pun).replace(' ', '')
+    sentence = rm_pun(sentence)
     url = "http://127.0.0.1:9200/cbeta/fulltext/_search"#创建一个文档，如果该文件已经存在，则返回失败
     data = {
      "query": {
@@ -1204,13 +1205,13 @@ def fullsearch(sentence):
         author = _source['author'].split('\u3000')[0]
         juan = _source["filename"].split('n')[0]
         # 文章内容去除标点符号
-        ctx = _source['content'].translate(pun).replace(' ', '')
+        ctx = rm_pun(_source['content'])
         # result.append((''.join(i['highlight']['content']), f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', _source['title'], author))
         # if zi_order(sentence, _source['content']):
         if all(stc in ctx for stc in sentence2):
-            result.append({'hl': highlight(sentence, _source['content']), 'an': f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}',
+            result.append({'hl': highlight(sentence, _source['content']), 'an': f'/xml/{juan}/{_source["filename"]}.xml#{_source["pid"]}',
                 'title':_source['title'], 'author': author, 'content': _source['content'],
-                'filename': _source["filename"].split('.')[0]})
+                'filename': _source["filename"]})
 
     result.sort(key=lambda x: pagerank(x['filename']))  #, sentence, x['content']))
         #     pprint.pprint(('||'.join(_source['content']), f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', _source['title'], author))

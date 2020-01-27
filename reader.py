@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-15 07:01:12
+# Last Modified: 2020-01-27 03:55:01
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -395,39 +395,15 @@ def searchmulu():
 @get('/search')
 @view('temp/search.jinja2')
 def search_post():
-    # global qp
-    # print(request.POST)
     content = request.GET.content
     if not content: return {}
-    # content = request.forms.content
     if ts.detect(content)['confidence'] == 's':
         content = convert2t(content)
-    content = rm_variant(content)
     # stop_words = frozenset("不無一是有之者如法為故生此佛所三以二人云也於中若得心大")
     # content = ''.join(set(content)-stop_words)
     print(('content', content))
     s = time.time()
     xx = fullsearch(content)
-    # mq = qp.parse(content)
-    # print(mq)
-    # # mq = Term('content', content)
-    # xx = []
-    # print('----------------------------------------')
-    # with ix.searcher() as searcher:
-    #     # results = searcher.search(mq)
-    #     pageid = 1
-    #     results = searcher.search_page(mq, pageid, pagelen=40)
-    #     # results = searcher.find(mq)
-    #     found = results.scored_length()
-    #     print(('found:', found))
-
-    #     for hit in results:
-    #         hl = hit.highlights("content",  top=5)
-    #         ct = hit["content"]
-    #         juan = hit["filename"].split('n')[0]
-    #         an = f'/xml/{juan}/{hit["filename"]}#{hit["p"]}'
-    #         xx.append((hl, an, hit['title']))
-    #         pprint.pprint((hl, an))
     e = time.time()
 
     print('----------------------------------------')
