@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-28 06:29:51
+# Last Modified: 2020-01-28 07:08:49
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1192,11 +1192,18 @@ def must_search(sentence, _from=0, _end=5000):
     }
     }
 
-    data["query"]["bool"]["must"] = [{"match_phrase": { "content": st}} for st in sentence.split()]
+
+    if re.search(r'\s+or\s+|\s*\|\s*', sentence, flags=re.I)
+        sentences = re.split(r'\s+or\s+|\s*\|\s*', sentence, flags=re.I)
+        data["query"]["bool"]["should"] = [{"match_phrase": { "content": st}} for st in sentences]
+    else:
+        sentences = re.split(r'\s+and\s+|\s*&\s*|\s+', sentence, flags=re.I)
+        data["query"]["bool"]["must"] = [{"match_phrase": { "content": st}} for st in sentences]
 
     r = requests.get(url, json=data, timeout=10)
     result = r.json()
     return result
+
 
 def fullsearch(sentence):
     '''全文搜索, sentence是繁体字'''
