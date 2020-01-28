@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-28 07:08:49
+# Last Modified: 2020-01-28 07:19:45
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1178,7 +1178,7 @@ def must_search(sentence, _from=0, _end=5000):
      "query": {
         # "match_phrase": { "content": sentence # "content": {"query": sentence, "slop": 1} },
          "bool":{
-             "must": {}
+            #  "must": {}
         }
     },
     "size":_end - _from ,
@@ -1193,7 +1193,7 @@ def must_search(sentence, _from=0, _end=5000):
     }
 
 
-    if re.search(r'\s+or\s+|\s*\|\s*', sentence, flags=re.I)
+    if re.search(r'\s+or\s+|\s*\|\s*', sentence, flags=re.I):
         sentences = re.split(r'\s+or\s+|\s*\|\s*', sentence, flags=re.I)
         data["query"]["bool"]["should"] = [{"match_phrase": { "content": st}} for st in sentences]
     else:
