@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-28 06:27:47
+# Last Modified: 2020-01-28 06:29:51
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1201,7 +1201,7 @@ def must_search(sentence, _from=0, _end=5000):
 def fullsearch(sentence):
     '''全文搜索, sentence是繁体字'''
     sentence = normalize_text(rm_pun(sentence))
-	r = must_search(sentence)
+    r = must_search(sentence)
     hits = r['hits']['hits']
     result = []
     for i in hits:
