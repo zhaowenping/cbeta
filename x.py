@@ -26,11 +26,13 @@ class Number:
                 self.juan == other.juan)
 
     def __lt__(self, other):
-        tt = {  'T': 1, 'A': 2, 'F': 3, 'D': 4, 'U': 5,
-                'P': 6, 'X': 7, 'B': 8, 'ZW': 9, 'C': 10,
-                'S': 11, 'K': 12, 'G': 13, 'N': 18, 'J':19,
+        '''重要性的排序'''
+        pr = ("T", "A", "S", "F", "C", "K", "B", "ZW", "P", "U", "D", "G", "M", "N", "L", "J", "X", "Y", "LC", "GA", "GB", "I")
+        tt = {  'T': 1, 'A': 2, 'F': 3, 'S': 4, 'U': 5,
+                'P': 6, 'B': 7, 'ZW': 8, 'J': 9, 'C': 10,
+                'D': 11, 'K': 12, 'G': 13, 'N': 18, 'I':19,
                 'L': 20, 'M': 30, 'Y':40, 'LC':50,
-                'GA':60, 'GB': 70, 'ZS':80, 'I':90}
+                'GA':60, 'GB': 70, 'ZS':80, 'X':90}
         yiyi = 0 if not self.yiyi else int(self.yiyi, 16)
         oyiyi = 0 if not other.yiyi else int(other.yiyi, 16)
         return (tt[self.book], int(self.ce), self.sutra, yiyi, self.juan) < (tt[other.book], int(other.ce), other.sutra, oyiyi, other.juan)

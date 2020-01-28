@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-27 06:32:05
+# Last Modified: 2020-01-28 03:19:47
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -125,7 +125,7 @@ def ishanzi(zi):
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    # path = os.path.join('/home/zhaowp/cbeta/cbeta', path)
+    path = os.path.join('/home/zhaowp/cbeta/cbeta', path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
             line = line.strip()
@@ -1176,12 +1176,13 @@ def fullsearch(sentence):
     '''全文搜索, sentence是繁体字'''
     sentence = normalize_text(sentence)
     sentence2 = sentence.split()
+    print(sentence2)
     # 去除标点符号
     sentence = rm_pun(sentence)
     url = "http://127.0.0.1:9200/cbeta/para/_search" #创建一个文档，如果该文件已经存在，则返回失败
     data = {
      "query": {
-        "match": {
+        "match_phrase": {
             "content": sentence,
         },
     },
@@ -1199,7 +1200,11 @@ def fullsearch(sentence):
 
     r = requests.get(url, json=data, timeout=10)
     hits = r.json()['hits']['hits']
-    # print(hits)
+    # import pprint
+    # for h in hits:
+    #     if '止觀明靜' in h['_source']['content']:
+    #         pprint.pprint(h)
+    # print('-------------------------')
     result = []
     for i  in hits:
         _source = i["_source"]
@@ -1210,7 +1215,8 @@ def fullsearch(sentence):
         # result.append((''.join(i['highlight']['content']), f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', _source['title'], author))
         # if zi_order(sentence, _source['content']):
         if all(stc in ctx for stc in sentence2):
-            result.append({'hl': highlight(sentence, _source['content']), 'an': f'/xml/{juan}/{_source["filename"]}.xml#{_source["pid"]}',
+            # result.append({'hl': highlight(sentence, _source['content']), 'an': f'/xml/{juan}/{_source["filename"]}.xml#{_source["pid"]}',
+            result.append({'hl': _source['highlight']['content'][0]), 'an': f'/xml/{juan}/{_source["filename"]}.xml#{_source["pid"]}',
                 'title':_source['title'], 'author': author, 'content': _source['content'],
                 'filename': _source["filename"]})
 
@@ -1345,6 +1351,7 @@ if __name__ == "__main__":
     # print(make_url('CBETA, T14, no. 475, pp. 537c8-538a14'))
     # print(make_url('CBETA 2019.Q2, Y25, no. 25, p. 411a5-7'))
     # print(normalize_text('說</g>九種命終心三界'))
-    print(fullsearch('九種命終心三界'))
+    for i in fullsearch('止觀明靜'):
+        print(i)
 
 
