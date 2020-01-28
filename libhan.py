@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-28 03:24:42
+# Last Modified: 2020-01-28 06:27:47
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1172,22 +1172,17 @@ def search_title(title):
 
 
 
-def fullsearch(sentence):
-    '''全文搜索, sentence是繁体字'''
-    sentence = normalize_text(sentence)
-    sentence2 = sentence.split()
-    print(sentence2)
-    # 去除标点符号
-    sentence = rm_pun(sentence)
+def must_search(sentence, _from=0, _end=5000):
     url = "http://127.0.0.1:9200/cbeta/para/_search" #创建一个文档，如果该文件已经存在，则返回失败
     data = {
      "query": {
-        "match_phrase": {
-            "content": sentence,
-        },
+        # "match_phrase": { "content": sentence # "content": {"query": sentence, "slop": 1} },
+         "bool":{
+             "must": {}
+        }
     },
-    "size":5000,
-    "from":0,
+    "size":_end - _from ,
+    "from": _from,
     "highlight": {
         "fields": {
             "content": {
@@ -1195,33 +1190,31 @@ def fullsearch(sentence):
             }
         }
     }
-}
+    }
 
+    data["query"]["bool"]["must"] = [{"match_phrase": { "content": st}} for st in sentence.split()]
 
     r = requests.get(url, json=data, timeout=10)
-    hits = r.json()['hits']['hits']
-    # import pprint
-    # for h in hits:
-    #     if '止觀明靜' in h['_source']['content']:
-    #         pprint.pprint(h)
-    # print('-------------------------')
+    result = r.json()
+    return result
+
+def fullsearch(sentence):
+    '''全文搜索, sentence是繁体字'''
+    sentence = normalize_text(rm_pun(sentence))
+	r = must_search(sentence)
+    hits = r['hits']['hits']
     result = []
-    for i  in hits:
+    for i in hits:
         _source = i["_source"]
         author = _source['author'].split('\u3000')[0]
         juan = _source["filename"].split('n')[0]
+        highlight = i['highlight']['content'][0]
         # 文章内容去除标点符号
-        ctx = rm_pun(_source['content'])
-        # result.append((''.join(i['highlight']['content']), f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', _source['title'], author))
-        # if zi_order(sentence, _source['content']):
-        if all(stc in ctx for stc in sentence2):
-            # result.append({'hl': highlight(sentence, _source['content']), 'an': f'/xml/{juan}/{_source["filename"]}.xml#{_source["pid"]}',
-            result.append({'hl': i['highlight']['content'][0], 'an': f'/xml/{juan}/{_source["filename"]}.xml#{_source["pid"]}',
+        result.append({'hl': highlight, 'an': f'/xml/{juan}/{_source["filename"]}.xml#{_source["pid"]}',
                 'title':_source['title'], 'author': author, 'content': _source['content'],
                 'filename': _source["filename"]})
 
-    result.sort(key=lambda x: pagerank(x['filename']))  #, sentence, x['content']))
-        #     pprint.pprint(('||'.join(_source['content']), f'/xml/{juan}/{_source["filename"]}#{_source["pid"]}', _source['title'], author))
+    result.sort(key=lambda x: pagerank(x['filename']))
 
     return result
 
