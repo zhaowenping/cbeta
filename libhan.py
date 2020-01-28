@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-28 03:19:47
+# Last Modified: 2020-01-28 03:24:42
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -125,7 +125,7 @@ def ishanzi(zi):
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    path = os.path.join('/home/zhaowp/cbeta/cbeta', path)
+    # path = os.path.join('/home/zhaowp/cbeta/cbeta', path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
             line = line.strip()
@@ -1216,7 +1216,7 @@ def fullsearch(sentence):
         # if zi_order(sentence, _source['content']):
         if all(stc in ctx for stc in sentence2):
             # result.append({'hl': highlight(sentence, _source['content']), 'an': f'/xml/{juan}/{_source["filename"]}.xml#{_source["pid"]}',
-            result.append({'hl': _source['highlight']['content'][0]), 'an': f'/xml/{juan}/{_source["filename"]}.xml#{_source["pid"]}',
+            result.append({'hl': i['highlight']['content'][0], 'an': f'/xml/{juan}/{_source["filename"]}.xml#{_source["pid"]}',
                 'title':_source['title'], 'author': author, 'content': _source['content'],
                 'filename': _source["filename"]})
 
