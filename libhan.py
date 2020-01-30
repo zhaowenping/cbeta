@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-29 18:33:44
+# Last Modified: 2020-01-29 18:38:47
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1169,7 +1169,7 @@ def must_search(sentence, _from=0, _end=5000):
     "from": _from,
     "highlight": {
         "fields": {
-            "content": {
+            "raw": {
 
             }
         }
@@ -1182,8 +1182,7 @@ def must_search(sentence, _from=0, _end=5000):
     #     data["query"]["bool"]["should"] = [{"match_phrase": { "content": st}} for st in sentences]
     # else:
     sentences = re.split(r'\s+and\s+|\s*&\s*|\s+', sentence, flags=re.I)
-    # data["query"]["bool"]["must"] = [{"match_phrase": { "content": st}} for st in sentences]
-    data["query"]["bool"]["must"] = [{"match_phrase": { "raw": st}} for st in sentences]
+    data["query"]["bool"]["must"] = [{"match_phrase": { "content": st}} for st in sentences]
 
     r = requests.get(url, json=data, timeout=10)
     result = r.json()
@@ -1200,10 +1199,10 @@ def fullsearch(sentence):
         _source = i["_source"]
         author = _source['author'].split('\u3000')[0]
         juan = _source["filename"].split('n')[0]
-        highlight = i['highlight']['content'][0]
+        highlight = i['highlight']['raw'][0]
         # 文章内容去除标点符号
         result.append({'hl': highlight, 'an': f'/xml/{juan}/{_source["filename"]}.xml#{_source["pid"]}',
-                'title':_source['title'], 'author': author, 'content': _source['content'],
+                'title':_source['title'], 'author': author, 'content': _source['raw'],
                 'filename': _source["filename"]})
 
     result.sort(key=lambda x: pagerank(x['filename']))
