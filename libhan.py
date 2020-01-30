@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-29 17:34:35
+# Last Modified: 2020-01-29 17:54:01
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -969,28 +969,28 @@ TSDinst = TSDetect()
 
 class STC:
     '''简体繁体转换类'''
-    def __init_cc__():
+    def __init__(self):
         '''读取简体繁体转换数据库'''
         # 读取繁体转简体短语词典
-        tsptable = readdb('cc/TSPhrases.txt')
+        self.tsptable = readdb('cc/TSPhrases.txt')
         # 读取简体转繁体短语词典
-        stptable = readdb('cc/STPhrases.txt')
+        self.stptable = readdb('cc/STPhrases.txt')
         # # print('|'.join(sorted(tsptable.keys(), key=lambda x: len(x), reverse=True)))
         # 读取繁体转简体字典
-        tstable = readdb('cc/TSCharacters.txt', trans=True)
+        self.tstable = readdb('cc/TSCharacters.txt', trans=True)
         # 读取简体转繁体字典
-        sttable = readdb('cc/STCharacters.txt', trans=True)
+        self.sttable = readdb('cc/STCharacters.txt', trans=True)
 
         # 简体繁体转换pattern
-        tsp = re.compile('|'.join(tsptable.keys()))
-        stp = re.compile('|'.join(stptable.keys()))
+        self.tsp = re.compile('|'.join(self.tsptable.keys()))
+        self.stp = re.compile('|'.join(self.stptable.keys()))
 
-        return tsp, tstable, tsptable, stp, sttable, stptable
+        # return tsp, tstable, tsptable, stp, sttable, stptable
 
     # tsp, tstable, tsptable, stp, sttable, stptable = __init_cc__()
 
 
-    def t2s(string, punctuation=True, region=False, autonorm=True, onlyURO=True):
+    def t2s(self, string, punctuation=True, region=False, autonorm=True, onlyURO=True):
         '''繁体转简体, punctuation是否转换单双引号
         region 是否执行区域转换
         region 转换后的地区
@@ -1004,21 +1004,21 @@ class STC:
             string = string.translate({0x300c: 0x201c, 0x300d: 0x201d, 0x300e: 0x2018, 0x300f: 0x2019})
 
         # 类推简化字处理
-        tst2 = copy.deepcopy(tstable)
+        tst2 = copy.deepcopy(self.tstable)
         if onlyURO:
             # 只要简化字不在BMP，就是类推简化字
             # tst2 = {k:tstable[k] for k in tstable if not (k < 0x20000 and tstable[k] > 0x20000)}
             # tst2 = {k:tstable[k] for k in tstable if 0x4E00 <= tstable[k] < 0x20000}
-            tst2 = {k:tstable[k] for k in tstable if 0x4E00 <= tstable[k] < 0x9FA5}
+            tst2 = {k:self.tstable[k] for k in self.tstable if 0x4E00 <= self.tstable[k] < 0x9FA5}
         else:
-            tst2 = {k:tstable[k] for k in tstable}
+            tst2 = {k:self.tstable[k] for k in self.tstable}
 
-        content = ''.join(i[0].translate(tst2) if not i[1] else tsptable[i[0]] for i in re_search(tsp, string))
+        content = ''.join(i[0].translate(tst2) if not i[1] else self.tsptable[i[0]] for i in re_search(self.tsp, string))
 
         return content
 
 
-    def s2t(string, punctuation=True, region=False):
+    def s2t(self, string, punctuation=True, region=False):
         '''简体转繁体, punctuation是否转换单双引号
         region 是否执行区域转换
         region 转换后的地区
@@ -1027,7 +1027,7 @@ class STC:
         if punctuation:
             string = string.translate({0x201c: 0x300c, 0x201d: 0x300d, 0x2018: 0x300e, 0x2019: 0x300f})
 
-        content = ''.join(i[0].translate(sttable) if not i[1] else stptable[i[0]] for i in re_search(stp, string))
+        content = ''.join(i[0].translate(self.sttable) if not i[1] else self.stptable[i[0]] for i in re_search(self.stp, string))
 
         return content
 
@@ -1343,6 +1343,7 @@ if __name__ == "__main__":
     # print(normalize_text('說</g>九種命終心三界'))
     #for i in fullsearch('止觀明靜'):
     #    print(i)
-    print(rm_ditto_mark('那莫三𭦟多嚩日羅赦憾云〃哦'))
+    stc = STC()
+    print(stc.t2s('那莫三𭦟多嚩日羅赦憾云〃哦'))
 
 
