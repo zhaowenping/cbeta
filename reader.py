@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-29 18:53:27
+# Last Modified: 2020-01-29 19:45:18
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -391,9 +391,11 @@ def searchmulu():
 @view('temp/search.jinja2')
 def search_post():
     content = request.GET.content
+    print('搜索: ', content)
     if not content: return {}
     if convert.detect(content)['confidence'] == 's':
         content = convert.s2t(content)
+    print('搜索: ', content)
     # stop_words = frozenset("不無一是有之者如法為故生此佛所三以二人云也於中若得心大")
     # content = ''.join(set(content)-stop_words)
     # print(('content', content))

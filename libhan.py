@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-29 19:03:12
+# Last Modified: 2020-01-29 19:54:37
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -26,6 +26,7 @@ import json
 import time
 import array
 from functools import reduce
+import pprint
 import requests
 
 
@@ -949,14 +950,14 @@ class STConvertor:
 
         # return tsp, tstable, tsptable, stp, sttable, stptable
 
-    # tsp, tstable, tsptable, stp, sttable, stptable = __init_cc__()
         # 简体繁体检测
         self.p = re.compile(r'[\u4e00-\u9fa5]')
 
+        _tst = readdb('cc/TSCharacters.txt')
         # self.tt: 纯繁体字集合
         # self.ss: 纯简体字集合
-        tt = set(self.tstable.keys())
-        ss = set(self.tstable.values())
+        tt = set(_tst.keys())
+        ss = set(_tst.values())
         xx = tt & ss
 
         self.tt = tt - xx
@@ -1018,11 +1019,14 @@ class STConvertor:
         # 简体可能性
         s = 100 + ((j * 50 - len(s0 - self.ss) * 100 )/ len(s0))
 
-        confidence = ''
+        confidence = 's'
         if t > 50:
             confidence = 't'
         elif s > 50:
             confidence = 's'
+        elif t > s:
+            confidence = 't'
+
         return {'t': t, 's': s, 'confidence': confidence}
 
 
@@ -1338,7 +1342,10 @@ if __name__ == "__main__":
     # print(normalize_text('說</g>九種命終心三界'))
     #for i in fullsearch('止觀明靜'):
     #    print(i)
-    stc = STC()
+    stc = STConvertor()
     print(stc.t2s('那莫三𭦟多嚩日羅赦憾云〃哦'))
+    print(stc.s2t('安乐国'))
+    print(stc.detect('安乐国'))
+    print(stc.detect('那莫三𭦟多嚩日羅赦憾云〃哦'))
 
 
