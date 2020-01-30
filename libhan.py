@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-29 21:30:58
+# Last Modified: 2020-01-30 03:05:19
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1187,9 +1187,9 @@ def must_search(sentence, _from=0, _end=5000):
     #     data["query"]["bool"]["should"] = [{"match_phrase": { "content": st}} for st in sentences]
     # else:
     sentences = re.split(r'\s+and\s+|\s*&\s*|\s+', sentence, flags=re.I)
-    data["query"]["bool"]["must"] = [{"match_phrase": {"content": st}} for st in sentences]
-    # sentences = [re.split(r':|：', st) for st in sentences]
-    # data["query"]["bool"]["must"] = [{"match_phrase": {"content": st[0]}} if len(st) == 1 else {"match": {st[0].lower(): st[1]}} for st in sentences]
+    # data["query"]["bool"]["must"] = [{"match_phrase": {"content": st}} for st in sentences]
+    sentences = [re.split(r':|：', st) for st in sentences]
+    data["query"]["bool"]["must"] = [{"match_phrase": {"content": st[0]}} if len(st) == 1 else {"match": {st[0].lower(): st[1]}} for st in sentences]
 
     r = requests.get(url, json=data, timeout=10)
     result = r.json()
