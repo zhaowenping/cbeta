@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-29 18:38:47
+# Last Modified: 2020-01-29 18:43:39
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -956,7 +956,7 @@ class STConvertor:
         # self.tt: 纯繁体字集合
         # self.ss: 纯简体字集合
         tt = set(self.tstable.keys())
-        ss = set(self.tstableb.values())
+        ss = set(self.tstable.values())
         xx = tt & ss
 
         self.tt = tt - xx
