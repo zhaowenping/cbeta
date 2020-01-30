@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-29 18:20:01
+# Last Modified: 2020-01-29 18:53:27
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -385,11 +385,8 @@ def searchmulu():
 
 # 搜索！
 
-# ix = open_dir("index")
-# 搜索content内容
 # qp = QueryParser("content", ix.schema)
 
-# TODO 搜索的时候被搜索内容应该手动分词
 @get('/search')
 @view('temp/search.jinja2')
 def search_post():
@@ -400,13 +397,7 @@ def search_post():
     # stop_words = frozenset("不無一是有之者如法為故生此佛所三以二人云也於中若得心大")
     # content = ''.join(set(content)-stop_words)
     # print(('content', content))
-    s = time.time()
     xx = fullsearch(content)
-    e = time.time()
-
-    print('----------------------------------------')
-    print('搜索花费时间:%d' % (e-s))
-    print(xx)
 
     with open('search.dict', 'a+') as fd:
         fd.write(datetime.datetime.now().strftime("%Y%m%dT%T ") + content + '\n')

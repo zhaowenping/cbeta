@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-29 18:43:39
+# Last Modified: 2020-01-29 18:59:15
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1157,6 +1157,7 @@ def search_title(title):
 
 
 def must_search(sentence, _from=0, _end=5000):
+    print('搜索:', sentence)
     url = "http://127.0.0.1:9200/cbeta/_doc/_search" #创建一个文档，如果该文件已经存在，则返回失败
     data = {
      "query": {
@@ -1199,9 +1200,9 @@ def fullsearch(sentence):
         _source = i["_source"]
         author = _source['author'].split('\u3000')[0]
         juan = _source["filename"].split('n')[0]
-        highlight = i['highlight']['raw'][0]
+        # highlight = i['highlight']['raw'][0]
         # 文章内容去除标点符号
-        result.append({'hl': highlight, 'an': f'/xml/{juan}/{_source["filename"]}.xml#{_source["pid"]}',
+        result.append({'hl': highlight(_source["raw"]), 'an': f'/xml/{juan}/{_source["filename"]}.xml#{_source["pid"]}',
                 'title':_source['title'], 'author': author, 'content': _source['raw'],
                 'filename': _source["filename"]})
 
