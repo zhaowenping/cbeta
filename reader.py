@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-28 21:35:54
+# Last Modified: 2020-01-29 18:20:01
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -39,8 +39,7 @@ import pprint
 from libhan import hk2iast, read_menu_file, HKdict2iast
 from libhan import get_all_juan
 from libhan import Search
-from libhan import TSDetect
-from libhan import STC
+from libhan import STConvertor
 from libhan import rm_variant
 from libhan import fullsearch
 from libhan import rm_ditto_mark
@@ -53,7 +52,7 @@ from libhan import get_prev_juan, get_next_juan
 # from xsltproc import xsltproc, XSLT
 
 # XSLT_FILE = 'static/tei.xsl'
-convert = STC()
+convert = STConvertor()
 
 @route('/')
 @view('temp/index.html')
@@ -333,12 +332,11 @@ def submenu6(bulei):
 # 处理搜索
 
 ss = Search()
-ts = TSDetect()
 
 @get('/jt2ft')
 def jiantifanti():
     content = request.GET.content
-    if ts.detect(content)['confidence'] == 's':
+    if convert.detect(content)['confidence'] == 's':
         content = convert.s2t(content)
     return {'content': content}
 
@@ -361,7 +359,7 @@ def searchmulu():
     if an:
         redirect(an)
 
-    if ts.detect(title)['confidence'] == 's':
+    if convert.detect(title)['confidence'] == 's':
         # title = opencc.convert(title, config='s2t.json')
         title = convert.s2t(title)
     results = []
@@ -397,7 +395,7 @@ def searchmulu():
 def search_post():
     content = request.GET.content
     if not content: return {}
-    if ts.detect(content)['confidence'] == 's':
+    if convert.detect(content)['confidence'] == 's':
         content = convert.s2t(content)
     # stop_words = frozenset("不無一是有之者如法為故生此佛所三以二人云也於中若得心大")
     # content = ''.join(set(content)-stop_words)

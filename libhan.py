@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-29 17:54:01
+# Last Modified: 2020-01-29 18:33:44
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -929,45 +929,7 @@ def re_search(pattern, string):
         yield (string, False)
 
 
-class TSDetect:
-    '''简体繁体检测'''
-    def __init__(self):
-
-        self.p = re.compile(r'[\u4e00-\u9fa5]')
-
-        # self.tt: 纯繁体字集合
-        # self.ss: 纯简体字集合
-        tsdb = readdb('cc/TSCharacters.txt')
-        tt = set(tsdb.keys())
-        ss = set(tsdb.values())
-        xx = tt & ss
-
-        self.tt = tt - xx
-        self.ss = ss - xx
-
-    def detect(self, s0):
-        '''粗略判断一段文本是简体还是繁体的概率'''
-        if len(s0) == 0:
-            return {'t': 50, 's': 50, 'confidence': ''}
-
-        s0 = set(s0)
-        # 同时是简体繁体的可能性
-        j = sum(1 for i in (s0 - self.tt - self.ss) if self.p.match(i))
-        # 繁体可能性
-        t = 100 + ((j * 50 - len(s0 - self.tt) * 100 )/ len(s0))
-        # 简体可能性
-        s = 100 + ((j * 50 - len(s0 - self.ss) * 100 )/ len(s0))
-
-        confidence = ''
-        if t > 50:
-            confidence = 't'
-        elif s > 50:
-            confidence = 's'
-        return {'t': t, 's': s, 'confidence': confidence}
-
-TSDinst = TSDetect()
-
-class STC:
+class STConvertor:
     '''简体繁体转换类'''
     def __init__(self):
         '''读取简体繁体转换数据库'''
@@ -988,6 +950,17 @@ class STC:
         # return tsp, tstable, tsptable, stp, sttable, stptable
 
     # tsp, tstable, tsptable, stp, sttable, stptable = __init_cc__()
+        # 简体繁体检测
+        self.p = re.compile(r'[\u4e00-\u9fa5]')
+
+        # self.tt: 纯繁体字集合
+        # self.ss: 纯简体字集合
+        tt = set(self.tstable.keys())
+        ss = set(self.tstableb.values())
+        xx = tt & ss
+
+        self.tt = tt - xx
+        self.ss = ss - xx
 
 
     def t2s(self, string, punctuation=True, region=False, autonorm=True, onlyURO=True):
@@ -1030,6 +1003,27 @@ class STC:
         content = ''.join(i[0].translate(self.sttable) if not i[1] else self.stptable[i[0]] for i in re_search(self.stp, string))
 
         return content
+
+
+    def detect(self, s0):
+        '''粗略判断一段文本是简体还是繁体的概率'''
+        if len(s0) == 0:
+            return {'t': 50, 's': 50, 'confidence': ''}
+
+        s0 = set(s0)
+        # 同时是简体繁体的可能性
+        j = sum(1 for i in (s0 - self.tt - self.ss) if self.p.match(i))
+        # 繁体可能性
+        t = 100 + ((j * 50 - len(s0 - self.tt) * 100 )/ len(s0))
+        # 简体可能性
+        s = 100 + ((j * 50 - len(s0 - self.ss) * 100 )/ len(s0))
+
+        confidence = ''
+        if t > 50:
+            confidence = 't'
+        elif s > 50:
+            confidence = 's'
+        return {'t': t, 's': s, 'confidence': confidence}
 
 
 # 异体字处理
@@ -1163,7 +1157,7 @@ def search_title(title):
 
 
 def must_search(sentence, _from=0, _end=5000):
-    url = "http://127.0.0.1:9200/cbeta/para/_search" #创建一个文档，如果该文件已经存在，则返回失败
+    url = "http://127.0.0.1:9200/cbeta/_doc/_search" #创建一个文档，如果该文件已经存在，则返回失败
     data = {
      "query": {
         # "match_phrase": { "content": sentence # "content": {"query": sentence, "slop": 1} },
@@ -1188,7 +1182,8 @@ def must_search(sentence, _from=0, _end=5000):
     #     data["query"]["bool"]["should"] = [{"match_phrase": { "content": st}} for st in sentences]
     # else:
     sentences = re.split(r'\s+and\s+|\s*&\s*|\s+', sentence, flags=re.I)
-    data["query"]["bool"]["must"] = [{"match_phrase": { "content": st}} for st in sentences]
+    # data["query"]["bool"]["must"] = [{"match_phrase": { "content": st}} for st in sentences]
+    data["query"]["bool"]["must"] = [{"match_phrase": { "raw": st}} for st in sentences]
 
     r = requests.get(url, json=data, timeout=10)
     result = r.json()
