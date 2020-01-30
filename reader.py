@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-27 06:33:22
+# Last Modified: 2020-01-28 21:35:54
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -40,8 +40,7 @@ from libhan import hk2iast, read_menu_file, HKdict2iast
 from libhan import get_all_juan
 from libhan import Search
 from libhan import TSDetect
-from libhan import convert2t
-from libhan import convert2s
+from libhan import STC
 from libhan import rm_variant
 from libhan import fullsearch
 from libhan import rm_ditto_mark
@@ -54,6 +53,7 @@ from libhan import get_prev_juan, get_next_juan
 # from xsltproc import xsltproc, XSLT
 
 # XSLT_FILE = 'static/tei.xsl'
+convert = STC()
 
 @route('/')
 @view('temp/index.html')
@@ -339,7 +339,7 @@ ts = TSDetect()
 def jiantifanti():
     content = request.GET.content
     if ts.detect(content)['confidence'] == 's':
-        content = convert2t(content)
+        content = convert.s2t(content)
     return {'content': content}
 
 @get('/searchmulu')
@@ -363,7 +363,7 @@ def searchmulu():
 
     if ts.detect(title)['confidence'] == 's':
         # title = opencc.convert(title, config='s2t.json')
-        title = convert2t(title)
+        title = convert.s2t(title)
     results = []
     if not title:
         return {'results': results}
@@ -398,7 +398,7 @@ def search_post():
     content = request.GET.content
     if not content: return {}
     if ts.detect(content)['confidence'] == 's':
-        content = convert2t(content)
+        content = convert.s2t(content)
     # stop_words = frozenset("不無一是有之者如法為故生此佛所三以二人云也於中若得心大")
     # content = ''.join(set(content)-stop_words)
     # print(('content', content))
@@ -676,7 +676,7 @@ def zh(filename):
     content = content.translate({0x300c: 0x201c, 0x300d: 0x201d, 0x300e: 0x2018, 0x300f: 0x2019})
     # content = opencc.convert(content, config='t2s.json')
     content = rm_ditto_mark(content)
-    content = convert2s(content)
+    content = convert.t2s(content)
     print(filename)
     response.content_type = 'text/xml'
     return content
@@ -707,7 +707,7 @@ def t2s_post():
 
     # 去除重复符号
     scontent = rm_ditto_mark(tcontent)
-    scontent = convert2s(scontent, onlyURO=False)
+    scontent = convert.t2s(scontent, onlyURO=False)
     with open('t2s.txt', 'a+') as fd:
         fd.write(tcontent)
         fd.write('\n--------------------\n')

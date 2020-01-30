@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-28 07:19:45
+# Last Modified: 2020-01-29 17:30:03
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -46,19 +46,6 @@ def rm_com(ctx):
         pass
     pass
 
-# 废弃了
-# def rm_ditto_mark(ctx):
-#     # 在xml中去除三个叠字符号: ⺀ U+2E80 0 /〃 U+3003 2227 /々 U+3005 6415/ 亽 U+4EBD 151
-#     ctx = array.array('u', ctx)
-#     dittos = (chr(0x3003), chr(0x3005), chr(0x4ebd))
-#     for idx, zi in enumerate(ctx):
-#         if zi in dittos:
-#             for i in range(idx-1, -1, -1):
-#                 if ishanzi(ctx[i]):
-#                     ctx[idx] = ctx[i]  # 找到一个合法的重复字符进行替换
-#                     break
-#     return ctx.tounicode()
-
 
 def rm_joiner(ctx):
     '''去除汉字的链接和装饰符号: 外圈加方框或者圆形'''
@@ -86,7 +73,7 @@ def rm_ditto_mark(ctx):
     for idx, zi in enumerate(ctx):
         if zi in dittos:
             cc = cc + 1
-            if len_ctx > idx and ctx[idx+1] in dittos:
+            if len_ctx > idx+1 and ctx[idx+1] in dittos:
                 continue
         if cc == 0:
             continue
@@ -125,7 +112,7 @@ def ishanzi(zi):
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    # path = os.path.join('/home/zhaowp/cbeta/cbeta', path)
+    path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
             line = line.strip()
@@ -142,43 +129,6 @@ def readdb(path, trans=False, reverse=False):
     return result
 
 
-class TSDetect:
-    '''简体繁体检测'''
-    def __init__(self):
-
-        self.p = re.compile(r'[\u4e00-\u9fa5]')
-
-        # self.tt: 纯繁体字集合
-        # self.ss: 纯简体字集合
-        tsdb = readdb('cc/TSCharacters.txt')
-        tt = set(tsdb.keys())
-        ss = set(tsdb.values())
-        xx = tt & ss
-
-        self.tt = tt - xx
-        self.ss = ss - xx
-
-    def detect(self, s0):
-        '''粗略判断一段文本是简体还是繁体的概率'''
-        if len(s0) == 0:
-            return {'t': 50, 's': 50, 'confidence': ''}
-
-        s0 = set(s0)
-        # 同时是简体繁体的可能性
-        j = sum(1 for i in (s0 - self.tt - self.ss) if self.p.match(i))
-        # 繁体可能性
-        t = 100 + ((j * 50 - len(s0 - self.tt) * 100 )/ len(s0))
-        # 简体可能性
-        s = 100 + ((j * 50 - len(s0 - self.ss) * 100 )/ len(s0))
-
-        confidence = ''
-        if t > 50:
-            confidence = 't'
-        elif s > 50:
-            confidence = 's'
-        return {'t': t, 's': s, 'confidence': confidence}
-
-TSDinst = TSDetect()
 
 def read_menu_file(sutra_list):
     '''读取tab分隔的菜单文件，返回树状字典'''
@@ -979,69 +929,108 @@ def re_search(pattern, string):
         yield (string, False)
 
 
-def __init_cc__():
-    '''读取简体繁体转换数据库'''
-    # 读取繁体转简体短语词典
-    tsptable = readdb('cc/TSPhrases.txt')
-    # 读取简体转繁体短语词典
-    stptable = readdb('cc/STPhrases.txt')
-    # # print('|'.join(sorted(tsptable.keys(), key=lambda x: len(x), reverse=True)))
-    # 读取繁体转简体字典
-    tstable = readdb('cc/TSCharacters.txt', trans=True)
-    # 读取简体转繁体字典
-    sttable = readdb('cc/STCharacters.txt', trans=True)
+class TSDetect:
+    '''简体繁体检测'''
+    def __init__(self):
 
-    # 简体繁体转换pattern
-    tsp = re.compile('|'.join(tsptable.keys()))
-    stp = re.compile('|'.join(stptable.keys()))
+        self.p = re.compile(r'[\u4e00-\u9fa5]')
 
-    return tsp, tstable, tsptable, stp, sttable, stptable
+        # self.tt: 纯繁体字集合
+        # self.ss: 纯简体字集合
+        tsdb = readdb('cc/TSCharacters.txt')
+        tt = set(tsdb.keys())
+        ss = set(tsdb.values())
+        xx = tt & ss
 
-tsp, tstable, tsptable, stp, sttable, stptable = __init_cc__()
+        self.tt = tt - xx
+        self.ss = ss - xx
+
+    def detect(self, s0):
+        '''粗略判断一段文本是简体还是繁体的概率'''
+        if len(s0) == 0:
+            return {'t': 50, 's': 50, 'confidence': ''}
+
+        s0 = set(s0)
+        # 同时是简体繁体的可能性
+        j = sum(1 for i in (s0 - self.tt - self.ss) if self.p.match(i))
+        # 繁体可能性
+        t = 100 + ((j * 50 - len(s0 - self.tt) * 100 )/ len(s0))
+        # 简体可能性
+        s = 100 + ((j * 50 - len(s0 - self.ss) * 100 )/ len(s0))
+
+        confidence = ''
+        if t > 50:
+            confidence = 't'
+        elif s > 50:
+            confidence = 's'
+        return {'t': t, 's': s, 'confidence': confidence}
+
+TSDinst = TSDetect()
+
+class STC:
+    '''简体繁体转换类'''
+    def __init_cc__():
+        '''读取简体繁体转换数据库'''
+        # 读取繁体转简体短语词典
+        tsptable = readdb('cc/TSPhrases.txt')
+        # 读取简体转繁体短语词典
+        stptable = readdb('cc/STPhrases.txt')
+        # # print('|'.join(sorted(tsptable.keys(), key=lambda x: len(x), reverse=True)))
+        # 读取繁体转简体字典
+        tstable = readdb('cc/TSCharacters.txt', trans=True)
+        # 读取简体转繁体字典
+        sttable = readdb('cc/STCharacters.txt', trans=True)
+
+        # 简体繁体转换pattern
+        tsp = re.compile('|'.join(tsptable.keys()))
+        stp = re.compile('|'.join(stptable.keys()))
+
+        return tsp, tstable, tsptable, stp, sttable, stptable
+
+    # tsp, tstable, tsptable, stp, sttable, stptable = __init_cc__()
 
 
-def convert2s(string, punctuation=True, region=False, autonorm=True, onlyURO=True):
-    '''繁体转简体, punctuation是否转换单双引号
-    region 是否执行区域转换
-    region 转换后的地区
-    autonorm 自动规范化异体字
-    onlyURO 不简化低位类推简化字(繁体字处于BMP和扩展A区, 但是简体字处于扩展B,C,D,E,F的汉字)
-    '''
-    if autonorm:
-        string = rm_variant(string)
+    def t2s(string, punctuation=True, region=False, autonorm=True, onlyURO=True):
+        '''繁体转简体, punctuation是否转换单双引号
+        region 是否执行区域转换
+        region 转换后的地区
+        autonorm 自动规范化异体字
+        onlyURO 不简化低位类推简化字(繁体字处于BMP和扩展A区, 但是简体字处于扩展B,C,D,E,F的汉字)
+        '''
+        if autonorm:
+            string = rm_variant(string)
 
-    if punctuation:
-        string = string.translate({0x300c: 0x201c, 0x300d: 0x201d, 0x300e: 0x2018, 0x300f: 0x2019})
+        if punctuation:
+            string = string.translate({0x300c: 0x201c, 0x300d: 0x201d, 0x300e: 0x2018, 0x300f: 0x2019})
 
-    # 类推简化字处理
-    tst2 = copy.deepcopy(tstable)
-    if onlyURO:
-        # 只要简化字不在BMP，就是类推简化字
-        # tst2 = {k:tstable[k] for k in tstable if not (k < 0x20000 and tstable[k] > 0x20000)}
-        # tst2 = {k:tstable[k] for k in tstable if 0x4E00 <= tstable[k] < 0x20000}
-        tst2 = {k:tstable[k] for k in tstable if 0x4E00 <= tstable[k] < 0x9FA5}
-    else:
-        tst2 = {k:tstable[k] for k in tstable}
+        # 类推简化字处理
+        tst2 = copy.deepcopy(tstable)
+        if onlyURO:
+            # 只要简化字不在BMP，就是类推简化字
+            # tst2 = {k:tstable[k] for k in tstable if not (k < 0x20000 and tstable[k] > 0x20000)}
+            # tst2 = {k:tstable[k] for k in tstable if 0x4E00 <= tstable[k] < 0x20000}
+            tst2 = {k:tstable[k] for k in tstable if 0x4E00 <= tstable[k] < 0x9FA5}
+        else:
+            tst2 = {k:tstable[k] for k in tstable}
 
-    content = ''.join(i[0].translate(tst2) if not i[1] else tsptable[i[0]] for i in re_search(tsp, string))
+        content = ''.join(i[0].translate(tst2) if not i[1] else tsptable[i[0]] for i in re_search(tsp, string))
 
-    return content
+        return content
 
 
-def convert2t(string, punctuation=True, region=False):
-    '''简体转繁体, punctuation是否转换单双引号
-    region 是否执行区域转换
-    region 转换后的地区
-    '''
+    def s2t(string, punctuation=True, region=False):
+        '''简体转繁体, punctuation是否转换单双引号
+        region 是否执行区域转换
+        region 转换后的地区
+        '''
 
-    if punctuation:
-        string = string.translate({0x201c: 0x300c, 0x201d: 0x300d, 0x2018: 0x300e, 0x2019: 0x300f})
+        if punctuation:
+            string = string.translate({0x201c: 0x300c, 0x201d: 0x300d, 0x2018: 0x300e, 0x2019: 0x300f})
 
-    content = ''.join(i[0].translate(sttable) if not i[1] else stptable[i[0]] for i in re_search(stp, string))
+        content = ''.join(i[0].translate(sttable) if not i[1] else stptable[i[0]] for i in re_search(stp, string))
 
-    return content
+        return content
 
-# 简体繁体转换结束
 
 # 异体字处理
 
@@ -1136,6 +1125,7 @@ def pagerank(filename, sentence='', content=''):
     return x
 
 
+# XXX convert2t
 def search_title(title):
     '''通过标题搜索'''
     if request.method == "GET":
@@ -1193,12 +1183,12 @@ def must_search(sentence, _from=0, _end=5000):
     }
 
 
-    if re.search(r'\s+or\s+|\s*\|\s*', sentence, flags=re.I):
-        sentences = re.split(r'\s+or\s+|\s*\|\s*', sentence, flags=re.I)
-        data["query"]["bool"]["should"] = [{"match_phrase": { "content": st}} for st in sentences]
-    else:
-        sentences = re.split(r'\s+and\s+|\s*&\s*|\s+', sentence, flags=re.I)
-        data["query"]["bool"]["must"] = [{"match_phrase": { "content": st}} for st in sentences]
+    # if re.search(r'\s+or\s+|\s*\|\s*', sentence, flags=re.I):
+    #     sentences = re.split(r'\s+or\s+|\s*\|\s*', sentence, flags=re.I)
+    #     data["query"]["bool"]["should"] = [{"match_phrase": { "content": st}} for st in sentences]
+    # else:
+    sentences = re.split(r'\s+and\s+|\s*&\s*|\s+', sentence, flags=re.I)
+    data["query"]["bool"]["must"] = [{"match_phrase": { "content": st}} for st in sentences]
 
     r = requests.get(url, json=data, timeout=10)
     result = r.json()
@@ -1351,7 +1341,8 @@ if __name__ == "__main__":
     # print(make_url('CBETA, T14, no. 475, pp. 537c8-538a14'))
     # print(make_url('CBETA 2019.Q2, Y25, no. 25, p. 411a5-7'))
     # print(normalize_text('說</g>九種命終心三界'))
-    for i in fullsearch('止觀明靜'):
-        print(i)
+    #for i in fullsearch('止觀明靜'):
+    #    print(i)
+    print(rm_ditto_mark('那莫三𭦟多嚩日羅赦憾云〃哦'))
 
 
