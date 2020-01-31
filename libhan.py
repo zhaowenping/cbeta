@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-31 04:06:39
+# Last Modified: 2020-01-31 04:15:07
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1160,7 +1160,7 @@ def search_title(title):
 
 
 def must_search(sentence, _from=0, _end=5000):
-    print('搜索:', sentence)
+    print('must搜索:', sentence)
     url = "http://127.0.0.1:9200/cbeta/_doc/_search" #创建一个文档，如果该文件已经存在，则返回失败
     data = {
      "query": {
@@ -1198,7 +1198,7 @@ def must_search(sentence, _from=0, _end=5000):
 
 def fullsearch(sentence):
     '''全文搜索, sentence是繁体字'''
-    sentence = normalize_text(rm_pun(sentence))
+    sentence = normalize_text(sentence)
     r = must_search(sentence)
     hits = r['hits']['hits']
     result = []
