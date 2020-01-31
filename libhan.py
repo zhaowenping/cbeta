@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-30 03:05:19
+# Last Modified: 2020-01-30 23:35:10
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -27,6 +27,8 @@ import time
 import array
 from functools import reduce
 import pprint
+import unicodedata
+
 import requests
 
 
@@ -90,22 +92,24 @@ def rm_ditto_mark(ctx):
 
 
 def ishanzi(zi):
-    '''判断一个字是否是非叠字汉字'''
+    '''判断一个字符是否是非叠字汉字'''
     zi = ord(zi)
     # 〇
     if 0x3007 == zi:
         return True
-    # 主区
-    if 0x4E00 <= zi <= 0x9FEF and zi != 0x4EBD:
-        return True
     # A区
     if 0x3400 <= zi <= 0x4DB5:
+        return True
+    # 主区
+    if 0x4E00 <= zi <= 0x9FEF and zi != 0x4EBD:
         return True
     # BCDEF: 0x20007-0x2EBD6
     if 0x20000 <= zi <= 0x2EBE0:
         return True
-    # 一些兼容汉字
-    if zi in (0x3007, 0xFA1F, 0x2F804, 0x2F83B):
+    # 兼容汉字区
+    if 0xF900 <= zi <= 0xFAD9:
+        return True
+    if 0x2F800 <= zi <= 0x2FA1D:
         return True
     return False
 
@@ -113,7 +117,7 @@ def ishanzi(zi):
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    # path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
+    path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
             line = line.strip()
@@ -186,7 +190,7 @@ def ls(pattern):
 
 def normalize_text(ctx):
     '''标准化文本'''
-    # 去除空格
+    # 去除两边空格及多余空格
     ctx = normalize_space(ctx)
     # 去除汉字链接符号
     ctx = rm_joiner(ctx)
@@ -1043,6 +1047,7 @@ def rm_variant(string, level=0):
     '''异体字规范化为标准繁体字'''
     # string = string.translate(yitizi)
     # return string
+    # ctx = unicodedata.normalize("NFKC", ctx)
     content = ''.join(i[0].translate(yitizi) if not i[1] else varptable[i[0]] for i in re_search(varppp, string))
     return content
 
@@ -1202,13 +1207,13 @@ def fullsearch(sentence):
     r = must_search(sentence)
     hits = r['hits']['hits']
     result = []
-    for i in hits:
-        _source = i["_source"]
-        author = _source['author'].split('\u3000')[0]
+    for hit in hits:
+        _source = hit["_source"]
+        author = _source['author']  # .split('\u3000')[0]
         juan = _source["filename"].split('n')[0]
-        # highlight = i['highlight']['raw'][0]
+        hl = highlight(sentence, _source["raw"])
         # 文章内容去除标点符号
-        result.append({'hl': highlight(sentence, _source["raw"]), 'an': f'/xml/{juan}/{_source["filename"]}.xml#{_source["pid"]}',
+        result.append({'hl': hl, 'an': f'/xml/{juan}/{_source["filename"]}.xml#{hit["_id"]}',
                 'title':_source['title'], 'author': author, 'content': _source['raw'],
                 'filename': _source["filename"]})
 
