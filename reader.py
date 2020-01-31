@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-29 19:45:18
+# Last Modified: 2020-01-31 03:40:26
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -360,7 +360,6 @@ def searchmulu():
         redirect(an)
 
     if convert.detect(title)['confidence'] == 's':
-        # title = opencc.convert(title, config='s2t.json')
         title = convert.s2t(title)
     results = []
     if not title:

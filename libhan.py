@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-30 23:36:26
+# Last Modified: 2020-01-31 03:55:44
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1041,7 +1041,7 @@ yitizi = readdb('dict/variants.txt', True, True)
 # 读取异体字短语词典
 varptable = readdb('variants/p.txt')
 # 异体字转换pattern
-varppp = re.compile('|'.join(varptable.keys()))
+varppp = re.compile('|'.join(sorted(varptable.keys(),key=len,reverse=True)))
 
 def rm_variant(string, level=0):
     '''异体字规范化为标准繁体字'''
@@ -1101,12 +1101,6 @@ def rm_pun(ctx):
     ctx = ctx.translate(pun).replace(chr(0xFFFD), '')
     return ctx
 
-def hanziin(sentence='', content=''):
-    '''判断一段话中是否包含一句话'''
-    # 1. 去除标点符号
-    sentence = sentence.translate(pun).replace(chr(0xFFFD), '')
-    content = content.translate(pun).replace(chr(0xFFFD), '')
-    return sentence in content
 
 def pagerank(filename, sentence='', content=''):
     '''对xml文件名评分, filename 为 T20n1060 或者 T20n1060_001.xml 形式
@@ -1214,7 +1208,8 @@ def fullsearch(sentence):
         hl = highlight(sentence, _source["raw"])
         # 文章内容去除标点符号
         result.append({'hl': hl, 'an': f'/xml/{juan}/{_source["filename"]}.xml#{hit["_id"]}',
-                'title':_source['title'], 'author': author, 'content': _source['raw'],
+                'title':_source['title'], 'author': author,
+                # 'content': _source['raw'],
                 'filename': _source["filename"]})
 
     result.sort(key=lambda x: pagerank(x['filename']))
