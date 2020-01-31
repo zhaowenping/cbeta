@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-31 03:55:44
+# Last Modified: 2020-01-31 04:06:39
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1189,6 +1189,7 @@ def must_search(sentence, _from=0, _end=5000):
     # data["query"]["bool"]["must"] = [{"match_phrase": {"content": st}} for st in sentences]
     sentences = [re.split(r':|：', st) for st in sentences]
     data["query"]["bool"]["must"] = [{"match_phrase": {"content": st[0]}} if len(st) == 1 else {"match": {st[0].lower(): st[1]}} for st in sentences]
+    pprint.pprint(data["query"]["bool"]["must"])
 
     r = requests.get(url, json=data, timeout=10)
     result = r.json()
