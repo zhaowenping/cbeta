@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-01 06:45:48
+# Last Modified: 2020-02-01 14:27:25
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1269,7 +1269,7 @@ def fullsearch(sentence):
     # number标准化
     must = [("content", st[0]) if len(st) == 1 else (st[0].lower(), st[1]) for st in sentences]
     must = [(st[0], st[1] if st[0] != 'number' else normalize_number(st[1],False)) for st in must]
-    data["query"]["bool"]["must"] = [{"match_phrase": {"content":st[1]}} if st[0]=="content" else {"match": {st[0]: st[1]}} for st in must]
+    data["query"]["bool"]["must"] = [{"match_phrase": {"content":st[1]}} if st[0] in {"content", "number"} else {"match": {st[0]: st[1]}} for st in must]
     # data["query"]["bool"]["must"] = [{"match_phrase": {"content": st[0]}} if len(st) == 1 else {"match": {st[0].lower(): st[1]}} for st in sentences]
     pprint.pprint(data["query"]["bool"]["must"])
     # 用于高亮的内容
@@ -1279,6 +1279,7 @@ def fullsearch(sentence):
     result = r.json()
 
     hits = result['hits']['hits']
+    # value = result['hits']['total']['value']
     result = []
     for hit in hits:
         _source = hit["_source"]
