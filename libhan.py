@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-31 16:24:24
+# Last Modified: 2020-02-01 02:53:04
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -117,7 +117,7 @@ def ishanzi(zi):
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    # path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
+    path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
             line = line.strip()
@@ -225,7 +225,7 @@ class Sutra:
 
 
 def get_all_juan(number):
-    '''给定经号T01n0002，返回所有排序后的卷['001', '002', ...]
+    '''给定经号T01n0002,T20n1113B, 返回所有排序后的卷['001', '002', ...]
     返回值是一个数组，如果没有找到则返回空的数组'''
     book, sutra = number.split('n')
     # 查找第一卷(有些不是从第一卷开始的)
@@ -351,38 +351,39 @@ def make_url2():
 # 模式2: T01,no.1,p.1a1
 # CBETA 2019.Q2, Y25, no. 25, p. 411a5-7
 # CBETA, T14, no. 475, pp. 537c8-538a14
+# CBETA 2019.Q3, T20, no. 1113B, p. 498c12-17
 # 模式0: 100, '100,3', t1000, t1000_001
 # TODO: T20n1113B
 # TODO: 大宝积经100
 # jinghaopatten = re.compile(r'([a-zA-Z]{1,2})(\d{2,3})n(\d{4})([a-zA-Z])?(?:_(\d{3}))?(?:[_#](p\d{4}[abc]\d\d))?')
-jinghaopatten = re.compile(r'([a-zA-Z]{1,2})(\d{2,3})n(\d{4})(?:_(\d{3}))?(?:[_#](p\d{4}[abc]\d\d))?')
-jinghaopatten2 = re.compile(r'([a-zA-Z]{1,2})(\d{2,3}),\s*no\.\s*(\d+),\s*pp?\.\s*(\d+)([abc])(\d+)')
-jinghaopatten0 = re.compile(r'([a-zA-Z]{1,2})?(\d+)[ \t,._\u3000\u3002\uff0c-]+(\d+)')  # 全角逗号句号
-# jinghaopatten0 = re.compile(r'([\u3007\u3400-\u9FCB\U00020000-\U0002EBE0]+)[ \t,._\u3000\u3002\uff0c-]*(\d+)')
-def make_url(title):
-    j1, j2, j3, j4, j5 = 'T', '', '', '', ''
-    # j1, j2,   j3,  j4, j5
-    #  T, 01, 0001, 001, p0001a01
-    # j6如果是小写就变为大写, 大写就变成小写
-    # j6 = j6.upper() if ord('a') <= ord(j6) <= ord('z') else j6.lower()
+jinghaopatten = re.compile(r'([a-zA-Z]{1,2})(\d{2,3})n(\d{4})(\S)?(?:_(\d{3}))?(?:[_#](p\d{4}[abc]\d\d))?')
+jinghaopatten2 = re.compile(r'([a-zA-Z]{1,2})(\d{2,3}),\s*no\.\s*(\d+)(\S)?,\s*pp?\.\s*(\d+)([abc])(\d+)')
+jinghaopatten0 = re.compile(r'([a-zA-Z]{1,2})?(\d+)(\S)?[ \t,._\u3000\u3002\uff0c-]+(\d+)')  # 全角逗号句号
+# jinghaopatten3 = re.compile(r'([\u3007\u3400-\u9FCB\U00020000-\U0002EBE0]+)[ \t,._\u3000\u3002\uff0c-]*(\d+)')
+def parse_number(title):
+    j1, j2, j3, j4, j5, j6 = 'T', '', '', '', '', ''
+    # j1, j2,   j3, j4,  j5,  j6
+    #  T, 01, 0001, a    001, p0001a01
+    # j7如果是小写就变为大写, 大写就变成小写
+    # j7 = j7.upper() if ord('a') <= ord(j7) <= ord('z') else j7.lower()
     found = False
     if not found:
         jinghao = jinghaopatten.findall(title)
         if jinghao:
-            j1,j2,j3,j4,j5 = jinghao[0]
+            j1,j2,j3,j4,j5,j6 = jinghao[0]
             found = True
 
     if not found:
         jinghao = jinghaopatten2.findall(title)
         if jinghao:
-            j1,j2,j3,j5,j6,j7 = jinghao[0]
-            j5 = 'p{:04}{}{:02}'.format(int(j5), j6, int(j7))
+            j1,j2,j3,j4,j6,j7,j8 = jinghao[0]
+            j6 = 'p{:04}{}{:02}'.format(int(j6), j7, int(j8))
             found = True
 
     if not found:
         jinghao = jinghaopatten0.findall(title)
         if jinghao:
-            j1,j3,j4 = jinghao[0]
+            j1,j3,j4,j5 = jinghao[0]
             found = True
 
     if title.isdigit():
@@ -403,23 +404,56 @@ def make_url(title):
     if not j2:
         return None
 
-    # 查找卷数
-    if not j4:
-        j4 = get_all_juan(f'{j1}{j2}n{j3}')
-        if j4:
-            j4 = j4[0]
+    # 用j1,j2,j3确定j4;有j4确定大小写
+    found = False
+    j9 = j4.upper() if j4 and ord('a') <= ord(j4) <= ord('z') else j4.lower()
+    for line in sch_db:
+        if f'{j1}{j2}n{j3}{j4}' in line:
+            j4 = line[len(f'{j1}{j2}n{j3}'):]
+            found = True
+            break
+        if f'{j1}{j2}n{j3}{j9}' in line:
+            j4 = line[len(f'{j1}{j2}n{j3}'):]
+            found = True
+            break
 
-    if not j4:
+    if not found:
         return None
 
-    j4 = '{:03}'.format(int(j4))
-    # 如果有锚就添加锚
-    if j5:
-        url = f'xml/{j1}{j2}/{j1}{j2}n{j3}_{j4}.xml#{j5}'
-    else:
-        url = f'xml/{j1}{j2}/{j1}{j2}n{j3}_{j4}.xml'
-    return url
+    # 查找第一卷的卷数
+    if not j5:
+        j5 = get_all_juan(f'{j1}{j2}n{j3}{j4}')
+        if j5:
+            j5 = j5[0]
 
+    if not j5:
+        return None
+
+    j5 = '{:03}'.format(int(j5))
+    return (j1, j2, j3, j4, j5, j6)
+
+
+def normalize_number(number):
+    '''如果number符合经号的形式, 就标准化为标准形式T01n0001_001, 否则原样返回'''
+    result = parse_number(number)
+    if result:
+        j1, j2, j3, j4, j5, j6 = result
+        number = f'{j1}{j2}n{j3}{j4}_{j5}'
+    return number
+
+
+def make_url(number):
+    number = parse_number(number)
+    # 如果有锚就添加锚
+    if number:
+        j1, j2, j3, j4, j5, j6 = number
+    else:
+        return None
+    if j6:
+        url = f'xml/{j1}{j2}/{j1}{j2}n{j3}{j4}_{j5}.xml#{j6}'
+    else:
+        url = f'xml/{j1}{j2}/{j1}{j2}n{j3}{j4}_{j5}.xml'
+    return url
 
 # FROM: https://en.wikipedia.org/wiki/International_Alphabet_of_Sanskrit_Transliteration
 
@@ -1013,7 +1047,7 @@ class STConvertor:
     def detect(self, s0):
         '''粗略判断一段文本是简体还是繁体的概率'''
         if len(s0) == 0:
-            return {'t': 50, 's': 50, 'confidence': ''}
+            return {'t': 50, 's': 50, 'confidence': 's'}
 
         s0 = set(s0)
         # 同时是简体繁体的可能性
@@ -1040,7 +1074,7 @@ class STConvertor:
 yitizi = readdb('dict/variants.txt', True, True)
 # 读取异体字短语词典
 varptable = readdb('variants/p.txt')
-# 异体字转换pattern
+# 异体短语转换pattern
 varppp = re.compile('|'.join(sorted(varptable.keys(),key=len,reverse=True)))
 
 def rm_variant(string, level=0):
@@ -1189,6 +1223,8 @@ def must_search(sentence, _from=0, _end=5000):
     # data["query"]["bool"]["must"] = [{"match_phrase": {"content": st}} for st in sentences]
     sentences = [re.split(r':|：', st) for st in sentences]
     # TODO: number需要标准化
+    must = [("content", st[0]) if len(st) == 1 else (st[0].lower(), st[1]) for st in sentences]
+    must = [(st[0], st[1] if st[0] != 'number' else normalize_number(st[1])) for st in must]
     data["query"]["bool"]["must"] = [{"match_phrase": {"content": st[0]}} if len(st) == 1 else {"match": {st[0].lower(): st[1]}} for st in sentences]
     pprint.pprint(data["query"]["bool"]["must"])
 
@@ -1340,15 +1376,20 @@ if __name__ == "__main__":
     #            line = line.strip().split()
     #            print(line)
     #pprint.pprint(mulu)
-    # print(make_url('CBETA, T14, no. 475, pp. 537c8-538a14'))
-    # print(make_url('CBETA 2019.Q2, Y25, no. 25, p. 411a5-7'))
+    print(parse_number('CBETA, T14, no. 475, pp. 537c8-538a14'))
+    print(parse_number('CBETA 2019.Q2, Y25, no. 25, p. 411a5-7'))
+    print(parse_number('CBETA 2019.Q3, T20, no. 1113B, p. 498c12-17'))
+    print(parse_number('T20n1113B'))
+    print(parse_number('T20n1113'))
     # print(normalize_text('說</g>九種命終心三界'))
     #for i in fullsearch('止觀明靜'):
     #    print(i)
-    stc = STConvertor()
-    print(stc.t2s('那莫三𭦟多嚩日羅赦憾云〃哦'))
-    print(stc.s2t('安乐国'))
-    print(stc.detect('安乐国'))
-    print(stc.detect('那莫三𭦟多嚩日羅赦憾云〃哦'))
+    # stc = STConvertor()
+    # print(stc.t2s('那莫三𭦟多嚩日羅赦憾云〃哦'))
+    # print(stc.s2t('安乐国'))
+    # print(stc.detect('安乐国'))
+    # print(stc.detect('那莫三𭦟多嚩日羅赦憾云〃哦'))
+    # print(get_all_juan('T20n1113B'))
+    # print(get_all_juan('T20n1113'))
 
 
