@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-01 05:35:17
+# Last Modified: 2020-02-01 05:51:23
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1239,14 +1239,51 @@ def must_search(sentence, _from=0, _end=5000):
 def fullsearch(sentence):
     '''全文搜索, sentence是繁体字'''
     sentence = normalize_text(sentence)
-    r = must_search(sentence)
-    hits = r['hits']['hits']
+    url = "http://127.0.0.1:9200/cbeta/_doc/_search" #创建一个文档，如果该文件已经存在，则返回失败
+    data = {
+     "query": {
+        # "match_phrase": { "content": sentence # "content": {"query": sentence, "slop": 1} },
+         "bool":{
+            #  "must": {}
+        }
+    },
+    "size":_end - _from ,
+    "from": _from,
+    # "highlight": {
+    #     "fields": {
+    #         "raw": {
+
+    #         }
+    #     }
+    # }
+    }
+
+
+    # if re.search(r'\s+or\s+|\s*\|\s*', sentence, flags=re.I):
+    #     sentences = re.split(r'\s+or\s+|\s*\|\s*', sentence, flags=re.I)
+    #     data["query"]["bool"]["should"] = [{"match_phrase": { "content": st}} for st in sentences]
+    # else:
+    sentences = re.split(r'\s+and\s+|\s*&\s*|\s+', sentence, flags=re.I)
+    # data["query"]["bool"]["must"] = [{"match_phrase": {"content": st}} for st in sentences]
+    sentences = [re.split(r':|：', st) for st in sentences]
+    # TODO: number需要标准化
+    # must = [("content", st[0]) if len(st) == 1 else (st[0].lower(), st[1]) for st in sentences]
+    # data["query"]["bool"]["must"] = [(st[0], st[1] if st[0] != 'number' else normalize_number(st[1],False)) for st in must]
+    data["query"]["bool"]["must"] = [{"match_phrase": {"content": st[0]}} if len(st) == 1 else {"match": {st[0].lower(): st[1]}} for st in sentences]
+    pprint.pprint(data["query"]["bool"]["must"])
+    # 用于高亮的内容
+    hlsentence = [st[0] for st in sentences if len(st) == 1]
+
+    r= requests.get(url, json=data, timeout=10)
+    result = r.json()
+
+    hits = result['hits']['hits']
     result = []
     for hit in hits:
         _source = hit["_source"]
         author = _source['author']
         juan = _source["number"].split('n')[0]
-        hl = highlight(sentence, _source["raw"])
+        hl = highlight(hlsentence, _source["raw"])
         # 文章内容去除标点符号
         result.append({'hl': hl, 'an': f'/xml/{juan}/{_source["number"]}.xml#{hit["_id"]}',
                 'title':_source['title'], 'author': author,
@@ -1396,5 +1433,9 @@ if __name__ == "__main__":
     # print(stc.detect('那莫三𭦟多嚩日羅赦憾云〃哦'))
     # print(get_all_juan('T20n1113B'))
     # print(get_all_juan('T20n1113'))
+    sentence = '非施者福 title:毘耶娑'
+    sentence = '非施者福'
+    raw = '爾時，世尊語毘耶娑大仙人言：「汝聽施報，復有施分。何義布施？既布施已，自食自淨，施已報轉，故名布施。以何義故名為施主？如是問者，大仙當聽。若人有物，彼信心生，信心生已，以財付人遣向他國，彼人將物向他國施；彼人布施，財主得福，非施者福。彼所遣者，雖持物施而非捨主。若人自物自手施者，則是捨主、亦是施主。'
+    print(highlight(sentence, raw))
 
 
