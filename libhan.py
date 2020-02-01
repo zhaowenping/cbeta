@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-01 05:31:42
+# Last Modified: 2020-02-01 05:33:39
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1246,8 +1246,7 @@ def fullsearch(sentence):
         _source = hit["_source"]
         author = _source['author']
         juan = _source["number"].split('n')[0]
-        # hl = highlight(sentence, _source["raw"])
-        hl = _source["raw"]
+        hl = highlight(sentence, _source["raw"])
         # 文章内容去除标点符号
         result.append({'hl': hl, 'an': f'/xml/{juan}/{_source["number"]}.xml#{hit["_id"]}',
                 'title':_source['title'], 'author': author,
