@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-31 16:23:49
+# Last Modified: 2020-01-31 16:24:24
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1211,9 +1211,9 @@ def fullsearch(sentence):
         # 文章内容去除标点符号
         result.append({'hl': hl, 'an': f'/xml/{juan}/{_source["number"]}.xml#{hit["_id"]}',
                 'title':_source['title'], 'author': author,
-                'filename': _source["number"]})
+                'number': _source["number"]})
 
-    result.sort(key=lambda x: pagerank(x['filename']))
+    result.sort(key=lambda x: pagerank(x['number']))
 
     return result
 
