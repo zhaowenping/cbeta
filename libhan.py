@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-01 05:51:23
+# Last Modified: 2020-02-01 05:53:00
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1247,8 +1247,8 @@ def fullsearch(sentence):
             #  "must": {}
         }
     },
-    "size":_end - _from ,
-    "from": _from,
+    "size": 5000,
+    "from": 0,
     # "highlight": {
     #     "fields": {
     #         "raw": {
