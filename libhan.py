@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-01 02:53:04
+# Last Modified: 2020-02-01 03:43:47
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -352,20 +352,18 @@ def make_url2():
 # CBETA 2019.Q2, Y25, no. 25, p. 411a5-7
 # CBETA, T14, no. 475, pp. 537c8-538a14
 # CBETA 2019.Q3, T20, no. 1113B, p. 498c12-17
-# 模式0: 100, '100,3', t1000, t1000_001
+# 模式0: '100,3', 't100,3', 100, t1000, t1000_001, 1333b
 # TODO: T20n1113B
 # TODO: 大宝积经100
 # jinghaopatten = re.compile(r'([a-zA-Z]{1,2})(\d{2,3})n(\d{4})([a-zA-Z])?(?:_(\d{3}))?(?:[_#](p\d{4}[abc]\d\d))?')
 jinghaopatten = re.compile(r'([a-zA-Z]{1,2})(\d{2,3})n(\d{4})(\S)?(?:_(\d{3}))?(?:[_#](p\d{4}[abc]\d\d))?')
 jinghaopatten2 = re.compile(r'([a-zA-Z]{1,2})(\d{2,3}),\s*no\.\s*(\d+)(\S)?,\s*pp?\.\s*(\d+)([abc])(\d+)')
-jinghaopatten0 = re.compile(r'([a-zA-Z]{1,2})?(\d+)(\S)?[ \t,._\u3000\u3002\uff0c-]+(\d+)')  # 全角逗号句号
+jinghaopatten0 = re.compile(r'([a-zA-Z]{1,2})?(\d+)(\S)?[ \t,._\u3000\u3002\uff0c-]*(\d+)?')  # 全角逗号句号
 # jinghaopatten3 = re.compile(r'([\u3007\u3400-\u9FCB\U00020000-\U0002EBE0]+)[ \t,._\u3000\u3002\uff0c-]*(\d+)')
 def parse_number(title):
     j1, j2, j3, j4, j5, j6 = 'T', '', '', '', '', ''
     # j1, j2,   j3, j4,  j5,  j6
     #  T, 01, 0001, a    001, p0001a01
-    # j7如果是小写就变为大写, 大写就变成小写
-    # j7 = j7.upper() if ord('a') <= ord(j7) <= ord('z') else j7.lower()
     found = False
     if not found:
         jinghao = jinghaopatten.findall(title)
@@ -406,6 +404,7 @@ def parse_number(title):
 
     # 用j1,j2,j3确定j4;有j4确定大小写
     found = False
+    # j4如果是小写就变为大写, 大写就变成小写
     j9 = j4.upper() if j4 and ord('a') <= ord(j4) <= ord('z') else j4.lower()
     for line in sch_db:
         if f'{j1}{j2}n{j3}{j4}' in line:
@@ -1381,6 +1380,8 @@ if __name__ == "__main__":
     print(parse_number('CBETA 2019.Q3, T20, no. 1113B, p. 498c12-17'))
     print(parse_number('T20n1113B'))
     print(parse_number('T20n1113'))
+    print(parse_number('1113b'))
+    print(parse_number('1113'))
     # print(normalize_text('說</g>九種命終心三界'))
     #for i in fullsearch('止觀明靜'):
     #    print(i)
