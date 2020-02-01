@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-31 04:15:07
+# Last Modified: 2020-01-31 05:33:28
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1188,6 +1188,7 @@ def must_search(sentence, _from=0, _end=5000):
     sentences = re.split(r'\s+and\s+|\s*&\s*|\s+', sentence, flags=re.I)
     # data["query"]["bool"]["must"] = [{"match_phrase": {"content": st}} for st in sentences]
     sentences = [re.split(r':|：', st) for st in sentences]
+    # TODO: number需要标准化
     data["query"]["bool"]["must"] = [{"match_phrase": {"content": st[0]}} if len(st) == 1 else {"match": {st[0].lower(): st[1]}} for st in sentences]
     pprint.pprint(data["query"]["bool"]["must"])
 
@@ -1204,16 +1205,15 @@ def fullsearch(sentence):
     result = []
     for hit in hits:
         _source = hit["_source"]
-        author = _source['author']  # .split('\u3000')[0]
-        juan = _source["filename"].split('n')[0]
+        author = _source['author']
+        juan = _source["number"].split('n')[0]
         hl = highlight(sentence, _source["raw"])
         # 文章内容去除标点符号
-        result.append({'hl': hl, 'an': f'/xml/{juan}/{_source["filename"]}.xml#{hit["_id"]}',
+        result.append({'hl': hl, 'an': f'/xml/{juan}/{_source["number"]}.xml#{hit["_id"]}',
                 'title':_source['title'], 'author': author,
-                # 'content': _source['raw'],
-                'filename': _source["filename"]})
+                'filename': _source["number"]})
 
-    result.sort(key=lambda x: pagerank(x['filename']))
+    result.sort(key=lambda x: pagerank(x['number']))
 
     return result
 
