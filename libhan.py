@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-01 05:53:00
+# Last Modified: 2020-02-01 05:55:27
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1272,7 +1272,7 @@ def fullsearch(sentence):
     data["query"]["bool"]["must"] = [{"match_phrase": {"content": st[0]}} if len(st) == 1 else {"match": {st[0].lower(): st[1]}} for st in sentences]
     pprint.pprint(data["query"]["bool"]["must"])
     # 用于高亮的内容
-    hlsentence = [st[0] for st in sentences if len(st) == 1]
+    hlsentence = ''.join([st[0] for st in sentences if len(st) == 1])
 
     r= requests.get(url, json=data, timeout=10)
     result = r.json()
