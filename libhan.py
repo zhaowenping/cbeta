@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-31 05:33:28
+# Last Modified: 2020-01-31 16:23:49
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1213,7 +1213,7 @@ def fullsearch(sentence):
                 'title':_source['title'], 'author': author,
                 'filename': _source["number"]})
 
-    result.sort(key=lambda x: pagerank(x['number']))
+    result.sort(key=lambda x: pagerank(x['filename']))
 
     return result
 
