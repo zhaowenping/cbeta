@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-01 03:49:05
+# Last Modified: 2020-02-01 04:08:02
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -360,7 +360,7 @@ jinghaopatten = re.compile(r'([a-zA-Z]{1,2})(\d{2,3})n(\d{4})(\S)?(?:_(\d{3}))?(
 jinghaopatten2 = re.compile(r'([a-zA-Z]{1,2})(\d{2,3}),\s*no\.\s*(\d+)(\S)?,\s*pp?\.\s*(\d+)([abc])(\d+)')
 jinghaopatten0 = re.compile(r'([a-zA-Z]{1,2})?(\d+)(\S)?[ \t,._\u3000\u3002\uff0c-]*(\d+)?')  # 全角逗号句号
 # jinghaopatten3 = re.compile(r'([\u3007\u3400-\u9FCB\U00020000-\U0002EBE0]+)[ \t,._\u3000\u3002\uff0c-]*(\d+)')
-def parse_number(title):
+def parse_number(title, guess_j5=True):
     j1, j2, j3, j4, j5, j6 = 'T', '', '', '', '', ''
     # j1, j2,   j3, j4,  j5,  j6
     #  T, 01, 0001, a    001, p0001a01
@@ -420,24 +420,28 @@ def parse_number(title):
         return None
 
     # 查找第一卷的卷数
-    if not j5:
-        j5 = get_all_juan(f'{j1}{j2}n{j3}{j4}')
-        if j5:
-            j5 = j5[0]
+    if guess_j5:
+        if not j5:
+            j5 = get_all_juan(f'{j1}{j2}n{j3}{j4}')
+            if j5:
+                j5 = j5[0]
 
-    if not j5:
-        return None
+        if not j5:
+            return None
 
-    j5 = '{:03}'.format(int(j5))
+        j5 = '{:03}'.format(int(j5))
     return (j1, j2, j3, j4, j5, j6)
 
 
-def normalize_number(number):
+def normalize_number(number, guess_j5=True):
     '''如果number符合经号的形式, 就标准化为标准形式T01n0001_001, 否则原样返回'''
-    result = parse_number(number)
+    result = parse_number(number, guess_j5)
     if result:
         j1, j2, j3, j4, j5, j6 = result
-        number = f'{j1}{j2}n{j3}{j4}_{j5}'
+        if guess_j5:
+            number = f'{j1}{j2}n{j3}{j4}_{j5}'
+        else:
+            number = f'{j1}{j2}n{j3}{j4}'
     return number
 
 
@@ -1223,8 +1227,9 @@ def must_search(sentence, _from=0, _end=5000):
     sentences = [re.split(r':|：', st) for st in sentences]
     # TODO: number需要标准化
     must = [("content", st[0]) if len(st) == 1 else (st[0].lower(), st[1]) for st in sentences]
-    must = [(st[0], st[1] if st[0] != 'number' else normalize_number(st[1])) for st in must]
-    data["query"]["bool"]["must"] = [{"match_phrase": {"content": st[0]}} if len(st) == 1 else {"match": {st[0].lower(): st[1]}} for st in sentences]
+    must = [(st[0], st[1] if st[0] != 'number' else normalize_number(st[1],False)) for st in must]
+    # data["query"]["bool"]["must"] = [{"match_phrase": {"content": st[0]}} if len(st) == 1 else {"match": {st[0].lower(): st[1]}} for st in sentences]
+    data["query"]["bool"]["must"] = must
     pprint.pprint(data["query"]["bool"]["must"])
 
     r = requests.get(url, json=data, timeout=10)
