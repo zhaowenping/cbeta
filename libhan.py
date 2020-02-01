@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-01 05:33:39
+# Last Modified: 2020-02-01 05:35:17
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1208,13 +1208,13 @@ def must_search(sentence, _from=0, _end=5000):
     },
     "size":_end - _from ,
     "from": _from,
-    "highlight": {
-        "fields": {
-            "raw": {
+    # "highlight": {
+    #     "fields": {
+    #         "raw": {
 
-            }
-        }
-    }
+    #         }
+    #     }
+    # }
     }
 
 
