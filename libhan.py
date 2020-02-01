@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-01 04:08:02
+# Last Modified: 2020-02-01 04:09:42
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1226,10 +1226,10 @@ def must_search(sentence, _from=0, _end=5000):
     # data["query"]["bool"]["must"] = [{"match_phrase": {"content": st}} for st in sentences]
     sentences = [re.split(r':|：', st) for st in sentences]
     # TODO: number需要标准化
-    must = [("content", st[0]) if len(st) == 1 else (st[0].lower(), st[1]) for st in sentences]
-    must = [(st[0], st[1] if st[0] != 'number' else normalize_number(st[1],False)) for st in must]
-    # data["query"]["bool"]["must"] = [{"match_phrase": {"content": st[0]}} if len(st) == 1 else {"match": {st[0].lower(): st[1]}} for st in sentences]
-    data["query"]["bool"]["must"] = must
+    # must = [("content", st[0]) if len(st) == 1 else (st[0].lower(), st[1]) for st in sentences]
+    # must = [(st[0], st[1] if st[0] != 'number' else normalize_number(st[1],False)) for st in must]
+    # data["query"]["bool"]["must"] = must
+    data["query"]["bool"]["must"] = [{"match_phrase": {"content": st[0]}} if len(st) == 1 else {"match": {st[0].lower(): st[1]}} for st in sentences]
     pprint.pprint(data["query"]["bool"]["must"])
 
     r = requests.get(url, json=data, timeout=10)
