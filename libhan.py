@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-01 14:31:00
+# Last Modified: 2020-02-02 06:55:33
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -117,7 +117,7 @@ def ishanzi(zi):
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    # path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
+    path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
             line = line.strip()
@@ -438,7 +438,7 @@ def normalize_number(number, guess_j5=True):
     result = parse_number(number, guess_j5)
     if result:
         j1, j2, j3, j4, j5, j6 = result
-        if guess_j5:
+        if j5:
             number = f'{j1}{j2}n{j3}{j4}_{j5}'
         else:
             number = f'{j1}{j2}n{j3}{j4}'
@@ -1218,16 +1218,17 @@ def must_search(sentence, _from=0, _end=5000):
     }
 
 
-    # if re.search(r'\s+or\s+|\s*\|\s*', sentence, flags=re.I):
-    #     sentences = re.split(r'\s+or\s+|\s*\|\s*', sentence, flags=re.I)
-    #     data["query"]["bool"]["should"] = [{"match_phrase": { "content": st}} for st in sentences]
-    # else:
-    sentences = re.split(r'\s+and\s+|\s*&\s*|\s+', sentence, flags=re.I)
+    if re.findall(r'\s+and\s+|\s*&\s*', sentence, flags=re.I):
+        sentences = re.split(r'\s+and\s+|\s*&\s*', sentence, flags=re.I)
+        sentences = [re.sub(r'\s+', '', ctx) for ctx in sentences]
+    else:
+        sentences = re.split(r'\s+', sentence, flags=re.I)
     # data["query"]["bool"]["must"] = [{"match_phrase": {"content": st}} for st in sentences]
     sentences = [re.split(r':|：', st) for st in sentences]
-    # TODO: number需要标准化
-    # must = [("content", st[0]) if len(st) == 1 else (st[0].lower(), st[1]) for st in sentences]
-    # data["query"]["bool"]["must"] = [(st[0], st[1] if st[0] != 'number' else normalize_number(st[1],False)) for st in must]
+    # 组成标准查询JSON
+    # must = [("content", st[0]) if len(st) == 1 else (st[0].lower(), st[1] if st[0] != 'number' else normalize_number(st[1],False)) for st in sentences]
+    # must = [('sutra' if st0=='number' and '_' not in st1 else st0, st1) for st0, st1 in must]
+    # data["query"]["bool"]["must"] = [{"match_phrase": {"content": val}} if key=="content" else {"match": {key: val}} for key,val in must]
     data["query"]["bool"]["must"] = [{"match_phrase": {"content": st[0]}} if len(st) == 1 else {"match": {st[0].lower(): st[1]}} for st in sentences]
     pprint.pprint(data["query"]["bool"]["must"])
 
