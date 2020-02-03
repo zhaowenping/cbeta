@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-02 21:25:38
+# Last Modified: 2020-02-02 21:26:33
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1272,7 +1272,7 @@ def fullsearch(sentence):
     must = [("content", st[0]) if len(st) == 1 else (st[0].lower(), st[1]) for st in sentences]
     must = [(st0, st1 if st0 != 'number' else normalize_number(st1,False)) for st0,st1 in must]
     must = [('sutra' if (st0=='number' and '_' not in st1) else st0, st1) for st0,st1 in must]
-    data["query"]["bool"]["must"] = [{"match_phrase": if key=="content" else "match": {key:val}} for key,val in must]
+    data["query"]["bool"]["must"] = [{"match_phrase" if key=="content" else "match": {key:val}} for key,val in must]
     # data["query"]["bool"]["must"] = [{"match_phrase": {"content": st[0]}} if len(st) == 1 else {"match": {st[0].lower(): st[1]}} for st in sentences]
     pprint.pprint(data["query"]["bool"]["must"])
     # 用于高亮的内容
