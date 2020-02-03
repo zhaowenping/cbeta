@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-02 21:26:33
+# Last Modified: 2020-02-02 21:32:46
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1241,7 +1241,7 @@ def fullsearch(sentence):
     '''全文搜索, sentence是繁体字'''
     # 标准化文本
     sentence = normalize_text(sentence)
-    url = "http://127.0.0.1:9200/cbeta/_doc/_search" #创建一个文档，如果该文件已经存在，则返回失败
+    url = "http://127.0.0.1:9200/cbeta/_doc/_search"
     data = {
      "query": {
         # "match_phrase": { "content": sentence # "content": {"query": sentence, "slop": 1} },
@@ -1260,6 +1260,7 @@ def fullsearch(sentence):
     # }
     }
 
+    # 组成标准查询JSON
     s = time.time()
     if re.findall(r'\s+and\s+|\s*&\s*', sentence, flags=re.I):
         sentences = re.split(r'\s+and\s+|\s*&\s*', sentence, flags=re.I)
@@ -1269,22 +1270,21 @@ def fullsearch(sentence):
     # data["query"]["bool"]["must"] = [{"match_phrase": {"content": st}} for st in sentences]
     sentences = [re.split(r':|：', st) for st in sentences]
     # 标准化经号number字段,按照长度不同分别在number和sutra字段中查找
-    must = [("content", st[0]) if len(st) == 1 else (st[0].lower(), st[1]) for st in sentences]
-    must = [(st0, st1 if st0 != 'number' else normalize_number(st1,False)) for st0,st1 in must]
-    must = [('sutra' if (st0=='number' and '_' not in st1) else st0, st1) for st0,st1 in must]
+    must = (("content", st[0]) if len(st) == 1 else (st[0].lower(), st[1]) for st in sentences)
+    must = ((st0, st1 if st0 != 'number' else normalize_number(st1,False)) for st0,st1 in must)
+    must = (('sutra' if (st0=='number' and '_' not in st1) else st0, st1) for st0,st1 in must)
     data["query"]["bool"]["must"] = [{"match_phrase" if key=="content" else "match": {key:val}} for key,val in must]
-    # data["query"]["bool"]["must"] = [{"match_phrase": {"content": st[0]}} if len(st) == 1 else {"match": {st[0].lower(): st[1]}} for st in sentences]
-    pprint.pprint(data["query"]["bool"]["must"])
+    # pprint.pprint(data["query"]["bool"]["must"])
     # 用于高亮的内容
     hlsentence = ''.join([st[0] for st in sentences if len(st) == 1])
-    e = time.time()
-    print(e-s)
+    # e = time.time()
+    # print(e-s)
 
     s = time.time()
     r= requests.get(url, json=data, timeout=10)
     result = r.json()
-    e = time.time()
-    print(e-s)
+    # e = time.time()
+    # print(e-s)
 
     hits = result['hits']['hits']
     # value = result['hits']['total']['value']
