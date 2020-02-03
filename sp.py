@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2019-11-09 16:49:13
+# Last Modified: 2020-02-02 20:50:52
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -25,7 +25,7 @@ with open('t.txt') as fd:
     for line in fd:
         line = line.strip()
         for zi in line:
-            if zi in data and '念' in line:
+            if zi in data and zi in line:
                 line = line.replace(zi, f"\033[0;31;40m{zi}\033[0m")
                 print(line)
 
