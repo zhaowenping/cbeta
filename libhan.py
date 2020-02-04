@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-02 21:32:46
+# Last Modified: 2020-02-03 21:04:08
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -325,94 +325,119 @@ with open("static/sutra_sch.lst") as fd:
             sch_db.append(line)
 
 # 大正七〇·四五九中、四六〇下
+# 大正二、一〇三c
+# 大正藏二·四一a
 # 大正藏第70卷459页b
-def make_url2():
-    # 大正四五·九下
-    # 0009c01
-    # vol:45;page:p9c
-    # vol:30;page:p772c
-    t = { '〇': '0',
-          '一': '1',
-          '二': '2',
-          '三': '3',
-          '四': '4',
-          '五': '5',
-          '六': '6',
-          '七': '7',
-          '八': '8',
-          '九': '9',
-          '上': 'a',
-          '中': 'b',
-          '下': 'c',
+# 《大正藏》第40卷第16頁下
+# 雜阿含經一五·一七
+# 增一阿含二一·六（大正二·六〇三c）  <pb n="0603c" ed="T" xml:id="T02.0125.0603c"/>
+jinghaopatten4 = re.compile(r'(《?大正?新?脩?大?藏?經?》?)第?([\d〇一二三四五六七八九]{1,3})(?:卷|卷第|\u00b7)\s*([\d〇一二三四五六七八九]{1,3})[頁|页]?([上中下abc])?')
+def make_url2(number):
+    t = { ord('〇'): ord('0'),
+          ord('一'): ord('1'),
+          ord('二'): ord('2'),
+          ord('三'): ord('3'),
+          ord('四'): ord('4'),
+          ord('五'): ord('5'),
+          ord('六'): ord('6'),
+          ord('七'): ord('7'),
+          ord('八'): ord('8'),
+          ord('九'): ord('9'),
+          ord('上'): ord('a'),
+          ord('中'): ord('b'),
+          ord('下'): ord('c'),
             }
-    pass
+    found = False
+    anchor = ''
+    jinghao = jinghaopatten4.findall(number)
+    if jinghao:
+        book, tome, page, jj = jinghao[0]
+        tome = '{:02}'.format(int(tome.translate(t)))
+        page = '{:04}'.format(int(page.translate(t)))
+        jj = jj.translate(t)
+        if '大正' in book:
+            book = 'T'
+        with open('idx/pbidx.txt') as fd:
+            for line in fd:
+                line = line.strip()
+                if f'{book}{tome}' in line and f'{page}{jj}' in line:
+                    number, anchor = line.split()
+                    found = True
+    if not found:
+        return None
+        # url = f'xml/{book}{tome}/{book}{tome}n{sutra}{jj}_{volume}.xml'
+    # url = f'xml/{book}{tome}/{number}.xml#{anchor}'
+    url = f'xml/{book}{tome}/{number}.xml'
+    return url
+    # return (book, tome, sutra, j4, volume, anchor)
 
 # 模式1: T01n0001, T01n0001_001, T01n0001_p0001a01
 # 模式2: T01,no.1,p.1a1
 # CBETA 2019.Q2, Y25, no. 25, p. 411a5-7
 # CBETA, T14, no. 475, pp. 537c8-538a14
 # CBETA 2019.Q3, T20, no. 1113B, p. 498c12-17
+# CBETA 2019.Q3, A091, no. 1057, pp. 311b03-312a10
 # 模式0: '100,3', 't100,3', 100, t1000, t1000_001, 1333b
-# TODO: T20n1113B
 # TODO: 大宝积经100
 # jinghaopatten = re.compile(r'([a-zA-Z]{1,2})(\d{2,3})n(\d{4})([a-zA-Z])?(?:_(\d{3}))?(?:[_#](p\d{4}[abc]\d\d))?')
-jinghaopatten = re.compile(r'([a-zA-Z]{1,2})(\d{2,3})n(\d{4})(\S)?(?:_(\d{3}))?(?:[_#](p\d{4}[abc]\d\d))?')
-jinghaopatten2 = re.compile(r'([a-zA-Z]{1,2})(\d{2,3}),\s*no\.\s*(\d+)(\S)?,\s*pp?\.\s*(\d+)([abc])(\d+)')
+jinghaopatten1 = re.compile(r'([a-zA-Z]{1,2})(\d{2,3})n(\d{4})([a-zA-Z])?(?:_(\d{3}))?(?:_(p\d{4}[abc]\d\d))?')
+jinghaopatten2 = re.compile(r'([a-zA-Z]{1,2})(\d{2,3}),\s*no\.\s*(\d+)([a-zA-Z])?,\s*pp?\.\s*(\d+)([abc])(\d+)')
 jinghaopatten0 = re.compile(r'([a-zA-Z]{1,2})?(\d+)(\S)?[ \t,._\u3000\u3002\uff0c-]*(\d+)?')  # 全角逗号句号
 # jinghaopatten3 = re.compile(r'([\u3007\u3400-\u9FCB\U00020000-\U0002EBE0]+)[ \t,._\u3000\u3002\uff0c-]*(\d+)')
-def parse_number(title, guess_j5=True):
-    j1, j2, j3, j4, j5, j6 = 'T', '', '', '', '', ''
-    # j1, j2,   j3, j4,  j5,  j6
-    #  T, 01, 0001, a    001, p0001a01
+def parse_number(title, guess_juan=False):
+    book, tome, sutra, j4, volume, anchor = 'T', '', '', '', '', ''
+    # book, tome, sutra, j4, volume, anchor
+    #    T,   01,  0001,  a     001, p0001a01
     found = False
     if not found:
-        jinghao = jinghaopatten.findall(title)
+        jinghao = jinghaopatten1.findall(title)
         if jinghao:
-            j1,j2,j3,j4,j5,j6 = jinghao[0]
+            book,tome,sutra,j4,volume,anchor = jinghao[0]
             found = True
 
     if not found:
         jinghao = jinghaopatten2.findall(title)
         if jinghao:
-            j1,j2,j3,j4,j6,j7,j8 = jinghao[0]
-            j6 = 'p{:04}{}{:02}'.format(int(j6), j7, int(j8))
+            book,tome,sutra,j4,anchor,j7,j8 = jinghao[0]
+            anchor = 'p{:04}{}{:02}'.format(int(anchor), j7, int(j8))
+            # <lb n="0001b25"
             found = True
 
     if not found:
         jinghao = jinghaopatten0.findall(title)
         if jinghao:
-            j1,j3,j4,j5 = jinghao[0]
+            book,sutra,j4,volume = jinghao[0]
             found = True
 
     if title.isdigit():
-        j3 = '{:04}'.format(int(title))
+        sutra = '{:04}'.format(int(title))
         found = True
 
     if not found:
             return None
 
-    j1 = j1.upper() if j1 else 'T'
-    j3 = '{:04}'.format(int(j3))
-    # 查找册数 # TODO: 根据锚来查找册数
-    if not j2:
+    book = book.upper() if book else 'T'
+    sutra = '{:04}'.format(int(sutra))
+    # 查找册数
+    if not tome:
         for line in sch_db:
-            if j1 in line and j3 in line:
-                j2 = line.split('n')[0][len(j1):]
+            if book in line and sutra in line:
+                tome = line.split('n')[0][len(book):]
                 break
-    if not j2:
+    if not tome:
         return None
 
-    # 用j1,j2,j3确定j4;有j4确定大小写
+    # 用book,tome,sutra确定j4;有j4确定大小写
     found = False
     # j4如果是小写就变为大写, 大写就变成小写
     j9 = j4.upper() if j4 and ord('a') <= ord(j4) <= ord('z') else j4.lower()
     for line in sch_db:
-        if f'{j1}{j2}n{j3}{j4}' in line:
-            j4 = line[len(f'{j1}{j2}n{j3}'):]
+        if f'{book}{tome}n{sutra}{j4}' in line:
+            j4 = line[len(f'{book}{tome}n{sutra}'):]
             found = True
             break
-        if f'{j1}{j2}n{j3}{j9}' in line:
-            j4 = line[len(f'{j1}{j2}n{j3}'):]
+        if f'{book}{tome}n{sutra}{j9}' in line:
+            j4 = line[len(f'{book}{tome}n{sutra}'):]
             found = True
             break
 
@@ -420,22 +445,29 @@ def parse_number(title, guess_j5=True):
         return None
 
     # 查找第一卷的卷数
-    if guess_j5:
-        if not j5:
-            j5 = get_all_juan(f'{j1}{j2}n{j3}{j4}')
-            if j5:
-                j5 = j5[0]
+    if guess_juan and not volume:
+        if not anchor:
+            volume = get_all_juan(f'{book}{tome}n{sutra}{j4}')
+            if volume:
+                volume = volume[0]
+        # TODO: 根据锚来查找册数
+        else:
+            volume = get_all_juan(f'{book}{tome}n{sutra}{j4}')
+            if volume:
+                volume = volume[0]
 
-        if not j5:
+        # print(4, title, book, tome,sutra,j4,volume, anchor)
+
+        if not volume:
             return None
 
-        j5 = '{:03}'.format(int(j5))
-    return (j1, j2, j3, j4, j5, j6)
+        volume = '{:03}'.format(int(volume))
+    return (book, tome, sutra, j4, volume, anchor)
 
 
-def normalize_number(number, guess_j5=True):
+def normalize_number(number, guess_juan=False):
     '''如果number符合经号的形式, 就标准化为标准形式T01n0001_001, 否则原样返回'''
-    result = parse_number(number, guess_j5)
+    result = parse_number(number, guess_juan)
     if result:
         j1, j2, j3, j4, j5, j6 = result
         if j5:
@@ -986,8 +1018,8 @@ class STConvertor:
         self.sttable = readdb('cc/STCharacters.txt', trans=True)
 
         # 简体繁体转换pattern
-        self.tsp = re.compile('|'.join(self.tsptable.keys()))
-        self.stp = re.compile('|'.join(self.stptable.keys()))
+        self.tsp = re.compile('|'.join(sorted(self.tsptable.keys(),key=len,reverse=True)))
+        self.stp = re.compile('|'.join(sorted(self.stptable.keys(),key=len,reverse=True)))
 
         # return tsp, tstable, tsptable, stp, sttable, stptable
 
@@ -1433,6 +1465,7 @@ if __name__ == "__main__":
     print(parse_number('T20n1113'))
     print(parse_number('1113b'))
     print(parse_number('1113'))
+    print(parse_number('T01n0001_p0001a01'))
     # print(normalize_text('說</g>九種命終心三界'))
     #for i in fullsearch('止觀明靜'):
     #    print(i)
@@ -1446,6 +1479,6 @@ if __name__ == "__main__":
     sentence = '非施者福 title:毘耶娑'
     sentence = '非施者福'
     raw = '爾時，世尊語毘耶娑大仙人言：「汝聽施報，復有施分。何義布施？既布施已，自食自淨，施已報轉，故名布施。以何義故名為施主？如是問者，大仙當聽。若人有物，彼信心生，信心生已，以財付人遣向他國，彼人將物向他國施；彼人布施，財主得福，非施者福。彼所遣者，雖持物施而非捨主。若人自物自手施者，則是捨主、亦是施主。'
-    print(highlight(sentence, raw))
+    # print(highlight(sentence, raw))
 
 

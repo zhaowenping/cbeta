@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-01-31 20:57:56
+# Last Modified: 2020-02-03 21:01:17
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -43,7 +43,7 @@ from libhan import STConvertor
 from libhan import rm_variant
 from libhan import fullsearch
 from libhan import rm_ditto_mark
-from libhan import make_url
+from libhan import make_url, make_url2
 
 from libhan import lookup, lookinkangxi, lookinsa, zhuyin
 from libhan import unihan
@@ -356,6 +356,10 @@ def searchmulu():
         title = request.forms.content
     # 使用经号方式查找藏经
     an = make_url(title)
+    if an:
+        redirect(an)
+    # 使用卷册方式查找藏经
+    an = make_url2(title)
     if an:
         redirect(an)
 
