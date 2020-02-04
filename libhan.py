@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-03 23:56:48
+# Last Modified: 2020-02-04 01:05:04
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -331,9 +331,9 @@ with open("static/sutra_sch.lst") as fd:
 # 《大正藏》第40卷第16頁下
 # 雜阿含經一五·一七
 # 增一阿含二一·六（大正二·六〇三c）  <pb n="0603c" ed="T" xml:id="T02.0125.0603c"/>
-jinghaopatten4 = re.compile(r'(《[中乾佛作傳典刊刻北卍南印叢史品善嘉國圖城外大學宋家寺山師彙志房拓教文新書朝本樂正武永法洪漢片獻珍百石經編纂續脩興華著藏補譯趙遺金隆集順館高麗]+》?)第?([\d〇一二三四五六七八九]{1,3})(?:卷|卷第|\u00b7)\s*([\d〇一二三四五六七八九]{1,3})[頁|页]?([上中下abc])?')
+jinghaopatten4 = re.compile(r'(《[中乾佛作傳典刊刻北卍南印叢史品善嘉國圖城外大學宋家寺山師彙志房拓教文新書朝本樂正武永法洪漢片獻珍百石經編纂續脩興華著藏補譯趙遺金隆集順館高麗传丛国图学师汇书乐汉献经编续修兴华补译赵遗顺馆丽]+》?)第?([\d〇一二三四五六七八九]{1,3})(?:卷|卷第|\u00b7)\s*([\d〇一二三四五六七八九]{1,3})[頁|页]?([上中下abc])?')
 def make_url2(number):
-    t = { ord('〇'): ord('0'),
+    tt = { ord('〇'): ord('0'),
           ord('一'): ord('1'),
           ord('二'): ord('2'),
           ord('三'): ord('3'),
@@ -352,45 +352,46 @@ def make_url2(number):
     jinghao = jinghaopatten4.findall(number)
     if jinghao:
         book, tome, page, abc = jinghao[0]
-        page = '{:04}'.format(int(page.translate(t)))
-        abc = abc.translate(t)
+        page = '{:04}'.format(int(page.translate(tt)))
+        abc = abc.translate(tt)
         if '大正' in book:
             book = 'T'
-        if '卍新' in book or '卍續' in book:
+        if '卍新' in book or '卍續' in book or '卍续' in book:
             book = 'X'
-        if '高麗' in book:
+        if '高麗' in book or '高丽' in book:
             book = 'K'
         if '房山' in book:
             book = 'F'
-        if '印順' in book:
+        if '印順' in book or '印顺' in book:
             book = 'Y'
         if '宋藏' in book:
             book = 'S'
         if '金' in book:
             book = 'A'
-        if '中華' in book:
+        if '中華' in book or '中华' in book:
             book = 'C'
-        if '嘉興' in book:
+        if '嘉興' in book or '嘉兴' in book:
             book = 'J'
-        if '永樂北' in book:
+        if '永樂北' in book or '永乐北' in book:
             book = 'P'
         if '洪武南' in book:
             book = 'U'
         if '圖' in book:
             book = 'D'
-        if '南傳' in book:
+        if '南傳' in book or '南传' in book:
             book = 'N'
         if '藏外' in book:
             book = 'ZW'
-        if '補' in book:
+        if '補' in book or '补' in book:
             book = 'B'
         if '乾隆' in book:
             book = 'L'
         if book in {'A', 'C', 'G', 'GA', 'GB', 'L', 'M', 'P', 'U'}:
-            tome = '{:03}'.format(int(tome.translate(t)))
+            tome = '{:03}'.format(int(tome.translate(tt)))
         else:
-            tome = '{:02}'.format(int(tome.translate(t)))
+            tome = '{:02}'.format(int(tome.translate(tt)))
 
+        # 查表
         with open('idx/pbidx.txt') as fd:
             for line in fd:
                 line = line.strip()
