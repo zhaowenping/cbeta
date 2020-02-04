@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-04 06:15:15
+# Last Modified: 2020-02-04 06:21:36
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -455,7 +455,7 @@ def parse_number(title, guess_juan=False):
         if jinghao:
             book,sutra,j4,volume = jinghao[0]
             found = True
-        #print(2, book, tome, sutra, j4, volume, anchor)
+        # print(2, book, tome, sutra, j4, volume, anchor)
 
     if title.isdigit():
         sutra = '{:04}'.format(int(title))
@@ -509,7 +509,7 @@ def parse_number(title, guess_juan=False):
         if not volume:
             return None
 
-        volume = '{:03}'.format(int(volume))
+    volume = '{:03}'.format(int(volume))
     return (book, tome, sutra, j4, volume, anchor)
 
 
