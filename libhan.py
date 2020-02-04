@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-04 01:05:04
+# Last Modified: 2020-02-04 06:15:15
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -331,7 +331,7 @@ with open("static/sutra_sch.lst") as fd:
 # 《大正藏》第40卷第16頁下
 # 雜阿含經一五·一七
 # 增一阿含二一·六（大正二·六〇三c）  <pb n="0603c" ed="T" xml:id="T02.0125.0603c"/>
-jinghaopatten4 = re.compile(r'(《[中乾佛作傳典刊刻北卍南印叢史品善嘉國圖城外大學宋家寺山師彙志房拓教文新書朝本樂正武永法洪漢片獻珍百石經編纂續脩興華著藏補譯趙遺金隆集順館高麗传丛国图学师汇书乐汉献经编续修兴华补译赵遗顺馆丽]+》?)第?([\d〇一二三四五六七八九]{1,3})(?:卷|卷第|\u00b7)\s*([\d〇一二三四五六七八九]{1,3})[頁|页]?([上中下abc])?')
+jinghaopatten4 = re.compile(r'(《[中乾佛作傳典刊刻北卍南印叢史品善嘉國圖城外大學宋家寺山師彙志房拓教文新書朝本樂正武永法洪漢片獻珍百石經編纂續脩興華著藏補譯趙遺金隆集順館高麗传丛国图学师汇书乐汉献经编续修兴华补译赵遗顺馆丽]+》?)第?([\d〇一二三四五六七八九]{1,3})(?:卷|卷第|\u00b7)([\d〇一二三四五六七八九]{1,3})[頁|页]?([上中下abcABC])?')
 def make_url2(number):
     tt = { ord('〇'): ord('0'),
           ord('一'): ord('1'),
@@ -346,14 +346,26 @@ def make_url2(number):
           ord('上'): ord('a'),
           ord('中'): ord('b'),
           ord('下'): ord('c'),
+          ord('伍'): ord('5'),
+          ord('叁'): ord('3'), ord('叄'): ord('3'),
+          ord('壹'): ord('1'),
+          ord('捌'): ord('8'),
+          ord('柒'): ord('7'),
+          ord('玖'): ord('9'),
+          ord('肆'): ord('4'),
+          ord('貳'): ord('2'), ord('贰'): ord('2'),
+          ord('陆'): ord('6'), ord('陸'): ord('6'),
+          # 伍叁叄壹拾捌柒玖肆貳贰陆陸
             }
+    number = re.sub(r'\s+', '', number)
     found = False
+    book = 'T'
     anchor = ''
     jinghao = jinghaopatten4.findall(number)
     if jinghao:
         book, tome, page, abc = jinghao[0]
         page = '{:04}'.format(int(page.translate(tt)))
-        abc = abc.translate(tt)
+        abc = abc.translate(tt).lower()
         if '大正' in book:
             book = 'T'
         if '卍新' in book or '卍續' in book or '卍续' in book:
@@ -416,7 +428,7 @@ def make_url2(number):
 # jinghaopatten = re.compile(r'([a-zA-Z]{1,2})(\d{2,3})n(\d{4})([a-zA-Z])?(?:_(\d{3}))?(?:[_#](p\d{4}[abc]\d\d))?')
 jinghaopatten1 = re.compile(r'([a-zA-Z]{1,2})(\d{2,3})n(\d{4})([a-zA-Z])?(?:_(\d{3}))?(?:_(p\d{4}[abc]\d\d))?')
 jinghaopatten2 = re.compile(r'([a-zA-Z]{1,2})(\d{2,3}),\s*no\.\s*(\d+)([a-zA-Z])?,\s*pp?\.\s*(\d+)([abc])(\d+)')
-jinghaopatten0 = re.compile(r'([a-zA-Z]{1,2})?(\d+)(\S)?[ \t,._\u3000\u3002\uff0c-]*(\d+)?')  # 全角逗号句号
+jinghaopatten0 = re.compile(r'([a-zA-Z]{1,2})?(\d+)([a-zA-Z])?[\s,._\u3002\uff0c-]+(\d+)?')  # 全角逗号句号
 # jinghaopatten3 = re.compile(r'([\u3007\u3400-\u9FCB\U00020000-\U0002EBE0]+)[ \t,._\u3000\u3002\uff0c-]*(\d+)')
 def parse_number(title, guess_juan=False):
     book, tome, sutra, j4, volume, anchor = 'T', '', '', '', '', ''
@@ -438,10 +450,12 @@ def parse_number(title, guess_juan=False):
             found = True
 
     if not found:
+        # print(1, book, tome, sutra, j4, volume, anchor)
         jinghao = jinghaopatten0.findall(title)
         if jinghao:
             book,sutra,j4,volume = jinghao[0]
             found = True
+        #print(2, book, tome, sutra, j4, volume, anchor)
 
     if title.isdigit():
         sutra = '{:04}'.format(int(title))
@@ -1492,14 +1506,15 @@ if __name__ == "__main__":
     #            line = line.strip().split()
     #            print(line)
     #pprint.pprint(mulu)
-    print(parse_number('CBETA, T14, no. 475, pp. 537c8-538a14'))
-    print(parse_number('CBETA 2019.Q2, Y25, no. 25, p. 411a5-7'))
-    print(parse_number('CBETA 2019.Q3, T20, no. 1113B, p. 498c12-17'))
-    print(parse_number('T20n1113B'))
-    print(parse_number('T20n1113'))
-    print(parse_number('1113b'))
-    print(parse_number('1113'))
-    print(parse_number('T01n0001_p0001a01'))
+    # print(parse_number('CBETA, T14, no. 475, pp. 537c8-538a14'))
+    # print(parse_number('CBETA 2019.Q2, Y25, no. 25, p. 411a5-7'))
+    # print(parse_number('CBETA 2019.Q3, T20, no. 1113B, p. 498c12-17'))
+    # print(parse_number('T20n1113B'))
+    # print(parse_number('T20n1113'))
+    # print(parse_number('1113b'))
+    # print(parse_number('1113'))
+    # print(parse_number('T01n0001_p0001a01'))
+    print(parse_number('100.3'))
     # print(normalize_text('說</g>九種命終心三界'))
     #for i in fullsearch('止觀明靜'):
     #    print(i)

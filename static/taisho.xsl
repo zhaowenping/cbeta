@@ -1130,10 +1130,10 @@
             <xsl:attribute name="href">
                <!--xsl:value-of select="concat($current_sutra, '_p', @n)" /-->
                 <xsl:if test="@target">
-                <xsl:value-of select="@target"/>
+                  <xsl:value-of select="@target"/>
                 </xsl:if>
                 <xsl:if test="@cRef">
-                <xsl:value-of select="@cRef"/>
+                  <xsl:value-of select="@cRef"/>
                 </xsl:if>
             </xsl:attribute>
             <!--xsl:value-of select="."/-->

@@ -43,14 +43,10 @@ class Number:
         n = 2
         if self.book in {'A', 'C', 'G', 'GA', 'GB', 'L', 'M', 'P', 'U'}:
             n = 3
-        if self.juan and n == 2:
-            return f'{self.book}{self.ce:02}n{self.sutra:04}{self.yiyi}_{self.juan:03}'
-        if self.juan and n == 3:
-            return f'{self.book}{self.ce:03}n{self.sutra:04}{self.yiyi}_{self.juan:03}'
-        if not self.juan and n == 2:
-            return f'{self.book}{self.ce:02}n{self.sutra:04}{self.yiyi}'
-        if not self.juan and n == 3:
-            return f'{self.book}{self.ce:03}n{self.sutra:04}{self.yiyi}'
+        if self.juan:
+            return f'{self.book}{self.ce:0{n}}n{self.sutra:04}{self.yiyi}_{self.juan:03}'
+        else:
+            return f'{self.book}{self.ce:0{n}}n{self.sutra:04}{self.yiyi}'
 
     def get_all_juan(self):
         '''给定经号T01n0002，返回所有排序后的卷['001', '002', ...]
