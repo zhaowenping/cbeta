@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-03 21:04:08
+# Last Modified: 2020-02-03 23:56:48
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -331,7 +331,7 @@ with open("static/sutra_sch.lst") as fd:
 # 《大正藏》第40卷第16頁下
 # 雜阿含經一五·一七
 # 增一阿含二一·六（大正二·六〇三c）  <pb n="0603c" ed="T" xml:id="T02.0125.0603c"/>
-jinghaopatten4 = re.compile(r'(《?大正?新?脩?大?藏?經?》?)第?([\d〇一二三四五六七八九]{1,3})(?:卷|卷第|\u00b7)\s*([\d〇一二三四五六七八九]{1,3})[頁|页]?([上中下abc])?')
+jinghaopatten4 = re.compile(r'(《[中乾佛作傳典刊刻北卍南印叢史品善嘉國圖城外大學宋家寺山師彙志房拓教文新書朝本樂正武永法洪漢片獻珍百石經編纂續脩興華著藏補譯趙遺金隆集順館高麗]+》?)第?([\d〇一二三四五六七八九]{1,3})(?:卷|卷第|\u00b7)\s*([\d〇一二三四五六七八九]{1,3})[頁|页]?([上中下abc])?')
 def make_url2(number):
     t = { ord('〇'): ord('0'),
           ord('一'): ord('1'),
@@ -351,21 +351,54 @@ def make_url2(number):
     anchor = ''
     jinghao = jinghaopatten4.findall(number)
     if jinghao:
-        book, tome, page, jj = jinghao[0]
-        tome = '{:02}'.format(int(tome.translate(t)))
+        book, tome, page, abc = jinghao[0]
         page = '{:04}'.format(int(page.translate(t)))
-        jj = jj.translate(t)
+        abc = abc.translate(t)
         if '大正' in book:
             book = 'T'
+        if '卍新' in book or '卍續' in book:
+            book = 'X'
+        if '高麗' in book:
+            book = 'K'
+        if '房山' in book:
+            book = 'F'
+        if '印順' in book:
+            book = 'Y'
+        if '宋藏' in book:
+            book = 'S'
+        if '金' in book:
+            book = 'A'
+        if '中華' in book:
+            book = 'C'
+        if '嘉興' in book:
+            book = 'J'
+        if '永樂北' in book:
+            book = 'P'
+        if '洪武南' in book:
+            book = 'U'
+        if '圖' in book:
+            book = 'D'
+        if '南傳' in book:
+            book = 'N'
+        if '藏外' in book:
+            book = 'ZW'
+        if '補' in book:
+            book = 'B'
+        if '乾隆' in book:
+            book = 'L'
+        if book in {'A', 'C', 'G', 'GA', 'GB', 'L', 'M', 'P', 'U'}:
+            tome = '{:03}'.format(int(tome.translate(t)))
+        else:
+            tome = '{:02}'.format(int(tome.translate(t)))
+
         with open('idx/pbidx.txt') as fd:
             for line in fd:
                 line = line.strip()
-                if f'{book}{tome}' in line and f'{page}{jj}' in line:
+                if f'{book}{tome}' in line and f'{page}{abc}' in line:
                     number, anchor = line.split()
                     found = True
     if not found:
         return None
-        # url = f'xml/{book}{tome}/{book}{tome}n{sutra}{jj}_{volume}.xml'
     # url = f'xml/{book}{tome}/{number}.xml#{anchor}'
     url = f'xml/{book}{tome}/{number}.xml'
     return url

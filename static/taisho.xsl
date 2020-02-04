@@ -89,8 +89,8 @@
         <xsl:when test="starts-with($current_sutra, 'I')">
             <xsl:text>《北朝佛教石刻拓片百品》（中央研究院歷史語言研究所 ©）</xsl:text>
         </xsl:when>
-        <xsl:when test="starts-with($current_sutra, 'ZW')">
-            <xsl:text>《藏外佛教文獻》（方廣錩 ©）</xsl:text>
+        <xsl:when test="starts-with($current_sutra, 'B')">
+            <xsl:text>《大藏經補編》</xsl:text>
         </xsl:when>
         <xsl:when test="starts-with($current_sutra, 'GA')">
             <xsl:text>《中國佛寺史志彙刊》（杜潔祥主編）</xsl:text>
