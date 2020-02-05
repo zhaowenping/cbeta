@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-04 06:21:36
+# Last Modified: 2020-02-04 06:36:05
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -446,16 +446,13 @@ def parse_number(title, guess_juan=False):
         if jinghao:
             book,tome,sutra,j4,anchor,j7,j8 = jinghao[0]
             anchor = 'p{:04}{}{:02}'.format(int(anchor), j7, int(j8))
-            # <lb n="0001b25"
             found = True
 
     if not found:
-        # print(1, book, tome, sutra, j4, volume, anchor)
         jinghao = jinghaopatten0.findall(title)
         if jinghao:
             book,sutra,j4,volume = jinghao[0]
             found = True
-        # print(2, book, tome, sutra, j4, volume, anchor)
 
     if title.isdigit():
         sutra = '{:04}'.format(int(title))
@@ -498,7 +495,7 @@ def parse_number(title, guess_juan=False):
             volume = get_all_juan(f'{book}{tome}n{sutra}{j4}')
             if volume:
                 volume = volume[0]
-        # TODO: 根据锚来查找册数
+        # TODO: 根据锚来查找册数volume
         else:
             volume = get_all_juan(f'{book}{tome}n{sutra}{j4}')
             if volume:

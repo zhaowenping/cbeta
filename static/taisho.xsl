@@ -1148,6 +1148,16 @@
         </a>
     </xsl:template>
 
+    <xsl:template match="quote">
+      <cite>
+      <xsl:if test="@source">
+        <xsl:attribute name="title">
+          <xsl:value-of select="@source"/>
+        </xsl:attribute>
+      </xsl:if>
+      </cite>
+    </xsl:template>
+
     <!-- <term rend="no_nor"> 此标签内的g不规范化-->
     <xsl:template match="term">
         <dfn class="term">
