@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-04 19:19:54
+# Last Modified: 2020-02-05 04:11:04
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -200,28 +200,6 @@ def normalize_text(ctx):
     ctx = rm_variant(ctx)
     # 去除标点符号?
     return ctx
-
-
-from functools import total_ordering
-
-@total_ordering
-class Number:
-    '''经号类: T01n0002a'''
-    def __init__(self, n):
-        self.book, self.sutra = n.split('n')
-    def __eq__(self, other):
-        self.book, self.sutra = n.split('n')
-    def __lt__(self, other):
-        self.book, self.sutra = n.split('n')
-    def __str__(self):
-        pass
-
-class Sutra:
-    def __init__(self, args):
-        self.title = args[0]  # 经名
-        self.number = args[1] # 经号
-        self.author = args[2] # 作者
-        self.total = args[3] # 卷数/字数, 年代
 
 
 def get_all_juan(number):
@@ -476,12 +454,23 @@ def parse_number(title, guess_juan=False):
 
     book = book.upper() if book else 'T'
     sutra = '{:04}'.format(int(sutra))
-    # 查找册数
+    # TODO: 查找卷数
     if not tome:
-        for line in sch_db:
-            if book in line and sutra in line:
-                tome = line.split('n')[0][len(book):]
-                break
+        # 大般若经特例
+        if volume and int(volume) == 220 and book == 'T':
+            if volume =< 200:
+                tome = '05'
+            if 201 <= volume <= 400:
+                tome = '06'
+            if volume > 400:
+                tome = '07'
+        else:
+            pt = r'{book}\d\d\d?n{sutra}{j4}'
+            for line in sch_db:
+                # if book in line and sutra in line:
+                if re.findall(pt, line):
+                    tome = line.split('n')[0][len(book):]
+                    break
     if not tome:
         return None
 
