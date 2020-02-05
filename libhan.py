@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-05 04:12:39
+# Last Modified: 2020-02-05 04:15:05
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -458,11 +458,11 @@ def parse_number(title, guess_juan=False):
     if not tome:
         # 大般若经特例
         if volume and int(volume) == 220 and book == 'T':
-            if volume <= 200:
+            if int(volume) <= 200:
                 tome = '05'
-            if 201 <= volume <= 400:
+            if 201 <= int(volume) <= 400:
                 tome = '06'
-            if volume > 400:
+            if int(volume) > 400:
                 tome = '07'
         else:
             pt = r'{book}\d\d\d?n{sutra}{j4}'
