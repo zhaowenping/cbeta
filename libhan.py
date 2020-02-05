@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-04 06:36:05
+# Last Modified: 2020-02-04 19:19:54
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -317,6 +317,19 @@ def get_prev_juan(number):
     return juanlist
 
 
+def grep(filepath, *keyword):
+    '''对Linux命令grep的模拟，返回一行'''
+    found = False
+    with open(filepath) as fd:
+        for line in fd:
+            line = line.strip()
+            if all(kw in line for kw in keyword):
+                found = True
+                break
+    if not found:
+        return None
+    return line
+
 sch_db = []
 with open("static/sutra_sch.lst") as fd:
     for line in fd:
@@ -506,7 +519,8 @@ def parse_number(title, guess_juan=False):
         if not volume:
             return None
 
-    volume = '{:03}'.format(int(volume))
+    if volume:
+        volume = '{:03}'.format(int(volume))
     return (book, tome, sutra, j4, volume, anchor)
 
 
@@ -523,7 +537,7 @@ def normalize_number(number, guess_juan=False):
 
 
 def make_url(number):
-    number = parse_number(number)
+    number = parse_number(number, True)
     # 如果有锚就添加锚
     if number:
         j1, j2, j3, j4, j5, j6 = number
