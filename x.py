@@ -5,21 +5,23 @@ from functools import total_ordering
 title = 'LC07n0007_001'
 title = 'ZW02n0018a_001'
 
+# J32nB271
 
 @total_ordering
 class Number:
     '''经号类: T01n0002a_002'''
     def __init__(self, n):
         self.book, self.tome, self.sutra, self.yiyi, self.volume = None, 0, 0, '', 0
-        r = re.findall(r'([A-Z]{1,2})(\d{2,3})n(\d{4})([a-hA-F])?(?:_(\d{3}))?', n)
+        r = re.findall(r'([A-Z]{1,2})(\d{2,3})n(\w\d{3})([a-zA-Z])?(?:_(\d{3}))?', n)
         if r:
             self.book, self.tome, self.sutra, self.yiyi, self.volume = r[0]
             self.tome = int(self.tome)
-            self.sutra = int(self.sutra)
+            self.sutra = int(self.sutra, 16)
             self.volume = 0 if not self.volume else int(self.volume)
             self.n = 2
             if self.book in {'A', 'C', 'G', 'GA', 'GB', 'L', 'M', 'P', 'U'}:
                 self.n = 3
+            self.tome = f'{self.tome:0{self.n}}'
 
     def __eq__(self, other):
         return (self.book == other.book and
