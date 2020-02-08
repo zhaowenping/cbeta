@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-03 21:01:17
+# Last Modified: 2020-02-06 07:05:10
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -355,6 +355,7 @@ def searchmulu():
     else:
         title = request.forms.content
     # 使用经号方式查找藏经
+    # TODO:搜索t1000, t1000_001, T01n0001, T01n0001_001, T01n0001_p0001a01, T01,no.1,p.1a1
     an = make_url(title)
     if an:
         redirect(an)
@@ -368,7 +369,6 @@ def searchmulu():
     results = []
     if not title:
         return {'results': results}
-    # TODO:搜索t1000, t1000_001, T01n0001, T01n0001_001, T01n0001_p0001a01, T01,no.1,p.1a1
     for idx in ss.search(title):
         title0 = idx
         hl = ss.titles[idx]

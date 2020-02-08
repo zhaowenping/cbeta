@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-06 04:39:54
+# Last Modified: 2020-02-08 04:22:40
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -322,7 +322,7 @@ with open("static/sutra_sch.lst") as fd:
 # 《大正藏》第40卷第16頁下
 # 雜阿含經一五·一七
 # 增一阿含二一·六（大正二·六〇三c）  <pb n="0603c" ed="T" xml:id="T02.0125.0603c"/>
-jinghaopatten4 = re.compile(r'(《[中乾佛作傳典刊刻北卍南印叢史品善嘉國圖城外大學宋家寺山師彙志房拓教文新書朝本樂正武永法洪漢片獻珍百石經編纂續脩興華著藏補譯趙遺金隆集順館高麗传丛国图学师汇书乐汉献经编续修兴华补译赵遗顺馆丽]+》?)第?([\d〇一二三四五六七八九]{1,3})(?:卷|卷第|\u00b7)([\d〇一二三四五六七八九]{1,3})[頁|页]?([上中下abcABC])?')
+jinghaopatten4 = re.compile(r'(《?[中乾佛作傳典刊刻北卍南印叢史品善嘉國圖城外大學宋家寺山師彙志房拓教文新書朝本樂正武永法洪漢片獻珍百石經編纂續脩興華著藏補譯趙遺金隆集順館高麗传丛国图学师汇书乐汉献经编续修兴华补译赵遗顺馆丽]+》?)第?([\d〇一二三四五六七八九]{1,3})(?:卷|卷第|\u00b7)([\d〇一二三四五六七八九]{1,3})[頁|页]?([上中下abcABC])?')
 def make_url2(number):
     tt = { ord('〇'): ord('0'),
           ord('一'): ord('1'),
@@ -424,6 +424,7 @@ jinghaopatten9 = re.compile(r'([a-zA-Z]{1,2})?(\w\d{0,3})([a-zA-Z])?(?:[\s,._\u3
 # jinghaopatten3 = re.compile(r'([\u3007\u3400-\u9FCB\U00020000-\U0002EBE0]+)[ \t,._\u3000\u3002\uff0c-]*(\d+)')
 def parse_number(title, guess_juan=False):
     '''所有的anchor都是lb标签的'''
+    print(title)
     book, tome, sutra, j4, volume, anchor = 'T', '', '', '', '', ''
     # book, tome, sutra, j4, volume, anchor
     #    T,   01,  0001,  a     001, p0001a01
@@ -988,7 +989,6 @@ class Search:
 
 
         result = walk(mulu)
-        import pprint
         result = [i.split(maxsplit=2) for i in result]
         if norm:
             titles = [(i[0], ' '.join((rm_variant(i[1]), i[2]))) for i in result]
@@ -1028,6 +1028,15 @@ class Search:
             title = rm_variant(title)
         result = (set(self.index.get(tt, {}).keys()) for tt in list(title))
         return sorted(reduce(lambda x, y: x & y, result), key=pagerank)
+
+# 372     for idx in ss.search(title):
+# 373         title0 = idx
+# 374         hl = ss.titles[idx]
+# 375         zang = idx.split('n')[0]              # T01
+# 376         juan = get_all_juan(idx)[0]           # 001
+# 377         an = f"/xml/{zang}/{idx}_{juan}.xml"  # T01n0002_001.xml
+# 378         results.append({'hl': hl, 'an':an, 'title':title0, 'author':''})
+
 
 
 
