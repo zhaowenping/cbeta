@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-08 07:25:59
+# Last Modified: 2020-02-11 13:09:01
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -192,7 +192,9 @@ def normalize_text(ctx):
     '''标准化文本'''
     # 去除错误的标点符号
     tt = {0xff0e: 0x00b7,
-          0x2027: 0x00b7}
+          0x2027: 0x00b7,
+          0x25CB: ord('〇'),  # 佛光山大辞典的用法
+          }
     ctx = ctx.translate(tt)
     # 去除两边空格及多余空格
     ctx = normalize_space(ctx)
@@ -327,7 +329,7 @@ with open("static/sutra_sch.lst") as fd:
 # 增一阿含二一·六（大正二·六〇三c）  <pb n="0603c" ed="T" xml:id="T02.0125.0603c"/>
 jinghaopatten4 = re.compile(r'(《?[中乾佛作傳典刊刻北卍南印叢史品善嘉國圖城外大學宋家寺山師彙志房拓教文新書朝本樂正武永法洪漢片獻珍百石經編纂續脩興華著藏補譯趙遺金隆集順館高麗传丛国图学师汇书乐汉献经编续修兴华补译赵遗顺馆丽]+》?)第?([\d〇一二三四五六七八九]{1,3})(?:卷|卷第|\u00b7)([\d〇一二三四五六七八九]{1,3})[頁|页]?([上中下abcABC])?')
 def make_url2(number):
-    tt = { ord('〇'): ord('0'),
+    tt = { ord('〇'): ord('0'), 0x25CB: ord('0'),
           ord('一'): ord('1'),
           ord('二'): ord('2'),
           ord('三'): ord('3'),
