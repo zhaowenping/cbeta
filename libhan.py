@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-08 04:22:40
+# Last Modified: 2020-02-08 07:25:59
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -117,7 +117,7 @@ def ishanzi(zi):
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    # path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
+    path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
             line = line.strip()
@@ -190,6 +190,10 @@ def ls(pattern):
 
 def normalize_text(ctx):
     '''标准化文本'''
+    # 去除错误的标点符号
+    tt = {0xff0e: 0x00b7,
+          0x2027: 0x00b7}
+    ctx = ctx.translate(tt)
     # 去除两边空格及多余空格
     ctx = normalize_space(ctx)
     # 去除汉字链接符号
@@ -198,7 +202,6 @@ def normalize_text(ctx):
     ctx = rm_ditto_mark(ctx)
     # 去除异体字、异体词
     ctx = rm_variant(ctx)
-    # 去除标点符号?
     return ctx
 
 
@@ -991,7 +994,7 @@ class Search:
         result = walk(mulu)
         result = [i.split(maxsplit=2) for i in result]
         if norm:
-            titles = [(i[0], ' '.join((rm_variant(i[1]), i[2]))) for i in result]
+            titles = [(i[0], ' '.join((normalize_text(i[1]), i[2]))) for i in result]
         else:
             titles = [(i[0], ' '.join((i[1], i[2]))) for i in result]
         # pprint.pprint(titles)
@@ -1025,7 +1028,7 @@ class Search:
         # title = opencc.convert(title, config='s2t.json')
         # ( for zi in index)
         if norm:
-            title = rm_variant(title)
+            title = normalize_text(title)
         result = (set(self.index.get(tt, {}).keys()) for tt in list(title))
         return sorted(reduce(lambda x, y: x & y, result), key=pagerank)
 
