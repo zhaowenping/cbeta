@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-08 17:09:42
+# Last Modified: 2020-02-12 01:19:42
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -494,6 +494,8 @@ def dict_get(word):
     word = pt.sub('', word)
     # word = re.sub(r'\[\d*\]', '', word)
     print('发过来一个字:%s' % word)
+    if len(word) > 1 and convert.detect(word)['confidence'] == 's':
+        word = convert.s2t(word)
     pinyin = ''
     _from = ''
     definition = ''

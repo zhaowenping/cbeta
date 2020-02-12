@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-11 13:09:01
+# Last Modified: 2020-02-12 01:15:11
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -925,8 +925,8 @@ def lookup(word, dictionary=None, lang='hant', mohu=False):
     word = pt.sub('', word)
     print('发过来一个字:%s' % word)
 
-    if TSDinst.detect(word)['confidence'] == 's':
-        word = convert2t(word)
+    # if TSDinst.detect(word)['confidence'] == 's':
+    #     word = convert2t(word)
 
     pinyin = ''
     _from = ''
@@ -1256,42 +1256,6 @@ def pagerank(filename, sentence='', content=''):
     x.insert(0, r)
     # x.insert(0, sentence_value)
     return x
-
-
-# XXX convert2t
-def search_title(title):
-    '''通过标题搜索'''
-    if request.method == "GET":
-        title = request.GET.title
-        # 去除HTML标签、注释、卷数, 留下标题
-        title = re.sub(r'<.*?>', '', title)  # title=[34]<span style="color:red">阿</span>差末菩薩經
-        title = re.sub(r'\(.*?\)', '', title)
-        title = re.sub(r'\[\w*?\]', '', title)
-        title = re.sub(r'[一二三四五六七八九十百]+卷', '', title)
-    else:
-        title = request.forms.content
-    if ts.detect(title)['confidence'] == 's':
-        # title = opencc.convert(title, config='s2t.json')
-        title = convert2t(title)
-    results = []
-    if not title:
-        return {'results': results}
-    for idx in ss.search(title):
-        title0 = idx
-        hl = ss.titles[idx]
-        zang = idx.split('n')[0]              # T01
-        juan = get_all_juan(idx)[0]           # 001
-        an = f"/xml/{zang}/{idx}_{juan}.xml"  # T01n0002_001.xml
-        results.append({'hl': hl, 'an':an, 'title':title0, 'author':''})
-    if request.method == "GET":
-        # 0个结果页面不动, 多个结果自己选择
-        if len(results) == 0:
-            abort(304)
-        if len(results) == 1:
-            redirect(an)
-        if len(results) > 1:
-            pass
-    return {'results': results}
 
 
 
