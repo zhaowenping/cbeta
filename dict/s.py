@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-12 00:57:36
+# Last Modified: 2020-02-13 05:02:32
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -14,8 +14,9 @@ __version__ = "0.0.1"
 
 import json
 import pprint
+import gzip
 
-with open('szfsb.json') as fd:
+with open('bkqs.json') as fd:
     data = json.load(fd)
 
 result = dict()
@@ -23,12 +24,11 @@ h = data.pop('header')
 result['header'] = h
 
 for k in data:
-    if len(data[k]) != 1:
+    if '■' in k or '◎' in k:
         print(k)
-    result[k] = '\n'.join(i.strip() for i in data[k])
 
 # pprint.pprint(result)
-# print(json.dumps(result,ensure_ascii=False, indent =4))
+#print(json.dumps(result,ensure_ascii=False, indent =4))
 
 
 def main():
