@@ -717,6 +717,14 @@ table.border{
     color:orange;
 }
 
+/*
+ruby.mps, ruby.zhuyin {
+    display: ruby;
+    -webkit-ruby-position: inter-character;
+    ruby-position: inter-character;
+}
+*/
+
 ruby rtc rt {
     display: inline;
     -webkit-text-emphasis: none;
@@ -725,14 +733,9 @@ ruby rtc rt {
     font-family: consola, Arial, Helvetica, sans-serif;
 }
 
-ruby.mps, ruby.zhuyin {
-    display: ruby;
-    -webkit-ruby-position: inter-character;
-    ruby-position: inter-character;
-}
 
 rt {
-    display: inline; // 默认不显示注音
+  /*  display: inline; */
     font-size: .5em;
     -webkit-transform: scale(.8);
     -moz-transform: scale(.8);

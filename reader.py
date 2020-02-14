@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-14 06:58:09
+# Last Modified: 2020-02-14 07:02:59
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1013,7 +1013,7 @@ def new_dict1(page):
         # fxcd = [(item, data[item].split('\n')[1:]) for item in data]
         # fxcd = [((item, zhuyin(item)), data[item].split('\n')[1:]) for item in data]
         # fxcd = [((item, zhuyin(item)), (zhuyin(i, True, cp) for i in data[item].split('\n')[1:])) for item in data]
-        fxcd = [((item, ''), ('<br>&nbsp;&nbsp;'.join(i['def'] for i in data[item]),)) for item in data]
+        fxcd = [((item, ''), ('<br>'.join(i['def'] for i in data[item]),)) for item in data]
         total = len(fxcd)
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
