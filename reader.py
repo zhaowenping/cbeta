@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-12 01:19:42
+# Last Modified: 2020-02-14 00:56:04
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1299,7 +1299,8 @@ def new_dict10(page):
     else:
         # fxcd = [(item, (data[item],)) for item in data]
         # fxcd = [((item, ''), (data[item]['def'], data[item].get('xr', ''))) for item in data]
-        fxcd = [((item, ''), ('<br>'.join(data[item]), )) for item in data]
+        # fxcd = [((item, ''), ('<br>'.join(data[item]), )) for item in data]
+        fxcd = [((item, ''), (data[item],)) for item in data]
         total = len(fxcd)
         prevpage = max(page - 1, 1)
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
