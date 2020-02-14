@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-14 00:56:04
+# Last Modified: 2020-02-14 01:04:17
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -991,6 +991,35 @@ def keyifayin_post():
 @get('/page')
 def page_get():
     return []
+
+# 丁福保词典
+@get('/dfb/:page')
+@view('temp/dict.jinja2')
+def new_dict1(page):
+    q = request.GET.q
+    pp = int(request.GET.pp or 800)  # 每頁詞條數量
+    cp = min(int(request.GET.cp or 500), 500000) # 注音詞頻, 默認50, 最大不超過50萬
+    page = int(page)
+    with gzip.open('dict/dfb.json.gz') as fd:
+        data = json.load(fd)
+    header = data.pop('header', {})
+    if q:
+        # 查字典
+        fxcd = {item: data[item].split('\n')[1:] for item in data}
+        result = {(q, ''): fxcd.get(q, '没找到')}
+        prevpage = max(page - 1, 1)
+        nextpage = page + 1
+    else:
+        # fxcd = [(item, data[item].split('\n')[1:]) for item in data]
+        # fxcd = [((item, zhuyin(item)), data[item].split('\n')[1:]) for item in data]
+        # fxcd = [((item, zhuyin(item)), (zhuyin(i, True, cp) for i in data[item].split('\n')[1:])) for item in data]
+        fxcd = [((item, ''), (data[item],)) for item in data]
+        total = len(fxcd)
+        prevpage = max(page - 1, 1)
+        nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
+        result = dict(fxcd[pp*(page-1):pp*page])
+    return {'result': result, 'header': header, 'prevpage': prevpage, 'nextpage': nextpage}
+
 
 # 法相词典
 @get('/fxcd/:page')
