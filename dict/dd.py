@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-11 14:44:41
+# Last Modified: 2020-02-13 19:58:44
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -42,7 +42,9 @@ with open('d3.txt') as fd:
 # with open('fk.json') as fd:
 #with open('fxcd.json') as fd:
 #with open('fymyj.json') as fd:
-with open('ldms.json') as fd:
+#with open('ldms.json') as fd:
+#with open('wdhy.json') as fd:
+with open('yzzj.json') as fd:
     data = fd.read()
 
 # data = data.translate({0x25CB:ord('〇')})

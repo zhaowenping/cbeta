@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-12 01:15:11
+# Last Modified: 2020-02-13 20:22:01
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -117,7 +117,7 @@ def ishanzi(zi):
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
+    # path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
             line = line.strip()
@@ -327,9 +327,9 @@ with open("static/sutra_sch.lst") as fd:
 # 《大正藏》第40卷第16頁下
 # 雜阿含經一五·一七
 # 增一阿含二一·六（大正二·六〇三c）  <pb n="0603c" ed="T" xml:id="T02.0125.0603c"/>
-jinghaopatten4 = re.compile(r'(《?[中乾佛作傳典刊刻北卍南印叢史品善嘉國圖城外大學宋家寺山師彙志房拓教文新書朝本樂正武永法洪漢片獻珍百石經編纂續脩興華著藏補譯趙遺金隆集順館高麗传丛国图学师汇书乐汉献经编续修兴华补译赵遗顺馆丽]+》?)第?([\d〇一二三四五六七八九]{1,3})(?:卷|卷第|\u00b7)([\d〇一二三四五六七八九]{1,3})[頁|页]?([上中下abcABC])?')
+jinghaopatten4 = re.compile(r'(《?[中乾佛作傳典刊刻北卍南印叢史品善嘉國圖城外大學宋家寺山師彙志房拓教文新書朝本樂正武永法洪漢片獻珍百石經編纂續脩興華著藏補譯趙遺金隆集順館高麗传丛国图学师汇书乐汉献经编续修兴华补译赵遗顺馆丽]+》?)第?([\d零〇一二三四五六七八九]{1,3})(?:卷|卷第|\u00b7)([\d零〇一二三四五六七八九]{1,3})[頁|页]?([上中下abcABC])?')
 def make_url2(number):
-    tt = { ord('〇'): ord('0'), 0x25CB: ord('0'),
+    tt = { ord('〇'): ord('0'), ord('零'): ord('0'), 0x25CB: ord('0'),
           ord('一'): ord('1'),
           ord('二'): ord('2'),
           ord('三'): ord('3'),
