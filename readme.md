@@ -145,6 +145,12 @@
 |20. | 大智度论词典                   | dzdl.gls.txt                 |          |  待整理    |
 |21. | 巴漢辭典    大馬比丘           | pali-dama.json               | 10530    |            |
 |22. | 五譯合璧集要  鄭寶蓮           | pentaglot.json               |          |            |
+|23. |  人名数据库                    |                              |          |            |
+|24. |  地名数据库                    |                              |          |            |
+|25. |ionary of Chinese Buddhist Terms| soothill-hodous              |          |            |
+|26. | 正法華經詞典                   | dharmaraksa                  |          |            |
+|27. | 妙法蓮華經詞典                 | kumarajiva                   |          |            |
+|28. | 道行般若經詞典                 | lokaksema                    |          |            |
 
 ## 浏览器兼容性
 1. 主流浏览器: firefox、opera、chrome、safari、搜狗浏览器、IOS手机等主流浏览器都没有发现任何问题
