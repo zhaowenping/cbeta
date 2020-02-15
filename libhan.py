@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-13 20:22:01
+# Last Modified: 2020-02-14 22:30:43
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -314,11 +314,11 @@ def grep(filepath, *keyword):
     return line
 
 sch_db = []
-with open("static/sutra_sch.lst") as fd:
+with open("idx/sutra_sch.lst") as fd:
     for line in fd:
-        if 'n' in line:
-            line = line.strip().split()[0]
-            sch_db.append(line)
+        line = line.strip().split()[0]
+        sch_db.append(line)
+
 
 # 大正七〇·四五九中、四六〇下
 # 大正二、一〇三c
@@ -980,25 +980,32 @@ def lookup(word, dictionary=None, lang='hant', mohu=False):
 
 class Search:
     def __init__(self, norm=True):
-        mulu = read_menu_file("static/sutra_sch.lst")
-        #pprint.pprint(m['T 大正藏'])
-        # d = mulu['T 大正藏']
-        def walk(d, result=[]):
-            '''遍历目录树'''
-            for x in d:
-                if not d[x]:
-                    result.append(x)
-                else:
-                    walk(d[x], result)
-            return result
+        # mulu = read_menu_file("static/sutra_sch.lst")
+        # #pprint.pprint(m['T 大正藏'])
+        # # d = mulu['T 大正藏']
+        # def walk(d, result=[]):
+        #     '''遍历目录树'''
+        #     for x in d:
+        #         if not d[x]:
+        #             result.append(x)
+        #         else:
+        #             walk(d[x], result)
+        #     return result
 
 
-        result = walk(mulu)
-        result = [i.split(maxsplit=2) for i in result]
-        if norm:
-            titles = [(i[0], ' '.join((normalize_text(i[1]), i[2]))) for i in result]
-        else:
-            titles = [(i[0], ' '.join((i[1], i[2]))) for i in result]
+        # result = walk(mulu)
+        # result = [i.split(maxsplit=2) for i in result]
+        # if norm:
+        #     titles = [(i[0], ' '.join((normalize_text(i[1]), i[2]))) for i in result]
+        # else:
+        #     titles = [(i[0], ' '.join((i[1], i[2]))) for i in result]
+
+        titles = []
+        with open("idx/sutra_sch.lst") as fd:
+            for line in fd:
+                line = normalize_text(line.strip()).split(maxsplit=1)
+                titles.append(line)
+
         # pprint.pprint(titles)
         # titles 是经号和title的对照表
         # 生成索引表
