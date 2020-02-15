@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-14 22:30:43
+# Last Modified: 2020-02-14 23:16:01
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -208,8 +208,10 @@ def normalize_text(ctx):
 
 
 def get_all_juan(number):
-    '''给定经号T01n0002,T20n1113B, 返回所有排序后的卷['001', '002', ...]
+    '''给定经号T01n0002,T20n1113B, T03n0154_002#p0085a13,  返回所有排序后的卷['001', '002', ...]
     返回值是一个数组，如果没有找到则返回空的数组'''
+    if '_' in number:
+        number = number.split('_')[0]
     book, sutra = number.split('n')
     # 查找第一卷(有些不是从第一卷开始的)
     juan = []
