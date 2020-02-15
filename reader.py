@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-14 23:20:04
+# Last Modified: 2020-02-14 23:24:46
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -375,9 +375,9 @@ def searchmulu():
         hl = ss.titles[idx]
         zang = idx.split('n')[0]              # T01
         juan = get_all_juan(idx)[0]           # 001
-        if '#' in juan:
-            juan, anchor = juan.split('#')
-            an = f"/xml/{zang}/{idx}_{juan}.xml#{anchor}"  # T01n0002_001.xml
+        if '#' in idx:
+            idx, anchor = idx.split('#')
+            an = f"/xml/{zang}/{idx}.xml#{anchor}"  # T01n0002_001.xml
         else:
             an = f"/xml/{zang}/{idx}_{juan}.xml"  # T01n0002_001.xml
         results.append({'hl': hl, 'an':an, 'title':title0, 'author':''})
