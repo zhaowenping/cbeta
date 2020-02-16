@@ -151,6 +151,7 @@
 |26. | 正法華經詞典                   | dharmaraksa                  |          |            |
 |27. | 妙法蓮華經詞典                 | kumarajiva                   |          |            |
 |28. | 道行般若經詞典                 | lokaksema                    |          |            |
+|29. | 比丘威儀法詞典                 | Abhisamacarika               |          |            |
 
 ## 浏览器兼容性
 1. 主流浏览器: firefox、opera、chrome、safari、搜狗浏览器、IOS手机等主流浏览器都没有发现任何问题
