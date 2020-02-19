@@ -810,163 +810,307 @@ vinayapiṭaka
 			S0189 1 Saptabuddhastotram
 			S0190 2 Saptajinastavaḥ
 		26 sarvatathāgata
-			1 Bhadracarīpraṇidhānastotram
-			2 Kamalākarasarvatathāgatastotram
-			3 Ṣaḍabhijñastotram
-			4 Bhadracaryādeśanā
+			S0191 1 Bhadracarīpraṇidhānastotram
+			S0192 2 Kamalākarasarvatathāgatastotram
+			S0193 3 Ṣaḍabhijñastotram
+			S0842 4 Bhadracaryādeśanā
 		27 svayambhū
-			1 Kalyāṇapañcaviṃśatistotram
-			2 Maṅgalaṣoḍaśastutiḥ
-			3 Mañjuvajrastotram
-			4 Svayaṃbhūstavaḥ
-			5 Svayambhūstotram
+			S0194 1 Kalyāṇapañcaviṃśatistotram
+			S0195 2 Maṅgalaṣoḍaśastutiḥ
+			S0196 3 Mañjuvajrastotram
+			S0197 4 Svayaṃbhūstavaḥ
+			S0198 5 Svayambhūstotram
 		28 triratna
-			1 Gururatnatrayastotram
+			S0199 Gururatnatrayastotram
 		29 ugratārā
-			1 Caṇḍikādaṇḍakastotram
-			2 Mahogratārāṣṭakastotram
-			3 Mahogratārāstutiḥ
+			S0200 1 Caṇḍikādaṇḍakastotram
+			S0201 2 Mahogratārāṣṭakastotram
+			S0202 3 Mahogratārāstutiḥ
 		30 vāgīśvara
-			1 Dharmadhātuvāgīśvaramaṇḍalastotram
-			2 Vāgīśvaravarṇanāstotram
+			S0203 1 Dharmadhātuvāgīśvaramaṇḍalastotram
+			S0204 2 Vāgīśvaravarṇanāstotram
 		31 vajrapāṇi
-			1 Vajrapāṇināmāṣṭottaraśatastotram
+			S0205 1 Vajrapāṇināmāṣṭottaraśatastotram
 		32 vajrāsana
-			1 Mahābodhibhaṭṭārakastotram
-			2 Mahābodhivandanāṣṭakam
-			3 Māravijayastotram
+			S0206 1 Mahābodhibhaṭṭārakastotram
+			S0207 2 Mahābodhivandanāṣṭakam
+			S0208 3 Māravijayastotram
 		33 vajrasattva
-			1 Vajrasattvastotram
-			2 Vajrasattvastutiḥ
+			S0209 1 Vajrasattvastotram
+			S0210 2 Vajrasattvastutiḥ
 		34 vajrayoginī
-			1 Kalyāṇatriṃśatikāstotram
-			2 Vajradevīstotram
-			3 Vajravilāsinīsādhanāstavaḥ
-			4 Vajravilāsinīstotram
-			5 Vajrayoginīpraṇāmaikaviśikā
-			6 Vajrayoginyāḥ piṇḍārthastutiḥ
-			7 Vajrayoginyāḥ stutipraṇidhānam
+			S0211 1 Kalyāṇatriṃśatikāstotram
+			S0212 2 Vajradevīstotram
+			S0213 3 Vajravilāsinīsādhanāstavaḥ
+			S0214 4 Vajravilāsinīstotram
+			S0215 5 Vajrayoginīpraṇāmaikaviśikā
+			S0216 6 Vajrayoginyāḥ piṇḍārthastutiḥ
+			S0217 7 Vajrayoginyāḥ stutipraṇidhānam
 		35 vasudhārā
-			1 Vasudhārānāmadhāraṇīstotram
-			2 Vasudhārāstotram
+			S0218 1 Vasudhārānāmadhāraṇīstotram
+			S0219 2 Vasudhārāstotram
 		36 Bhagavatstutiḥ
-			1 Bhagavatstutiḥ
+			S0743 1 Bhagavatstutiḥ
 	6 darśana
-		1 Gurukriyākramaḥ
-		2 Gurupañcāśikā
+		S0220 1 Gurukriyākramaḥ
+		S0221 2 Gurupañcāśikā
 	7 kāvya
-		1 Buddhacarita
-		2 Buddhavijayakāvyam
-		3 Saundaranandam Mahākāvyam
-		4 Siddhārthacaritakāvyam
-		5 Subhāṣitaratnakāraṇḍaka
-		6 Yaśodharācaritam
-		7 Triratnasaundaryagāthā
+		S0222 1 Buddhacarita
+			S0222_915 1 Bhagavatprasūtirnāma prathamaḥ sargaḥ
+			S0222_916 2 Antaḥpuravihāro nāma dvitīyaḥ sargaḥ
+			S0222_917 3 Saṁvegotpattirnāma tṛtīyaḥ sargaḥ
+			S0222_918 4 Strīvighātano nāma caturthaḥ sargaḥ
+			S0222_919 5 Abhiniṣkramaṇo nāma pañcamaḥ sargaḥ
+			S0222_920 6 Chandakanivartano nāma ṣaṣṭhaḥ sargaḥ
+			S0222_921 7 Tapovanapraveśo nāma saptamaḥ sargaḥ
+			S0222_922 8 Antaḥpuravilāpo nāmāṣṭamaḥ sargaḥ
+			S0222_923 9 Kumārānveṣaṇoṁ nāma navamaḥ sargaḥ
+			S0222_924 10 Śreṇyābhigamano nāma daśamaḥ sargaḥ
+			S0222_925 11 Kāmavigarhaṇo nāmaikādaśa sargaḥ
+			S0222_926 12 Arāḍadarśano nāma dvādaśaḥ sargaḥ
+			S0222_927 13 Māravijayo nāma trayodaśaḥ sargaḥ
+			S0222_928 14 Caturdaśaḥ sargaḥ
+		S0223 2 Buddhavijayakāvyam (null)
+		S0224 3 Saundaranandam Mahākāvyam
+			S0224_929 1 Prathamaḥ sargaḥ
+			S0224_930 2 Dvitīyaḥ sargaḥ
+			S0224_931 3 Tṛtīyaḥ sargaḥ
+			S0224_932 4 Caturthaḥ sargaḥ
+			S0224_933 5 Pañcamaḥ sargaḥ
+			S0224_934 6 Ṣaṣṭhaḥ sargaḥ
+			S0224_935 7 Saptamaḥ sargaḥ
+			S0224_936 8 Aṣṭamaḥ sargaḥ
+			S0224_937 9 Navamaḥ sargaḥ
+			S0224_938 10 Daśamaḥ sargaḥ
+			S0224_939 11 Ekādaśaḥ sargaḥ
+			S0224_940 12 Dvādaśaḥ sargaḥ
+			S0224_941 13 Trayodaśaḥ sargaḥ
+			S0224_942 14 Caturdaśaḥ sargaḥ
+			S0224_943 15 Pañcadaśaḥ sargaḥ
+			S0224_944 16 Ṣoḍaśaḥ sargaḥ
+			S0224_945 17 Saptadaśaḥ sargaḥ
+			S0224_946 18 Aṣṭādaśaḥ sargaḥ
+		S0225 4 Siddhārthacaritakāvyam
+			S0225_947 1 Prathamaḥ sargaḥ
+			S0225_948 2 Dvitīyaḥ sargaḥ
+			S0225_949 3 Tṛtīyaḥ sargaḥ
+			S0225_950 4 Caturthaḥ sargaḥ
+			S0225_951 5 Pañcamaḥ sargaḥ
+			S0225_952 6 Ṣaṣṭhaḥ sargaḥ
+			S0225_953 7 Saptamaḥ sargaḥ
+			S0225_954 8 Aṣṭamaḥ sargaḥ
+			S0225_955 9 Navamaḥ sargaḥ
+			S0225_956 10 Daśamaḥ sargaḥ
+		S0226 5 Subhāṣitaratnakāraṇḍaka (null)
+		S0227 6 Yaśodharācaritam
+		S0811 7 Triratnasaundaryagāthā
 		S0848 8 Saṅgītamālikā
 	8 kośa
-		1 Arthaviniścayanibandhana
-		2 Bauddha tantra kośa (I)
-		3 Dharmasaṃgrahaḥ
-		4 Dharmasamuccayaḥ
-		5 Mahāvyutpatti
-		6 Lupta bauddhavacana saṁgraha
-		7 Śabdabhedaprakāśaḥ
-		8 Viśvaprakāśaḥ
+		S0228 1 Arthaviniścayanibandhana (null)
+		S0229 2 Bauddha tantra kośa (I)
+		S0230 3 Dharmasaṃgrahaḥ
+		S0231 4 Dharmasamuccayaḥ
+		S0232 5 Mahāvyutpatti
+		S0739 6 Lupta bauddhavacana saṁgraha
+		S0807 7 Śabdabhedaprakāśaḥ
+		S0815 8 Viśvaprakāśaḥ
 	9 lekha
-		1 Ratnāvalī
-		2 Śiṣyalekha
-		3 Suhṛllekhaḥ
-		4 Daṇḍikathā
+		S0233 1 Ratnāvalī
+		S0234 2 Śiṣyalekha
+		S0235 3 Suhṛllekhaḥ
+		S0774 4 Daṇḍikathā
 	10 madhyamaka 中觀
-		1 Akutobhaya
-		2 Catuḥ śatikā
-		3 Hastavālaprakaraṇa
-		4 Hastavālaprakaraṇavṛttiḥ
-		5 Madhyamakahṛdayaḥ
-		6 Madhyamakālokaḥ
-		7 Madhyamakaśāstram 中論
-		8 Madhyamakāvatāraḥ
-		9 Madhyamārthasaṃgrahaḥ
-		10 Mahāyānaviṃśikā 大乘二十頌論
-		11 Prajñāpradīpaḥ
-		12 Prasannapadā (madhyamakavṛtti)
-		13 Pratītyasamutpādahṛdayakārikā
-		14 Pratītyasamutpādahṛdayavyākhyānam
-		15 Śaraṇagamanadeśanā
-		16 Satyadvayāvatāranāma
-		17 Śūnyatāsaptatiḥ 七十空性論
-		18 Sūtrārthasamuccayopadeśaḥ
-		19 Vigrahavyāvartanī 迴諍論
-		20 Yuktiṣaṣṭikārikā
-		21 Svabhāvavādaḥ
+		S0236 1 Akutobhaya (null)
+		S0237 2 Catuḥ śatikā
+		S0238 3 Hastavālaprakaraṇa
+		S0239 4 Hastavālaprakaraṇavṛttiḥ
+		S0240 5 Madhyamakahṛdayaḥ
+		S0241 6 Madhyamakālokaḥ
+		S0242 7 Madhyamakaśāstram 中論
+		S0243 8 Madhyamakāvatāraḥ
+		S0244 9 Madhyamārthasaṃgrahaḥ
+		S0245 10 Mahāyānaviṃśikā 大乘二十頌論
+		S0246 11 Prajñāpradīpaḥ
+		S0247 12 Prasannapadā (madhyamakavṛtti)
+		S0248 13 Pratītyasamutpādahṛdayakārikā
+		S0249 14 Pratītyasamutpādahṛdayavyākhyānam
+		S0250 15 Śaraṇagamanadeśanā
+		S0251 16 Satyadvayāvatāranāma
+		S0252 17 Śūnyatāsaptatiḥ 七十空性論
+		S0253 18 Sūtrārthasamuccayopadeśaḥ
+		S0254 19 Vigrahavyāvartanī 迴諍論
+		S0255 20 Yuktiṣaṣṭikārikā
+		S0721 21 Svabhāvavādaḥ
 	11 madhyamaka-yogācāra
-		1 Āpattideśanāvidhiḥ
-		2 Bhāvanākramaḥ 廣釋菩提心論
-		3 Bodhicaryāvatāraḥ 菩提行經
-		4 Bodhicaryāvatāraḥ (pañjikā)
-		5 Bodhipathapradīpaḥ
-		6 Bodhisattvādikarmika-mārgāvatāra-deśanā
-		7 Bodhyāpattideśanāvṛttiḥ
-		8 Caryāsaṅgrahapradīpaḥ
-		9 Cittotpādasaṃvaravidhikramaḥ
-		10 Garbha-saṅgrahaḥ
-		11 Mahāyānapathasādhanasaṅgrahaḥ
-		12 Samādhisaṃbhāraparivartaḥ
-		13 Śikṣāsamuccaya kārikā
-		14 Śikṣāsamuccayaḥ 大乘集菩薩學論
+		S0256 1 Āpattideśanāvidhiḥ
+		S0257 2 Bhāvanākramaḥ 廣釋菩提心論
+		S0258 3 Bodhicaryāvatāraḥ 菩提行經
+		S0259 4 Bodhicaryāvatāraḥ (pañjikā)
+		S0260 5 Bodhipathapradīpaḥ
+		S0261 6 Bodhisattvādikarmika-mārgāvatāra-deśanā
+		S0262 7 Bodhyāpattideśanāvṛttiḥ
+		S0263 8 Caryāsaṅgrahapradīpaḥ
+		S0264 9 Cittotpādasaṃvaravidhikramaḥ
+		S0265 10 Garbha-saṅgrahaḥ
+		S0266 11 Mahāyānapathasādhanasaṅgrahaḥ
+		S0267 12 Samādhisaṃbhāraparivartaḥ
+		S0268 13 Śikṣāsamuccaya kārikā
+		S0269 14 Śikṣāsamuccayaḥ 大乘集菩薩學論
+			S0269_1117 1 	Dānapāramitā prathamaḥ paricchedaḥ
+			S0269_1118 2 	Saddharmaparigraho dvitīyaḥ paricchedaḥ
+			S0269_1119 3 	Dharmabhāṇakādirakṣā tṛtīyaḥ paricchedaḥ
+			S0269_1120 4 	Anarthavarjanaṁ caturthaḥ paricchedaḥ
+			S0269_1121 5 	Śīlapāramitāyāmanarthavarjanaṁ pañcamaḥ paricchedaḥ
+			S0269_1122 6 	Ātmabhāvarakṣā ṣaṣṭhaḥ paricchedaḥ
+			S0269_1123 7 	Bhogapuṇyarakṣā saptamaḥ paricchedaḥ
+			S0269_1124 8 	Pāpaśodhanaṁ nāma aṣṭamaḥ paricchedaḥ
+			S0269_1125 9 	Kṣāntipāramitā navamaḥ paricchedaḥ
+			S0269_1126 10 	Vīryapāramitā daśamaḥ paricchedaḥ
+			S0269_1127 11 	Araṇyasaṁvarṇanaṁ nāmaikādaśaḥ paricchedaḥ
+			S0269_1128 12 	Cittaparikarma dvādaśaḥ paricchedaḥ
+			S0269_1129 13 	Smṛtyupasthānaparicchedaḥ trayodaśaḥ
+			S0269_1130 14 	Ātmabhāvapariśuddhiparicchedaścaturdaśaḥ
+			S0269_1131 15 	Bhogapuṇyaśuddhiḥ pañcadaśaḥ paricchedaḥ
+			S0269_1132 16 	Bhadracaryāvidhiḥ ṣoḍaśaḥ paricchedaḥ
+			S0269_1133 17 	Vandanānuśaṁsā saptadaśaḥ paricchedaḥ
+			S0269_1134 18 	Ratnatrayānusmṛtirnāmāṣṭādaśaḥ paricchedaḥ
+			S0269_1135 19 	Puṇyavṛddhirnāma navadaśaḥ paricchedaḥ
 	12 nāṭaka
-		1 Buddhamatam
-		2 Nāgānandam nāṭaka
-		3 Nālandādahanam
-		4 Nṛtyaprasūtiḥ
+		S0270 1 Buddhamatam
+		S0271 2 Nāgānandam nāṭaka
+		S0272 3 Nālandādahanam
+		S0273 4 Nṛtyaprasūtiḥ
 	13 nīti
-		1 Nītiśāstram
-		2 Śatagāthā
+		S0274 1 Nītiśāstram
+		S0275 2 Śatagāthā
 	14 prajñāpāramitā
-		1 Abhisamayālaṇkāraloka
-		2 Abhisamayālaṅkārāntaḥ pātināṃ padārthānāṃ
-		3 Abhisamayālaṅkāravṛttiḥ sphuṭārthā
-		4 Āryaprajñāpāramitāvajracchedikāṭīkā
-		5 Pāramitāsamāsaḥ
-		6 Sāratamākhyā pañjikā
+		S0276 1 Abhisamayālaṇkāraloka
+			S0276_1146 1 	Prathamaparivartaḥ
+			S0276_1147 2 	Dvitīyaparivartaḥ
+			S0276_1148 3 	Tṛtīyaparivartaḥ
+			S0276_1149 4 	Caturthaparivartaḥ
+			S0276_1150 5 	Pañcamaparivartaḥ
+			S0276_1151 6 	Ṣaṣṭhaparivartaḥ
+			S0276_1152 7 	Saptamaparivartaḥ
+			S0276_1153 8 	Aṣṭamaparivartaḥ
+			S0276_1154 9 	Navamaparivartaḥ
+			S0276_1155 10 	Daśamaparivartaḥ
+			S0276_1156 11 	Ekādaśaparivarttaḥ
+			S0276_1157 12 	Dvādaśaparivartaḥ
+			S0276_1158 13 	Trayodaśaparivartaḥ
+			S0276_1159 14 	Caturdaśaparivartaḥ
+			S0276_1160 15 	Pañcadaśaparivartaḥ
+			S0276_1161 16 	Ṣoḍaśaparivartaḥ
+			S0276_1162 17 	Saptadaśaparivartaḥ
+			S0276_1163 18 	Aṣṭādaśaparivartaḥ
+			S0276_1164 19 	Ūnaviṁśaparivartaḥ
+			S0276_1165 20 	Viṁśatitamaparivartaḥ
+			S0276_1166 21 	Ekaviṁśatitamaparivartaḥ
+			S0276_1167 22 	Dvāviṁśatitamaparivartaḥ
+			S0276_1168 23 	Trayoviṁśatitamaparivartaḥ
+			S0276_1169 24 	Caturthaviṁśatitamaparivartaḥ
+			S0276_1170 25 	Pañcaviṁśatitamaparivartaḥ
+			S0276_1171 26 	Ṣaḍviṁśatitamaparivartaḥ
+			S0276_1172 27 	Saptaviṁśatitamaparivartaḥ
+			S0276_1173 28 	Aṣṭāviṁśatitamaparivartaḥ
+			S0276_1174 29 	Ūnatriṁśattamaparivartaḥ
+			S0276_1175 30 	Triṁśattamaparivartaḥ
+			S0276_1176 31 	Ekatriṁśattamaparivartaḥ
+			S0276_1177 32 	Dvātriṁśattamaparivartaḥ
+		S0277 2 Abhisamayālaṅkārāntaḥ pātināṃ padārthānāṃ
+		S0278 3 Abhisamayālaṅkāravṛttiḥ sphuṭārthā
+			S0278_1179 1 Sarvākārajñatādhikāraḥ prathamaḥ
+			S0278_1180 2 Mārgajñatādhikāraḥ dvitīyaḥ
+			S0278_1181 3 Sarvajñatādhikāraḥ tṛtīyaḥ
+			S0278_1182 4 Sarvākārābhisambodhādhikāraḥ caturthaḥ
+			S0278_1183 5 Mūrdhābhisamayādhikāraḥ pañcamaḥ
+			S0278_1184 6 Ānupūrvikādhikāraḥ ṣaṣṭhaḥ
+			S0278_1185 7 Ekakṣaṇābhisambodhādhikāraḥ saptamaḥ
+			S0278_1186 8 Dharmakāyādhikāraḥ aṣṭamaḥ
+		S0279 4 Āryaprajñāpāramitāvajracchedikāṭīkā
+		S0280 5 Pāramitāsamāsaḥ
+			S0280_1188 1. dānapāramitāsamāsaḥ
+			S0280_1189 2. śīlapāramitāsamāsaḥ
+			S0280_1190 3. kṣāntipāramitāsamāsaḥ
+			S0280_1191 4. vīryapāramitāsamāsaḥ
+			S0280_1192 5. dhyānapāramitāsamāsaḥ
+			S0280_1193 6. prajñāpāramitāsamāsaḥ
+		S0281 6 Sāratamākhyā pañjikā
+			S0281_1194 1  Sarvākārajñatācaryāparivarto nāma prathamaḥ
+			S0281_1195 2  Śakraparivarto nāma dvitīyaḥ
+			S0281_1196 3  Aprameyaguṇadhāraṇapāramitāstūpasatkāro nāma tṛtīyaḥ
+			S0281_1197 4  Guṇaparikīrtanaparivarto nāma caturthaḥ
+			S0281_1198 5  Puṇyaparyāyaparivarto nāma pañcamaḥ
+			S0281_1199 6  Anumodanāparimāṇamanāparivarto nāma ṣaṣṭhaḥ
+			S0281_1200 7  Nirayaparivarto nāma saptamaḥ
+			S0281_1201 8  Viśuddhiparivarto nāmāṣṭamaḥ
+			S0281_1202 9  Stutiparivarto nāma navamaḥ
+			S0281_1203 10 Dhāraṇaguṇaparikīrtanaparivarto nāma daśamaḥ
+			S0281_1204 11 Mārakarmaparivarto nāmaikādaśamaḥ
+			S0281_1205 12 Lokasaṁdarśanaparivarto nāma dvādaśaḥ
+			S0281_1206 13 trayodaśamaḥ
+			S0281_1207 14 Caturdaśamaḥ
+			S0281_1208 15 Devaparivarto nāma pañcadaśaḥ
+			S0281_1209 16 Tathatāparivarto nāma ṣoḍaśaḥ
+			S0281_1210 17 Avinirvatanīyākāraliṅganimittaparivarto nāma saptadaśaḥ
+			S0281_1211 18 Śūnyatāparivarto nāmāṣṭādaśaḥ
+			S0281_1212 19 Gaṅgadevābhaginīparivarto nāmekonaviṁśatitamaḥ
+			S0281_1213 20 Upāyakauśalyamīmāṁsāparivarto nāma viṁśatitamaḥ
+			S0281_1214 21 Mārakarmaparivarto nāmaikaviṁśatitamaḥ
+			S0281_1215 22 Kalyāṇamitraparivarto nāma dvāviṁśatitamaḥ
+			S0281_1216 23 Śakraparivarto nāma trayoviṁśatitamaḥ
+			S0281_1217 24 Abhimānaparivarto nāma catarśititamaḥ
+			S0281_1218 25 Śikṣāparivarto nāma pañcaviṁśatitamaḥ
+			S0281_1219 26 Māyopamaparivarto nāma ṣaḍviṁśatitamaḥ
+			S0281_1220 27 Sāraparivarto nāma saptaviṁśatitamaḥ
+			S0281_1221 28 Avakīrṇakusumaparivarto nāmāṣṭāviṁśatitamaḥ
+			S0281_1222 29 Anugamaparivarto nāmaikonatriṁśattamaḥ
+			S0281_1223 30 Sadāpraruditaparivarto nāma triṁśattamaḥ
+			S0281_1224 31 Dharmodgataparivarto nāmaikatriśattamaḥ
+			S0281_1225 32 Parīnandanāparivarto nāma dvātriṁśattamaḥ
 	15 pramāṇa
-		1 Vādanyāyaṭīkā
-		2 Ālambanaparīkṣā
-		3 Ālambanaparīkṣāvṛttiḥ
-		4 Antarvyāptisamarthanam
-		5 Apohasiddhiḥ
-		6 Avayavinirākaraṇam
-		7 Hetubinduḥ
-		8 Hetubinduṭīkā
-		9 Hetutattvopadeśaḥ
-		10 Jātinirākṛti
-		11 Kṣaṇabhaṅgasiddhiḥ
-		12 Kṣaṇabhaṅgasidviḥ vyatirekātmikā
-		13 Nyāyabindu prakaraṇakārikā
-		14 Nyāyabinduṭīkā
-		15 Nyāyabinduṭīkāṭippaṇī
-		16 Nyāyapraveśapravṛttiḥ
-		17 Pramāṇavārtikam
-		18 Pramāṇavarttikasvavṛti
-		19 Ratnakīrti nibandhāvalī
-		20 Sāmānyadūṣaṇadikprasāritā
-		21 Sambandhaparīkṣā
-		22 Santānāntarasiddhiḥ
-		23 Santānāntarasiddhiṭīkā
-		24 Tarkaśāstram
-		25 Udayananirākaraṇam
-		26 Upāyahṛdayam
-		27 Vādanyāyaḥ
-		28 Vādarahasya
-		29 Vajrasūcī
-		30 Bauddha manīṣā- Bauddheṣu Pramāṇamīmāṃsā
-		31 Anupalabdhirahasya
-		32 Sarvaśabdabhāvacarcā
+		S0282 1 Vādanyāyaṭīkā
+		S0283 2 Ālambanaparīkṣā
+		S0284 3 Ālambanaparīkṣāvṛttiḥ
+		S0285 4 Antarvyāptisamarthanam
+		S0286 5 Apohasiddhiḥ
+		S0287 6 Avayavinirākaraṇam
+		S0288 7 Hetubinduḥ
+		S0289 8 Hetubinduṭīkā
+		S0290 9 Hetutattvopadeśaḥ
+		S0291 10 Jātinirākṛti
+		S0292 11 Kṣaṇabhaṅgasiddhiḥ
+		S0293 12 Kṣaṇabhaṅgasidviḥ vyatirekātmikā
+		S0294 13 Nyāyabindu prakaraṇakārikā
+		S0295 14 Nyāyabinduṭīkā
+		S0296 15 Nyāyabinduṭīkāṭippaṇī
+		S0297 16 Nyāyapraveśapravṛttiḥ
+		S0298 17 Pramāṇavārtikam
+		S0299 18 Pramāṇavarttikasvavṛti
+		S0300 19 Ratnakīrti nibandhāvalī
+		S0301 20 Sāmānyadūṣaṇadikprasāritā
+		S0302 21 Sambandhaparīkṣā
+		S0303 22 Santānāntarasiddhiḥ
+		S0304 23 Santānāntarasiddhiṭīkā
+		S0305 24 Tarkaśāstram
+		S0306 25 Udayananirākaraṇam
+		S0307 26 Upāyahṛdayam
+		S0308 27 Vādanyāyaḥ
+		S0309 28 Vādarahasya
+		S0310 29 Vajrasūcī
+		S0719 30 Bauddha manīṣā- Bauddheṣu Pramāṇamīmāṃsā
+		S0731 31 Anupalabdhirahasya
+		S0732 32 Sarvaśabdabhāvacarcā
 	16 sautrāntika
-		1 Satyasiddhiśāstram
+		S0311 1 Satyasiddhiśāstram
+			S0311_1274 1 atha prasthānaskandhaḥ
+			S0311_1275 2 atha duḥkhasatyaskandhaḥ
+			S0311_1276 3 atha samudayasatyaskandhaḥ
+			S0311_1277 4 atha nirodhasatyaskandhaḥ
+			S0311_1278 5 atha mārgasatyaskandhaḥ
 	17 śilpaśāstra
-		1 Ātreyatilakam
-		2 Citrakarmaśāstram
+		S0312 1 Ātreyatilakam
+		S0313 2 Citrakarmaśāstram (null)
 		3 Citralakṣaṇam
 		4 Kriyāsaṃgrahakārikā
 		5 Pratimālakṣaṇavivaraṇam

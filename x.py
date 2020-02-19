@@ -2,10 +2,19 @@ import re
 import os
 from functools import total_ordering
 
-title = 'LC07n0007_001'
-title = 'ZW02n0018a_001'
 
-# J32nB271
+
+def get_sorted_juan(book):
+    '''获得book(T01)下的所有排序好的经卷号(T01n0002_001)'''
+    # 对所有的book下的卷排序
+    juanlist = []
+    for path in os.listdir(f'xml/{book}'):
+        sutra, vol = path[:-4].split('_')
+        sutra = sutra.split('n')[1]
+        juanlist.append((sutra, vol))
+    juanlist.sort(key=lambda x: (int(f'{x[0]:0<5}', 16), int(x[1])))
+    juanlist = [f'{book}n{i[0]}_{i[1]:0>3}' for i in juanlist]
+    return juanlist
 
 @total_ordering
 class Number:
@@ -14,14 +23,13 @@ class Number:
         self.book, self.tome, self.sutra, self.yiyi, self.volume = None, 0, 0, '', 0
         r = re.findall(r'([A-Z]{1,2})(\d{2,3})n(\w\d{3})([a-zA-Z])?(?:_(\d{3}))?', n)
         if r:
-            self.book, self.tome, self.sutra, self.yiyi, self.volume = r[0]
-            self.tome = int(self.tome)
-            self.sutra = int(self.sutra, 16)
+            self.book, tome, self.sutra, self.yiyi, self.volume = r[0]
             self.volume = 0 if not self.volume else int(self.volume)
             self.n = 2
             if self.book in {'A', 'C', 'G', 'GA', 'GB', 'L', 'M', 'P', 'U'}:
                 self.n = 3
-            self.tome = f'{self.tome:0{self.n}}'
+            tome = int(tome)
+            self.tome = f'{tome:0{self.n}}'
 
     def __eq__(self, other):
         return (self.book == other.book and
@@ -40,65 +48,115 @@ class Number:
                 'GA':60, 'GB': 70, 'ZS':80, 'X':90}
         yiyi = 0 if not self.yiyi else int(self.yiyi, 16)
         oyiyi = 0 if not other.yiyi else int(other.yiyi, 16)
-        return (tt[self.book], int(self.tome), self.sutra, yiyi, self.volume) < (tt[other.book], int(other.tome), other.sutra, oyiyi, other.volume)
+        return (tt[self.book], int(self.tome), int(self.sutra, 16), yiyi, self.volume) < (tt[other.book], int(other.tome), int(other.sutra, 16), oyiyi, other.volume)
 
     def __str__(self):
         if not self.book:
             return 'None'
         if self.volume:
-            return f'{self.book}{self.tome:0{self.n}}n{self.sutra:04}{self.yiyi}_{self.volume:03}'
+            return f'{self.book}{self.tome}n{self.sutra}{self.yiyi}_{self.volume:03}'
         else:
-            return f'{self.book}{self.tome:0{self.n}}n{self.sutra:04}{self.yiyi}'
+            return f'{self.book}{self.tome}n{self.sutra}{self.yiyi}'
 
     def get_all_juan(self):
         '''给定经号T01n0002，返回所有排序后的卷['001', '002', ...]
         返回值是一个数组，如果没有找到则返回空的数组'''
-        book, sutra = str(self).split('n')
-        number = str(self).split('_')[0]
+        number = f'{self.book}{self.tome}n{self.sutra}{self.yiyi}'
         # 查找第一卷(有些不是从第一卷开始的)
         juan = []
-        if not os.path.exists(f'xml/{book}'):
+        if not os.path.exists(f'xml/{self.book}{self.tome}'):
             return None
-        for path in os.listdir(f'xml/{book}'):
+        for path in os.listdir(f'xml/{self.book}{self.tome}'):
             if path.startswith(number):
                 juan.append(path.split('_')[1][:-4])
         juan.sort(key=lambda x: int(re.sub(r'[a-zA-Z]*', '', f'{x:0<5}'), 16))
         return juan
 
-    def get_next_juan(number):
+    def get_next_juan(self, page):
         '''给定经号T01n0002_001，返回T01n0002_002'''
-        book = number.split('n')[0]
         # 重新生成标准经号
-        jinghao, juan = number.split('_')
-        number = f'{jinghao}_{juan:0>3}'
+        if not self.volume:
+            pass  #raise 一个错误?
+        number = f'{self.book}{self.tome}n{self.sutra}{self.yiyi}_{self.volume:03}'
         # # 对所有的book下的卷排序
-        juanlist = get_sorted_juan(book)
-
-        if number != juanlist[-1]:
-            return juanlist[juanlist.index(number) + 1]
+        juanlist = get_sorted_juan(f'{self.book}{self.tome}')
+        idx = juanlist.index(number)
+        if 0 <= idx + page < len(juanlist):
+            return Number(juanlist[idx + page])
+        # else: tome + 1
+        page = page - (len(juanlist) - idx) + 1
+        # page = len(juanlist) - idx - page
+        tomelist = (path.strip(self.book) for path in os.listdir(f'xml') if path.startswith(self.book))
+        tomelist = [f'{self.book}{i}' for i in sorted(tomelist, key=int)]
+        idx = tomelist.index(f'{self.book}{self.tome}')
+        print(idx, page, len(tomelist))
+        # page<0 and 0 <= idx - 1 , page >0  and
+        if idx + 1 < len(tomelist):
+            nextbook = tomelist[idx + 1]
+            juanlist = get_sorted_juan(nextbook)
+            return Number(juanlist[page-1])
         # else: book + 1
-        booklist = []
-        bookhead = re.sub('[0-9]*', '', book)
-        for path in os.listdir(f'xml'):
-            if path.startswith(bookhead):
-                booklist.append(path.strip(bookhead))
-        booklist.sort(key=int)
-        booklist = [f'{bookhead}{i}' for i in booklist]
-        if book != booklist[-1]:
-            nextbook = booklist[booklist.index(book) + 1]
-            booklist = get_sorted_juan(nextbook)
-            return booklist[0]
+        return juanlist
+
+    def get_prev_juan(self):
+        '''给定经号T01n0002_002，返回T01n0002_001'''
+        # 重新生成标准经号
+        if not self.volume:
+            pass  #raise 一个错误?
+        number = f'{self.book}{self.tome}n{self.sutra}{self.yiyi}_{self.volume:03}'
+        # 对所有的book下的卷排序
+        juanlist = get_sorted_juan(f'{self.book}{self.tome}')
+
+        if number != juanlist[0]:
+            return Number(juanlist[juanlist.index(number) - 1])
+        # else: book - 1
+        # 获得全部排序号的book列表
+        booklist = (path.strip(self.book) for path in os.listdir(f'xml') if path.startswith(self.book))
+        booklist = sorted(booklist, key=int)
+        booklist = [f'{self.book}{i}' for i in booklist]
+        # if book != booklist[0]:
+        if f'{self.book}{self.tome}' != booklist[0]:
+            prevbook = booklist[booklist.index(book) - 1]
+            booklist = get_sorted_juan(prevbook)
+            return Number(booklist[-1])
         # else:
         return juanlist
 
 
+    def get_next_juan2(self, page):
+        '''给定经号T01n0002_001，返回T01n0002_002'''
+        # 重新生成标准经号
+        if not self.volume:
+            pass  #raise 一个错误?
+        number = f'{self.book}{self.tome}n{self.sutra}{self.yiyi}_{self.volume:03}'
+        # # 对所有的book下的卷排序
+        juanlist = get_sorted_juan(f'{self.book}{self.tome}')
+        idx = juanlist.index(number)
+        if 0 <= idx + page < len(juanlist):
+            return Number(juanlist[idx + page])
+        # else: tome + 1
+        # page = page - (len(juanlist) - idx) + 1
+        page = page - idx + 1
+        print(idx, page)
+        tomelist = (path.strip(self.book) for path in os.listdir(f'xml') if path.startswith(self.book))
+        tomelist = [f'{self.book}{i}' for i in sorted(tomelist, key=int)]
+        idx = tomelist.index(f'{self.book}{self.tome}')
+        #print(idx, page, len(tomelist))
+        # page<0 and 0 <= idx - 1 , page >0  and
+        if idx + 1 < len(tomelist):
+            nextbook = tomelist[idx - 1]
+            juanlist = get_sorted_juan(nextbook)
+            return Number(juanlist[-1])
+        # else: book + 1
+        return juanlist
+
 
 title1 = 'T07n0007_001'
 title2 = 'T07n0007_002'
-n = Number(title)
-print(title, str(n), Number(title1)< Number(title2))
-n = Number('T01n0026')
-print(n.get_all_juan())
+# n = Number(title1)
+# print(title, str(n), Number(title1)< Number(title2))
+# n = Number('T01n0026')
+# print(n.get_all_juan())
 
 class Sutra:
     def __init__(self, args):
@@ -121,38 +179,21 @@ def get_sorted_ce(book):
     return booklist
 
 
-def get_prev_juan(number):
-    '''给定经号T01n0002_002，返回T01n0002_001'''
-    book = number.split('n')[0]
-    # 重新生成标准经号
-    jinghao, juan = number.split('_')
-    number = f'{jinghao}_{juan:0>3}'
-    # 对所有的book下的卷排序
-    juanlist = get_sorted_juan(book)
-
-    if number != juanlist[0]:
-        return juanlist[juanlist.index(number) - 1]
-    # else: book - 1
-    # 获得全部排序号的book列表
-    booklist = []
-    bookhead = re.sub('[0-9]*', '', book)
-    for path in os.listdir(f'xml'):
-        if path.startswith(bookhead):
-            booklist.append(path.strip(bookhead))
-    booklist.sort(key=int)
-    booklist = [f'{bookhead}{i}' for i in booklist]
-    if book != booklist[0]:
-        prevbook = booklist[booklist.index(book) - 1]
-        booklist = get_sorted_juan(prevbook)
-        return booklist[-1]
-    # else:
-    return juanlist
 
 
+# import os
+# r = set()
+# for path in os.listdir(f'../xml'):
+#     r.add(re.sub(r'[0-9]*', '', path))
+# J32nB271
+title = 'LC07n0007_001'
+title = 'ZW02n0018a_001'
+title = 'T01n0098_001'
+title = 'T02n0099_001'
 
-import os
-r = set()
-for path in os.listdir(f'../xml'):
-    r.add(re.sub(r'[0-9]*', '', path))
-
-print(r)
+n = Number(title)
+print(n)
+#print(n.get_next_juan(-1), n.get_prev_juan(), n, n.get_next_juan(1), n.get_next_juan(2))
+#print(n.get_next_juan(-1), n.get_next_juan(1), n.get_next_juan(2))
+print(n.get_next_juan2(-1))
+#print(n.get_next_juan(10))
