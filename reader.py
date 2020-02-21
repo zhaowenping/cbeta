@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-21 06:16:32
+# Last Modified: 2020-02-21 06:24:01
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -321,7 +321,7 @@ def submenu6(bulei):
         src, text = bulei[-1].split(maxsplit=1)  # T01n0002
 
         if '_' in src:
-            src = src.replace('_', '/')
+            # src = src.replace('_', '/')
             url = f"/xml/dsbc/{src}.html"  # T01n0002_001.xml
             found = True
         else:
