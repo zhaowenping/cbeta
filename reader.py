@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-21 06:02:23
+# Last Modified: 2020-02-21 06:16:32
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -329,7 +329,6 @@ def submenu6(bulei):
                 if src in path:
                     url = f"/xml/dsbc/{path}"
                     found = True
-            url = f"/xml/dsbc/tipitaka/{src}.html"  # T01n0002_001.xml
         if not found:
             abort(404, '无此文件')
         redirect(url)
