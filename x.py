@@ -58,6 +58,10 @@ class Number:
         else:
             return f'{self.book}{self.tome}n{self.sutra}{self.yiyi}'
 
+    def url(self):
+        if self.volume:
+            return f'/xml/{self.book}{self.tome}/{self.book}{self.tome}n{self.sutra}{self.yiyi}_{self.volume:03}.xml'
+
     def get_all_juan(self):
         '''给定经号T01n0002，返回所有排序后的卷['001', '002', ...]
         返回值是一个数组，如果没有找到则返回空的数组'''
@@ -85,7 +89,6 @@ class Number:
             return Number(juanlist[idx + page])
         # else: tome + 1
         page = page - (len(juanlist) - idx) + 1
-        # page = len(juanlist) - idx - page
         tomelist = (path.strip(self.book) for path in os.listdir(f'xml') if path.startswith(self.book))
         tomelist = [f'{self.book}{i}' for i in sorted(tomelist, key=int)]
         idx = tomelist.index(f'{self.book}{self.tome}')
@@ -136,7 +139,7 @@ class Number:
             return Number(juanlist[idx + page])
         # else: tome + 1
         # page = page - (len(juanlist) - idx) + 1
-        page = page - idx + 1
+        page = - page - idx
         print(idx, page)
         tomelist = (path.strip(self.book) for path in os.listdir(f'xml') if path.startswith(self.book))
         tomelist = [f'{self.book}{i}' for i in sorted(tomelist, key=int)]
@@ -146,7 +149,7 @@ class Number:
         if idx + 1 < len(tomelist):
             nextbook = tomelist[idx - 1]
             juanlist = get_sorted_juan(nextbook)
-            return Number(juanlist[-1])
+            return Number(juanlist[-page])
         # else: book + 1
         return juanlist
 

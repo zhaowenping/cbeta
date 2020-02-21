@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-14 23:24:46
+# Last Modified: 2020-02-21 06:02:23
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -37,7 +37,6 @@ import jieba
 
 import pprint
 from libhan import hk2iast, read_menu_file, HKdict2iast
-from libhan import get_all_juan
 from libhan import Search
 from libhan import STConvertor
 from libhan import rm_variant
@@ -48,6 +47,7 @@ from libhan import make_url, make_url2
 from libhan import lookup, lookinkangxi, lookinsa, zhuyin
 from libhan import unihan
 from libhan import get_prev_juan, get_next_juan
+from libhan import get_all_juan
 
 # from xsltproc import xsltproc, XSLT
 
@@ -316,15 +316,22 @@ def submenu6(bulei):
     nav.pop(0)
 
     # 跳转到正文
+    found = False
     if not menu:
         src, text = bulei[-1].split(maxsplit=1)  # T01n0002
 
         if '_' in src:
             src = src.replace('_', '/')
-            url = f"/xml/cscd/{src}.xml"  # T01n0002_001.xml
+            url = f"/xml/dsbc/{src}.html"  # T01n0002_001.xml
+            found = True
         else:
-            url = f"/xml/cscd/tipitaka/{src}.xml"  # T01n0002_001.xml
-
+            for path in os.listdir(f'xml/dsbc'):
+                if src in path:
+                    url = f"/xml/dsbc/{path}"
+                    found = True
+            url = f"/xml/dsbc/tipitaka/{src}.html"  # T01n0002_001.xml
+        if not found:
+            abort(404, '无此文件')
         redirect(url)
     return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '梵文三藏目錄', 'root':root}
 
