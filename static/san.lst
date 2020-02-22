@@ -16,13 +16,13 @@ sūtrapiṭaka
 		4 Vṛhat svayambhūpūrāṇa(null)
 	2 dhāraṇī 陀羅尼經
 		S0009 1 Ārya amoghapāśahṛdaya nāma mahāyānasūtram 不空罥索神咒心經
-		S0010 2 Āryamahāpratisarāvidyādhāraṇī
+		S0010 2 Āryamahāpratisarāvidyādhāraṇī 佛說隨求即得大自在陀羅尼神咒經
 		S0011 3 Āryaśrīmahādevīvyākaraṇam 大吉祥天女十二契一百八名無垢大乘經
 		S0012 4 Āryavajravidāraṇā nāma dhāraṇī 佛說壞相金剛陀羅尼經
-		S0013 5 Avikalpapraveśadhāraṇī
+		S0013 5 Avikalpapraveśadhāraṇī 聖入無分別陀羅尼
 		S0014 6 Dhvajāgrakeyurā dhāraṇī(null)
 		S0015 7 Ekādaśamukham 佛說十一面觀世音神咒經
-		S0016 8 Hayagrīvavidyā
+		S0016 8 Hayagrīvavidyā 馬頭成就法
 		9 Mahāsannipātaratnaketudhāraṇī sūtraṃ 寶星陀羅尼經
 			S0017_209 1  Prathamaḥ parivartaḥ
 			S0017_210 2  Dvitīyaḥ parivartaḥ
@@ -36,12 +36,12 @@ sūtrapiṭaka
 			S0017_218 10 Daśamaḥ parivartaḥ
 			S0017_219 11 Ekādaśaḥ parivartaḥ
 		S0018 10 Nārāyaṇaparipṛcchā āryamahāmāyāvijayavāhinī nāma dhāraṇī
-		S0019 11 Ṣaṇmukhī dhāraṇī
+		S0019 11 Ṣaṇmukhī dhāraṇī 六門陀羅尼
 		S0020 12 Sitātapatrā dhāraṇī 佛頂大白傘蓋陀羅尼經
-		S0021 13 Vasudhārādhāraṇī
+		S0021 13 Vasudhārādhāraṇī 持世陀羅尼
 		S0820 14 Dhāraṇī Saṃgraha
 	3 jātaka 本生
-		1 Jātakamālā
+		1 Jātakamālā 本生論
 			S0022_224 1 vyāghrī-jātakam
 			S0022_224 2 śibi-jātakam
 			S0022_224 3 kulmāṣapiṇḍī-jātakam
@@ -81,14 +81,14 @@ sūtrapiṭaka
 		S0024 2  Aparimitāyuḥ nāma mahāyāna sūtram 佛說大乘聖無量壽決定光明王如來陀羅尼經
 		S0025 3  Arthaviniścayasūtram 佛說決定義經
 		S0026 4 Ārya ṃaitreya-vyākaraṇaṃ 佛說彌勒下生成佛經
-		S0027 5 Āryānityatā sūtram
+		S0027 5 Āryānityatā sūtram 佛說無常經
 		S0028 6 Āryapratītyasamutpādo nāma mahāyānasūtram
 		7 Āryarāṣṭrapālaparipṛcchā nāma mahāyānasūtram
 			S0029_264 1 Nidānaparivartaḥ prathamaḥ
 			S0029_265 2 Dvitīyaḥ parivartaḥ
 		S0030 8 Āryasāgaranāgarājaparipṛcchā nāma mahāyānasūtram 佛為海龍王說法印經
 		S0031 9 Āryasaṃghāṭa sūtram 僧伽吒經
-		S0032 10 Āryasarvabuddhaviṣayāvatārajñānālokālaṃkāranāma mahāyānasūtram
+		S0032 10 Āryasarvabuddhaviṣayāvatārajñānālokālaṃkāranāma mahāyānasūtram 佛說入一切諸佛境界智慧光明莊嚴大乘經
 		S0033 11 Āryatriratnānusmṛtisūtram
 		S0034 12 Āryatriskandha sūtram
 		13 Āryavimalakīrtinirdeśo nāma mahāyānasūtram 維摩詰所說經
@@ -270,7 +270,7 @@ sūtrapiṭaka
 			S0045_440 26 dharmacakrapravartanaparivartaḥ ṣaḍviṁśaḥ
 			S0045_441 27 nigamaparivartaḥ saptaviṁśaḥ
 		S0046 24 Madhyamaka-śālistambasūtram
-		S0047 25 Mahāmegha sūtram
+		S0047 25 Mahāmegha sūtram 大雲經
 		S0048 26 Mahāparinirvāṇa sūtram
 		S0049 27 Mahāvadānasūtram
 		S0050 28 Megha sūtram
@@ -611,8 +611,8 @@ sūtrapiṭaka
 			S0737 Guhyāsamājatantrapradīpodyotanaṭīkā ṣaṭkoṭivyākhyā
 	9 yogācāra 瑜伽行(null)
 vinayapiṭaka
-	S0087 1 Bhikṣukarmavākya
-	S0088 2 Bhikṣuṇī vinaya
+	S0087 1 Bhikṣukarmavākya 比丘業尼柯耶
+	S0088 2 Bhikṣuṇī vinaya 比丘尼毘那耶
 	S0089 3  Bodhisattva-prātimokṣa-sūtram 菩薩戒羯摩文
 	S0090 4  Mahāsāṃghikānāṃ prātimokṣasūtram
 	5  Mūlasarvāstivāda-vinayavastu
