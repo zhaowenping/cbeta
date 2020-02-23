@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-21 06:24:01
+# Last Modified: 2020-02-22 17:56:25
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -380,12 +380,14 @@ def searchmulu():
         title0 = idx
         hl = ss.titles[idx]
         zang = idx.split('n')[0]              # T01
-        juan = get_all_juan(idx)[0]           # 001
         if '#' in idx:
             idx, anchor = idx.split('#')
             an = f"/xml/{zang}/{idx}.xml#{anchor}"  # T01n0002_001.xml
-        else:
+        elif '_' in idx:
+            juan = get_all_juan(idx)[0]           # 001
             an = f"/xml/{zang}/{idx}_{juan}.xml"  # T01n0002_001.xml
+        else:
+            an = f"/xml/{zang}/{idx}.xml"  # T01n0002_001.xml
         results.append({'hl': hl, 'an':an, 'title':title0, 'author':''})
     if request.method == "GET":
         # 0个结果页面不动, 多个结果自己选择
