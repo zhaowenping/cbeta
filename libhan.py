@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-14 23:16:01
+# Last Modified: 2020-02-23 07:07:14
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -205,6 +205,23 @@ def normalize_text(ctx):
     # 去除异体字、异体词
     ctx = rm_variant(ctx)
     return ctx
+
+def get_first_juan(number):
+    '''给定经号T01n0002,T20n1113B, T03n0154_002#p0085a13,  返回所有排序后的卷['001', '002', ...]中的第一卷
+    返回值是一个数字，如果没有找到则返回0'''
+    if '_' in number:
+        number = number.split('_')[0]
+    book, sutra = number.split('n')
+    # 查找第一卷(有些不是从第一卷开始的)
+    juan = 999
+    if not os.path.exists(f'xml/{book}'):
+        return 0
+    for path in os.listdir(f'xml/{book}'):
+        if path.startswith(number):
+            juan = min(juan, int(path.split('_')[1][:3]))
+    if juan == 999:
+        juan = 0
+    return juan
 
 
 def get_all_juan(number):
@@ -503,9 +520,10 @@ def parse_number(title, guess_juan=False):
 
     # 查找第一卷的卷数
     if guess_juan and not volume and not anchor:
-        volume = get_all_juan(f'{book}{tome}n{sutra}{j4}')
-        if volume:
-            volume = volume[0]
+        volume = get_first_juan(f'{book}{tome}n{sutra}{j4}')
+        # volume = get_all_juan(f'{book}{tome}n{sutra}{j4}')
+        # if volume:
+        #     volume = volume[0]
 
     # 根据锚来查找卷数volume
     if not volume and anchor:
@@ -1042,16 +1060,6 @@ class Search:
             title = normalize_text(title)
         result = (set(self.index.get(tt, {}).keys()) for tt in list(title))
         return sorted(reduce(lambda x, y: x & y, result), key=pagerank)
-
-# 372     for idx in ss.search(title):
-# 373         title0 = idx
-# 374         hl = ss.titles[idx]
-# 375         zang = idx.split('n')[0]              # T01
-# 376         juan = get_all_juan(idx)[0]           # 001
-# 377         an = f"/xml/{zang}/{idx}_{juan}.xml"  # T01n0002_001.xml
-# 378         results.append({'hl': hl, 'an':an, 'title':title0, 'author':''})
-
-
 
 
 # 简体繁体转换

@@ -62,18 +62,17 @@ class Number:
         if self.volume:
             return f'/xml/{self.book}{self.tome}/{self.book}{self.tome}n{self.sutra}{self.yiyi}_{self.volume:03}.xml'
 
-    def get_all_juan(self):
-        '''给定经号T01n0002，返回所有排序后的卷['001', '002', ...]
-        返回值是一个数组，如果没有找到则返回空的数组'''
+    def get_first_juan(self):
+        '''给定经号T01n0002，返回所有排序后的卷['001', '002', ...]中的第一个
+        返回值是一个数字，如果没有找到则返回0'''
         number = f'{self.book}{self.tome}n{self.sutra}{self.yiyi}'
         # 查找第一卷(有些不是从第一卷开始的)
-        juan = []
+        juan = 0
         if not os.path.exists(f'xml/{self.book}{self.tome}'):
-            return None
+            return 0
         for path in os.listdir(f'xml/{self.book}{self.tome}'):
             if path.startswith(number):
-                juan.append(path.split('_')[1][:-4])
-        juan.sort(key=lambda x: int(re.sub(r'[a-zA-Z]*', '', f'{x:0<5}'), 16))
+                juan = max(juan, int(path.split('_')[1][:3]))
         return juan
 
     def get_next_juan(self, page):

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-22 17:59:45
+# Last Modified: 2020-02-23 07:19:49
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -47,7 +47,7 @@ from libhan import make_url, make_url2
 from libhan import lookup, lookinkangxi, lookinsa, zhuyin
 from libhan import unihan
 from libhan import get_prev_juan, get_next_juan
-from libhan import get_all_juan
+from libhan import get_all_juan, get_first_juan
 
 # from xsltproc import xsltproc, XSLT
 
@@ -171,8 +171,9 @@ def submenu1(bulei):
     if not menu:
         sutra = bulei[-1].split()[0]  # T01n0002
         zang = sutra.split('n')[0]              # T01
-        juan = get_all_juan(sutra)[0]           # 001
-        url = f"/xml/{zang}/{sutra}_{juan}.xml"  # T01n0002_001.xml
+        juan = get_first_juan(sutra)           # 001
+        # juan = get_all_juan(sutra)[0]           # 001
+        url = f"/xml/{zang}/{sutra}_{juan:03}.xml"  # T01n0002_001.xml
         redirect(url)
     return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大正藏部類', 'root':root}
 
@@ -199,11 +200,12 @@ def submenu2(bulei):
             sutra, juan = sutra.split('_')
         else:
             # 查找第一卷(有些不是从第一卷开始的)
-            juan = get_all_juan(sutra)              # 001
+            juan = get_first_juan(sutra)              # 001
+            # juan = get_all_juan(sutra)              # 001
             if not juan:
                 abort(404, f'没找到文件: /xml/{zang}/{sutra}_*.xml')
-            juan = juan[0]
-        url = f"/xml/{zang}/{sutra}_{juan}.xml"  # T01n0002_001.xml
+            # juan = juan[0]
+        url = f"/xml/{zang}/{sutra}_{juan:03}.xml"  # T01n0002_001.xml
         redirect(url)
     return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大正藏冊別', 'root': root}
 
@@ -227,8 +229,9 @@ def submenu3(bulei):
     if not menu:
         sutra = bulei[-1].split()[0]  # T01n0002
         zang = sutra.split('n')[0]              # T01
-        juan = get_all_juan(sutra)[0]           # 001
-        url = f"/xml/{zang}/{sutra}_{juan}.xml"  # T01n0002_001.xml
+        juan = get_first_juan(sutra)           # 001
+        # juan = get_all_juan(sutra)[0]           # 001
+        url = f"/xml/{zang}/{sutra}_{juan:03}.xml"  # T01n0002_001.xml
         redirect(url)
     return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大衆閲藏5.4版', 'root':root}
 
@@ -251,21 +254,23 @@ def submenu4(bulei):
     if not menu:
         sutra = bulei[-1].split()[0]  # T01n0002
         zang = sutra.split('n')[0]              # T01
+        para = ''
 
         if '_' in sutra:
             sutra, juan = sutra.split('_')
+            if '#' in juan:
+                juan, para = sutra.split('#')
+            juan = int(juan)
         else:
             # 查找第一卷(有些不是从第一卷开始的)
-            juan = get_all_juan(sutra)              # 001
+            juan = get_first_juan(sutra)              # 001
             if not juan:
                 abort(404, f'没找到文件: /xml/{zang}/{sutra}_*.xml')
-            juan = juan[0]
 
-        if '#' in juan:
-            juan, para = sutra.split('#')
-            url = f"/xml/{zang}/{sutra}_{juan}.xml#{para}"  # T01n0002_001.xml
+        if para:
+            url = f"/xml/{zang}/{sutra}_{juan:03}.xml#{para}"  # T01n0002_001.xml
         else:
-            url = f"/xml/{zang}/{sutra}_{juan}.xml"  # T01n0002_001.xml
+            url = f"/xml/{zang}/{sutra}_{juan:03}.xml"  # T01n0002_001.xml
 
         redirect(url)
     return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大德長老居士推薦目錄', 'root':root}
@@ -386,8 +391,9 @@ def searchmulu():
         elif '_' in idx:
             an = f"/xml/{zang}/{idx}.xml"  # T01n0002_001.xml
         else:
-            juan = get_all_juan(idx)[0]           # 001
-            an = f"/xml/{zang}/{idx}_{juan}.xml"  # T01n0002_001.xml
+            # juan = get_all_juan(idx)[0]           # 001
+            juan = get_first_juan(idx)           # 001
+            an = f"/xml/{zang}/{idx}_{juan:03}.xml"  # T01n0002_001.xml
         results.append({'hl': hl, 'an':an, 'title':title0, 'author':''})
     if request.method == "GET":
         # 0个结果页面不动, 多个结果自己选择
@@ -763,8 +769,9 @@ def zhx(filename):
     '''从目录简体版转到简体阅读章节'''
     jing = filename.split()[0]
     zang = jing.split('n')[0]
-    juan = get_all_juan(jing)[0]
-    url = f"/zh/xml/{zang}/{jing}_{juan}.xml"
+    juan = get_first_juan(jing)
+    # juan = get_all_juan(jing)[0]
+    url = f"/zh/xml/{zang}/{jing}_{juan:03}.xml"
     redirect(url)
 
 
