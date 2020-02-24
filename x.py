@@ -16,6 +16,8 @@ def get_sorted_juan(book):
     juanlist = [f'{book}n{i[0]}_{i[1]:0>3}' for i in juanlist]
     return juanlist
 
+# lb anchor 0607a18  #p0481a25
+# pb anchor T02.0125.0603c
 @total_ordering
 class Number:
     '''经号类: T01n0002a_002'''
@@ -65,8 +67,10 @@ class Number:
 
     @property
     def url_with_anchor(self):
-        if self.volume:
+        if self.anchor:
             return f'/xml/{self.book}{self.tome}/{self.book}{self.tome}n{self.sutra}{self.yiyi}_{self.volume:03}.xml#{self.anchor}'
+        if self.volume:
+            return f'/xml/{self.book}{self.tome}/{self.book}{self.tome}n{self.sutra}{self.yiyi}_{self.volume:03}.xml'
 
     def get_first_juan(self):
         '''给定经号T01n0002，返回所有排序后的卷['001', '002', ...]中的第一个

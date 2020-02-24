@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-23 07:25:42
+# Last Modified: 2020-02-24 04:44:20
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -383,6 +383,8 @@ def searchmulu():
         zang = idx.split('n')[0]              # T01
         if '#' in idx:
             idx, anchor = idx.split('#')
+            if 'p' in anchor:
+                anchor = anchor.strip('p')
             an = f"/xml/{zang}/{idx}.xml#{anchor}"  # T01n0002_001.xml
         elif '_' in idx:
             an = f"/xml/{zang}/{idx}.xml"  # T01n0002_001.xml
