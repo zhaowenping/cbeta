@@ -20,7 +20,7 @@ def get_sorted_juan(book):
 class Number:
     '''经号类: T01n0002a_002'''
     def __init__(self, n):
-        self.book, self.tome, self.sutra, self.yiyi, self.volume = None, 0, 0, '', 0
+        self.book, self.tome, self.sutra, self.yiyi, self.volume = None, '', '', '', 0
         r = re.findall(r'([A-Z]{1,2})(\d{2,3})n(\w\d{3})([a-zA-Z])?(?:_(\d{3}))?', n)
         if r:
             self.book, tome, self.sutra, self.yiyi, self.volume = r[0]
@@ -58,21 +58,29 @@ class Number:
         else:
             return f'{self.book}{self.tome}n{self.sutra}{self.yiyi}'
 
+    @property
     def url(self):
         if self.volume:
             return f'/xml/{self.book}{self.tome}/{self.book}{self.tome}n{self.sutra}{self.yiyi}_{self.volume:03}.xml'
+
+    @property
+    def url_with_anchor(self):
+        if self.volume:
+            return f'/xml/{self.book}{self.tome}/{self.book}{self.tome}n{self.sutra}{self.yiyi}_{self.volume:03}.xml#{self.anchor}'
 
     def get_first_juan(self):
         '''给定经号T01n0002，返回所有排序后的卷['001', '002', ...]中的第一个
         返回值是一个数字，如果没有找到则返回0'''
         number = f'{self.book}{self.tome}n{self.sutra}{self.yiyi}'
         # 查找第一卷(有些不是从第一卷开始的)
-        juan = 0
+        juan = 999
         if not os.path.exists(f'xml/{self.book}{self.tome}'):
             return 0
         for path in os.listdir(f'xml/{self.book}{self.tome}'):
             if path.startswith(number):
-                juan = max(juan, int(path.split('_')[1][:3]))
+                juan = min(juan, int(path.split('_')[1][:3]))
+        if juan == 999:
+            juan = 0
         return juan
 
     def get_next_juan(self, page):
