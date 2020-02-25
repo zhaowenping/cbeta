@@ -99,9 +99,10 @@ class Number:
         if 0 <= idx + page < len(juanlist):
             return Number(juanlist[idx + page])
         # else: tome + 1
+        # tomelist: 获得全部book(T01)下的所有排序好的册号列表(T01,T02,T03,T04...)
         page = page - (len(juanlist) - idx) + 1
         tomelist = (path.strip(self.book) for path in os.listdir(f'xml') if path.startswith(self.book))
-        tomelist = [f'{self.book}{i}' for i in sorted(tomelist, key=int)]
+        tomelist = tuple(f'{self.book}{i}' for i in sorted(tomelist, key=int))
         idx = tomelist.index(f'{self.book}{self.tome}')
         print(idx, page, len(tomelist))
         # page<0 and 0 <= idx - 1 , page >0  and
@@ -209,5 +210,5 @@ n = Number(title)
 print(n)
 #print(n.get_next_juan(-1), n.get_prev_juan(), n, n.get_next_juan(1), n.get_next_juan(2))
 #print(n.get_next_juan(-1), n.get_next_juan(1), n.get_next_juan(2))
-print(n.get_next_juan2(-1))
+print(n.get_next_juan2(-1).url, n.url)
 #print(n.get_next_juan(10))

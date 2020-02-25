@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-23 07:07:14
+# Last Modified: 2020-02-25 00:21:38
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -224,21 +224,21 @@ def get_first_juan(number):
     return juan
 
 
-def get_all_juan(number):
-    '''给定经号T01n0002,T20n1113B, T03n0154_002#p0085a13,  返回所有排序后的卷['001', '002', ...]
-    返回值是一个数组，如果没有找到则返回空的数组'''
-    if '_' in number:
-        number = number.split('_')[0]
-    book, sutra = number.split('n')
-    # 查找第一卷(有些不是从第一卷开始的)
-    juan = []
-    if not os.path.exists(f'xml/{book}'):
-        return None
-    for path in os.listdir(f'xml/{book}'):
-        if path.startswith(number):
-            juan.append(path.split('_')[1][:-4])
-    juan.sort(key=lambda x: int(re.sub(r'[a-zA-Z]*', '', f'{x:0<5}'), 16))
-    return juan
+# def get_all_juan(number):
+#     '''给定经号T01n0002,T20n1113B, T03n0154_002#p0085a13,  返回所有排序后的卷['001', '002', ...]
+#     返回值是一个数组，如果没有找到则返回空的数组'''
+#     if '_' in number:
+#         number = number.split('_')[0]
+#     book, sutra = number.split('n')
+#     # 查找第一卷(有些不是从第一卷开始的)
+#     juan = []
+#     if not os.path.exists(f'xml/{book}'):
+#         return None
+#     for path in os.listdir(f'xml/{book}'):
+#         if path.startswith(number):
+#             juan.append(path.split('_')[1][:-4])
+#     juan.sort(key=lambda x: int(re.sub(r'[a-zA-Z]*', '', f'{x:0<5}'), 16))
+#     return juan
 
 
 def get_sorted_juan(book):
@@ -253,16 +253,16 @@ def get_sorted_juan(book):
     juanlist = [f'{book}n{i[0]}_{i[1]:0>3}' for i in juanlist]
     return juanlist
 
-def get_sorted_ce(book):
-    # 获得全部book(T01)下的所有排序好的册号列表(T01,T02,T03,T04...)
-    booklist = []
-    bookhead = re.sub('[0-9]*', '', book)
-    for path in os.listdir(f'xml'):
-        if path.startswith(bookhead):
-            booklist.append(path.strip(bookhead))
-    booklist.sort(key=int)
-    booklist = [f'{bookhead}{i}' for i in booklist]
-    return booklist
+# def get_sorted_ce(book):
+#     # 获得全部book(T01)下的所有排序好的册号列表(T01,T02,T03,T04...)
+#     booklist = []
+#     bookhead = re.sub('[0-9]*', '', book)
+#     for path in os.listdir(f'xml'):
+#         if path.startswith(bookhead):
+#             booklist.append(path.strip(bookhead))
+#     booklist.sort(key=int)
+#     booklist = [f'{bookhead}{i}' for i in booklist]
+#     return booklist
 
 def get_next_juan(number):
     '''给定经号T01n0002_001，返回T01n0002_002'''
@@ -521,9 +521,6 @@ def parse_number(title, guess_juan=False):
     # 查找第一卷的卷数
     if guess_juan and not volume and not anchor:
         volume = get_first_juan(f'{book}{tome}n{sutra}{j4}')
-        # volume = get_all_juan(f'{book}{tome}n{sutra}{j4}')
-        # if volume:
-        #     volume = volume[0]
 
     # 根据锚来查找卷数volume
     if not volume and anchor:
