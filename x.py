@@ -87,7 +87,7 @@ class Number:
             juan = 0
         return juan
 
-    def get_next_juan(self, page):
+    def __add__(self, page):
         '''给定经号T01n0002_001，返回T01n0002_002'''
         # 重新生成标准经号
         if not self.volume:
@@ -95,74 +95,44 @@ class Number:
         number = f'{self.book}{self.tome}n{self.sutra}{self.yiyi}_{self.volume:03}'
         # # 对所有的book下的卷排序
         juanlist = get_sorted_juan(f'{self.book}{self.tome}')
-        idx = juanlist.index(number)
-        if 0 <= idx + page < len(juanlist):
-            return Number(juanlist[idx + page])
+        page = juanlist.index(number) + page
+        if 0 <= page < len(juanlist):
+            return Number(juanlist[page])
         # else: tome + 1
         # tomelist: 获得全部book(T01)下的所有排序好的册号列表(T01,T02,T03,T04...)
-        page = page - (len(juanlist) - idx) + 1
+        page = page - len(juanlist)
         tomelist = (path.strip(self.book) for path in os.listdir(f'xml') if path.startswith(self.book))
         tomelist = tuple(f'{self.book}{i}' for i in sorted(tomelist, key=int))
         idx = tomelist.index(f'{self.book}{self.tome}')
-        print(idx, page, len(tomelist))
-        # page<0 and 0 <= idx - 1 , page >0  and
         if idx + 1 < len(tomelist):
             nextbook = tomelist[idx + 1]
             juanlist = get_sorted_juan(nextbook)
-            return Number(juanlist[page-1])
+            return Number(juanlist[page])
         # else: book + 1
         return juanlist
 
-    def get_prev_juan(self):
+
+    def __sub__(self, page):
         '''给定经号T01n0002_002，返回T01n0002_001'''
         # 重新生成标准经号
-        if not self.volume:
-            pass  #raise 一个错误?
-        number = f'{self.book}{self.tome}n{self.sutra}{self.yiyi}_{self.volume:03}'
-        # 对所有的book下的卷排序
-        juanlist = get_sorted_juan(f'{self.book}{self.tome}')
-
-        if number != juanlist[0]:
-            return Number(juanlist[juanlist.index(number) - 1])
-        # else: book - 1
-        # 获得全部排序号的book列表
-        booklist = (path.strip(self.book) for path in os.listdir(f'xml') if path.startswith(self.book))
-        booklist = sorted(booklist, key=int)
-        booklist = [f'{self.book}{i}' for i in booklist]
-        # if book != booklist[0]:
-        if f'{self.book}{self.tome}' != booklist[0]:
-            prevbook = booklist[booklist.index(book) - 1]
-            booklist = get_sorted_juan(prevbook)
-            return Number(booklist[-1])
-        # else:
-        return juanlist
-
-
-    def get_next_juan2(self, page):
-        '''给定经号T01n0002_001，返回T01n0002_002'''
-        # 重新生成标准经号
+        # print('page:', page)
         if not self.volume:
             pass  #raise 一个错误?
         number = f'{self.book}{self.tome}n{self.sutra}{self.yiyi}_{self.volume:03}'
         # # 对所有的book下的卷排序
         juanlist = get_sorted_juan(f'{self.book}{self.tome}')
-        idx = juanlist.index(number)
-        if 0 <= idx + page < len(juanlist):
-            return Number(juanlist[idx + page])
-        # else: tome + 1
-        # page = page - (len(juanlist) - idx) + 1
-        page = - page - idx
-        print(idx, page)
+        page = juanlist.index(number) - page
+        if 0 <= page < len(juanlist):
+            return Number(juanlist[page])
+        # else: tome - 1
         tomelist = (path.strip(self.book) for path in os.listdir(f'xml') if path.startswith(self.book))
         tomelist = [f'{self.book}{i}' for i in sorted(tomelist, key=int)]
         idx = tomelist.index(f'{self.book}{self.tome}')
-        #print(idx, page, len(tomelist))
-        # page<0 and 0 <= idx - 1 , page >0  and
-        if idx + 1 < len(tomelist):
+        if 0 <= idx - 1:
             nextbook = tomelist[idx - 1]
             juanlist = get_sorted_juan(nextbook)
-            return Number(juanlist[-page])
-        # else: book + 1
+            return Number(juanlist[page])
+        # else: book - 1
         return juanlist
 
 
@@ -204,11 +174,10 @@ def get_sorted_ce(book):
 title = 'LC07n0007_001'
 title = 'ZW02n0018a_001'
 title = 'T01n0098_001'
-title = 'T02n0099_001'
+# title = 'T02n0099_001'
 
 n = Number(title)
-print(n)
 #print(n.get_next_juan(-1), n.get_prev_juan(), n, n.get_next_juan(1), n.get_next_juan(2))
 #print(n.get_next_juan(-1), n.get_next_juan(1), n.get_next_juan(2))
-print(n.get_next_juan2(-1).url, n.url)
+print(n-1, n, n+1, n+2)
 #print(n.get_next_juan(10))
