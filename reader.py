@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-26 04:20:29
+# Last Modified: 2020-02-26 04:27:24
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -19,6 +19,7 @@ import gzip
 import json
 import time
 import datetime
+import pprint
 
 from bottle import get, post, response
 from bottle import route, run, static_file, default_app
@@ -28,14 +29,9 @@ from bottle import jinja2_view as view
 from bottle import request
 from bottle import GeventServer
 
-# from whoosh.index import open_dir
-# from whoosh.qparser import QueryParser
-# from whoosh.query import *
 # import psycopg2
-# import opencc
 import jieba
 
-import pprint
 from libhan import hk2iast, read_menu_file, HKdict2iast
 from libhan import Search
 from libhan import STConvertor
@@ -89,17 +85,11 @@ def listdir():
 @route('/prev/:sutra')
 def getf_prev_juan(sutra):
     sutra = Number(sutra) - 1
-    # sutra = get_prev_juan(sutra)
-    # book = sutra.split('n')[0]
-    # url = f"/xml/{book}/{sutra}.xml"  # T01n0002_001.xml
     redirect(sutra.url)
 
 @route('/next/:sutra')
 def getf_next_juan(sutra):
     sutra = Number(sutra) + 1
-    # sutra = get_next_juan(sutra)
-    # book = sutra.split('n')[0]
-    # url = f"/xml/{book}/{sutra}.xml"  # T01n0002_001.xml
     redirect(sutra.url)
 
 # # 浏览器渲染，也可以
@@ -171,11 +161,12 @@ def submenu1(bulei):
 
     # 跳转到正文
     if not menu:
-        sutra = bulei[-1].split()[0]  # T01n0002
-        zang = sutra.split('n')[0]              # T01
-        juan = get_first_juan(sutra)           # 001
-        url = f"/xml/{zang}/{sutra}_{juan:03}.xml"  # T01n0002_001.xml
-        redirect(url)
+        sutra = Number(bulei[-1].split()[0])  # T01n0002
+        # sutra = bulei[-1].split()[0]  # T01n0002
+        # zang = sutra.split('n')[0]              # T01
+        # juan = get_first_juan(sutra)           # 001
+        # url = f"/xml/{zang}/{sutra}_{juan:03}.xml"  # T01n0002_001.xml
+        redirect(sutra.url)
     return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大正藏部類', 'root':root}
 
 @route('/cebie/:bulei#.+#')
@@ -195,17 +186,18 @@ def submenu2(bulei):
 
     # 跳转到正文
     if not menu:
-        sutra = bulei[-1].split()[0]  # T01n0002
-        zang = sutra.split('n')[0]              # T01
-        if '_' in sutra:
-            sutra, juan = sutra.split('_')
-        else:
-            # 查找第一卷(有些不是从第一卷开始的)
-            juan = get_first_juan(sutra)              # 001
-            if not juan:
-                abort(404, f'没找到文件: /xml/{zang}/{sutra}_*.xml')
-        url = f"/xml/{zang}/{sutra}_{juan:03}.xml"  # T01n0002_001.xml
-        redirect(url)
+        sutra = Number(bulei[-1].split()[0])  # T01n0002
+        # sutra = bulei[-1].split()[0]  # T01n0002
+        # zang = sutra.split('n')[0]              # T01
+        # if '_' in sutra:
+        #     sutra, juan = sutra.split('_')
+        # else:
+        #     # 查找第一卷(有些不是从第一卷开始的)
+        #     juan = get_first_juan(sutra)              # 001
+        #     if not juan:
+        #         abort(404, f'没找到文件: /xml/{zang}/{sutra}_*.xml')
+        # url = f"/xml/{zang}/{sutra}_{juan:03}.xml"  # T01n0002_001.xml
+        redirect(sutra.url)
     return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大正藏冊別', 'root': root}
 
 
@@ -226,11 +218,12 @@ def submenu3(bulei):
 
     # 跳转到正文
     if not menu:
-        sutra = bulei[-1].split()[0]  # T01n0002
-        zang = sutra.split('n')[0]              # T01
-        juan = get_first_juan(sutra)           # 001
-        url = f"/xml/{zang}/{sutra}_{juan:03}.xml"  # T01n0002_001.xml
-        redirect(url)
+        sutra = Number(bulei[-1].split()[0])  # T01n0002
+        # sutra = bulei[-1].split()[0]  # T01n0002
+        # zang = sutra.split('n')[0]              # T01
+        # juan = get_first_juan(sutra)           # 001
+        # url = f"/xml/{zang}/{sutra}_{juan:03}.xml"  # T01n0002_001.xml
+        redirect(sutra.url)
     return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大衆閲藏5.4版', 'root':root}
 
 @route('/fyjs/:bulei#.+#')
