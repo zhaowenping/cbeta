@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-25 00:21:38
+# Last Modified: 2020-02-25 19:45:34
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -33,6 +33,7 @@ import requests
 
 
 print('调用函数库')
+PATH = "/home/zhaowp/cbeta/cbeta"
 
 
 def rm_html_tag(title):
@@ -333,6 +334,7 @@ def grep(filepath, *keyword):
     return line
 
 sch_db = []
+# with open(os.path.join(PATH, "idx/sutra_sch.lst")) as fd:
 with open("idx/sutra_sch.lst") as fd:
     for line in fd:
         line = line.strip().split()[0]
