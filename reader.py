@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-26 04:27:24
+# Last Modified: 2020-02-26 07:41:43
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -42,7 +42,7 @@ from libhan import make_url, make_url2
 
 from libhan import lookup, lookinkangxi, lookinsa, zhuyin
 from libhan import unihan
-from libhan import Number  # , get_prev_juan, get_next_juan
+from libhan import Number
 from libhan import get_first_juan
 
 # from xsltproc import xsltproc, XSLT
@@ -73,13 +73,6 @@ def server_static(filename):
 def server_xml(filename):
     return static_file(filename, root='xml')
 
-
-def listdir():
-    sutras = []
-    for path in os.listdir('xml/{ye}'):
-        if path.startswith(sutra):
-            sutras.append(path)
-    sutra.sort()
 
 # 跳转上一卷/下一卷
 @route('/prev/:sutra')
@@ -243,27 +236,28 @@ def submenu4(bulei):
 
     # 跳转到正文
     if not menu:
-        sutra = bulei[-1].split()[0]  # T01n0002
-        zang = sutra.split('n')[0]              # T01
-        para = ''
+        sutra = Number(bulei[-1].split()[0])  # T01n0002
+        # sutra = bulei[-1].split()[0]  # T01n0002
+        # zang = sutra.split('n')[0]              # T01
+        # para = ''
 
-        if '_' in sutra:
-            sutra, juan = sutra.split('_')
-            if '#' in juan:
-                juan, para = sutra.split('#')
-            juan = int(juan)
-        else:
-            # 查找第一卷(有些不是从第一卷开始的)
-            juan = get_first_juan(sutra)              # 001
-            if not juan:
-                abort(404, f'没找到文件: /xml/{zang}/{sutra}_*.xml')
+        # if '_' in sutra:
+        #     sutra, juan = sutra.split('_')
+        #     if '#' in juan:
+        #         juan, para = sutra.split('#')
+        #     juan = int(juan)
+        # else:
+        #     # 查找第一卷(有些不是从第一卷开始的)
+        #     juan = get_first_juan(sutra)              # 001
+        #     if not juan:
+        #         abort(404, f'没找到文件: /xml/{zang}/{sutra}_*.xml')
 
-        if para:
-            url = f"/xml/{zang}/{sutra}_{juan:03}.xml#{para}"  # T01n0002_001.xml
-        else:
-            url = f"/xml/{zang}/{sutra}_{juan:03}.xml"  # T01n0002_001.xml
+        # if para:
+        #     url = f"/xml/{zang}/{sutra}_{juan:03}.xml#{para}"  # T01n0002_001.xml
+        # else:
+        #     url = f"/xml/{zang}/{sutra}_{juan:03}.xml"  # T01n0002_001.xml
 
-        redirect(url)
+        redirect(sutra.url)
     return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大德長老居士推薦目錄', 'root':root}
 
 
@@ -375,18 +369,20 @@ def searchmulu():
     for idx in ss.search(title):
         title0 = idx
         hl = ss.titles[idx]
-        zang = idx.split('n')[0]              # T01
-        if '#' in idx:
-            idx, anchor = idx.split('#')
-            if 'p' in anchor:
-                anchor = anchor.strip('p')
-            an = f"/xml/{zang}/{idx}.xml#{anchor}"  # T01n0002_001.xml
-        elif '_' in idx:
-            an = f"/xml/{zang}/{idx}.xml"  # T01n0002_001.xml
-        else:
-            juan = get_first_juan(idx)           # 001
-            an = f"/xml/{zang}/{idx}_{juan:03}.xml"  # T01n0002_001.xml
-        results.append({'hl': hl, 'an':an, 'title':title0, 'author':''})
+        sutra = Number(idx)
+        # zang = idx.split('n')[0]              # T01
+        # if '#' in idx:
+        #     idx, anchor = idx.split('#')
+        #     if 'p' in anchor:
+        #         anchor = anchor.strip('p')
+        #     an = f"/xml/{zang}/{idx}.xml#{anchor}"  # T01n0002_001.xml
+        # elif '_' in idx:
+        #     an = f"/xml/{zang}/{idx}.xml"  # T01n0002_001.xml
+        # else:
+        #     juan = get_first_juan(idx)           # 001
+        #     an = f"/xml/{zang}/{idx}_{juan:03}.xml"  # T01n0002_001.xml
+        # results.append({'hl': hl, 'an':an, 'title':title0, 'author':''})
+        results.append({'hl': hl, 'an':sutra.url, 'title':title0, 'author':''})
     if request.method == "GET":
         # 0个结果页面不动, 多个结果自己选择
         if len(results) == 0:
@@ -399,17 +395,15 @@ def searchmulu():
 
 # 搜索！
 
-# qp = QueryParser("content", ix.schema)
-
 @get('/search')
 @view('temp/search.jinja2')
 def search_post():
     content = request.GET.content
-    print('搜索: ', content)
+    # print('搜索: ', content)
     if not content: return {}
     if convert.detect(content)['confidence'] == 's':
         content = convert.s2t(content)
-    print('搜索: ', content)
+    # print('搜索: ', content)
     # stop_words = frozenset("不無一是有之者如法為故生此佛所三以二人云也於中若得心大")
     # content = ''.join(set(content)-stop_words)
     # print(('content', content))

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-26 04:18:43
+# Last Modified: 2020-02-26 07:36:04
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -182,12 +182,12 @@ def read_menu_file(sutra_list):
                 continue
         return menu
 
-def ls(pattern):
-    result = []
-    for path in os.listdir(pattern):
-        if path.startswith(sutra) and re.match(pattern, path):
-            result.append(path.split('_')[1][:-4])
-    return result
+# def ls(pattern):
+#     result = []
+#     for path in os.listdir(pattern):
+#         if path.startswith(sutra) and re.match(pattern, path):
+#             result.append(path.split('_')[1][:-4])
+#     return result
 
 
 def normalize_text(ctx):
@@ -225,17 +225,18 @@ def get_first_juan(number):
         juan = 0
     return juan
 
-# lb anchor 0607a18  #p0481a25
-# pb anchor T02.0125.0603c
+# lb_anchor 0607a18  #p0481a25
+# pb_anchor T02.0125.0603c
 @total_ordering
 class Number:
     '''经号类: T01n0002a_002'''
     def __init__(self, n):
-        self.book, self.tome, self.sutra, self.yiyi, self.volume = None, '', '', '', 0
-        r = re.findall(r'([A-Z]{1,2})(\d{2,3})n(\w\d{3})([a-zA-Z])?(?:_(\d{3}))?', n)
+        self.book, self.tome, self.sutra, self.yiyi, self.volume, self.anchor = None, '', '', '', 0, ''
+        # r = re.findall(r'([A-Z]{1,2})(\d{2,3})n(\w\d{3})([a-zA-Z])?(?:_(\d{3}))?', n)
+        r = re.findall(r'([A-Z]{1,2})(\d{2,3})n(\w\d{3})([a-zA-Z])?(?:_(\d{3}))?(?:#p(\w\d{3}[abc]\d\d))?', n)
         if r:
-            self.book, tome, self.sutra, self.yiyi, self.volume = r[0]
-            self.volume = 0 if not self.volume else int(self.volume)
+            self.book, tome, self.sutra, self.yiyi, volume, self.anchor = r[0]
+            self.volume = 0 if not volume else int(volume)
             self.n = 2
             if self.book in {'A', 'C', 'G', 'GA', 'GB', 'L', 'M', 'P', 'U'}:
                 self.n = 3
@@ -272,7 +273,13 @@ class Number:
     @property
     def url(self):
         if self.volume:
-            return f'/xml/{self.book}{self.tome}/{self.book}{self.tome}n{self.sutra}{self.yiyi}_{self.volume:03}.xml'
+            volume = self.volume
+        else:
+            volume = self.get_first_juan()
+        if self.anchor:
+            return f'/xml/{self.book}{self.tome}/{self.book}{self.tome}n{self.sutra}{self.yiyi}_{volume:03}.xml#{self.anchor}'
+        else:
+            return f'/xml/{self.book}{self.tome}/{self.book}{self.tome}n{self.sutra}{self.yiyi}_{volume:03}.xml'
 
     @property
     def url_with_anchor(self):
@@ -358,71 +365,6 @@ def get_sorted_juan(book):
     juanlist = [f'{book}n{i[0]}_{i[1]:0>3}' for i in juanlist]
     return juanlist
 
-# def get_sorted_ce(book):
-#     # 获得全部book(T01)下的所有排序好的册号列表(T01,T02,T03,T04...)
-#     booklist = []
-#     bookhead = re.sub('[0-9]*', '', book)
-#     for path in os.listdir(f'xml'):
-#         if path.startswith(bookhead):
-#             booklist.append(path.strip(bookhead))
-#     booklist.sort(key=int)
-#     booklist = [f'{bookhead}{i}' for i in booklist]
-#     return booklist
-
-# def get_next_juan(number):
-#     '''给定经号T01n0002_001，返回T01n0002_002'''
-#     book = number.split('n')[0]
-#     # 重新生成标准经号
-#     jinghao, juan = number.split('_')
-#     number = f'{jinghao}_{juan:0>3}'
-#     # # 对所有的book下的卷排序
-#     juanlist = get_sorted_juan(book)
-#
-#     if number != juanlist[-1]:
-#         return juanlist[juanlist.index(number) + 1]
-#     # else: book + 1
-#     booklist = []
-#     bookhead = re.sub('[0-9]*', '', book)
-#     for path in os.listdir(f'xml'):
-#         if path.startswith(bookhead):
-#             booklist.append(path.strip(bookhead))
-#     booklist.sort(key=int)
-#     booklist = [f'{bookhead}{i}' for i in booklist]
-#     if book != booklist[-1]:
-#         nextbook = booklist[booklist.index(book) + 1]
-#         booklist = get_sorted_juan(nextbook)
-#         return booklist[0]
-#     # else:
-#     return juanlist
-#
-#
-# def get_prev_juan(number):
-#     '''给定经号T01n0002_002，返回T01n0002_001'''
-#     book = number.split('n')[0]
-#     # 重新生成标准经号
-#     jinghao, juan = number.split('_')
-#     number = f'{jinghao}_{juan:0>3}'
-#     # 对所有的book下的卷排序
-#     juanlist = get_sorted_juan(book)
-#
-#     if number != juanlist[0]:
-#         return juanlist[juanlist.index(number) - 1]
-#     # else: book - 1
-#     # 获得全部排序号的book列表
-#     booklist = []
-#     bookhead = re.sub('[0-9]*', '', book)
-#     for path in os.listdir(f'xml'):
-#         if path.startswith(bookhead):
-#             booklist.append(path.strip(bookhead))
-#     booklist.sort(key=int)
-#     booklist = [f'{bookhead}{i}' for i in booklist]
-#     if book != booklist[0]:
-#         prevbook = booklist[booklist.index(book) - 1]
-#         booklist = get_sorted_juan(prevbook)
-#         return booklist[-1]
-#     # else:
-#     return juanlist
-#
 
 def grep(filepath, *keyword):
     '''对Linux命令grep的模拟，返回一行'''
