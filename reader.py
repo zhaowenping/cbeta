@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-24 04:44:20
+# Last Modified: 2020-02-26 04:20:29
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -46,7 +46,7 @@ from libhan import make_url, make_url2
 
 from libhan import lookup, lookinkangxi, lookinsa, zhuyin
 from libhan import unihan
-from libhan import get_prev_juan, get_next_juan
+from libhan import Number  # , get_prev_juan, get_next_juan
 from libhan import get_first_juan
 
 # from xsltproc import xsltproc, XSLT
@@ -88,17 +88,19 @@ def listdir():
 # 跳转上一卷/下一卷
 @route('/prev/:sutra')
 def getf_prev_juan(sutra):
-    sutra = get_prev_juan(sutra)
-    book = sutra.split('n')[0]
-    url = f"/xml/{book}/{sutra}.xml"  # T01n0002_001.xml
-    redirect(url)
+    sutra = Number(sutra) - 1
+    # sutra = get_prev_juan(sutra)
+    # book = sutra.split('n')[0]
+    # url = f"/xml/{book}/{sutra}.xml"  # T01n0002_001.xml
+    redirect(sutra.url)
 
 @route('/next/:sutra')
 def getf_next_juan(sutra):
-    sutra = get_next_juan(sutra)
-    book = sutra.split('n')[0]
-    url = f"/xml/{book}/{sutra}.xml"  # T01n0002_001.xml
-    redirect(url)
+    sutra = Number(sutra) + 1
+    # sutra = get_next_juan(sutra)
+    # book = sutra.split('n')[0]
+    # url = f"/xml/{book}/{sutra}.xml"  # T01n0002_001.xml
+    redirect(sutra.url)
 
 # # 浏览器渲染，也可以
 # @route('/xml/:n')
