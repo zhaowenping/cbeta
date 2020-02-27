@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-26 07:36:04
+# Last Modified: 2020-02-26 19:20:58
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -191,7 +191,7 @@ def read_menu_file(sutra_list):
 
 
 def normalize_text(ctx):
-    '''标准化文本'''
+    '''标准化文本(只适合繁体字)'''
     # 去除错误的标点符号
     tt = {0xff0e: 0x00b7,
           0x2027: 0x00b7,

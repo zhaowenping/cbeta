@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-26 07:41:43
+# Last Modified: 2020-02-26 19:25:07
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -35,9 +35,8 @@ import jieba
 from libhan import hk2iast, read_menu_file, HKdict2iast
 from libhan import Search
 from libhan import STConvertor
-from libhan import rm_variant
+from libhan import normalize_text
 from libhan import fullsearch
-from libhan import rm_ditto_mark
 from libhan import make_url, make_url2
 
 from libhan import lookup, lookinkangxi, lookinsa, zhuyin
@@ -155,10 +154,6 @@ def submenu1(bulei):
     # 跳转到正文
     if not menu:
         sutra = Number(bulei[-1].split()[0])  # T01n0002
-        # sutra = bulei[-1].split()[0]  # T01n0002
-        # zang = sutra.split('n')[0]              # T01
-        # juan = get_first_juan(sutra)           # 001
-        # url = f"/xml/{zang}/{sutra}_{juan:03}.xml"  # T01n0002_001.xml
         redirect(sutra.url)
     return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大正藏部類', 'root':root}
 
@@ -180,16 +175,7 @@ def submenu2(bulei):
     # 跳转到正文
     if not menu:
         sutra = Number(bulei[-1].split()[0])  # T01n0002
-        # sutra = bulei[-1].split()[0]  # T01n0002
-        # zang = sutra.split('n')[0]              # T01
-        # if '_' in sutra:
-        #     sutra, juan = sutra.split('_')
-        # else:
-        #     # 查找第一卷(有些不是从第一卷开始的)
-        #     juan = get_first_juan(sutra)              # 001
-        #     if not juan:
         #         abort(404, f'没找到文件: /xml/{zang}/{sutra}_*.xml')
-        # url = f"/xml/{zang}/{sutra}_{juan:03}.xml"  # T01n0002_001.xml
         redirect(sutra.url)
     return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大正藏冊別', 'root': root}
 
@@ -212,10 +198,6 @@ def submenu3(bulei):
     # 跳转到正文
     if not menu:
         sutra = Number(bulei[-1].split()[0])  # T01n0002
-        # sutra = bulei[-1].split()[0]  # T01n0002
-        # zang = sutra.split('n')[0]              # T01
-        # juan = get_first_juan(sutra)           # 001
-        # url = f"/xml/{zang}/{sutra}_{juan:03}.xml"  # T01n0002_001.xml
         redirect(sutra.url)
     return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大衆閲藏5.4版', 'root':root}
 
@@ -237,26 +219,6 @@ def submenu4(bulei):
     # 跳转到正文
     if not menu:
         sutra = Number(bulei[-1].split()[0])  # T01n0002
-        # sutra = bulei[-1].split()[0]  # T01n0002
-        # zang = sutra.split('n')[0]              # T01
-        # para = ''
-
-        # if '_' in sutra:
-        #     sutra, juan = sutra.split('_')
-        #     if '#' in juan:
-        #         juan, para = sutra.split('#')
-        #     juan = int(juan)
-        # else:
-        #     # 查找第一卷(有些不是从第一卷开始的)
-        #     juan = get_first_juan(sutra)              # 001
-        #     if not juan:
-        #         abort(404, f'没找到文件: /xml/{zang}/{sutra}_*.xml')
-
-        # if para:
-        #     url = f"/xml/{zang}/{sutra}_{juan:03}.xml#{para}"  # T01n0002_001.xml
-        # else:
-        #     url = f"/xml/{zang}/{sutra}_{juan:03}.xml"  # T01n0002_001.xml
-
         redirect(sutra.url)
     return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大德長老居士推薦目錄', 'root':root}
 
@@ -365,23 +327,11 @@ def searchmulu():
         title = convert.s2t(title)
     results = []
     if not title:
-        return {'results': results}
+        abort(304)
     for idx in ss.search(title):
         title0 = idx
         hl = ss.titles[idx]
         sutra = Number(idx)
-        # zang = idx.split('n')[0]              # T01
-        # if '#' in idx:
-        #     idx, anchor = idx.split('#')
-        #     if 'p' in anchor:
-        #         anchor = anchor.strip('p')
-        #     an = f"/xml/{zang}/{idx}.xml#{anchor}"  # T01n0002_001.xml
-        # elif '_' in idx:
-        #     an = f"/xml/{zang}/{idx}.xml"  # T01n0002_001.xml
-        # else:
-        #     juan = get_first_juan(idx)           # 001
-        #     an = f"/xml/{zang}/{idx}_{juan:03}.xml"  # T01n0002_001.xml
-        # results.append({'hl': hl, 'an':an, 'title':title0, 'author':''})
         results.append({'hl': hl, 'an':sutra.url, 'title':title0, 'author':''})
     if request.method == "GET":
         # 0个结果页面不动, 多个结果自己选择
@@ -674,9 +624,7 @@ def zh(filename):
     # print(honorific)
     content = re.sub(f'({honorific})', r'<persName>\1</persName>', content)
     # 简体繁体双引号, 单引号切换
-    content = content.translate({0x300c: 0x201c, 0x300d: 0x201d, 0x300e: 0x2018, 0x300f: 0x2019})
-    # content = opencc.convert(content, config='t2s.json')
-    content = rm_ditto_mark(content)
+    content = normalize_text(content)
     content = convert.t2s(content)
     print(filename)
     response.content_type = 'text/xml'
@@ -707,7 +655,7 @@ def t2s_post():
     # conn.close()
 
     # 去除重复符号
-    scontent = rm_ditto_mark(tcontent)
+    scontent = normalize_text(tcontent)
     scontent = convert.t2s(scontent, onlyURO=False)
     with open('t2s.txt', 'a+') as fd:
         fd.write(tcontent)
@@ -740,11 +688,7 @@ def zh_TW(filename):
     honorific = '|'.join(sorted(honorific, key=len, reverse=True))
     # print(honorific)
     content = re.sub(f'({honorific})', r'<persName>\1</persName>', content)
-    # 简体繁体双引号, 单引号切换
-    # content = content.translate({0x300c: 0x201c, 0x300d: 0x201d, 0x300e: 0x2018, 0x300f: 0x2019})
-    # content = opencc.convert(content, config='t2s.json')
-    content = rm_variant(content)
-    content = rm_ditto_mark(content)
+    content = normalize_text(content)
     print(filename)
     response.content_type = 'text/xml'
     return content
@@ -754,6 +698,7 @@ def zh_TW(filename):
 def zhx(filename):
     '''从目录简体版转到简体阅读章节'''
     jing = filename.split()[0]
+    # sutra = Number(jing)
     zang = jing.split('n')[0]
     juan = get_first_juan(jing)
     url = f"/zh/xml/{zang}/{jing}_{juan:03}.xml"
