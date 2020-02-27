@@ -821,14 +821,14 @@
 			abh03m11.mul19 Dhammapaccanī yā nulome dukadukapaṭṭhā naṃ
 02. Aṭṭhakathā 義註
 	Vinaya piṭaka (aṭṭhakathā)
-		vin01a.att Pārājikakaṇḍa-aṭṭhakathā
+		vin01a.att Pārājikakaṇḍa-aṭṭhakathā 波羅夷注釋
 			atthakatha_vin01a.att0 Ganthā rambhakathā
 			atthakatha_vin01a.att1 Verañjakaṇḍavaṇṇanā
 			atthakatha_vin01a.att2 1. Pā rā jikakaṇḍaṃ
 			atthakatha_vin01a.att3 2. Saṅghā disesakaṇḍaṃ
 			atthakatha_vin01a.att4 3. Aniyatakaṇḍaṃ
 			atthakatha_vin01a.att5 4. Nissaggiyakaṇḍaṃ
-		vin02a1.att Pācittiya-aṭṭhakathā
+		vin02a1.att Pācittiya-aṭṭhakathā 波逸提注釋
 			atthakatha_vin02a1.att0 5. Pā cittiyakaṇḍaṃ
 			atthakatha_vin02a1.att1 6. Pā ṭidesanī yakaṇḍaṃ
 			atthakatha_vin02a1.att2 7. Sekhiyakaṇḍaṃ
@@ -838,7 +838,7 @@
 			atthakatha_vin02a1.att6 3. Nissaggiyakaṇḍaṃ (bhikkhunī vibhaṅgavaṇṇanā )
 			atthakatha_vin02a1.att7 4. Pā cittiyakaṇḍaṃ (bhikkhunī vibhaṅgavaṇṇanā )
 			atthakatha_vin02a1.att8 5. Pā ṭidesanī yakaṇḍaṃ (bhikkhunī vibhaṅgavaṇṇanā )
-		vin02a2.att Mahāvagga-aṭṭhakathā
+		vin02a2.att Mahāvagga-aṭṭhakathā 大品注釋
 			atthakatha_vin02a2.att0 1. Mahā khandhakaṃ
 			atthakatha_vin02a2.att1 2. Uposathakkhandhakaṃ
 			atthakatha_vin02a2.att2 3. Vassū panā yikakkhandhakaṃ
@@ -849,7 +849,7 @@
 			atthakatha_vin02a2.att7 8. Cī varakkhandhakaṃ
 			atthakatha_vin02a2.att8 9. Campeyyakkhandhakaṃ
 			atthakatha_vin02a2.att9 10. Kosambakakkhandhakaṃ
-		vin02a3.att Cūḷavagga-aṭṭhakathā
+		vin02a3.att Cūḷavagga-aṭṭhakathā 大品注釋
 			atthakatha_vin02a3.att0 1. Kammakkhandhakaṃ
 			atthakatha_vin02a3.att1 2. Pā rivā sikakkhandhakaṃ
 			atthakatha_vin02a3.att2 3. Samuccayakkhandhakaṃ
@@ -862,7 +862,7 @@
 			atthakatha_vin02a3.att9 10. Bhikkhunikkhandhakaṃ
 			atthakatha_vin02a3.att10 11. Pañcasatikakkhandhakaṃ
 			atthakatha_vin02a3.att11 12. Sattasatikakkhandhakaṃ
-		vin02a4.att Parivāra-aṭṭhakathā
+		vin02a4.att Parivāra-aṭṭhakathā 附隨注釋
 			atthakatha_vin02a4.att0 Soḷasamahā vā ro
 			atthakatha_vin02a4.att1 Samuṭṭhā nasī savaṇṇanā 
 			atthakatha_vin02a4.att2 Antarapeyyā laṃ
@@ -1295,31 +1295,31 @@
 			atthakatha_abh03a.att64 13-18. Anulomapaccanī yapaṭṭhā navaṇṇanā 
 			atthakatha_abh03a.att65 19-24. Paccanī yā nulomapaṭṭhā navaṇṇanā 
 03. Tīkā 複註
-	Vinaya piṭaka (ṭīkā)
-		src="./cscd/vin01t1.tik.toc.xml" text="Sāratthadīpanī-ṭīkā-1"
+	Vinaya piṭaka (ṭīkā) 律疏
+		src="./cscd/vin01t1.tik.toc.xml" text="Sāratthadīpanī-ṭīkā-1" 心義燈(善見律疏) by Bhadantacariya Sariputta(Lavkan)
 		src="./cscd/vin01t2.tik.toc.xml" text="Sāratthadīpanī-ṭīkā-2"
 		src="./cscd/vin02t.tik.toc.xml" text="Sāratthadīpanī-ṭīkā-3"
 		src="./cscd/vin04t.nrf.toc.xml" text="Dvemātikāpāḷi"
-		src="./cscd/vin05t.nrf.toc.xml" text="Vinayasaṅgaha-aṭṭhakathā"
-		src="./cscd/vin06t.nrf.toc.xml" text="Vajirabuddhi-ṭīkā"
-		src="./cscd/vin07t.nrf.toc.xml" text="Vimativinodanī-ṭīkā"
-		src="./cscd/vin08t.nrf.toc.xml" text="Vinayālaṅkāra-ṭīkā"
-		src="./cscd/vin09t.nrf.toc.xml" text="Kaṅkhāvitaraṇīpurāṇa-ṭīkā"
+		src="./cscd/vin05t.nrf.toc.xml" text="Vinayasaṅgaha-aṭṭhakathā" 律攝義註(Palimuttakavinayavinicchayasavgaha) by Bhadantacariya Sariputta (Lavkan)
+		src="./cscd/vin06t.nrf.toc.xml" text="Vajirabuddhi-ṭīkā" 金剛覺疏(善見律疏) by Bhadantacariya Vajirabuddhi
+		src="./cscd/vin07t.nrf.toc.xml" text="Vimativinodanī-ṭīkā" 猶豫排除(善見律疏) by Bhadantacariya Udumabaravihara Mahakassapa (Lavkan)
+		src="./cscd/vin08t.nrf.toc.xml" text="Vinayālaṅkāra-ṭīkā" 律帆疏
+		src="./cscd/vin09t.nrf.toc.xml" text="Kaṅkhāvitaraṇīpurāṇa-ṭīkā" 《析疑》古新疏
 		src="./cscd/vin10t.nrf.toc.xml" text="Vinayavinicchaya-uttaravinicchaya"
-		src="./cscd/vin11t.nrf.toc.xml" text="Vinayavinicchaya-ṭīkā"
-		src="./cscd/vin12t.nrf.toc.xml" text="Pācityādiyojanāpāḷi"
-		src="./cscd/vin13t.nrf.toc.xml" text="Khuddasikkhā-mūlasikkhā"
+		src="./cscd/vin11t.nrf.toc.xml" text="Vinayavinicchaya-ṭīkā" 律裁定疏
+		src="./cscd/vin12t.nrf.toc.xml" text="Pācityādiyojanāpāḷi" 波逸提等解說
+		src="./cscd/vin13t.nrf.toc.xml" text="Khuddasikkhā-mūlasikkhā" 微小戒與根本戒
 	Sutta piṭaka (ṭīkā)
-		Dīghanikāya (ṭīkā)
-			src="./cscd/s0101t.tik.toc.xml" text="Sīlakkhandhavagga-ṭīkā"
-			src="./cscd/s0102t.tik.toc.xml" text="Mahāvagga-ṭīkā"
-			src="./cscd/s0103t.tik.toc.xml" text="Pāthikavagga-ṭīkā"
-			src="./cscd/s0104t.nrf.toc.xml" text="Sīlakkhandhavagga-abhinavaṭīkā-1"
+		Dīghanikāya (ṭīkā) 長部注釋《吉祥悅意》【Sumavgalavilāsinī】
+			src="./cscd/s0101t.tik.toc.xml" text="Sīlakkhandhavagga-ṭīkā" 長部戒蘊品注釋
+			src="./cscd/s0102t.tik.toc.xml" text="Mahāvagga-ṭīkā" 長部大品注釋
+			src="./cscd/s0103t.tik.toc.xml" text="Pāthikavagga-ṭīkā" 長部誦品注釋
+			src="./cscd/s0104t.nrf.toc.xml" text="Sīlakkhandhavagga-abhinavaṭīkā-1" 長部新疏
 			src="./cscd/s0105t.nrf.toc.xml" text="Sīlakkhandhavagga-abhinavaṭīkā-2"
-		Majjhimanikāya (ṭīkā)
-			src="./cscd/s0201t.tik.toc.xml" text="Mūlapaṇṇāsa-ṭīkā"
-			src="./cscd/s0202t.tik.toc.xml" text="Majjhimapaṇṇāsa-ṭīkā"
-			src="./cscd/s0203t.tik.toc.xml" text="Uparipaṇṇāsa-ṭīkā"
+		Majjhimanikāya (ṭīkā) 中部注釋《破除疑障》【Papañcasudani】by Bhadantacariya BUDDHAGHOSA(佛音﹐5 A.D.)
+			src="./cscd/s0201t.tik.toc.xml" text="Mūlapaṇṇāsa-ṭīkā" 中部根本五十經注釋
+			src="./cscd/s0202t.tik.toc.xml" text="Majjhimapaṇṇāsa-ṭīkā" 中部中分五十經注釋
+			src="./cscd/s0203t.tik.toc.xml" text="Uparipaṇṇāsa-ṭīkā" 中部後分五十經注釋
 		Saṃyuttanikāya (ṭīkā)
 			src="./cscd/s0301t.tik.toc.xml" text="Sagāthāvagga-ṭīkā"
 			src="./cscd/s0302t.tik.toc.xml" text="Nidānavagga-ṭīkā"
@@ -1427,7 +1427,7 @@
 			tika_abh09t.nrf13 7. Paṭṭhā namā tikatthavaṇṇanā 
 04. Anya  複複註
 	Visuddhimagga 清淨道論
-		e0101n.mul Visuddhimagga
+		e0101n.mul Visuddhimagga 清淨道論
 			anya_e0101n.mul0 Nidā nā dikathā 序論
 			anya_e0101n.mul1 1. Sī laniddeso 第一說戒品
 			anya_e0101n.mul2 2. Dhutaṅganiddeso 第二說頭陀支品
@@ -1452,7 +1452,7 @@
 			anya_e0102n.mul9 21. Paṭipadā ñā ṇadassanavisuddhiniddeso 第二十一說行道智見清淨品
 			anya_e0102n.mul10 22. Ñā ṇadassanavisuddhiniddeso 第二十二說智見清淨品
 			anya_e0102n.mul11 23. Paññā bhā vanā nisaṃsaniddeso 第二十三說修慧功德品
-		e0103n.att Visuddhimagga-mahāṭīkā
+		e0103n.att Visuddhimagga-mahāṭīkā 清淨道論大疏
 			anya_e0103n.att0 Nidā nā dikathā vaṇṇanā 
 			anya_e0103n.att1 1. Sī laniddesavaṇṇanā 
 			anya_e0103n.att2 2. Dhutaṅganiddesavaṇṇanā 
@@ -1477,7 +1477,7 @@
 			anya_e0104n.att9 21. Paṭipadā ñā ṇadassanavisuddhiniddesavaṇṇanā 
 			anya_e0104n.att10 22. Ñā ṇadassanavisuddhiniddesavaṇṇanā 
 			anya_e0104n.att11 23. Paññā bhā vanā nisaṃsaniddesavaṇṇanā 
-		e0105n.nrf Visuddhimagga nidānakathā
+		e0105n.nrf Visuddhimagga nidānakathā 清淨道論因緣論
 			anya_e0105n.nrf0 Mahā vaṃsa-buddhaghosakathā 
 			anya_e0105n.nrf1 Jā tidesavicā raṇā 
 			anya_e0105n.nrf2 Brā hmaṇakulavicā raṇā 

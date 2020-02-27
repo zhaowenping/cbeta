@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-26 22:49:31
+# Last Modified: 2020-02-27 06:01:19
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -281,13 +281,6 @@ class Number:
         else:
             return f'/xml/{self.book}{self.tome}/{self.book}{self.tome}n{self.sutra}{self.yiyi}_{volume:03}.xml'
 
-    @property
-    def url_with_anchor(self):
-        if self.anchor:
-            return f'/xml/{self.book}{self.tome}/{self.book}{self.tome}n{self.sutra}{self.yiyi}_{self.volume:03}.xml#{self.anchor}'
-        if self.volume:
-            return f'/xml/{self.book}{self.tome}/{self.book}{self.tome}n{self.sutra}{self.yiyi}_{self.volume:03}.xml'
-
     def get_first_juan(self):
         '''给定经号T01n0002，返回所有排序后的卷['001', '002', ...]中的第一个
         返回值是一个数字，如果没有找到则返回0'''
@@ -394,9 +387,9 @@ with open("idx/sutra_sch.lst") as fd:
 # 《大正藏》第40卷第16頁下
 # 雜阿含經一五·一七
 # 增一阿含二一·六（大正二·六〇三c）  <pb n="0603c" ed="T" xml:id="T02.0125.0603c"/>
-jinghaopatten4 = re.compile(r'(《?[中乾佛作傳典刊刻北卍南印叢史品善嘉國圖城外大學宋家寺山師彙志房拓教文新書朝本樂正武永法洪漢片獻珍百石經編纂續脩興華著藏補譯趙遺金隆集順館高麗传丛国图学师汇书乐汉献经编续修兴华补译赵遗顺馆丽]+》?)第?([\d零〇一二三四五六七八九]{1,3})(?:卷|卷第|\u00b7)([\d零〇一二三四五六七八九]{1,3})[頁|页]?([上中下abcABC])?')
+pbanchor_pattern = re.compile(r'(《?[中乾佛作傳典刊刻北卍南印叢史品善嘉國圖城外大學宋家寺山師彙志房拓教文新書朝本樂正武永法洪漢片獻珍百石經編纂續脩興華著藏補譯趙遺金隆集順館高麗传丛国图学师汇书乐汉献经编续修兴华补译赵遗顺馆丽]+》?)第?([\d零〇一二三四五六七八九]{1,3})(?:卷|卷第|\u00b7)([\d零〇一二三四五六七八九]{1,3})[頁|页]?([上中下abcABC])?')
 def make_url2(number):
-    tt = { ord('〇'): ord('0'), ord('零'): ord('0'), 0x25CB: ord('0'),
+    tt = { ord('〇'): ord('0'), ord('零'): ord('0'),
           ord('一'): ord('1'),
           ord('二'): ord('2'),
           ord('三'): ord('3'),
@@ -424,7 +417,7 @@ def make_url2(number):
     found = False
     book = 'T'
     anchor = ''
-    jinghao = jinghaopatten4.findall(number)
+    jinghao = pbanchor_pattern.findall(number)
     if jinghao:
         book, tome, page, abc = jinghao[0]
         page = '{:04}'.format(int(page.translate(tt)))
@@ -475,8 +468,7 @@ def make_url2(number):
                     found = True
     if not found:
         return None
-    # url = f'xml/{book}{tome}/{number}.xml#{anchor}'
-    url = f'xml/{book}{tome}/{number}.xml'
+    url = f'/xml/{book}{tome}/{number}.xml#{anchor}'
     return url
     # return (book, tome, sutra, j4, volume, anchor)
 
@@ -1045,26 +1037,6 @@ def lookup(word, dictionary=None, lang='hant', mohu=False):
 
 class Search:
     def __init__(self, norm=True):
-        # mulu = read_menu_file("static/sutra_sch.lst")
-        # #pprint.pprint(m['T 大正藏'])
-        # # d = mulu['T 大正藏']
-        # def walk(d, result=[]):
-        #     '''遍历目录树'''
-        #     for x in d:
-        #         if not d[x]:
-        #             result.append(x)
-        #         else:
-        #             walk(d[x], result)
-        #     return result
-
-
-        # result = walk(mulu)
-        # result = [i.split(maxsplit=2) for i in result]
-        # if norm:
-        #     titles = [(i[0], ' '.join((normalize_text(i[1]), i[2]))) for i in result]
-        # else:
-        #     titles = [(i[0], ' '.join((i[1], i[2]))) for i in result]
-
         titles = []
         with open("idx/sutra_sch.lst") as fd:
             for line in fd:
