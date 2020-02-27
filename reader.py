@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-26 19:25:07
+# Last Modified: 2020-02-26 23:06:26
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -41,7 +41,7 @@ from libhan import make_url, make_url2
 
 from libhan import lookup, lookinkangxi, lookinsa, zhuyin
 from libhan import unihan
-from libhan import Number
+from libhan import Number, rm_pun
 from libhan import get_first_juan
 
 # from xsltproc import xsltproc, XSLT
@@ -751,7 +751,7 @@ def ytz():
 
     return {'result': result}
 
-punct = re.compile(r"([\u3000-\u303f\ufe10-\uff0f\uff1a-\uffee])")
+# punct = re.compile(r"([\u3000-\u303f\ufe10-\uff0f\uff1a-\uffee])")
 
 from libhan import diff_ctx
 
@@ -791,7 +791,7 @@ def diff_post():
     # print(request.forms.punct)
     # print(request.forms.punct == 'true')
     if request.forms.punct == 'true':
-        lfile = punct.sub('', lfile)
+        lfile = rm_pun(lfile)
     with open('lfile.tmp', 'w') as fd:
         fd.write(lfile)
 
@@ -801,7 +801,7 @@ def diff_post():
         encoding = 'GB18030'
     rfile = rfile.decode(encoding, 'replace')
     if request.forms.punct == 'true':
-        rfile = punct.sub('', rfile)
+        rfile = rm_pun(rfile)
     with open('rfile.tmp', 'w') as fd:
         fd.write(rfile)
 

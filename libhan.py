@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-26 19:20:58
+# Last Modified: 2020-02-26 22:49:31
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -201,7 +201,7 @@ def normalize_text(ctx):
     # 去除两边空格及多余空格
     ctx = normalize_space(ctx)
     # 去除汉字链接符号
-    ctx = rm_joiner(ctx)
+    # ctx = rm_joiner(ctx)
     # 去除汉字重复符号
     ctx = rm_ditto_mark(ctx)
     # 去除异体字、异体词
@@ -490,13 +490,13 @@ def make_url2(number):
 # 模式9: '100,3', 't100,3', 100, t1000, t1000_001, 1333b
 # TODO: 大宝积经100
 jinghaopatten = re.compile(r'([A-Z]{1,2})(\d{2,3})n(\w\d{3})([a-zA-Z])?(?:_(\d{3}))?')
-jinghaopatten1 = re.compile(r'([a-zA-Z]{1,2})(\d{2,3})n(\w\d{3})([a-zA-Z])?(?:_(\d{3}))?(?:_p(\d{4}[abc]\d\d))?')
+jinghaopatten1 = re.compile(r'([a-zA-Z]{1,2})(\d{2,3})n(\w\d{3})([a-zA-Z])?(?:_(\d{3}))?(?:_p(\w\d{3}[abc]\d\d))?')
 jinghaopatten2 = re.compile(r'([a-zA-Z]{1,2})(\d{2,3}),\s*no\.\s*(\w\d{0,3})([a-zA-Z])?,\s*pp?\.\s*(\d+)([abc])(\d+)')
 jinghaopatten9 = re.compile(r'([a-zA-Z]{1,2})?(\w\d{0,3})([a-zA-Z])?(?:[\s,._\u3002\uff0c-]+(\d+)?)?')  # 全角逗号句号
 # jinghaopatten3 = re.compile(r'([\u3007\u3400-\u9FCB\U00020000-\U0002EBE0]+)[ \t,._\u3000\u3002\uff0c-]*(\d+)')
 def parse_number(title, guess_juan=False):
     '''所有的anchor都是lb标签的'''
-    print(title)
+    # print(title)
     book, tome, sutra, j4, volume, anchor = 'T', '', '', '', '', ''
     # book, tome, sutra, j4, volume, anchor
     #    T,   01,  0001,  a     001, p0001a01
