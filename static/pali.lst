@@ -1296,7 +1296,7 @@
 			atthakatha_abh03a.att65 19-24. Paccanī yā nulomapaṭṭhā navaṇṇanā 
 03. Tīkā 複註
 	Vinaya piṭaka (ṭīkā) 律疏
-		tika_vin01t1.tik Sāratthadīpanī-ṭīkā 心義燈(善見律疏) by Bhadantacariya Sariputta(Lavkan)
+		vin01t1.tik Sāratthadīpanī-ṭīkā 心義燈(善見律疏) by Bhadantacariya Sariputta(Lavkan)
 			tika_vin01t1.tik0 Ganthārambhakathā
 			tika_vin01t1.tik1 Verañjakaṇḍavaṇṇanā
 			tika_vin01t2.tik0 1. Pārājikakaṇḍaṃ
@@ -1351,16 +1351,260 @@
 			tika_vin02t.tik45 Aparadutiyagāthāsaṅgaṇikaṃ
 			tika_vin02t.tik46 Sedamocanagāthā
 			tika_vin02t.tik47 Pañcavaggo
-		tika_vin04t.nrf.toc  Dvemātikāpāḷi
-		tika_vin05t.nrf.toc  Vinayasaṅgaha-aṭṭhakathā 律攝義註(Palimuttakavinayavinicchayasavgaha) by Bhadantacariya Sariputta (Lavkan)
-		tika_vin06t.nrf.toc  Vajirabuddhi-ṭīkā 金剛覺疏(善見律疏) by Bhadantacariya Vajirabuddhi
-		tika_vin07t.nrf.toc  Vimativinodanī-ṭīkā 猶豫排除(善見律疏) by Bhadantacariya Udumabaravihara Mahakassapa (Lavkan)
-		tika_vin08t.nrf.toc  Vinayālaṅkāra-ṭīkā 律帆疏
-		tika_vin09t.nrf.toc  Kaṅkhāvitaraṇīpurāṇa-ṭīkā 《析疑》古新疏
-		tika_vin10t.nrf.toc  Vinayavinicchaya-uttaravinicchaya
-		tika_vin11t.nrf.toc  Vinayavinicchaya-ṭīkā 律裁定疏
-		tika_vin12t.nrf.toc  Pācityādiyojanāpāḷi 波逸提等解說
-		tika_vin13t.nrf.toc  Khuddasikkhā-mūlasikkhā 微小戒與根本戒
+		vin04t.nrf Dvemātikāpāḷi
+			tika_vin04t.nrf0 Bhikkhupātimokkhapāḷi
+			tika_vin04t.nrf1 Bhikkhunīpātimokkhapāḷi
+			tika_vin04t.nrf2 Kaṅkhāvitaraṇī-aṭṭhakathā
+			tika_vin04t.nrf3 Nidānavaṇṇanā
+			tika_vin04t.nrf4 Pārājikakaṇḍo
+			tika_vin04t.nrf5 Saṅghādisesakaṇḍo
+			tika_vin04t.nrf6 Aniyatakaṇḍo
+			tika_vin04t.nrf7 Nissaggiyakaṇḍo
+			tika_vin04t.nrf8 Pācittiyakaṇḍo
+			tika_vin04t.nrf9 Pāṭidesanīyakaṇḍo
+			tika_vin04t.nrf10 Sekhiyakaṇḍo
+			tika_vin04t.nrf11 Bhikkhunīpātimokkhavaṇṇanā
+			tika_vin04t.nrf12 Pārājikakaṇḍo
+			tika_vin04t.nrf13 Saṅghādisesakaṇḍo
+			tika_vin04t.nrf14 Nissaggiyakaṇḍo
+			tika_vin04t.nrf15 Pācittiyakaṇḍo
+			tika_vin04t.nrf16 Pāṭidesanīyakaṇḍo
+		vin05t.nrf  Vinayasaṅgaha-aṭṭhakathā 律攝義註(Palimuttakavinayavinicchayasavgaha) by Bhadantacariya Sariputta (Lavkan)
+			tiak_vin05t.nrf0 Ganthārambhakathā
+			tiak_vin05t.nrf1 1. Divāseyyavinicchayakathā
+			tiak_vin05t.nrf2 2. Parikkhāravinicchayakathā
+			tiak_vin05t.nrf3 3. Bhesajjādikaraṇavinicchayakathā
+			tiak_vin05t.nrf4 4. Viññattivinicchayakathā
+			tiak_vin05t.nrf5 5. Kulasaṅgahavinicchayakathā
+			tiak_vin05t.nrf6 6. Macchamaṃsavinicchayakathā
+			tiak_vin05t.nrf7 7. Anāmāsavinicchayakathā
+			tiak_vin05t.nrf8 8. Adhiṭṭhānavikappanavinicchayakathā
+			tiak_vin05t.nrf9 9. Cīvaravippavāsavinicchayakathā
+			tiak_vin05t.nrf10 10. Bhaṇḍapaṭisāmanavinicchayakathā
+			tiak_vin05t.nrf11 11. Kayavikkayasamāpattivinicchayakathā
+			tiak_vin05t.nrf12 12. Rūpiyādipaṭiggahaṇavinicchayakathā
+			tiak_vin05t.nrf13 13. Dānalakkhaṇādivinicchayakathā
+			tiak_vin05t.nrf14 14. Pathavīkhaṇanavinicchayakathā
+			tiak_vin05t.nrf15 15. Bhūtagāmavinicchayakathā
+			tiak_vin05t.nrf16 16. Sahaseyyavinicchayakathā
+			tiak_vin05t.nrf17 17. Mañcapīṭhādisaṅghikasenāsanesu paṭipajjitabbavinicchayakathā
+			tiak_vin05t.nrf18 18. Kālikavinicchayakathā
+			tiak_vin05t.nrf19 19. Kappiyabhūmivinicchayakathā
+			tiak_vin05t.nrf20 20. Paṭiggahaṇavinicchayakathā
+			tiak_vin05t.nrf21 21. Pavāraṇāvinicchayakathā
+			tiak_vin05t.nrf22 22. Pabbajjāvinicchayakathā
+			tiak_vin05t.nrf23 23. Nissayavinicchayakathā
+			tiak_vin05t.nrf24 24. Sīmāvinicchayakathā
+			tiak_vin05t.nrf25 25. Uposathapavāraṇāvinicchayakathā
+			tiak_vin05t.nrf26 26. Vassūpanāyikavinicchayakathā
+			tiak_vin05t.nrf27 27. Upajjhāyādivattavinicchayakathā
+			tiak_vin05t.nrf28 28. Catupaccayabhājanīyavinicchayakathā
+			tiak_vin05t.nrf29 29. Kathinatthāravinicchayakathā
+			tiak_vin05t.nrf30 30. Garubhaṇḍavinicchayakathā
+			tiak_vin05t.nrf31 31. Codanādivinicchayakathā
+			tiak_vin05t.nrf32 32. Garukāpattivuṭṭhānavinicchayakathā
+			tiak_vin05t.nrf33 33. Kammākammavinicchayakathā
+			tiak_vin05t.nrf34 34. Pakiṇṇakavinicchayakathā
+		vin06t.nrf  Vajirabuddhi-ṭīkā 金剛覺疏(善見律疏) by Bhadantacariya Vajirabuddhi
+			tika_vin06t.nrf0 Ganthārambhakathā
+			tika_vin06t.nrf1 Pārājikavaṇṇanā
+			tika_vin06t.nrf2 Pācittiyavaṇṇanā
+			tika_vin06t.nrf3 Mahāvaggavaṇṇanā
+			tika_vin06t.nrf4 Cūḷavaggavaṇṇanā
+			tika_vin06t.nrf5 Parivāravaṇṇanā
+		vin07t.nrf  Vimativinodanī-ṭīkā 猶豫排除(善見律疏) by Bhadantacariya Udumabaravihara Mahakassapa (Lavkan)
+			tika_vin07t.nrf0 Ganthārambhakathā
+			tika_vin07t.nrf1 Verañjakaṇḍavaṇṇanā
+			tika_vin07t.nrf2 1. Pārājikakaṇḍo
+			tika_vin07t.nrf3 2. Saṅghādisesakaṇḍo
+			tika_vin07t.nrf4 3. Aniyatakaṇḍo
+			tika_vin07t.nrf5 4. Nissaggiyakaṇḍo
+			tika_vin07t.nrf6 5. Pācittiyakaṇḍaṃ
+			tika_vin07t.nrf7 6. Pāṭidesanīyakaṇḍaṃ
+			tika_vin07t.nrf8 7. Sekhiyakaṇḍaṃ
+			tika_vin07t.nrf9 Bhikkhunīvibhaṅgavaṇṇanā
+			tika_vin07t.nrf10 1. Pārājikakaṇḍaṃ
+			tika_vin07t.nrf11 2. Saṅghādisesakaṇḍaṃ
+			tika_vin07t.nrf12 3. Nissaggiyakaṇḍaṃ
+			tika_vin07t.nrf13 4. Pācittiyakaṇḍaṃ
+			tika_vin07t.nrf14 5. Pāṭidesanīyakaṇḍaṃ
+			tika_vin07t.nrf15 Mahāvaggavaṇṇanā
+			tika_vin07t.nrf16 1. Mahākhandhako
+			tika_vin07t.nrf17 2. Uposathakkhandhako
+			tika_vin07t.nrf18 3. Vassūpanāyikakkhandhako
+			tika_vin07t.nrf19 4. Pavāraṇākkhandhako
+			tika_vin07t.nrf20 5. Cammakkhandhako
+			tika_vin07t.nrf21 6. Bhesajjakkhandhako
+			tika_vin07t.nrf22 7. Kathinakkhandhako
+			tika_vin07t.nrf23 8. Cīvarakkhandhako
+			tika_vin07t.nrf24 9. Campeyyakkhandhako
+			tika_vin07t.nrf25 10. Kosambakakkhandhako
+			tika_vin07t.nrf26 Cūḷavaggavaṇṇanā
+			tika_vin07t.nrf27 1. Kammakkhandhako
+			tika_vin07t.nrf28 2. Pārivāsikakkhandhako
+			tika_vin07t.nrf29 3. Samuccayakkhandhako
+			tika_vin07t.nrf30 4. Samathakkhandhako
+			tika_vin07t.nrf31 5. Khuddakavatthukkhandhako
+			tika_vin07t.nrf32 6. Senāsanakkhandhako
+			tika_vin07t.nrf33 7. Saṅghabhedakakkhandhako
+			tika_vin07t.nrf34 8. Vattakkhandhako
+			tika_vin07t.nrf35 9. Pātimokkhaṭṭhapanakkhandhako
+			tika_vin07t.nrf36 10. Bhikkhunikkhandhako
+			tika_vin07t.nrf37 11. Pañcasatikakkhandhako
+			tika_vin07t.nrf38 12. Sattasatikakkhandhako
+			tika_vin07t.nrf39 Parivāravaṇṇanā
+			tika_vin07t.nrf40 Paññattivāravaṇṇanā
+			tika_vin07t.nrf41 Samuṭṭhānasīsavaṇṇanā
+			tika_vin07t.nrf42 Antarapeyyālaṃ
+			tika_vin07t.nrf43 Samathabhedaṃ
+			tika_vin07t.nrf44 Khandhakapucchāvāro
+			tika_vin07t.nrf45 Ekuttarikanayaṃ
+			tika_vin07t.nrf46 Uposathādipucchāvissajjanāvaṇṇanā
+			tika_vin07t.nrf47 Paṭhamagāthāsaṅgaṇikaṃ
+			tika_vin07t.nrf48 Adhikaraṇabhedaṃ
+			tika_vin07t.nrf49 Codanākaṇḍaṃ
+			tika_vin07t.nrf50 Cūḷasaṅgāmaṃ
+			tika_vin07t.nrf51 Mahāsaṅgāmaṃ
+			tika_vin07t.nrf52 Kathinabhedaṃ
+			tika_vin07t.nrf53 Upālipañcakaṃ
+			tika_vin07t.nrf54 Aparadutiyagāthāsaṅgaṇikaṃ
+			tika_vin07t.nrf55 Sedamocanagāthā
+			tika_vin07t.nrf56 Pañcavaggo
+		vin08t.nrf  Vinayālaṅkāra-ṭīkā 律帆疏
+			tika_vin08t.nrf0 Ganthārambhakathā
+			tika_vin08t.nrf1 1. Divāseyyavinicchayakathā
+			tika_vin08t.nrf2 2. Parikkhāravinicchayakathā
+			tika_vin08t.nrf3 3. Bhesajjādikaraṇavinicchayakathā
+			tika_vin08t.nrf4 4. Viññattivinicchayakathā
+			tika_vin08t.nrf5 5. Kulasaṅgahavinicchayakathā
+			tika_vin08t.nrf6 6. Macchamaṃsavinicchayakathā
+			tika_vin08t.nrf7 7. Anāmāsavinicchayakathā
+			tika_vin08t.nrf8 8. Adhiṭṭhānavikappanavinicchayakathā
+			tika_vin08t.nrf9 9. Cīvaravippavāsavinicchayakathā
+			tika_vin08t.nrf10 10. Bhaṇḍapaṭisāmanavinicchayakathā
+			tika_vin08t.nrf11 11. Kayavikkayasamāpattivinicchayakathā
+			tika_vin08t.nrf12 12. Rūpiyādipaṭiggahaṇavinicchayakathā
+			tika_vin08t.nrf13 13. Dānalakkhaṇādivinicchayakathā
+			tika_vin08t.nrf14 14. Pathavīkhaṇanavinicchayakathā
+			tika_vin08t.nrf15 15. Bhūtagāmavinicchayakathā
+			tika_vin08t.nrf16 16. Sahaseyyavinicchayakathā
+			tika_vin08t.nrf17 17. Mañcapīṭhādisaṅghikasenāsanesupaṭipajjitabbavinicchayakathā
+			tika_vin08t.nrf18 18. Kālikavinicchayakathā
+			tika_vin08t.nrf19 19. Kappiyabhūmivinicchayakathā
+			tika_vin08t.nrf20 20. Paṭiggahaṇavinicchayakathā
+			tika_vin08t.nrf21 21. Pavāraṇāvinicchayakathā
+			tika_vin08t.nrf22 22. Pabbajjāvinicchayakathā
+			tika_vin08t.nrf23 23. Nissayavinicchayakathā
+			tika_vin08t.nrf24 24. Sīmāvinicchayakathā
+			tika_vin08t.nrf25 25. Uposathapavāraṇāvinicchayakathā
+			tika_vin08t.nrf26 26. Vassūpanāyikavinicchayakathā
+			tika_vin08t.nrf27 27. Upajjhāyādivattavinicchayakathā
+			tika_vin08t.nrf28 28. Catupaccayabhājanīyavinicchayakathā
+			tika_vin08t.nrf29 29. Kathinatthāravinicchayakathā
+			tika_vin08t.nrf30 30. Garubhaṇḍavinicchayakathā
+			tika_vin08t.nrf31 31. Codanādivinicchayakathā
+			tika_vin08t.nrf32 32. Garukāpattivuṭṭhānavinicchayakathā
+			tika_vin08t.nrf33 33. Kammākammavinicchayakathā
+			tika_vin08t.nrf34 34. Pakiṇṇakavinicchayakathā
+			tika_vin08t.nrf35 Nigamanakathā
+		vin09t.nrf  Kaṅkhāvitaraṇīpurāṇa-ṭīkā 《析疑》古新疏
+			tika_vin09t.nrf0 Ganthārambhakathā
+			tika_vin09t.nrf1 Pārājikakaṇḍaṃ
+			tika_vin09t.nrf2 Saṅghādisesakaṇḍaṃ
+			tika_vin09t.nrf3 Aniyatakaṇḍaṃ
+			tika_vin09t.nrf4 Nissaggiyakaṇḍaṃ
+			tika_vin09t.nrf5 Pācittiyakaṇḍaṃ
+			tika_vin09t.nrf6 Pāṭidesanīyakaṇḍaṃ
+			tika_vin09t.nrf7 Sekhiyakaṇḍaṃ
+			tika_vin09t.nrf8 Bhikkhunīpātimokkhavaṇṇanā
+			tika_vin09t.nrf9 Pārājikakaṇḍaṃ
+			tika_vin09t.nrf10 Saṅghādisesakaṇḍaṃ
+			tika_vin09t.nrf11 Nissaggiyakaṇḍaṃ
+			tika_vin09t.nrf12 Pācittiyakaṇḍaṃ
+			tika_vin09t.nrf13 Pārājikakaṇḍaṃ
+			tika_vin09t.nrf14 Saṅghādisesakaṇḍaṃ
+			tika_vin09t.nrf15 Aniyatakaṇḍaṃ
+			tika_vin09t.nrf16 Nissaggiyakaṇḍaṃ
+			tika_vin09t.nrf17 Pācittiyakaṇḍaṃ
+			tika_vin09t.nrf18 Pāṭidesanīyakaṇḍaṃ
+			tika_vin09t.nrf19 Sekhiyakaṇḍaṃ
+			tika_vin09t.nrf20 Bhikkhunīpātimokkhavaṇṇanā
+			tika_vin09t.nrf21 Pārājikakaṇḍaṃ
+			tika_vin09t.nrf22 Saṅghādisesakaṇḍaṃ
+			tika_vin09t.nrf23 Nissaggiyakaṇḍaṃ
+			tika_vin09t.nrf24 Pācittiyakaṇḍaṃ
+			tika_vin09t.nrf25 Pāṭidesanīyakaṇḍaṃ
+		vin10t.nrf  Vinayavinicchaya-uttaravinicchaya
+			tika_vin10t.nrf0 Vinayavinicchayo
+			tika_vin10t.nrf1 Bhikkhuvibhaṅgo
+			tika_vin10t.nrf2 Bhikkhunīvibhaṅgo
+			tika_vin10t.nrf3 Mahāvaggo
+			tika_vin10t.nrf4 Cūḷavaggo
+			tika_vin10t.nrf5 Uttaravinicchayo
+			tika_vin10t.nrf6 Mahāvibhaṅgasaṅgahakathā
+			tika_vin10t.nrf7 Bhikkhunīvibhaṅgo
+		vin11t.nrf Vinayavinicchaya-ṭīkā 律裁定疏
+			tika_vin11t.nrf0 Ganthārambhakathā
+			tika_vin11t.nrf1 Bhikkhuvibhaṅgo
+			tika_vin11t.nrf2 Pārājikakathā
+			tika_vin11t.nrf3 Saṅghādisesakathāvaṇṇanā
+			tika_vin11t.nrf4 Aniyatakathāvaṇṇanā
+			tika_vin11t.nrf5 Nissaggiyakathāvaṇṇanā
+			tika_vin11t.nrf6 Pācittiyakathāvaṇṇanā
+			tika_vin11t.nrf7 Pāṭidesanīyakathāvaṇṇanā
+			tika_vin11t.nrf8 Sekhiyakathāvaṇṇanā
+			tika_vin11t.nrf9 Bhikkhunivibhaṅgo
+			tika_vin11t.nrf10 Pārājikakathāvaṇṇanā
+			tika_vin11t.nrf11 Saṅghādisesakathāvaṇṇanā
+			tika_vin11t.nrf12 Nissaggiyakathāvaṇṇanā
+			tika_vin11t.nrf13 Pācittiyakathāvaṇṇanā
+			tika_vin11t.nrf14 Pāṭidesanīyakathāvaṇṇanā
+			tika_vin11t.nrf15 Sikkhākaraṇīyakathāvaṇṇanā
+			tika_vin11t.nrf16 Mahāvaggo
+			tika_vin11t.nrf17 Pabbajjākathāvaṇṇanā
+			tika_vin11t.nrf18 Uposathakkhandhakakathāvaṇṇanā
+			tika_vin11t.nrf19 Vassūpanāyikakkhandhakakathāvaṇṇanā
+			tika_vin11t.nrf20 Pavāraṇakkhandhakakathāvaṇṇanā
+			tika_vin11t.nrf21 Cammakkhandhakakathāvaṇṇanā
+			tika_vin11t.nrf22 Bhesajjakkhandhakakathāvaṇṇanā
+			tika_vin11t.nrf23 Kathinakkhandhakakathāvaṇṇanā
+			tika_vin11t.nrf24 Cīvarakkhandhakakathāvaṇṇanā
+			tika_vin11t.nrf25 Cūḷavaggo
+			tika_vin11t.nrf26 Pārivāsikakkhandhakakathāvaṇṇanā
+			tika_vin11t.nrf27 Samathakkhandhakakathāvaṇṇanā
+			tika_vin11t.nrf28 Khuddakavatthukkhandhakakathāvaṇṇanā
+			tika_vin11t.nrf29 Senāsanakkhandhakakathāvaṇṇanā
+			tika_vin11t.nrf30 Vattakkhandhakakathāvaṇṇanā
+			tika_vin11t.nrf31 Bhikkhunikkhandhakakathāvaṇṇanā
+			tika_vin11t.nrf32 Catubbidhakammakathāvaṇṇanā
+			tika_vin11t.nrf33 Kammavipattikathāvaṇṇanā
+			tika_vin11t.nrf34 Pakiṇṇakavinicchayakathāvaṇṇanā
+			tika_vin11t.nrf35 Kammaṭṭhānavibhāvanāvidhānakathāvaṇṇanā
+			tika_vin11t.nrf36 Uttaravinicchaya-ṭīkā
+			tika_vin11t.nrf37 Mahāvibhaṅgasaṅgahakathāvaṇṇanā
+			tika_vin11t.nrf38 Bhikkhunivibhaṅgo
+			tika_vin11t.nrf39 Catuvipattikathāvaṇṇanā
+			tika_vin11t.nrf40 Adhikaraṇapaccayakathāvaṇṇanā
+			tika_vin11t.nrf41 Khandhakapucchākathāvaṇṇanā
+			tika_vin11t.nrf42 Samuṭṭhānasīsakathāvaṇṇanā
+			tika_vin11t.nrf43 Āpattisamuṭṭhānakathāvaṇṇanā
+			tika_vin11t.nrf44 Ekuttaranayakathāvaṇṇanā
+			tika_vin11t.nrf45 Sedamocanakathāvaṇṇanā
+			tika_vin11t.nrf46 Sādhāraṇāsādhāraṇakathāvaṇṇanā
+			tika_vin11t.nrf47 Lakkhaṇakathāvaṇṇanā
+			tika_vin11t.nrf48 Sabbasaṅkalananayakathāvaṇṇanā
+		vin12t.nrf Pācityādiyojanāpāḷi 波逸提等解說
+			tika_vin12t.nrf0 Pācittiyayojanā
+			tika_vin12t.nrf1 Bhikkhunīvibhaṅgo
+			tika_vin12t.nrf2 Mahāvaggayojanā
+			tika_vin12t.nrf3 Cūḷavaggayojanā
+			tika_vin12t.nrf4 Parivāravaggayojanā
+		vin13t.nrf Khuddasikkhā-mūlasikkhā 微小戒與根本戒
+			tika_vin13t.nrf0 Khuddasikkhā
+			tika_vin13t.nrf1 Khuddasikkhā-purāṇaṭīkā
+			tika_vin13t.nrf2 Khuddasikkhā-abhinavaṭīkā
+			tika_vin13t.nrf3 Mūlasikkhā
+			tika_vin13t.nrf4 Mūlasikkhā-ṭīkā
 	Sutta piṭaka (ṭīkā) 經疏
 		Dīghanikāya (ṭīkā) 長部注釋《吉祥悅意》【Sumavgalavilāsinī】
 			src="./cscd/s0101t.tik.toc.xml" text="Sīlakkhandhavagga-ṭīkā" 長部戒蘊品注釋
