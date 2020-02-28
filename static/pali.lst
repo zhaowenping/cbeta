@@ -1296,19 +1296,19 @@
 			atthakatha_abh03a.att65 19-24. Paccanī yā nulomapaṭṭhā navaṇṇanā 
 03. Tīkā 複註
 	Vinaya piṭaka (ṭīkā) 律疏
-		src="./cscd/vin01t1.tik.toc.xml" text="Sāratthadīpanī-ṭīkā-1" 心義燈(善見律疏) by Bhadantacariya Sariputta(Lavkan)
-		src="./cscd/vin01t2.tik.toc.xml" text="Sāratthadīpanī-ṭīkā-2"
-		src="./cscd/vin02t.tik.toc.xml" text="Sāratthadīpanī-ṭīkā-3"
-		src="./cscd/vin04t.nrf.toc.xml" text="Dvemātikāpāḷi"
-		src="./cscd/vin05t.nrf.toc.xml" text="Vinayasaṅgaha-aṭṭhakathā" 律攝義註(Palimuttakavinayavinicchayasavgaha) by Bhadantacariya Sariputta (Lavkan)
-		src="./cscd/vin06t.nrf.toc.xml" text="Vajirabuddhi-ṭīkā" 金剛覺疏(善見律疏) by Bhadantacariya Vajirabuddhi
-		src="./cscd/vin07t.nrf.toc.xml" text="Vimativinodanī-ṭīkā" 猶豫排除(善見律疏) by Bhadantacariya Udumabaravihara Mahakassapa (Lavkan)
-		src="./cscd/vin08t.nrf.toc.xml" text="Vinayālaṅkāra-ṭīkā" 律帆疏
-		src="./cscd/vin09t.nrf.toc.xml" text="Kaṅkhāvitaraṇīpurāṇa-ṭīkā" 《析疑》古新疏
-		src="./cscd/vin10t.nrf.toc.xml" text="Vinayavinicchaya-uttaravinicchaya"
-		src="./cscd/vin11t.nrf.toc.xml" text="Vinayavinicchaya-ṭīkā" 律裁定疏
-		src="./cscd/vin12t.nrf.toc.xml" text="Pācityādiyojanāpāḷi" 波逸提等解說
-		src="./cscd/vin13t.nrf.toc.xml" text="Khuddasikkhā-mūlasikkhā" 微小戒與根本戒
+		tika_vin01t1.tik Sāratthadīpanī-ṭīkā-1 心義燈(善見律疏) by Bhadantacariya Sariputta(Lavkan)
+		tika_vin01t2.tik Sāratthadīpanī-ṭīkā-2
+		tika_vin02t.tik  Sāratthadīpanī-ṭīkā-3
+		tika_vin04t.nrf  Dvemātikāpāḷi
+		tika_vin05t.nrf  Vinayasaṅgaha-aṭṭhakathā 律攝義註(Palimuttakavinayavinicchayasavgaha) by Bhadantacariya Sariputta (Lavkan)
+		tika_vin06t.nrf  Vajirabuddhi-ṭīkā 金剛覺疏(善見律疏) by Bhadantacariya Vajirabuddhi
+		tika_vin07t.nrf  Vimativinodanī-ṭīkā 猶豫排除(善見律疏) by Bhadantacariya Udumabaravihara Mahakassapa (Lavkan)
+		tika_vin08t.nrf  Vinayālaṅkāra-ṭīkā 律帆疏
+		tika_vin09t.nrf  Kaṅkhāvitaraṇīpurāṇa-ṭīkā 《析疑》古新疏
+		tika_vin10t.nrf  Vinayavinicchaya-uttaravinicchaya
+		tika_vin11t.nrf  Vinayavinicchaya-ṭīkā 律裁定疏
+		tika_vin12t.nrf  Pācityādiyojanāpāḷi 波逸提等解說
+		tika_vin13t.nrf  Khuddasikkhā-mūlasikkhā 微小戒與根本戒
 	Sutta piṭaka (ṭīkā)
 		Dīghanikāya (ṭīkā) 長部注釋《吉祥悅意》【Sumavgalavilāsinī】
 			src="./cscd/s0101t.tik.toc.xml" text="Sīlakkhandhavagga-ṭīkā" 長部戒蘊品注釋
