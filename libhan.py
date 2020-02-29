@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-27 06:01:19
+# Last Modified: 2020-02-29 05:22:35
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -379,14 +379,37 @@ with open("idx/sutra_sch.lst") as fd:
         line = line.strip().split()[0]
         sch_db.append(line)
 
+# 雜阿含經一五·一七
+# 增一阿含二一·六（大正二·六〇三c）  <pb n="0603c" ed="T" xml:id="T02.0125.0603c"/>
+ahan_pattern = re.compile(r'(《?[中阿含經增一经長壹雜杂]+》?)第?([\d零〇一二三四五六七八九]{1,4})[經经]')
+def ahan_url(number):
+    found = False
+    jinghao = ahan_pattern.findall(number)
+    if jinghao:
+        book, sutra = jinghao[0]
+        sutra = int(sutra)
+        if '中' in book:
+            pass
+        if '雜' in book or '杂' in book:
+            book = 'T0099'
+
+        # 查表
+        with open(f'idx/{book}.xml') as fd:
+            for line in fd:
+                line = line.strip().split()
+                if sutra == int(line[0]):
+                    sutra = Number(line[1])
+                    found = True
+    if not found:
+        return None
+    return sutra
+
 
 # 大正七〇·四五九中、四六〇下
 # 大正二、一〇三c
 # 大正藏二·四一a
 # 大正藏第70卷459页b
 # 《大正藏》第40卷第16頁下
-# 雜阿含經一五·一七
-# 增一阿含二一·六（大正二·六〇三c）  <pb n="0603c" ed="T" xml:id="T02.0125.0603c"/>
 pbanchor_pattern = re.compile(r'(《?[中乾佛作傳典刊刻北卍南印叢史品善嘉國圖城外大學宋家寺山師彙志房拓教文新書朝本樂正武永法洪漢片獻珍百石經編纂續脩興華著藏補譯趙遺金隆集順館高麗传丛国图学师汇书乐汉献经编续修兴华补译赵遗顺馆丽]+》?)第?([\d零〇一二三四五六七八九]{1,3})(?:卷|卷第|\u00b7)([\d零〇一二三四五六七八九]{1,3})[頁|页]?([上中下abcABC])?')
 def make_url2(number):
     tt = { ord('〇'): ord('0'), ord('零'): ord('0'),
