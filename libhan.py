@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-29 05:28:29
+# Last Modified: 2020-02-29 06:09:30
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -381,7 +381,7 @@ with open("idx/sutra_sch.lst") as fd:
 
 # 雜阿含經一五·一七
 # 增一阿含二一·六（大正二·六〇三c）  <pb n="0603c" ed="T" xml:id="T02.0125.0603c"/>
-ahan_pattern = re.compile(r'(《?[中阿含經增一经長壹雜杂]+》?)第?([\d零〇一二三四五六七八九]{1,4})[經经]')
+ahan_pattern = re.compile(r'(《?[中长長雜杂增][一壹]?阿[含鋡][經经]?》?)第?([\d零〇一二三四五六七八九]{1,4})[經经]')
 def ahan_url(number):
     found = False
     jinghao = ahan_pattern.findall(number)
