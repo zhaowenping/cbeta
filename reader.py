@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-29 05:23:54
+# Last Modified: 2020-02-29 06:05:19
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -324,7 +324,7 @@ def searchmulu():
     # 查找阿含经
     an = ahan_url(title)
     if an:
-        redirect(an)
+        redirect(an.url)
 
     # 使用书名方式查找藏经
     if convert.detect(title)['confidence'] == 's':
