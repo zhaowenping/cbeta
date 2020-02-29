@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-29 05:22:35
+# Last Modified: 2020-02-29 05:28:29
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -387,7 +387,7 @@ def ahan_url(number):
     jinghao = ahan_pattern.findall(number)
     if jinghao:
         book, sutra = jinghao[0]
-        sutra = int(sutra)
+        sutran = int(sutra)
         if '中' in book:
             pass
         if '雜' in book or '杂' in book:
@@ -397,9 +397,10 @@ def ahan_url(number):
         with open(f'idx/{book}.xml') as fd:
             for line in fd:
                 line = line.strip().split()
-                if sutra == int(line[0]):
+                if sutran == int(line[0]):
                     sutra = Number(line[1])
                     found = True
+                    break
     if not found:
         return None
     return sutra
