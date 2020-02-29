@@ -1661,15 +1661,88 @@
 				tika_s0105t.nrf10 12. Lohiccasuttavaṇṇanā
 				tika_s0105t.nrf11 13. Tevijjasuttavaṇṇanā
 		Majjhimanikāya (ṭīkā) 中部注釋《破除疑障》【Papañcasudani】by Bhadantacariya BUDDHAGHOSA(佛音﹐5 A.D.)
-			src="./cscd/s0201t.tik.toc.xml" text="Mūlapaṇṇāsa-ṭīkā" 中部根本五十經注釋
-			src="./cscd/s0202t.tik.toc.xml" text="Majjhimapaṇṇāsa-ṭīkā" 中部中分五十經注釋
-			src="./cscd/s0203t.tik.toc.xml" text="Uparipaṇṇāsa-ṭīkā" 中部後分五十經注釋
+			s0201t.tik Mūlapaṇṇāsa-ṭīkā 中部根本五十經注釋
+				tika_s0201t.tik0 Ganthārambhakathāvaṇṇanā
+				tika_s0201t.tik1 1. Mūlapariyāyavaggo
+				tika_s0201t.tik2 2. Sīhanādavaggo
+				tika_s0201t.tik3 3. Opammavaggo
+				tika_s0201t.tik4 4. Mahāyamakavaggo
+				tika_s0201t.tik5 5. Cūḷayamakavaggo
+			s0202t.tik Majjhimapaṇṇāsa-ṭīkā 中部中分五十經注釋
+				tika_s0202t.tik0 1. Gahapativaggo
+				tika_s0202t.tik1 2. Bhikkhuvaggo
+				tika_s0202t.tik2 3. Paribbājakavaggo
+				tika_s0202t.tik3 4. Rājavaggo
+				tika_s0202t.tik4 5. Brāhmaṇavaggo
+			s0203t.tik Uparipaṇṇāsa-ṭīkā 中部後分五十經注釋
+				tika_s0203t.tik0 1. Devadahavaggo
+				tika_s0203t.tik1 2. Anupadavaggo
+				tika_s0203t.tik2 3. Suññatavaggo
+				tika_s0203t.tik3 4. Vibhaṅgavaggo
+				tika_s0203t.tik4 5. Saḷāyatanavaggo
 		Saṃyuttanikāya (ṭīkā) 相應部注釋《顯揚心義》【sāratthappakāsinī】by Bhadantacariya BUDDHAGHOSA(佛音﹐5 A.D.)
-			src="./cscd/s0301t.tik.toc.xml" text="Sagāthāvagga-ṭīkā"
-			src="./cscd/s0302t.tik.toc.xml" text="Nidānavagga-ṭīkā"
-			src="./cscd/s0303t.tik.toc.xml" text="Khandhavagga-ṭīkā"
-			src="./cscd/s0304t.tik.toc.xml" text="Saḷāyatanavagga-ṭīkā"
-			src="./cscd/s0305t.tik.toc.xml" text="Mahāvagga-ṭīkā"
+			s0301t.tik Sagāthāvagga-ṭīkā
+				tika_s0301t.tik0 Ganthārambhakathāvaṇṇanā
+				tika_s0301t.tik1 1. Devatāsaṃyuttaṃ
+				tika_s0301t.tik2 2. Devaputtasaṃyuttaṃ
+				tika_s0301t.tik3 3. Kosalasaṃyuttaṃ
+				tika_s0301t.tik4 4. Mārasaṃyuttaṃ
+				tika_s0301t.tik5 5. Bhikkhunīsaṃyuttaṃ
+				tika_s0301t.tik6 6. Brahmasaṃyuttaṃ
+				tika_s0301t.tik7 7. Brāhmaṇasaṃyuttaṃ
+				tika_s0301t.tik8 8. Vaṅgīsasaṃyuttaṃ
+				tika_s0301t.tik9 9. Vanasaṃyuttaṃ
+				tika_s0301t.tik10 10. Yakkhasaṃyuttaṃ
+				tika_s0301t.tik11 11. Sakkasaṃyuttaṃ
+			s0302t.tik Nidānavagga-ṭīkā
+				tika_s0302t.tik0 1. Nidānasaṃyuttaṃ
+				tika_s0302t.tik1 2. Abhisamayasaṃyuttaṃ
+				tika_s0302t.tik2 3. Dhātusaṃyuttaṃ
+				tika_s0302t.tik3 4. Anamataggasaṃyuttaṃ
+				tika_s0302t.tik4 5. Kassapasaṃyuttaṃ
+				tika_s0302t.tik5 6. Lābhasakkārasaṃyuttaṃ
+				tika_s0302t.tik6 7. Rāhulasaṃyuttaṃ
+				tika_s0302t.tik7 8. Lakkhaṇasaṃyuttaṃ
+				tika_s0302t.tik8 9. Opammasaṃyuttaṃ
+				tika_s0302t.tik9 10. Bhikkhusaṃyuttaṃ
+			s0303t.tik Khandhavagga-ṭīkā
+				tika_s0303t.tik0 1. Khandhasaṃyuttaṃ
+				tika_s0303t.tik1 2. Rādhasaṃyuttaṃ
+				tika_s0303t.tik2 3. Diṭṭhisaṃyuttaṃ
+				tika_s0303t.tik3 4. Okkantasaṃyuttaṃ
+				tika_s0303t.tik4 5. Uppādasaṃyuttavaṇṇanā
+				tika_s0303t.tik5 6. Kilesasaṃyuttavaṇṇanā
+				tika_s0303t.tik6 7. Sāriputtasaṃyuttaṃ
+				tika_s0303t.tik7 8. Nāgasaṃyuttaṃ
+				tika_s0303t.tik8 9. Supaṇṇasaṃyuttavaṇṇanā
+				tika_s0303t.tik9 10. Gandhabbakāyasaṃyuttavaṇṇanā
+				tika_s0303t.tik10 11. Valāhakasaṃyuttavaṇṇanā
+				tika_s0303t.tik11 12. Vacchagottasaṃyuttavaṇṇanā
+				tika_s0303t.tik12 13. Jhānasaṃyuttaṃ
+			s0304t.tik Saḷāyatanavagga-ṭīkā
+				tika_s0304t.tik0 1. Saḷāyatanasaṃyuttaṃ
+				tika_s0304t.tik1 2. Vedanāsaṃyuttaṃ
+				tika_s0304t.tik2 3. Mātugāmasaṃyuttaṃ
+				tika_s0304t.tik3 4. Jambukhādakasaṃyuttaṃ
+				tika_s0304t.tik4 5. Sāmaṇḍakasaṃyuttavaṇṇanā
+				tika_s0304t.tik5 6. Moggallānasaṃyuttaṃ
+				tika_s0304t.tik6 7. Cittasaṃyuttaṃ
+				tika_s0304t.tik7 8. Gāmaṇisaṃyuttaṃ
+				tika_s0304t.tik8 9. Asaṅkhatasaṃyuttaṃ
+				tika_s0304t.tik9 10. Abyākatasaṃyuttaṃ
+			s0305t.tik Mahāvagga-ṭīkā
+				tika_s0305t.tik0 1. Maggasaṃyuttaṃ
+				tika_s0305t.tik1 2. Bojjhaṅgasaṃyuttaṃ
+				tika_s0305t.tik2 3. Satipaṭṭhānasaṃyuttaṃ
+				tika_s0305t.tik3 4. Indriyasaṃyuttaṃ
+				tika_s0305t.tik4 5. Sammappadhānasaṃyuttavaṇṇanā
+				tika_s0305t.tik5 6. Balasaṃyuttavaṇṇanā
+				tika_s0305t.tik6 7. Iddhipādasaṃyuttaṃ
+				tika_s0305t.tik7 8. Anuruddhasaṃyuttaṃ
+				tika_s0305t.tik8 9. Jhānasaṃyuttavaṇṇanā
+				tika_s0305t.tik9 10. Ānāpānasaṃyuttaṃ
+				tika_s0305t.tik10 11. Sotāpattisaṃyuttaṃ
+				tika_s0305t.tik11 12. Saccasaṃyuttaṃ
 		Aṅguttaranikāya (ṭīkā) 增支部注釋《滿足希求》 【Manotathapurani】by Bhadantacariya BUDDHAGHOSA(佛音﹐5 A.D.)
 			src="./cscd/s0401t.tik.toc.xml" text="Ekakanipāta-ṭīkā"
 			src="./cscd/s0402t.tik.toc.xml" text="Duka-tika-catukkanipāta-ṭīkā"
@@ -1754,7 +1827,7 @@
 			tika_abh08t.nrf46 22. Bā vī satimo paricchedo
 			tika_abh08t.nrf47 23. Tevī satimo paricchedo
 			tika_abh08t.nrf48 24. Catuvī satimo paricchedo
-		abh09t.nrf Abhidhammamātikāpāḷi
+		abh09t.nrf Abhidhammamātikāpāḷi 阿毘達摩論母
 			tika_abh09t.nrf0 1. Dhammasaṅgaṇī mā tikā 
 			tika_abh09t.nrf1 2. Vibhaṅgamā tikā 
 			tika_abh09t.nrf2 3. Dhā tukathā mā tikā 

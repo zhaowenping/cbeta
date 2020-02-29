@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-28 07:34:08
+# Last Modified: 2020-02-28 20:41:00
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -16,7 +16,7 @@ import re
 
 p = re.compile(r'<tree text="(.*?)" action="cscd/(.*?).xml"')
 
-t = 's0105t.nrf.toc'
+t = 's0305t.tik.toc'
 with open(f'../pali/toc3/{t}.xml') as fd:
     for line in fd:
         line = line.strip()
