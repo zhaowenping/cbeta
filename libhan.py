@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-29 06:09:30
+# Last Modified: 2020-03-01 05:16:32
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -36,14 +36,6 @@ import requests
 print('调用函数库')
 PATH = "/home/zhaowp/cbeta/cbeta"
 
-
-def rm_html_tag(title):
-    # 去除HTML标签、注释、卷数, 留下标题
-    title = re.sub(r'<.*?>', '', title)  # title=[34]<span style="color:red">阿</span>差末菩薩經
-    title = re.sub(r'\(.*?\)', '', title)
-    title = re.sub(r'\[\w*?\]', '', title)
-    title = re.sub(r'[一二三四五六七八九十百]+卷', '', title)
-    return title
 
 def rm_com(ctx):
     # 删除组字式
@@ -388,10 +380,14 @@ def ahan_url(number):
     if jinghao:
         book, sutra = jinghao[0]
         sutran = int(sutra)
-        if '中' in book:
-            pass
         if '雜' in book or '杂' in book:
             book = 'T0099'
+            if sutra > 1362:
+                sutran = 1362
+            if sutra < 1:
+                sutran = 1
+        else:
+            return None
 
         # 查表
         with open(f'idx/{book}.xml') as fd:
