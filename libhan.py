@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-03-01 05:16:32
+# Last Modified: 2020-03-01 22:13:09
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -99,6 +99,9 @@ def ishanzi(zi):
         return True
     # BCDEF: 0x20007-0x2EBD6
     if 0x20000 <= zi <= 0x2EBE0:
+        return True
+    # G区: 0x30000-0x3134A
+    if 0x30000 <= zi <= 0x3134A:
         return True
     # 兼容汉字区
     if 0xF900 <= zi <= 0xFAD9:
