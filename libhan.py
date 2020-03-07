@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-03-01 22:13:09
+# Last Modified: 2020-03-07 07:46:40
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -385,9 +385,9 @@ def ahan_url(number):
         sutran = int(sutra)
         if '雜' in book or '杂' in book:
             book = 'T0099'
-            if sutra > 1362:
+            if sutran > 1362:
                 sutran = 1362
-            if sutra < 1:
+            if sutran < 1:
                 sutran = 1
         else:
             return None
