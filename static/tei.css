@@ -67,12 +67,12 @@
 */
 
 /* 用于显示扩展G区汉字 */
-@font-face {
+/*@font-face {
   font-family: 'extg';
   font-style: normal;
   font-weight: normal;
   src: url(/static/subextg.otf) format('opentype');
-}
+}*/
 
 /* 用于显示等宽英文和拼音, 拼音a的显示还存在问题 */
 @font-face {
@@ -120,7 +120,7 @@ html {
         "Hiragino Sans GB", "PingFang HK", "PingFang SC", "PMingLiU", "Microsoft YaHei",
         hanaminsat, siddham;
         */
-    font-family: quote, "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", "PMingLiU", hanaminsat, extg;
+    font-family: quote, "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", "PMingLiU", hanaminsat
     /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;*/
     /*font-family: ENCLOSING_CIRCLE, WSQUARE, quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", "PingFang HK", "PingFang SC", "PMingLiU", "Microsoft YaHei", siddham;*/
     /* font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;*/
