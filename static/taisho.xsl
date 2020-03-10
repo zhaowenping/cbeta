@@ -182,7 +182,6 @@
             <xsl:value-of select="concat($current_sutra, ' ', $title)"/>
         </title>
         <script src="/static/jquery-3.3.1.min.js"></script>
-        <script src="/static/bootstrap-3.3.7.min.js"></script>
         <script src="/static/jquery.webui-popover.min.js"></script>
         <!--script src="https://cdnjs.cloudflare.com/ajax/libs/Han/3.2.7/han.min.js"></script-->
         <!--[if lt IE9]> 
