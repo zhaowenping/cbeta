@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-03-11 07:37:35
+# Last Modified: 2020-03-11 07:39:54
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -640,7 +640,7 @@ def nizifa_get():
     '''逆字法'''
     return static_file('nizifa.htm', root='static')
 
-@get('/nizifa')
+@post('/nizifa')
 def nizifa_post():
     '''逆字法'''
     if request.forms.text:
