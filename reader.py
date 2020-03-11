@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-03-11 07:35:09
+# Last Modified: 2020-03-11 07:37:35
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -647,6 +647,7 @@ def nizifa_post():
         tcontent = json.loads(request.forms.text).get('text', '')
     else:
         tcontent = ''
+    scontent = 'convert.s2t(scontent, onlyURO=False)'
     nizibiao = dict()
     with open('dict/variants.txt') as fd:
         for line in fd:
