@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-02-29 06:05:19
+# Last Modified: 2020-03-11 07:24:01
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -20,6 +20,7 @@ import json
 import time
 import datetime
 import pprint
+import random
 
 from bottle import get, post, response
 from bottle import route, run, static_file, default_app
@@ -633,6 +634,34 @@ def zh(filename):
     print(filename)
     response.content_type = 'text/xml'
     return content
+
+@get('/nizifa')
+def nizifa_get():
+    '''逆字法'''
+    return static_file('t2s.htm', root='static')
+
+@get('/nizifa')
+def nizifa_post():
+    '''逆字法'''
+    tcontent = json.loads(request.forms.text).get('text', '')
+    nizibiao = dict()
+    with open('dict/variants.txt') as fd:
+        for line in fd:
+            line = line.strip().split()
+            if line[0] in nizibiao:
+                nizibiao[line[0]].append(line[1])
+            else:
+                nizibiao[line[0]] = [line[0], line[1]]
+    rr = []
+    for zi in tcontent:
+        if zi in nizibiao:
+            rr.append(random.choice(nizibiao[zi]))
+        else:
+            rr.append(zi)
+
+    tcontent = ''.join(rr)
+    response.content_type = 'application/json'
+    return {"tcontent": tcontent, "scontent": scontent}
 
 @get('/t2s')
 def t2s_get():

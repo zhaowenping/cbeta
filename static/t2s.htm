@@ -212,7 +212,7 @@
                 }
             }
             document.getElementById('text_output').innerHTML = '正在分析。。。';
-            Ajax.post('/t2s', {
+            Ajax.post('/nizifa', {
                 "text": textDom.value
             }, function (responseText) {
                 document.getElementById('text_output').innerHTML = responseText;
