@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-03-11 07:24:01
+# Last Modified: 2020-03-11 07:27:53
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -638,7 +638,7 @@ def zh(filename):
 @get('/nizifa')
 def nizifa_get():
     '''逆字法'''
-    return static_file('t2s.htm', root='static')
+    return static_file('nizifa.htm', root='static')
 
 @get('/nizifa')
 def nizifa_post():
@@ -662,6 +662,7 @@ def nizifa_post():
     tcontent = ''.join(rr)
     response.content_type = 'application/json'
     return {"tcontent": tcontent, "scontent": scontent}
+
 
 @get('/t2s')
 def t2s_get():
