@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-03-11 07:27:53
+# Last Modified: 2020-03-11 07:35:09
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -643,7 +643,10 @@ def nizifa_get():
 @get('/nizifa')
 def nizifa_post():
     '''逆字法'''
-    tcontent = json.loads(request.forms.text).get('text', '')
+    if request.forms.text:
+        tcontent = json.loads(request.forms.text).get('text', '')
+    else:
+        tcontent = ''
     nizibiao = dict()
     with open('dict/variants.txt') as fd:
         for line in fd:
