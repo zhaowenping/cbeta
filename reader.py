@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-03-11 07:55:50
+# Last Modified: 2020-03-11 18:59:34
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -658,7 +658,8 @@ def nizifa_post():
             if line[0] in nizibiao:
                 nizibiao[line[0]].append(line[1])
             else:
-                nizibiao[line[0]] = [line[0], line[1]]
+                # nizibiao[line[0]] = [line[0], line[1]]
+                nizibiao[line[0]] = [line[1],]
     rr = []
     for zi in scontent:
         if zi in nizibiao:
