@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-03-07 07:46:40
+# Last Modified: 2020-03-13 02:31:46
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -45,8 +45,9 @@ def rm_com(ctx):
 
 
 def rm_joiner(ctx):
-    '''去除汉字的链接和装饰符号: 外圈加方框或者圆形'''
-    tt = {0x200C:0xFFFD, 0x200D:0xFFFD, 0x20DD:0xFFFD, 0x20DE:0xFFFD, 0x20DF:0xFFFD, 0x20E0:0xFFFD}
+    '''去除汉字的链接和装饰符号: 外圈加方框、圆形或者三角'''
+    tt = {0x200C:0xFFFD, 0x200D:0xFFFD, 0x20DD:0xFFFD, 0x20DE:0xFFFD, 0x20DF:0xFFFD,
+            0x20E0:0xFFFD, 0x20E4:0xFFFD, }
     ctx = ctx.translate(tt).replace(chr(0xFFFD), '')
     return ctx
 
