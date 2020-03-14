@@ -9,34 +9,40 @@
     font-family:"HeitiTC";
     src:local("Hiragino Sans GB"),
         local("PingFang HK"),
+        local("PingFang TC"),
         local("PingFang SC"),
-        local(".PingFang SC Light"),
-        local(".PingFang TC Light"),
-        local(".PingFang-SC-Light"),
-        local(".PingFang-TC-Light"),
-        local(".PingFang SC"),
-        local(".PingFang TC"),
-        local("Microsoft YaHei"),
-        local("Lantinghei TC Extralight"),
-        local("Lantinghei SC Extralight"),
-        local(FZLTXHB--B51-0),
-        local(FZLTZHK--GBK1-0),
+        local("Source Han Sans");
+}
+
+/* 统一宋体 */
+@font-face {
+    font-family:"SongtiTC";
+    src:local("Source Han Serif"),
         local("Source Han Serif TC"),
-        local("Source Han Sans K"), local("Source Han Sans KR"),
-        local("Source Han Sans JP"),local("Source Han Sans CN"),local("Source Han Sans HK"),local("Source Han Sans TW"), local("Source Han Sans TWHK");
+        local("Source Han Serif SC"),
+        local("Noto Serif"),
+        local("Noto Serif CJK"),
+        local("Noto Serif CJK TC"),
+        local("Noto Serif CJK SC"),
+        local("source-han-serif-tc"),
+        local("source-han-serif-sc"),
+        local("serif"),
+        local("PMingLiU"),
+        local("SimSun"),
+        local("宋体");
 }
 
 /* 给汉字加外圈 */
 @font-face {
   font-family:"ENCLOSING_CIRCLE";
-  src:local("Source Han Serif TC");
+  src:local("Source Han Serif");
   unicode-range: U+20DD-20DE;
 }
 
 /* 正常显示缺字方块大小, 冬青黑和雅黑不能随着字体大小变化 */
 @font-face {
   font-family: WSQUARE;
-  src: local('Source Han Serif TC'),
+  src: local('Source Han Serif'),
        local('PingFang HK'),
        local('PingFang SC'),
        local('PMingLiU'),
@@ -49,10 +55,7 @@
   font-family: 'siddham';
   font-style: normal;
   font-weight: normal;
-  /*src:  local('siddham'), url(/static/siddham.woff) format('woff');*/
-  src:  url(/static/NotoSansSiddham-Regular.otf) format('opentype'), url(/static/Muktamsiddham.otf) format('opentype');
-  // local(ApDevaSanskrit),
-  // local(ApDevaSiddham),
+  src:  url(/static/NotoSansSiddham-Regular.otf) format('opentype');
   unicode-range: U+11580-115FF;
 }
 
@@ -65,14 +68,6 @@
     unicode-range: U+2CEEC-2EBCF;
 }
 */
-
-/* 用于显示扩展G区汉字 */
-/*@font-face {
-  font-family: 'extg';
-  font-style: normal;
-  font-weight: normal;
-  src: url(/static/subextg.otf) format('opentype');
-}*/
 
 /* 用于显示等宽英文和拼音, 拼音a的显示还存在问题 */
 @font-face {
@@ -131,16 +126,11 @@ body{
     height: 100%;
     // line-height: 1.3em;
     color:#000000;
-    /*background-color: #E7F4FE;
-    // background-color: #F1EDCC;*/
     /*background-color: #D0D0D0;  *//*150秒开始,使用40秒缓慢切换到此数值CCCCCC*/
     // background-color: #fffbf0;  /*象牙白*/
     background: url(/static/bg.jpg) repeat;
     padding:2em;
     padding-top:100px;
-    -ms-font-feature-settings: "liga";
-    /*-moz-font-feature-settings: "liga";
-    -webkit-font-feature-settings: "liga";*/
     font-feature-settings: "liga";
     -webkit-font-variant-ligatures: common-ligatures;
     font-variant-ligatures: common-ligatures;
@@ -162,7 +152,7 @@ p {
     white-space: normal; /* 单词间空白,对中文无效 */
     /*font-family: quote, "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", "PMingLiU", hanaminsat;*/
     /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", SimSun, "宋体", "Microsoft YaHei", "微软雅黑", "PMingLiU",
-     * "Source Han Serif TC";*/
+     "Source Han Serif";*/
     font-size: 100%;
     // font-weight: normal;
     letter-spacing: 0em; /* 字母间空白0.12em */
@@ -178,6 +168,10 @@ pre {
     border:dashed 0px blue;
     text-indent: 0;
     padding 0 0 0 0:
+}
+
+h1, h2, h3, h4{
+    font-family: HeitiTC
 }
 
 h1{
@@ -224,29 +218,9 @@ h1.maintitle{
 }
 
 h1.title{
-    /*margin-left:100px;*/
     text-align:center;
-    /*font-family:Arial, Helvetica, sans-serif;*/
-    font-weight:bold;
     bottom:5px;
 }
-
-/*
-h2.institution{
-    margin-left:100px;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-h2.department{
-    margin-left:100px;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-h2.subtitle{
-    margin-left:100px;
-    font-weight:bold;
-}
-*/
 
 .footer{
     text-align:center;
@@ -573,9 +547,6 @@ div.dateline{
 
 
 .dharani {
-     /*text-indent: 2em;*/
-     /*margin-left: 2em; */
-    /*line-height: 2.7em;*/
     color:#990099;
  }
 
@@ -696,22 +667,6 @@ td:last-child {
     text-align:right;
 }
 
-/*border: 0px solid transparent !important;*/
-/*
-table.border td{
-    vertical-align:top;
-    border:1px solid black;
-    padding:2px;
-}
-table.border td.norules{
-    border-width:0px;
-    padding-top:6px;
-}
-table.border{
-    border-collapse:collapse;
-    border-spacing:0;
-}*/
-
 .del{
     text-decoration:line-through;
 }
@@ -725,13 +680,6 @@ table.border{
     color:orange;
 }
 
-/*
-ruby.mps, ruby.zhuyin {
-    display: ruby;
-    -webkit-ruby-position: inter-character;
-    ruby-position: inter-character;
-}
-*/
 
 ruby rtc rt {
     display: inline;
@@ -822,27 +770,3 @@ sub {
 
 /*html5*/
 article,aside,dialog,footer,header,section,footer,nav,figure,menu{ display:block }
-
-// div.pre,
-// div.pre_eg,
-// pre.eg,
-// div.eg{
-//     clear:both;
-//     margin-top:1em;
-//     margin-bottom:1em;
-//     border-top-width:4px;
-//     border-bottom-width:4px;
-//     border-left-width:2px;
-//     border-right-width:2px;
-//     border-style:solid;
-//     padding-top:10px;
-//     padding-right:10px;
-//     padding-bottom:10px;
-//     padding-left:10px;
-//     color:#000000;
-//     line-height:1.1em;
-//     font-family:monospace;
-//     //font-size:10pt;
-//     /*white-space:pre;*/
-//     white-space: nowrap;
-// }
