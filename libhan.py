@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-03-19 06:58:20
+# Last Modified: 2020-03-20 04:48:13
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -115,7 +115,7 @@ def ishanzi(zi):
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
+    # path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
             line = line.strip()
@@ -369,8 +369,8 @@ def grep(filepath, *keyword):
     return line
 
 sch_db = []
-with open(os.path.join(PATH, "idx/sutra_sch.lst")) as fd:
-#with open("idx/sutra_sch.lst") as fd:
+# with open(os.path.join(PATH, "idx/sutra_sch.lst")) as fd:
+with open("idx/sutra_sch.lst") as fd:
     for line in fd:
         line = line.strip().split()[0]
         sch_db.append(line)
