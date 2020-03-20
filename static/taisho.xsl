@@ -1149,13 +1149,14 @@
     </xsl:template>
 
     <xsl:template match="quote">
-      <cite>
+      <blockquote>
       <xsl:if test="@source">
-        <xsl:attribute name="title">
+        <xsl:attribute name="cite">
           <xsl:value-of select="@source"/>
         </xsl:attribute>
       </xsl:if>
-      </cite>
+      <xsl:apply-templates/>
+      </blockquote>
     </xsl:template>
 
     <!-- <term rend="no_nor"> 此标签内的g不规范化-->
