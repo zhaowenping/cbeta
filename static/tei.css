@@ -754,6 +754,11 @@ sup {
 sub {
     bottom: -.25em;
 }
+/*quote*/
+q {
+    color:brown;
+}
+
 
 /* 敬语: 赤金色 */
 .honorific {
