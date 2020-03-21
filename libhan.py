@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-03-20 04:48:13
+# Last Modified: 2020-03-21 07:13:00
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -61,11 +61,11 @@ def normalize_space(ctx):
 
 
 def rm_ditto_mark(ctx):
-    # 在xml中去除三个叠字符号(默认叠字符号始终相连): ⺀ U+2E80 0 /〃 U+3003 2227 /々 U+3005 6415/ 亽 U+4EBD 151
+    # 在xml中去除四个叠字符号(默认叠字符号始终相连): ⺀ U+2E80 0 /〃 U+3003 2227 /々 U+3005 6415/ 亽 U+4EBD 151/ 𠚤 U+206A4
     # 首先删除叠字符号中间的空白
-    ctx = re.sub(r'([\u3003\u3005\u4ebd])\s+([\u3003\u3005\u4ebd])', r'\1\2', ctx)
+    ctx = re.sub(r'([\u3003\u3005\u4ebd\U000206A4])\s+([\u3003\u3005\u4ebd\U000206A4])', r'\1\2', ctx)
     ctx = array.array('u', ctx)
-    dittos = (chr(0x3003), chr(0x3005), chr(0x4ebd))
+    dittos = (chr(0x3003), chr(0x3005), chr(0x4ebd), chr(0x206A4))
     cc = 0  # 叠字符号的重复次数
     len_ctx = len(ctx)
     for idx, zi in enumerate(ctx):
@@ -89,6 +89,8 @@ def rm_ditto_mark(ctx):
 def ishanzi(zi):
     '''判断一个字符是否是非叠字汉字'''
     zi = ord(zi)
+    if zi in {'\u2E80', '\u3003', '\u3005', '\u4ebd', '\U000206A4'}:
+        return False
     # 〇
     if 0x3007 == zi:
         return True
@@ -96,7 +98,7 @@ def ishanzi(zi):
     if 0x3400 <= zi <= 0x4DB5:
         return True
     # 主区
-    if 0x4E00 <= zi <= 0x9FEF and zi != 0x4EBD:
+    if 0x4E00 <= zi <= 0x9FEF: # and zi != 0x4EBD:
         return True
     # BCDEF: 0x20007-0x2EBD6
     if 0x20000 <= zi <= 0x2EBE0:
@@ -411,6 +413,7 @@ def ahan_url(number):
 # 大正藏二·四一a
 # 大正藏第70卷459页b
 # 《大正藏》第40卷第16頁下
+# 大正藏第十九卷第16頁下 XXX
 pbanchor_pattern = re.compile(r'(《?[中乾佛作傳典刊刻北卍南印叢史品善嘉國圖城外大學宋家寺山師彙志房拓教文新書朝本樂正武永法洪漢片獻珍百石經編纂續脩興華著藏補譯趙遺金隆集順館高麗传丛国图学师汇书乐汉献经编续修兴华补译赵遗顺馆丽]+》?)第?([\d零〇一二三四五六七八九]{1,3})(?:卷|卷第|\u00b7)([\d零〇一二三四五六七八九]{1,3})[頁|页]?([上中下abcABC])?')
 def make_url2(number):
     tt = { ord('〇'): ord('0'), ord('零'): ord('0'),
@@ -1547,15 +1550,15 @@ if __name__ == "__main__":
     #            line = line.strip().split()
     #            print(line)
     #pprint.pprint(mulu)
-    print(parse_number('CBETA, T14, no. 475, pp. 537c8-538a14'))
-    print(parse_number('CBETA 2019.Q2, Y25, no. 25, p. 411a5-7'))
-    print(parse_number('CBETA 2019.Q3, T20, no. 1113B, p. 498c12-17'))
-    print(parse_number('T20n1113B'))
-    print(parse_number('T20n1113'))
-    print(parse_number('T01n0001_p0001a01'))
-    print(parse_number('1113b'))
-    print(parse_number('1113'))
-    print(parse_number('100.3'))
+    # print(parse_number('CBETA, T14, no. 475, pp. 537c8-538a14'))
+    # print(parse_number('CBETA 2019.Q2, Y25, no. 25, p. 411a5-7'))
+    # print(parse_number('CBETA 2019.Q3, T20, no. 1113B, p. 498c12-17'))
+    # print(parse_number('T20n1113B'))
+    # print(parse_number('T20n1113'))
+    # print(parse_number('T01n0001_p0001a01'))
+    # print(parse_number('1113b'))
+    # print(parse_number('1113'))
+    # print(parse_number('100.3'))
     # print(normalize_text('說</g>九種命終心三界'))
     #for i in fullsearch('止觀明靜'):
     #    print(i)
@@ -1568,7 +1571,6 @@ if __name__ == "__main__":
     # print(get_all_juan('T20n1113'))
     sentence = '非施者福 title:毘耶娑'
     sentence = '非施者福'
-    raw = '爾時，世尊語毘耶娑大仙人言：「汝聽施報，復有施分。何義布施？既布施已，自食自淨，施已報轉，故名布施。以何義故名為施主？如是問者，大仙當聽。若人有物，彼信心生，信心生已，以財付人遣向他國，彼人將物向他國施；彼人布施，財主得福，非施者福。彼所遣者，雖持物施而非捨主。若人自物自手施者，則是捨主、亦是施主。'
     # print(highlight(sentence, raw))
-
+    print(make_url2('大正藏第十九卷第七〇九页'))
 
