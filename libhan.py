@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-03-29 18:27:46
+# Last Modified: 2020-03-29 20:28:52
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1408,7 +1408,7 @@ def fullsearch(sentence):
     r= requests.get(url, json=data, timeout=10)
     result = r.json()
     # e = time.time()
-    # print(e-s)
+    print(result)
 
     hits = result['hits']['hits']
     # value = result['hits']['total']['value']
