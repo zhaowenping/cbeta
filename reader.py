@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-03-11 18:59:34
+# Last Modified: 2020-03-31 08:36:57
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -729,7 +729,15 @@ def zh_TW(filename):
     # content = re.sub(r'(?!辟支|仿)(佛陀?)', r'<persName>\1</persName>', content)
     honorific = '|'.join(sorted(honorific, key=len, reverse=True))
     # print(honorific)
-    content = re.sub(f'({honorific})', r'<persName>\1</persName>', content)
+    content = re.sub(f'({honorific})', r'<Honorific>\1</Honorific>', content)
+    # 人名地名下划线
+    persName = list()
+    with open('dict/persName.txt') as fd:
+        for line in fd:
+            line = line.strip()
+            persName.append(line)
+    persName = '|'.join(persName)
+    content = re.sub(f'({persName})', r'<persName>\1</persName>', content)
     content = normalize_text(content)
     print(filename)
     response.content_type = 'text/xml'

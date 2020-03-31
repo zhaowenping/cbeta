@@ -765,6 +765,12 @@ q {
     color:#F2BE45;
 }
 
+/* 人名地名: 下划线 */
+.persName {
+    text-decoration:underline wavy red;
+}
+
+
 /* 关闭新字形?
 [lang*=Hant],[lang*=Hans],[lang=zh-TW],[lang=zh-HK],[lang=zh-CN],[lang^=zh],article blockquote i,article blockquote var,article strong,code,html,kbd,pre,samp {
     -moz-font-feature-settings: "liga=1, locl=0";

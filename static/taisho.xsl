@@ -1215,8 +1215,15 @@
     </xsl:template>
 
     <!--敬语-->
-    <xsl:template match="persName">
+    <xsl:template match="Honorific">
         <span class="honorific">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+
+    <!--人名地名-->
+    <xsl:template match="persName">
+        <span class="persName">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
