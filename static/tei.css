@@ -767,7 +767,7 @@ q {
 
 /* 人名地名: 下划线 */
 .persName {
-    text-decoration:underline wavy red;
+    text-decoration:underline wavy black;
 }
 
 
