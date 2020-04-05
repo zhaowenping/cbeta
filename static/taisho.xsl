@@ -1222,11 +1222,11 @@
     </xsl:template>
 
     <!--人名地名-->
-    <xsl:template match="persName">
+    <!--xsl:template match="persName">
         <span class="persName">
             <xsl:apply-templates/>
         </span>
-    </xsl:template>
+    </xsl:template-->
 
     <!--string-split函数: 空格分割后取值witness@id-->
     <xsl:template match="text/text()" name="tokenize">

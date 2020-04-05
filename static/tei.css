@@ -766,9 +766,10 @@ q {
 }
 
 /* 人名地名: 下划线 */
-.persName {
+/*.persName {
     text-decoration:underline wavy black;
 }
+*/
 
 
 /* 关闭新字形?
