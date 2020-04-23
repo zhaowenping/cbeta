@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-04-23 01:27:18
+# Last Modified: 2020-04-23 01:33:17
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -346,7 +346,7 @@ def searchmulu():
             redirect(an)
         if len(results) > 1:
             pass
-    return {'results': results}
+    return {'results': results, 'content': title}
 
 # 搜索！
 
