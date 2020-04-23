@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-03-31 15:58:02
+# Last Modified: 2020-04-23 01:27:18
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -357,17 +357,17 @@ def search_post():
     # print('搜索: ', content)
     if not content: return {}
     if convert.detect(content)['confidence'] == 's':
-        content = convert.s2t(content)
+        ncontent = convert.s2t(content)
     # print('搜索: ', content)
     # stop_words = frozenset("不無一是有之者如法為故生此佛所三以二人云也於中若得心大")
     # content = ''.join(set(content)-stop_words)
     # print(('content', content))
-    xx = fullsearch(content)
+    xx = fullsearch(ncontent)
 
     with open('search.dict', 'a+') as fd:
-        fd.write(datetime.datetime.now().strftime("%Y%m%dT%T ") + content + '\n')
+        fd.write(datetime.datetime.now().strftime("%Y%m%dT%T ") + content + '|' + ncontent + '\n')
 
-    return {'results': xx}
+    return {'results': xx, 'content': content}
 
 # "menu/sutra_sch.lst"
 # "menu/bulei_sutra_sch.lst'
