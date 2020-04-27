@@ -594,7 +594,7 @@
             <p class="dharani">
               <span lang="sa-Sidd"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-Sidd']"/></span>
               <!--span lang="sa-Sidd"><xsl:apply-templates select="starts-with(cb:tt/cb:t[@xml:lang], 'sa')"/></span-->
-              <!--span lang="sa-x-rj"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-x-rj']"/></span-->
+              <span lang="sa-x-rj"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-x-rj']"/></span>
               <span>(<xsl:apply-templates select="cb:tt/cb:t[@xml:lang='zh-Hant']"/>)</span>
               <!--span lang="zh-Hant">(<xsl:apply-templates select="starts-with(cb:tt/cb:t[@xml:lang], 'zh')"/>)</span-->
               <!--span lang="zh-Hant">(<xsl:apply-templates select="cb:tt/cb:t[@xml:lang='zh-x-yy']"/>)</span-->
@@ -603,7 +603,7 @@
         </xsl:when>
         <xsl:otherwise>
             <p lang="sa-Sidd" class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-Sidd']"/></p>
-            <!--p lang="sa-x-rj" class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-x-rj']"/></p-->
+            <p lang="sa-x-rj" class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='sa-x-rj']"/></p>
             <p class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='zh-Hant']"/></p>
             <!--p lang="zh-Hant" class="dharani"><xsl:apply-templates select="cb:tt/cb:t[@xml:lang='zh-x-yy']"/></p-->
         </xsl:otherwise>
@@ -804,6 +804,11 @@
         <xsl:when test="starts-with($Ref, 'RJ')">
         <span lang="sa-x-rj" class="gaiji_rj">
             <ruby>
+            <xsl:choose>
+                <xsl:when test="$char/mapping[@type='unicode']">
+                    <xsl:value-of select="$char/mapping[@type='unicode']"/>
+                </xsl:when>
+                <xsl:otherwise>
                 <img>
                 <xsl:attribute name="src">
                     <xsl:text>/static/rj-gif/</xsl:text>
@@ -813,6 +818,8 @@
                     <xsl:text>.gif</xsl:text>
                 </xsl:attribute>
                 </img>
+                </xsl:otherwise>
+            </xsl:choose>
             <!-- 安装了cbeta的蘭扎字库，使用这句，不推荐-->
             <!--xsl:value-of select="/TEI//char[@xml:id=$Ref]/charProp[localName='rjchar']/value"/-->
                 <rt lang="sa-Latn">
