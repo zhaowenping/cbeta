@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-04-23 01:49:00
+# Last Modified: 2020-04-29 08:11:28
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -53,7 +53,13 @@ convert = STConvertor()
 @route('/')
 @view('temp/index.html')
 def index():
-    return {'Hello World!':''}
+    zoumadeng = []
+    with open('idx/zoumadeng.txt') as fd:
+        for line in fd:
+            line = line.strip()
+            zoumadeng.append(line)
+    zoumadeng = random.choice(zoumadeng)
+    return {'zoumadeng': zoumadeng}
 
 @get('/tools')
 @view('temp/tools.jinja2')
