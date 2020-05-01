@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-04-30 04:01:32
+# Last Modified: 2020-04-30 22:16:58
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -347,11 +347,12 @@ def searchmulu():
     # if request.method == "GET":
     # 0个结果页面不动, 多个结果自己选择
     if len(results) == 0:
-        abort(304)
+        # abort(304)
+        redirect('/')
     if len(results) == 1:
         redirect(sutra.url)
-    if len(results) > 1:
-        pass
+    # if len(results) > 1:
+    #     pass
     return {'results': results, 'content': title}
 
 # 搜索！
