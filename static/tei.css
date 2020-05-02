@@ -132,6 +132,7 @@ body{
     padding:2em;
     padding-top:100px;
     font-feature-settings: "liga";
+    //font-feature-settings: "liga", "ss04";
     -webkit-font-variant-ligatures: common-ligatures;
     font-variant-ligatures: common-ligatures;
     /*font-variant-ligatures: contextual;*/
