@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-05-05 05:18:31
+# Last Modified: 2020-05-05 06:55:56
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -54,7 +54,7 @@ def rm_joiner(ctx):
 
 # _space = re.compile(r'[ \t\n\r\x0b\x0c\u3000]+')
 def normalize_space(ctx):
-    '''去掉字符串两边的空格, 中间连续的多个空格替换为一个'''
+    '''去掉字符串两边的空格, 中间连续的多个空格(空白)替换为一个'''
     ctx = ctx.strip()
     ctx = re.sub(r'\s+', ' ', ctx)
     return ctx
@@ -376,6 +376,8 @@ with open("idx/sutra_sch.lst") as fd:
     for line in fd:
         line = line.strip().split()[0]
         sch_db.append(line)
+
+juan_pattern = re.compile(r'(\s+)第?([\d零〇一二三四五六七八九]{1,4})卷?')
 
 # 雜阿含經一五·一七
 # 增一阿含二一·六（大正二·六〇三c）  <pb n="0603c" ed="T" xml:id="T02.0125.0603c"/>
