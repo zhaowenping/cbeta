@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-04-30 22:16:58
+# Last Modified: 2020-05-08 17:34:52
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -38,7 +38,7 @@ from libhan import Search
 from libhan import STConvertor
 from libhan import normalize_text
 from libhan import fullsearch
-from libhan import make_url, make_url2, ahan_url
+from libhan import make_url, make_url2, ahan_url, make_docx
 
 from libhan import lookup, lookinkangxi, lookinsa, zhuyin
 from libhan import unihan
@@ -78,6 +78,12 @@ def server_static(filename):
 @route('/xml/:filename#.+#')
 def server_xml(filename):
     return static_file(filename, root='xml')
+
+@route('/docx/:filename#.+#')
+def server_docx(filename):
+    make_docx(os.path.join('xml', filename), 'docx')
+    filename = filename.split('/')[-1][:-4] + '.docx'
+    return static_file(filename, root='docx')
 
 
 # 跳转上一卷/下一卷

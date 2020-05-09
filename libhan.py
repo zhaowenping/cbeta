@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-05-07 20:37:14
+# Last Modified: 2020-05-08 17:35:26
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -31,6 +31,17 @@ import pprint
 import unicodedata
 
 import requests
+
+# docx
+import xml.dom.minidom as minidom
+from xml.etree import ElementTree as ET
+from docx import Document
+from docx.shared import Inches, Emu
+from docx.shared import Pt
+from docx.oxml.ns import qn
+from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_LINE_SPACING
+from docx.shared import Pt
+from docx.shared import RGBColor
 
 
 print('调用函数库')
@@ -1492,6 +1503,55 @@ def diff_ctx(lctx, rctx):
     # rctx = ''.join(f'<p>{line}</p>' for line in rctx.splitlines())
 
     return {'lfile': lctx, 'rfile': rctx}
+
+def make_docx(ff, temp=''):
+    et = ET.parse(ff)
+    root = et.getroot()
+
+    teiheader = root.findall("teiHeader")[0]
+    title = ''.join(root.findall("teiHeader/fileDesc/titleStmt/title")[0].itertext())
+    title = title.split('No.')[1].strip().split(maxsplit=1)[1]
+    author = root.findall("teiHeader/fileDesc/titleStmt/author")
+    if author:
+        author = author[0].text
+    if not author:
+        author = ''
+
+    fname = ff.split('/')[-1].split('_')[0]
+    if fname == 'D11n8817':
+        title = '佛說觀世音三昧經'
+    if fname == 'T19n0920':
+        title = '佛心經品亦通大隨求陀羅尼'
+
+    # title, author, pid, ct, fname
+    paras = root.findall("p")
+    text = root.findall("text")[0]
+    body = text.findall("body")[0]
+    document = Document()
+    head = document.add_heading(title, 0)
+    head.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    head = document.add_heading(author,1)
+    head.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+
+    for p in body.iter():
+        if p.tag == 'p':
+            xmlid = p.attrib.get('{http://www.w3.org/XML/1998/namespace}id', None)
+
+            ctx = normalize_text(''.join((normalize_space(t) for t in p.itertext())))
+            para = document.add_paragraph(ctx)
+            paragraph_format = para.paragraph_format
+            #print(dir(paragraph_format))
+            paragraph_format.first_line_indent = Inches(0.25)
+
+            # yield (xmlid, fname, author, title,  ctx)
+
+        if p.tag == 'lg':
+            xmlid = p.attrib['{http://www.w3.org/XML/1998/namespace}id']
+            ctx = normalize_text(''.join((normalize_space(t) for t in p.itertext())))
+            para = document.add_paragraph(ctx, style='Intense Quote')
+            #yield (xmlid, fname, author, title,  ctx)
+    docxfname = ff.split('/')[-1][:-4]
+    document.save(os.path.join(temp, f'{docxfname}.docx'))
 
 
 def test():
