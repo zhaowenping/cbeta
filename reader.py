@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-05-08 17:34:52
+# Last Modified: 2020-05-09 05:53:28
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -83,6 +83,7 @@ def server_xml(filename):
 def server_docx(filename):
     make_docx(os.path.join('xml', filename), 'docx')
     filename = filename.split('/')[-1][:-4] + '.docx'
+    response.content_type = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
     return static_file(filename, root='docx')
 
 
