@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-05-09 05:53:28
+# Last Modified: 2020-05-09 06:21:54
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -82,9 +82,9 @@ def server_xml(filename):
 @route('/docx/:filename#.+#')
 def server_docx(filename):
     make_docx(os.path.join('xml', filename), 'docx')
-    filename = filename.split('/')[-1][:-4] + '.docx'
-    response.content_type = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-    return static_file(filename, root='docx')
+    filename = filename.split('/')[-1].split('.')[0] + '.docx'
+    mime = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    return static_file(filename, root='docx', mimetype=mime, download=filename)
 
 
 # 跳转上一卷/下一卷
