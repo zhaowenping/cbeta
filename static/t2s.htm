@@ -162,14 +162,14 @@
                     <p>繁体</p>
                 </div>
                 <div class="box_content">
-                    <textarea id="text_input" maxlength="300" onkeydown="count();" onkeyup="count();">郭熙山水畫論云春山艷冶而如笑夏山蒼翠而如滴秋山明净而如妝冬山慘淡而如睡又云海山微茫而隱見江山嚴厲而峭卓溪山窈窕而幽深塞山童頳而堆阜操觚當作如是觀</textarea>
+                    <textarea id="text_input" maxlength="30000" onkeydown="count();" onkeyup="count();">郭熙山水畫論云春山艷冶而如笑夏山蒼翠而如滴秋山明净而如妝冬山慘淡而如睡又云海山微茫而隱見江山嚴厲而峭卓溪山窈窕而幽深塞山童頳而堆阜操觚當作如是觀</textarea>
                 </div>
                 <div class="box_button">
                     <div id="tips">
                         ※小技巧：上下文稍長效果更好，輸入80-90字好於10-20字。
                     </div>
                     <div id="count">
-                        0/300
+                        0/30000
                     </div>
                     <button id="button_submit_quan" onclick="getResult('quan');">转换</button>
                     <!--button id="button_submit_biaodian" onclick="getResult('biaodian');">標點<span style="font-size: 10px; font-family: Simsun; letter-spacing: 1px; position: relative; top: -2px;">(測試版)</span></button-->
@@ -192,7 +192,7 @@
     <script>
         function count() {
             var textDom = document.getElementById('text_input');
-            document.getElementById('count').innerHTML = textDom.value.length + '/300';
+            document.getElementById('count').innerHTML = textDom.value.length + '/30000';
         }
         count();
 
