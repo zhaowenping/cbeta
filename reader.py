@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-05-19 22:24:47
+# Last Modified: 2020-05-20 06:11:15
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1535,6 +1535,13 @@ def new_dict12(page):
         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
         result = dict(fxcd[pp*(page-1):pp*page])
     return {'result': result, 'header': header, 'prevpage': prevpage, 'nextpage': nextpage}
+
+@get('/rj')
+@view('temp/rj.jinja2')
+def gaiji_sd_get():
+    with open('static/rjv.json') as fd:
+        result = json.load(fd)
+    return {'result': result}
 
 
 # GeventServer.run(host = '0.0.0.0', port = 8081)
