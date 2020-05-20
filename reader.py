@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-05-20 06:11:15
+# Last Modified: 2020-05-20 07:26:09
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1540,7 +1540,13 @@ def new_dict12(page):
 @view('temp/rj.jinja2')
 def gaiji_sd_get():
     with open('static/rjv.json') as fd:
-        result = json.load(fd)
+        rr = json.load(fd)
+
+    result = list()
+    for zi in rr:
+        x = '+'.join('%X' % ord(x) for x in zi[1])
+        result.append([zi[0], x, zi[2], zi[3], zi[4], zi[5], zi[6]])
+
     return {'result': result}
 
 
