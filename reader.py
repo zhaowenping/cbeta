@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-05-09 06:21:54
+# Last Modified: 2020-05-19 22:15:49
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -79,9 +79,18 @@ def server_static(filename):
 def server_xml(filename):
     return static_file(filename, root='xml')
 
+# 生成繁体docx文档
 @route('/docx/:filename#.+#')
 def server_docx(filename):
     make_docx(os.path.join('xml', filename), 'docx')
+    filename = filename.split('/')[-1].split('.')[0] + '.docx'
+    mime = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    return static_file(filename, root='docx', mimetype=mime, download=filename)
+
+# 生成简体docx文档
+@route('/docx/zh/:filename#.+#')
+def server_docx_zh(filename):
+    make_docx(os.path.join('xml', filename), 'docx', fanti=False)
     filename = filename.split('/')[-1].split('.')[0] + '.docx'
     mime = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
     return static_file(filename, root='docx', mimetype=mime, download=filename)

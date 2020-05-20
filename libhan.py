@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-05-18 02:52:49
+# Last Modified: 2020-05-19 22:13:51
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1504,7 +1504,9 @@ def diff_ctx(lctx, rctx):
 
     return {'lfile': lctx, 'rfile': rctx}
 
-def make_docx(ff, temp=''):
+def make_docx(ff, temp='', fanti=True):
+    if not fanti:
+        stc = STConvertor()
     et = ET.parse(ff)
     root = et.getroot()
 
@@ -1538,6 +1540,8 @@ def make_docx(ff, temp=''):
             xmlid = p.attrib.get('{http://www.w3.org/XML/1998/namespace}id', None)
 
             ctx = normalize_text(''.join((normalize_space(t) for t in p.itertext())))
+            if not fanti:
+                ctx = stc.t2s(ctx)
             para = document.add_paragraph(ctx)
             paragraph_format = para.paragraph_format
             #print(dir(paragraph_format))
@@ -1548,6 +1552,8 @@ def make_docx(ff, temp=''):
         if p.tag == 'lg':
             xmlid = p.attrib['{http://www.w3.org/XML/1998/namespace}id']
             ctx = normalize_text(''.join((normalize_space(t) for t in p.itertext())))
+            if not fanti:
+                ctx = stc.t2s(ctx)
             para = document.add_paragraph(ctx, style='Intense Quote')
             #yield (xmlid, fname, author, title,  ctx)
     docxfname = ff.split('/')[-1][:-4]
