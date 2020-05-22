@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-05-21 18:45:27
+# Last Modified: 2020-05-22 08:30:14
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -56,6 +56,8 @@ def rm_com(ctx):
     for com in re.findall(r'\[.*?\]', ctx):
         if com in desc:
             ctx = ctx.replace(com, desc[com])
+        else:
+            ctx = ctx.replace(com, ' ')
     return ctx
 
 
@@ -132,7 +134,7 @@ def ishanzi(zi):
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    #path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
+    # path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
             line = line.strip()
