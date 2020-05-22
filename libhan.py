@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-05-21 05:03:18
+# Last Modified: 2020-05-21 18:26:54
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -50,9 +50,12 @@ PATH = "/home/zhaowp/cbeta/cbeta"
 
 def rm_com(ctx):
     # 删除组字式
+    with open('dict/desc.json') as fd:
+        desc = json.load(fd)
     for com in re.findall(r'\[.*?\]', ctx):
-        pass
-    pass
+        if com in desc:
+            ctx = ctx.replace(com, desc[com])
+    return ctx
 
 
 def rm_joiner(ctx):
@@ -201,6 +204,10 @@ def read_menu_file(sutra_list):
 
 def normalize_text(ctx):
     '''标准化文本(只适合繁体字)'''
+    # 去除上标和下标
+    ctx = re.sub(r'\[\w+\]', '', ctx)
+    # 去除组字式
+    ctx = rm_com(ctx)
     # 去除错误的标点符号
     tt = {0xff0e: 0x00b7,
           0x2027: 0x00b7,
