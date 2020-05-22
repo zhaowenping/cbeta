@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-05-21 05:03:04
+# Last Modified: 2020-05-21 18:52:09
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -34,7 +34,7 @@ from bottle import GeventServer
 import jieba
 
 from libhan import hk2iast, read_menu_file, HKdict2iast
-from libhan import Search
+from libhan import Search, rm_com
 from libhan import STConvertor
 from libhan import normalize_text
 from libhan import fullsearch
@@ -376,6 +376,12 @@ def search_post():
     # print('搜索: ', content)
     if not content: return {}
     ncontent = content
+
+    # 去除上标和下标
+    ncontent = re.sub(r'\[\w+\]', '', ncontent)
+    # 去除组字式
+    ncontent = rm_com(ncontent)
+
     if convert.detect(content)['confidence'] == 's':
         ncontent = convert.s2t(content)
     xx = fullsearch(ncontent)
