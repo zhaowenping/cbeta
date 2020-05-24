@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-05-21 18:52:09
+# Last Modified: 2020-05-24 04:18:40
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1551,7 +1551,7 @@ def gaiji_sd_get():
     result = list()
     for zi in rr:
         xx = '+'.join(['%X' % ord(x) for x in zi[5]])
-        result.append([zi[0], xx, zi[2], zi[3], zi[4], zi[5], zi[6]])
+        result.append([zi[0], xx, zi[2], zi[3], zi[4], zi[5], zi[6]], zi[7])
     result = sorted(result, key=lambda x: int(x[0], 16))
 
     return {'result': result}

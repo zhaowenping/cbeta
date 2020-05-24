@@ -37,11 +37,11 @@
 </table-->
 
 <table>
-<tr><td>名称</td><td>romanu</td><td>romanu</td><td>原字</td><td>xxx</td><td>图片</td></tr>
-{% for name, nor, uni, nun, url, des, cipin in result %}
+<tr><td>名称</td><td>romanu</td><td>romanu</td><td>原字</td><td>xxx</td><td>图片</td><td>词频</td><td>汉字</td></tr>
+{% for name, nor, uni, nun, url, des, cipin, rjchar in result %}
 <tr>
 <td>{{loop.index}}</td><td>{{name}}</td><td>{{nor}}</td><td class="uni">{{uni}}</td><td class="nun">{{nun}}</td><td class="des">{{des}}</td><td><img src="{{url}}"/></td>
-<td class="cipin">{{cipin}}</td>
+<td class="cipin">{{cipin}}</td><td>{{rjchar}}</td>
 </tr>
 {% endfor %}
 </table>
