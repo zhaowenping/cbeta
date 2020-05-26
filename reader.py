@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-05-24 04:18:40
+# Last Modified: 2020-05-25 17:43:12
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -369,9 +369,24 @@ def searchmulu():
 
 # 搜索！
 
+@post('/search')
+def search_post():
+    content = request.POST.content
+    # print('搜索: ', content)
+    if not content: return []
+    ncontent = content
+
+    xx = fullsearch(ncontent)
+
+    with open('search.dict', 'a+') as fd:
+        fd.write(datetime.datetime.now().strftime("%Y%m%dT%T ") + content + '|' + ncontent + '\n')
+
+    return xx
+
+
 @get('/search')
 @view('temp/search.jinja2')
-def search_post():
+def search_get():
     content = request.GET.content
     # print('搜索: ', content)
     if not content: return {}
