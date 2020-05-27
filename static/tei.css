@@ -133,7 +133,7 @@ html {
         "Hiragino Sans GB", "PingFang HK", "PingFang SC", "PMingLiU", "Microsoft YaHei",
         hanaminsat, siddham;
         */
-    font-family: quote, "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", "PMingLiU", hanaminsat, SCTG
+    font-family: SCTG, quote, "Hiragino Sans GB", "PingFang SC", "PMingLiU", hanaminsat
     /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;*/
     /*font-family: ENCLOSING_CIRCLE, WSQUARE, quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", "PingFang HK", "PingFang SC", "PMingLiU", "Microsoft YaHei", siddham;*/
     /* font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;*/
