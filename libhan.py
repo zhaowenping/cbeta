@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-06-02 04:51:43
+# Last Modified: 2020-06-02 06:40:33
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -46,6 +46,30 @@ from docx.shared import RGBColor
 
 print('调用函数库')
 PATH = "/home/zhaowp/cbeta/cbeta"
+
+
+ids_dict = dict()
+with open('idx/ids.txt') as fd:
+    for line in fd:
+        line = line.strip().split()
+        ids_dict[line[2]] = line[1]
+
+ids_pattern = re.compile('|'.join(sorted(ids_dict.keys(), key=len, reverse=True)))
+
+def rm_ids(ctx):
+    # 替换unicode ids形式
+    ids = False
+    for ch in ctx:
+        if 0x2FF0 <= ord(ch) <= 0x2FFB:
+            ids = True
+            break
+    if not ids:
+        return ctx
+
+    for ids in ids_pattern.findall(ctx):
+        ctx.replace(ids, ids_dict.get(ids, ' '))
+
+    return ctx
 
 
 def rm_com(ctx):

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-05-31 08:41:38
+# Last Modified: 2020-06-02 06:41:40
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -34,7 +34,7 @@ from bottle import GeventServer
 import jieba
 
 from libhan import hk2iast, read_menu_file, HKdict2iast
-from libhan import Search, rm_com
+from libhan import Search, rm_com, rm_ids
 from libhan import STConvertor
 from libhan import normalize_text
 from libhan import fullsearch
@@ -396,6 +396,8 @@ def search_get():
     ncontent = re.sub(r'\[\w+\]', '', ncontent)
     # 去除组字式
     ncontent = rm_com(ncontent)
+    # 去除IDS
+    ncontent = rm_ids(ncontent)
 
     if convert.detect(content)['confidence'] == 's':
         ncontent = convert.s2t(content)
