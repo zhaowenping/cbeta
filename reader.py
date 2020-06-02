@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-06-02 06:41:40
+# Last Modified: 2020-06-02 07:40:21
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -399,8 +399,8 @@ def search_get():
     # 去除IDS
     ncontent = rm_ids(ncontent)
 
-    if convert.detect(content)['confidence'] == 's':
-        ncontent = convert.s2t(content)
+    if convert.detect(ncontent)['confidence'] == 's':
+        ncontent = convert.s2t(ncontent)
     xx = fullsearch(ncontent)
 
     with open('search.dict', 'a+') as fd:

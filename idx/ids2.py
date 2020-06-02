@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-06-02 07:09:36
+# Last Modified: 2020-06-02 07:15:01
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -40,6 +40,7 @@ def rm_ids(ctx):
     return ctx
 
 print(rm_ids('言辭⿰言羊j'))
+print(rm_ids('⿰山叵⿰山我'))
 
 def main():
     ''''''
