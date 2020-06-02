@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-06-02 06:40:33
+# Last Modified: 2020-06-02 07:10:30
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -54,7 +54,7 @@ with open('idx/ids.txt') as fd:
         line = line.strip().split()
         ids_dict[line[2]] = line[1]
 
-ids_pattern = re.compile('|'.join(sorted(ids_dict.keys(), key=len, reverse=True)))
+ids_pattern = sorted(ids_dict.keys(), key=len, reverse=True)
 
 def rm_ids(ctx):
     # 替换unicode ids形式
@@ -66,8 +66,9 @@ def rm_ids(ctx):
     if not ids:
         return ctx
 
-    for ids in ids_pattern.findall(ctx):
-        ctx.replace(ids, ids_dict.get(ids, ' '))
+    for ids in ids_pattern:
+        if ids in ctx:
+            ctx = ctx.replace(ids, ids_dict.get(ids, ' '))
 
     return ctx
 
