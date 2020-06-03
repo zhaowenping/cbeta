@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-06-03 02:35:31
+# Last Modified: 2020-06-03 07:32:45
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -34,7 +34,7 @@ from bottle import GeventServer
 import jieba
 
 from libhan import hk2iast, read_menu_file, HKdict2iast
-from libhan import Search, rm_com, rm_ids, unicode_escape
+from libhan import Search, rm_com, IDS, unicode_escape
 from libhan import STConvertor
 from libhan import normalize_text
 from libhan import fullsearch
@@ -384,6 +384,8 @@ def search_post():
     return xx
 
 
+ids = IDS()
+
 @get('/search')
 @view('temp/search.jinja2')
 def search_get():
@@ -399,7 +401,7 @@ def search_get():
     # 去除组字式
     ncontent = rm_com(ncontent)
     # 去除IDS
-    ncontent = rm_ids(ncontent)
+    ncontent = ids.rm_ids(ncontent)
 
     if convert.detect(ncontent)['confidence'] == 's':
         ncontent = convert.s2t(ncontent)

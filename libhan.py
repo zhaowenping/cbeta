@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-06-03 02:38:27
+# Last Modified: 2020-06-03 07:39:49
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -57,29 +57,33 @@ def unicode_escape(ctx):
 
     return ctx
 
-ids_dict = dict()
-with open('idx/ids.txt') as fd:
-    for line in fd:
-        line = line.strip().split()
-        ids_dict[line[2]] = line[1]
 
-ids_pattern = sorted(ids_dict.keys(), key=len, reverse=True)
+class IDS:
+    def __init__(self):
+        self.ids_dict = dict()
+        with open('idx/ids.txt') as fd:
+            for line in fd:
+                line = line.strip().split()
+                self.ids_dict[line[2]] = line[1]
 
-def rm_ids(ctx):
-    # 替换unicode ids形式
-    ids = False
-    for ch in ctx:
-        if 0x2FF0 <= ord(ch) <= 0x2FFB:
-            ids = True
-            break
-    if not ids:
+        # self.ids_pattern = sorted(ids_dict.keys(), key=len, reverse=True)
+
+    def rm_ids(self, ctx):
+        # 替换unicode ids形式为单个字符
+        ids = False
+        for ch in ctx:
+            #if 0x2FF0 <= ord(ch) <= 0x2FFB:
+            if ch in '⿰⿱⿲⿳⿴⿵⿶⿷⿸⿹⿺⿻↷':
+                ids = True
+                break
+        if not ids:
+            return ctx
+
+        for ids in ids_dict.keys():
+            if ids in ctx:
+                ctx = ctx.replace(ids, self.ids_dict[ids])
+
         return ctx
-
-    for ids in ids_pattern:
-        if ids in ctx:
-            ctx = ctx.replace(ids, ids_dict[ids])
-
-    return ctx
 
 
 def rm_com(ctx):
