@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-06-02 07:40:21
+# Last Modified: 2020-06-03 02:35:31
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -34,7 +34,7 @@ from bottle import GeventServer
 import jieba
 
 from libhan import hk2iast, read_menu_file, HKdict2iast
-from libhan import Search, rm_com, rm_ids
+from libhan import Search, rm_com, rm_ids, unicode_escape
 from libhan import STConvertor
 from libhan import normalize_text
 from libhan import fullsearch
@@ -392,6 +392,8 @@ def search_get():
     if not content: return {}
     ncontent = content
 
+    # 去除python转义字符
+    ncontent = unicode_escape(ncontent)
     # 去除上标和下标
     ncontent = re.sub(r'\[\w+\]', '', ncontent)
     # 去除组字式
