@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-06-03 07:39:49
+# Last Modified: 2020-06-03 07:44:46
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -79,7 +79,7 @@ class IDS:
         if not ids:
             return ctx
 
-        for ids in ids_dict.keys():
+        for ids in self.ids_dict.keys():
             if ids in ctx:
                 ctx = ctx.replace(ids, self.ids_dict[ids])
 
