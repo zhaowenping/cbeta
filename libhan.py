@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-06-03 02:33:54
+# Last Modified: 2020-06-03 02:38:27
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -49,7 +49,7 @@ PATH = "/home/zhaowp/cbeta/cbeta"
 
 
 def unicode_escape(ctx):
-	'''替换python字样转义字符串'''
+    '''替换python字样转义字符串'''
     for ch in re.findall(r'\\u[a-fA-F0-9]{4}', ctx):
         ctx = ctx.replace(ch, chr(int(ch[2:], 16)))
     for ch in re.findall(r'\\U[a-fA-F0-9]{8}', ctx):
