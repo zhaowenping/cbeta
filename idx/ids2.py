@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-06-02 07:15:01
+# Last Modified: 2020-06-02 16:34:17
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -13,6 +13,12 @@ __author__ = "北京秘银科技 赵文平(email:wenping_zhao@126.com tel:135110
 __version__ = "0.0.1"
 
 import re
+
+cipin = dict()
+with open('../../p01.txt') as fd:
+    for line in fd:
+        line = line.strip().split()
+        cipin[line[0]] = int(line[2])
 
 ids_dict = dict()
 with open('ids.txt') as fd:
@@ -41,6 +47,11 @@ def rm_ids(ctx):
 
 print(rm_ids('言辭⿰言羊j'))
 print(rm_ids('⿰山叵⿰山我'))
+
+idsv = ids_dict.values()
+for zi in cipin:
+    if zi not in idsv:
+        print(zi, cipin[zi])
 
 def main():
     ''''''

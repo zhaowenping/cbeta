@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-06-02 07:42:52
+# Last Modified: 2020-06-02 07:44:11
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -68,7 +68,7 @@ def rm_ids(ctx):
 
     for ids in ids_pattern:
         if ids in ctx:
-            ctx = ctx.replace(ids, ids_dict[ids]))
+            ctx = ctx.replace(ids, ids_dict[ids])
 
     return ctx
 
