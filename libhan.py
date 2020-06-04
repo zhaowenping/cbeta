@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-06-03 19:53:51
+# Last Modified: 2020-06-04 06:35:03
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -246,7 +246,7 @@ def read_menu_file(sutra_list):
 def normalize_text(ctx):
     '''标准化文本(只适合繁体字)'''
     # # 去除上标和下标
-    # ctx = re.sub(r'\[\w+\]', '', ctx)
+    # ctx = re.sub(r'\[[\w\*]+\]', '', ctx)
     # # 去除组字式
     # ctx = rm_com(ctx)
     # 去除错误的标点符号
