@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-06-03 07:44:46
+# Last Modified: 2020-06-03 19:53:51
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -73,7 +73,7 @@ class IDS:
         ids = False
         for ch in ctx:
             #if 0x2FF0 <= ord(ch) <= 0x2FFB:
-            if ch in '⿰⿱⿲⿳⿴⿵⿶⿷⿸⿹⿺⿻↷':
+            if ch in '⿰⿱⿲⿳⿴⿵⿶⿷⿸⿹⿺⿻↷↹':
                 ids = True
                 break
         if not ids:

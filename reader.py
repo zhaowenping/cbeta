@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-06-03 07:32:45
+# Last Modified: 2020-06-03 19:42:56
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -398,10 +398,10 @@ def search_get():
     ncontent = unicode_escape(ncontent)
     # 去除上标和下标
     ncontent = re.sub(r'\[\w+\]', '', ncontent)
-    # 去除组字式
-    ncontent = rm_com(ncontent)
     # 去除IDS
     ncontent = ids.rm_ids(ncontent)
+    # 去除组字式
+    ncontent = rm_com(ncontent)
 
     if convert.detect(ncontent)['confidence'] == 's':
         ncontent = convert.s2t(ncontent)
