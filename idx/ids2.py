@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-06-02 16:34:17
+# Last Modified: 2020-06-03 15:53:47
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -27,7 +27,15 @@ with open('ids.txt') as fd:
         ids_dict[line[2]] = line[1]
 
 ids_pattern = sorted(ids_dict.keys(), key=len, reverse=True)
-print('⿰言羊' in ids_pattern)
+#print('⿰言羊' in ids_pattern)
+
+IDS = dict()
+with open('/home/zhaowp/Downloads/ranjana_20170930/IDS.TXT') as fd:
+    for line in fd:
+        if not line.startswith('U+'):
+            continue
+        line = line.strip().split()
+        IDS[line[1]] = line
 
 def rm_ids(ctx):
     # 替换unicode ids形式
@@ -45,13 +53,13 @@ def rm_ids(ctx):
 
     return ctx
 
-print(rm_ids('言辭⿰言羊j'))
-print(rm_ids('⿰山叵⿰山我'))
+# print(rm_ids('言辭⿰言羊j'))
+# print(rm_ids('⿰山叵⿰山我'))
 
 idsv = ids_dict.values()
 for zi in cipin:
-    if zi not in idsv:
-        print(zi, cipin[zi])
+    if zi not in idsv and zi in IDS:
+        print(IDS[zi][0], zi, IDS[zi][2], cipin[zi])
 
 def main():
     ''''''
