@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-06-04 06:35:03
+# Last Modified: 2020-06-09 20:15:05
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -50,12 +50,23 @@ PATH = "/home/zhaowp/cbeta/cbeta"
 
 def unicode_escape(ctx):
     '''替换python字样转义字符串'''
-    for ch in re.findall(r'\\u[a-fA-F0-9]{4}', ctx):
-        ctx = ctx.replace(ch, chr(int(ch[2:], 16)))
-    for ch in re.findall(r'\\U[a-fA-F0-9]{8}', ctx):
-        ctx = ctx.replace(ch, chr(int(ch[2:], 16)))
+    for ch in re.findall(r'(?:[^\\]|^)(\\u[a-fA-F0-9]{4})', ctx):
+        ctx = ctx.replace(ch, chr(int(ch[-4:], 16)))
+    for ch in re.findall(r'(?:[^\\]|^)(\\U[a-fA-F0-9]{8})', ctx):
+        ctx = ctx.replace(ch, chr(int(ch[-8:], 16)))
+    # ctx = ctx.replace(r'\\\\', r'\\')
 
     return ctx
+
+
+def unicode_descape(ctx):
+    for char in ctx:
+        if 0x2CEB0 <= ord(char) <= 0x2EBE0:  # F区
+            yield r'\U{:08X}'.format(ord(char))
+        elif 0x30000 <= ord(char) <= 0x3134A:  # G区
+            yield r'\U{:08X}'.format(ord(char))
+        else:
+            yield char
 
 
 class IDS:
@@ -86,17 +97,20 @@ class IDS:
         return ctx
 
 
-def rm_com(ctx):
-    # 删除组字式
-    with open('dict/desc.json') as fd:
-        desc = json.load(fd)
-    # pattern = '|'.join(['\[%s\]' % k[1:-1].replace('*', '\*').replace('?', '\?')  for k in desc.keys()])
-    for com in re.findall(r'\[.*?\]', ctx):
-        if com in desc:
-            ctx = ctx.replace(com, desc[com])
-        else:
-            ctx = ctx.replace(com, ' ')
-    return ctx
+class CBETA_COM:
+    def __init__(self):
+        with open('idx/composition.json') as fd:
+            self.desc = json.load(fd)
+
+    def rm_com(self, ctx):
+        # 删除组字式
+        # pattern = '|'.join(['\[%s\]' % k[1:-1].replace('*', '\*').replace('?', '\?')  for k in desc.keys()])
+        for com in re.findall(r'\[.*?\]', ctx):
+            if com in self.desc:
+                ctx = ctx.replace(com, self.desc[com])
+            else:
+                ctx = ctx.replace(com, ' ')
+        return ctx
 
 
 def rm_joiner(ctx):
@@ -168,11 +182,36 @@ def ishanzi(zi):
         return True
     return False
 
+def unicode_zone(char):
+    '''汉字编码范围'''
+    if 0x4E00 <= ord(char) <= 0x9FA5:
+        return 'M'
+    if 0x9FA6 <= ord(char) <= 0x9FFC:
+        return 'Mx'
+    if 0x3400 <= ord(char) <= 0x4DB5:
+        return 'A'
+    if 0x4DB6 <= ord(char) <= 0x4DBF:
+        return 'Ax'
+    if 0x20000 <= ord(char) <= 0x2A6D6:
+        return 'B'
+    if 0x2A6D7 <= ord(char) <= 0x2A6DD:
+        return 'Bx'
+    if 0x2A700 <= ord(char) <= 0x2B734:
+        return 'C'
+    if 0x2B740 <= ord(char) <= 0x2B81D:
+        return 'D'
+    if 0x2B820 <= ord(char) <= 0x2CEA1:
+        return 'E'
+    if 0x2CEB0 <= ord(char) <= 0x2EBE0:
+        return 'F'
+    if 0x30000 <= ord(char) <= 0x3134A:
+        return 'G'
+    return ''
 
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    #path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
+    path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
             line = line.strip()
@@ -430,8 +469,8 @@ def grep(filepath, *keyword):
     return line
 
 sch_db = []
-#with open(os.path.join(PATH, "idx/sutra_sch.lst")) as fd:
-with open("idx/sutra_sch.lst") as fd:
+with open(os.path.join(PATH, "idx/sutra_sch.lst")) as fd:
+#with open("idx/sutra_sch.lst") as fd:
     for line in fd:
         line = line.strip().split()[0]
         sch_db.append(line)
@@ -700,6 +739,45 @@ def make_url(number):
 class SA:
     '''梵语字符串类, 可以使用HK转写和iast转写输入, 使用天城体, 悉檀体, 拉丁输出'''
     pass
+
+def fromlatn(ctx):
+    vowel = {
+            'a': chr(0x11580), 'ā': chr(0x11581), 'i': chr(0x11582), 'ī': chr(0x11583),
+            'u': chr(0x11584), 'ū': chr(0x11585), 'ṛ': chr(0x11586), 'ṝ': chr(0x11587),
+            'ḷ': chr(0x11588), 'ḹ': chr(0x11589), 'e': chr(0x1158a), 'ai': chr(0x1158b),
+            'o': chr(0x1158c), 'au': chr(0x1158d),
+            }
+    consonant = {
+    'k': chr(0x1158e), 'kh': chr(0x1158f), 'g': chr(0x11590), 'gh': chr(0x11591),
+    'ṅ': chr(0x11592), 'c': chr(0x11593), 'ch': chr(0x11594), 'j': chr(0x11595),
+    'jh': chr(0x11596), 'ñ': chr(0x11597), 'ṭ': chr(0x11598), 'ṭh': chr(0x11599),
+    'ḍ': chr(0x1159a), 'ḍh': chr(0x1159b), 'ṇ': chr(0x1159c), 't': chr(0x1159d),
+    'th': chr(0x1159e), 'd': chr(0x1159f), 'dh': chr(0x115a0), 'n': chr(0x115a1),
+    'p': chr(0x115a2), 'ph': chr(0x115a3), 'b': chr(0x115a4), 'bh': chr(0x115a5),
+    'm': chr(0x115a6), 'y': chr(0x115a7), 'r': chr(0x115a8), 'l': chr(0x115a9),
+    'v': chr(0x115aa), 'ś': chr(0x115ab), 'ṣ': chr(0x115ac), 's': chr(0x115ad),
+    'h': chr(0x115ae),
+    }
+    mvowel = {
+    'ā': chr(0x115af),
+    'i': chr(0x115b0),
+    'ī': chr(0x115b1),
+    'u': chr(0x115b2),
+    'ū': chr(0x115b3),
+    'r': chr(0x115b4),
+    'ṛ': chr(0x115b5),
+    'e': chr(0x115b8),
+    'ai': chr(0x115b9),
+    'o': chr(0x115ba),
+    'au': chr(0x115bb),
+    }
+    sign = {
+    'ṃ': chr(0x115bd),
+    'ḥ': chr(0x115be),
+    }
+    # '|': chr(0x115c2),
+    # '||': chr(0x115c3),
+
 
 def hk2iastdeve(str_in):
     '''hk哈佛-京都系统转IAST梵语(天城体)'''
