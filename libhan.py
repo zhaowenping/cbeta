@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-06-10 01:15:55
+# Last Modified: 2020-06-10 03:27:59
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -160,17 +160,17 @@ def ishanzi(zi):
     zi = ord(zi)
     if zi in {'\u2E80', '\u3003', '\u3005', '\u4ebd', '\U000206A4'}:
         return False
-    # 〇
-    if 0x3007 == zi:
+    # 主区, 包括补充区0x9FA6-0x9FFC
+    if 0x4E00 <= zi <= 0x9FFC: # and zi != 0x4EBD:
         return True
     # A区,包括补充区0x4DB6-0x4DBF
     if 0x3400 <= zi <= 0x4DBF:
         return True
-    # 主区, 包括补充区0x9FA6-0x9FFC
-    if 0x4E00 <= zi <= 0x9FFC: # and zi != 0x4EBD:
-        return True
     # BCDEF: 0x20007-0x2EBD6
     if 0x20000 <= zi <= 0x2EBE0:
+        return True
+    # 〇
+    if 0x3007 == zi:
         return True
     # G区: 0x30000-0x3134A
     if 0x30000 <= zi <= 0x3134A:
@@ -181,6 +181,7 @@ def ishanzi(zi):
     if 0x2F800 <= zi <= 0x2FA1D:
         return True
     return False
+
 
 def unicode_zone(char):
     '''汉字编码范围'''
@@ -207,6 +208,7 @@ def unicode_zone(char):
     if 0x30000 <= ord(char) <= 0x3134A:
         return 'G'
     return ''
+
 
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
