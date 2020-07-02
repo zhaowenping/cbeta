@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-07-02 09:34:09
+# Last Modified: 2020-07-02 15:57:54
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1507,7 +1507,7 @@ def fullsearch(sentence):
     '''全文搜索, sentence是繁体字'''
     # 标准化文本
     sentence = normalize_text(sentence)
-    sentence = unicode_escape(sentence)
+    sentence = ''.join(unicode_escape(sentence))
     url = "http://127.0.0.1:9200/cbeta/_doc/_search"
     data = {
      "query": {
@@ -1543,7 +1543,7 @@ def fullsearch(sentence):
     data["query"]["bool"]["must"] = [{"match_phrase" if key=="content" else "match": {key:val}} for key,val in must]
     # pprint.pprint(data["query"]["bool"]["must"])
     # 用于高亮的内容
-    hlsentence = ''.join([st[0] for st in sentences if len(st) == 1])
+    hlsentence = unicode_unescape(''.join([st[0] for st in sentences if len(st) == 1]))
     # e = time.time()
     # print(e-s)
 
