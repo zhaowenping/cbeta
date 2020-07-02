@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-07-02 04:59:52
+# Last Modified: 2020-07-02 08:18:34
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -48,7 +48,7 @@ print('调用函数库')
 PATH = "/home/zhaowp/cbeta/cbeta"
 
 
-def unicode_escape(ctx):
+def unicode_escape(ctx, start=r'\'):
     '''替换python字样转义字符串'''
     for ch in re.findall(r'(?:[^\\]|^)(\\u[a-fA-F0-9]{4})', ctx):
         ctx = ctx.replace(ch, chr(int(ch[-4:], 16)))
@@ -59,7 +59,8 @@ def unicode_escape(ctx):
     return ctx
 
 
-def unicode_descape(ctx):
+def unicode_descape(ctx, start=r'\'):
+    '''将F区、G区汉字转换成转义字符序列，方便后续查找'''
     for char in ctx:
         if 0x2CEB0 <= ord(char) <= 0x2EBE0:  # F区
             yield r'\U{:08X}'.format(ord(char))
@@ -1506,6 +1507,7 @@ def fullsearch(sentence):
     '''全文搜索, sentence是繁体字'''
     # 标准化文本
     sentence = normalize_text(sentence)
+    sentence = unicode_escape(sentence)
     url = "http://127.0.0.1:9200/cbeta/_doc/_search"
     data = {
      "query": {
