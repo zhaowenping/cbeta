@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-07-02 08:19:51
+# Last Modified: 2020-07-02 09:34:09
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -48,8 +48,8 @@ print('调用函数库')
 PATH = "/home/zhaowp/cbeta/cbeta"
 
 
-def unicode_escape(ctx):
-    '''替换python字样转义字符串'''
+def unicode_unescape(ctx):
+    '''替换python字样转义字符串为正常汉字'''
     for ch in re.findall(r'(?:[^\\]|^)(\\u[a-fA-F0-9]{4})', ctx):
         ctx = ctx.replace(ch, chr(int(ch[-4:], 16)))
     for ch in re.findall(r'(?:[^\\]|^)(\\U[a-fA-F0-9]{8})', ctx):
@@ -59,7 +59,7 @@ def unicode_escape(ctx):
     return ctx
 
 
-def unicode_descape(ctx):
+def unicode_escape(ctx):
     '''将F区、G区汉字转换成转义字符序列，方便后续查找'''
     for char in ctx:
         if 0x2CEB0 <= ord(char) <= 0x2EBE0:  # F区
