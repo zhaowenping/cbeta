@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-07-02 09:35:14
+# Last Modified: 2020-07-07 06:32:48
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -398,7 +398,7 @@ def search_get():
     # 去除python转义字符
     ncontent = unicode_unescape(ncontent)
     # 去除上标和下标
-    ncontent = re.sub(r'\[[\w\*]+\]', '', ncontent)
+    ncontent = re.sub(r'\[[a-zA-Z0-9\*]+\]', '', ncontent)
     # 去除IDS
     ncontent = ids.rm_ids(ncontent)
     # 去除组字式
