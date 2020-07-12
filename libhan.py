@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-07-11 21:22:33
+# Last Modified: 2020-07-12 03:23:45
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -214,7 +214,7 @@ def unicode_zone(char):
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    # path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
+    #path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
             line = line.strip()
