@@ -1186,7 +1186,7 @@
                 <xsl:text>英&#x20DE;</xsl:text>
             </xsl:when>
             <xsl:when test="@xml:lang='x-sa-pi'">
-                <xsl:text>[梵語/巴利語]</xsl:text>
+                <xsl:text>[梵&#x20DE;/巴&#x20DE;]</xsl:text>
             </xsl:when>
             <xsl:when test="@xml:lang='sa'">
                 <xsl:text>梵&#x20DE;</xsl:text>
