@@ -1186,7 +1186,7 @@
                 <xsl:text>英&#x20DE;</xsl:text>
             </xsl:when>
             <xsl:when test="@xml:lang='x-sa-pi'">
-                <xsl:text>[梵&#x20DE;/巴&#x20DE;]</xsl:text>
+                <xsl:text>梵&#x20DE;巴&#x20DE;</xsl:text>
             </xsl:when>
             <xsl:when test="@xml:lang='sa'">
                 <xsl:text>梵&#x20DE;</xsl:text>
@@ -1195,7 +1195,7 @@
                 <xsl:text>巴&#x20DE;</xsl:text>
             </xsl:when>
             <xsl:when test="@xml:lang='x-unknown'">
-                <xsl:text>[UNKNOWN]</xsl:text>
+                <xsl:text>？&#x20DE;</xsl:text>
             </xsl:when>
         </xsl:choose>
                 <xsl:apply-templates/>
