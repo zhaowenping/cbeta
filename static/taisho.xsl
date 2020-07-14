@@ -1183,16 +1183,16 @@
         </span-->
         <xsl:choose>
             <xsl:when test="@xml:lang='en'">
-                <xsl:text>[英語]</xsl:text>
+                <xsl:text>英&#x20DE;</xsl:text>
             </xsl:when>
             <xsl:when test="@xml:lang='x-sa-pi'">
                 <xsl:text>[梵語/巴利語]</xsl:text>
             </xsl:when>
             <xsl:when test="@xml:lang='sa'">
-                <xsl:text>[梵語]</xsl:text>
+                <xsl:text>梵&#x20DE;</xsl:text>
             </xsl:when>
             <xsl:when test="@xml:lang='pi'">
-                <xsl:text>[巴利語]</xsl:text>
+                <xsl:text>巴&#x20DE;</xsl:text>
             </xsl:when>
             <xsl:when test="@xml:lang='x-unknown'">
                 <xsl:text>[UNKNOWN]</xsl:text>
