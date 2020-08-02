@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-07-27 08:57:33
+# Last Modified: 2020-08-02 06:58:16
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -46,7 +46,7 @@ from docx.shared import RGBColor
 
 print('调用函数库')
 PATH = "/home/zhaowp/cbeta/cbeta"
-
+# 拉丁字母0041~024F
 
 def unicode_unescape(ctx):
     '''替换python字样转义字符串为正常汉字'''
