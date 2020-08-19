@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-08-17 13:08:28
+# Last Modified: 2020-08-18 21:08:29
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -655,7 +655,7 @@ def parse_number(title, guess_juan=False):
     # TODO: 查找卷数
     if not tome:
         # 大般若经特例
-        if volume and (book, int(volume)) == ('T', 220):
+        if volume and (book, int(sutra)) == ('T', 220):
             if int(volume) <= 200:
                 tome = '05'
             if 201 <= int(volume) <= 400:
@@ -1757,6 +1757,8 @@ if __name__ == "__main__":
     # print(parse_number('1113b'))
     # print(parse_number('1113'))
     # print(parse_number('100.3'))
+    print(parse_number('220.200'))
+    print(parse_number('220.201'))
     # print(normalize_text('說</g>九種命終心三界'))
     #for i in fullsearch('止觀明靜'):
     #    print(i)
