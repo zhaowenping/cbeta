@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-08-18 21:08:29
+# Last Modified: 2020-08-19 08:58:32
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -157,29 +157,21 @@ def rm_ditto_mark(ctx):
 
 
 def ishanzi(zi):
-    '''判断一个字符是否是非叠字汉字'''
+    '''粗略判断一个字符是否是非叠字汉字'''
     zi = ord(zi)
     if zi in {'\u2E80', '\u3003', '\u3005', '\u4ebd', '\U000206A4'}:
         return False
-    # 主区, 包括补充区0x9FA6-0x9FFC
-    if 0x4E00 <= zi <= 0x9FFC: # and zi != 0x4EBD:
+    # 主区和A区, 包括补充区0x4DB6-0x4DBF, 0x9FA6-0x9FFC
+    if 0x3400 <= zi <= 0x9FFC: # and zi != 0x4EBD:
         return True
-    # A区,包括补充区0x4DB6-0x4DBF
-    if 0x3400 <= zi <= 0x4DBF:
-        return True
-    # BCDEF: 0x20007-0x2EBD6
-    if 0x20000 <= zi <= 0x2EBE0:
+    # BCDEFG，包括兼容汉字区0x2FXXX
+    if 0x20000 <= zi <= 0x3134A:
         return True
     # 〇
     if 0x3007 == zi:
         return True
-    # G区: 0x30000-0x3134A
-    if 0x30000 <= zi <= 0x3134A:
-        return True
     # 兼容汉字区
     if 0xF900 <= zi <= 0xFAD9:
-        return True
-    if 0x2F800 <= zi <= 0x2FA1D:
         return True
     return False
 
@@ -548,6 +540,7 @@ def make_url2(number):
     book = 'T'
     anchor = ''
     jinghao = pbanchor_pattern.findall(number)
+    print(number, jinghao)
     if jinghao:
         book, tome, page, abc = jinghao[0]
         page = '{:04}'.format(int(page.translate(tt)))
@@ -584,6 +577,8 @@ def make_url2(number):
             book = 'B'
         if '乾隆' in book:
             book = 'L'
+        if '呂澂' in book or '吕澂' in book:
+            book = 'LC'
         if book in {'A', 'C', 'G', 'GA', 'GB', 'L', 'M', 'P', 'U'}:
             tome = '{:03}'.format(int(tome.translate(tt)))
         else:
@@ -650,12 +645,11 @@ def parse_number(title, guess_juan=False):
             return None
 
     book = book.upper() if book else 'T'
-    # sutra = '{:04}'.format(int(sutra))
     sutra = sutra.upper().zfill(4)
     # TODO: 查找卷数
     if not tome:
         # 大般若经特例
-        if volume and (book, int(sutra)) == ('T', 220):
+        if volume and f'{book}{sutra}' == 'T0220':
             if int(volume) <= 200:
                 tome = '05'
             if 201 <= int(volume) <= 400:
@@ -1435,8 +1429,10 @@ with open('dict/punctuation.txt') as fd:
         c1 = line[0]
         pun[ord(c1)] = 0xFFFD
 
-def rm_pun(ctx):
-    '''删除标点符号'''
+def rm_pun(ctx, ex=()):
+    '''删除标点符号，除了ex列表中的字符'''
+    # for char in ex:
+    #     pun.pop(ord(char), None)
     ctx = ctx.translate(pun).replace(chr(0xFFFD), '')
     return ctx
 
@@ -1759,6 +1755,7 @@ if __name__ == "__main__":
     # print(parse_number('100.3'))
     print(parse_number('220.200'))
     print(parse_number('220.201'))
+    print(parse_number('J32nB271'))
     # print(normalize_text('說</g>九種命終心三界'))
     #for i in fullsearch('止觀明靜'):
     #    print(i)
@@ -1772,5 +1769,6 @@ if __name__ == "__main__":
     sentence = '非施者福 title:毘耶娑'
     sentence = '非施者福'
     # print(highlight(sentence, raw))
-    print(make_url2('大正藏第十九卷第七〇九页'))
+    print(make_url2('大正藏第九卷第七〇九页'))
+    print(make_url2('大正藏第十九卷第16頁下'))
 
