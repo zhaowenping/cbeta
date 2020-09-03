@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-08-21 17:53:30
+# Last Modified: 2020-08-30 18:32:46
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -60,7 +60,7 @@ def unicode_unescape(ctx):
 
 
 def unicode_escape(ctx):
-    '''将F区、G区汉字转换成转义字符序列，方便后续查找'''
+    '''将F区、G区汉字转换成转义字符序列，方便后续ES中查找'''
     for char in ctx:
         if 0x2CEB0 <= ord(char) <= 0x2EBE0:  # F区
             yield r'\U{:08X}'.format(ord(char))
