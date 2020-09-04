@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-09-03 07:38:58
+# Last Modified: 2020-09-04 04:11:21
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -27,14 +27,13 @@ import time
 import array
 from functools import reduce
 from functools import total_ordering
-import pprint
 import unicodedata
-
-import requests
+# import xml.dom.minidom as minidom
+from xml.etree import ElementTree as ET
+import pprint
 
 # docx
-import xml.dom.minidom as minidom
-from xml.etree import ElementTree as ET
+import requests
 from docx import Document
 from docx.shared import Inches, Emu
 from docx.shared import Pt
@@ -47,6 +46,31 @@ from docx.shared import RGBColor
 print('调用函数库')
 PATH = "/home/zhaowp/cbeta/cbeta"
 # 拉丁字母0041~024F
+
+
+def VERTICAL(ctx):
+    '''竖排标点转横排标点'''
+    t = { 0xfe10: 0xff0c,  # 逗号
+          0xfe11: 0x3001,  # 顿号
+          0xfe12: 0x3002,  # 句号
+          0xfe13: 0xff1a,  # 冒号
+          0xfe14: 0xff1b,  # 分号
+          0xfe15: 0xff01,  # 感叹号
+          0xfe16: 0xff1f,  # 问号
+          0xfe17: 0x3016,  # 左括号
+          0xfe18: 0x3017,  # 右括号
+          0xfe19: 0x2026,  # 省略号
+          0xfe31: 0x2014,  # 破折号
+          0xfe35: 0xff08,  # 左小括号
+          0xfe36: 0xff09,  # 右小括号
+          0xfe41: 0x300c,  # 左内引号
+          0xfe42: 0x300d,  # 右内引号
+          0xfe43: 0x300e,  # 左外引号
+          0xfe44: 0x300f,  # 右外引号
+            }
+    ctx = ctx.translate(t)
+    return ctx
+
 
 def unicode_unescape(ctx):
     '''替换python字样转义字符串为正常汉字'''
