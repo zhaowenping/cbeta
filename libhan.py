@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-09-08 07:51:07
+# Last Modified: 2020-09-08 15:17:57
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1572,6 +1572,7 @@ def fullsearch(sentence):
     result = r.json()
     # e = time.time()
     print(result)
+    # {'error': {'root_cause': [{'type': 'index_not_found_exception', 'reason': 'no such index [cbeta]', 'resource.type': 'index_or_alias', 'resource.id': 'cbeta', 'index_uuid': '_na_', 'index': 'cbeta'}], 'type': 'index_not_found_exception', 'reason': 'no such index [cbeta]', 'resource.type': 'index_or_alias', 'resource.id': 'cbeta', 'index_uuid': '_na_', 'index': 'cbeta'}, 'status': 404}
 
     hits = result['hits']['hits']
     # value = result['hits']['total']['value']
