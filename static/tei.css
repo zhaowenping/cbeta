@@ -662,6 +662,7 @@ dt{
 
 /* figures */
 .figure{
+    text-align:center;
     display:block;
     border-top:solid 1pt blue;
     border-bottom:solid 1pt blue;
