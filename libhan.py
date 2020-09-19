@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-09-16 19:08:25
+# Last Modified: 2020-09-18 20:56:48
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -230,7 +230,7 @@ def unicode_zone(char):
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    #path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
+    # path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
             line = line.strip()
@@ -1367,26 +1367,47 @@ class STConvertor:
         return content
 
 
+    # def detect(self, s0):
+    #     '''粗略判断一段文本是简体还是繁体的概率'''
+    #     if len(s0) == 0:
+    #         return {'t': 50, 's': 50, 'confidence': 's'}
+
+    #     s0 = set(s0)
+    #     # 同时是简体繁体的可能性
+    #     j = sum(1 for i in (s0 - self.tt - self.ss) if self.p.match(i))
+    #     # 繁体可能性
+    #     t = 100 + ((j * 50 - len(s0 - self.tt) * 100 )/ len(s0))
+    #     # 简体可能性
+    #     s = 100 + ((j * 50 - len(s0 - self.ss) * 100 )/ len(s0))
+
+    #     confidence = 's'
+    #     if t > 50:
+    #         confidence = 't'
+    #     elif s > 50:
+    #         confidence = 's'
+    #     elif t > s:
+    #         confidence = 't'
+
+    #     return {'t': t, 's': s, 'confidence': confidence}
+
     def detect(self, s0):
-        '''粗略判断一段文本是简体还是繁体的概率'''
+        '''使用简体字表来判断一段文本是简体还是繁体的概率'''
         if len(s0) == 0:
             return {'t': 50, 's': 50, 'confidence': 's'}
+        jt = set()
+        with open('idx/jt.txt') as fd:
+            for line in fd:
+                if line.startswith('#'): continue
+                line = line.split()
+                jt.add(line[0])
 
-        s0 = set(s0)
-        # 同时是简体繁体的可能性
-        j = sum(1 for i in (s0 - self.tt - self.ss) if self.p.match(i))
-        # 繁体可能性
-        t = 100 + ((j * 50 - len(s0 - self.tt) * 100 )/ len(s0))
-        # 简体可能性
-        s = 100 + ((j * 50 - len(s0 - self.ss) * 100 )/ len(s0))
-
-        confidence = 's'
-        if t > 50:
-            confidence = 't'
-        elif s > 50:
-            confidence = 's'
-        elif t > s:
-            confidence = 't'
+        t = 50
+        s = 50
+        confidence = 't'
+        for zi in s0:
+            if zi in jt:
+                confidence = 's'
+                break
 
         return {'t': t, 's': s, 'confidence': confidence}
 
