@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-09-21 18:30:37
+# Last Modified: 2020-09-23 00:18:41
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -72,7 +72,7 @@ def VERTICAL(ctx):
     return ctx
 
 
-def unicode_unescape(ctx):
+def python_unescape(ctx):
     '''替换python字样转义字符串为正常汉字'''
     for ch in re.findall(r'(?:[^\\]|^)(\\u[a-fA-F0-9]{4})', ctx):
         ctx = ctx.replace(ch, chr(int(ch[-4:], 16)))
@@ -83,7 +83,7 @@ def unicode_unescape(ctx):
     return ctx
 
 
-def unicode_escape(ctx):
+def python_escape(ctx):
     '''将F区、G区汉字转换成转义字符序列，方便后续ES中查找'''
     for char in ctx:
         if 0x2CEB0 <= ord(char) <= 0x2EBE0:  # F区
@@ -94,6 +94,38 @@ def unicode_escape(ctx):
             yield char
 
 
+def ids_split(ctx, fn=lambda x:x):
+    '''将字符串按照ids序列分割为数组。遇到ids序列的时候，使用fn处理，返回处理后的数组。'''
+    stack = []
+    counter = 0
+    for ch in ctx:
+        if counter == 0:
+            if stack and ch in '↷↹⿰⿱⿴⿵⿶⿷⿸⿹⿺⿻⿲⿳':
+                yield ''.join(stack)
+                stack = []
+            stack.append(ch)
+            if ch in '↷↹':
+                counter = 1
+            elif ch in '⿰⿱⿴⿵⿶⿷⿸⿹⿺⿻':
+                counter = 2
+            elif ch in '⿲⿳':
+                counter = 3
+        else:
+            stack.append(ch)
+            if ch in '↷↹':
+                pass
+            elif ch in '⿰⿱⿴⿵⿶⿷⿸⿹⿺⿻':
+                counter += 1
+            elif ch in '⿲⿳':
+                counter += 2
+            else:
+                counter -= 1
+                if counter == 0:
+                    yield fn(''.join(stack))
+                    stack = []
+    yield ''.join(stack)
+
+
 class IDS:
     def __init__(self):
         self.ids_dict = dict()
@@ -102,24 +134,27 @@ class IDS:
                 line = line.strip().split()
                 self.ids_dict[line[2]] = line[1]
 
-        # self.ids_pattern = sorted(ids_dict.keys(), key=len, reverse=True)
-
     def rm_ids(self, ctx):
-        # 替换unicode ids形式为单个字符
-        ids = False
-        for ch in ctx:
-            #if 0x2FF0 <= ord(ch) <= 0x2FFB:
-            if ch in '⿰⿱⿲⿳⿴⿵⿶⿷⿸⿹⿺⿻↷↹':
-                ids = True
-                break
-        if not ids:
-            return ctx
+        '''替换unicode ids形式为普通单个字符'''
+        return ''.join(ids_split(ctx, fn=lambda x:self.ids_dict.get(x, x)))
 
-        for ids in self.ids_dict.keys():
-            if ids in ctx:
-                ctx = ctx.replace(ids, self.ids_dict[ids])
 
-        return ctx
+    # def rm_ids(self, ctx):
+    #     # 替换unicode ids形式为单个字符
+    #     ids = False
+    #     for ch in ctx:
+    #         #if 0x2FF0 <= ord(ch) <= 0x2FFB:
+    #         if ch in '⿰⿱⿲⿳⿴⿵⿶⿷⿸⿹⿺⿻↷↹':
+    #             ids = True
+    #             break
+    #     if not ids:
+    #         return ctx
+
+    #     for ids in sorted(self.ids_dict.keys(), key=len, reverse=True):
+    #         if ids in ctx:
+    #             ctx = ctx.replace(ids, self.ids_dict[ids])
+
+    #     return ctx
 
 
 class CBETA_COM:
@@ -1548,7 +1583,7 @@ def fullsearch(sentence):
     '''全文搜索, sentence是繁体字'''
     # 标准化文本
     sentence = normalize_text(sentence)
-    sentence = ''.join(unicode_escape(sentence))
+    sentence = ''.join(python_escape(sentence))
     url = "http://127.0.0.1:9200/cbeta/_doc/_search"
     data = {
      "query": {
@@ -1584,7 +1619,7 @@ def fullsearch(sentence):
     data["query"]["bool"]["must"] = [{"match_phrase" if key=="content" else "match": {key:val}} for key,val in must]
     # pprint.pprint(data["query"]["bool"]["must"])
     # 用于高亮的内容
-    hlsentence = unicode_unescape(''.join([st[0] for st in sentences if len(st) == 1]))
+    hlsentence = python_unescape(''.join([st[0] for st in sentences if len(st) == 1]))
     # e = time.time()
     # print(e-s)
 
