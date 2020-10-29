@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-10-26 02:44:53
+# Last Modified: 2020-10-29 07:20:32
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -72,6 +72,39 @@ def VERTICAL(ctx):
     return ctx
 
 
+def fullwidth2half(ctx, pun=True, exp=''):
+    '''全角字符转半角字符, pun: 默认转换全角标点, exp: 不转换的字符列表'''
+
+    if pun:
+        # '！' <= ch <= '～':  # 0xFF01~0xFF5E
+        t = {ch: ch-0xFEE0 for ch in range(0xFF01, 0xFF5F)}
+        t[0x3000] = 0x20
+    else:
+        # if '０' <= ch <= '９' or 'Ａ' <= ch <= 'Ｚ' or 'ａ' <= ch <= 'ｚ':
+        t = {ch: ch-0xFEE0 for ch in range(0xFF10, 0xFF1A)}
+        t.update({ch: ch-0xFEE0 for ch in range(0xFF21, 0xFF3B)})
+        t.update({ch: ch-0xFEE0 for ch in range(0xFF41, 0xFF5B)})
+    for ch in exp:
+        t.pop(ord(ch), None)
+    ctx = ctx.translate(t)
+    return ctx
+
+    # ctx = array.array('u', ctx)
+    # SPACE = chr(0x3000)
+    # if pun:
+    #     for idx, ch in enumerate(ctx):
+    #         if ch == SPACE:
+    #             ctx[idx] = ' '
+    #         elif '！' <= ch <= '～':  # 0xFF01~0xFF5E
+    #             ctx[idx] = chr(ord(ch) - 0xFEE0)
+    # else:
+    #     for idx, ch in enumerate(ctx):
+    #         if '０' <= ch <= '９' or 'Ａ' <= ch <= 'Ｚ' or 'ａ' <= ch <= 'ｚ':
+    #             ctx[idx] = chr(ord(ch) - 0xFEE0)
+
+    # return ctx.tounicode()
+
+
 def python_unescape(ctx):
     '''替换python字样转义字符串为正常汉字'''
     for ch in re.findall(r'(?:[^\\]|^)(\\u[a-fA-F0-9]{4})', ctx):
@@ -84,7 +117,7 @@ def python_unescape(ctx):
 
 
 def python_escape(ctx):
-    '''将F区、G区汉字转换成转义字符序列，方便后续ES中查找'''
+    '''因为ES不支持F区、G区汉字，所以将F区、G区汉字转换成转义字符序列，方便后续ES中查找'''
     for char in ctx:
         if 0x2CEB0 <= ord(char) <= 0x2EBE0:  # F区
             yield r'\U{:08X}'.format(ord(char))
@@ -265,7 +298,7 @@ def unicode_zone(char):
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    #path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
+    # path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
             line = line.strip()
@@ -523,7 +556,7 @@ def grep(filepath, *keyword):
     return line
 
 sch_db = []
-#with open(os.path.join(PATH, "idx/sutra_sch.lst")) as fd:
+# with open(os.path.join(PATH, "idx/sutra_sch.lst")) as fd:
 with open("idx/sutra_sch.lst") as fd:
     for line in fd:
         line = line.strip().split()[0]
