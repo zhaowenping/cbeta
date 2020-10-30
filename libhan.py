@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-10-29 07:20:32
+# Last Modified: 2020-10-30 09:04:43
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -197,13 +197,13 @@ class CBETA_COM:
 
     def rm_com(self, ctx):
         # 删除组字式
-        # pattern = '|'.join(['\[%s\]' % k[1:-1].replace('*', '\*').replace('?', '\?')  for k in desc.keys()])
-        for com in re.findall(r'\[.*?\]', ctx):
-            if com in self.desc:
-                ctx = ctx.replace(com, self.desc[com])
-            else:
-                ctx = ctx.replace(com, ' ')
-        return ctx
+        return ''.join(re_split(r'\[.*?\]', ctx, lambda x: self.desc.get(x, ' ')))
+        # for com in re.findall(r'\[.*?\]', ctx):
+        #     if com in self.desc:
+        #         ctx = ctx.replace(com, self.desc[com])
+        #     else:
+        #         ctx = ctx.replace(com, ' ')
+        # return ctx
 
 
 def rm_joiner(ctx):
@@ -556,7 +556,7 @@ def grep(filepath, *keyword):
     return line
 
 sch_db = []
-# with open(os.path.join(PATH, "idx/sutra_sch.lst")) as fd:
+#with open(os.path.join(PATH, "idx/sutra_sch.lst")) as fd:
 with open("idx/sutra_sch.lst") as fd:
     for line in fd:
         line = line.strip().split()[0]
@@ -1335,6 +1335,22 @@ class Search:
 
 
 # 简体繁体转换
+def re_split(pattern, string, fn=lambda x: x, exfn=lambda x: x):
+    '''对re模块split的改进；把输入字符串使用pattern分割, 匹配的字符串使用fn处理, 不匹配的使用exfn处理'''
+    if not isinstance(pattern, re.Pattern):
+        pattern = re.compile(pattern)
+    rr = pattern.search(string)
+    while rr:
+        start, end = rr.span()
+        if start != 0:
+            yield exfn(string[:start])
+        yield fn(string[start:end])
+        string = string[end:]
+        rr = pattern.search(string)
+    if string:
+        yield exfn(string)
+
+
 def re_search(pattern, string):
     '''对re模块search的改进；把输入字符串使用pattern分割, 每个字符串附带一个标志，表示该字符串是否短语匹配'''
     rr = pattern.search(string)
@@ -1416,7 +1432,8 @@ class STConvertor:
         else:
             tst2 = {k:self.tstable[k] for k in self.tstable}
 
-        content = ''.join(i[0].translate(tst2) if not i[1] else self.tsptable[i[0]] for i in re_search(self.tsp, string))
+        #content = ''.join(i[0].translate(tst2) if not i[1] else self.tsptable[i[0]] for i in re_search(self.tsp, string))
+        content = ''.join(re_split(self.tsp, string, self.tsptable.get, lambda i: i.translate(tst2)))
 
         return content
 
@@ -1430,7 +1447,8 @@ class STConvertor:
         if punctuation:
             string = string.translate({0x201c: 0x300c, 0x201d: 0x300d, 0x2018: 0x300e, 0x2019: 0x300f})
 
-        content = ''.join(i[0].translate(self.sttable) if not i[1] else self.stptable[i[0]] for i in re_search(self.stp, string))
+        #content = ''.join(i[0].translate(self.sttable) if not i[1] else self.stptable[i[0]] for i in re_search(self.stp, string))
+        content = ''.join(re_split(self.stp, string, self.stptable.get, lambda i: i.translate(self.sttable)))
 
         return content
 
@@ -1491,10 +1509,9 @@ varppp = re.compile('|'.join(sorted(varptable.keys(),key=len,reverse=True)))
 
 def rm_variant(string, level=0):
     '''异体字规范化为标准繁体字'''
-    # string = string.translate(yitizi)
-    # return string
     # ctx = unicodedata.normalize("NFKC", ctx)
-    content = ''.join(i[0].translate(yitizi) if not i[1] else varptable[i[0]] for i in re_search(varppp, string))
+    # content = ''.join(i[0].translate(yitizi) if not i[1] else varptable[i[0]] for i in re_search(varppp, string))
+    content = ''.join(re_split(varppp, string, varptable.get, lambda i: i.translate(yitizi)))
     return content
 
 
