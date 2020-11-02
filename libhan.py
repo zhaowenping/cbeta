@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-10-30 09:04:43
+# Last Modified: 2020-11-01 23:01:57
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -11,6 +11,7 @@ from __future__ import unicode_literals, division, absolute_import, print_functi
 3. 注音 phonetic notation
 4. 注音格式转换
 5. 去除'〡'
+6. 所有数据装入redis
 """
 
 __all__ = []
@@ -1019,276 +1020,276 @@ def HKdict2iast(hkdict):
     return sa_en
 
 
-def load_dict(dictionary=None):
-
-    # 词典列表
-    dicts = {'fk': ('佛光山', 'fk.json.gz'), 'dfb': ('丁福保', 'dfb.json.gz'), 'ccc': ('庄春江', 'ccc.json'), 'fxcd': ('法相詞典', 'fxcd.json.gz'),
-            'nvd': ('南山律学词典', 'nvd.json.gz'), 'cyx': ('佛學常見詞彙（陳義孝）', 'cyx.json'), 'ylb': ('唯识名词白话新解', 'ylb.json'),
-            'szfs': ('三藏法数', 'szfs.json'), 'fymyj': ('翻譯名義集', 'fymyj.json'), 'wdhy': ('五燈會元', 'wdhy.json.gz'), 'yzzj': ('閱藏知津', 'yzzj.json.gz'),
-            'ldms': ('歷代名僧辭典', 'ldms.json.gz'), 'syfy': ('俗語佛源', 'syfy.json.gz'), 'bkqs': ('中华佛教百科全书','bkqs.json.gz')}
-
-    aio = dict()
-
-    # 装入梵英词典, 太大了，暂时不装了
-    mwpatten = re.compile(r'(%\{.+?})')
-    sa_en = dict()
-
-    # s = time.time()
-    # with gzip.open('dict/sa-en.json.gz') as fd:
-    #     data = fd.read()
-    # data = json.loads(data)
-    # sa_en = dict()
-    # for key in data:
-    #     k = key.replace('1', '').replace("'", '').replace('4', '').replace('7', '').replace('8', '').replace('9', '').replace('0', '').replace('-', '').lower()
-    #     sa_en.update({k: data[key]})
-    #
-    # for key in data:
-    #     vals = data[key]
-    #     res = []
-    #     for val in vals:
-    #         x = mwpatten.findall(val)
-    #         if x:
-    #             for ff in x:
-    #                 val = val.replace(ff, hk2sa(ff))
-    #         res.append(val)
-    #     # 不知道以下这两行那个对
-    #     sa_en.update({hk2sa(key, 1): res})
-    #     sa_en.update({hk2sa(key, 2): res})
-    # e = time.time()
-    # print('装入梵英词典，用时%s' % (e - s))
-    yield ('sa_en', sa_en)
-
-    sa_hant = dict()
-    # s = time.time()
-    # with gzip.open('dict/sa-hant.json.gz') as fd:
-    #     data = fd.read()
-    # data = json.loads(data)
-    # for key in data:
-    #     sa_hant.update({key.lower(): data[key]})
-    # e = time.time()
-    # print('装入梵汉词典，用时%s' % (e - s))
-    yield ('sa_hant', sa_hant)
-
-    yat = dict()
-    # s = time.time()
-    # with gzip.open('dict/yat.json.gz') as fd:
-    #     data = fd.read()
-    # data = json.loads(data)
-    # for key in data:
-    #     yat.update({key.lower(): data[key]})
-    # for key in data:
-    #     vals = data[key]
-    #     res = []
-    #     for val in vals:
-    #         x = mwpatten.findall(val)
-    #         if x:
-    #             for ff in x:
-    #                 v = val.replace(ff, hk2sa(ff))
-    #         res.append(v)
-    #     yat.update({hk2sa(key, 1): res})
-    #     yat.update({hk2sa(key, 2): res})
-    # e = time.time()
-    # print('装入Yates梵英词典，用时%s' % (e - s))
-    yield ('yat', yat)
-
-    s = time.time()
-    with gzip.open('dict/kangxi.json.gz') as fd:
-        kangxi = json.load(fd)
-    e = time.time()
-    print('装入康熙字典，用时%s' % (e - s))
-    yield ('kangxi', kangxi)
-
-    s = time.time()
-    with open('dict/Unihan_Readings.json') as fd:
-        unihan = json.load(fd)
-    e = time.time()
-    print('装入Unicode10.0字典，用时%s' % (e - s))
-    yield ('unihan', unihan)
-
-    for k in dicts:
-        s = time.time()
-        path = f'dict/{dicts[k][1]}'
-        if not os.path.exists(path):
-            continue
-
-        if path.endswith('gz'):
-            with gzip.open(path) as fd:
-                try:
-                    v = json.load(fd)
-                except:
-                    print(path)
-                    raise
-        else:
-            with open(path, encoding='utf8') as fd:
-                v = json.load(fd)
-        # for k1 in v:
-        #     if k1 in aio:
-        #         aio[k1].update({dicts[k][0]: v[k1]})
-        #     #     aio[k1].append()
-        #     else:
-        #         aio[k1] = {dicts[k][0]: v[k1]}
-        e = time.time()
-        print('装入%s，用时%s' % (dicts[k][0], e - s))
-        yield (k, v)
-
-    yield ('aio', aio)
-
-    # return {'kangxi':kangxi, 'unihan':unihan,
-    #         'fk':fk, 'dfb': dfb, 'ccc': ccc, 'nvd': nvd, 'cxy': cxy, 'ylb': ylb, 'fxcd': fxcd,
-    #         'szfs': szfs, 'fymyj': fymyj,
-    #     'sa_hant': sa_hant, 'sa_en': sa_en, 'yat': yat}
-
-
-
-def lookinkangxi(word):
-    '''查询康熙字典'''
-
-    def sub(word):
-        definition = []
-        _from = ""
-        pinyin = ""
-        if word in kangxi:
-            _from = "康熙字典"
-            kxword = kangxi[word]
-            if "說文解字" in kxword:
-                definition.append(kxword["說文解字"])
-            if "康熙字典" in kxword:
-                definition.append(kxword["康熙字典"])
-            if "宋本廣韻" in kxword:
-                definition.append(kxword["宋本廣韻"])
-            if definition:
-                definition = '<br><br>'.join(definition)
-            else:
-                definition = kxword.get('英文翻譯', '')
-            pinyin = kxword.get('國語發音', '')
-        else:
-            _from = "unicode"
-            definition = unihan.get(word, {}).get('kDefinition', '')
-            pinyin = unihan.get(word, {}).get('kMandarin', '')
-        return pinyin, definition, _from
-
-    pinyin, definition, _from = sub(word)
-
-    if not pinyin:
-        word2 = rm_variant(word)
-        pinyin, definition, _from = sub(word2)
-        if definition:
-            definition = f'同{word2}<br>' + definition
-    return {'word': word, 'pinyin': pinyin, 'def': definition, 'from': _from}
-
-
-def lookinsa(word):
-    definition = sa_hant.get(hk2sa(word).lower(), '')
-    pinyin = ""
-    _from = ""
-    if definition:
-        _from = "文理学院"
-        pinyin = "文理学院"
-    if not definition:
-        # 使用Harvard-Kyoto转写查找字典
-        definition = sa_en.get(hk2sa(word), '')
-        # 使用缩写查找字典
-        if not definition:
-            w = word.replace('1', '').replace("'", '').replace('4', '').replace('7', '').replace('8', '').replace('9', '').replace('0', '').replace('-', '').lower()
-            definition = sa_en.get(w, '')
-        if definition:
-            definition = '|'.join(definition)
-            _from = "威廉梵英词典"
-            pinyin = "威廉梵英词典"
-    if not definition:
-        print(hk2sa(word))
-        definition = yat.get(hk2sa(word), '')
-        if not definition:
-            w = word.replace('-', '').lower()
-            definition = yat.get(w, '')
-        if definition:
-            definition = '|'.join(definition)
-            _from = "YAT"
-            pinyin = "YAT"
-    return {'word': word, 'pinyin': pinyin, 'def': definition, 'from': _from}
+# def load_dict(dictionary=None):
+#
+#     # 词典列表
+#     dicts = {'fk': ('佛光山', 'fk.json.gz'), 'dfb': ('丁福保', 'dfb.json.gz'), 'ccc': ('庄春江', 'ccc.json'), 'fxcd': ('法相詞典', 'fxcd.json.gz'),
+#             'nvd': ('南山律学词典', 'nvd.json.gz'), 'cyx': ('佛學常見詞彙（陳義孝）', 'cyx.json'), 'ylb': ('唯识名词白话新解', 'ylb.json'),
+#             'szfs': ('三藏法数', 'szfs.json'), 'fymyj': ('翻譯名義集', 'fymyj.json'), 'wdhy': ('五燈會元', 'wdhy.json.gz'), 'yzzj': ('閱藏知津', 'yzzj.json.gz'),
+#             'ldms': ('歷代名僧辭典', 'ldms.json.gz'), 'syfy': ('俗語佛源', 'syfy.json.gz'), 'bkqs': ('中华佛教百科全书','bkqs.json.gz')}
+#
+#     aio = dict()
+#
+#     # 装入梵英词典, 太大了，暂时不装了
+#     mwpatten = re.compile(r'(%\{.+?})')
+#     sa_en = dict()
+#
+#     # s = time.time()
+#     # with gzip.open('dict/sa-en.json.gz') as fd:
+#     #     data = fd.read()
+#     # data = json.loads(data)
+#     # sa_en = dict()
+#     # for key in data:
+#     #     k = key.replace('1', '').replace("'", '').replace('4', '').replace('7', '').replace('8', '').replace('9', '').replace('0', '').replace('-', '').lower()
+#     #     sa_en.update({k: data[key]})
+#     #
+#     # for key in data:
+#     #     vals = data[key]
+#     #     res = []
+#     #     for val in vals:
+#     #         x = mwpatten.findall(val)
+#     #         if x:
+#     #             for ff in x:
+#     #                 val = val.replace(ff, hk2sa(ff))
+#     #         res.append(val)
+#     #     # 不知道以下这两行那个对
+#     #     sa_en.update({hk2sa(key, 1): res})
+#     #     sa_en.update({hk2sa(key, 2): res})
+#     # e = time.time()
+#     # print('装入梵英词典，用时%s' % (e - s))
+#     yield ('sa_en', sa_en)
+#
+#     sa_hant = dict()
+#     # s = time.time()
+#     # with gzip.open('dict/sa-hant.json.gz') as fd:
+#     #     data = fd.read()
+#     # data = json.loads(data)
+#     # for key in data:
+#     #     sa_hant.update({key.lower(): data[key]})
+#     # e = time.time()
+#     # print('装入梵汉词典，用时%s' % (e - s))
+#     yield ('sa_hant', sa_hant)
+#
+#     yat = dict()
+#     # s = time.time()
+#     # with gzip.open('dict/yat.json.gz') as fd:
+#     #     data = fd.read()
+#     # data = json.loads(data)
+#     # for key in data:
+#     #     yat.update({key.lower(): data[key]})
+#     # for key in data:
+#     #     vals = data[key]
+#     #     res = []
+#     #     for val in vals:
+#     #         x = mwpatten.findall(val)
+#     #         if x:
+#     #             for ff in x:
+#     #                 v = val.replace(ff, hk2sa(ff))
+#     #         res.append(v)
+#     #     yat.update({hk2sa(key, 1): res})
+#     #     yat.update({hk2sa(key, 2): res})
+#     # e = time.time()
+#     # print('装入Yates梵英词典，用时%s' % (e - s))
+#     yield ('yat', yat)
+#
+#     s = time.time()
+#     with gzip.open('dict/kangxi.json.gz') as fd:
+#         kangxi = json.load(fd)
+#     e = time.time()
+#     print('装入康熙字典，用时%s' % (e - s))
+#     yield ('kangxi', kangxi)
+#
+#     s = time.time()
+#     with open('dict/Unihan_Readings.json') as fd:
+#         unihan = json.load(fd)
+#     e = time.time()
+#     print('装入Unicode10.0字典，用时%s' % (e - s))
+#     yield ('unihan', unihan)
+#
+#     for k in dicts:
+#         s = time.time()
+#         path = f'dict/{dicts[k][1]}'
+#         if not os.path.exists(path):
+#             continue
+#
+#         if path.endswith('gz'):
+#             with gzip.open(path) as fd:
+#                 try:
+#                     v = json.load(fd)
+#                 except:
+#                     print(path)
+#                     raise
+#         else:
+#             with open(path, encoding='utf8') as fd:
+#                 v = json.load(fd)
+#         # for k1 in v:
+#         #     if k1 in aio:
+#         #         aio[k1].update({dicts[k][0]: v[k1]})
+#         #     #     aio[k1].append()
+#         #     else:
+#         #         aio[k1] = {dicts[k][0]: v[k1]}
+#         e = time.time()
+#         print('装入%s，用时%s' % (dicts[k][0], e - s))
+#         yield (k, v)
+#
+#     yield ('aio', aio)
+#
+#     # return {'kangxi':kangxi, 'unihan':unihan,
+#     #         'fk':fk, 'dfb': dfb, 'ccc': ccc, 'nvd': nvd, 'cxy': cxy, 'ylb': ylb, 'fxcd': fxcd,
+#     #         'szfs': szfs, 'fymyj': fymyj,
+#     #     'sa_hant': sa_hant, 'sa_en': sa_en, 'yat': yat}
+#
+#
+#
+# def lookinkangxi(word):
+#     '''查询康熙字典'''
+#
+#     def sub(word):
+#         definition = []
+#         _from = ""
+#         pinyin = ""
+#         if word in kangxi:
+#             _from = "康熙字典"
+#             kxword = kangxi[word]
+#             if "說文解字" in kxword:
+#                 definition.append(kxword["說文解字"])
+#             if "康熙字典" in kxword:
+#                 definition.append(kxword["康熙字典"])
+#             if "宋本廣韻" in kxword:
+#                 definition.append(kxword["宋本廣韻"])
+#             if definition:
+#                 definition = '<br><br>'.join(definition)
+#             else:
+#                 definition = kxword.get('英文翻譯', '')
+#             pinyin = kxword.get('國語發音', '')
+#         else:
+#             _from = "unicode"
+#             definition = unihan.get(word, {}).get('kDefinition', '')
+#             pinyin = unihan.get(word, {}).get('kMandarin', '')
+#         return pinyin, definition, _from
+#
+#     pinyin, definition, _from = sub(word)
+#
+#     if not pinyin:
+#         word2 = rm_variant(word)
+#         pinyin, definition, _from = sub(word2)
+#         if definition:
+#             definition = f'同{word2}<br>' + definition
+#     return {'word': word, 'pinyin': pinyin, 'def': definition, 'from': _from}
+#
+#
+# def lookinsa(word):
+#     definition = sa_hant.get(hk2sa(word).lower(), '')
+#     pinyin = ""
+#     _from = ""
+#     if definition:
+#         _from = "文理学院"
+#         pinyin = "文理学院"
+#     if not definition:
+#         # 使用Harvard-Kyoto转写查找字典
+#         definition = sa_en.get(hk2sa(word), '')
+#         # 使用缩写查找字典
+#         if not definition:
+#             w = word.replace('1', '').replace("'", '').replace('4', '').replace('7', '').replace('8', '').replace('9', '').replace('0', '').replace('-', '').lower()
+#             definition = sa_en.get(w, '')
+#         if definition:
+#             definition = '|'.join(definition)
+#             _from = "威廉梵英词典"
+#             pinyin = "威廉梵英词典"
+#     if not definition:
+#         print(hk2sa(word))
+#         definition = yat.get(hk2sa(word), '')
+#         if not definition:
+#             w = word.replace('-', '').lower()
+#             definition = yat.get(w, '')
+#         if definition:
+#             definition = '|'.join(definition)
+#             _from = "YAT"
+#             pinyin = "YAT"
+#     return {'word': word, 'pinyin': pinyin, 'def': definition, 'from': _from}
 
 
 # 装入各种词典
-dd = dict(load_dict())
-sa_hant = dd['sa_hant']
-sa_en = dd['sa_en']
-yat = dd['yat']
-kangxi = dd['kangxi']
-unihan = dd['unihan']
-fk = dd['fk']
-dfb = dd['dfb']
-ccc = dd['ccc']
-nvd = dd['nvd']
-cyx = dd['cyx']
-ylb = dd['ylb']
-fxcd = dd['fxcd']
-szfs = dd['szfs']
-fymyj = dd['fymyj']
-wdhy = dd['wdhy']
-ldms = dd['ldms']
-yzzj = dd['yzzj']
-bkqs = dd['bkqs']
+# dd = dict(load_dict())
+# sa_hant = dd['sa_hant']
+# sa_en = dd['sa_en']
+# yat = dd['yat']
+# kangxi = dd['kangxi']
+# unihan = dd['unihan']
+# fk = dd['fk']
+# dfb = dd['dfb']
+# ccc = dd['ccc']
+# nvd = dd['nvd']
+# cyx = dd['cyx']
+# ylb = dd['ylb']
+# fxcd = dd['fxcd']
+# szfs = dd['szfs']
+# fymyj = dd['fymyj']
+# wdhy = dd['wdhy']
+# ldms = dd['ldms']
+# yzzj = dd['yzzj']
+# bkqs = dd['bkqs']
 
 # aio = dd['aio']
 
-def lookup(word, dictionary=None, lang='hant', mohu=False):
-    '''查字典, dictionary=None表示所有词典, lang表示被查询的语言'''
-    pt = re.compile(r'\[|\]|\d')  # 应该在前端过滤
-    word = pt.sub('', word)
-    print('发过来一个字:%s' % word)
-
-    # if TSDinst.detect(word)['confidence'] == 's':
-    #     word = convert2t(word)
-
-    pinyin = ''
-    _from = ''
-    definition = ''
-    if word in fk:
-        _from = "佛光山"
-        definition = fk[word]
-    elif word in dfb:
-        _from = dfb[word][0]['usg']
-        definition = '丁福保[{}]'.format(dfb[word][0]['def'])
-    elif word in fxcd:
-        _from = "朱芾煌"
-    elif word in ccc:
-        _from = "莊春江"
-        definition = ccc[word]
-    elif word in nvd:
-        _from = "南山律"
-        definition = nvd[word]
-    elif word in cyx:
-        _from = "陈义孝"
-        definition = cyx[word]
-    elif word in ylb:
-        _from = "于凌波"
-        definition = ylb[word]
-    elif word in szfs:
-        _from = "三藏法数"
-        definition = szfs[word]
-    elif word in fymyj:
-        _from = "翻譯名義集"
-        definition = fymyj[word]
-    elif word in wdhy:
-        _from = "五燈會元"
-        definition = wdhy[word]
-    elif word in ldms:
-        _from = "歷代名僧辭典"
-        definition = ldms[word]
-    elif word in yzzj:
-        _from = "閱藏知津"
-        definition = yzzj[word]
-    elif word in bkqs:
-        _from = "百科全书"
-        definition = bkqs[word]
-
-    pinyin = ' '.join(lookinkangxi(zi)['pinyin'] for zi in word)
-
-    if not _from and mohu:
-        pass
-
-    return {'word': word, 'pinyin': pinyin, 'definition': definition, 'from': _from}
-
+# def lookup(word, dictionary=None, lang='hant', mohu=False):
+#     '''查字典, dictionary=None表示所有词典, lang表示被查询的语言'''
+#     pt = re.compile(r'\[|\]|\d')  # 应该在前端过滤
+#     word = pt.sub('', word)
+#     print('发过来一个字:%s' % word)
+#
+#     # if TSDinst.detect(word)['confidence'] == 's':
+#     #     word = convert2t(word)
+#
+#     pinyin = ''
+#     _from = ''
+#     definition = ''
+#     if word in fk:
+#         _from = "佛光山"
+#         definition = fk[word]
+#     elif word in dfb:
+#         _from = dfb[word][0]['usg']
+#         definition = '丁福保[{}]'.format(dfb[word][0]['def'])
+#     elif word in fxcd:
+#         _from = "朱芾煌"
+#     elif word in ccc:
+#         _from = "莊春江"
+#         definition = ccc[word]
+#     elif word in nvd:
+#         _from = "南山律"
+#         definition = nvd[word]
+#     elif word in cyx:
+#         _from = "陈义孝"
+#         definition = cyx[word]
+#     elif word in ylb:
+#         _from = "于凌波"
+#         definition = ylb[word]
+#     elif word in szfs:
+#         _from = "三藏法数"
+#         definition = szfs[word]
+#     elif word in fymyj:
+#         _from = "翻譯名義集"
+#         definition = fymyj[word]
+#     elif word in wdhy:
+#         _from = "五燈會元"
+#         definition = wdhy[word]
+#     elif word in ldms:
+#         _from = "歷代名僧辭典"
+#         definition = ldms[word]
+#     elif word in yzzj:
+#         _from = "閱藏知津"
+#         definition = yzzj[word]
+#     elif word in bkqs:
+#         _from = "百科全书"
+#         definition = bkqs[word]
+#
+#     pinyin = ' '.join(lookinkangxi(zi)['pinyin'] for zi in word)
+#
+#     if not _from and mohu:
+#         pass
+#
+#     return {'word': word, 'pinyin': pinyin, 'definition': definition, 'from': _from}
+#
 
 class Search:
     def __init__(self, norm=True):
@@ -1408,6 +1409,12 @@ class STConvertor:
         self.tt = tt - xx
         self.ss = ss - xx
 
+        self.jt = set()
+        with open('idx/jt.txt') as fd:
+            for line in fd:
+                if line.startswith('#'): continue
+                line = line.split()
+                self.jt.add(line[0])
 
     def t2s(self, string, punctuation=True, region=False, autonorm=True, onlyURO=True):
         '''繁体转简体, punctuation是否转换单双引号
@@ -1480,18 +1487,11 @@ class STConvertor:
         '''使用简体字表来判断一段文本是简体还是繁体的概率'''
         if len(s0) == 0:
             return {'t': 50, 's': 50, 'confidence': 's'}
-        jt = set()
-        with open('idx/jt.txt') as fd:
-            for line in fd:
-                if line.startswith('#'): continue
-                line = line.split()
-                jt.add(line[0])
-
         t = 50
         s = 50
         confidence = 't'
         for zi in s0:
-            if zi in jt:
+            if zi in self.jt:
                 confidence = 's'
                 break
 

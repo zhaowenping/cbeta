@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-09-22 21:42:26
+# Last Modified: 2020-11-01 06:19:37
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -33,17 +33,18 @@ from bottle import GeventServer
 # import psycopg2
 import jieba
 
-from libhan import hk2iast, read_menu_file, HKdict2iast
+from libhan import read_menu_file
 from libhan import Search, IDS, CBETA_COM, python_unescape
 from libhan import STConvertor
 from libhan import normalize_text
 from libhan import fullsearch
 from libhan import make_url, make_url2, ahan_url, make_docx
 
-from libhan import lookup, lookinkangxi, lookinsa, zhuyin
-from libhan import unihan
 from libhan import Number, rm_pun
 from libhan import get_first_juan
+
+from libhan import HKdict2iast
+from data import lookup, lookinkangxi
 
 # from xsltproc import xsltproc, XSLT
 
@@ -518,16 +519,16 @@ def dict_get(word):
             definition = result['def']
         pinyin = result['pinyin']
 
-    if not _from:
-        result = lookinsa(word)
-        _from = result['from']
-        definition = result['def']
-        pinyin = result['pinyin']
+    # if not _from:
+    #     result = lookinsa(word)
+    #     _from = result['from']
+    #     definition = result['def']
+    #     pinyin = result['pinyin']
 
-    # 用Unicode数据库注音
-    if _from and not pinyin:
-        pinyin = [unihan.get(x, {}).get('kMandarin', '') for x in word]
-        pinyin = ' '.join([x.split()[0] if x else '' for x in pinyin])
+    # # 用Unicode数据库注音
+    # if _from and not pinyin:
+    #     pinyin = [unihan.get(x, {}).get('kMandarin', '') for x in word]
+    #     pinyin = ' '.join([x.split()[0] if x else '' for x in pinyin])
 
     with open('yoga.dict', 'a+') as fd:
         fd.write(datetime.datetime.now().strftime("%Y%m%dT%T ") + word + '\n')
@@ -1064,32 +1065,32 @@ def new_dict1(page):
     return {'result': result, 'header': header, 'prevpage': prevpage, 'nextpage': nextpage}
 
 
-# 法相词典
-@get('/fxcd/:page')
-@view('temp/dict.jinja2')
-def new_dict1(page):
-    q = request.GET.q
-    pp = int(request.GET.pp or 800)  # 每頁詞條數量
-    cp = min(int(request.GET.cp or 500), 500000) # 注音詞頻, 默認50, 最大不超過50萬
-    page = int(page)
-    with gzip.open('dict/fxcd.json.gz') as fd:
-        data = json.load(fd)
-    header = data.pop('header', {})
-    if q:
-        # 查字典
-        fxcd = {item: data[item].split('\n')[1:] for item in data}
-        result = {(q, ''): fxcd.get(q, '没找到')}
-        prevpage = max(page - 1, 1)
-        nextpage = page + 1
-    else:
-        # fxcd = [(item, data[item].split('\n')[1:]) for item in data]
-        # fxcd = [((item, zhuyin(item)), data[item].split('\n')[1:]) for item in data]
-        fxcd = [((item, zhuyin(item)), (zhuyin(i, True, cp) for i in data[item].split('\n')[1:])) for item in data]
-        total = len(fxcd)
-        prevpage = max(page - 1, 1)
-        nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
-        result = dict(fxcd[pp*(page-1):pp*page])
-    return {'result': result, 'header': header, 'prevpage': prevpage, 'nextpage': nextpage}
+# # 法相词典
+# @get('/fxcd/:page')
+# @view('temp/dict.jinja2')
+# def new_dict1(page):
+#     q = request.GET.q
+#     pp = int(request.GET.pp or 800)  # 每頁詞條數量
+#     cp = min(int(request.GET.cp or 500), 500000) # 注音詞頻, 默認50, 最大不超過50萬
+#     page = int(page)
+#     with gzip.open('dict/fxcd.json.gz') as fd:
+#         data = json.load(fd)
+#     header = data.pop('header', {})
+#     if q:
+#         # 查字典
+#         fxcd = {item: data[item].split('\n')[1:] for item in data}
+#         result = {(q, ''): fxcd.get(q, '没找到')}
+#         prevpage = max(page - 1, 1)
+#         nextpage = page + 1
+#     else:
+#         # fxcd = [(item, data[item].split('\n')[1:]) for item in data]
+#         # fxcd = [((item, zhuyin(item)), data[item].split('\n')[1:]) for item in data]
+#         fxcd = [((item, zhuyin(item)), (zhuyin(i, True, cp) for i in data[item].split('\n')[1:])) for item in data]
+#         total = len(fxcd)
+#         prevpage = max(page - 1, 1)
+#         nextpage = min(page + 1, total//pp+ 1 if total%pp> 0 else 0)
+#         result = dict(fxcd[pp*(page-1):pp*page])
+#     return {'result': result, 'header': header, 'prevpage': prevpage, 'nextpage': nextpage}
 
 # 佛光山词典
 @get('/fk/:page')
