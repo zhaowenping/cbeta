@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-11-02 23:12:43
+# Last Modified: 2020-11-02 23:15:58
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -508,7 +508,7 @@ def dict_get(word):
         rr = lookup(word)
         _from = rr['from']
         definition = rr['definition']
-        pinyin = result['pinyin']
+        pinyin = rr['pinyin']
 
     if len(word) == 1:
         result = lookinkangxi(word)
