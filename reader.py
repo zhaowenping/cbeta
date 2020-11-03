@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-11-01 06:19:37
+# Last Modified: 2020-11-02 23:12:43
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -508,15 +508,15 @@ def dict_get(word):
         rr = lookup(word)
         _from = rr['from']
         definition = rr['definition']
-        print(definition)
+        pinyin = result['pinyin']
 
     if len(word) == 1:
         result = lookinkangxi(word)
         _from = result['from']
         if definition:
-            definition = '<br>'.join((definition, result['def']))
+            definition = '<br>'.join((definition, result['definition']))
         else:
-            definition = result['def']
+            definition = result['definition']
         pinyin = result['pinyin']
 
     # if not _from:

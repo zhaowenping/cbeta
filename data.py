@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-11-02 18:41:49
+# Last Modified: 2020-11-02 23:09:09
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -374,7 +374,7 @@ def lookinkangxi(word):
             pinyin = val.get('kMandarin', '')
 
     r2.close()
-    return {'word': word, 'pinyin': pinyin, 'def': definition, 'from': _from}
+    return {'word': word, 'pinyin': pinyin, 'definition': definition, 'from': _from}
 
 
 
@@ -382,3 +382,4 @@ if __name__ == "__main__":
     main()
     test()
     print(lookup('佛陀'))
+    print(lookup('彌勒'))

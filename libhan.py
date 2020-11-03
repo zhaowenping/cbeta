@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-11-02 21:00:36
+# Last Modified: 2020-11-02 23:13:25
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -169,26 +169,8 @@ class IDS:
                 self.ids_dict[line[2]] = line[1]
 
     def rm_ids(self, ctx):
-        '''替换unicode ids形式为普通单个字符'''
+        '''替换unicode ids形式为普通单个字符, 无法替换则保持原样不动'''
         return ''.join(ids_split(ctx, fn=lambda x:self.ids_dict.get(x, x)))
-
-
-    # def rm_ids(self, ctx):
-    #     # 替换unicode ids形式为单个字符
-    #     ids = False
-    #     for ch in ctx:
-    #         #if 0x2FF0 <= ord(ch) <= 0x2FFB:
-    #         if ch in '⿰⿱⿲⿳⿴⿵⿶⿷⿸⿹⿺⿻↷↹':
-    #             ids = True
-    #             break
-    #     if not ids:
-    #         return ctx
-
-    #     for ids in sorted(self.ids_dict.keys(), key=len, reverse=True):
-    #         if ids in ctx:
-    #             ctx = ctx.replace(ids, self.ids_dict[ids])
-
-    #     return ctx
 
 
 class CBETA_COM:
@@ -197,14 +179,8 @@ class CBETA_COM:
             self.desc = json.load(fd)
 
     def rm_com(self, ctx):
-        # 删除组字式
+        ''' 替换cbeta组字式为相应的字符, 无法替换则替换为空格'''
         return ''.join(re_split(r'\[.*?\]', ctx, lambda x: self.desc.get(x, ' ')))
-        # for com in re.findall(r'\[.*?\]', ctx):
-        #     if com in self.desc:
-        #         ctx = ctx.replace(com, self.desc[com])
-        #     else:
-        #         ctx = ctx.replace(com, ' ')
-        # return ctx
 
 
 def rm_joiner(ctx):
@@ -1141,42 +1117,6 @@ def HKdict2iast(hkdict):
 #
 #
 #
-# def lookinkangxi(word):
-#     '''查询康熙字典'''
-#
-#     def sub(word):
-#         definition = []
-#         _from = ""
-#         pinyin = ""
-#         if word in kangxi:
-#             _from = "康熙字典"
-#             kxword = kangxi[word]
-#             if "說文解字" in kxword:
-#                 definition.append(kxword["說文解字"])
-#             if "康熙字典" in kxword:
-#                 definition.append(kxword["康熙字典"])
-#             if "宋本廣韻" in kxword:
-#                 definition.append(kxword["宋本廣韻"])
-#             if definition:
-#                 definition = '<br><br>'.join(definition)
-#             else:
-#                 definition = kxword.get('英文翻譯', '')
-#             pinyin = kxword.get('國語發音', '')
-#         else:
-#             _from = "unicode"
-#             definition = unihan.get(word, {}).get('kDefinition', '')
-#             pinyin = unihan.get(word, {}).get('kMandarin', '')
-#         return pinyin, definition, _from
-#
-#     pinyin, definition, _from = sub(word)
-#
-#     if not pinyin:
-#         word2 = rm_variant(word)
-#         pinyin, definition, _from = sub(word2)
-#         if definition:
-#             definition = f'同{word2}<br>' + definition
-#     return {'word': word, 'pinyin': pinyin, 'def': definition, 'from': _from}
-#
 #
 # def lookinsa(word):
 #     definition = sa_hant.get(hk2sa(word).lower(), '')
@@ -1232,64 +1172,6 @@ def HKdict2iast(hkdict):
 
 # aio = dd['aio']
 
-# def lookup(word, dictionary=None, lang='hant', mohu=False):
-#     '''查字典, dictionary=None表示所有词典, lang表示被查询的语言'''
-#     pt = re.compile(r'\[|\]|\d')  # 应该在前端过滤
-#     word = pt.sub('', word)
-#     print('发过来一个字:%s' % word)
-#
-#     # if TSDinst.detect(word)['confidence'] == 's':
-#     #     word = convert2t(word)
-#
-#     pinyin = ''
-#     _from = ''
-#     definition = ''
-#     if word in fk:
-#         _from = "佛光山"
-#         definition = fk[word]
-#     elif word in dfb:
-#         _from = dfb[word][0]['usg']
-#         definition = '丁福保[{}]'.format(dfb[word][0]['def'])
-#     elif word in fxcd:
-#         _from = "朱芾煌"
-#     elif word in ccc:
-#         _from = "莊春江"
-#         definition = ccc[word]
-#     elif word in nvd:
-#         _from = "南山律"
-#         definition = nvd[word]
-#     elif word in cyx:
-#         _from = "陈义孝"
-#         definition = cyx[word]
-#     elif word in ylb:
-#         _from = "于凌波"
-#         definition = ylb[word]
-#     elif word in szfs:
-#         _from = "三藏法数"
-#         definition = szfs[word]
-#     elif word in fymyj:
-#         _from = "翻譯名義集"
-#         definition = fymyj[word]
-#     elif word in wdhy:
-#         _from = "五燈會元"
-#         definition = wdhy[word]
-#     elif word in ldms:
-#         _from = "歷代名僧辭典"
-#         definition = ldms[word]
-#     elif word in yzzj:
-#         _from = "閱藏知津"
-#         definition = yzzj[word]
-#     elif word in bkqs:
-#         _from = "百科全书"
-#         definition = bkqs[word]
-#
-#     pinyin = ' '.join(lookinkangxi(zi)['pinyin'] for zi in word)
-#
-#     if not _from and mohu:
-#         pass
-#
-#     return {'word': word, 'pinyin': pinyin, 'definition': definition, 'from': _from}
-#
 
 class Search:
     def __init__(self, norm=True):
@@ -1352,29 +1234,29 @@ def re_split(pattern, string, fn=lambda x: x, exfn=lambda x: x):
         yield exfn(string)
 
 
-def re_search(pattern, string):
-    '''对re模块search的改进；把输入字符串使用pattern分割, 每个字符串附带一个标志，表示该字符串是否短语匹配'''
-    rr = pattern.search(string)
-    if not rr:
-        yield (string, False)
-        return
-        # raise StopIteration()
-    start, end = rr.span()
-    if start !=0:
-        yield (string[0:start], False)
-    yield (string[start:end], True)
-    while True:
-        string = string[end:]
-        rr = pattern.search(string)
-        if not rr: break
-        start, end = rr.span()
-        if start !=0:
-            yield (string[0:start], False)
-        yield (string[start:end], True)
-
-    if string:
-        yield (string, False)
-
+# def re_search(pattern, string):
+#     '''对re模块search的改进；把输入字符串使用pattern分割, 每个字符串附带一个标志，表示该字符串是否短语匹配'''
+#     rr = pattern.search(string)
+#     if not rr:
+#         yield (string, False)
+#         return
+#         # raise StopIteration()
+#     start, end = rr.span()
+#     if start !=0:
+#         yield (string[0:start], False)
+#     yield (string[start:end], True)
+#     while True:
+#         string = string[end:]
+#         rr = pattern.search(string)
+#         if not rr: break
+#         start, end = rr.span()
+#         if start !=0:
+#             yield (string[0:start], False)
+#         yield (string[start:end], True)
+#
+#     if string:
+#         yield (string, False)
+#
 
 class STConvertor:
     '''简体繁体转换类'''
