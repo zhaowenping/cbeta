@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-11-02 23:13:25
+# Last Modified: 2020-11-03 03:30:12
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1234,30 +1234,6 @@ def re_split(pattern, string, fn=lambda x: x, exfn=lambda x: x):
         yield exfn(string)
 
 
-# def re_search(pattern, string):
-#     '''对re模块search的改进；把输入字符串使用pattern分割, 每个字符串附带一个标志，表示该字符串是否短语匹配'''
-#     rr = pattern.search(string)
-#     if not rr:
-#         yield (string, False)
-#         return
-#         # raise StopIteration()
-#     start, end = rr.span()
-#     if start !=0:
-#         yield (string[0:start], False)
-#     yield (string[start:end], True)
-#     while True:
-#         string = string[end:]
-#         rr = pattern.search(string)
-#         if not rr: break
-#         start, end = rr.span()
-#         if start !=0:
-#             yield (string[0:start], False)
-#         yield (string[start:end], True)
-#
-#     if string:
-#         yield (string, False)
-#
-
 class STConvertor:
     '''简体繁体转换类'''
     def __init__(self):
@@ -1279,7 +1255,7 @@ class STConvertor:
         # return tsp, tstable, tsptable, stp, sttable, stptable
 
         # 简体繁体检测
-        self.p = re.compile(r'[\u4e00-\u9fa5]')
+        # self.p = re.compile(r'[\u4e00-\u9fa5]')
 
         _tst = readdb('cc/TSCharacters.txt')
         # self.tt: 纯繁体字集合
@@ -1321,7 +1297,6 @@ class STConvertor:
         else:
             tst2 = {k:self.tstable[k] for k in self.tstable}
 
-        #content = ''.join(i[0].translate(tst2) if not i[1] else self.tsptable[i[0]] for i in re_search(self.tsp, string))
         content = ''.join(re_split(self.tsp, string, self.tsptable.get, lambda i: i.translate(tst2)))
 
         return content
@@ -1336,7 +1311,6 @@ class STConvertor:
         if punctuation:
             string = string.translate({0x201c: 0x300c, 0x201d: 0x300d, 0x2018: 0x300e, 0x2019: 0x300f})
 
-        #content = ''.join(i[0].translate(self.sttable) if not i[1] else self.stptable[i[0]] for i in re_search(self.stp, string))
         content = ''.join(re_split(self.stp, string, self.stptable.get, lambda i: i.translate(self.sttable)))
 
         return content
@@ -1392,7 +1366,6 @@ varppp = re.compile('|'.join(sorted(varptable.keys(),key=len,reverse=True)))
 def rm_variant(string, level=0):
     '''异体字规范化为标准繁体字'''
     # ctx = unicodedata.normalize("NFKC", ctx)
-    # content = ''.join(i[0].translate(yitizi) if not i[1] else varptable[i[0]] for i in re_search(varppp, string))
     content = ''.join(re_split(varppp, string, varptable.get, lambda i: i.translate(yitizi)))
     return content
 
@@ -1580,36 +1553,23 @@ def fullsearch(sentence):
     return result
 
 
-with gzip.open('dict/cipin.json.gz') as fd:
-    cipind = json.load(fd)
-
-def zhuyin(txt, ruby=False, cipin=50):
-    '''對txt文本注音, ruby是否使用ruby語法'''
-    if not ruby:
-        content = ' '.join(lookinkangxi(i)['pinyin'].split(' ')[0] for i in txt)
-    else:
-        result = []
-        for zi in txt:
-            if cipind.get(zi, 0) < cipin:
-                pinyin = lookinkangxi(zi)['pinyin'].split(' ')[0]
-                if pinyin:
-                    zi = f"<ruby>{zi}<rt>{pinyin}</rt></ruby>"
-            result.append(zi)
-        content = ''.join(result)
-    return content
-
-def main():
-    ''''''
-    ss = Search()
-    title = '成唯识论'
-    import opencc
-    title = opencc.convert(title, config='s2t.json')
-    s = time.time()
-    ss.search(title)
-    e = time.time()
-    print(e-s)
-    for idx in ss.search(title):
-        print(idx, ss.titles[idx])
+# with gzip.open('dict/cipin.json.gz') as fd:
+#     cipind = json.load(fd)
+#
+# def zhuyin(txt, ruby=False, cipin=50):
+#     '''對txt文本注音, ruby是否使用ruby語法'''
+#     if not ruby:
+#         content = ' '.join(lookinkangxi(i)['pinyin'].split(' ')[0] for i in txt)
+#     else:
+#         result = []
+#         for zi in txt:
+#             if cipind.get(zi, 0) < cipin:
+#                 pinyin = lookinkangxi(zi)['pinyin'].split(' ')[0]
+#                 if pinyin:
+#                     zi = f"<ruby>{zi}<rt>{pinyin}</rt></ruby>"
+#             result.append(zi)
+#         content = ''.join(result)
+#     return content
 
 
 import difflib
@@ -1699,9 +1659,15 @@ def make_docx(ff, temp='', fanti=True):
     document.save(os.path.join(temp, f'{docxfname}.docx'))
 
 
+
+def main():
+    ''''''
+    pass
+
 def test():
     ''''''
-    print(rm_variant('妬'))
+    pass
+
 
 if __name__ == "__main__":
     # main()
@@ -1712,31 +1678,6 @@ if __name__ == "__main__":
     # print(get_all_juan('T19n0974A'))
     # print(get_next_page('T02n0099_001'))
     # print(get_next_page('T01n0002_001'))
-
-    # with gzip.open('dict/kangxi.json.gz') as fd:
-    #     kangxi = json.load(fd)
-
-    # with open('cipin.json') as fd:
-    #     cipin = json.load(fd)
-
-    # for word in kangxi:
-    #     kxword = kangxi[word]
-    #     pinyin = kxword.get('國語發音', '')
-    #     if not pinyin:
-    #         word2 = rm_variant(word)
-    #         kxword2 = kangxi.get(word2, {})
-    #         pinyin2 = kxword2.get('國語發音', '')
-    #         if pinyin2:
-    #             # print(word, word2, pinyin2)
-    #             pass
-    #         else:
-    #             cp = cipin.get(word, 0)
-    #             if cp > 0:
-    #                 print(word, word2, cipin.get(word, 0), "%X" % ord(word))
-    #             pass
-    # print(pagerank('T14n0563_001.xml'))
-    # print(zhuyin('你好', True))
-    # print(lookinkangxi('𢾛'))
 
     # ctx = '五<g ref="#CB22072">說</g>九種命終心三界<g ref="#CB29911">々</g><g ref="#CB29911">々</g>生各潤生心各有三故<note place="inline">已上'
     # print(rm_ditto_mark(ctx))
@@ -1750,12 +1691,6 @@ if __name__ == "__main__":
     # # TODO:搜索t1000, t1000_001, T01n0001, T01n0001_001, T01n0001_p0001a01, T01,no.1,p.1a1
     #titlepatten = re.compile(r'([a-zA-Z][a-zA-Z]?)(\d\dn)?(\d\d\d\d)(_\d\d\d)?')
     #titlepatten.find('t1000')
-    #import pprint
-    #with open("static/sutra_sch.lst") as fd:
-    #    for line in fd:
-    #        if 'n' in line:
-    #            line = line.strip().split()
-    #            print(line)
     #pprint.pprint(mulu)
     # print(parse_number('CBETA, T14, no. 475, pp. 537c8-538a14'))
     # print(parse_number('CBETA 2019.Q2, Y25, no. 25, p. 411a5-7'))

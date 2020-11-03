@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-11-02 23:15:58
+# Last Modified: 2020-11-02 23:59:30
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -414,82 +414,82 @@ def search_get():
 
     return {'results': xx, 'content': content}
 
-# "menu/sutra_sch.lst"
-# "menu/bulei_sutra_sch.lst'
-
-# print(conn)
-@get('/dict/ccc/:word')
-def ccc_dict_get(word):
-    pinyin = ''
-    _from = ''
-    definition = ''
-    if word in ccc:
-        _from = "庄春江"
-        definition = ccc[word]
-    return json.dumps({'word': word, 'pinyin': pinyin, 'definition': definition, 'from': _from}, ensure_ascii=False, indent =4)
-
-@get('/dict/dfb/:word')
-def dfb_dict_get(word):
-    pinyin = ''
-    definition = ''
-    if word in dfb:
-        definition = dfb[word]
-    return json.dumps({'word': word, 'pinyin': pinyin, 'definition': definition}, ensure_ascii=False, indent =4)
-
-@get('/dict/yph')
-@view('temp/dict.jinja2')
-def fxcd_dict_all():
-    return {'dd': fxcd}
-
-@get('/dict/fxcd/:word')
-# @view('temp/search.jinja2')
-def fxcd_dict_get(word):
-    pinyin = ''
-    _from = ''
-    definition = ''
-    print(word)
-    if word in fxcd:
-        _from = "於沛煌"
-        definition = fxcd[word]
-    return json.dumps({'word': word, 'pinyin': pinyin, 'definition': definition, 'from': _from}, ensure_ascii=False, indent =4)
-
-@get('/dict/fk/:word')
-def fk_dict_get(word):
-    pinyin = ''
-    _from = ''
-    definition = ''
-    if word in fk:
-        _from = "佛光山"
-        definition = fk[word]
-    return json.dumps({'word': word, 'pinyin': pinyin, 'definition': definition, 'from': _from}, ensure_ascii=False, indent =4)
-
-@get('/dict/kx/:word')
-def kx_dict_get(word):
-    pinyin = ''
-    _from = ''
-    definition = ''
-    # {'word': word, 'pinyin': pinyin, 'def': definition, 'from': _from}
-    # lookinkangxi(word)
-    if len(word) == 1:
-        if word in kangxi:
-            _from = "康熙字典"
-            definition = []
-            kxword = kangxi[word]
-            if "說文解字" in kxword:
-                definition.append(kxword["說文解字"])
-            if "康熙字典" in kxword:
-                definition.append(kxword["康熙字典"])
-            if "宋本廣韻" in kxword:
-                definition.append(kxword["宋本廣韻"])
-            if definition:
-                definition = '|'.join(definition)
-            else:
-                definition = kxword.get('英文翻譯', '')
-            pinyin = kxword.get('國語發音', '')
-        else:
-            kxword = None
-    return json.dumps({word: kxword}, ensure_ascii=False, indent =4)
-    # return json.dumps({'word': word, 'pinyin': pinyin, 'definition': definition, 'from': _from}, ensure_ascii=False, indent =4)
+# # "menu/sutra_sch.lst"
+# # "menu/bulei_sutra_sch.lst'
+#
+# # print(conn)
+# @get('/dict/ccc/:word')
+# def ccc_dict_get(word):
+#     pinyin = ''
+#     _from = ''
+#     definition = ''
+#     if word in ccc:
+#         _from = "庄春江"
+#         definition = ccc[word]
+#     return json.dumps({'word': word, 'pinyin': pinyin, 'definition': definition, 'from': _from}, ensure_ascii=False, indent =4)
+#
+# @get('/dict/dfb/:word')
+# def dfb_dict_get(word):
+#     pinyin = ''
+#     definition = ''
+#     if word in dfb:
+#         definition = dfb[word]
+#     return json.dumps({'word': word, 'pinyin': pinyin, 'definition': definition}, ensure_ascii=False, indent =4)
+#
+# @get('/dict/yph')
+# @view('temp/dict.jinja2')
+# def fxcd_dict_all():
+#     return {'dd': fxcd}
+#
+# @get('/dict/fxcd/:word')
+# # @view('temp/search.jinja2')
+# def fxcd_dict_get(word):
+#     pinyin = ''
+#     _from = ''
+#     definition = ''
+#     print(word)
+#     if word in fxcd:
+#         _from = "於沛煌"
+#         definition = fxcd[word]
+#     return json.dumps({'word': word, 'pinyin': pinyin, 'definition': definition, 'from': _from}, ensure_ascii=False, indent =4)
+#
+# @get('/dict/fk/:word')
+# def fk_dict_get(word):
+#     pinyin = ''
+#     _from = ''
+#     definition = ''
+#     if word in fk:
+#         _from = "佛光山"
+#         definition = fk[word]
+#     return json.dumps({'word': word, 'pinyin': pinyin, 'definition': definition, 'from': _from}, ensure_ascii=False, indent =4)
+#
+# @get('/dict/kx/:word')
+# def kx_dict_get(word):
+#     pinyin = ''
+#     _from = ''
+#     definition = ''
+#     # {'word': word, 'pinyin': pinyin, 'def': definition, 'from': _from}
+#     # lookinkangxi(word)
+#     if len(word) == 1:
+#         if word in kangxi:
+#             _from = "康熙字典"
+#             definition = []
+#             kxword = kangxi[word]
+#             if "說文解字" in kxword:
+#                 definition.append(kxword["說文解字"])
+#             if "康熙字典" in kxword:
+#                 definition.append(kxword["康熙字典"])
+#             if "宋本廣韻" in kxword:
+#                 definition.append(kxword["宋本廣韻"])
+#             if definition:
+#                 definition = '|'.join(definition)
+#             else:
+#                 definition = kxword.get('英文翻譯', '')
+#             pinyin = kxword.get('國語發音', '')
+#         else:
+#             kxword = None
+#     return json.dumps({word: kxword}, ensure_ascii=False, indent =4)
+#     # return json.dumps({'word': word, 'pinyin': pinyin, 'definition': definition, 'from': _from}, ensure_ascii=False, indent =4)
 
 @get('/dict/:word')
 def dict_get(word):

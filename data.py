@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-11-02 23:09:09
+# Last Modified: 2020-11-03 03:29:58
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -19,6 +19,8 @@ import gzip
 
 import redis
 import msgpack
+
+from libhan import rm_variant
 
 
 def readdb(path, trans=False, reverse=False):
@@ -251,13 +253,6 @@ def lookup(word, dictionary=None, lang='hant', mohu=False):
     '''查字典, dictionary=None表示所有词典, lang表示被查询的语言'''
 
     r = redis.Redis(host='localhost', port=6379, decode_responses=True)
-
-    pt = re.compile(r'\[|\]|\d')  # 应该在前端过滤
-    word = pt.sub('', word)
-    print('发过来一个字:%s' % word)
-
-    # if TSDinst.detect(word)['confidence'] == 's':
-    #     word = convert2t(word)
 
     pinyin = ''
     definition = []
