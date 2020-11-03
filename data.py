@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-11-01 07:28:37
+# Last Modified: 2020-11-02 18:41:49
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -19,6 +19,7 @@ import gzip
 
 import redis
 import msgpack
+
 
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
@@ -41,7 +42,7 @@ def readdb(path, trans=False, reverse=False):
 
 
 def main():
-    ''''''
+    '''装入所有数据'''
 
     r = redis.Redis(host='localhost', port=6379, decode_responses=True)
 
@@ -259,7 +260,6 @@ def lookup(word, dictionary=None, lang='hant', mohu=False):
     #     word = convert2t(word)
 
     pinyin = ''
-    _from = ''
     definition = []
 
     val = r.hget('dict_fk', word)
@@ -278,43 +278,45 @@ def lookup(word, dictionary=None, lang='hant', mohu=False):
     if val:
         definition.append(f"《莊春江》: {val}")
 
-    val = r.hget('dict_nvd', word)
-    if val:
-        definition.append(f"《南山律》: {val}")
-
-    val = r.hget('dict_cyx', word)
-    if val:
-        definition.append(f"《陳義孝》: {val}")
-
-    val = r.hget('dict_ylb', word)
-    if val:
-        definition.append(f"《于凌波》: {val}")
 
     val = r.hget('dict_szfs', word)
-    if val:
+    if not definition and val:
         definition.append(f"《三藏法數》: {val}")
 
     val = r.hget('dict_fymyj', word)
-    if val:
+    if not definition and val:
         definition.append(f"《翻譯名義集》: {val}")
 
     val = r.hget('dict_wdhy', word)
-    if val:
+    if not definition and val:
         definition.append(f"《五燈會元》: {val}")
 
+    val = r.hget('dict_nvd', word)
+    if not definition and val:
+        definition.append(f"《南山律》: {val}")
+
+    val = r.hget('dict_cyx', word)
+    if not definition and val:
+        definition.append(f"《陳義孝》: {val}")
+
+    val = r.hget('dict_ylb', word)
+    if not definition and val:
+        definition.append(f"《于凌波》: {val}")
+
     val = r.hget('dict_ldms', word)
-    if val:
+    if not definition and val:
         definition.append(f"《歷代名僧辭典》: {val}")
 
     val = r.hget('dict_yzzj', word)
-    if val:
+    if not definition and val:
         definition.append(f"《閱藏知津》: {val}")
 
     val = r.hget('dict_bkqs', word)
-    if val:
+    if not definition and val:
         definition.append(f"《百科全书》: {val}")
 
-    definition = '\n'.join(definition)
+    definition = '\n\n'.join(definition)
+    definition = definition.replace('\n', '<br>')
 
     pinyin = ' '.join(lookinkangxi(zi)['pinyin'] for zi in word)
 	# # 用Unicode数据库注音
@@ -322,10 +324,7 @@ def lookup(word, dictionary=None, lang='hant', mohu=False):
 	#     pinyin = [unihan.get(x, {}).get('kMandarin', '') for x in word]
 	#     pinyin = ' '.join([x.split()[0] if x else '' for x in pinyin])
 
-
-    if not _from and mohu:
-        pass
-
+    r.close()
     return {'word': word, 'pinyin': pinyin, 'definition': definition, 'from': ''}
 
 
@@ -374,6 +373,7 @@ def lookinkangxi(word):
             definition = val.get('kDefinition', '')
             pinyin = val.get('kMandarin', '')
 
+    r2.close()
     return {'word': word, 'pinyin': pinyin, 'def': definition, 'from': _from}
 
 
