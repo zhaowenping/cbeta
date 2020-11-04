@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-11-03 03:29:58
+# Last Modified: 2020-11-03 18:25:02
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -353,6 +353,7 @@ def lookinkangxi(word):
 
     pinyin, definition, _from = sub(word)
 
+    # 没有查到字典则使用对应正字重新查找
     if not pinyin:
         word2 = rm_variant(word)
         pinyin, definition, _from = sub(word2)
