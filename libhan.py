@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-11-09 03:02:43
+# Last Modified: 2020-11-09 04:23:06
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1216,7 +1216,8 @@ class Search:
             title = normalize_text(title)
         result = (set(self.index.get(tt, {}).keys()) for tt in list(title))
         # return sorted(reduce(lambda x, y: x & y, result), key=pagerank)
-        return sorted(reduce(lambda x, y: x & y, result), key=lambda x: Levenshtein.ratio(title, x), reverse=True)
+        result = reduce(lambda x, y: x & y, result)
+        return sorted(result, key=lambda x: Levenshtein.ratio(title, self.titles[x]), reverse=True)
 
 
 # 简体繁体转换
