@@ -22,13 +22,14 @@ gunicorn
 # iso8601
 jieba
 Jinja2
+redis
 # keystoneauth1
-lxml
+# lxml
 MarkupSafe
 # mysql-replication
 # numpy
 # olefile
-OpenCC
+# OpenCC
 # openstacksdk
 # os-client-config
 # PasteDeploy
@@ -63,7 +64,7 @@ snowballstemmer
 # venusian
 # webencodings
 # WebOb
-Whoosh
+# Whoosh
 # wrapt
 xhtml2pdf
 zope.deprecation
