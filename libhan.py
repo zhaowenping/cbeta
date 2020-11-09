@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-11-08 22:45:15
+# Last Modified: 2020-11-09 03:02:43
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -42,6 +42,7 @@ from docx.oxml.ns import qn
 from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_LINE_SPACING
 from docx.shared import Pt
 from docx.shared import RGBColor
+import Levenshtein
 
 
 print('调用函数库')
@@ -1214,7 +1215,8 @@ class Search:
         if norm:
             title = normalize_text(title)
         result = (set(self.index.get(tt, {}).keys()) for tt in list(title))
-        return sorted(reduce(lambda x, y: x & y, result), key=pagerank)
+        # return sorted(reduce(lambda x, y: x & y, result), key=pagerank)
+        return sorted(reduce(lambda x, y: x & y, result), key=lambda x: Levenshtein.ratio(title, x), reverse=True)
 
 
 # 简体繁体转换
@@ -1416,8 +1418,8 @@ with open('dict/punctuation.txt') as fd:
 
 def rm_pun(ctx, ex=()):
     '''删除标点符号，除了ex列表中的字符'''
-    # for char in ex:
-    #     pun.pop(ord(char), None)
+    for char in ex:
+        pun.pop(ord(char), None)
     ctx = ctx.translate(pun).replace(chr(0xFFFD), '')
     return ctx
 
@@ -1439,6 +1441,8 @@ def pagerank(filename, sentence='', content=''):
     # return r, x[0], x[1], x[2]
     x.insert(0, r)
     # x.insert(0, sentence_value)
+    # 对于符合条件的重新排列到前面
+    # zi_order(ss, ct)
     return x
 
 
