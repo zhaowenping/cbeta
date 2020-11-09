@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-11-09 04:23:06
+# Last Modified: 2020-11-09 04:41:32
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1210,6 +1210,7 @@ class Search:
         self.titles = dict(titles)
 
     def search(self, title, norm=True):
+        '''搜索经文标题或者作者，以标题为主'''
         # title = opencc.convert(title, config='s2t.json')
         # ( for zi in index)
         if norm:
@@ -1217,7 +1218,7 @@ class Search:
         result = (set(self.index.get(tt, {}).keys()) for tt in list(title))
         # return sorted(reduce(lambda x, y: x & y, result), key=pagerank)
         result = reduce(lambda x, y: x & y, result)
-        return sorted(result, key=lambda x: Levenshtein.ratio(title, self.titles[x]), reverse=True)
+        return sorted(result, key=lambda x: Levenshtein.ratio(title, self.titles[x].split(' (')[0]), reverse=True)
 
 
 # 简体繁体转换
