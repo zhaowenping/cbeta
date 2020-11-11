@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-11-03 18:25:02
+# Last Modified: 2020-11-10 21:29:38
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -21,6 +21,9 @@ import redis
 import msgpack
 
 from libhan import rm_variant
+
+
+REDIS_HOST= 'localhost'
 
 
 def readdb(path, trans=False, reverse=False):
@@ -46,7 +49,7 @@ def readdb(path, trans=False, reverse=False):
 def main():
     '''装入所有数据'''
 
-    r = redis.Redis(host='localhost', port=6379, decode_responses=True)
+    r = redis.Redis(host=REDIS_HOST, port=6379, decode_responses=True)
 
     # 删除数据库所有内容
     for k in r.keys('*'):
@@ -230,7 +233,7 @@ def main():
 
     # class DICT:
     #     def __init__(self, key):
-    #         r = redis.Redis(host='localhost', port=6379, decode_responses=True)
+    #         r = redis.Redis(host=REDIS_HOST, port=6379, decode_responses=True)
     #         pass
 
 def test():
@@ -252,7 +255,10 @@ def load_dict(dictionary=None):
 def lookup(word, dictionary=None, lang='hant', mohu=False):
     '''查字典, dictionary=None表示所有词典, lang表示被查询的语言'''
 
-    r = redis.Redis(host='localhost', port=6379, decode_responses=True)
+    r = redis.Redis(host=REDIS_HOST, port=6379, decode_responses=True)
+
+    # with r.pipeline(transaction=False) as pipe:
+    # pipe.execute()
 
     pinyin = ''
     definition = []
@@ -313,7 +319,8 @@ def lookup(word, dictionary=None, lang='hant', mohu=False):
     definition = '\n\n'.join(definition)
     definition = definition.replace('\n', '<br>')
 
-    pinyin = ' '.join(lookinkangxi(zi)['pinyin'] for zi in word)
+    # pinyin = ' '.join(lookinkangxi(zi)['pinyin'] for zi in word)
+    pinyin = lookinkangxi_pinyin(word)
 	# # 用Unicode数据库注音
 	# if _from and not pinyin:
 	#     pinyin = [unihan.get(x, {}).get('kMandarin', '') for x in word]
@@ -323,10 +330,24 @@ def lookup(word, dictionary=None, lang='hant', mohu=False):
     return {'word': word, 'pinyin': pinyin, 'definition': definition, 'from': ''}
 
 
-def lookinkangxi(word):
-    '''查询康熙字典'''
+def lookinkangxi_pinyin(word):
+    '''在康熙字典中查找句子的拼音'''
 
-    r2 = redis.Redis(host='localhost', port=6379)
+    r2 = redis.Redis(host=REDIS_HOST, port=6379)
+    with r2.pipeline(transaction=False) as pipe:
+        pipe.hmget('dict_kangxi', *word)
+        result = pipe.execute()
+    r2.close()
+
+    result = [msgpack.loads(val[0]) if val[0] else dict() for val in result]
+    result = ' '.join([val['國語發音'] if '國語發音' in val else '*' for val in result])
+    return result
+
+
+def lookinkangxi(word):
+    '''在康熙字典中查一个字'''
+
+    r2 = redis.Redis(host=REDIS_HOST, port=6379)
     # print(msgpack.loads(r2.hget('dict_kangxi', '好')))
 
     def sub(word):
@@ -375,7 +396,9 @@ def lookinkangxi(word):
 
 
 if __name__ == "__main__":
-    main()
+    # main()
     test()
-    print(lookup('佛陀'))
-    print(lookup('彌勒'))
+    #print(lookup('佛陀'))
+    #print(lookup('彌勒'))
+    import pprint
+    pprint.pprint(lookinkangxi_pinyin('佛陀'))
