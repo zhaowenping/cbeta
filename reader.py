@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-11-02 23:59:30
+# Last Modified: 2020-11-11 05:03:01
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -87,7 +87,10 @@ def server_docx(filename):
     if filename.startswith('zh'):
         filename = filename.split('/', maxsplit=1)[-1]
         fanti = False
-    make_docx(os.path.join('xml', filename), 'docx', fanti=fanti)
+    filename = filename.split('.')[0] + '.xml'
+    path = os.path.join('xml', filename)
+    # make_docx(os.path.join('xml', filename), 'docx', fanti=fanti)
+    make_docx(path, 'docx', fanti=fanti)
     filename = filename.split('/')[-1].split('.')[0] + '.docx'
     mime = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
     return static_file(filename, root='docx', mimetype=mime, download=filename)
