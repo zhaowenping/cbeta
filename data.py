@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-11-10 21:29:38
+# Last Modified: 2020-11-11 01:55:36
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -339,7 +339,7 @@ def lookinkangxi_pinyin(word):
         result = pipe.execute()
     r2.close()
 
-    result = [msgpack.loads(val[0]) if val[0] else dict() for val in result]
+    result = [msgpack.loads(val) if val else dict() for val in result[0]]
     result = ' '.join([val['國語發音'] if '國語發音' in val else '*' for val in result])
     return result
 
