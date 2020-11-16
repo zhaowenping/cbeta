@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-11-13 05:42:55
+# Last Modified: 2020-11-15 20:33:33
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -70,6 +70,10 @@ def VERTICAL(ctx):
           0xfe43: 0x300e,  # 左外引号
           0xfe44: 0x300f,  # 右外引号
             }
+    # ！＂＃＄％＆＇（）＊＋，－．／
+    # ：；＜＝＞？＠
+    # ［＼］＿
+    # ｛｜｝～
     ctx = ctx.translate(t)
     return ctx
 
@@ -276,7 +280,7 @@ def unicode_zone(char):
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    #path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
+    # path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
             line = line.strip()
