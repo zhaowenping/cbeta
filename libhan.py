@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-11-15 20:33:33
+# Last Modified: 2020-11-17 01:57:32
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1410,6 +1410,7 @@ def highlight(ss, ct):
         ct = ct.replace(zi, f'<em>{zi}</em>')
     return ct
 
+
 # pun = string.punctuation + '\u00b7\u2013-\u2027\u2e3a\u3000-\u301f\ufe30-\ufe6b\uff01-\uff0f\uff1a-\uff5e'
 # pun = re.compile('['+string.punctuation+']')
 # 读取标点数据库
@@ -1422,6 +1423,7 @@ with open('dict/punctuation.txt') as fd:
         if not line or line.startswith('#'): continue
         c1 = line[0]
         pun[ord(c1)] = 0xFFFD
+
 
 def rm_pun(ctx, ex=()):
     '''删除标点符号，除了ex列表中的字符'''
