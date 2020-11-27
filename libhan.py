@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-11-25 05:53:22
+# Last Modified: 2020-11-27 01:42:44
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -133,14 +133,14 @@ def python_escape(ctx):
             yield char
 
 
-def ids_split(ctx, fn=lambda x:x):
+def ids_split(ctx, fn=lambda x:x, exfn=lambda x:x):
     '''将字符串按照ids序列分割为数组。遇到ids序列的时候，使用fn处理，返回处理后的数组。'''
     stack = []
     counter = 0
     for ch in ctx:
         if counter == 0:
             if stack and ch in '↷↹⿰⿱⿴⿵⿶⿷⿸⿹⿺⿻⿲⿳':
-                yield ''.join(stack)
+                yield exfn(''.join(stack))
                 stack = []
             stack.append(ch)
             if ch in '↷↹':
@@ -162,7 +162,12 @@ def ids_split(ctx, fn=lambda x:x):
                 if counter == 0:
                     yield fn(''.join(stack))
                     stack = []
-    yield ''.join(stack)
+    yield exfn(''.join(stack))
+
+
+def hz_len(ctx):
+    '''判断一个unicode文本的汉字长度: 有几个汉字组成'''
+    return sum(ids_split(ctx, fn=lambda x:1, exfn=len))
 
 
 class IDS:
