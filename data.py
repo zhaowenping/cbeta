@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-11-11 01:55:36
+# Last Modified: 2020-12-06 17:52:46
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -320,7 +320,8 @@ def lookup(word, dictionary=None, lang='hant', mohu=False):
     definition = definition.replace('\n', '<br>')
 
     # pinyin = ' '.join(lookinkangxi(zi)['pinyin'] for zi in word)
-    pinyin = lookinkangxi_pinyin(word)
+    if definition:
+        pinyin = lookinkangxi_pinyin(word)
 	# # 用Unicode数据库注音
 	# if _from and not pinyin:
 	#     pinyin = [unihan.get(x, {}).get('kMandarin', '') for x in word]
