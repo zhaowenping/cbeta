@@ -323,12 +323,12 @@
               <audio controls="controls" preload="meta">
                 <source type="audio/mpeg">
                   <xsl:attribute name="src">      
-                      <xsl:value-of select="concat('/static/m4a/', $current_sutra, '.m4a')"/>
+                      <xsl:value-of select="concat('/static/m4a/', $current_sutra, '_', $juan,'.m4a')"/>
                   </xsl:attribute>
                 </source>
                 <source type="audio/mpeg">
                   <xsl:attribute name="src">      
-                      <xsl:value-of select="concat('/static/mp3/', $current_sutra, '.mp3')"/>
+                      <xsl:value-of select="concat('/static/mp3/', $current_sutra, '_', $juan,'.mp3')"/>
                   </xsl:attribute>
                 </source>
               </audio>
