@@ -320,6 +320,18 @@
         <!--左侧目录-->
         <!--xsl:copy-of select="document(concat('/static/toc/', $current_book, '.xml'))"/-->
         <!--xsl:copy-of select="document('/static/t.xml')"/-->
+              <audio controls="controls" preload="meta">
+                <source type="audio/mpeg">
+                  <xsl:attribute name="src">      
+                      <xsl:value-of select="concat('/static/m4a/', $current_sutra, '.m4a')"/>
+                  </xsl:attribute>
+                </source>
+                <source type="audio/mpeg">
+                  <xsl:attribute name="src">      
+                      <xsl:value-of select="concat('/static/mp3/', $current_sutra, '.mp3')"/>
+                  </xsl:attribute>
+                </source>
+              </audio>
         <!--正文内容-->
         <div class="contentx">
             <xsl:apply-templates/>
