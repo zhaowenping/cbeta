@@ -320,7 +320,7 @@
         <!--左侧目录-->
         <!--xsl:copy-of select="document(concat('/static/toc/', $current_book, '.xml'))"/-->
         <!--xsl:copy-of select="document('/static/t.xml')"/-->
-        <div>
+        <div style="height:20px">
         </div>
               <audio controls="controls" preload="meta" style="width:100%">
                 <source type="audio/mpeg">
