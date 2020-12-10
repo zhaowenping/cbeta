@@ -323,7 +323,7 @@
         <div style="height:40px">
         </div>
               <audio controls="controls" preload="meta" style="width:100%">
-                <source type="audio/mpeg">
+                <source type="audio/mp4">
                   <xsl:attribute name="src">      
                       <xsl:value-of select="concat('/static/m4a/', $current_sutra, '_', $juan,'.m4a')"/>
                   </xsl:attribute>
@@ -593,7 +593,7 @@
         <xsl:when test="not(cb:tt)">
             <xsl:if test="@xml:id">
               <audio controls="controls" preload="meta">
-                <source type="audio/mpeg">
+                <source type="audio/mp4">
                   <xsl:attribute name="src">      
                       <xsl:value-of select="concat('/static/m4a/', @xml:id, '.m4a')"/>
                   </xsl:attribute>
