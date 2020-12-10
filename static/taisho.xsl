@@ -320,7 +320,7 @@
         <!--左侧目录-->
         <!--xsl:copy-of select="document(concat('/static/toc/', $current_book, '.xml'))"/-->
         <!--xsl:copy-of select="document('/static/t.xml')"/-->
-              <audio controls="controls" preload="meta">
+              <audio controls="controls" preload="meta" style="width:100%">
                 <source type="audio/mpeg">
                   <xsl:attribute name="src">      
                       <xsl:value-of select="concat('/static/m4a/', $current_sutra, '_', $juan,'.m4a')"/>
