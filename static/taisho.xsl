@@ -320,6 +320,8 @@
         <!--左侧目录-->
         <!--xsl:copy-of select="document(concat('/static/toc/', $current_book, '.xml'))"/-->
         <!--xsl:copy-of select="document('/static/t.xml')"/-->
+        <!--正文内容-->
+        <div class="contentx">
               <audio controls="controls" preload="meta" style="width:100%">
                 <source type="audio/mpeg">
                   <xsl:attribute name="src">      
@@ -332,8 +334,6 @@
                   </xsl:attribute>
                 </source>
               </audio>
-        <!--正文内容-->
-        <div class="contentx">
             <xsl:apply-templates/>
         </div>
         <div id="bottomAnchor"/>
