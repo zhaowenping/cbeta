@@ -674,6 +674,13 @@
     </xsl:template>
 
 
+    <!--添加专名号: 人名、地名、朝代名、种族名、国名、机构名-->
+    <xsl:template match="name">
+        <span class="person">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+
   <!--xsl:template match="juan">
           <xsl:apply-templates/>
   </xsl:template-->

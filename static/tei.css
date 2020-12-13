@@ -785,15 +785,15 @@ q {
 
 /* 敬语: 赤金色 */
 .honorific {
-    color:#F2BE45;
+    /*color:#F2BE45;*/
+    border-bottom: 1px solid #F2BE45;
 }
 
 /* 人名地名: 下划线 */
-/*.persName {
-    text-decoration:underline wavy black;
+.person {
+    /*text-decoration:underline wavy black;*/
+    border-bottom: 1px solid black;
 }
-*/
-
 
 /* 关闭新字形?
 [lang*=Hant],[lang*=Hans],[lang=zh-TW],[lang=zh-HK],[lang=zh-CN],[lang^=zh],article blockquote i,article blockquote var,article strong,code,html,kbd,pre,samp {
