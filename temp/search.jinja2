@@ -6,11 +6,15 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
   <meta name="revised" content="">
-  <title>全文搜索</title>
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
-  <script>
-  //<![CDATA[
-  //]]>
+  <title>智能搜索</title>
+  <!--link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/-->
+  <link rel="stylesheet" href="/static/bootstrap4.min.css"/>
+  <script type="text/javascript">
+      function addNewText(x)
+      {
+        var ctx=document.getElementById("content");
+        ctx.value = ctx.value+x;
+      }
   </script>
   <style>
   <!--
@@ -61,6 +65,29 @@
  </p>
 <p class="help-block">搜索会判断输入的是简体字还是繁体字，自动转为繁体字搜索，因为众所周知的原因，可能会找不到。可以使用繁体字再次尝试。</p>
 <p class="help-block">生僻字可以使用CBETA的组合字形式、UNICODE IDS[⿰⿱⿲⿳⿴⿵⿶⿷⿸⿹⿺⿻↷↹]形式或者Python转义字符序列以及他们的组合来描述；搜索引擎会自动转换为对应汉字。</p>
+
+ <div  class="input-group mb-3">
+    <div class="btn-group btn-group-justified">
+      <span>
+   <a href="#" class="btn btn-primary" onclick="addNewText('⿰')">⿰</a>
+   <a href="#" class="btn btn-primary" onclick="addNewText('⿱')">⿱</a>
+   <a href="#" class="btn btn-primary" onclick="addNewText('⿲')">⿲</a>
+   <a href="#" class="btn btn-primary" onclick="addNewText('⿳')">⿳</a>
+   <a href="#" class="btn btn-primary" onclick="addNewText('⿴')">⿴</a>
+   <a href="#" class="btn btn-primary" onclick="addNewText('⿵')">⿵</a>
+   <a href="#" class="btn btn-primary" onclick="addNewText('⿶')">⿶</a>
+   <a href="#" class="btn btn-primary" onclick="addNewText('⿷')">⿷</a>
+   <a href="#" class="btn btn-primary" onclick="addNewText('⿸')">⿸</a>
+   <a href="#" class="btn btn-primary" onclick="addNewText('⿹')">⿹</a>
+   <a href="#" class="btn btn-primary" onclick="addNewText('⿺')">⿺</a>
+   <a href="#" class="btn btn-primary" onclick="addNewText('⿻')">⿻</a>
+   <a href="#" class="btn btn-primary" onclick="addNewText('↷')">↷</a>
+   <a href="#" class="btn btn-primary" onclick="addNewText('↹')">↹</a>
+   <a href="#" class="btn btn-primary" onclick="addNewText('\\U000')">\U000xxxxx</a>
+      </span>
+ </div>
+   </div>
+
 </form>
 <!--/div-->
   <br>

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-12-12 15:39:57
+# Last Modified: 2020-12-14 00:27:17
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -551,6 +551,7 @@ with open("idx/sutra_sch.lst") as fd:
 
 juan_pattern = re.compile(r'(\s+)第?([\d零〇一二三四五六七八九]{1,4})卷?')
 
+# ../T31/T31n1585.xml#xpath2(//0011b12)
 # 雜阿含經一五·一七
 # 增一阿含二一·六（大正二·六〇三c）  <pb n="0603c" ed="T" xml:id="T02.0125.0603c"/>
 ahan_pattern = re.compile(r'(《?[中长長雜杂增][一壹]?阿[含鋡][經经]?》?)第?([\d零〇一二三四五六七八九]{1,4})[經经]')

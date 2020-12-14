@@ -1150,9 +1150,11 @@
     <!-- <ref target="#PTS.Ja.3.227" type="PTS_hide"> -->
     <!-- <ref target="#PTS.Ja.3.153"> -->
     <!-- <ref cRef="PTS.Ja.1.1"/> -->
-    <!-- <ref target="../T31/T31n1585.xml#xpath2(//0041b09)"> -->
+    <!-- <ref target="../T31/T31n1585.xml#xpath2(//0041b09)"> TODO-->
     <!-- <ref target="../T31/T31n1585_008.xml#0041b09)"> TODO -->
     <!-- <ref target="#vol:24;page:p900c" type="taisho"> -->
+    <!-- 《中阿含經》</title><ref target="#no:26.73" type="taisho">（七三）</ref-->
+    <!-- <ref target="#vol:19;page:p570" type="taixu">(ref taixu::vol:19;page:p570)</ref -->
     <xsl:template match="ref">
         <a>
             <xsl:attribute name="href">
