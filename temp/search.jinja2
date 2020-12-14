@@ -15,6 +15,23 @@
         ctx.value = ctx.value+x;
         ctx.focus();
       }
+
+      function Monitor(t){
+		/*限制只能输入合规字符*/
+          var str1 = t.value.slice(0, -1);
+          var str2 = t.value;
+          var patt1 = /\U000[0-9a-fA-F]{0,4}\b/g;
+          var patt2 = /\U000[0-9a-fA-F]{0,5}\b/g;
+          var patt3 = /\u[0-9a-fA-F]{0,3}\b/g;
+          var patt4 = /\u[0-9a-fA-F]{0,4}\b/g;
+          if (str1.search(patt1) != -1 && str2.search(patt2) == -1){
+            t.value = str1;
+            }
+          if (str1.search(patt3) != -1 && str2.search(patt4) == -1){
+            t.value = str1;
+            }
+      }
+
   </script>
   <style>
   <!--
@@ -50,16 +67,16 @@
 <form action="/search" method="get" role="form">
   <div class="row center-block">
     <div class="col-lg-8">
-      <input type="text" class="form-control" id="content" name="content" value="{{content}}" autofocus="autofocus" placeholder="自动检测简体繁体内容">
+      <input type="text" class="form-control" id="content" name="content" value="{{content}}" oninput="Monitor(this);" autofocus="autofocus" placeholder="自动检测简体繁体内容">
     </div>
     <input type="submit" class="btn btn-default">
   </div>
 
   <div  class="input-group mb-3">
 
-       <label  class="radio-inline"><input type="radio" name="optradio" checked="true">Title</label>
-       <label  class="radio-inline"><input type="radio" name="optradio">Content</label>
-       <label  class="radio-inline"><input type="radio" name="optradio" disabled>Dict</label>
+       <label class="radio-inline"><input type="radio" name="istitle" checked="true">Title</label>
+       <label class="radio-inline"><input type="radio" name="isctx">Content</label>
+       <label class="radio-inline"><input type="radio" name="isdict" disabled>Dict</label>
   </div>
 
  <div  class="input-group mb-3">
