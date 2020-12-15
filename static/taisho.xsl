@@ -100,7 +100,7 @@
         <xsl:value-of select="function-available('str:tokenize')"/-->
         <!--xsl:value-of select="str:tokenize('2001-06-03T11:40:23', '-T:')"/-->
 
-        <menu id="supermenu" type="context">
+        <!--menu id="supermenu" type="context">
             <menuitem label="报告错误" onclick="alert('step1')"/>
             <menuitem label="保存书签" onclick="imageRotation('rotate-90')" icon="img/arrow-return-090.png"/>
             <menuitem label="拼音标注" onclick="alert('此功能暂时不开放')" icon="img/arrow-return-180.png"/>
@@ -110,7 +110,7 @@
             <menuitem label="导出PDF"  onclick="alert('此功能暂时不开放')" icon="img/arrow-stop-270.png"/>
             <menuitem label="导出epub" onclick="alert('此功能暂时不开放')" icon="img/arrow-stop-270.png"/>
             <menuitem label="导出txt"  onclick="alert('此功能暂时不开放')" icon="img/arrow-stop-270.png"/>
-        </menu>
+        </menu-->
 
             <!--ul class="pagination pagination-sm"-->
         <nav class="navbar navbar-fixed-top navbar-expand justify-content-center" role="navigation">
