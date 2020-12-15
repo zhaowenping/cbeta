@@ -173,20 +173,20 @@
         <meta name="description" content="印刷品般的经典阅读"/>
         <meta name="keywords" content="大正藏, 中文, 排版, 排版規範, 阅藏, 大藏经"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-        <!--link rel="stylesheet" href="/static/bootstrap-3.3.7.min.css"/-->
-        <link rel="stylesheet" href="/static/bootstrap4.min.css"/>
+        <link rel="stylesheet" href="/static/bootstrap-3.3.7.min.css"/>
+        <!--link rel="stylesheet" href="/static/bootstrap4.min.css"/-->
         <!--link rel="stylesheet" href="http://han-css.herokuapp.com/style.css"/-->
-        <!--link rel="stylesheet" href="/static/jquery.webui-popover.min.css"/-->
+        <link rel="stylesheet" href="/static/jquery.webui-popover.min.css"/>
         <link rel="stylesheet" href="/static/tei.css"/>
         <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Han/3.2.7/han.min.css"/-->
         <title>
             <xsl:value-of select="concat($current_sutra, ' ', $title)"/>
         </title>
         <script src="/static/jquery-3.3.1.min.js"></script>
-        <!--script src="/static/bootstrap-3.3.7.min.js"></script-->
-        <script src="/static/popper.min.js"></script>
-        <script src="/static/bootstrap4.min.js"></script>
-        <!--script src="/static/jquery.webui-popover.min.js"></script-->
+        <script src="/static/bootstrap-3.3.7.min.js"></script>
+        <!--script src="/static/popper.min.js"></script-->
+        <!--script src="/static/bootstrap4.min.js"></script-->
+        <script src="/static/jquery.webui-popover.min.js"></script>
         <!--script src="https://cdnjs.cloudflare.com/ajax/libs/Han/3.2.7/han.min.js"></script-->
         <!--[if lt IE9]> 
         <script src="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
@@ -683,7 +683,7 @@
 
     <!--添加专名号: 人名、地名、朝代名、种族名、国名、机构名-->
     <xsl:template match="name">
-        <span class="person">
+        <span class="person" data-toggle="tooltip" data-placement="top" title="人名">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
