@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-12-04 16:10:26
+# Last Modified: 2020-12-15 05:32:44
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -38,7 +38,7 @@ from libhan import Search, IDS, CBETA_COM, python_unescape
 from libhan import STConvertor
 from libhan import normalize_text
 from libhan import fullsearch
-from libhan import make_url, make_url2, ahan_url, make_docx
+from libhan import parse_number, make_docx
 
 from libhan import Number, rm_pun
 from libhan import get_first_juan
@@ -337,22 +337,14 @@ def searchmulu():
         title = request.forms.content
     # 使用经号方式查找藏经
     # TODO:搜索t1000, t1000_001, T01n0001, T01n0001_001, T01n0001_p0001a01, T01,no.1,p.1a1
-    an = make_url(title)
-    if an:
-        redirect(an)
-    # 使用卷册方式查找藏经
-    an = make_url2(title)
-    if an:
-        redirect(an)
-    # 查找阿含经
-    an = ahan_url(title)
-    if an:
-        redirect(an.url)
+    results = []
+    sutra = parse_number(title)
+    if sutra:
+        redirect(sutra.url)
 
     # 使用书名方式查找藏经
     if convert.detect(title)['confidence'] == 's':
         title = convert.s2t(title)
-    results = []
     if not title:
         abort(304)
     for idx in ss.search(title):
@@ -369,7 +361,7 @@ def searchmulu():
         redirect(sutra.url)
     # if len(results) > 1:
     #     pass
-    return {'results': results, 'content': title}
+    return {'results': results, 'content': title, 'q': 'title'}
 
 # 搜索！
 
@@ -396,7 +388,7 @@ cbeta_com = CBETA_COM()
 def search_get():
     content = request.GET.content
     # print('搜索: ', content)
-    if not content: return {}
+    if not content: return {'q': 'content'}
     ncontent = content
 
     # 去除python转义字符
@@ -407,7 +399,7 @@ def search_get():
     ncontent = ids.rm_ids(ncontent)
     # 去除组字式
     ncontent = cbeta_com.rm_com(ncontent)
-
+    # 判断简体繁体, 统一转为繁体之后搜索
     if convert.detect(ncontent)['confidence'] == 's':
         ncontent = convert.s2t(ncontent)
     xx = fullsearch(ncontent)
@@ -415,7 +407,7 @@ def search_get():
     with open('search.dict', 'a+') as fd:
         fd.write(datetime.datetime.now().strftime("%Y%m%dT%T ") + content + '|' + ncontent + '\n')
 
-    return {'results': xx, 'content': content}
+    return {'results': xx, 'content': content, 'q': 'content'}
 
 # # "menu/sutra_sch.lst"
 # # "menu/bulei_sutra_sch.lst'
@@ -1599,3 +1591,42 @@ if __name__ == "__main__":
     run(host = '0.0.0.0', port = 8081)
 
 
+def search_title(title):
+    '''搜索标题, GET方法为目录部典籍查找所用'''
+    # if request.method == "GET":
+    #     title = request.GET.title
+    #     # 去除HTML标签、注释、卷数, 留下标题
+    #     title = re.sub(r'<.*?>', '', title)  # title=[34]<span style="color:red">阿</span>差末菩薩經
+    #     title = re.sub(r'\(.*?\)', '', title)
+    #     title = re.sub(r'\[\w*?\]', '', title)
+    #     title = re.sub(r'[一二三四五六七八九十百]+卷', '', title)
+    # else:
+    #     title = request.forms.content
+
+    # 使用经号方式查找藏经
+    # TODO:搜索t1000, t1000_001, T01n0001, T01n0001_001, T01n0001_p0001a01, T01,no.1,p.1a1
+    results = []
+    sutra = parse_number(title)
+    if sutra:
+        redirect(sutra.url)
+
+    # 使用书名方式查找藏经
+    if convert.detect(title)['confidence'] == 's':
+        title = convert.s2t(title)
+    if not title:
+        abort(304)
+    for idx in ss.search(title):
+        title0 = idx
+        hl = ss.titles[idx]
+        sutra = Number(idx)
+        results.append({'hl': hl, 'an':sutra.url, 'title':title0, 'author':''})
+    # if request.method == "GET":
+    # 0个结果页面不动, 多个结果自己选择
+    if len(results) == 0:
+        # abort(304)
+        redirect('/')
+    if len(results) == 1:
+        redirect(sutra.url)
+    # if len(results) > 1:
+    #     pass
+    return {'results': xx, 'content': content, 'q': 'content'}

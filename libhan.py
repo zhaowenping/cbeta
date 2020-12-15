@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-12-14 17:12:22
+# Last Modified: 2020-12-15 05:22:50
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -400,18 +400,21 @@ def get_first_juan(number):
 @total_ordering
 class Number:
     '''经号类: T01n0002a_002'''
-    def __init__(self, n):
-        self.book, self.tome, self.sutra, self.yiyi, self.volume, self.anchor = None, '', '', '', 0, ''
-        # r = re.findall(r'([A-Z]{1,2})(\d{2,3})n(\w\d{3})([a-zA-Z])?(?:_(\d{3}))?', n)
-        r = re.findall(r'([A-Z]{1,2})(\d{2,3})n(\w\d{3})([a-zA-Z])?(?:_(\d{3}))?(?:#p(\w\d{3}[abc]\d\d))?', n)
-        if r:
-            self.book, tome, self.sutra, self.yiyi, volume, self.anchor = r[0]
-            self.volume = 0 if not volume else int(volume)
-            self.n = 2
-            if self.book in {'A', 'C', 'G', 'GA', 'GB', 'L', 'M', 'P', 'U'}:
-                self.n = 3
-            tome = int(tome)
-            self.tome = f'{tome:0{self.n}}'
+    def __init__(self, n, anchor=''):
+        if isinstance(n, tuple):
+            self.book, self.tome, self.sutra, self.yiyi, self.volume, self.anchor = n
+        else:
+            self.book, self.tome, self.sutra, self.yiyi, self.volume, self.anchor = None, '', '', '', 0, ''
+            # r = re.findall(r'([A-Z]{1,2})(\d{2,3})n(\w\d{3})([a-zA-Z])?(?:_(\d{3}))?', n)
+            r = re.findall(r'([A-Z]{1,2})(\d{2,3})n(\w\d{3})([a-zA-Z])?(?:_(\d{3}))?(?:#p(\w\d{3}[abc]\d\d))?', n)
+            if r:
+                self.book, tome, self.sutra, self.yiyi, volume, self.anchor = r[0]
+                self.volume = 0 if not volume else int(volume)
+        tome_len = 2
+        if self.book in {'A', 'C', 'G', 'GA', 'GB', 'L', 'M', 'P', 'U'}:
+            tome_len = 3
+        tome = int(tome)
+        self.tome = f'{tome:0{tome_len}}'
 
     def __eq__(self, other):
         return (self.book == other.book and
@@ -434,7 +437,7 @@ class Number:
 
     def __str__(self):
         if not self.book:
-            return 'None'
+            return ''
         if self.volume:
             return f'{self.book}{self.tome}n{self.sutra}{self.yiyi}_{self.volume:03}'
         else:
@@ -515,7 +518,6 @@ class Number:
         return juanlist
 
 
-
 def get_sorted_juan(book):
     '''获得book(T01)下的所有排序好的经卷号(T01n0002_001)'''
     # 对所有的book下的卷排序
@@ -555,7 +557,7 @@ juan_pattern = re.compile(r'(\s+)第?([\d零〇一二三四五六七八九]{1,4}
 # 雜阿含經一五·一七
 # 增一阿含二一·六（大正二·六〇三c）  <pb n="0603c" ed="T" xml:id="T02.0125.0603c"/>
 ahan_pattern = re.compile(r'(《?[中长長雜杂增][一壹]?阿[含鋡][經经]?》?)第?([\d零〇一二三四五六七八九]{1,4})[經经]')
-def ahan_url(number):
+def parse_ahan(number):
     found = False
     jinghao = ahan_pattern.findall(number)
     if jinghao:
@@ -590,7 +592,7 @@ def ahan_url(number):
 # 《大正藏》第40卷第16頁下
 # 大正藏第十九卷第16頁下 XXX
 pbanchor_pattern = re.compile(r'(《?[中乾佛作傳典刊刻北卍南印叢史品善嘉國圖城外大學宋家寺山師彙志房拓教文新書朝本樂正武永法洪漢片獻珍百石經編纂續脩興華著藏補譯趙遺金隆集順館高麗传丛国图学师汇书乐汉献经编续修兴华补译赵遗顺馆丽]+》?)第?([\d零〇一二三四五六七八九]{1,3})(?:卷|卷第|\u00b7)([\d零〇一二三四五六七八九]{1,3})[頁|页]?([上中下abcABC])?')
-def make_url2(number):
+def parse_number2(number):
     tt = { ord('〇'): ord('0'), ord('零'): ord('0'),
           ord('一'): ord('1'),
           ord('二'): ord('2'),
@@ -673,8 +675,9 @@ def make_url2(number):
                     found = True
     if not found:
         return None
-    url = f'/xml/{book}{tome}/{number}.xml#{anchor}'
-    return url
+    # url = f'/xml/{book}{tome}/{number}.xml#{anchor}'
+    # return url
+    return Number(f'{number}#{anchor}')
     # return (book, tome, sutra, j4, volume, anchor)
 
 # 标准模式: T01n0001, T01n0001_001
@@ -691,7 +694,7 @@ jinghaopatten1 = re.compile(r'([a-zA-Z]{1,2})(\d{2,3})n(\w\d{3})([a-zA-Z])?(?:_(
 jinghaopatten2 = re.compile(r'([a-zA-Z]{1,2})(\d{2,3}),\s*no\.\s*(\w\d{0,3})([a-zA-Z])?,\s*pp?\.\s*(\d+)([abc])(\d+)')
 jinghaopatten9 = re.compile(r'([a-zA-Z]{1,2})?(\w\d{0,3})([a-zA-Z])?(?:[\s,._\u3002\uff0c-]+(\d+)?)?')  # 全角逗号句号
 # jinghaopatten3 = re.compile(r'([\u3007\u3400-\u9FCB\U00020000-\U0002EBE0]+)[ \t,._\u3000\u3002\uff0c-]*(\d+)')
-def parse_number(title, guess_juan=False):
+def parse_number1(title, guess_juan=False):
     '''所有的anchor都是lb标签的'''
     # print(title)
     book, tome, sutra, j4, volume, anchor = 'T', '', '', '', '', ''
@@ -782,33 +785,46 @@ def parse_number(title, guess_juan=False):
 
     if volume:
         volume = '{:03}'.format(int(volume))
-    return (book, tome, sutra, j4, volume, anchor)
+    return Number((book, tome, sutra, j4, volume, anchor))
 
 
-def normalize_number(number, guess_juan=False):
-    '''如果number符合经号的形式, 就标准化为标准形式T01n0001_001, 否则原样返回'''
-    result = parse_number(number, guess_juan)
-    if result:
-        j1, j2, j3, j4, j5, j6 = result
-        if j5:
-            number = f'{j1}{j2}n{j3}{j4}_{j5}'
-        else:
-            number = f'{j1}{j2}n{j3}{j4}'
-    return number
+def parse_number(number):
+    '''尝试解析不同的经号格式'''
+    sutra = parse_number1(number)
+    if sutra:
+        return sutra
+    # 使用卷册方式查找藏经
+    sutra = parse_number2(number)
+    if sutra:
+        return sutra
+    # 查找阿含经
+    sutra = parse_ahan(number)
+    return sutra
 
-
-def make_url(number):
-    number = parse_number(number, True)
-    # 如果有锚就添加锚
-    if number:
-        j1, j2, j3, j4, j5, j6 = number
-    else:
-        return None
-    if j6:
-        url = f'xml/{j1}{j2}/{j1}{j2}n{j3}{j4}_{j5}.xml#{j6}'
-    else:
-        url = f'xml/{j1}{j2}/{j1}{j2}n{j3}{j4}_{j5}.xml'
-    return url
+# def normalize_number(number, guess_juan=False):
+#     '''如果number符合经号的形式, 就标准化为标准形式T01n0001_001, 否则原样返回'''
+#     result = parse_number1(number, guess_juan)
+#     if result:
+#         j1, j2, j3, j4, j5, j6 = result
+#         if j5:
+#             number = f'{j1}{j2}n{j3}{j4}_{j5}'
+#         else:
+#             number = f'{j1}{j2}n{j3}{j4}'
+#     return number
+#
+#
+# def make_url(number):
+#     number = parse_number1(number, True)
+#     # 如果有锚就添加锚
+#     if number:
+#         j1, j2, j3, j4, j5, j6 = number
+#     else:
+#         return None
+#     if j6:
+#         url = f'xml/{j1}{j2}/{j1}{j2}n{j3}{j4}_{j5}.xml#{j6}'
+#     else:
+#         url = f'xml/{j1}{j2}/{j1}{j2}n{j3}{j4}_{j5}.xml'
+#     return url
 
 # FROM: https://en.wikipedia.org/wiki/International_Alphabet_of_Sanskrit_Transliteration
 
@@ -1538,7 +1554,8 @@ def fullsearch(sentence):
     sentences = [re.split(r':|：', st) for st in sentences]
     # 标准化经号number字段,按照长度不同分别在number和sutra字段中查找
     must = (("content", st[0]) if len(st) == 1 else (st[0].lower(), st[1]) for st in sentences)
-    must = ((st0, st1 if st0 != 'number' else normalize_number(st1,False)) for st0,st1 in must)
+    # must = ((st0, st1 if st0 != 'number' else normalize_number(st1,False)) for st0,st1 in must)
+    must = ((st0, st1 if st0 != 'number' else str(parse_number1(st1,False))) for st0,st1 in must)
     must = (('sutra' if (st0=='number' and '_' not in st1) else st0, st1) for st0,st1 in must)
     data["query"]["bool"]["must"] = [{"match_phrase" if key=="content" else "match": {key:val}} for key,val in must]
     # pprint.pprint(data["query"]["bool"]["must"])
@@ -1736,6 +1753,6 @@ if __name__ == "__main__":
     sentence = '非施者福 title:毘耶娑'
     sentence = '非施者福'
     # print(highlight(sentence, raw))
-    print(make_url2('大正藏第九卷第七〇九页'))
-    print(make_url2('大正藏第十九卷第16頁下'))
+    print(parse_number2('大正藏第九卷第七〇九页'))
+    print(parse_number2('大正藏第十九卷第16頁下'))
 
