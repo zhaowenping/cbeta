@@ -228,14 +228,13 @@
         </menu>
 
             <!--ul class="pagination pagination-sm"-->
-        <nav class="nav navbar navbar-default navbar-fixed-top justify-content-center" role="navigation">
+        <nav class="navbar navbar-default navbar-fixed-top justify-content-center" role="navigation">
             <!--div class="navbar-header">  
                 <a class="navbar-brand">&#9776;</a>  
             </div--> 
             <!--div class="container"-->
                 <!--ul id="pagination"></ul-->
-                <ul class="nav navbar-nav">
-                    <div class="collapse navbar-collapse" id="collapsible">
+                <ul class="navbar-nav">
                 <li class="nav-item">
                     <!--a class="navbar-brand" href="/prev/{$current_sutra}_{$juan}/{$lang}">上一卷</a-->
                     <a class="navbar-link" href="/prev/{$current_sutra}_{$juan}">上一卷</a>
@@ -269,7 +268,6 @@
                 简
             </a>
                 </li>
-            </div>
             </ul>
             <!--form class="collspae navbar-collspae navbar-form navbar-left" role="search">
                <div class="form-group">
