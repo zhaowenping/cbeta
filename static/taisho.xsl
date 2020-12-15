@@ -235,9 +235,6 @@
             <!--div class="container"-->
                 <!--ul id="pagination"></ul-->
                 <ul class="nav navbar-nav">
-                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsible">
-    <span class="navbar-toggler-icon"></span>
-  </button>
                     <div class="collapse navbar-collapse" id="collapsible">
                 <li class="nav-item">
                     <!--a class="navbar-brand" href="/prev/{$current_sutra}_{$juan}/{$lang}">上一卷</a-->
