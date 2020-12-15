@@ -228,23 +228,23 @@
         </menu>
 
             <!--ul class="pagination pagination-sm"-->
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <nav class="navbar navbar-fixed-top navbar-expand-sm" role="navigation">
             <!--div class="navbar-header">  
                 <a class="navbar-brand">&#9776;</a>  
             </div--> 
-            <div class="container">
+            <!-div class="container"-->
                 <!--ul id="pagination"></ul-->
-                <ul class="nav navbar-nav">
+                <ul class="navbar-nav">
                 <li class="nav-item">
                     <!--a class="navbar-brand" href="/prev/{$current_sutra}_{$juan}/{$lang}">上一卷</a-->
-                    <a class="navbar-brand" href="/prev/{$current_sutra}_{$juan}">上一卷</a>
+                    <a class="navbar-link" href="/prev/{$current_sutra}_{$juan}">上一卷</a>
                 </li>
                 <li class="nav-item">
-                    <a class="navbar-brand" href="/mulu">目錄</a>
+                    <a class="navbar-link" href="/mulu">目錄</a>
                 </li>
                 <li class="nav-item">
                     <!--a class="navbar-brand" href="/next/{$current_sutra}_{$juan}/{$lang}">下一卷</a-->
-                    <a class="navbar-brand" href="/next/{$current_sutra}_{$juan}">下一卷</a>
+                    <a class="navbar-link" href="/next/{$current_sutra}_{$juan}">下一卷</a>
                 </li>
             <!--input id="shupaictl" type="button" value="竖" onclick="shupai(this);"/-->
             <!--a id="pinyinctl" class="navbar-brand" onclick="pinyin(this);">P</a-->
@@ -275,7 +275,7 @@
                </div>
                <button type="submit" class="btn btn-default">直达</button>
             </form-->    
-            </div>
+            <!--/div-->
         </nav>
 
         <!--侧边栏目录 max(level)=28-->
