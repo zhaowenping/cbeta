@@ -228,7 +228,7 @@
         </menu>
 
             <!--ul class="pagination pagination-sm"-->
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <nav class="nav navbar navbar-default navbar-fixed-top justify-content-center" role="navigation">
             <!--div class="navbar-header">  
                 <a class="navbar-brand">&#9776;</a>  
             </div--> 
