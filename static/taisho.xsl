@@ -235,21 +235,21 @@
             <div class="container">
                 <!--ul id="pagination"></ul-->
                 <ul class="nav navbar-nav">
-                <li>
+                <li class="nav-item">
                     <!--a class="navbar-brand" href="/prev/{$current_sutra}_{$juan}/{$lang}">上一卷</a-->
                     <a class="navbar-brand" href="/prev/{$current_sutra}_{$juan}">上一卷</a>
                 </li>
-                <li>
+                <li class="nav-item">
                     <a class="navbar-brand" href="/mulu">目錄</a>
                 </li>
-                <li>
+                <li class="nav-item">
                     <!--a class="navbar-brand" href="/next/{$current_sutra}_{$juan}/{$lang}">下一卷</a-->
                     <a class="navbar-brand" href="/next/{$current_sutra}_{$juan}">下一卷</a>
                 </li>
-            </ul>
             <!--input id="shupaictl" type="button" value="竖" onclick="shupai(this);"/-->
             <!--a id="pinyinctl" class="navbar-brand" onclick="pinyin(this);">P</a-->
-            <a>
+                <li class="nav-item">
+            <a class="nav-link">
                 <xsl:attribute name="href">
                     <xsl:value-of select="concat('/zh_TW', $dir, $current_sutra, '_')"/>
                     <xsl:number format="001" value="$juan"/>
@@ -257,7 +257,9 @@
                 </xsl:attribute>
                 正
             </a>
-            <a>
+                </li>
+                <li class="nav-item">
+            <a class="nav-link">
                 <xsl:attribute name="href">
                     <xsl:value-of select="concat('/zh', $dir, $current_sutra, '_')"/>
                     <xsl:number format="001" value="$juan"/>
@@ -265,6 +267,8 @@
                 </xsl:attribute>
                 简
             </a>
+                </li>
+            </ul>
             <!--form class="collspae navbar-collspae navbar-form navbar-left" role="search">
                <div class="form-group">
                   <input type="search" class="form-control" placeholder="Search"/>
