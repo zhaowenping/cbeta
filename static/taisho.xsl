@@ -228,13 +228,13 @@
         </menu>
 
             <!--ul class="pagination pagination-sm"-->
-        <nav class="navbar navbar-fixed-top navbar-expand-sm justify-content-center" role="navigation">
+        <nav class="navbar navbar-fixed-top navbar-expand justify-content-center" role="navigation">
             <!--div class="navbar-header">  
                 <a class="navbar-brand">&#9776;</a>  
             </div--> 
             <!--div class="container"-->
                 <!--ul id="pagination"></ul-->
-                <ul class="nav navbar-nav">
+                <ul class="navbar-nav">
                 <li class="nav-item">
                     <!--a class="navbar-brand" href="/prev/{$current_sutra}_{$juan}/{$lang}">上一卷</a-->
                     <a class="navbar-link" href="/prev/{$current_sutra}_{$juan}">上一卷</a>
