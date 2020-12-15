@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-12-15 05:22:50
+# Last Modified: 2020-12-15 06:07:13
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -402,18 +402,19 @@ class Number:
     '''经号类: T01n0002a_002'''
     def __init__(self, n, anchor=''):
         if isinstance(n, tuple):
-            self.book, self.tome, self.sutra, self.yiyi, self.volume, self.anchor = n
+            self.book, tome, self.sutra, self.yiyi, self.volume, self.anchor = n
         else:
-            self.book, self.tome, self.sutra, self.yiyi, self.volume, self.anchor = None, '', '', '', 0, ''
+            self.book, tome, self.sutra, self.yiyi, self.volume, self.anchor = None, '', '', '', 0, ''
             # r = re.findall(r'([A-Z]{1,2})(\d{2,3})n(\w\d{3})([a-zA-Z])?(?:_(\d{3}))?', n)
             r = re.findall(r'([A-Z]{1,2})(\d{2,3})n(\w\d{3})([a-zA-Z])?(?:_(\d{3}))?(?:#p(\w\d{3}[abc]\d\d))?', n)
             if r:
                 self.book, tome, self.sutra, self.yiyi, volume, self.anchor = r[0]
                 self.volume = 0 if not volume else int(volume)
+        # 重新标准化tome
+        tome = int(tome)
         tome_len = 2
         if self.book in {'A', 'C', 'G', 'GA', 'GB', 'L', 'M', 'P', 'U'}:
             tome_len = 3
-        tome = int(tome)
         self.tome = f'{tome:0{tome_len}}'
 
     def __eq__(self, other):
@@ -785,6 +786,7 @@ def parse_number1(title, guess_juan=False):
 
     if volume:
         volume = '{:03}'.format(int(volume))
+    # ('T', '05', '0220', '', '', '')
     return Number((book, tome, sutra, j4, volume, anchor))
 
 
@@ -1737,9 +1739,10 @@ if __name__ == "__main__":
     # print(parse_number('1113b'))
     # print(parse_number('1113'))
     # print(parse_number('100.3'))
-    print(parse_number('220.200'))
-    print(parse_number('220.201'))
-    print(parse_number('J32nB271'))
+    print(parse_number1('220').url)
+    # print(parse_number1('220.200'))
+    # print(parse_number1('220.201'))
+    # print(parse_number1('J32nB271'))
     # print(normalize_text('說</g>九種命終心三界'))
     #for i in fullsearch('止觀明靜'):
     #    print(i)
@@ -1753,6 +1756,6 @@ if __name__ == "__main__":
     sentence = '非施者福 title:毘耶娑'
     sentence = '非施者福'
     # print(highlight(sentence, raw))
-    print(parse_number2('大正藏第九卷第七〇九页'))
-    print(parse_number2('大正藏第十九卷第16頁下'))
+    #print(parse_number2('大正藏第九卷第七〇九页'))
+    #print(parse_number2('大正藏第十九卷第16頁下'))
 
