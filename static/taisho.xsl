@@ -235,6 +235,10 @@
             <!--div class="container"-->
                 <!--ul id="pagination"></ul-->
                 <ul class="nav navbar-nav">
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsible">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+                    <div class="collapse navbar-collapse" id="collapsible">
                 <li class="nav-item">
                     <!--a class="navbar-brand" href="/prev/{$current_sutra}_{$juan}/{$lang}">上一卷</a-->
                     <a class="navbar-link" href="/prev/{$current_sutra}_{$juan}">上一卷</a>
@@ -268,6 +272,7 @@
                 简
             </a>
                 </li>
+            </div>
             </ul>
             <!--form class="collspae navbar-collspae navbar-form navbar-left" role="search">
                <div class="form-group">
