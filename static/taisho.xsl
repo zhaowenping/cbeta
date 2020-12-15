@@ -232,7 +232,7 @@
             <!--div class="navbar-header">  
                 <a class="navbar-brand">&#9776;</a>  
             </div--> 
-            <!-div class="container"-->
+            <!--div class="container"-->
                 <!--ul id="pagination"></ul-->
                 <ul class="navbar-nav">
                 <li class="nav-item">
