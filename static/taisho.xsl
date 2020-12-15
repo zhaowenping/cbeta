@@ -42,127 +42,9 @@
     <xsl:variable name="MSIE" select="system-property('xsl:vendor')='Microsoft'"/>
     <xsl:variable name="firefox" select="system-property('xsl:vendor')='Transformiix'"/>
 
-    <!--xsl:variable name="copyright">
-        <xsl:choose>
-        <xsl:when test="starts-with($current_sutra, 'T')">
-            <xsl:text>《大正新脩大藏經》（大藏出版株式會社 ©）</xsl:text>
-        </xsl:when>
-        <xsl:when test="starts-with($current_sutra, 'X')">
-            <xsl:text>《卍新纂續藏經》（株式會社國書刊行會 ©）</xsl:text>
-        </xsl:when>
-        <xsl:when test="starts-with($current_sutra, 'A')">
-            <xsl:text>《趙城金藏》</xsl:text>
-        </xsl:when>
-        <xsl:when test="starts-with($current_sutra, 'C')">
-            <xsl:text>《中華藏》</xsl:text>
-        </xsl:when>
-        <xsl:when test="starts-with($current_sutra, 'F')">
-            <xsl:text>《房山石經》</xsl:text>
-        </xsl:when>
-        <xsl:when test="starts-with($current_sutra, 'J')">
-            <xsl:text>《嘉興大藏經》（新文豐出版公司）</xsl:text>
-        </xsl:when>
-        <xsl:when test="starts-with($current_sutra, 'K')">
-            <xsl:text>《高麗藏》（新文豐出版公司）</xsl:text>
-        </xsl:when>
-        <xsl:when test="starts-with($current_sutra, 'L')">
-            <xsl:text>《乾隆藏》</xsl:text>
-        </xsl:when>
-        <xsl:when test="starts-with($current_sutra, 'M')">
-            <xsl:text>《卍正藏經》（新文豐出版公司）</xsl:text>
-        </xsl:when>
-        <xsl:when test="starts-with($current_sutra, 'P')">
-            <xsl:text>《永樂北藏》</xsl:text>
-        </xsl:when>
-        <xsl:when test="starts-with($current_sutra, 'S')">
-            <xsl:text>《宋藏遺珍》</xsl:text>
-        </xsl:when>
-        <xsl:when test="starts-with($current_sutra, 'U')">
-            <xsl:text>《洪武南藏》</xsl:text>
-        </xsl:when>
-        <xsl:when test="starts-with($current_sutra, 'D')">
-            <xsl:text>國家圖書館善本佛典</xsl:text>
-        </xsl:when>
-        <xsl:when test="starts-with($current_sutra, 'N')">
-            <xsl:text>《漢譯南傳大藏經》（元亨寺 ©）</xsl:text>
-        </xsl:when>
-        <xsl:when test="starts-with($current_sutra, 'I')">
-            <xsl:text>《北朝佛教石刻拓片百品》（中央研究院歷史語言研究所 ©）</xsl:text>
-        </xsl:when>
-        <xsl:when test="starts-with($current_sutra, 'B')">
-            <xsl:text>《大藏經補編》</xsl:text>
-        </xsl:when>
-        <xsl:when test="starts-with($current_sutra, 'GA')">
-            <xsl:text>《中國佛寺史志彙刊》（杜潔祥主編）</xsl:text>
-        </xsl:when>
-        <xsl:when test="starts-with($current_sutra, 'ZW')">
-            <xsl:text>《藏外佛教文獻》（方廣錩 ©）</xsl:text>
-        </xsl:when>
-        <xsl:when test="starts-with($current_sutra, 'GB')">
-            <xsl:text>《中國佛寺志叢刊》（張智等編輯）</xsl:text>
-        </xsl:when>
-        <xsl:when test="starts-with($current_sutra, 'Y')">
-            <xsl:text>《印順法師佛學著作集》（印順文教基金會©）</xsl:text>
-        </xsl:when>
-        <xsl:when test="starts-with($current_sutra, 'G')">
-            <xsl:text>《佛教大藏經》</xsl:text>
-        </xsl:when>
-        </xsl:choose>
-    </xsl:variable-->
-
     <!--xml所在目录前缀, 形如: /xml/T01/-->
     <xsl:variable name="dir" select="concat('/xml/', substring-before($current_sutra, 'n'), '/')"/>
 
-    <!--计算上一页-->
-    <!--xsl:variable name="prev_filepath">
-        <xsl:variable name="prevvol">
-          <xsl:value-of select="concat($dir, $current_sutra, '_')"/>
-          <xsl:number format="001" value="$juan - 1"/>
-          <xsl:text>.xml</xsl:text>
-        </xsl:variable>
-    <xsl:if test="$MSIE or document($prevvol)">
-        <xsl:value-of select="$prevvol"/>
-    </xsl:if>
-    </xsl:variable-->
-
-    <!--计算下一页 TODO 太复杂了, 还是交给后台计算吧-->
-    <!--xsl:variable name="next_filepath">
-        <xsl:variable name="nextvol">
-          <xsl:value-of select="concat($dir, $current_sutra, '_')"/>
-          <xsl:number format="001" value="$juan + 1"/>
-          <xsl:text>.xml</xsl:text>
-        </xsl:variable>
-        <xsl:variable name="nextsutra">
-          <xsl:value-of select="concat($dir, substring-before($current_sutra, 'n'), 'n')"/>
-          <xsl:number format="0001" value="substring-after($current_sutra, 'n') + 1"/>
-          <xsl:text>_001.xml</xsl:text>
-        </xsl:variable>
-        <xsl:variable name="nexthan">
-          <xsl:text>/xml/</xsl:text>
-          <xsl:value-of select="substring(substring-before($current_sutra, 'n'), 1, 1)"/>
-          <xsl:number format="01" value="substring(substring-before($current_sutra, 'n'), 2) + 1"/>
-          <xsl:text>/</xsl:text>
-          <xsl:value-of select="substring(substring-before($current_sutra, 'n'), 1, 1)"/>
-          <xsl:number format="01" value="substring(substring-before($current_sutra, 'n'), 2) + 1"/>
-          <xsl:text>n</xsl:text>
-          <xsl:number format="0001" value="substring-after($current_sutra, 'n') + 1"/>
-          <xsl:text>_001.xml</xsl:text>
-        </xsl:variable>
-        <xsl:choose>
-          <xsl:when test="$MSIE or document($nextvol)">
-              <xsl:value-of select="$nextvol"/>
-          </xsl:when>
-          <xsl:when test="$MSIE or document($nextsutra)">
-              <xsl:value-of select="$nextsutra"/>
-          </xsl:when>
-          <xsl:when test="$MSIE or document($nexthan)">
-              <xsl:value-of select="$nexthan"/>
-          </xsl:when>
-          <xsl:otherwise>
-              <xsl:text>#</xsl:text>
-          </xsl:otherwise>
-        </xsl:choose>
-    </xsl:variable-->
 
     <!--开始页面根元素: 默认使用繁体文言文-->
     <xsl:template match="/">
@@ -174,7 +56,7 @@
         <meta name="keywords" content="大正藏, 中文, 排版, 排版規範, 阅藏, 大藏经"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
         <link rel="stylesheet" href="/static/bootstrap-3.3.7.min.css"/>
-        <!--link rel="stylesheet" href="/static/bootstrap4.min.css"/-->
+        <link rel="stylesheet" href="/static/bootstrap4.min.css"/>
         <!--link rel="stylesheet" href="http://han-css.herokuapp.com/style.css"/-->
         <link rel="stylesheet" href="/static/jquery.webui-popover.min.css"/>
         <link rel="stylesheet" href="/static/tei.css"/>
@@ -183,9 +65,9 @@
             <xsl:value-of select="concat($current_sutra, ' ', $title)"/>
         </title>
         <script src="/static/jquery-3.3.1.min.js"></script>
-        <script src="/static/bootstrap-3.3.7.min.js"></script>
-        <!--script src="/static/popper.min.js"></script-->
-        <!--script src="/static/bootstrap4.min.js"></script-->
+        <!--script src="/static/bootstrap-3.3.7.min.js"></script-->
+        <script src="/static/popper.min.js"></script>
+        <script src="/static/bootstrap4.min.js"></script>
         <script src="/static/jquery.webui-popover.min.js"></script>
         <!--script src="https://cdnjs.cloudflare.com/ajax/libs/Han/3.2.7/han.min.js"></script-->
         <!--[if lt IE9]> 
