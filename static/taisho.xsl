@@ -173,7 +173,8 @@
         <meta name="description" content="印刷品般的经典阅读"/>
         <meta name="keywords" content="大正藏, 中文, 排版, 排版規範, 阅藏, 大藏经"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-        <link rel="stylesheet" href="/static/bootstrap-3.3.7.min.css"/>
+        <!--link rel="stylesheet" href="/static/bootstrap-3.3.7.min.css"/-->
+        <link rel="stylesheet" href="/static/bootstrap4.min.css"/>
         <!--link rel="stylesheet" href="http://han-css.herokuapp.com/style.css"/-->
         <link rel="stylesheet" href="/static/jquery.webui-popover.min.css"/>
         <link rel="stylesheet" href="/static/tei.css"/>
@@ -182,7 +183,8 @@
             <xsl:value-of select="concat($current_sutra, ' ', $title)"/>
         </title>
         <script src="/static/jquery-3.3.1.min.js"></script>
-        <script src="/static/bootstrap-3.3.7.min.js"></script>
+        <!--script src="/static/bootstrap-3.3.7.min.js"></script-->
+        <script src="/static/bootstrap4.min.js"></script>
         <script src="/static/jquery.webui-popover.min.js"></script>
         <!--script src="https://cdnjs.cloudflare.com/ajax/libs/Han/3.2.7/han.min.js"></script-->
         <!--[if lt IE9]> 
