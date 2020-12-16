@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-12-15 18:27:06
+# Last Modified: 2020-12-15 23:21:21
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -529,6 +529,17 @@ class Number:
         # else: book - 1
         return juanlist
 
+    @property
+    def title(self):
+        number = f'{self.book}{self.tome}n{self.sutra}{self.yiyi}'
+        title = ''
+        with open("idx/sutra_sch.lst") as fd:
+            for line in fd:
+                if number in line:
+                    title = line.strip().split(maxsplit=1)[1]
+                    break
+        return title
+
 
 def get_sorted_juan(book):
     '''获得book(T01)下的所有排序好的经卷号(T01n0002_001)'''
@@ -796,8 +807,11 @@ def parse_number1(title, guess_juan=False):
         return None
 
     if volume:
-        volume = '{:03}'.format(int(volume))
-    # ('T', '05', '0220', '', '', '')
+        volume = int(volume)
+    else:
+        volume = 0
+    #    volume = '{:03}'.format(int(volume))
+    # ('T', '05', '0220', '', 0, '')
     return Number((book, tome, sutra, j4, volume, anchor))
 
 
