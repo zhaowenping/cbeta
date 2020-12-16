@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-12-15 18:25:38
+# Last Modified: 2020-12-15 18:48:29
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -406,14 +406,14 @@ def search_get():
     if convert.detect(ncontent)['confidence'] == 's':
         ncontent = convert.s2t(ncontent)
 
-    if q = 'title':
+    if q == 'title':
         # 使用经号方式查找藏经
         # TODO:搜索t1000, t1000_001, T01n0001, T01n0001_001, T01n0001_p0001a01, T01,no.1,p.1a1
         title = ncontent
         sutra = parse_number(title)
         if sutra:
             result = [{'hl': '', 'an': sutra.url, 'title': title, 'author': ''}]
-            return {'results': xx, 'content': content, 'q': 'title'}
+            return {'results': result, 'content': content, 'q': 'title'}
 
         # 使用经名方式查找藏经
         results = []
@@ -422,18 +422,18 @@ def search_get():
             hl = ss.titles[idx]
             sutra = Number(idx)
             results.append({'hl': hl, 'an':sutra.url, 'title':title0, 'author':''})
-        return {'results': xx, 'content': content, 'q': 'title'}
+        return {'results': results, 'content': content, 'q': 'title'}
 
-    if q = 'dict':
+    if q == 'dict':
         return {'results': {}, 'content': content, 'q': 'dict'}
 
-    xx = fullsearch(ncontent)
+    results = fullsearch(ncontent)
 
-    if q = 'content':
+    if q == 'content':
         with open('search.dict', 'a+') as fd:
             fd.write(datetime.datetime.now().strftime("%Y%m%dT%T ") + content + '|' + ncontent + '\n')
 
-    return {'results': xx, 'content': content, 'q': 'content'}
+    return {'results': results, 'content': content, 'q': 'content'}
 
 # # "menu/sutra_sch.lst"
 # # "menu/bulei_sutra_sch.lst'
@@ -1616,31 +1616,3 @@ if __name__ == "__main__":
     test()
     run(host = '0.0.0.0', port = 8081)
 
-
-def search_title(title):
-    '''搜索标题, GET方法为目录部典籍查找所用'''
-    # if request.method == "GET":
-    #     title = request.GET.title
-    #     # 去除HTML标签、注释、卷数, 留下标题
-    #     title = re.sub(r'<.*?>', '', title)  # title=[34]<span style="color:red">阿</span>差末菩薩經
-    #     title = re.sub(r'\(.*?\)', '', title)
-    #     title = re.sub(r'\[\w*?\]', '', title)
-    #     title = re.sub(r'[一二三四五六七八九十百]+卷', '', title)
-    # else:
-    #     title = request.forms.content
-
-    # 使用经号方式查找藏经
-    # TODO:搜索t1000, t1000_001, T01n0001, T01n0001_001, T01n0001_p0001a01, T01,no.1,p.1a1
-    sutra = parse_number(title)
-    if sutra:
-        result = [{'hl': '', 'an': sutra.url, 'title': title, 'author': ''}]
-        return {'results': xx, 'content': content, 'q': 'title'}
-
-    # 使用经名方式查找藏经
-    results = []
-    for idx in ss.search(title):
-        title0 = idx
-        hl = ss.titles[idx]
-        sutra = Number(idx)
-        results.append({'hl': hl, 'an':sutra.url, 'title':title0, 'author':''})
-    return {'results': xx, 'content': content, 'q': 'title'}
