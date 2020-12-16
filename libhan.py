@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-12-15 06:07:13
+# Last Modified: 2020-12-15 18:27:06
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -454,6 +454,17 @@ class Number:
             return f'/xml/{self.book}{self.tome}/{self.book}{self.tome}n{self.sutra}{self.yiyi}_{volume:03}.xml#{self.anchor}'
         else:
             return f'/xml/{self.book}{self.tome}/{self.book}{self.tome}n{self.sutra}{self.yiyi}_{volume:03}.xml'
+
+    @property
+    def pages(self):
+        '''大般若经等....'''
+        if f'{self.book}{self.sutra}' == 'T0220':
+            return list(range(1, 601))
+        number = f'{self.book}{self.tome}n{self.sutra}{self.yiyi}'
+        if not os.path.exists(f'xml/{self.book}{self.tome}'):
+            return []
+        pages = [int(path.split('_')[1][:3]) for path in os.listdir(f'xml/{self.book}{self.tome}') if path.startswith(number)]
+        return sorted(pages)
 
     def get_first_juan(self):
         '''给定经号T01n0002，返回所有排序后的卷['001', '002', ...]中的第一个
@@ -1740,6 +1751,7 @@ if __name__ == "__main__":
     # print(parse_number('1113'))
     # print(parse_number('100.3'))
     print(parse_number1('220').url)
+    print(parse_number1('220').pages)
     # print(parse_number1('220.200'))
     # print(parse_number1('220.201'))
     # print(parse_number1('J32nB271'))

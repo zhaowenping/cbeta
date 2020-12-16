@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-12-15 05:32:44
+# Last Modified: 2020-12-15 18:25:38
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -387,7 +387,10 @@ cbeta_com = CBETA_COM()
 @view('temp/search.jinja2')
 def search_get():
     content = request.GET.content
-    # print('搜索: ', content)
+    title = request.GET.title
+    q = request.GET.q
+    if not q:
+        q = 'content'
     if not content: return {'q': 'content'}
     ncontent = content
 
@@ -402,10 +405,33 @@ def search_get():
     # 判断简体繁体, 统一转为繁体之后搜索
     if convert.detect(ncontent)['confidence'] == 's':
         ncontent = convert.s2t(ncontent)
+
+    if q = 'title':
+        # 使用经号方式查找藏经
+        # TODO:搜索t1000, t1000_001, T01n0001, T01n0001_001, T01n0001_p0001a01, T01,no.1,p.1a1
+        title = ncontent
+        sutra = parse_number(title)
+        if sutra:
+            result = [{'hl': '', 'an': sutra.url, 'title': title, 'author': ''}]
+            return {'results': xx, 'content': content, 'q': 'title'}
+
+        # 使用经名方式查找藏经
+        results = []
+        for idx in ss.search(title):
+            title0 = idx
+            hl = ss.titles[idx]
+            sutra = Number(idx)
+            results.append({'hl': hl, 'an':sutra.url, 'title':title0, 'author':''})
+        return {'results': xx, 'content': content, 'q': 'title'}
+
+    if q = 'dict':
+        return {'results': {}, 'content': content, 'q': 'dict'}
+
     xx = fullsearch(ncontent)
 
-    with open('search.dict', 'a+') as fd:
-        fd.write(datetime.datetime.now().strftime("%Y%m%dT%T ") + content + '|' + ncontent + '\n')
+    if q = 'content':
+        with open('search.dict', 'a+') as fd:
+            fd.write(datetime.datetime.now().strftime("%Y%m%dT%T ") + content + '|' + ncontent + '\n')
 
     return {'results': xx, 'content': content, 'q': 'content'}
 
@@ -1605,28 +1631,16 @@ def search_title(title):
 
     # 使用经号方式查找藏经
     # TODO:搜索t1000, t1000_001, T01n0001, T01n0001_001, T01n0001_p0001a01, T01,no.1,p.1a1
-    results = []
     sutra = parse_number(title)
     if sutra:
-        redirect(sutra.url)
+        result = [{'hl': '', 'an': sutra.url, 'title': title, 'author': ''}]
+        return {'results': xx, 'content': content, 'q': 'title'}
 
-    # 使用书名方式查找藏经
-    if convert.detect(title)['confidence'] == 's':
-        title = convert.s2t(title)
-    if not title:
-        abort(304)
+    # 使用经名方式查找藏经
+    results = []
     for idx in ss.search(title):
         title0 = idx
         hl = ss.titles[idx]
         sutra = Number(idx)
         results.append({'hl': hl, 'an':sutra.url, 'title':title0, 'author':''})
-    # if request.method == "GET":
-    # 0个结果页面不动, 多个结果自己选择
-    if len(results) == 0:
-        # abort(304)
-        redirect('/')
-    if len(results) == 1:
-        redirect(sutra.url)
-    # if len(results) > 1:
-    #     pass
-    return {'results': xx, 'content': content, 'q': 'content'}
+    return {'results': xx, 'content': content, 'q': 'title'}
