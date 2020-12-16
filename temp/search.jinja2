@@ -12,7 +12,13 @@
       function addNewText(x)
       {
         var ctx=document.getElementById("content");
-        ctx.value = ctx.value+x;
+        var str1 = ctx.value
+        var str2 = ctx.value+x;
+        var patt1 = /\U000[0-9a-fA-F]{0,4}$/g;
+        var patt2 = /\U000[0-9a-fA-F]{0,5}$/g;
+        if (str1.search(patt1) == -1 || str2.search(patt2) != -1){
+           ctx.value = ctx.value+x;
+          }
         ctx.focus();
       }
 
@@ -81,8 +87,8 @@
   </div-->
 
   <div class="d-flex flex-row mb-3">
-    <div class="p-2 {% if q=='title'%}bg-alert{%else%}bg-warning{%endif%}"><a href="/search?q=title&content={{content}}">标題</a></div>
-    <div class="p-2 {% if q=='content'%}bg-alert{%else%}bg-warning{%endif%}"><a href="/search?q=content&content={{content}}">全文</a></div>
+    <div class="p-2 {% if q=='title'%}bg-alert{%else%}bg-warning{%endif%}"><a href="/search?q=title&content={{content}}">标題或經號</a></div>
+    <div class="p-2 {% if q=='content'%}bg-alert{%else%}bg-warning{%endif%}"><a href="/search?q=content&content={{content}}">全文搜索</a></div>
     <div class="p-2 {% if q=='dict'%}bg-alert{%else%}bg-warning{%endif%}"><a href="/search?q=dict&content={{content}}">字典</a></div>
   </div>
 
