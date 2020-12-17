@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-12-16 15:54:08
+# Last Modified: 2020-12-17 06:01:30
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -91,6 +91,7 @@ def server_docx(filename):
     path = os.path.join('xml', filename)
     filename = filename.split('/')[-1].split('.')[0] + '.docx'
     mime = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    # 应该区分简体繁体，用不同的目录，否则会出现错误 XXX
     if not os.path.exists(filename):
         make_docx(path, 'docx', fanti=fanti)
     return static_file(filename, root='docx', mimetype=mime, download=filename)

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-12-17 02:48:49
+# Last Modified: 2020-12-17 06:18:09
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1676,8 +1676,10 @@ def make_docx(ff, temp='', fanti=True):
     title = ''.join(root.findall("teiHeader/fileDesc/titleStmt/title")[0].itertext())
     title = title.split('No.')[1].strip().split(maxsplit=1)[1]
     author = root.findall("teiHeader/fileDesc/titleStmt/author")
+    # 应该用byline?
     if author:
-        author = author[0].text
+        # author = author[0].text
+        author = ''.join(author[0].itertext())
     if not author:
         author = ''
 
