@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-12-15 23:21:36
+# Last Modified: 2020-12-16 15:54:08
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -412,7 +412,7 @@ def search_get():
         title = ncontent
         sutra = parse_number(title)
         if sutra:
-            # title和author不对,需要修改
+            # author不对,需要修改
             result = [{'hl': '', 'an': sutra.url, 'title': sutra.title, 'author': ''}]
             return {'results': result, 'content': content, 'q': 'title'}
 
