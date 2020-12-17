@@ -37,6 +37,7 @@
            ctx.value = ctx.value+x;
           }
         */
+        pos = ctx.selectionStart;
         ctx.value = ctx.value.slice(0, pos) + x + ctx.value.slice(pos);
         npos = pos + x.length;
         setCaretPosition(ctx, npos);
