@@ -9,16 +9,37 @@
   <title>古籍智能搜索</title>
   <link rel="stylesheet" href="/static/bootstrap4.min.css"/>
   <script type="text/javascript">
+	/*设置input中文本的光标位置*/
+       function setCaretPosition(ctrl, pos){
+         if(ctrl.setSelectionRange)
+         {
+             ctrl.focus();
+             ctrl.setSelectionRange(pos,pos);
+         }
+         else if (ctrl.createTextRange) {
+             var range = ctrl.createTextRange();
+             range.collapse(true);
+             range.moveEnd('character', pos);
+             range.moveStart('character', pos);
+             range.select();
+         }
+     }
+
+     /*点击按钮时插入IDS序列描述字符*/
       function addNewText(x)
       {
         var ctx=document.getElementById("content");
-        var str1 = ctx.value
+        /*var str1 = ctx.value
         var str2 = ctx.value+x;
         var patt1 = /\U000[0-9a-fA-F]{0,4}$/g;
         var patt2 = /\U000[0-9a-fA-F]{0,5}$/g;
         if (str1.search(patt1) == -1 || str2.search(patt2) != -1){
            ctx.value = ctx.value+x;
           }
+        */
+        ctx.value = ctx.value.slice(0, pos) + x + ctx.value.slice(pos);
+        npos = pos + x.length;
+        setCaretPosition(ctx, npos);
         ctx.focus();
       }
 
