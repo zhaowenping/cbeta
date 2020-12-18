@@ -41,10 +41,10 @@
 		/*限制只能输入合规字符*/
           var str1 = t.value.slice(0, -1);
           var str2 = t.value;
-          var patt1 = /\U000[0-9a-fA-F]{0,4}$/g;
-          var patt2 = /\U000[0-9a-fA-F]{0,5}$/g;
-          var patt3 = /\u[0-9a-fA-F]{0,3}$/g;
-          var patt4 = /\u[0-9a-fA-F]{0,4}$/g;
+          var patt1 = /\\U000[0-9a-fA-F]{0,4}$/;
+          var patt2 = /\\U000[0-9a-fA-F]{0,5}$/;
+          var patt3 = /\\u[0-9a-fA-F]{0,3}$/;
+          var patt4 = /\\u[0-9a-fA-F]{0,4}$/;
           if (str1.search(patt1) != -1 && str2.search(patt2) == -1){
             t.value = str1;
             }
