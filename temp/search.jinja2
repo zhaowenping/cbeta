@@ -29,18 +29,11 @@
       function addNewText(x)
       {
         var ctx=document.getElementById("content");
-        /*var str1 = ctx.value
-        var str2 = ctx.value+x;
-        var patt1 = /\U000[0-9a-fA-F]{0,4}$/g;
-        var patt2 = /\U000[0-9a-fA-F]{0,5}$/g;
-        if (str1.search(patt1) == -1 || str2.search(patt2) != -1){
-           ctx.value = ctx.value+x;
-          }
-        */
         pos = ctx.selectionStart;
         ctx.value = ctx.value.slice(0, pos) + x + ctx.value.slice(pos);
         npos = pos + x.length;
-        setCaretPosition(ctx, npos);
+        /*setCaretPosition(ctx, npos);*/
+        ctx.setSelectionRange(npos,npos);
         ctx.focus();
       }
 
@@ -58,6 +51,7 @@
           if (str1.search(patt3) != -1 && str2.search(patt4) == -1){
             t.value = str1;
             }
+          t.focus();
       }
 
   </script>
