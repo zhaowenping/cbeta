@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-12-17 06:18:09
+# Last Modified: 2020-12-17 22:12:21
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1543,6 +1543,43 @@ def must_search(sentence, _from=0, _end=5000):
 
     r = requests.get(url, json=data, timeout=10)
     result = r.json()
+    return result
+
+
+def wordsearch(word):
+    # nword = normalize_text(word)
+    # sentence = ''.join(python_escape(sentence))
+    url = "http://127.0.0.1:9200/dict/_doc/_search"
+    data = {
+     "query": {
+         # "match_phrase": { "orth": nword},  # "content": {"query": sentence, "slop": 1} },
+         "match": {"orth": word},  # "content": {"query": sentence, "slop": 1} },
+       #  "bool":{
+            #  "must": {}
+       # }
+    },
+    "size": 5000,
+    "from": 0,
+    # "highlight": {
+    #     "fields": {
+    #         "raw": {
+
+    #         }
+    #     }
+    # }
+    }
+    r= requests.get(url, json=data, timeout=10)
+    result = r.json()
+    # print(result)
+    hits = result['hits']['hits']
+    #print(hits)
+    result = []
+    for hit in hits:
+        _source = hit["_source"]
+        # 文章内容高亮显示
+        result.append({'hl': _source['def'], 'an': '', 'title':_source['hyph'], 'author': _source['dict'], 'number': ''})
+
+    # result.sort(key=lambda x: pagerank(x['number']))
     return result
 
 

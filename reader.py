@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-12-17 06:01:30
+# Last Modified: 2020-12-17 22:14:34
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -37,7 +37,7 @@ from libhan import read_menu_file
 from libhan import Search, IDS, CBETA_COM, python_unescape
 from libhan import STConvertor
 from libhan import normalize_text
-from libhan import fullsearch
+from libhan import fullsearch, wordsearch
 from libhan import parse_number, make_docx
 
 from libhan import Number, rm_pun
@@ -392,7 +392,7 @@ def search_get():
     q = request.GET.q
     if not q:
         q = 'content'
-    if not content: return {'q': 'content'}
+    if not content: return {'q': q}
     ncontent = content
 
     # 去除python转义字符
@@ -427,7 +427,8 @@ def search_get():
         return {'results': results, 'content': content, 'q': 'title'}
 
     if q == 'dict':
-        return {'results': {}, 'content': content, 'q': 'dict'}
+        results = wordsearch(content)
+        return {'results': results, 'content': content, 'q': 'dict'}
 
     results = fullsearch(ncontent)
 

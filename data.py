@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-12-06 17:52:46
+# Last Modified: 2020-12-17 21:07:56
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -123,59 +123,54 @@ def main():
         unihan = {k: msgpack.dumps(unihan[k]) for k in unihan}
         r.hset('dict_unihan', mapping=unihan)
 
-    # 佛光山词典
+    # 佛光大辭典
     with gzip.open('dict/fk.json.gz') as fd:
         fk = json.load(fd)
         fk.pop('header', None)
         r.hset('dict_fk', mapping=fk)
 
-    # 丁福保词典
+    # 丁福保佛學大詞典
     with gzip.open('dict/dfb.json.gz') as fd:
         dfb = json.load(fd)
         dfb.pop('header', None)
         dfb = {k: '\n'.join(i['def'] for i in dfb[k]) for k in dfb}
         r.hset('dict_dfb', mapping=dfb)
 
-    # 庄春江词典
-
+    # 阿含辭典 - 莊春江居士編
     with open('dict/ccc.json') as fd:
         ccc = json.load(fd)
         ccc.pop('header', None)
         r.hset('dict_ccc', mapping=ccc)
 
-    # 法相词典
-
+    # 法相辭典
     with gzip.open('dict/fxcd.json.gz') as fd:
         fxcd = json.load(fd)
         fxcd.pop('header', None)
         r.hset('dict_fxcd', mapping=fxcd)
 
 
-    # 南山律学词典
-
+    # 南山律學辭典
     with gzip.open('dict/nvd.json.gz') as fd:
         nvd = json.load(fd)
         nvd.pop('header', None)
         r.hset('dict_nvd', mapping=nvd)
 
 
-    # 陈义孝词典
-
+    # 陳義孝佛學常見辭匯
     with open('dict/cyx.json') as fd:
         cyx = json.load(fd)
         cyx.pop('header', None)
         r.hset('dict_cyx', mapping=cyx)
 
-    # 于凌波词典 -- 唯识名词白话新解
 
+    # 于凌波词典 -- 唯識名詞白話新解
     with open('dict/ylb.json') as fd:
         ylb = json.load(fd)
         ylb.pop('header', None)
         r.hset('dict_ylb', mapping=ylb)
 
 
-    # 三藏法数
-
+    # 三藏法數
     with open('dict/szfs.json') as fd:
         szfs = json.load(fd)
         szfs.pop('header', None)
@@ -183,48 +178,42 @@ def main():
         r.hset('dict_szfs', mapping=szfs)
 
 
-    # 翻译名义集
-
+    # 翻譯名義集
     with open('dict/fymyj.json') as fd:
         fymyj = json.load(fd)
         fymyj.pop('header', None)
         r.hset('dict_fymyj', mapping=fymyj)
 
 
-    # 五灯会元
-
+    # 五燈會元
     with gzip.open('dict/wdhy.json.gz') as fd:
         wdhy = json.load(fd)
         wdhy.pop('header', None)
         r.hset('dict_wdhy', mapping=wdhy)
 
 
-    # 阅藏知津
-
+    # 閱藏知津
     with gzip.open('dict/yzzj.json.gz') as fd:
         yzzj = json.load(fd)
         yzzj.pop('header', None)
         r.hset('dict_yzzj', mapping=yzzj)
 
 
-    # 历代名僧词典
-
+    # 歷代名僧詞典
     with gzip.open('dict/ldms.json.gz') as fd:
         ldms = json.load(fd)
         ldms.pop('header', None)
         r.hset('dict_ldms', mapping=ldms)
 
 
-    # 俗语佛源
-
+    # 俗語佛源
     with gzip.open('dict/syfy.json.gz') as fd:
         syfy = json.load(fd)
         syfy.pop('header', None)
         r.hset('dict_syfy', mapping=syfy)
 
 
-    # 中华佛教百科全书
-
+    # 中華佛教百科全書
     with gzip.open('dict/bkqs.json.gz') as fd:
         bkqs = json.load(fd)
         bkqs.pop('header', None)
