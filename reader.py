@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-12-17 22:14:34
+# Last Modified: 2020-12-19 03:19:16
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -427,7 +427,7 @@ def search_get():
         return {'results': results, 'content': content, 'q': 'title'}
 
     if q == 'dict':
-        results = wordsearch(content)
+        results = wordsearch(ncontent)
         return {'results': results, 'content': content, 'q': 'dict'}
 
     results = fullsearch(ncontent)
