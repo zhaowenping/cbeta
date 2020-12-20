@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-12-19 03:05:01
+# Last Modified: 2020-12-19 21:06:18
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -180,7 +180,36 @@ class IDS:
 
     def rm_ids(self, ctx):
         '''替换unicode ids形式为普通单个字符, 无法替换则保持原样不动'''
-        return ''.join(ids_split(ctx, fn=lambda x:self.ids_dict.get(x, x)))
+        # return ''.join(ids_split(ctx, fn=lambda x:self.ids_dict.get(x, x)))
+        return ''.join(ids_split(ctx, fn=self.find_ids)
+
+    def find_ids(self, ctx):
+        '''查找ids序列
+        牛 on left = 牜
+        玉 on left = 𤣩
+        示 on left = 礻
+        竹 on top = 𥫗
+        糸 on left = 糹
+        肉 on left = 月
+        艸 on top = 艹
+        言 on left = 訁
+        金 on left = 釒
+        食 on left = 飠
+        牜𤣩礻糹⺼艹訁釒飠氵冫忄
+        '''
+        tt = {'牛': '牜', '王': '𤣩', '示': '礻', '糸': '糹', '月': '⺼', '草': '艹', '言': '訁',
+              '金': '釒', '食': '飠', '水': '氵', '冰': '冫', '心': '忄', '人': '亻', '衣': '衤',
+              '手': '扌', '犬': '犭', '病': '疒', '爪': '爫', '火': '灬', '足': '𧾷'}
+        rr = self.ids_dict.get(ctx, None)
+        if rr:
+            return rr
+        # 没找到就替换之后再找一次
+        tt = {ord(k): ord(tt[k]) for k in tt}
+        ctx = ctx.translate(tt)  # .replace(chr(0xFFFD), '')
+        rr = self.ids_dict.get(ctx, None)
+        if rr:
+            return rr
+        return ctx
 
 
 class CBETA_COM:
@@ -285,7 +314,7 @@ def unicode_zone(char):
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    #path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
+    # path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
             line = line.strip()
