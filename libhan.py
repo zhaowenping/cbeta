@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-12-19 21:06:18
+# Last Modified: 2020-12-20 19:27:22
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -181,7 +181,7 @@ class IDS:
     def rm_ids(self, ctx):
         '''替换unicode ids形式为普通单个字符, 无法替换则保持原样不动'''
         # return ''.join(ids_split(ctx, fn=lambda x:self.ids_dict.get(x, x)))
-        return ''.join(ids_split(ctx, fn=self.find_ids)
+        return ''.join(ids_split(ctx, fn=self.find_ids))
 
     def find_ids(self, ctx):
         '''查找ids序列
@@ -314,7 +314,7 @@ def unicode_zone(char):
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    # path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
+    #path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
             line = line.strip()

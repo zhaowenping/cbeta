@@ -26615,6 +26615,7 @@ U+2DEC1 𭻁 ⿰田支
 U+2DEC3 𭻃 ⿱田分
 U+2DEC7 𭻇 ⿰田古
 U+2DEC8 𭻈 ⿱去甲
+U+2DECB 𭻋 ⿰𬺹𭺽
 U+2DECF 𭻏 ⿱死田
 U+2DEDC 𭻜 ⿰田林
 U+2DEDD 𭻝 ⿰甲冐
