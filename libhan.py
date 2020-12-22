@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-12-21 06:48:48
+# Last Modified: 2020-12-21 16:48:45
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1483,12 +1483,6 @@ def zi_order(ss, ct):
     return True
 
 
-def highlight(ss, ct):
-    for zi in set(ss):
-        ct = ct.replace(zi, f'<em>{zi}</em>')
-    return ct
-
-
 # pun = string.punctuation + '\u00b7\u2013-\u2027\u2e3a\u3000-\u301f\ufe30-\ufe6b\uff01-\uff0f\uff1a-\uff5e'
 # pun = re.compile('['+string.punctuation+']')
 # 读取标点数据库
@@ -1503,8 +1497,35 @@ with open('dict/punctuation.txt') as fd:
         pun[ord(c1)] = 0xFFFD
 
 
+def highlight(ss, ct):
+    '''将汉字和非汉字分开，汉字用字高亮， 非汉字用词高亮'''
+    global pun
+    pattern = re.compile(r'[\u3007\u3400-\u9FFC\U00020000-\U0003134A]+')
+    # 把标点符号都变成空格
+    pun2 = {k, 0x20 for k in pun}
+    ss = ss.translate(pun2)
+
+    # 汉字用字高亮
+    def fn(ss_):
+        nonlocal ct
+        for zi in set(ss_):
+            ct = ct.replace(zi, f'<em>{zi}</em>')
+        return ct
+
+    # 非汉字用词高亮
+    def exfn(ss_):
+        nonlocal ct
+        for word in ss_.split():
+            ct = ct.replace(word, f'<em>{word}</em>')
+        return ct
+
+    ct = ''.join(re_split(pattern, ss, fn=fn, exfn=exfn))
+    return ct
+
+
 def rm_pun(ctx, ex=()):
     '''删除标点符号，除了ex列表中的字符'''
+    global pun
     for char in ex:
         pun.pop(ord(char), None)
     ctx = ctx.translate(pun).replace(chr(0xFFFD), '')
@@ -1832,8 +1853,8 @@ if __name__ == "__main__":
     # print(parse_number('1113b'))
     # print(parse_number('1113'))
     # print(parse_number('100.3'))
-    print(parse_number1('220').url)
-    print(parse_number1('220').pages)
+    #print(parse_number1('220').url)
+    #print(parse_number1('220').pages)
     # print(parse_number1('220.200'))
     # print(parse_number1('220.201'))
     # print(parse_number1('J32nB271'))
@@ -1847,9 +1868,13 @@ if __name__ == "__main__":
     # print(stc.detect('那莫三𭦟多嚩日羅赦憾云〃哦'))
     # print(get_all_juan('T20n1113B'))
     # print(get_all_juan('T20n1113'))
-    sentence = '非施者福 title:毘耶娑'
-    sentence = '非施者福'
+    #sentence = '非施者福 title:毘耶娑'
+    #sentence = '非施者福'
     # print(highlight(sentence, raw))
     #print(parse_number2('大正藏第九卷第七〇九页'))
     #print(parse_number2('大正藏第十九卷第16頁下'))
-
+    pattern = re.compile(r'[\u3007\u3400-\u9FFC\U00020000-\U0003134A]+')
+    j = 0
+    for i in re_split(pattern, '由尊者迦葉（Maha Kasyape）結集於王舍城', fn=lambda x: x, exfn=lambda x: x):
+        j = j+ 1
+        print(j, i)
