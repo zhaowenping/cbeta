@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-12-21 16:48:45
+# Last Modified: 2020-12-22 19:44:59
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -12,6 +12,7 @@ from __future__ import unicode_literals, division, absolute_import, print_functi
 4. 注音格式转换
 5. 去除'〡'
 6. 所有数据装入redis
+7. 使用日文30fb作为标准人名分隔符
 """
 
 __all__ = []
@@ -392,8 +393,8 @@ def normalize_text(ctx):
     # # 去除组字式
     # ctx = rm_com(ctx)
     # 去除错误的标点符号
-    tt = {0xff0e: 0x00b7,
-          0x2027: 0x00b7,
+    tt = {0xff0e: 0x30fb,
+          0x2027: 0x30fb,
           0x25CB: ord('〇'),  # 佛光山大辞典的用法
           }
     ctx = ctx.translate(tt)
@@ -643,7 +644,7 @@ def parse_ahan(number):
 # 大正藏第70卷459页b
 # 《大正藏》第40卷第16頁下
 # 大正藏第十九卷第16頁下 XXX
-pbanchor_pattern = re.compile(r'(《?[中乾佛作傳典刊刻北卍南印叢史品善嘉國圖城外大學宋家寺山師彙志房拓教文新書朝本樂正武永法洪漢片獻珍百石經編纂續脩興華著藏補譯趙遺金隆集順館高麗传丛国图学师汇书乐汉献经编续修兴华补译赵遗顺馆丽]+》?)第?([\d零〇一二三四五六七八九]{1,3})(?:卷|卷第|\u00b7)([\d零〇一二三四五六七八九]{1,3})[頁|页]?([上中下abcABC])?')
+pbanchor_pattern = re.compile(r'(《?[中乾佛作傳典刊刻北卍南印叢史品善嘉國圖城外大學宋家寺山師彙志房拓教文新書朝本樂正武永法洪漢片獻珍百石經編纂續脩興華著藏補譯趙遺金隆集順館高麗传丛国图学师汇书乐汉献经编续修兴华补译赵遗顺馆丽]+》?)第?([\d零〇一二三四五六七八九]{1,3})(?:卷|卷第|[\u00b7\u30fb\u2027])([\d零〇一二三四五六七八九]{1,3})[頁|页]?([上中下abcABC])?')
 def parse_number2(number):
     tt = { ord('〇'): ord('0'), ord('零'): ord('0'),
           ord('一'): ord('1'),
@@ -1502,7 +1503,7 @@ def highlight(ss, ct):
     global pun
     pattern = re.compile(r'[\u3007\u3400-\u9FFC\U00020000-\U0003134A]+')
     # 把标点符号都变成空格
-    pun2 = {k, 0x20 for k in pun}
+    pun2 = {k: 0x20 for k in pun}
     ss = ss.translate(pun2)
 
     # 汉字用字高亮
@@ -1512,7 +1513,7 @@ def highlight(ss, ct):
             ct = ct.replace(zi, f'<em>{zi}</em>')
         return ct
 
-    # 非汉字用词高亮
+    # 非汉字用词高亮(忽略大小写和修饰符?)
     def exfn(ss_):
         nonlocal ct
         for word in ss_.split():
