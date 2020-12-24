@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-12-23 00:16:02
+# Last Modified: 2020-12-24 07:05:33
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -12,7 +12,7 @@ from __future__ import unicode_literals, division, absolute_import, print_functi
 4. 注音格式转换
 5. 去除'〡'
 6. 所有数据装入redis
-7. 使用日文30fb作为标准人名分隔符
+7. 使用日文30fb,ff65作为标准人名分隔符
 """
 
 __all__ = []
@@ -393,8 +393,8 @@ def normalize_text(ctx):
     # # 去除组字式
     # ctx = rm_com(ctx)
     # 去除错误的标点符号
-    tt = {0xff0e: 0x30fb,
-          0x2027: 0x30fb,
+    tt = {0xff0e: 0xff65,
+          0x2027: 0xff65,
           0x25CB: ord('〇'),  # 佛光山大辞典的用法
           }
     ctx = ctx.translate(tt)
@@ -644,7 +644,7 @@ def parse_ahan(number):
 # 大正藏第70卷459页b
 # 《大正藏》第40卷第16頁下
 # 大正藏第十九卷第16頁下 XXX
-pbanchor_pattern = re.compile(r'(《?[中乾佛作傳典刊刻北卍南印叢史品善嘉國圖城外大學宋家寺山師彙志房拓教文新書朝本樂正武永法洪漢片獻珍百石經編纂續脩興華著藏補譯趙遺金隆集順館高麗传丛国图学师汇书乐汉献经编续修兴华补译赵遗顺馆丽]+》?)第?([\d零〇一二三四五六七八九]{1,3})(?:卷|卷第|[\u00b7\u30fb\u2027])([\d零〇一二三四五六七八九]{1,3})[頁|页]?([上中下abcABC])?')
+pbanchor_pattern = re.compile(r'(《?[中乾佛作傳典刊刻北卍南印叢史品善嘉國圖城外大學宋家寺山師彙志房拓教文新書朝本樂正武永法洪漢片獻珍百石經編纂續脩興華著藏補譯趙遺金隆集順館高麗]+》?)第?(\d{1,3})(?:卷|卷第|\uff65)(\d{1,3})頁?([abcABC])?')
 def parse_number2(number):
     tt = { ord('〇'): ord('0'), ord('零'): ord('0'),
           ord('一'): ord('1'),
@@ -668,8 +668,18 @@ def parse_number2(number):
           ord('肆'): ord('4'),
           ord('貳'): ord('2'), ord('贰'): ord('2'),
           ord('陆'): ord('6'), ord('陸'): ord('6'),
+          ord('传'): ord('傳'), ord('丛'): ord('叢'), ord('国'): ord('國'), ord('图'): ord('圖'),
+          ord('学'): ord('學'), ord('师'): ord('師'), ord('汇'): ord('彙'), ord('书'): ord('書'),
+          ord('乐'): ord('樂'), ord('汉'): ord('漢'), ord('献'): ord('獻'), ord('经'): ord('經'),
+          ord('编'): ord('編'), ord('续'): ord('續'), ord('修'): ord('脩'), ord('兴'): ord('興'),
+          ord('华'): ord('華'), ord('补'): ord('補'), ord('译'): ord('譯'), ord('赵'): ord('趙'),
+          ord('遗'): ord('遺'), ord('顺'): ord('順'), ord('馆'): ord('館'), ord('丽'): ord('麗'),
+          ord('页'): ord('頁'), ord('吕'): ord('呂'),
           # 伍叁叄壹拾捌柒玖肆貳贰陆陸
+            # 统一分隔号
+            0x00b7: 0xff65, 0x2027: 0xff65, 0x30fb: 0xff65, 0xff0e: 0xff65,
             }
+    number = number.translate(tt)
     number = re.sub(r'\s+', '', number)
     found = False
     book = 'T'
@@ -678,46 +688,46 @@ def parse_number2(number):
     print(number, jinghao)
     if jinghao:
         book, tome, page, abc = jinghao[0]
-        page = '{:04}'.format(int(page.translate(tt)))
+        page = '{:04}'.format(int(page))
         abc = abc.translate(tt).lower()
         if '大正' in book:
             book = 'T'
-        if '卍新' in book or '卍續' in book or '卍续' in book:
+        if '卍' in book:
             book = 'X'
-        if '高麗' in book or '高丽' in book:
+        if '高麗' in book:
             book = 'K'
         if '房山' in book:
             book = 'F'
-        if '印順' in book or '印顺' in book:
+        if '印順' in book:
             book = 'Y'
         if '宋藏' in book:
             book = 'S'
         if '金' in book:
             book = 'A'
-        if '中華' in book or '中华' in book:
+        if '中華' in book:
             book = 'C'
-        if '嘉興' in book or '嘉兴' in book:
+        if '嘉興' in book:
             book = 'J'
-        if '永樂北' in book or '永乐北' in book:
+        if '永樂北' in book:
             book = 'P'
         if '洪武南' in book:
             book = 'U'
         if '圖' in book:
             book = 'D'
-        if '南傳' in book or '南传' in book:
+        if '南傳' in book:
             book = 'N'
         if '藏外' in book:
             book = 'ZW'
-        if '補' in book or '补' in book:
+        if '補' in book:
             book = 'B'
         if '乾隆' in book:
             book = 'L'
-        if '呂澂' in book or '吕澂' in book:
+        if '呂澂' in book:
             book = 'LC'
         if book in {'A', 'C', 'G', 'GA', 'GB', 'L', 'M', 'P', 'U'}:
-            tome = '{:03}'.format(int(tome.translate(tt)))
+            tome = '{:03}'.format(int(tome))
         else:
-            tome = '{:02}'.format(int(tome.translate(tt)))
+            tome = '{:02}'.format(int(tome))
 
         # 查表
         with open('idx/pbidx.txt') as fd:
@@ -1483,6 +1493,13 @@ def zi_order(ss, ct):
             start = min(start)
     return True
 
+def shave_marks(ctx):
+    '''将unicode字符串全部转成小写的标准英文字母，去掉修饰符号;主要用于梵文巴利文的标准化'''
+    # tt = {letter: 0xFFFD for letter in range(0x300, 0x363)}
+    shaved = ''.join(c for c in unicodedata.normalize("NFKD", ctx) if not unicodedata.combining(c))
+    shaved = shaved.casefold()
+    return shaved
+    # return unicodedata.normalize('NFC', shaved)
 
 # pun = string.punctuation + '\u00b7\u2013-\u2027\u2e3a\u3000-\u301f\ufe30-\ufe6b\uff01-\uff0f\uff1a-\uff5e'
 # pun = re.compile('['+string.punctuation+']')
@@ -1510,23 +1527,28 @@ def highlight(ss, ct):
     def fn(ss_):
         nonlocal ct
         for zi in set(ss_):
-            ct = ct.replace(zi, f'<em>{zi}</em>')
-        return ct
+            xct = ct.replace(zi, f'<em>{zi}</em>')
+        return xct
 
     # 非汉字用词高亮(忽略大小写和修饰符?)
     def exfn(ss_):
         nonlocal ct
-        for word in ss_.split():
-            ct = ct.replace(word, f'<em>{word}</em>')
-        return ct
+        origct = ct.split()
+        diffct = shave_marks(ct)
+        for word in shave_marks(ss_).split():
+            idx = diffct.index(word)
+            origct[idx] = f'<em>{word}</em>'
+        return ' '.join(origct)
 
     ct = ''.join(re_split(pattern, ss, fn=fn, exfn=exfn))
     return ct
 
 
 def rm_pun(ctx, ex=()):
-    '''删除标点符号，除了ex列表中的字符'''
+    '''删除标点符号，除了ex列表中的字符;删除连字号的时候，应该替换为空格'''
     global pun
+    # 替换梵巴英中的连字号为空格
+    ctx = re.sub(r'([A-Za-z\u00C0-\u024F])-([A-Za-z\u00C0-\u024F])', r'\1 \2', ctx)
     for char in ex:
         pun.pop(ord(char), None)
     ctx = ctx.translate(pun).replace(chr(0xFFFD), '')
@@ -1874,8 +1896,12 @@ if __name__ == "__main__":
     # print(highlight(sentence, raw))
     #print(parse_number2('大正藏第九卷第七〇九页'))
     #print(parse_number2('大正藏第十九卷第16頁下'))
-    pattern = re.compile(r'[\u3007\u3400-\u9FFC\U00020000-\U0003134A]+')
-    j = 0
-    for i in re_split(pattern, '由尊者迦葉（Maha Kasyape）結集於王舍城', fn=lambda x: x, exfn=lambda x: x):
-        j = j+ 1
-        print(j, i)
+    order = '“Herr Voß: • ½ cup of Œtker™ caffè latte • bowl of açaí.”'
+    print((order))
+    print(shave_marks(order))
+    print(unicodedata.normalize('NFC', shave_marks(order)))
+    # pattern = re.compile(r'[\u3007\u3400-\u9FFC\U00020000-\U0003134A]+')
+    # j = 0
+    # for i in re_split(pattern, '由尊者迦葉（Maha Kasyape）結集於王舍城', fn=lambda x: x, exfn=lambda x: x):
+    #     j = j+ 1
+    #     print(j, i)
