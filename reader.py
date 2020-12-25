@@ -1,11 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-12-19 03:19:16
+# Last Modified: 2020-12-24 14:19:48
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
 web入口程序
+文石UA: Mozilla/5.0 (Linux; Android 9; Note2_YZB) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.117 Safari/537.3
 """
 
 __all__ = []

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-12-24 07:05:33
+# Last Modified: 2020-12-24 18:50:36
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1519,28 +1519,30 @@ def highlight(ss, ct):
     '''将汉字和非汉字分开，汉字用字高亮， 非汉字用词高亮'''
     global pun
     pattern = re.compile(r'[\u3007\u3400-\u9FFC\U00020000-\U0003134A]+')
-    # 把标点符号都变成空格
-    pun2 = {k: 0x20 for k in pun}
-    ss = ss.translate(pun2)
+    # 删除标点符号
+    # pun2 = {k: 0x20 for k in pun}
+    # ss = ss.translate(pun2)
+    ss = rm_pun(ss)
 
     # 汉字用字高亮
-    def fn(ss_):
-        nonlocal ct
-        for zi in set(ss_):
-            xct = ct.replace(zi, f'<em>{zi}</em>')
-        return xct
+    def fn(ct):
+        nonlocal ss
+        for zi in set(ss):
+            if zi in ct:
+                ct = ct.replace(zi, f'<em>{zi}</em>')
+        return ct
 
     # 非汉字用词高亮(忽略大小写和修饰符?)
-    def exfn(ss_):
-        nonlocal ct
-        origct = ct.split()
-        diffct = shave_marks(ct)
-        for word in shave_marks(ss_).split():
-            idx = diffct.index(word)
-            origct[idx] = f'<em>{word}</em>'
-        return ' '.join(origct)
+    def exfn(ct):
+        nonlocal ss
+        # origct = ct.split()
+        # diffct = shave_marks(ct)
+        for word in ss.split():
+            if word in ct:
+                ct = ct.replace(word, f'<em>{word}</em>')
+        return ct
 
-    ct = ''.join(re_split(pattern, ss, fn=fn, exfn=exfn))
+    ct = ''.join(re_split(pattern, ct, fn=fn, exfn=exfn))
     return ct
 
 
@@ -1552,6 +1554,7 @@ def rm_pun(ctx, ex=()):
     for char in ex:
         pun.pop(ord(char), None)
     ctx = ctx.translate(pun).replace(chr(0xFFFD), '')
+    ctx = shave_marks(ctx)
     return ctx
 
 
@@ -1899,9 +1902,10 @@ if __name__ == "__main__":
     order = '“Herr Voß: • ½ cup of Œtker™ caffè latte • bowl of açaí.”'
     print((order))
     print(shave_marks(order))
-    print(unicodedata.normalize('NFC', shave_marks(order)))
-    # pattern = re.compile(r'[\u3007\u3400-\u9FFC\U00020000-\U0003134A]+')
-    # j = 0
-    # for i in re_split(pattern, '由尊者迦葉（Maha Kasyape）結集於王舍城', fn=lambda x: x, exfn=lambda x: x):
-    #     j = j+ 1
-    #     print(j, i)
+    print(rm_pun(order))
+    # print(unicodedata.normalize('NFC', shave_marks(order)))
+    pattern = re.compile(r'[\u3007\u3400-\u9FFC\U00020000-\U0003134A]+')
+    j = 0
+    for i in re_split(pattern, '由尊者迦葉（Maha Kasyape）結集於王舍城', fn=lambda x: f'x{x}', exfn=lambda x: x):
+        j = j+ 1
+        print(j, i)
