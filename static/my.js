@@ -193,3 +193,9 @@ function pinyin(evt){
         rbs[i].style.display='inline';
     }
 }
+
+// 对文石墨水屏取消背景图片
+if (navigator.userAgent.indexOf("Note2_YZB")!=-1){
+   document.getElementById("body").style.background = null;
+}
+

@@ -73,7 +73,6 @@
         <!--[if lt IE9]> 
         <script src="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
         <![endif]-->
-        <script src="/static/my.js"></script>
         </head>
         <style type="text/css">
             @font-face {
@@ -84,7 +83,7 @@
         </style>
 
         <!--firefox浏览器特有的菜单-->
-        <body class="contenttext" contextmenu="supermenu">
+        <body id="body" class="contenttext" contextmenu="supermenu">
             <!--header class="layout">
                 <div><div class="logo">
                     <h1><a href="/manual/">漢字標準格式</a></h1>
@@ -260,6 +259,7 @@
     </div>
 
         </body>
+        <script src="/static/my.js"></script>
         </html>
     </xsl:template>
 
