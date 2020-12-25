@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-12-24 21:15:03
+# Last Modified: 2020-12-25 15:37:52
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1515,6 +1515,25 @@ with open('dict/punctuation.txt') as fd:
         pun[ord(c1)] = 0xFFFD
 
 
+def pali_split(ctx):
+    '''把巴利文梵文切分, 用空格或者减号, 保留空格和减号'''
+    def split_minis(ctx):
+        rr = list()
+        for i in ctx.split('-'):
+            rr.append(i)
+            rr.append('-')
+        return rr[:-1]
+    b = list()
+    for i in ctx.split():
+        b.append(i)
+        b.append(' ')
+    b = b[:-1]
+    result = list()
+    for i in b:
+        for j in split_minis(i):
+            result.append(j)
+    return result
+
 def highlight(ss, ct):
     '''在ct中高亮ss. 将汉字和非汉字分开，汉字用字高亮， 非汉字用词高亮'''
     global pun
@@ -1535,12 +1554,15 @@ def highlight(ss, ct):
     # 非汉字用词高亮(忽略大小写和修饰符?)
     def exfn(ct):
         nonlocal ss
-        # origct = ct.split()
-        # diffct = shave_marks(ct)
-        for word in ss.split():
-            if word in ct:
-                ct = ct.replace(word, f'<em>{word}</em>')
-        return ct
+        ss = [shave_marks(i) for i in ss.split()]
+        result = list()
+        for word in pali_split(ct):
+            for i in ss:
+                if shave_marks(word) == i:
+                    result.append(f'<em>{word}</em>')
+                else:
+                    result.append(word)
+        return ''.join(result)
 
     ct = ''.join(re_split(pattern, ct, fn=fn, exfn=exfn))
     return ct

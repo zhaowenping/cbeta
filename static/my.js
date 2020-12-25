@@ -194,14 +194,11 @@ function pinyin(evt){
     }
 }
 
-// 对文石墨水屏取消背景图片
-if (navigator.userAgent.indexOf("Note2_YZB")!=-1){
-   document.getElementById("body").style.backgroundImage = null;
-}
 
 // 对非文石墨水屏设置背景图片
 window.onload = function(){
 if (navigator.userAgent.indexOf("Note2_YZB")==-1){
    document.getElementById("body").style.background = "#fffbf0 url(/static/bg.jpg) repeat";
+}
 }
 
