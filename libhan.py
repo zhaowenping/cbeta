@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-12-25 15:47:36
+# Last Modified: 2020-12-25 15:52:41
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1541,7 +1541,8 @@ def highlight(ss, ct):
     # 删除标点符号
     # pun2 = {k: 0x20 for k in pun}
     # ss = ss.translate(pun2)
-    ss = rm_pun(ss, '-')
+    ss = rm_pun(ss)
+    ss = shave_marks(ss)
 
     # 汉字用字高亮
     def fn(ct):
@@ -1554,7 +1555,7 @@ def highlight(ss, ct):
     # 非汉字用词高亮(忽略大小写和修饰符?)
     def exfn(ct):
         nonlocal ss
-        ss_ = [shave_marks(i) for i in ss.split()]
+        ss_ = ss.split()
         result = list()
         for word in pali_split(ct):
             mingzhong = False
