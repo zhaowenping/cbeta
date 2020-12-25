@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-12-24 18:50:36
+# Last Modified: 2020-12-24 21:15:03
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1516,7 +1516,7 @@ with open('dict/punctuation.txt') as fd:
 
 
 def highlight(ss, ct):
-    '''将汉字和非汉字分开，汉字用字高亮， 非汉字用词高亮'''
+    '''在ct中高亮ss. 将汉字和非汉字分开，汉字用字高亮， 非汉字用词高亮'''
     global pun
     pattern = re.compile(r'[\u3007\u3400-\u9FFC\U00020000-\U0003134A]+')
     # 删除标点符号
@@ -1663,6 +1663,7 @@ def fullsearch(sentence):
     '''全文搜索, sentence是繁体字'''
     # 标准化文本
     sentence = normalize_text(sentence)
+    sentence = shave_marks(sentence)
     sentence = ''.join(python_escape(sentence))
     url = "http://127.0.0.1:9200/cbeta/_doc/_search"
     data = {
