@@ -961,13 +961,16 @@
     <!--处理div 折叠式注释 TODO, 里面的异体字处理有些问题D47n8936_002-->
     <!--xsl:template match="cb:div[@type='orig']"-->
     <xsl:template match="cb:div[@type='commentary']">
-        <div class="commentary panel-collapse">
+        <!--div class="commentary panel-collapse">
             <a data-toggle="collapse" data-parent="#accordion" href="#{generate-id()}"><span class="caret"/>註疏：</a>
             <div id="{generate-id()}" class="panel-collapse collapse">
               <div class="panel-body">
                 <xsl:apply-templates/>
               </div>
             </div>
+        </div-->
+        <div class="commentary">
+            <xsl:apply-templates/>
         </div>
         <br/>
     </xsl:template>
