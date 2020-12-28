@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-12-25 15:52:41
+# Last Modified: 2020-12-28 04:35:55
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -126,10 +126,13 @@ def python_unescape(ctx):
 def python_escape(ctx):
     '''因为ES不支持F区、G区汉字，所以将F区、G区汉字转换成转义字符序列，方便后续ES中查找'''
     for char in ctx:
-        if 0x2CEB0 <= ord(char) <= 0x2EBE0:  # F区
-            yield r'\U{:08X}'.format(ord(char))
-        elif 0x30000 <= ord(char) <= 0x3134A:  # G区
-            yield r'\U{:08X}'.format(ord(char))
+        ordchar = ord(char)
+        # if 0x2CEB0 <= ordchar <= 0x2EBE0:  # F区
+        #     yield r'\U{:08X}'.format(ordchar)
+        # elif 0x30000 <= ordchar <= 0x3134A:  # G区
+        #     yield r'\U{:08X}'.format(ordchar)
+        if 0x2CEB0 <= ordchar:
+            yield r'\U{:08X}'.format(ordchar)
         else:
             yield char
 
@@ -315,7 +318,7 @@ def unicode_zone(char):
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    #path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
+    # path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
             line = line.strip()
