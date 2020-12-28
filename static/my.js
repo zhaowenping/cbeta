@@ -2,7 +2,12 @@
 (function(){if(!/*@cc_on!@*/0)return;var e="abbr,article,aside,audio,canvas,datalist,details,dialog,eventsource,figure,footer,header,hgroup,mark,menu,meter,nav,output,progress,section,time,video".split(','),i=e.length;while(i--){document.createElement(e[i])}})();
 
 /*bootstrap popver*/
-$(function (){$("[data-toggle='popover']").popover({html:true});});
+$().ready(()=>{
+    $('[data-toggle="popover"]').popover();
+})
+
+//$(function (){$("[data-toggle='popover']").popover({html:true});});
+
 // $(function (){
 // $("[data-toggle='popover']").webuiPopover();
 // });
