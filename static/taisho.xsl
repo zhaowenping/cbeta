@@ -58,7 +58,7 @@
         <!--link rel="stylesheet" href="/static/bootstrap-3.3.7.min.css"/-->
         <link rel="stylesheet" href="/static/bootstrap4.min.css"/>
         <!--link rel="stylesheet" href="http://han-css.herokuapp.com/style.css"/-->
-        <link rel="stylesheet" href="/static/jquery.webui-popover.min.css"/>
+        <!--link rel="stylesheet" href="/static/jquery.webui-popover.min.css"/-->
         <link rel="stylesheet" href="/static/tei.css"/>
         <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Han/3.2.7/han.min.css"/-->
         <title>
@@ -68,7 +68,7 @@
         <!--script src="/static/bootstrap-3.3.7.min.js"></script-->
         <script src="/static/popper.min.js"></script>
         <script src="/static/bootstrap4.min.js"></script>
-        <script src="/static/jquery.webui-popover.min.js"></script>
+        <!--script src="/static/jquery.webui-popover.min.js"></script-->
         <!--script src="https://cdnjs.cloudflare.com/ajax/libs/Han/3.2.7/han.min.js"></script-->
         <!--[if lt IE9]> 
         <script src="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
