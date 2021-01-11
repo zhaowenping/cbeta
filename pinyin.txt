@@ -1,0 +1,4624 @@
+不 U+4E0D 3479552 bù fǒu fōu
+無 U+7121 2846269 wú mó
+有 U+6709 2466611 yǒu yòu
+者 U+8005 2122019 zhě zhū
+大 U+5927 1994478 dà dài tài
+爲 U+7232 1925485 wèi wéi
+三 U+4E09 1880884 sān sàn
+故 U+6545 1791807 gù gǔ
+中 U+4E2D 1297053 zhōng zhòng
+於 U+65BC 1250541 yú yū wū
+若 U+82E5 1211502 ruò rě ré rè
+得 U+5F97 1209038 dé de děi
+說 U+8AAA 1170159 shuō shuì yuè tuō
+其 U+5176 1100046 qí jī
+而 U+800C 1092902 ér néng
+諸 U+8AF8 1088548 zhū chú
+# 相 U+76F8 1081209 xiāng xiàng
+# 行 U+884C 1047040 xíng háng xìng hàng héng
+見 U+898B 950855 jiàn xiàn
+何 U+4F55 904941 hé hè
+言 U+8A00 893762 yán yàn yín
+非 U+975E 885149 fēi fěi
+道 U+9053 850206 dào dǎo
+來 U+4F86 843182 lái lài
+經 U+7D93 829568 jīng jìng
+知 U+77E5 818007 zhī zhì
+作 U+4F5C 775301 zuò zuō zuó
+能 U+80FD 763616 néng nài tái tài nái xióng
+菩 U+83E9 751663 pú bèi bù bó
+身 U+8EAB 669680 shēn yuán juān
+# 切 U+5207 665460 qiē qiè qì
+子 U+5B50 662634 zǐ zi
+緣 U+7DE3 609849 yuán yuàn
+至 U+81F3 609611 zhì dié
+智 U+667A 603373 zhì zhī
+# 處 U+8655 596470 chù chǔ
+可 U+53EF 590569 kě kè
+# 應 U+61C9 588326 yīng yìng
+正 U+6B63 586163 zhèng zhēng
+# 分 U+5206 573766 fēn fèn
+# 種 U+7A2E 560259 zhǒng zhòng
+羅 U+7F85 560137 luó luō luo
+地 U+5730 549657 dì de
+# 與 U+8207 540585 yǔ yù yú
+# 空 U+7A7A 535665 kōng kòng kǒng
+文 U+6587 510272 wén wèn
+方 U+65B9 496957 fāng fēng páng wǎng
+六 U+516D 491448 liù lù
+王 U+738B 487369 wáng wàng yù
+同 U+540C 472402 tóng tòng
+# 觀 U+89C0 460741 guān guàn
+# 當 U+7576 453647 dāng dàng
+日 U+65E5 438666 rì mì
+論 U+8AD6 432575 lùn lún
+# 解 U+89E3 428819 jiě jiè xiè
+依 U+4F9D 427241 yī yǐ
+識 U+8B58 420994 shí shì shi zhì
+釋 U+91CB 420604 shì yì
+色 U+8272 417938 sè shǎi
+復 U+5FA9 412481 fù fòu
+從 U+5F9E 404090 cóng zòng zōng cōng
+聞 U+805E 398010 wén wèn
+教 U+6559 384180 jiào jiāo
+或 U+6216 364898 huò yù
+離 U+96E2 364707 lí lì lǐ chī gǔ
+便 U+4FBF 357256 biàn pián
+果 U+679C 355405 guǒ kè luǒ wǒ
+通 U+901A 351476 tōng tòng
+禪 U+79AA 347054 chán shàn tán
+提 U+63D0 346449 tí dī dǐ shí
+卷 U+5377 334892 juàn juǎn
+的 U+7684 333061 de dí dì
+比 U+6BD4 330675 bǐ bì pí pǐ
+阿 U+963F 326525 ā à a ē ě ǎ
+令 U+4EE4 323861 lìng líng lǐng
+覺 U+89BA 321047 jué jiào
+由 U+7531 316290 yóu yāo
+清 U+6E05 311109 qīng qìng
+藏 U+85CF 308986 cáng zàng zāng
+合 U+5408 305575 hé gě
+語 U+8A9E 300014 yǔ yù
+難 U+96E3 299927 nán nàn nuó
+樂 U+6A02 294898 lè yuè yào luò liáo
+苦 U+82E6 289099 kǔ gǔ
+體 U+9AD4 283540 tǐ tī
+間 U+9593 283110 jiān jiàn jiǎn
+摩 U+6469 282970 mó mā
+乘 U+4E58 278775 chéng shèng
+過 U+904E 277540 guò guo guō huò
+盡 U+76E1 268923 jìn
+華 U+83EF 265756 huá huā huà
+南 U+5357 264957 nán nā
+量 U+91CF 263715 liàng liáng
+百 U+767E 255925 bǎi bó mò
+答 U+7B54 252102 dá dā
+餘 U+9918 249869 yú yé
+取 U+53D6 249796 qǔ qū
+勝 U+52DD 248880 shèng shēng
+長 U+9577 247608 cháng zhǎng zhàng
+發 U+767C 246478 fā fà bō
+立 U+7ACB 245742 lì wèi
+句 U+53E5 244610 jù gōu
+波 U+6CE2 244171 bō bēi bì
+信 U+4FE1 243011 xìn shēn
+唯 U+552F 242386 wéi wěi
+家 U+5BB6 241004 jiā jie gū
+金 U+91D1 239176 jīn jìn
+了 U+4E86 238312 le liǎo
+思 U+601D 237042 sī sì sāi
+化 U+5316 235045 huà huā
+耶 U+8036 233484 yé yē xié
+反 U+53CD 233220 fǎn fān
+惡 U+60E1 232894 è wù wū
+麼 U+9EBC 232601 me mo mǒ ma
+著 U+8457 228817 zhù zhuó chú zhāo zháo zhe
+會 U+6703 226945 huì kuài guì
+轉 U+8F49 225433 zhuǎn zhuàn
+神 U+795E 222629 shén shēn
+和 U+548C 221572 hé huò huó hè
+重 U+91CD 220829 zhòng chóng tóng
+足 U+8DB3 219067 zú jù
+那 U+90A3 218065 nà nèi nā nǎ né něi nuó nuò
+眼 U+773C 215574 yǎn wěn
+白 U+767D 213161 bái bó
+食 U+98DF 210089 shí sì yì
+示 U+793A 209878 shì qī zhì shí
+結 U+7D50 204398 jié jì jiē
+音 U+97F3 203866 yīn yìn
+數 U+6578 199184 shù shǔ cù shuò
+頭 U+982D 197745 tóu tou
+旣 U+65E3 194133 jì xì
+攝 U+651D 193802 shè niè
+施 U+65BD 192982 shī shǐ yí yì
+陀 U+9640 192422 tuó duò
+脫 U+812B 189810 tuō tuì
+沙 U+6C99 189397 shā shà suō
+度 U+5EA6 189189 dù duó
+內 U+5167 184184 nèi nà
+還 U+9084 177624 huán hái xuán
+般 U+822C 175940 bān bō pán bǎn
+衣 U+8863 170621 yī yì
+供 U+4F9B 165913 gōng gòng
+迦 U+8FE6 165223 jiā xiè
+居 U+5C45 163292 jū jī
+諦 U+8AE6 162997 dì tí
+歸 U+6B78 160651 guī kuì
+尚 U+5C1A 159118 shàng cháng
+更 U+66F4 157858 gèng gēng
+風 U+98A8 155850 fēng fěng fèng
+滿 U+6EFF 155321 mǎn mèn
+請 U+8ACB 154329 qǐng qìng qīng qíng
+甚 U+751A 154321 shén shí shèn
+將 U+5C07 153070 jiāng jiàng qiāng
+總 U+7E3D 152650 zǒng zōng
+共 U+5171 148818 gòng gōng
+疑 U+7591 148691 yí nǐ níng
+使 U+4F7F 147057 shǐ shì
+往 U+5F80 146197 wǎng wàng
+女 U+5973 145503 nǚ rǔ
+傳 U+50B3 145097 chuán zhuàn
+要 U+8981 143257 yào yāo yǎo
+夫 U+592B 143102 fū fú
+除 U+9664 142657 chú zhù shū
+高 U+9AD8 140404 gāo gào
+遠 U+9060 138151 yuǎn yuàn
+福 U+798F 137207 fú fù
+祖 U+7956 136664 zǔ jiē
+約 U+7D04 133845 yuē yāo yào dì
+龍 U+9F8D 132701 lóng lǒng máng
+兩 U+5169 132431 liǎng liàng
+耳 U+8033 132247 ěr réng
+部 U+90E8 131419 bù pǒu
+稱 U+7A31 130502 chēng chèng chèn
+少 U+5C11 130209 shǎo shào
+達 U+9054 129859 dá tà tì
+火 U+706B 129768 huǒ huō
+且 U+4E14 128711 qiě jū
+漏 U+6F0F 127229 lòu lóu
+矣 U+77E3 125740 yǐ xián
+養 U+990A 125172 yǎng yàng
+猶 U+7336 124776 yóu yáo
+疏 U+758F 122419 shū shù
+頌 U+980C 121725 sòng róng
+喻 U+55BB 119718 yù yú
+類 U+985E 118616 lèi lì
+偈 U+5048 118439 jié qì jì
+精 U+7CBE 117079 jīng qíng jìng
+石 U+77F3 117028 shí dàn
+莫 U+83AB 112849 mò mù
+親 U+89AA 111906 qīn qìng xīn
+興 U+8208 111744 xīng xìng
+好 U+597D 111304 hǎo hào
+差 U+5DEE 110564 chà chāi
+障 U+969C 109535 zhàng zhāng
+微 U+5FAE 108993 wēi wéi
+漢 U+6F22 106890 hàn tān
+趣 U+8DA3 105324 qù cù qū cǒu zōu
+這 U+9019 104384 zhè zhèi yàn
+似 U+4F3C 102795 sì shì
+造 U+9020 102364 zào cào cāo
+聽 U+807D 101927 tīng tìng
+豈 U+8C48 101079 qǐ kǎi
+校 U+6821 100946 xiào jiǎo jiào xiáo
+母 U+6BCD 98799 mǔ mú wǔ wú
+邪 U+90AA 98323 xié xú yá yé yú shé
+乎 U+4E4E 95784 hū hú
+假 U+5047 94401 jiǎ jià xiá
+近 U+8FD1 91500 jìn jì
+刹 U+5239 91305 chà shā
+弟 U+5F1F 90096 dì tì
+治 U+6CBB 89972 zhì chí yí
+放 U+653E 89686 fàng fǎng
+許 U+8A31 87807 xǔ hǔ
+屬 U+5C6C 86918 shǔ zhǔ
+底 U+5E95 84811 dǐ de
+原 U+539F 84252 yuán yuàn
+于 U+4E8E 84234 yú xū
+都 U+90FD 83727 dū dōu
+參 U+53C3 82504 cān sān shēn dēn cēn
+北 U+5317 82009 běi bèi
+父 U+7236 80877 fù fǔ
+遂 U+9042 80631 suì suí
+辨 U+8FA8 79587 biàn bān bàn biǎn piàn
+曾 U+66FE 79474 céng zēng
+靈 U+9748 79311 líng lìng
+落 U+843D 78638 luò là lào luō
+陰 U+9670 78095 yīn yìn ān
+玄 U+7384 77438 xuán xuàn
+被 U+88AB 77169 bèi pī bì pì
+打 U+6253 76274 dǎ dá
+殺 U+6BBA 75819 shā sà shài shè
+並 U+4E26 75688 bìng bàng
+看 U+770B 75601 kàn kān
+只 U+53EA 75287 zhǐ zhī
+尋 U+5C0B 74664 xún xín
+箇 U+7B87 74660 gè gě
+路 U+8DEF 74327 lù luò
+誰 U+8AB0 74280 shuí shéi
+迷 U+8FF7 74223 mí mèi mì
+違 U+9055 73797 wéi huí
+蘊 U+860A 73612 yùn wēn
+墮 U+58AE 73156 duò huī
+葉 U+8449 72741 yè xié shè
+究 U+7A76 72715 jiū jiù
+號 U+865F 70956 hào háo
+藥 U+85E5 70902 yào yuè shuò lüè
+熟 U+719F 69710 shú shóu
+倒 U+5012 69280 dǎo dào
+雨 U+96E8 68507 yǔ yù
+磨 U+78E8 68441 mó mò
+隱 U+96B1 67718 yǐn yìn
+昔 U+6614 67714 xī cuò xí
+散 U+6563 67223 sàn sǎn
+點 U+9EDE 66699 diǎn zhān duò
+氣 U+6C23 65844 qì xì
+沒 U+6C92 64170 méi mò
+宿 U+5BBF 63155 sù xiǔ xiù
+章 U+7AE0 62988 zhāng zhàng
+草 U+8349 62595 cǎo zào
+蓮 U+84EE 62446 lián liǎn
+輕 U+8F15 61997 qīng qìng
+夢 U+5922 61253 mèng méng
+祇 U+7947 59715 qí chí zhī zhǐ
+繫 U+7E6B 59477 xì jì
+囉 U+56C9 58899 luō lóu
+畏 U+754F 58792 wèi wēi wěi
+漸 U+6F38 58646 jiàn chán jiān qián
+青 U+9752 58559 qīng jīng
+蓋 U+84CB 58493 gài gě hé
+齊 U+9F4A 57466 qí jī jì jiǎn zhāi zī
+臨 U+81E8 57004 lín lìn
+超 U+8D85 56951 chāo chǎo chào tiào
+濟 U+6FDF 56329 jì jǐ qí
+待 U+5F85 56261 dài dāi
+露 U+9732 56234 lù lòu
+幾 U+5E7E 54756 jǐ jī
+无 U+65E0 54537 wú mó
+致 U+81F4 53809 zhì zhuì
+頓 U+9813 53756 dùn dú zhūn
+承 U+627F 53650 chéng zhěng
+任 U+4EFB 53342 rèn rén
+編 U+7DE8 53137 biān biàn biǎn
+節 U+7BC0 52439 jié jiē
+氏 U+6C0F 51369 shì zhī jīng
+舌 U+820C 51269 shé guā
+什 U+4EC0 51166 shí shén
+越 U+8D8A 51067 yuè huó
+調 U+8ABF 50921 diào tiào tiáo zhōu
+忘 U+5FD8 50824 wàng wáng
+害 U+5BB3 49940 hài hé
+朝 U+671D 49745 zhāo cháo zhū
+良 U+826F 49023 liáng liǎng
+春 U+6625 48942 chūn chǔn
+童 U+7AE5 48832 tóng zhōng
+守 U+5B88 48803 shǒu shòu
+資 U+8CC7 48221 zī zì
+辯 U+8FAF 47936 biàn pián biǎn bàn
+拈 U+62C8 47799 nián niān niǎn diān
+眠 U+7720 47723 mián miǎn mǐn
+焉 U+7109 47706 yān yí
+飲 U+98F2 47584 yǐn yìn
+喝 U+559D 47464 hē hè
+演 U+6F14 47020 yǎn yàn
+兒 U+5152 46475 ér er
+毛 U+6BDB 45320 máo mào
+燒 U+71D2 44624 shāo shào
+服 U+670D 44608 fú fù bì
+場 U+5834 44596 cháng chǎng
+遣 U+9063 44017 qiǎn qiàn
+個 U+500B 43910 gè gě
+留 U+7559 43869 liú liǔ liù
+寧 U+5BE7 42617 níng nìng zhù
+檀 U+6A80 42141 tán shàn
+并 U+5E76 41807 bìng bīng
+厭 U+53AD 41583 yàn yā yān
+毒 U+6BD2 41070 dú dài
+陳 U+9673 40812 chén zhèn
+車 U+8ECA 40598 chē jū
+脩 U+8129 40542 xiū tiáo
+注 U+6CE8 40474 zhù zhòu
+麗 U+9E97 40392 lì lí
+契 U+5951 40279 qì qiè xiè
+橫 U+6A6B 40223 héng hèng
+仰 U+4EF0 40061 yǎng yàng áng
+盛 U+76DB 39711 shèng chéng
+降 U+964D 39162 jiàng xiáng xiàng
+連 U+9023 39036 lián liǎn liàn làn
+讀 U+8B80 38800 dú dòu
+闍 U+95CD 38536 dū shé
+縱 U+7E31 37900 zòng zǒng sǒng cóng
+熏 U+718F 37860 xūn xùn
+叉 U+53C9 37852 chā chá chǎ chà chāi cha
+維 U+7DAD 37836 wéi yí
+肉 U+8089 37700 ròu rù
+亡 U+4EA1 37322 wáng wú
+導 U+5C0E 37246 dǎo dào
+鳥 U+9CE5 37208 niǎo diǎo dǎo què
+泥 U+6CE5 36823 ní nì nǐ niè nìng
+樓 U+6A13 36544 lóu lǘ
+嚩 U+56A9 36184 fú pó
+期 U+671F 35565 qī qí jī
+張 U+5F35 35322 zhāng zhàng
+勞 U+52DE 35313 láo lào
+洞 U+6D1E 35202 dòng tóng
+顛 U+985B 35128 diān tián
+擇 U+64C7 35010 zé zhái
+勒 U+52D2 34924 lè lēi
+遺 U+907A 34731 yí wèi suí
+鐵 U+9435 34721 tiě dié
+載 U+8F09 34605 zài zǎi dài zāi zī
+骨 U+9AA8 34590 gǔ gū gú
+登 U+767B 34400 dēng dé
+呼 U+547C 34222 hū xū
+諍 U+8ACD 34056 zhēng zhèng
+菴 U+83F4 33803 ān ǎn
+夏 U+590F 33731 xià jiǎ
+臺 U+81FA 33703 tái yí tāi
+題 U+984C 33559 tí dì
+毀 U+6BC0 33552 huǐ huì
+活 U+6D3B 33311 huó guō
+竺 U+7AFA 33048 zhú dǔ
+奇 U+5947 32866 qí jī
+科 U+79D1 32791 kē kè
+戲 U+6232 32404 xì xī
+曲 U+66F2 32117 qū qǔ
+黑 U+9ED1 32056 hēi hè
+房 U+623F 31948 fáng páng
+拂 U+62C2 31906 fú bì
+皇 U+7687 31900 huáng wǎng
+池 U+6C60 31825 chí tuó chè
+畜 U+755C 31702 chù xù
+每 U+6BCF 31699 měi mèi
+予 U+4E88 30985 yú yǔ
+虎 U+864E 30909 hǔ hù
+錢 U+9322 30718 qián jiǎn
+賊 U+8CCA 30530 zéi zé
+強 U+5F37 30390 qiáng qiǎng jiàng
+迹 U+8FF9 30122 jī jì
+背 U+80CC 30101 bèi bēi
+質 U+8CEA 29742 zhì zhí
+髮 U+9AEE 29643 fà fǎ
+適 U+9069 29557 shì dí tì zhé
+角 U+89D2 29465 jiǎo jué gǔ lù
+丁 U+4E01 29149 dīng zhēng
+楞 U+695E 28878 léng lèng
+附 U+9644 28831 fù pǒu bù fū
+溪 U+6EAA 28529 xī qī
+蘇 U+8607 28513 sū sù
+枝 U+679D 28473 zhī qí
+塞 U+585E 28238 sāi sè sài
+台 U+53F0 28125 tái yí tāi
+錯 U+932F 28074 cuò cù xī
+逢 U+9022 27556 féng páng péng
+責 U+8CAC 27437 zé zhài
+徵 U+5FB5 27410 zhēng zhǐ
+脚 U+811A 27061 jiǎo jué
+把 U+628A 27051 bǎ bà
+單 U+55AE 26957 dān shàn chán
+詳 U+8A73 26810 xiáng yáng
+否 U+5426 26524 fǒu pǐ
+跋 U+8DCB 26182 bá bèi
+給 U+7D66 26180 gěi jǐ xiá
+幢 U+5E62 25962 chuáng zhuàng
+拘 U+62D8 25495 jū gōu
+鈔 U+9214 25352 chāo miǎo chǎo
+純 U+7D14 25222 chún quán tún zhūn zhǔn zī
+余 U+4F59 25184 yú xú
+烏 U+70CF 24772 wū wù
+逐 U+9010 24648 zhú dí zhòu tún
+妨 U+59A8 24567 fáng fāng
+限 U+9650 24558 xiàn wěn
+拔 U+62D4 24431 bá bèi
+御 U+5FA1 24396 yù yà
+擊 U+64CA 24322 jī jí jì xí
+爭 U+722D 24240 zhēng zhèng
+省 U+7701 23891 shěng xiǎn xǐng
+禁 U+7981 23754 jìn jīn
+孫 U+5B6B 23749 sūn xùn
+洗 U+6D17 23748 xǐ xiǎn
+喫 U+55AB 23702 chī jī
+輸 U+8F38 23629 shū shù
+尺 U+5C3A 23596 chǐ chě
+蒙 U+8499 23576 méng mēng měng máng
+移 U+79FB 23348 yí chǐ yì
+趙 U+8D99 23124 zhào tiǎo diào
+闕 U+95D5 23071 què quē jué
+折 U+6298 23032 zhé shé zhē
+刺 U+523A 22909 cì qì
+跡 U+8DE1 22810 jī jì
+賜 U+8CDC 22785 cì sì
+藐 U+85D0 22750 miǎo mò
+干 U+5E72 22723 gān gàn hán
+招 U+62DB 22408 zhāo qiáo sháo
+樣 U+6A23 22204 yàng xiàng
+撰 U+64B0 21972 zhuàn suàn xuǎn
+瞿 U+77BF 21930 jù qú jí qū
+涉 U+6D89 21870 shè dié
+血 U+8840 21768 xiě xuè
+尾 U+5C3E 21765 wěi yǐ
+僞 U+50DE 21698 wěi wèi
+吒 U+5412 21565 zhà chà zhā
+淺 U+6DFA 21554 qiǎn jiān jiàn cán zàn
+族 U+65CF 21291 zú zòu còu
+賓 U+8CD3 21278 bīn bìn
+召 U+53EC 21191 zhào shào
+閻 U+95BB 21109 yán yàn yǎn
+詔 U+8A54 21019 zhào zhāo
+隔 U+9694 21006 gé rǒng jī
+閒 U+9592 20912 xián jiān jiàn
+谷 U+8C37 20800 gǔ yù lù
+薄 U+8584 20799 bó báo bò bù
+值 U+503C 20796 zhí zhì
+牟 U+725F 20784 móu mù mào
+率 U+7387 20766 lǜ shuài lüè
+汚 U+6C5A 20534 wū wù wā yū
+魏 U+9B4F 20377 wèi wéi wēi
+蛇 U+86C7 20246 shé yí tuó chí
+突 U+7A81 20198 tū tú
+吹 U+5439 19956 chuī chuì
+澄 U+6F84 19930 chéng dèng
+景 U+666F 19770 jǐng yǐng
+累 U+7D2F 19694 lèi lěi léi lǜ liè
+震 U+9707 19680 zhèn shēn
+狂 U+72C2 19658 kuáng jué
+茲 U+8332 19626 zī cī
+涼 U+6DBC 19282 liáng liàng
+鹿 U+9E7F 19088 lù lǘ
+伴 U+4F34 19013 bàn pàn
+鎮 U+93AE 18994 zhèn zhēn tián
+規 U+898F 18990 guī kuī xù guì
+迎 U+8FCE 18859 yíng yìng
+浪 U+6D6A 18808 làng láng
+縣 U+7E23 18734 xiàn xuán
+哩 U+54E9 18705 lī li lǐ
+傍 U+508D 18596 bàng páng
+旋 U+65CB 18494 xuán xuàn
+庭 U+5EAD 18410 tíng tìng
+灌 U+704C 18322 guàn huàn
+掃 U+6383 18317 sǎo sào
+荅 U+8345 18260 dā dá tà
+紅 U+7D05 18249 hóng gōng jiàng
+片 U+7247 18236 piàn piān pàn
+頗 U+9817 18234 pō pǒ pò pí
+追 U+8FFD 18232 zhuī duī tuī
+雅 U+96C5 18201 yǎ yā yá
+伺 U+4F3A 18074 sì cì
+曼 U+66FC 18023 màn mán
+繞 U+7E5E 17845 rào rǎo
+沈 U+6C88 17836 chén shěn tán
+辟 U+8F9F 17774 pì pī bì mǐ
+妻 U+59BB 17721 qī qì
+卒 U+5352 17619 zú cù
+獻 U+737B 17425 xiàn suō xī
+牙 U+7259 17421 yá yà
+耆 U+8006 16966 qí shì zhǐ
+雷 U+96F7 16923 léi lèi
+邑 U+9091 16859 yì è
+些 U+4E9B 16826 xiē suò sā
+委 U+59D4 16754 wěi wēi
+藍 U+85CD 16666 lán la
+盤 U+76E4 16465 pán xuán
+飾 U+98FE 16354 shì chì
+湛 U+6E5B 16341 zhàn chén dān jiān tán jìn
+透 U+900F 16270 tòu shū
+辱 U+8FB1 16144 rǔ rù
+闇 U+95C7 16122 àn ān yǎn
+冠 U+51A0 16042 guān guàn
+紀 U+7D00 16020 jì jǐ
+恣 U+6063 15897 zì cī
+瓦 U+74E6 15846 wǎ wà
+夕 U+5915 15803 xī xì
+柱 U+67F1 15731 zhù zhǔ
+葢 U+8462 15696 gài gě hé
+政 U+653F 15676 zhèng zhēng
+顏 U+984F 15633 yán yá
+隆 U+9686 15592 lóng lōng
+喪 U+55AA 15551 sāng sàng
+渴 U+6E34 15410 kě hé jié kài
+纂 U+7E82 15365 zuǎn zuàn
+振 U+632F 15229 zhèn zhēn zhěn
+郎 U+90CE 15034 láng làng
+翁 U+7FC1 15022 wēng wěng
+吐 U+5410 14989 tǔ tù
+衰 U+8870 14977 shuāi cuī suō
+擔 U+64D4 14932 dān dàn
+扶 U+6276 14904 fú pú
+稽 U+7A3D 14875 jī qǐ
+潭 U+6F6D 14849 tán xún yǐn dàn
+貫 U+8CAB 14701 guàn wān
+蒼 U+84BC 14586 cāng cǎng
+誑 U+8A91 14416 kuáng kuàng
+昏 U+660F 14364 hūn mǐn
+臂 U+81C2 14357 bì bei bèi
+鄉 U+9109 14348 xiāng xiǎng xiàng
+英 U+82F1 14270 yīng yāng
+頃 U+9803 14206 qǐng kuǐ qīng
+番 U+756A 14179 fān pān bō pó fán pán pí
+游 U+6E38 14171 yóu liú
+滯 U+6EEF 13924 zhì chì
+璃 U+7483 13915 lí li
+擲 U+64F2 13799 zhì zhí zhī
+潙 U+6F59 13662 guí wéi guī
+牽 U+727D 13521 qiān qiàn
+盲 U+76F2 13462 máng wàng
+頻 U+983B 13284 pín bīn
+澤 U+6FA4 13219 zé duó shì yì
+側 U+5074 13084 cè zè
+派 U+6D3E 13083 pài mài bài pā
+隋 U+968B 12952 suí duò tuǒ tuō
+濕 U+6FD5 12881 shī qì tà xí
+龜 U+9F9C 12852 guī jūn qiū
+穴 U+7A74 12839 xué jué xuè
+苑 U+82D1 12814 yuàn yuǎn yù yǔn yūn yuān
+渠 U+6E20 12773 qú jù
+湯 U+6E6F 12757 tāng tàng shāng yáng
+斗 U+6597 12716 dǒu dòu
+繩 U+7E69 12646 shéng mǐn yìng shèng
+麻 U+9EBB 12579 má mā
+營 U+71DF 12559 yíng cuō
+格 U+683C 12544 gé gē
+較 U+8F03 12500 jiào jué xiào
+舒 U+8212 12481 shū yù
+錫 U+932B 12461 xí xī tì
+棲 U+68F2 12456 qī xī
+陸 U+9678 12443 lù liù
+焚 U+711A 12387 fén fèn
+逮 U+902E 12386 dài dǎi dì
+料 U+6599 12348 liào liáo
+荼 U+837C 12282 tú chá shū yé
+荷 U+8377 12252 hé hè kē hē
+剌 U+524C 12236 là lá
+紹 U+7D39 12230 shào chāo
+弄 U+5F04 12221 nòng lòng
+跳 U+8DF3 12174 tiào tiáo táo diào
+研 U+7814 12157 yán yàn xíng
+繁 U+7E41 12154 fán pó pán
+秘 U+79D8 12110 mì bì bié
+炎 U+708E 12061 yán yàn tán
+油 U+6CB9 12033 yóu yòu
+遶 U+9076 12020 rào rǎo
+珞 U+73DE 12008 luò lì
+價 U+50F9 12005 jià jie
+彈 U+5F48 12005 dàn tán
+灑 U+7051 11822 sǎ lí xiǎn xǐ shī
+馱 U+99B1 11787 tuó duò dài
+踏 U+8E0F 11773 tà tā
+伎 U+4F0E 11691 jì qí
+摧 U+6467 11686 cuī cuò
+嗔 U+55D4 11657 tián chēn
+撥 U+64A5 11652 bō fá
+朱 U+6731 11617 zhū shú
+蕩 U+8569 11560 dàng tāng tàng
+危 U+5371 11542 wēi wéi
+暴 U+66B4 11519 bào pù bó
+夾 U+593E 11510 jiā jiá
+祝 U+795D 11486 zhù zhòu chù
+頁 U+9801 11466 yè xié
+竇 U+7AC7 11465 dòu dú
+選 U+9078 11444 xuǎn suàn xuàn
+肩 U+80A9 11434 jiān xián
+穀 U+7A40 11433 gǔ gòu nòu
+稍 U+7A0D 11363 shāo shào
+衍 U+884D 11320 yǎn yán
+犍 U+728D 11303 jiān qián jiǎn
+監 U+76E3 11227 jiān jiàn kàn
+蔽 U+853D 11116 bì fù
+遲 U+9072 11108 chí zhì xī zhí
+藉 U+85C9 11054 jiè jí
+腳 U+8173 10987 jiǎo jué
+勘 U+52D8 10942 kān kàn
+吽 U+543D 10936 ōu hōng hǒu óu
+射 U+5C04 10875 shè yì yè
+伯 U+4F2F 10840 bó bǎi bà
+漫 U+6F2B 10725 màn mán
+欽 U+6B3D 10712 qīn qìn yín
+險 U+96AA 10626 xiǎn yán jiǎn
+稟 U+7A1F 10612 bǐng lǐn
+蒲 U+84B2 10573 pú bó
+環 U+74B0 10520 huán huàn
+拾 U+62FE 10518 shí jiè shè
+苟 U+82DF 10412 gǒu gōu
+揵 U+63F5 10384 qián jiàn
+區 U+5340 10373 qū ōu
+均 U+5747 10249 jūn yùn
+奔 U+5954 10131 bēn bèn
+崖 U+5D16 10079 yá ya
+臭 U+81ED 10061 chòu xiù
+儞 U+511E 10033 nǐ ěr nǎi
+謙 U+8B19 9854 qiān qiàn zhàn
+侯 U+4FAF 9812 hóu hòu
+祭 U+796D 9759 jì zhài
+杭 U+676D 9757 háng kāng
+躍 U+8E8D 9653 yuè tì
+混 U+6DF7 9611 hùn hǔn hún gǔn kūn
+濫 U+6FEB 9606 làn jiàn lǎn lán
+奘 U+5958 9593 zàng zhuǎng
+泯 U+6CEF 9584 mǐn miàn
+牢 U+7262 9504 láo lào lóu
+浩 U+6D69 9453 hào gé gǎo
+疎 U+758E 9394 shū shù
+幼 U+5E7C 9389 yòu yào
+排 U+6392 9367 pái pǎi bèi
+着 U+7740 9361 zháo zhe zhāo zhuó
+創 U+5275 9357 chuàng chuāng
+髻 U+9AFB 9340 jì jié
+荒 U+8352 9330 huāng huǎng kāng
+鳩 U+9CE9 9317 jiū qiú zhì
+虫 U+866B 9269 chóng huǐ
+扇 U+6247 9208 shàn shān
+靡 U+9761 9205 mǐ mí má méi mó
+檗 U+6A97 9204 bò bì
+驀 U+9A40 9200 mò mà
+罷 U+7F77 9143 bà ba bǎi pí pì bǐ
+籠 U+7C60 9126 lóng lǒng
+泣 U+6CE3 9107 qì lì sè
+宛 U+5B9B 9102 wǎn yuān
+革 U+9769 9056 gé jí jǐ
+覽 U+89BD 8966 lǎn làn
+罔 U+7F54 8953 wǎng wáng
+它 U+5B83 8933 tā tuō
+歇 U+6B47 8918 xiē yà
+騎 U+9A0E 8915 qí jì
+屏 U+5C4F 8908 píng bǐng bìng
+郭 U+90ED 8878 guō guó
+旁 U+65C1 8844 páng bàng
+淳 U+6DF3 8831 chún zhūn zhǔn
+斂 U+6582 8792 liǎn lián liàn
+豫 U+8C6B 8724 yù xù
+費 U+8CBB 8686 fèi bì
+駕 U+99D5 8678 jià jiā
+豁 U+8C41 8649 huō huò huá
+祈 U+7948 8566 qí guǐ
+裂 U+88C2 8526 liè liě
+擾 U+64FE 8524 rǎo róu
+探 U+63A2 8463 tàn tān
+胝 U+80DD 8395 zhī chī dì
+秖 U+79D6 8297 zhī zhǐ
+冰 U+51B0 8275 bīng níng
+采 U+91C7 8236 cǎi cài
+莖 U+8396 8213 jīng yīng
+茫 U+832B 8204 máng huǎng
+擁 U+64C1 8156 yōng yǒng
+綠 U+7DA0 8133 lǜ lù
+魯 U+9B6F 8122 lǔ lǚ
+竝 U+7ADD 8101 bìng bàng
+葛 U+845B 8057 gé gě
+鮮 U+9BAE 8025 xiān xiǎn xiàn
+莎 U+838E 7979 shā suō suī
+咎 U+548E 7973 jiù gāo
+粥 U+7CA5 7902 zhōu yù zhù
+爪 U+722A 7879 zhuǎ zhǎo
+几 U+51E0 7879 jī jǐ
+巍 U+5DCD 7811 wēi wéi
+添 U+6DFB 7797 tiān tiàn
+織 U+7E54 7770 zhī zhì
+趨 U+8DA8 7769 qū cù qù cǒu
+渾 U+6E3E 7763 hún hùn gǔn
+籍 U+7C4D 7736 jí jiè
+涌 U+6D8C 7727 yǒng chōng
+撫 U+64AB 7712 fǔ hū
+熙 U+7199 7683 xī yí
+系 U+7CFB 7679 xì jì
+溺 U+6EBA 7640 nì niào
+煖 U+7156 7633 nuǎn xuān
+鉤 U+9264 7623 gōu gòu qú
+嗟 U+55DF 7596 jiē juē
+殷 U+6BB7 7561 yīn yān yǐn
+臾 U+81FE 7554 yú yǒng yǔ kuì
+奧 U+5967 7524 ào yù
+乗 U+4E57 7492 chéng shèng
+拍 U+62CD 7348 pāi bó pò
+淚 U+6DDA 7288 lèi lì
+欠 U+6B20 7226 qiàn quē
+鹽 U+9E7D 7222 yán yàn
+羽 U+7FBD 7187 yǔ hù
+籌 U+7C4C 7177 chóu táo
+占 U+5360 7153 zhān zhàn
+捐 U+6350 7141 juān yuán
+烟 U+70DF 7115 yān yīn
+鼎 U+9F0E 7107 dǐng zhēn
+曳 U+66F3 7088 yè yì
+滋 U+6ECB 7082 zī cí
+埋 U+57CB 7072 mái mán
+盖 U+76D6 7068 gài gě hé
+饑 U+9951 7036 jī qí
+祠 U+7960 7007 cí sì
+淡 U+6DE1 7005 dàn tán yǎn yàn
+陶 U+9676 6958 táo dào yáo
+陁 U+9641 6925 tuó yǐ
+纖 U+7E96 6912 xiān jiān
+肆 U+8086 6894 sì tì
+雀 U+96C0 6874 què qiāo qiǎo
+酪 U+916A 6835 lào luò lù
+腦 U+8166 6768 nǎo nào
+椎 U+690E 6756 zhuī chuí
+敦 U+6566 6712 dūn duì diāo duī tuán tún
+醒 U+9192 6699 xǐng xīng chéng jīng
+龕 U+9F95 6626 kān kè
+激 U+6FC0 6608 jī jiào jiāo
+卜 U+535C 6600 bo bǔ
+操 U+64CD 6597 cāo cào
+迫 U+8FEB 6581 pò pǎi
+跛 U+8DDB 6573 bǒ bì pō
+燕 U+71D5 6569 yàn yān
+睛 U+775B 6551 jīng jǐng
+僅 U+50C5 6531 jǐn jìn
+職 U+8077 6518 zhí zhì tè
+芥 U+82A5 6487 jiè gài
+淫 U+6DEB 6458 yín yàn yáo
+狼 U+72FC 6456 láng làng lǎng hǎng
+妃 U+5983 6448 fēi pèi
+韋 U+97CB 6430 wéi huí
+鞞 U+979E 6430 bǐng bǐ pí
+拙 U+62D9 6426 zhuó zhuō
+谿 U+8C3F 6397 xī qī
+艸 U+8278 6377 cǎo zào
+邏 U+908F 6352 luó luò
+播 U+64AD 6336 bō bò bǒ
+鞋 U+978B 6255 xié wā
+叅 U+53C5 6246 cān càn cēn
+泊 U+6CCA 6240 bó pó pō pò
+黨 U+9EE8 6220 dǎng zhǎng
+娜 U+5A1C 6214 nuó nà
+柴 U+67F4 6209 chái zhài zì
+竿 U+7AFF 6167 gān gàn gǎn
+汗 U+6C57 6159 hàn hán gān
+霄 U+9704 6148 xiāo xiào
+鑿 U+947F 6109 záo zuò zú zào
+枕 U+6795 6095 zhěn zhèn
+哆 U+54C6 6047 duō chǐ
+坊 U+574A 6039 fāng fáng
+霧 U+9727 6030 wù méng
+佳 U+4F73 6021 jiā jia
+暇 U+6687 6008 xiá xià
+彙 U+5F59 5979 huì wèi
+唎 U+550E 5957 lì lī
+軒 U+8ED2 5866 xuān xiǎn xiàn hǎn jiān
+撿 U+64BF 5850 jiǎn liàn
+䟦 U+47E6 5805 bá bó yuán
+淪 U+6DEA 5803 lún lǔn guān
+頑 U+9811 5799 wán kūn
+傅 U+5085 5790 fù fū
+綺 U+7DBA 5781 qǐ yǐ
+賈 U+8CC8 5775 jiǎ jià gǔ
+泛 U+6CDB 5774 fàn fán fěng fá
+謾 U+8B3E 5772 mán màn
+咽 U+54BD 5692 yān yàn yè
+呢 U+5462 5682 ní ne
+徃 U+5F83 5673 wǎng wàng
+逾 U+903E 5656 yú dòu
+悶 U+60B6 5646 mèn mēn
+俾 U+4FFE 5561 bǐ bì
+壑 U+58D1 5560 hè huò
+築 U+7BC9 5531 zhú zhù
+脈 U+8108 5505 mài mò
+柏 U+67CF 5490 bǎi bó bò
+鴻 U+9D3B 5473 hóng hòng
+暖 U+6696 5472 nuǎn xuān
+壓 U+58D3 5469 yā yà
+窺 U+7ABA 5446 kuī kuǐ
+汙 U+6C59 5392 wū wù wā yū
+佗 U+4F57 5379 tuó tuō tuò yí
+縫 U+7E2B 5379 féng fèng
+括 U+62EC 5324 kuò guā
+摸 U+6478 5293 mō mó
+蹉 U+8E49 5254 cuō chuài
+漂 U+6F02 5253 piāo piǎo piào biāo
+模 U+6A21 5248 mó mú
+撒 U+6492 5227 sā sǎ
+庸 U+5EB8 5223 yōng yóng
+煞 U+715E 5211 shā shà
+諭 U+8AED 5184 yù tǒu
+焦 U+7126 5163 jiāo qiáo
+洋 U+6D0B 5126 yáng xiáng yǎng
+奚 U+595A 5117 xī xí
+羸 U+7FB8 5113 léi lián
+澡 U+6FA1 5069 zǎo cāo
+輿 U+8F3F 5066 yú yù
+絡 U+7D61 5057 luò lào
+蔭 U+852D 5037 yìn yīn
+諷 U+8AF7 4986 fěng fēng fèng
+聊 U+804A 4954 liáo liú
+覿 U+89BF 4932 dí jí
+捷 U+6377 4922 jié qiè
+屎 U+5C4E 4912 shǐ xī
+羨 U+7FA8 4907 xiàn yí yán
+瞞 U+779E 4885 mán mén mèn
+攞 U+651E 4862 luǒ luō lǚ
+歛 U+6B5B 4823 hān liǎn liàn
+窣 U+7AA3 4818 sù sū
+赫 U+8D6B 4815 hè xì shì
+磬 U+78EC 4801 qìng qǐng
+遽 U+907D 4795 jù qú
+帖 U+5E16 4788 tiē tiě tiè
+鄰 U+9130 4788 lín lìn
+拒 U+62D2 4784 jù jǔ
+滑 U+6ED1 4765 huá gǔ
+筋 U+7B4B 4729 jīn qián
+鑽 U+947D 4727 zuān zuàn
+讖 U+8B96 4721 chèn chàn
+措 U+63AA 4697 cuò zé
+削 U+524A 4686 xuē xiāo
+謚 U+8B1A 4672 shì yì xì
+壹 U+58F9 4647 yī yì
+醍 U+918D 4643 tí tǐ
+靖 U+9756 4639 jìng jīng
+甫 U+752B 4639 fǔ pù pǔ
+劈 U+5288 4638 pī pǐ
+贍 U+8D0D 4604 shàn dàn
+撞 U+649E 4589 zhuàng chuáng
+槌 U+69CC 4577 chuí zhuì duī
+療 U+7642 4559 liáo shuò
+瑩 U+7469 4554 yíng yǐng
+摶 U+6476 4548 tuán zhuān
+員 U+54E1 4546 yuán yùn
+漚 U+6F1A 4542 òu ōu
+繇 U+7E47 4522 yáo yóu zhòu yāo
+乍 U+4E4D 4508 zhà zuò
+轍 U+8F4D 4489 chè zhé
+汾 U+6C7E 4482 fén pén fēn
+昆 U+6606 4464 kūn hùn
+蓬 U+84EC 4454 péng pèng
+欄 U+6B04 4353 lán liàn
+尉 U+5C09 4332 wèi yù
+濤 U+6FE4 4331 tāo táo cháo shòu dào
+枳 U+67B3 4324 zhī zhí zhǐ
+剖 U+5256 4323 pōu pǒ
+汁 U+6C41 4315 zhī xié shī
+遁 U+9041 4298 dùn xún qūn
+遞 U+905E 4297 dì dài
+隊 U+968A 4287 duì suì zhuì
+个 U+4E2A 4272 gè gě
+厂 U+5382 4256 chǎng hàn ān
+爽 U+723D 4235 shuǎng shuāng
+栽 U+683D 4231 zāi zài
+嚼 U+56BC 4228 jiáo jué jiào
+釐 U+91D0 4218 lí xī
+釘 U+91D8 4215 dīng dìng líng
+拶 U+62F6 4192 zǎn zā
+匪 U+532A 4187 fěi fēi
+拉 U+62C9 4185 lā lá lǎ là
+衝 U+885D 4162 chōng chòng
+毋 U+6BCB 4160 wú móu
+殖 U+6B96 4148 zhí shì
+訟 U+8A1F 4110 sòng róng
+浣 U+6D63 4093 wǎn guǎn huàn
+隹 U+96B9 4089 zhuī cuī wéi
+凉 U+51C9 4082 liáng liàng
+勑 U+52D1 4060 lài chì
+窗 U+7A97 4059 chuāng cōng
+拓 U+62D3 4050 tuò tà zhí
+挑 U+6311 4030 tiāo tiǎo tāo
+猗 U+7317 4023 yī ē wēi yǐ jì
+夭 U+592D 4013 yāo wò wāi yǎo
+罕 U+7F55 3999 hǎn hàn
+阻 U+963B 3993 zǔ zhù
+覲 U+89B2 3980 jǐn jìn
+頸 U+9838 3946 jǐng gěng
+軸 U+8EF8 3920 zhóu zhú zhòu
+蹈 U+8E48 3903 dǎo dào
+沾 U+6CBE 3899 zhān tiān tiē diàn chān
+漿 U+6F3F 3875 jiāng jiàng
+肥 U+80A5 3875 féi bǐ
+縮 U+7E2E 3862 suō sù
+与 U+4E0E 3860 yǔ yù yú
+咬 U+54AC 3852 yǎo jiāo
+俟 U+4FDF 3843 sì qí
+脂 U+8102 3842 zhī zhǐ
+煎 U+714E 3835 jiān jiǎn jiàn
+瀑 U+7011 3833 pù bào bó
+棺 U+68FA 3823 guān guàn
+柄 U+67C4 3818 bǐng bìng
+啄 U+5544 3809 zhuó zhòu
+拽 U+62FD 3805 yè zhuài zhuāi
+剝 U+525D 3769 bō bāo
+幹 U+5E79 3767 gàn hán
+喧 U+55A7 3761 xuān xuǎn
+亘 U+4E98 3752 gèn gèng
+跨 U+8DE8 3728 kuà kù kuā kuǎ
+梯 U+68AF 3718 tī tí
+逗 U+9017 3714 dòu zhù tóu qí
+礫 U+792B 3679 lì luò
+釆 U+91C6 3677 biàn cǎi
+万 U+4E07 3672 wàn mò
+斜 U+659C 3665 xié xiá yé
+芬 U+82AC 3663 fēn fén
+矯 U+77EF 3661 jiǎo jiāo
+蘖 U+8616 3658 niè bì bò
+脊 U+810A 3652 jí jǐ
+揔 U+63D4 3648 zǒng zōng
+貯 U+8CAF 3642 zhǔ zhù
+亨 U+4EA8 3637 hēng xiǎng pēng
+骸 U+9AB8 3601 hái gāi
+撮 U+64AE 3601 cuō zuǒ
+孚 U+5B5A 3596 fú fū
+押 U+62BC 3584 yā xiá
+鋪 U+92EA 3572 pū pù
+澹 U+6FB9 3549 dàn dán shàn tán dān
+秤 U+79E4 3495 chèng chēng chèn píng
+摘 U+6458 3482 zhāi zhé
+餐 U+9910 3478 cān sùn
+啞 U+555E 3477 yǎ yā è
+零 U+96F6 3460 líng lián
+栖 U+6816 3437 qī xī
+汎 U+6C4E 3437 fàn fěng
+綴 U+7DB4 3433 zhuì chuò
+吃 U+5403 3413 chī jī
+洽 U+6D3D 3399 qià hé xiá
+組 U+7D44 3392 zǔ qū
+訥 U+8A25 3387 nè nà
+㲲 U+3CB2 3383 dié yì
+玩 U+73A9 3376 wán wàn
+洒 U+6D12 3352 sǎ cuǐ xǐ xiǎn sěn xùn
+沸 U+6CB8 3343 fèi fú
+体 U+4F53 3339 tǐ bèn tī
+塲 U+5872 3326 cháng chǎng
+脉 U+8109 3309 mài mò
+攜 U+651C 3307 xié xī xí
+稠 U+7A20 3293 chóu tiáo tiào diào
+蔣 U+8523 3281 jiǎng jiāng
+誣 U+8AA3 3274 wū wú
+蟻 U+87FB 3271 yǐ jǐ
+肖 U+8096 3257 xiào xiāo
+弁 U+5F01 3254 biàn pán
+糸 U+7CF8 3248 mì sī
+猒 U+7312 3242 yān yā yàn
+巷 U+5DF7 3236 xiàng hàng
+袒 U+8892 3232 tǎn zhàn
+倘 U+5018 3217 tǎng cháng
+戾 U+623E 3203 lì liè
+萌 U+840C 3194 méng míng
+抗 U+6297 3175 kàng káng
+煉 U+7149 3155 liàn làn
+苔 U+82D4 3124 tái tāi
+嬈 U+5B08 3122 rǎo ráo yǎo
+爍 U+720D 3119 shuò luò yuè
+絹 U+7D79 3099 juàn xuàn
+綸 U+7DB8 3091 lún guān
+莽 U+83BD 3075 mǎng máng
+捲 U+6372 3074 juǎn quán
+炤 U+70A4 3068 zhào zhāo
+瓊 U+74CA 3064 qióng xuán
+稅 U+7A05 3053 shuì tuàn tuì tuō
+濡 U+6FE1 3050 rú nuán ruǎn ér nuò
+膏 U+818F 3045 gāo gào
+膠 U+81A0 3027 jiāo jiǎo
+繒 U+7E52 3011 zēng céng zèng
+瞥 U+77A5 3010 piē bì
+浸 U+6D78 3006 jìn qīn
+揖 U+63D6 3005 yī jí
+綜 U+7D9C 3002 zōng zòng zèng
+蹟 U+8E5F 3001 jī jì
+榜 U+699C 2996 bǎng bàng bēng páng
+鉗 U+9257 2993 qián ān
+泡 U+6CE1 2987 pào páo pāo
+矜 U+77DC 2984 jīn guān qín
+耐 U+8010 2983 nài néng
+齎 U+9F4E 2979 jī qí
+馮 U+99AE 2969 féng píng
+尿 U+5C3F 2937 niào suī
+需 U+9700 2934 xū nuò ruǎn rú
+潑 U+6F51 2934 pō bō
+杓 U+6753 2933 sháo biāo shuó
+銕 U+9295 2931 tiě yí
+陟 U+965F 2913 zhì dé
+董 U+8463 2910 dǒng zhǒng
+蝦 U+8766 2904 xiā há jiǎ
+串 U+4E32 2904 chuàn guàn
+蔡 U+8521 2898 cài sà cā
+偕 U+5055 2894 xié jiē
+㵎 U+3D4E 2887 hǎn jiàn kǎn
+搭 U+642D 2882 dā tà
+痕 U+75D5 2875 hén gèn
+硬 U+786C 2873 yìng gěng
+肢 U+80A2 2858 zhī shì
+澆 U+6F86 2858 jiāo ào nào
+蕉 U+8549 2854 jiāo qiáo qiāo
+殑 U+6B91 2848 qíng jìng
+頡 U+9821 2836 jié jiá xié
+裴 U+88F4 2824 péi féi
+芒 U+8292 2820 máng wáng huǎng huāng
+挾 U+633E 2819 xié jiā xiá
+帥 U+5E25 2810 shuài shuò
+沮 U+6CAE 2797 jū jù jiān zǔ jǔ
+閡 U+95A1 2784 hé gāi ài hài kǎi
+皓 U+7693 2778 hào huī
+疆 U+7586 2777 jiāng qiáng jiàng
+隂 U+9682 2772 yīn ān yìn
+禎 U+798E 2771 zhēn zhēng
+褥 U+8925 2763 rù nù
+栢 U+6822 2755 bó bò bǎi
+蹄 U+8E44 2745 tí dì
+倡 U+5021 2737 chàng chāng
+藪 U+85EA 2724 sǒu shú còu
+篦 U+7BE6 2700 bì pí
+溟 U+6E9F 2682 míng mǐng mì
+掠 U+63A0 2661 lüè lüě
+駒 U+99D2 2655 jū jù
+芭 U+82AD 2652 bā pā
+鍼 U+937C 2651 zhēn qián
+禰 U+79B0 2651 nǐ mí xiǎn
+趁 U+8D81 2630 chèn zhēn chén
+頒 U+9812 2624 bān fén
+携 U+643A 2621 xī xí xié
+翫 U+7FEB 2607 wàn wān
+羹 U+7FB9 2602 gēng láng
+儲 U+5132 2595 chǔ chú
+泄 U+6CC4 2583 xiè yì
+圈 U+5708 2582 quān juàn
+翹 U+7FF9 2581 qiáo qiào
+聻 U+807B 2580 jī jí jiàn
+誼 U+8ABC 2577 yì yí
+迸 U+8FF8 2562 bèng bǐng pēng
+劃 U+5283 2553 huà huá
+陜 U+965C 2539 xiá shǎn
+廾 U+5EFE 2538 gǒng gòng niàn
+魄 U+9B44 2533 pò bó tuò
+蔓 U+8513 2533 màn wàn mán
+查 U+67E5 2520 chá zhā
+疋 U+758B 2497 pǐ pī shū yǎ
+銳 U+92B3 2482 ruì duì yuè
+汪 U+6C6A 2480 wāng wǎng hóng
+沿 U+6CBF 2478 yán yàn
+倣 U+5023 2477 fǎng páng
+蔬 U+852C 2474 shū xū shǔ
+溝 U+6E9D 2473 gōu gǎng kòu
+摽 U+647D 2470 piāo biào biāo pāo piǎo
+帆 U+5E06 2465 fān fán
+揣 U+63E3 2462 chuǎi chuāi chuài tuán zhuī
+虚 U+865A 2420 xū qū
+亞 U+4E9E 2414 yà yā
+倆 U+5006 2413 liǎ liǎng
+晃 U+6643 2410 huǎng huàng
+稜 U+7A1C 2400 léng lèng líng
+攢 U+6522 2385 zǎn cuán zuān
+奄 U+5944 2378 yǎn yān
+朴 U+6734 2370 pò pú pō piáo pǔ
+顆 U+9846 2364 kē kě kuǎn
+邈 U+9088 2363 miǎo miáo
+楷 U+6977 2356 kǎi jiē
+肚 U+809A 2333 dù dǔ
+賺 U+8CFA 2324 zhuàn zuàn
+裳 U+88F3 2320 shang cháng
+碩 U+78A9 2317 shuò shí
+繪 U+7E6A 2311 huì guì
+赦 U+8D66 2305 shè cè
+虵 U+8675 2305 shé yí
+淹 U+6DF9 2297 yān yǎn
+叚 U+53DA 2289 jiǎ jià xiá
+猫 U+732B 2285 māo máo miáo
+甄 U+7504 2276 zhēn zhèn juàn
+爇 U+7207 2271 ruò rè
+痒 U+75D2 2270 yǎng yáng
+飡 U+98E1 2266 cān sūn
+租 U+79DF 2252 zū jū
+吧 U+5427 2207 ba bā
+溥 U+6EA5 2201 pǔ fū bù bó pò
+亟 U+4E9F 2200 jí qì
+劄 U+5284 2198 zhá dá
+鷂 U+9DC2 2194 yào yáo
+踵 U+8E35 2185 zhǒng zhòng
+臆 U+81C6 2185 yì yǐ
+㝵 U+3775 2181 dé ài
+棹 U+68F9 2166 zhuō zhào
+孛 U+5B5B 2153 bèi bó
+抹 U+62B9 2137 mǒ mā mò
+歐 U+6B50 2118 ōu ǒu
+儿 U+513F 2110 ér er
+挈 U+6308 2102 qiè qì
+鋤 U+92E4 2100 chú jǔ
+窓 U+7A93 2094 chuāng cōng
+苐 U+82D0 2088 yí tí dì
+擘 U+64D8 2081 bāi bò
+唄 U+5504 2072 bài bei
+培 U+57F9 2062 péi pǒu
+冒 U+5192 2041 mào mòu mò
+燋 U+71CB 2040 jiāo qiáo
+液 U+6DB2 2034 yè yì shì
+驟 U+9A5F 2030 zòu zhòu
+筒 U+7B52 2028 tǒng tóng dòng
+仇 U+4EC7 2025 chóu qiú
+燥 U+71E5 2021 zào sào
+蔔 U+8514 2021 bo bó
+簿 U+7C3F 2020 bù bó
+諳 U+8AF3 2019 ān tǒu
+圜 U+571C 2014 yuán huán
+匱 U+5331 2007 guì kuì
+哈 U+54C8 2005 hā hǎ hà
+羡 U+7FA1 1993 xiàn yí yán
+勾 U+52FE 1989 gōu gòu
+嗎 U+55CE 1987 ma má mǎ
+溼 U+6EBC 1985 shī qì
+属 U+5C5E 1981 shǔ zhǔ
+捻 U+637B 1978 niǎn niē
+濯 U+6FEF 1975 zhuó zhào shuò
+萎 U+840E 1968 wēi wěi
+癩 U+7669 1965 lài là
+馨 U+99A8 1964 xīn xīng
+楔 U+6954 1956 xiē xiè
+鄣 U+9123 1944 zhāng zhàng
+闔 U+95D4 1944 hé gé
+胞 U+80DE 1940 bāo páo pào
+訾 U+8A3E 1932 zǐ zī cī
+撩 U+64A9 1915 liāo liáo liào
+皿 U+76BF 1914 mǐn mǐng
+饌 U+994C 1907 zhuàn xuǎn
+淑 U+6DD1 1895 shú shū chù
+韜 U+97DC 1893 tāo tào
+涵 U+6DB5 1892 hán hàn
+沓 U+6C93 1892 tà dá
+踢 U+8E22 1891 tī dié
+粘 U+7C98 1890 nián liān zhān
+冐 U+5190 1890 mào mò
+闌 U+95CC 1879 lán làn
+壅 U+58C5 1877 yōng yǒng
+潘 U+6F58 1868 pān pán fān pàn bō
+賒 U+8CD2 1867 shē shā
+贖 U+8D16 1864 shú shù
+扁 U+6241 1860 biǎn piān biàn
+鵬 U+9D6C 1856 péng fèng
+瞑 U+7791 1844 míng mǐng mián miàn méng
+耗 U+8017 1843 hào máo mào
+嘿 U+563F 1838 hēi mò
+琅 U+7405 1832 láng làng
+攘 U+6518 1825 ràng rǎng níng xiǎng ráng
+滲 U+6EF2 1822 shèn qīn sēn lín
+酢 U+9162 1820 zuò cù
+袍 U+888D 1818 páo bào
+雌 U+96CC 1817 cí cī
+蟠 U+87E0 1816 pán fán
+蕃 U+8543 1811 fán fān bó pí bō
+糜 U+7CDC 1804 mí méi
+虹 U+8679 1801 hóng jiàng hòng gòng
+馥 U+99A5 1799 fù bì
+腋 U+814B 1796 yì yè
+倪 U+502A 1786 ní nì
+脾 U+813E 1772 pí pái bì pì
+諒 U+8AD2 1772 liàng liáng
+衷 U+8877 1767 zhōng zhòng
+峙 U+5CD9 1762 zhì shì
+掇 U+6387 1762 duó duō
+驕 U+9A55 1758 jiāo xiāo jū qiáo
+剏 U+524F 1757 chuàng chuāng
+款 U+6B3E 1747 kuǎn xīn
+逞 U+901E 1745 chěng yíng
+蹲 U+8E72 1743 dūn dún cún zūn cǔn cuán
+薛 U+859B 1741 xuē xiē
+估 U+4F30 1739 gū gǔ gù
+霍 U+970D 1734 huò hè suǒ
+来 U+6765 1733 lái lài
+惚 U+60DA 1733 hū bū
+狸 U+72F8 1732 lí mái
+佚 U+4F5A 1731 yì dié
+磚 U+78DA 1729 zhuān tuán tuó
+郢 U+90E2 1726 yǐng chéng
+亙 U+4E99 1717 gèn gèng
+掬 U+63AC 1713 jú jū
+仔 U+4ED4 1709 zǐ zǎi
+盾 U+76FE 1709 dùn shǔn yǔn
+葱 U+8471 1700 cōng chuāng
+觜 U+89DC 1689 zī zuǐ
+爆 U+7206 1688 bào bó
+擻 U+64FB 1684 sǒu sòu
+鑰 U+9470 1681 yào yuè
+蔚 U+851A 1678 wèi yù
+鴉 U+9D09 1676 yā yǎ
+獷 U+7377 1674 guǎng jǐng
+簸 U+7C38 1664 bò bǒ
+鯨 U+9BE8 1658 jīng qíng
+魁 U+9B41 1656 kuí kuǐ kuài
+筠 U+7B60 1651 yún jūn
+控 U+63A7 1649 kòng qiāng
+蝶 U+8776 1649 dié tiē
+艾 U+827E 1649 ài yì
+雉 U+96C9 1642 zhì kǎi yǐ sì
+俞 U+4FDE 1642 yú shù
+雹 U+96F9 1637 báo bó
+匙 U+5319 1635 chí shi
+臚 U+81DA 1634 lú lǚ
+脹 U+8139 1633 zhàng cháng
+份 U+4EFD 1632 fèn bīn
+陂 U+9642 1629 bēi bì pō pí
+粳 U+7CB3 1623 gēng jīng
+徊 U+5F8A 1619 huái huí
+漱 U+6F31 1618 shù sòu
+拆 U+62C6 1611 chāi cā chè
+琢 U+7422 1607 zhuó zuó
+磕 U+78D5 1607 kē kě
+盍 U+76CD 1606 hé kě
+盟 U+76DF 1597 méng míng mèng
+孺 U+5B7A 1595 rú rù
+賔 U+8CD4 1593 bīn bìn
+彷 U+5F77 1588 páng fǎng
+蚤 U+86A4 1586 zǎo zhǎo
+簇 U+7C07 1584 cù còu chuò
+亢 U+4EA2 1581 kàng gāng
+綽 U+7DBD 1579 chuò chāo
+窄 U+7A84 1575 zhǎi zé
+壘 U+58D8 1574 lěi lèi léi lǜ
+皺 U+76BA 1573 zhòu zhōu
+剡 U+5261 1563 yǎn shàn
+灘 U+7058 1560 tān hàn nàn
+颯 U+98AF 1558 sà lì
+站 U+7AD9 1557 zhàn zhān
+膜 U+819C 1556 mò mó
+薜 U+859C 1555 bì bò bó bài pì
+彊 U+5F4A 1554 qiáng qiǎng jiāng jiàng
+脅 U+8105 1551 xié xiàn xī
+咀 U+5480 1547 jǔ zǔ
+梢 U+68A2 1546 shāo shào xiāo
+倩 U+5029 1546 qiàn qìng
+噴 U+5674 1539 pēn pèn
+舡 U+8221 1536 gāng chuán xiāng
+檐 U+6A90 1533 yán dān
+隘 U+9698 1531 ài è
+眩 U+7729 1516 xuàn huàn juàn
+粹 U+7CB9 1516 cuì suì
+徘 U+5F98 1514 pái péi
+樸 U+6A38 1509 pú pǔ
+肌 U+808C 1506 jī jì
+撾 U+64BE 1504 zhuā wō
+蝕 U+8755 1503 shí lì lóng
+驪 U+9A6A 1503 lí chí
+鏤 U+93E4 1501 lòu lǘ
+潦 U+6F66 1501 lǎo lào láo liáo liǎo
+苕 U+82D5 1499 tiáo sháo
+屯 U+5C6F 1497 tún zhūn
+檻 U+6ABB 1493 jiàn kǎn xiǎn
+掖 U+6396 1490 yè yē yì yě
+喏 U+558F 1490 rě nuò
+核 U+6838 1488 hé hú
+堤 U+5824 1479 dī tí
+肺 U+80BA 1477 fèi pèi
+鞠 U+97A0 1472 jū jú qū qiōng
+睫 U+776B 1462 jié shè
+馴 U+99B4 1461 xún xùn
+僮 U+50EE 1457 tóng zhuàng
+葷 U+8477 1457 hūn xūn
+鐙 U+9419 1451 dèng dēng
+梧 U+68A7 1450 wú wù yǔ
+叄 U+53C4 1450 cān cēn càn shēn sān sǎn
+仝 U+4EDD 1448 tóng tòng
+緫 U+7DEB 1447 cōng zōng zǒng
+癹 U+7679 1441 pō bá
+黏 U+9ECF 1431 nián niān zhān
+刷 U+5237 1427 shuā shuà
+爻 U+723B 1422 yáo xiào
+紋 U+7D0B 1420 wén wèn
+璉 U+7489 1417 lián liǎn
+叨 U+53E8 1416 tāo dāo
+巫 U+5DEB 1414 wū wú
+坻 U+577B 1411 chí dǐ
+挨 U+6328 1409 āi ái
+諄 U+8AC4 1408 zhūn zhùn
+号 U+53F7 1408 hào háo
+狄 U+72C4 1407 dí tì
+瘥 U+7625 1405 chài cuó
+湫 U+6E6B 1403 jiǎo jiù jiū qiū qiù
+皤 U+76A4 1402 pó pán
+竄 U+7AC4 1400 cuàn cuān
+茆 U+8306 1395 mǎo máo
+砌 U+780C 1394 qì qiè
+淋 U+6DCB 1393 lín lìn
+茗 U+8317 1390 míng mǐng
+閼 U+95BC 1390 è yān yù yè
+紇 U+7D07 1383 hé gē jié
+傭 U+50AD 1379 yōng yóng
+咤 U+54A4 1378 zhà chà zhā
+澍 U+6F8D 1373 shù zhù
+臧 U+81E7 1372 zāng cáng zàng záng
+吁 U+5401 1371 xū yù
+嶠 U+5DA0 1359 jiào qiáo
+螫 U+87AB 1356 shì zhē
+汩 U+6C69 1356 gǔ yù hú
+涓 U+6D93 1355 juān yuàn xuàn
+藩 U+85E9 1353 fán fān
+昱 U+6631 1350 yù yì
+琊 U+740A 1350 yé yá
+涎 U+6D8E 1349 xián yàn diàn
+碓 U+7893 1348 duì duī
+蟬 U+87EC 1348 chán shàn
+糊 U+7CCA 1343 hú hū hù
+涸 U+6DB8 1343 hé hào
+稷 U+7A37 1336 jì zè
+鵠 U+9D60 1335 hú gǔ hè
+芸 U+82B8 1330 yún yì yùn
+蘄 U+8604 1329 qí jī qín
+甯 U+752F 1325 níng nìng
+樊 U+6A0A 1324 fán pán fàn
+蕪 U+856A 1318 wú wǔ
+苞 U+82DE 1318 bāo páo biāo
+咳 U+54B3 1317 ké hāi hái kài
+漲 U+6F32 1315 zhǎng zhàng zhāng
+跌 U+8DCC 1314 diē dié tú
+悖 U+6096 1311 bèi bó
+叶 U+53F6 1310 xié yè shè
+甌 U+750C 1310 ōu ǒu
+漬 U+6F2C 1298 zì sè qì
+媿 U+5ABF 1293 kuì guǐ
+埽 U+57FD 1292 sào sǎo
+胥 U+80E5 1289 xū xǔ
+嘶 U+5636 1289 sī xī
+猥 U+7325 1287 wěi wèi
+徇 U+5F87 1286 xùn xún
+舂 U+8202 1286 chōng chuāng zhōng
+穹 U+7A79 1285 qióng qiōng kōng
+殼 U+6BBC 1284 ké qiào
+械 U+68B0 1279 xiè jiè
+潰 U+6F70 1271 kuì xiè
+詶 U+8A76 1269 chóu zhòu
+燉 U+71C9 1266 dùn dūn tūn tún
+迂 U+8FC2 1259 yū yù
+祁 U+7941 1257 qí zhǐ
+絮 U+7D6E 1256 xù nǜ qù chù nà
+洟 U+6D1F 1254 yí tì
+膊 U+818A 1249 bó pò liè
+斡 U+65A1 1246 wò guǎn
+孃 U+5B43 1243 niáng náng ráng rǎng
+氐 U+6C10 1240 dǐ dī zhī
+杉 U+6749 1238 shān shā
+淆 U+6DC6 1236 yáo xiáo
+沽 U+6CBD 1234 gū gǔ
+樁 U+6A01 1223 zhuāng chōng
+瀆 U+7006 1221 dú dòu
+槍 U+69CD 1216 qiāng chēng
+蟒 U+87D2 1216 mǎng měng
+蹇 U+8E47 1213 jiǎn qiān
+蠡 U+8821 1212 lǐ lí luó luǒ lì
+碌 U+788C 1209 lù liù luò
+眇 U+7707 1208 miǎo miào
+撕 U+6495 1206 sī xī
+槁 U+69C1 1206 gǎo kào gāo
+濂 U+6FC2 1203 lián xiǎn
+鶻 U+9DBB 1202 gú hú gǔ
+裨 U+88E8 1201 bì pí
+繹 U+7E79 1200 yì shì
+呀 U+5440 1196 yā ya
+鐺 U+943A 1193 dāng chēng tāng
+犧 U+72A7 1192 xī suō
+价 U+4EF7 1191 jiè jie
+謫 U+8B2B 1190 zhé zé
+燎 U+71CE 1189 liǎo liáo liào
+廡 U+5EE1 1181 wǔ wú
+鋸 U+92F8 1177 jù jū
+泠 U+6CE0 1167 líng lǐng
+欬 U+6B2C 1157 kài ké
+諠 U+8AE0 1150 xuān xuǎn
+衙 U+8859 1145 yá yú yǔ yù
+仆 U+4EC6 1141 pū fù pú
+簫 U+7C2B 1140 xiāo xiǎo
+聶 U+8076 1140 niè zhè shè zhé yè
+蛻 U+86FB 1134 tuì yuè shuì
+捩 U+6369 1133 liè lì
+髟 U+9ADF 1130 biāo shān piào
+紆 U+7D06 1127 yū yǔ ōu
+蹴 U+8E74 1127 cù zú
+毳 U+6BF3 1125 cuì qiāo xiā
+禧 U+79A7 1124 xǐ xī
+褐 U+8910 1123 hé hè
+箸 U+7BB8 1121 zhù zhuó
+眴 U+7734 1113 xuàn shùn
+騷 U+9A37 1100 sāo sǎo xiāo
+蒿 U+84BF 1099 hāo gǎo
+兹 U+5179 1099 zī cí
+黯 U+9EEF 1099 àn ān
+埤 U+57E4 1097 pí bēi bì
+騫 U+9A2B 1096 qiān jiǎn
+蟆 U+87C6 1096 má mò
+秫 U+79EB 1095 shú shù
+糅 U+7CC5 1093 rǒu róu
+玷 U+73B7 1091 diàn diān
+齩 U+9F69 1086 yǎo jiāo yāo
+懵 U+61F5 1086 měng méng
+鬻 U+9B3B 1084 yù zhōu zhǔ zhù jū
+佃 U+4F43 1083 diàn tián
+溉 U+6E89 1082 gài xiè
+鍋 U+934B 1080 guō guǒ
+頇 U+9807 1079 hān àn
+柁 U+67C1 1076 duò tuó tuǒ
+謦 U+8B26 1069 qìng qǐng
+瞢 U+77A2 1068 méng mèng máng
+捋 U+634B 1067 lè lǚ luō
+瓠 U+74E0 1066 hù hú huò gū
+煨 U+7168 1065 wēi yù
+鎗 U+9397 1062 qiāng qiàng chēng
+抓 U+6293 1061 zhuā zhāo
+轂 U+8F42 1061 gǔ gū
+脛 U+811B 1055 jìng kēng
+緝 U+7DDD 1055 jī qì qī jí
+賁 U+8CC1 1054 bì bēn féi fén fèn
+豊 U+8C4A 1051 lǐ fēng
+勁 U+52C1 1044 jìn jìng
+蔵 U+8535 1044 zāng cáng
+簪 U+7C2A 1039 zān zǎn
+砥 U+7825 1039 dǐ zhǐ
+畱 U+7571 1038 liú liǔ
+貸 U+8CB8 1037 dài tè
+埿 U+57FF 1031 ní bàn
+疣 U+75A3 1030 yóu yòu
+㲉 U+3C89 1030 kài ké
+絞 U+7D5E 1029 jiǎo xiáo jiào
+愉 U+6109 1028 yú tōu
+蛙 U+86D9 1020 wā jué
+聘 U+8058 1015 pìn pìng
+缶 U+7F36 1007 fǒu guàn
+攷 U+6537 1005 kǎo káo
+摠 U+6460 992 zǒng zōng
+艮 U+826E 983 gèn gěn hén
+煬 U+716C 981 yáng yàng
+欻 U+6B3B 977 xū chuā hū
+翛 U+7FDB 975 xiāo shù
+港 U+6E2F 973 gǎng hòng
+驃 U+9A43 972 piào biāo
+蹔 U+8E54 970 zhàn zàn
+牕 U+7255 969 chuāng cōng
+嶼 U+5DBC 967 yǔ xù
+歹 U+6B79 967 dǎi è dāi
+窈 U+7A88 966 yǎo yào
+鏃 U+93C3 966 zú chuò
+喀 U+5580 964 kā kè ke
+錍 U+930D 961 pí pī
+劵 U+52B5 960 juàn quàn
+沌 U+6C8C 960 dùn tún zhuàn chún
+迮 U+8FEE 959 zé zuò
+昬 U+662C 958 hūn mǐn
+駱 U+99F1 955 luò jià
+煆 U+7146 948 xiā xià
+拗 U+62D7 947 ǎo ào niù
+湮 U+6E6E 945 yīn yān
+蠕 U+8815 942 rú ruǎn
+瞭 U+77AD 938 liǎo liào yǎo
+窒 U+7A92 937 zhì dié
+泆 U+6CC6 933 yī yì
+顢 U+9862 928 mán mān
+逅 U+9005 928 hòu gòu
+疵 U+75B5 927 cī zī zhài jì
+箴 U+7BB4 920 zhēn jiǎn
+蛆 U+86C6 915 qū jū
+衿 U+887F 912 jīn qìn
+嶷 U+5DB7 909 yí nì
+肋 U+808B 907 lèi lè lē jīn
+鞴 U+97B4 907 bèi bù fú bài
+擿 U+64FF 906 zhí tì zhì
+珣 U+73E3 904 xún xuān
+熒 U+7192 903 yíng xíng jiǒng
+皋 U+768B 903 gāo gū háo
+唼 U+553C 902 shà zā qiè
+涇 U+6D87 901 jīng qǐng
+羮 U+7FAE 900 gēng láng
+迤 U+8FE4 899 yǐ tuō yí tuó
+謳 U+8B33 899 ōu xú
+瘳 U+7633 897 chōu lù
+嘲 U+5632 897 cháo zhāo
+搔 U+6414 894 sāo zhǎo
+蟄 U+87C4 893 zhé zhí
+汀 U+6C40 892 tīng dìng tìng
+蚖 U+8696 888 wán yuán
+溜 U+6E9C 887 liū liù liú
+蚌 U+868C 884 bàng bèng pí fēng
+瘧 U+7627 883 nüè yào
+菽 U+83FD 883 shú shū jiāo
+蜎 U+870E 877 yuān xuān
+鑠 U+9460 877 shuò yuè lì
+隄 U+9684 875 dī tí
+閔 U+9594 873 mǐn mín
+躅 U+8E85 870 zhú zhuó
+阮 U+962E 864 ruǎn juàn yuán
+僂 U+50C2 863 lǚ lóu
+蝎 U+874E 861 hé xiē
+閤 U+95A4 855 gé hé
+蛾 U+86FE 855 é yǐ
+邕 U+9095 854 yōng yǒng
+橈 U+6A48 854 náo ráo
+繆 U+7E46 853 móu jiū liǎo miào miù mù
+嘔 U+5614 847 ōu ǒu òu xū ou
+侗 U+4F97 846 tōng tóng tǒng dòng
+繢 U+7E62 843 huì huí
+跑 U+8DD1 842 pǎo páo bó
+噯 U+566F 838 ǎi ài āi
+疽 U+75BD 836 jū jǔ
+蛤 U+86E4 835 há gé hā è
+擗 U+64D7 834 pì pǐ
+釵 U+91F5 831 chāi chā
+覃 U+8983 828 tán qín yǎn
+叭 U+53ED 828 bā ba
+藂 U+85C2 819 còng cóng
+殻 U+6BBB 818 què ké qiào
+嚇 U+5687 815 xià hè
+洄 U+6D04 812 huí huì
+羝 U+7F9D 812 dī dǐ
+俛 U+4FDB 808 fǔ miǎn
+袂 U+8882 805 mèi yì
+漾 U+6F3E 803 yàng yáng
+鉛 U+925B 803 qiān yán
+糾 U+7CFE 803 jiū jiǔ
+㘕 U+3615 803 hǎn lán
+姥 U+59E5 800 mǔ lǎo
+楗 U+6957 799 jiàn jiǎn
+椅 U+6905 798 yǐ yī
+顫 U+986B 797 zhàn chàn shān
+楖 U+6956 792 zhì jí
+浹 U+6D79 790 jiá jiā
+呆 U+5446 790 dāi ái
+菟 U+83DF 789 tù tú
+尢 U+5C22 785 wāng yóu
+蹬 U+8E6C 785 dèng dēng
+虺 U+867A 780 huǐ huī
+茸 U+8338 779 róng rǒng
+梭 U+68AD 778 suō xùn
+謎 U+8B0E 777 mí mèi mì
+卡 U+5361 776 qiǎ kǎ
+擕 U+64D5 775 xī xí xié
+离 U+79BB 775 lí chī lì
+懅 U+61C5 770 qú jù
+訢 U+8A22 769 xīn xī yín
+渥 U+6E25 768 wò òu wū
+躇 U+8E87 768 chú chuò
+狡 U+72E1 765 jiǎo xiào
+髴 U+9AF4 763 fú fèi
+杻 U+677B 761 chǒu niǔ
+贄 U+8D04 759 zhì zhí
+餧 U+9927 758 wèi něi
+霸 U+9738 757 bà pò
+暝 U+669D 756 míng mǐng
+蹶 U+8E76 756 jué juě guì
+鞅 U+9785 755 yǎng yāng
+溷 U+6EB7 755 hùn hún
+穰 U+7A70 753 ráng rǎng réng
+駃 U+99C3 753 kuài jué
+詆 U+8A46 753 dǐ tì
+狠 U+72E0 749 hěn yín yán kěn hǎng
+酣 U+9163 749 hān hàn
+笏 U+7B0F 746 hù wěn wù
+裓 U+88D3 744 gé jiē
+襵 U+8975 739 zhé zhě
+楮 U+696E 739 chǔ zhū
+甸 U+7538 738 diàn shèng tián yìng
+勦 U+52E6 737 jiǎo chāo
+凹 U+51F9 737 āo wā
+褚 U+891A 736 chǔ zhě zhǔ
+沱 U+6CB1 736 tuó duò chí
+噁 U+5641 733 ě wù
+湍 U+6E4D 732 tuān zhuān
+紊 U+7D0A 731 wèn wěn
+苫 U+82EB 730 shān shàn tiān chān
+檜 U+6A9C 726 guì kuài huì
+燿 U+71FF 724 yào shào shuò
+痾 U+75FE 724 ē kē
+曙 U+66D9 723 shù shǔ
+縹 U+7E39 723 piǎo piāo
+耑 U+8011 722 zhuān duān
+鄒 U+9112 720 zōu jù
+浚 U+6D5A 719 jùn xùn cún
+濺 U+6FFA 719 jiàn jiān zàn
+勺 U+52FA 716 sháo zhuó
+邢 U+90A2 713 xíng gěng
+趍 U+8D8D 710 chí qū
+舖 U+8216 707 pù pū
+嫩 U+5AE9 706 nèn nùn
+鵄 U+9D44 705 zhī chī
+騃 U+9A03 705 ái dāi
+崗 U+5D17 704 gǎng gāng
+菲 U+83F2 704 fēi fěi fèi
+煒 U+7152 703 wěi huī
+慊 U+614A 703 qiàn qiè
+苻 U+82FB 703 fú pú
+紗 U+7D17 699 shā miǎo
+摭 U+646D 698 zhí tuò
+腔 U+8154 698 qiāng kòng
+橐 U+6A50 698 tuó dù luò tuò
+潼 U+6F7C 697 tóng chōng zhōng
+弛 U+5F1B 696 chí shǐ
+徳 U+5FB3 695 dé duó
+桎 U+684E 694 zhì zhí
+揲 U+63F2 689 shé tié dié yè
+隕 U+9695 685 yǔn yuán
+蹊 U+8E4A 682 xī qī xí
+擐 U+64D0 682 huàn guān xuān
+処 U+51E6 682 chǔ chù jù
+碾 U+78BE 681 niǎn niàn liǎn
+坏 U+574F 680 huài pī péi
+芋 U+828B 677 yù hū xū yǔ yú
+慵 U+6175 677 yōng yóng
+彗 U+5F57 677 huì suì
+諗 U+8AD7 675 shěn niè
+釀 U+91C0 675 niàng niáng
+溯 U+6EAF 674 sù shuò
+槽 U+69FD 674 cáo zāo
+廈 U+5EC8 673 shà xià
+鴟 U+9D1F 672 chī zhī
+閬 U+95AC 671 lǎng dū
+禺 U+79BA 670 yú ǒu yù
+輅 U+8F05 670 lù yà hé
+槎 U+69CE 670 chá chā zhā
+跣 U+8DE3 667 xiǎn xiān sǔn
+郵 U+90F5 666 yóu chuí
+鉏 U+924F 663 chú jǔ xú
+輾 U+8F3E 662 zhǎn niǎn
+篩 U+7BE9 661 shāi shī
+晟 U+665F 660 shèng chéng jīng
+詹 U+8A79 659 zhān shàn dàn
+関 U+95A2 658 guān wān wǎn
+鮑 U+9B91 654 bào bāo pāo
+茄 U+8304 650 qié jiā
+褊 U+890A 650 biǎn piān
+綏 U+7D8F 648 suī suí shuāi ruí tuǒ
+梏 U+688F 648 gù jué
+扎 U+624E 645 zhā zhá zā zhǎ
+唅 U+5505 638 hān hán hàn
+趯 U+8DAF 637 tì yuè
+繚 U+7E5A 635 liáo rǎo
+棋 U+68CB 632 qí jī
+煦 U+7166 631 xǔ xù xiū
+芟 U+829F 630 shān wěi
+祢 U+7962 629 mí nǐ
+玘 U+7398 628 jǐ qǐ
+磴 U+78F4 627 dèng dēng
+㓨 U+34E8 627 cí cì
+仡 U+4EE1 626 yì gē
+亹 U+4EB9 625 wěi mén
+纍 U+7E8D 625 léi lèi lěi
+詬 U+8A6C 619 gòu hòu
+欹 U+6B39 618 yī qī
+徼 U+5FBC 618 jiào jiǎo jiāo yāo yáo
+踝 U+8E1D 618 huái huà
+蓼 U+84FC 615 liǎo lù lǎo liǔ
+扃 U+6243 615 jiōng jiǒng
+倭 U+502D 614 wēi wō wǒ
+謔 U+8B14 614 nüè xuè
+墯 U+58AF 614 duò huī
+糝 U+7CDD 613 sǎn sān
+埀 U+57C0 613 chuí zhuì
+滇 U+6EC7 612 diān tián zhēn
+帑 U+5E11 609 tǎng nú
+嫗 U+5AD7 608 yù yǔ
+橙 U+6A59 608 chéng chén dèng
+瘠 U+7620 607 jí zì
+睇 U+7747 606 dì tī tí
+雛 U+96DB 606 chú jú jù
+畦 U+7566 604 qí xí
+賃 U+8CC3 602 lìn rèn
+鉞 U+925E 598 yuè huì
+鬲 U+9B32 597 lì gé è
+暈 U+6688 596 yūn yùn
+逄 U+9004 592 páng féng
+碣 U+78A3 592 jié kè yà
+葡 U+8461 590 pú bèi
+脯 U+812F 590 fǔ pú
+昵 U+6635 588 nì nǐ zhì
+懾 U+61FE 587 shè zhé
+棱 U+68F1 587 léng lēng líng lèng
+渙 U+6E19 584 huàn huì
+柵 U+67F5 582 zhà cè shà shān
+臊 U+81CA 579 sāo sào
+漕 U+6F15 579 cáo cào
+玆 U+7386 578 zī cī xuán
+䑛 U+445B 578 chǐ shì yì
+敖 U+6556 576 áo ào
+爿 U+723F 575 qiáng pán
+飭 U+98ED 575 chì shì
+噶 U+5676 574 gé gá
+箬 U+7BAC 572 ruò nà
+跂 U+8DC2 572 qí qǐ qì
+翟 U+7FDF 571 dí zhái
+霅 U+9705 570 zhá xiá zhà shà
+漩 U+6F29 570 xuán xuàn
+票 U+7968 569 piào piāo
+犛 U+729B 567 lí máo
+阤 U+9624 565 tuó yǐ zhì
+痆 U+75C6 565 nì nà
+嘹 U+5639 565 liáo liào
+沂 U+6C82 564 yí yín
+蕊 U+854A 563 ruǐ juǎn
+聒 U+8052 563 guā guō
+陿 U+967F 562 shǎn xiá
+髦 U+9AE6 562 máo lí
+賷 U+8CF7 559 jī qí
+褻 U+893B 558 xiè dié
+鈷 U+9237 558 gǔ gū gú gù hú
+豚 U+8C5A 557 tún dūn
+攣 U+6523 555 luán liàn
+慌 U+614C 550 huāng huǎng
+翮 U+7FEE 549 hé lì
+煇 U+7147 548 huī xūn yùn
+摺 U+647A 547 zhé lā
+饋 U+994B 546 kuì tuí
+抃 U+6283 543 biàn pàn
+甬 U+752C 541 yǒng dòng
+扠 U+6260 539 chā zhǎ
+杷 U+6777 539 pá bà
+獃 U+7343 538 dāi ái
+轄 U+8F44 537 xiá hé
+蘋 U+860B 537 pín píng
+葆 U+8446 536 bǎo bāo
+廕 U+5ED5 535 yìn yīn
+从 U+4ECE 534 cóng zòng zōng cōng
+薇 U+8587 532 wéi wēi
+菀 U+83C0 532 wǎn yuàn yù yùn
+躓 U+8E93 530 zhì zhī
+繳 U+7E73 529 jiǎo zhuó jiào hé
+詫 U+8A6B 529 chà dù
+洵 U+6D35 525 xún xuàn
+菌 U+83CC 525 jūn jùn
+蝸 U+8778 525 guā wō luó guǒ
+帕 U+5E15 524 pà mò
+郝 U+90DD 522 hǎo shì
+歘 U+6B58 521 xū chuā
+鈸 U+9238 519 bó bá
+珉 U+73C9 518 mín wén
+譙 U+8B59 515 qiáo qiào
+闓 U+95D3 514 kǎi kāi
+挐 U+6310 513 rú ná nú ráo
+戱 U+6231 510 xì xī hū huī
+慷 U+6177 509 kāng kǎng
+熬 U+71AC 509 áo āo
+孳 U+5B73 507 zī zì
+傀 U+5080 507 guī kuǐ
+淛 U+6DDB 505 zhì zhè
+瓨 U+74E8 505 jiāng hóng
+穬 U+7A6C 504 gǒng kuàng
+鶉 U+9D89 501 chún tuán
+夗 U+5917 499 yuàn wǎn
+鋼 U+92FC 499 gāng gàng
+惔 U+60D4 496 tán dàn
+亶 U+4EB6 493 dǎn dàn
+瞠 U+77A0 493 chēng zhèng
+仿 U+4EFF 492 fǎng páng
+潯 U+6F6F 490 xún yín
+澣 U+6FA3 490 huǎn huàn hàn wǎn guǎn
+黧 U+9EE7 489 lí lái
+覇 U+8987 487 bà pò
+狥 U+72E5 483 xùn xún
+麫 U+9EAB 482 miǎn miàn
+燾 U+71FE 481 dào tāo chóu
+湻 U+6E7B 481 chún zhūn
+裒 U+88D2 480 póu bāo
+蜒 U+8712 479 yán yàn dàn
+洮 U+6D2E 479 táo yáo dào tāo
+雋 U+96CB 479 jùn juàn
+苛 U+82DB 477 kē hē hé
+瑾 U+747E 475 jǐn jìn
+闚 U+95DA 474 kuī kuǐ
+鶩 U+9DA9 473 wù mù
+畬 U+756C 472 yú shē
+苣 U+82E3 471 jù qǔ
+鞔 U+9794 468 wǎn mán mèn
+搶 U+6436 468 qiǎng qiāng chēng
+筩 U+7B69 467 tǒng yǒng dòng tóng
+㰤 U+3C24 465 kě qià
+抆 U+6286 463 wèn wěn
+斐 U+6590 463 fěi fēi
+樗 U+6A17 462 chū shū
+閶 U+95B6 462 chāng tāng
+藿 U+85FF 459 huò hé
+卬 U+536C 459 áng yǎng
+盼 U+76FC 458 pàn fén
+炮 U+70AE 457 pào bāo páo
+窶 U+7AB6 454 jù lóu
+苴 U+82F4 454 jū chá zhǎ zū jiē bāo xié
+醮 U+91AE 454 jiào qiáo zhàn
+嵯 U+5D6F 454 cuó cī
+妳 U+59B3 452 nǎi nǐ
+紡 U+7D21 451 fǎng bǎng fàng
+芮 U+82AE 450 ruì ruò
+氤 U+6C24 448 yīn yán
+癬 U+766C 448 xuǎn xiǎn
+鐃 U+9403 448 náo nào
+杼 U+677C 447 zhù shù
+麴 U+9EB4 446 qú qū
+榦 U+69A6 444 gàn gān
+烜 U+70DC 442 xuǎn huǐ xuān
+摵 U+6475 442 suǒ shè
+釤 U+91E4 442 shàn shān xiān
+鼕 U+9F15 440 dōng tóng
+潢 U+6F62 438 huáng huǎng huàng guāng
+埏 U+57CF 437 yán shān
+儐 U+5110 436 bìn bīn
+朧 U+6727 434 lóng lǒng
+蓑 U+84D1 433 suō sāi suī
+哪 U+54EA 433 nǎ něi na né
+瀰 U+7030 431 mí mǐ
+疹 U+75B9 429 zhěn chèn
+蜆 U+8706 428 xiàn xiǎn
+峒 U+5CD2 427 tóng dòng
+蘧 U+8627 426 qú qù
+鍜 U+935C 425 xiā xiá
+緡 U+7DE1 425 mín mǐn mián hún
+譖 U+8B56 424 zèn jiàn
+逡 U+9021 423 qūn jùn xùn suō
+襁 U+8941 421 jiǎng qiǎng
+蓊 U+84CA 419 wěng wèng
+絢 U+7D62 418 xuàn xún
+皖 U+7696 417 wǎn huàn
+阬 U+962C 417 kēng gāng
+蜱 U+8731 415 pí miáo
+揄 U+63C4 414 yú yóu
+窖 U+7A96 414 jiào zào
+蝡 U+8761 411 ruǎn rú
+椑 U+6911 411 bēi pí pì
+綮 U+7DAE 410 qǐ qìng
+鄱 U+9131 410 pó pí pán
+濘 U+6FD8 407 nìng níng nì
+陬 U+966C 406 zōu zhé
+蚣 U+86A3 406 gōng zhōng
+摂 U+6442 405 shè niè
+飴 U+98F4 402 yí sì
+哇 U+54C7 402 wā wa
+拚 U+62DA 401 pàn fān fèn pīn
+漣 U+6F23 401 lián lán
+銚 U+929A 401 yáo diào tiáo qiāo yào
+撇 U+6487 400 piē piě
+厓 U+5393 399 yá ya
+滹 U+6EF9 398 hū hǔ
+氂 U+6C02 397 máo lí
+窕 U+7A95 395 tiǎo tiāo yáo
+燔 U+71D4 394 fán fén
+拌 U+62CC 394 bàn pàn
+莞 U+839E 393 guān guǎn wǎn
+莓 U+8393 392 méi mèi
+搋 U+640B 391 chǐ chā chuāi
+齁 U+9F41 390 hōu hóu
+蜚 U+871A 388 fēi fěi pèi bèi
+樽 U+6A3D 387 zūn zǔn
+蟣 U+87E3 387 jǐ qí
+瑗 U+7457 386 yuàn huán
+裰 U+88F0 385 duó duō
+嗄 U+55C4 385 á shà
+抝 U+629D 382 ǎo niù
+鰕 U+9C15 379 xiá xiā
+貍 U+8C8D 379 lí mái
+鞥 U+97A5 379 yì en
+呞 U+545E 378 shī chī
+碟 U+789F 378 dié shé
+餈 U+9908 374 cí zī
+軼 U+8EFC 372 yì dié zhé
+肄 U+8084 372 yì sì
+俶 U+4FF6 371 chù tì
+舋 U+820B 370 xìn wèn
+莆 U+8386 370 fǔ pú
+瑳 U+7473 370 cuǒ cuō
+歙 U+6B59 369 xī shè xié xì
+强 U+5F3A 368 qiáng qiǎng jiàng
+郗 U+90D7 367 chī xī
+爝 U+721D 364 jué jiào
+訐 U+8A10 364 jié jì
+蠃 U+8803 363 luǒ luó guǒ
+噠 U+5660 363 dā dá
+襆 U+8946 362 pú fú
+泌 U+6CCC 362 mì bì
+獠 U+7360 361 liáo lǎo
+毆 U+6BC6 359 ōu kōu qū
+氓 U+6C13 359 máng méng
+膞 U+819E 358 zhuān chún
+糺 U+7CFA 358 jiū jiǔ jiǎo
+数 U+6570 356 shù shǔ cù shuò
+禅 U+7985 356 shàn chán
+蜴 U+8734 355 yì xí
+齗 U+9F57 355 kěn yín
+茇 U+8307 355 bá pèi
+嘍 U+560D 354 lou lóu
+摟 U+645F 354 lǒu lōu lóu
+飈 U+98C8 351 biǎo biāo
+隰 U+96B0 350 xí xiè
+椰 U+6930 348 yé yē
+喑 U+5591 347 yīn yìn
+獺 U+737A 347 tǎ tà
+澇 U+6F87 347 lào láo
+棍 U+68CD 347 gùn hùn āo gǔn
+裾 U+88FE 346 jū jù
+櫂 U+6AC2 345 zhào zhuō
+黽 U+9EFD 345 měng mǐn méng miǎn
+淙 U+6DD9 345 cóng shuàng
+燹 U+71F9 343 xiǎn bìng
+罝 U+7F5D 342 jū jiē
+綢 U+7DA2 342 chóu tāo diào
+隧 U+96A7 341 suì zhuì
+骰 U+9AB0 340 tóu gǔ
+杈 U+6748 340 chā chà
+桉 U+6849 340 ān àn
+槖 U+69D6 339 tuò tuó
+䆳 U+41B3 337 qióng suì
+攴 U+6534 337 pū pō
+沬 U+6CAC 337 mèi huì
+笮 U+7B2E 336 zé zuó zhà
+韞 U+97DE 336 yùn wēn
+戇 U+6207 335 gàng zhuàng
+霾 U+973E 334 mái lí
+邯 U+90AF 334 hán hàn
+慴 U+6174 332 shè zhé
+苓 U+82D3 332 líng lián
+鄲 U+9132 332 dān duō
+濩 U+6FE9 328 huò hù
+滛 U+6EDB 327 yín yàn yáo
+袤 U+88A4 327 mào móu
+莠 U+83A0 326 yǒu xiù
+弉 U+5F09 325 zàng zhuǎng
+哄 U+54C4 324 hōng hǒng hòng
+捄 U+6344 323 jiù jiū jū qiú
+絜 U+7D5C 323 xié jié
+鎣 U+93A3 322 yìng yíng jiǒng
+麌 U+9E8C 320 wú yǔ
+剽 U+527D 319 piào piāo piáo biǎo biāo
+缸 U+7F38 319 gāng hóng
+潬 U+6F6C 318 dàn shàn
+刱 U+5231 317 chuàng chuāng
+絣 U+7D63 317 bīng bēng
+杆 U+6746 316 gān gǎn
+睪 U+776A 315 yì gāo hào zé
+耙 U+8019 314 bà pá bǎ
+熨 U+71A8 312 yùn yù wèi
+乹 U+4E79 312 gān qián
+銑 U+9291 311 xiǎn xǐ xiān
+軋 U+8ECB 310 yà gá zhá
+摛 U+645B 310 chī lí
+跬 U+8DEC 309 kuǐ xiè
+楨 U+6968 308 zhēn zhēng
+筴 U+7B74 308 cè jiā
+痼 U+75FC 307 gù gū
+蛣 U+86E3 305 jié qiè jī
+鉀 U+9240 304 jiǎ hé gé
+昶 U+6636 304 chǎng chàng
+嵌 U+5D4C 303 qiàn qiān
+涪 U+6DAA 303 fú póu
+覘 U+8998 303 zhān chān dān jī
+蜓 U+8713 302 tíng diàn
+鼷 U+9F37 301 xī xí
+咥 U+54A5 300 xì xī dié zhì
+綉 U+7D89 299 xiù tòu
+馗 U+9997 299 kuí qiú
+堕 U+5815 299 duò huī
+墉 U+5889 297 yōng yóng
+潄 U+6F44 297 shù sòu
+榾 U+69BE 296 gù gǔ
+跖 U+8DD6 295 zhí zhī
+孱 U+5B71 294 chán càn
+桄 U+6844 293 guàng guāng
+抨 U+62A8 292 pēng bēng
+葭 U+846D 292 jiā xiá
+暠 U+66A0 290 gǎo hào
+鋟 U+92DF 289 qiān qǐn qīn jìn
+諶 U+8AF6 288 chén shén
+扳 U+6273 287 bān pān
+筈 U+7B48 286 guā kuò
+頫 U+982B 286 fǔ tiào
+篅 U+7BC5 286 chuí chuán
+䴵 U+4D35 286 bǐng zhuó
+鞘 U+9798 285 qiào shāo
+㪯 U+3AAF 285 chá jǔ qú
+痺 U+75FA 285 bì bēi
+鋌 U+92CC 284 tǐng dìng
+鐔 U+9414 283 tán xīn xín
+湩 U+6E69 282 zhòng dòng
+舄 U+8204 282 xì qiǎo
+郄 U+90C4 281 xì què
+汶 U+6C76 281 wèn mén wén mín
+櫛 U+6ADB 280 jié zhì
+濮 U+6FEE 280 pú pū
+症 U+75C7 279 zhèng zhēng
+鈿 U+923F 278 diàn tián
+圻 U+573B 277 qí yín
+䎡 U+43A1 277 nuǎn ruǎn
+遒 U+9052 276 qiú qiū
+斆 U+6586 276 xiào jiǎo
+沆 U+6C86 276 háng hàng kàng
+歪 U+6B6A 275 wāi wǎi
+蒔 U+8494 271 shí shì
+熅 U+7185 270 yùn yún yūn
+戕 U+6215 270 qiāng qiáng
+慝 U+615D 270 tè nì
+闖 U+95D6 270 chuǎng chèn
+犴 U+72B4 270 àn hān án jiàn
+熄 U+7184 268 xí xī
+葶 U+8476 268 tíng dǐng
+緂 U+7DC2 267 tān tián
+磷 U+78F7 266 lín lìn lǐn líng
+涿 U+6DBF 265 zhuō zhuó
+襾 U+897E 265 yà xī
+䔧 U+4527 264 lí lì
+餔 U+9914 264 bū bǔ
+磑 U+78D1 263 wèi ái wéi
+娩 U+5A29 263 miǎn wǎn
+蚕 U+8695 263 cán tiǎn
+縟 U+7E1F 262 rù rǒng
+瘻 U+763B 262 lǘ lòu
+鞫 U+97AB 262 jú jū qū
+縝 U+7E1D 261 chēn zhěn zhēn
+矻 U+77FB 261 kù kū wù
+䧟 U+49DF 260 xiàn xuàn
+亾 U+4EBE 260 wáng wú
+麽 U+9EBD 260 mo mǒ ma me
+紕 U+7D15 259 pī pí bǐ bī bì chǐ
+么 U+4E48 258 yāo mo me ma mǒ
+呤 U+5464 258 líng lìng lǐng
+泫 U+6CEB 257 xuàn xuán juān
+撅 U+6485 257 juē jué guì
+蝙 U+8759 257 biān pián
+廨 U+5EE8 256 xiè jiè
+焯 U+712F 255 zhuó zhuō chuò chāo
+硎 U+784E 255 xíng yán kēng
+薉 U+8589 255 wèi huì
+棣 U+68E3 255 dì tì dài
+啚 U+555A 254 bǐ tú
+糍 U+7CCD 252 cí zī
+紬 U+7D2C 252 chóu chōu
+秔 U+79D4 251 gēng jīng
+栝 U+681D 251 guā kuài kuò tiàn
+柂 U+67C2 250 yí duò
+玼 U+73BC 250 cǐ cī
+磣 U+78E3 250 chěn cà
+瀋 U+700B 249 shěn chèn pán
+棓 U+68D3 249 pǒu bàng bèi
+广 U+5E7F 248 yǎn ān guǎng
+扛 U+625B 248 káng gāng
+圩 U+5729 247 wéi yú xū
+倔 U+5014 247 jué juè
+闞 U+95DE 247 kàn hǎn xiàn
+桁 U+6841 246 héng háng hàng
+墎 U+588E 246 guō guò
+枙 U+6799 246 ě è é
+滎 U+6ECE 245 xíng yīng yíng
+担 U+62C5 245 dàn dān dǎn qiè
+豉 U+8C49 245 chǐ shì
+莘 U+8398 244 shēn xīn
+蜿 U+873F 243 wān wǎn
+黮 U+9EEE 243 tǎn dǎn shèn dàn
+滸 U+6EF8 243 hǔ xǔ
+瘵 U+7635 241 zhài jì
+掊 U+638A 241 póu bào fù pǒu
+賫 U+8CEB 241 jī qí
+篲 U+7BF2 241 huì suì
+称 U+79F0 241 chēng chèn chèng
+聼 U+807C 240 tīng tìng
+芊 U+828A 240 qiān qiàn
+据 U+636E 239 jù jū
+胯 U+80EF 238 kuà kuǎ
+膨 U+81A8 234 péng pèng
+蛩 U+86E9 233 qióng gǒng
+迁 U+8FC1 233 qiān gān
+擂 U+64C2 233 léi lèi lēi
+頎 U+980E 232 qí kěn
+烊 U+70CA 231 yáng yàng
+禀 U+7980 231 bǐng bǐn lǐn
+跱 U+8DF1 230 zhì shì
+醭 U+91AD 230 bú pū pú
+諜 U+8ADC 229 dié xiè
+荃 U+8343 227 quán chuò
+莧 U+83A7 226 xiàn huán wàn
+洸 U+6D38 226 guāng huáng
+繙 U+7E59 226 fān fán
+酖 U+9156 226 dān zhèn
+啑 U+5551 225 shà dié
+菅 U+83C5 225 jiān guān
+柑 U+67D1 225 gān qián
+嘌 U+560C 224 piāo piào
+踣 U+8E23 224 bó pòu
+駘 U+99D8 223 tái dài zhài tāi
+焜 U+711C 222 kūn hǔn
+鎞 U+939E 222 bì bī pī
+煽 U+717D 221 shān shàn
+窬 U+7AAC 220 yú dòu dōu
+椹 U+6939 220 shèn zhēn
+盒 U+76D2 220 hé ān
+鈐 U+9210 219 qián hán
+閧 U+95A7 219 hòng hǒng
+牠 U+7260 218 tuó tā tuō
+嘎 U+560E 218 gā gǎ
+堡 U+5821 218 bǎo bǔ pù
+扞 U+625E 217 hàn gǎn
+淬 U+6DEC 217 cuì zú
+畹 U+7579 216 wǎn yuàn
+瑱 U+7471 216 tiàn zhèn
+榔 U+6994 216 láng lǎng
+愓 U+6113 216 dàng shāng
+隩 U+96A9 215 yù ào
+瘟 U+761F 215 wēn wò yūn
+擭 U+64ED 215 wò huò hù
+尨 U+5C28 214 máng méng páng
+踉 U+8E09 214 láng liáng liàng làng
+箄 U+7B84 214 bì bēi pái
+檳 U+6AB3 213 bīn bīng
+伙 U+4F19 212 huǒ huo
+哿 U+54FF 212 gě kě
+攧 U+6527 212 diān dié
+鴝 U+9D1D 211 qú gōu gòu
+芍 U+828D 210 sháo xiào què shuò dì
+枇 U+6787 210 pí bǐ bì
+噦 U+5666 210 yuě huì
+菔 U+83D4 210 fú bó
+町 U+753A 210 tǐng tīng dīng zhèng tiǎn
+瀹 U+7039 209 yuè yào
+疴 U+75B4 209 kē ē qià
+喋 U+558B 209 dié zhá
+塤 U+5864 208 xūn xuān
+茜 U+831C 208 qiàn qiān xī
+頵 U+9835 208 jūn yūn
+縕 U+7E15 207 yūn yùn
+炅 U+7085 207 jiǒng gěng guì
+剿 U+527F 207 jiǎo chāo
+犲 U+72B2 207 cái chái
+咋 U+548B 206 zhā zǎ zé
+枸 U+67B8 206 jǔ gǒu gōu qú
+窳 U+7AB3 205 yǔ yú
+蜻 U+873B 205 qīng jīng
+燠 U+71E0 204 yù ào
+弇 U+5F07 204 yǎn yān
+逺 U+903A 203 yuǎn yuàn
+鈆 U+9206 203 yán qiān
+槀 U+69C0 203 kǎo gǎo
+噍 U+564D 203 jiào jiāo
+綆 U+7D86 202 gěng bǐng
+涔 U+6D94 202 cén qián zàn
+抴 U+62B4 201 yì yè
+嫰 U+5AF0 201 nèn nùn
+悝 U+609D 201 kuī huī lǐ
+狌 U+72CC 200 shēng xīng
+螃 U+8783 198 páng bǎng
+苧 U+82E7 198 zhù níng
+朞 U+671E 198 jī qí
+呱 U+5471 198 gū guā
+㚲 U+36B2 197 diǎn shàn
+筑 U+7B51 196 zhú zhù
+閘 U+9598 196 zhá yā gé
+蚰 U+86B0 196 yóu zhú
+喁 U+5581 196 yóng yú
+䙡 U+4661 196 huì kuì
+踔 U+8E14 196 zhuó chuō diào zhuō tiào
+濼 U+6FFC 194 luò bó pō lì
+蜇 U+8707 193 zhé zhē
+籓 U+7C53 193 fān fán
+膀 U+8180 193 bǎng bàng pāng páng pǎng
+鬨 U+9B28 192 hòng xiàng hōng hǒng
+鷙 U+9DD9 191 zhì zhé
+璹 U+74B9 191 shòu shú
+瀏 U+700F 191 liú liū
+踧 U+8E27 191 cù dí
+擉 U+64C9 191 chuò chuō
+忪 U+5FEA 190 zhōng sōng
+憣 U+61A3 190 fán fān
+鵽 U+9D7D 190 zhuì duò zhuā
+毹 U+6BF9 189 shū yú yū
+讙 U+8B99 189 huān xuān
+藳 U+85F3 189 gǎo kào gào
+斸 U+65B8 188 zhǔ zhú
+菑 U+83D1 188 zī zāi zì
+崕 U+5D15 188 yá ya
+寗 U+5BD7 187 níng nìng
+寠 U+5BE0 187 jù lóu
+淊 U+6DCA 187 hàn yān yǎn hán
+纛 U+7E9B 187 dào dú
+渉 U+6E09 186 shè dié
+睥 U+7765 186 bì pì
+湔 U+6E54 186 jiān jiàn zàn zhǎn
+擋 U+64CB 186 dǎng dàng tǎng
+釿 U+91FF 185 yín jīn
+鷰 U+9DF0 185 yàn yān
+遴 U+9074 185 lín lìn
+覌 U+898C 185 guān guàn
+楪 U+696A 185 yè dié
+狻 U+72FB 184 suān xùn jùn
+烙 U+70D9 183 luò lào gé
+寖 U+5BD6 183 jìn qìn
+殀 U+6B80 182 yǎo yāo
+鈕 U+9215 182 niǔ chǒu
+澌 U+6F8C 181 sī xī
+阨 U+9628 181 è ài
+摣 U+6463 180 zhā zā
+媛 U+5A9B 180 yuàn yuán
+綃 U+7D83 180 xiāo shāo
+粼 U+7CBC 180 lín lǐn
+㩲 U+3A72 180 kǔn quán
+昳 U+6633 180 dié yì
+磅 U+78C5 180 bàng pàng páng pāng
+崒 U+5D12 179 zú cuì
+鸛 U+9E1B 179 guàn huān quán
+朮 U+672E 177 shù zhú
+麑 U+9E91 177 ní mí
+淖 U+6DD6 177 nào chuò zhuō zhào
+拮 U+62EE 177 jié jiá
+鶿 U+9DBF 176 zī cí
+黻 U+9EFB 176 fú fù
+黐 U+9ED0 176 chī lí
+聱 U+8071 176 áo yóu
+詒 U+8A52 175 yí dài tái
+鰥 U+9C25 175 guān guàn kūn gǔn yín
+讜 U+8B9C 175 dǎng dàng
+蔟 U+851F 175 cù còu chuò
+衘 U+8858 174 xián yù
+厶 U+53B6 174 sī mǒu
+砰 U+7830 174 pēng pīng pèng
+㗘 U+35D8 174 bó fù
+迍 U+8FCD 173 zhūn tún
+听 U+542C 173 tīng tìng yín
+闋 U+95CB 173 què jué kuí
+薔 U+8594 173 qiáng sè
+蠖 U+8816 173 huò yuè
+翀 U+7FC0 173 chōng chóng
+蕘 U+8558 172 ráo yáo
+薶 U+85B6 172 mái lí wēi wō
+敫 U+656B 172 jiào jiǎo
+薺 U+85BA 172 cí jì qì qí qi
+鎬 U+93AC 172 hào gǎo
+蜍 U+870D 172 chú shú yú
+鉆 U+9246 171 chān qián tiē zhān qín
+焱 U+7131 171 yàn biāo yì
+樔 U+6A14 171 cháo jiǎo
+饡 U+9961 170 zuàn zàn
+紲 U+7D32 170 xiè yì
+㣪 U+38EA 169 huǎn kuò
+籲 U+7C72 168 yù xū
+齟 U+9F5F 168 jǔ zhā
+坳 U+5773 168 ào āo
+䆫 U+41AB 168 chuāng cōng
+偵 U+5075 167 zhēn zhēng
+餡 U+9921 167 xiàn kàn
+㡌 U+384C 167 mào mèi
+枋 U+678B 167 fāng bìng
+褶 U+8936 166 zhé zhě dié xí
+呫 U+546B 166 tiē chè
+蹌 U+8E4C 166 qiāng qiàng
+邡 U+90A1 166 fāng fǎng fàng
+鏑 U+93D1 166 dí dī
+愻 U+613B 165 sùn xùn
+渦 U+6E26 165 wō guō
+贛 U+8D1B 165 gàn gòng zhuàng
+獮 U+736E 164 xiǎn mí
+椉 U+6909 164 chéng shèng
+筧 U+7B67 163 jiǎn jiàn
+嵇 U+5D47 163 jī xí
+搨 U+6428 162 tà dā
+謼 U+8B3C 162 hù hū
+蜾 U+873E 162 guǒ luǒ
+隼 U+96BC 161 zhǔn sǔn
+霶 U+9736 161 páng pāng
+宁 U+5B81 161 níng zhù nìng
+玔 U+7394 161 chuàn quàn
+躔 U+8E94 161 chán zhàn
+簉 U+7C09 160 chòu zào
+洫 U+6D2B 160 xù yì
+湑 U+6E51 160 xǔ xū
+咻 U+54BB 160 xiū xǔ
+泞 U+6CDE 160 nìng zhǔ zhù
+靚 U+975A 160 jìng liàng
+舵 U+8235 160 duò tuó
+鋋 U+92CB 160 chán yán
+𩔗 U+29517 158 lèi lì
+瞶 U+77B6 157 kuì guì
+溘 U+6E98 157 kè kài
+茤 U+8324 157 jì duō
+埶 U+57F6 155 yì shì
+祆 U+7946 154 xiān yāo
+桔 U+6854 154 jié jú xié
+斁 U+6581 154 yì dù
+圌 U+570C 154 chuán chuí
+歰 U+6B70 153 sè shà
+蠰 U+8830 153 shàng shāng náng ráng
+䖟 U+459F 153 mǎng méng
+鈇 U+9207 152 fū fǔ
+爓 U+7213 151 yàn qián xún
+㥲 U+3972 151 shèn yín
+逯 U+902F 151 lù dài
+嚂 U+5682 151 làn hǎn lán
+旰 U+65F0 151 gàn hàn
+祅 U+7945 150 yāo xiān
+縗 U+7E17 150 cuī suī shuāi
+酵 U+9175 150 jiào xiào
+鏊 U+93CA 150 áo ào
+騶 U+9A36 149 zōu zhòu zhū qū
+雩 U+96E9 149 yú yù xū
+瀁 U+7001 149 yàng yǎng
+胖 U+80D6 148 pàng pán pàn
+嘩 U+5629 148 huā huá
+殽 U+6BBD 147 yáo xiáo xiào
+昰 U+6630 147 shì xià
+岨 U+5CA8 147 jū jǔ
+掄 U+6384 146 lūn lún
+㐌 U+340C 145 sì yí
+疙 U+7599 145 gē yì
+酇 U+9147 145 zàn dá
+摻 U+647B 145 shǎn chān sēn càn xiān
+虒 U+8652 144 sī zhài yí
+蟯 U+87EF 144 ráo náo rào
+蕈 U+8548 144 xùn tán
+攉 U+6509 143 huò huō què
+呴 U+5474 142 xū hǒu hōu
+磽 U+78FD 142 qiāo qiǎo qiào áo
+坭 U+576D 142 ní nì
+櫟 U+6ADF 142 lì láo yuè
+搒 U+6412 142 bèng bàng péng
+薌 U+858C 141 xiāng xiǎng
+麪 U+9EAA 141 miǎn miàn
+蹭 U+8E6D 141 cèng céng
+笐 U+7B10 140 gāng hàng
+氾 U+6C3E 140 fàn fán fěng
+樅 U+6A05 140 cōng zōng
+櫬 U+6AEC 140 chèn qìn guàn
+泖 U+6CD6 139 mǎo máo liǔ
+罗 U+7F57 139 luō luó luo
+郴 U+90F4 139 chēn lán
+靸 U+9778 138 sǎ tā
+扔 U+6254 138 rēng rèng
+慥 U+6165 137 zào cào
+䘮 U+462E 137 sà sàng xì
+睽 U+777D 137 kuí jì
+芾 U+82BE 137 fèi fù fú
+蓁 U+84C1 136 zhēn qín
+齬 U+9F6C 136 yǔ wú
+躂 U+8E82 136 tà da
+諕 U+8AD5 136 háo xià
+檮 U+6AAE 135 táo dǎo
+毦 U+6BE6 135 èr ěr
+戹 U+6239 135 è ài
+囄 U+56C4 134 lí lēi
+濆 U+6FC6 134 fén fèn pēn
+夆 U+5906 133 féng páng
+暕 U+6695 132 jiǎn lán
+踦 U+8E26 132 jǐ jī qī yǐ
+啁 U+5541 132 zhōu zhāo
+瘍 U+760D 131 yáng dàng
+褎 U+890E 131 xiù yòu
+罘 U+7F58 131 fú fū
+葑 U+8451 131 fēng fèng
+掙 U+6399 130 zhēng zhèng
+忸 U+5FF8 130 niǔ nǜ
+溲 U+6EB2 129 sōu sǒu shāo
+鍤 U+9364 129 chá chā
+靨 U+9768 128 yè yǎn
+愬 U+612C 128 sù shuò
+厖 U+5396 128 páng máng
+隗 U+9697 128 wěi guī kuí
+鮫 U+9BAB 128 jiāo jiǎo
+柚 U+67DA 127 yòu yóu zhú
+乇 U+4E47 127 zhé nüè zhè tuō
+笤 U+7B24 127 tiáo shào
+艘 U+8258 127 sāo sōu
+澠 U+6FA0 127 miǎn shéng mǐn
+䫫 U+4AEB 127 lóu lòu
+麇 U+9E87 127 jūn kǔn qún
+囤 U+56E4 127 dùn tún
+踹 U+8E39 127 chuài shuàn duàn
+揥 U+63E5 126 tì dì
+棵 U+68F5 126 kē kuǎn kě
+晢 U+6662 125 zhé zhē xī zhì
+橝 U+6A5D 125 tān tán
+樷 U+6A37 125 cōng cóng
+茷 U+8337 125 fá fèi
+肫 U+80AB 124 zhūn chún tún zhuō
+磻 U+78FB 124 pán bō
+暸 U+66B8 124 liáo liǎo
+濊 U+6FCA 124 huì huò wèi
+淴 U+6DF4 124 wà hū
+笴 U+7B34 124 gě gǎo
+剬 U+526C 124 duān tuán zhì
+鞁 U+9781 124 tuó bèi
+蕞 U+855E 123 zuì jué zhuó
+唌 U+550C 123 xián yán dàn
+絍 U+7D4D 123 rén rèn
+璡 U+74A1 123 jìn jīn
+睱 U+7771 122 xià jiǎ
+酩 U+9169 122 míng mǐng
+蛄 U+86C4 122 gū gǔ
+囪 U+56EA 122 cōng chuāng
+榑 U+6991 121 fù fú
+爚 U+721A 120 yuè shuò
+瞀 U+7780 120 mào wú mòu
+屮 U+5C6E 120 chè cǎo
+晳 U+6673 119 xì xī
+泜 U+6CDC 118 chí zhī dì zhì
+渫 U+6E2B 118 xiè dié zhá yì qiè
+歃 U+6B43 118 shà xiá
+檠 U+6AA0 118 qíng jìng
+茁 U+8301 117 zhuó zhú
+遝 U+905D 117 tà dài
+挼 U+633C 117 nuò nuó ruó
+膢 U+81A2 117 lǘ liú lóu
+韃 U+97C3 117 dá tà
+㿇 U+3FC7 116 xí xì
+涴 U+6DB4 116 wò wǎn
+幪 U+5E6A 116 méng měng
+簀 U+7C00 116 zé zhài
+腱 U+8171 116 jiàn qián
+綳 U+7DB3 116 bēng běng
+扑 U+6251 115 pū bū
+棬 U+68EC 114 quān quàn
+仳 U+4EF3 114 pǐ pí
+欏 U+6B0F 114 luó luǒ
+両 U+4E21 114 liǎng liàng
+祲 U+7972 114 jīn jìn
+瀅 U+7005 113 yìng jiōng yíng
+庻 U+5EBB 113 shù zhù zhē
+捼 U+637C 113 nuó ruó
+䨥 U+4A25 113 hù huò
+朏 U+670F 113 fěi pèi
+扒 U+6252 113 bā pā pá
+捽 U+637D 112 zú zuó
+吱 U+5431 112 zhī zī
+鱣 U+9C63 112 zhān shàn
+汐 U+6C50 112 xì xī
+邳 U+90B3 112 péi pī
+㢠 U+38A0 112 jiǒng jùn
+頏 U+980F 112 háng gāng hàng
+牚 U+725A 112 chèng chēng
+蔀 U+8500 112 bù pǒu
+崱 U+5D31 111 zé zè
+鎩 U+93A9 111 shā shì sè
+麕 U+9E95 111 jūn qún
+蹻 U+8E7B 111 qiāo jué
+鷸 U+9DF8 110 yù shù
+蝘 U+8758 110 yǎn yàn
+渰 U+6E30 110 yǎn yān
+衂 U+8842 110 niù nǜ
+挪 U+632A 110 nuó ruó
+荖 U+8356 110 lǎo chā
+澮 U+6FAE 110 kuài huì huá
+嗌 U+55CC 110 yì ài
+袜 U+889C 109 wà mò
+衹 U+8879 109 qí zhǐ
+将 U+5C06 109 jiāng jiàng qiāng
+滉 U+6EC9 109 huǎng huàng
+佪 U+4F6A 109 huí huái
+佰 U+4F70 109 bǎi bó
+肹 U+80B9 108 xī bì
+膴 U+81B4 108 hū wǔ méi wú
+黌 U+9ECC 108 héng hóng
+蠁 U+8801 107 xiàng xiǎng
+璚 U+749A 107 qióng jué
+棼 U+68FC 107 fén fēn fèn
+胆 U+80C6 107 dǎn tán tǎn dá
+睚 U+775A 106 ya yá
+蜼 U+873C 106 wèi wěi
+彡 U+5F61 106 shān xiān
+瘙 U+7619 106 sāo sào
+鐼 U+943C 106 fén bēn
+唉 U+5509 106 āi ài
+讋 U+8B8B 105 zhé shè
+詀 U+8A40 105 zhān chè
+温 U+6E29 105 wēn yùn
+騇 U+9A07 105 shě shè
+渢 U+6E22 105 féng fēng
+柞 U+67DE 104 zuò zé zhà
+澎 U+6F8E 104 péng pēng
+嶁 U+5D81 104 lǒu lǚ
+悁 U+6081 104 yuān juàn
+瘕 U+7615 104 jiǎ xiá xiā
+蝀 U+8740 104 dōng dòng
+萹 U+8439 104 piān biān
+昝 U+661D 103 zǎn cǎn
+烋 U+70CB 103 xiāo xiū
+畸 U+7578 103 jī qí
+夯 U+592F 103 hāng bèn
+㨶 U+3A36 103 chóu dǎo zhǒu zhòu
+齚 U+9F5A 102 cuò zé
+譍 U+8B4D 102 yìng yíng
+蜩 U+8729 102 tiáo diào
+圣 U+5723 102 shèng kū
+泅 U+6CC5 102 qiú yōu
+擈 U+64C8 102 pū bǔ
+玭 U+73AD 102 pí pián pín
+䱜 U+4C5C 102 cuò què
+冘 U+5198 101 yín yóu
+菸 U+83F8 101 yān yū yù
+芚 U+829A 101 tún chūn
+勷 U+52F7 101 ráng xiāng
+瀧 U+7027 101 lóng shuāng
+㟧 U+37E7 101 è niè xùn
+楂 U+6942 101 zhā chá chā
+湃 U+6E43 100 pài bá
+聹 U+8079 100 níng nǐng
+寜 U+5BDC 100 níng nìng
+鍇 U+9347 100 kǎi jiē jiě
+槿 U+69FF 100 jǐn qín
+胗 U+80D7 99 zhēn zhěn zhūn
+朾 U+673E 99 tíng tīng chéng
+麯 U+9EAF 99 qú qū
+黥 U+9EE5 99 qíng jīng
+塸 U+5878 99 ǒu ōu
+瑁 U+7441 99 mào mèi
+啦 U+5566 99 la lā
+庳 U+5EB3 99 bēi bǐ
+泱 U+6CF1 98 yāng yǎng
+脬 U+812C 98 pāo bāo
+鶡 U+9DA1 98 hé jiè
+堋 U+580B 98 péng bèng
+澳 U+6FB3 98 ào yù
+鷁 U+9DC1 96 nì yì
+鏇 U+93C7 96 xuàn xuán
+呺 U+547A 96 xiāo háo
+佀 U+4F40 96 sì shì
+蔫 U+852B 96 yān niān yàn
+翏 U+7FCF 96 liù liào liú
+発 U+767A 96 fā fà
+酊 U+914A 96 dǐng dīng
+遟 U+905F 96 chí zhì xī
+㳒 U+3CD2 96 biàn fǎ
+瑒 U+7452 95 yáng chàng dàng
+莉 U+8389 95 lì lí chí
+漯 U+6F2F 95 tà luò lěi
+揃 U+63C3 95 jiān jiǎn
+枅 U+6785 95 jī jiān
+釭 U+91ED 95 gāng gōng
+欱 U+6B31 94 xià hē
+嵠 U+5D60 94 xī jī qī
+鱓 U+9C53 94 shàn tuó
+蚍 U+868D 94 bǐ pí
+霝 U+971D 94 líng lìng
+鞬 U+97AC 94 jiān jiàn
+淞 U+6DDE 93 sōng sòng
+术 U+672F 93 zhú shù
+菹 U+83F9 93 jū zū jù
+暍 U+668D 93 hè yē
+洑 U+6D11 93 fú fù
+芏 U+828F 93 tǔ dù
+誂 U+8A82 93 tiǎo diào
+幬 U+5E6C 93 chóu dào
+枹 U+67B9 93 fū bāo fú
+掞 U+639E 92 shàn yàn
+玟 U+739F 92 mín wén
+髁 U+9AC1 92 kē kuà
+泔 U+6CD4 92 gān hàn
+柎 U+67CE 92 fū fǔ fù
+䥘 U+4958 92 cù cuò
+蹏 U+8E4F 91 tí dì
+誆 U+8A86 91 kuāng kuáng kuàng
+鷇 U+9DC7 91 kòu gòu
+軃 U+8EC3 91 tuǒ duǒ
+晣 U+6663 90 zhē zhé zhì
+軿 U+8EFF 90 píng pēng
+諏 U+8ACF 89 zōu zhōu
+絏 U+7D4F 89 xiè yì
+嚷 U+56B7 89 rǎng rāng
+艫 U+826B 89 lú lǔ
+蒯 U+84AF 89 kuǎi kuài
+趼 U+8DBC 89 jiǎn yàn
+冓 U+5193 89 gòu gōu
+茖 U+8316 89 gé gè
+棰 U+68F0 89 chuí duǒ
+餳 U+9933 88 xíng táng
+荽 U+837D 88 suī wēi wěi
+錡 U+9321 88 qí yǐ
+擱 U+64F1 88 gē gé
+㥽 U+397D 88 cè zé
+縦 U+7E26 87 zòng cóng zǒng
+咱 U+54B1 87 zán zá
+鏹 U+93F9 87 qiāng qiǎng
+眯 U+772F 87 mǐ mī mì mí
+蹣 U+8E63 87 pán mán liǎng
+膻 U+81BB 87 dàn shān tǎn
+泬 U+6CEC 86 xuè jué
+鰓 U+9C13 86 sāi xǐ
+蠎 U+880E 85 mǎng měng
+愒 U+6112 85 kài qì
+葅 U+8445 85 jū zū
+圾 U+573E 85 jí jī
+䒢 U+44A2 85 áng yìng
+剸 U+5278 84 tuán zhuān
+靦 U+9766 84 tiǎn miǎn
+倰 U+5030 84 léng lèng líng
+㭰 U+3B70 84 jì jué zuǐ
+趠 U+8DA0 84 chuò chào
+絀 U+7D40 84 chù zhuó
+趲 U+8DB2 83 zǎn zàn zū
+迆 U+8FC6 83 yǐ yí
+燖 U+71D6 83 xún qián
+蟺 U+87FA 83 shàn dàn chán tuó
+攲 U+6532 83 qī jī yī
+屴 U+5C74 83 lì lè
+蛘 U+86D8 82 yáng yǎng
+頲 U+9832 82 tǐng tian
+磎 U+78CE 82 qī xī
+陴 U+9674 82 pí bì
+湓 U+6E53 82 pén pèn
+䞈 U+4788 82 guǐ guì
+撢 U+64A2 82 dǎn tàn
+阢 U+9622 81 wù wèi
+迕 U+8FD5 81 wù wǔ
+綈 U+7D88 81 tí tì
+箐 U+7B90 81 jīng qìng qiāng
+澒 U+6F92 81 hòng hǒng gǒng
+槅 U+69C5 81 gé hé
+芘 U+8298 81 pí bì bī
+紮 U+7D2E 80 zā zhā zhá
+牾 U+727E 80 wú wǔ
+矒 U+77D2 80 méng máng mèng
+噱 U+5671 80 jué xué
+赶 U+8D76 80 gǎn qián
+恫 U+606B 80 tōng dòng
+跰 U+8DF0 80 bèng pián
+胑 U+80D1 79 zhī zhí zhū
+浥 U+6D65 79 yì yà
+謩 U+8B29 79 mò mó
+酈 U+9148 79 lì zhí lí
+嗑 U+55D1 79 kē kè
+槳 U+69F3 79 jiǎng jiāng
+秸 U+79F8 79 jiē jí
+訇 U+8A07 79 hōng jùn hēng
+皜 U+769C 79 hào gǎo
+祓 U+7953 79 fú fèi
+詘 U+8A58 79 qū chù qù
+澶 U+6FB6 79 chán dàn zhān
+堨 U+5828 79 è ài yè
+栯 U+682F 78 yǒu yù
+傒 U+5092 78 xī xí xì
+媮 U+5AAE 78 tōu yú
+涑 U+6D91 78 sù sōu shù
+颿 U+98BF 78 fán fān fàn
+鷀 U+9DC0 78 zī cí
+貟 U+8C9F 77 yuán yún
+黝 U+9EDD 77 yǒu yī
+籧 U+7C67 77 qú jǔ
+湟 U+6E5F 77 huáng kuàng
+撜 U+649C 76 zhěng chéng
+洼 U+6D3C 76 wā guī
+渃 U+6E03 76 rè ruò
+莬 U+83AC 76 wèn wǎn miǎn
+椷 U+6937 76 jiān hán
+虖 U+8656 76 hū hù hú
+頦 U+9826 76 hái kē ké
+撣 U+64A3 76 dǎn chán shàn
+鏨 U+93E8 75 zàn jiàn
+壎 U+58CE 75 xūn xuān
+蓿 U+84FF 75 sù xù
+㕛 U+355B 75 xù yǒu yòu
+莛 U+839B 75 tíng tǐng
+葚 U+845A 75 shèn rèn
+獪 U+736A 75 kuài huá
+㟲 U+37F2 75 jué yuán
+㿃 U+3FC3 75 dài zhì
+靶 U+9776 75 bǎ bà
+蹺 U+8E7A 74 qiāo qiào
+攡 U+6521 74 lí chī
+徠 U+5FA0 74 lái lài
+粢 U+7CA2 74 zī cí jì
+鶬 U+9DAC 74 cāng qiāng
+玢 U+73A2 74 bīn fēn fén
+蓖 U+84D6 74 bì bī
+舳 U+8233 73 zhú zhòu
+擩 U+64E9 73 rǔ ruì
+牎 U+724E 73 chuāng cōng
+盩 U+76E9 72 zhōu chōu
+鑴 U+9474 72 xī huī
+飩 U+98E9 72 tún tun zhùn
+蔞 U+851E 72 lóu liǔ jù lǚ
+厈 U+5388 72 hǎn àn
+遻 U+907B 71 wù è
+褪 U+892A 71 tùn tuì
+鑹 U+9479 71 cuàn cuān
+膱 U+81B1 70 zhí zhū
+戝 U+621D 70 zéi zé
+啉 U+5549 70 lán lín
+齦 U+9F66 70 kěn yín qiǎn
+峇 U+5CC7 70 kē bā
+唶 U+5536 70 jiè jí zè
+跤 U+8DE4 70 jiāo qiāo
+暅 U+6685 70 xuǎn gèng gěng
+儅 U+5105 70 dāng dàng
+眈 U+7708 70 dān tán chěn
+橦 U+6A66 70 chuáng chōng tóng
+訿 U+8A3F 69 zǐ zī
+輜 U+8F1C 69 zī zì
+鞙 U+9799 69 xuàn juān
+穸 U+7A78 69 xì xī
+㬉 U+3B09 69 nuǎn ruò
+赳 U+8D73 69 jiǔ jiū jiù
+茭 U+832D 69 jiāo xiǎo xiào qiào
+搐 U+6410 69 chù chōu
+謿 U+8B3F 69 cháo zhāo
+惌 U+60CC 68 yuān yù
+螣 U+87A3 68 téng tè
+篸 U+7BF8 68 sēn cēn zān
+轔 U+8F54 68 lín lìn
+惏 U+60CF 68 lín lán
+垃 U+5783 68 lā la
+䏣 U+43E3 68 jué qù
+趄 U+8D84 68 jū qiè
+䀹 U+4039 68 jié zhǎ jiá shè yà
+栻 U+683B 68 shì chì
+衩 U+8869 68 chà chǎ
+禇 U+7987 67 zhě zhǔ chǔ
+臃 U+81C3 67 yǒng yōng
+掜 U+639C 67 yǐ nǐ niè
+妮 U+59AE 67 nī ní
+橑 U+6A51 67 lǎo liáo
+胳 U+80F3 67 gē gé gā
+鏖 U+93D6 67 áo biāo
+晻 U+667B 67 ǎn yǎn
+稹 U+7A39 66 zhěn zhēn biān
+殢 U+6BA2 66 tì nì
+㛐 U+36D0 66 sǒu xuán
+箑 U+7B91 66 shà jié
+紝 U+7D1D 66 rèn rén
+鈹 U+9239 66 pī pí
+猲 U+7332 66 xiē xié hè
+眙 U+7719 66 chì yí dèng
+訏 U+8A0F 65 xū xǔ
+肸 U+80B8 65 xì xī bì
+䠱 U+4831 65 shǔ zhú
+蔘 U+8518 65 sēn sān shēn
+顉 U+9849 65 qīn hàn
+吶 U+5436 65 ne nè nà
+还 U+8FD8 65 huán hái xuán
+掍 U+638D 65 gǔn hǔn
+巛 U+5DDB 65 chuān kūn
+恀 U+6040 65 chǐ shì
+苡 U+82E1 64 yǐ sì
+袨 U+88A8 64 xiàn xuàn
+昫 U+662B 64 xǔ xū xù
+荑 U+8351 64 tí yí
+誧 U+8AA7 64 pǔ bū
+殍 U+6B8D 64 piǎo bì
+姣 U+59E3 64 jiāo jiǎo xiáo
+蕺 U+857A 64 jí qiè
+髂 U+9AC2 64 kà qià gé
+疐 U+7590 63 zhì dì
+鶤 U+9DA4 63 yùn kūn
+暀 U+6680 63 wǎng wàng
+梃 U+6883 63 tǐng tìng
+芩 U+82A9 63 qín yín
+録 U+9332 63 lù lǜ
+遛 U+905B 63 liú liù
+嘚 U+561A 63 dé dē dāi
+骯 U+9AAF 63 āng kǎng
+𧘂 U+27602 63 chōng chòng
+蹵 U+8E75 62 zú cù
+潠 U+6F60 62 sùn xùn xuàn
+肜 U+809C 62 róng chēn
+鐐 U+9410 62 liáo liào
+蕢 U+8562 62 kuì kuài
+卩 U+5369 62 jié bù
+儌 U+510C 62 jiǎo yáo
+袷 U+88B7 62 jiá jié
+䬪 U+4B2A 62 bó fù
+窀 U+7A80 61 zhūn tún
+砫 U+782B 61 zhǔ zhù
+遰 U+9070 61 dì shì
+柤 U+67E4 61 zhā jū zǔ
+囐 U+56D0 61 zá zán
+坷 U+5777 61 kě kē
+炕 U+7095 61 kàng hāng
+梡 U+68A1 61 hún kuǎn
+鞨 U+97A8 61 hé mò
+嘠 U+5620 61 gā gǎ
+痁 U+75C1 61 diàn shān
+錞 U+931E 61 duì chún duò qún
+胏 U+80CF 60 zǐ fèi
+尞 U+5C1E 60 liào liáo
+框 U+6846 60 kuàng kuāng
+砢 U+7822 60 luǒ kē
+軬 U+8EEC 60 fàn bèn
+髒 U+9AD2 59 zāng zǎng
+舃 U+8203 59 xì qiǎo tuō què
+樘 U+6A18 59 táng chēng
+奓 U+5953 59 shē chǐ zhà zhā
+䩸 U+4A78 59 róng rǒng
+瀼 U+703C 59 ráng ràng
+寍 U+5BCD 59 níng nìng
+礚 U+791A 59 kài kē
+餛 U+991B 59 hún kūn
+郇 U+90C7 59 xún huán
+胲 U+80F2 59 hǎi gāi gǎi gěi
+噌 U+564C 59 chēng cēng
+傖 U+5096 59 cāng chéng
+鮓 U+9B93 58 zhǎ zhà
+狘 U+72D8 58 yuè xuè
+纚 U+7E9A 58 xǐ lí lǐ shǎi shī shǐ
+繈 U+7E48 58 qiǎng jiǎng
+嗛 U+55DB 58 xián qiàn qiǎn qiè
+塪 U+586A 58 kǎn xiàn
+轘 U+8F58 58 huàn huán
+觳 U+89F3 58 hú jué què
+杠 U+6760 58 gāng gàng
+抌 U+628C 57 zhěn shèn
+鋗 U+92D7 57 xuān juān
+繰 U+7E70 57 zǎo qiāo sāo
+甹 U+7539 57 píng pīng
+灵 U+7075 57 líng lìng
+揳 U+63F3 57 xiè xié jiá xiē
+划 U+5212 57 huá huà
+馘 U+9998 57 guó xù
+嘏 U+560F 57 gǔ jiǎ
+咯 U+54AF 57 gē kǎ lo
+䊩 U+42A9 57 fán fàn
+㙮 U+366E 57 dā da
+縡 U+7E21 56 zǎi zài
+佼 U+4F7C 56 jiǎo jiāo
+磺 U+78FA 56 huáng kuàng
+㝃 U+3743 56 fàn miǎn wǎn
+葯 U+846F 55 yào yuè
+揎 U+63CE 55 xuān shuān
+陘 U+9658 55 xíng jìng
+汽 U+6C7D 55 qì gāi yǐ
+宓 U+5B93 55 mì fú
+攂 U+6502 55 lèi léi
+絇 U+7D47 55 jù qú
+涷 U+6DB7 55 dōng dòng
+䬫 U+4B2B 55 cǎn tí
+麃 U+9E83 55 biāo páo piǎo
+鏜 U+93DC 54 tāng táng
+两 U+4E24 54 liǎng liàng
+搰 U+6430 54 hú gǔ
+貉 U+8C89 54 hé háo mò mà
+枓 U+6793 54 dǒu zhǔ
+当 U+5F53 54 dāng dàng
+萆 U+8406 54 pì bì bēi bá
+剠 U+5260 53 qíng lüè
+刾 U+523E 53 cì qì
+軺 U+8EFA 52 yáo diāo
+斅 U+6585 52 xiào jiǎo
+棑 U+68D1 52 pái bài
+䭷 U+4B77 52 liú máo
+䗶 U+45F6 52 là lì
+㦥 U+39A5 52 huán xiǎn
+咶 U+54B6 52 huài huá shì
+吭 U+542D 52 háng kēng
+畨 U+7568 52 pān fān
+剙 U+5259 52 chuàng chuāng
+炸 U+70B8 51 zhà zhá
+槱 U+69F1 51 yǒu yóu
+訑 U+8A11 51 yí dàn
+芎 U+828E 51 qiōng xiōng
+渻 U+6E3B 51 xǐng shèng
+柙 U+67D9 51 xiá jiǎ yā
+甡 U+7521 51 shēn shēng
+蕎 U+854E 51 qiáo jiāo
+憿 U+61BF 51 jiāo jī jiǎo
+戯 U+622F 51 xì xī hū huī
+蠚 U+881A 51 hè hē ruò
+郃 U+90C3 51 hé xiá gé
+檔 U+6A94 51 dàng dǎng
+鉋 U+924B 51 bào páo
+矞 U+77DE 50 yù jué xù
+鬩 U+9B29 50 xì hè
+滃 U+6EC3 50 wěng wēng
+蘤 U+8624 50 wěi huā
+跧 U+8DE7 50 quán zūn zhuān
+难 U+96BE 50 nán nàn nuó
+鎦 U+93A6 50 liú liù
+倥 U+5025 50 kōng kǒng
+篹 U+7BF9 50 zhuàn suǎn zuǎn zuàn
+茝 U+831D 50 chǎi zhǐ
+燌 U+71CC 50 fén bèn
+瘃 U+7603 49 zhú zhǔ
+芧 U+82A7 49 xù zhù
+傝 U+509D 49 tàn tà
+惢 U+60E2 49 ruǐ suǒ
+蟊 U+87CA 49 máo méng
+孌 U+5B4C 49 luán liàn
+鏂 U+93C2 49 ōu kōu
+茀 U+8300 49 fú bó
+髪 U+9AEA 49 fà fǎ
+瓿 U+74FF 49 pǒu bù
+獬 U+736C 48 xiè hǎ jiě
+狶 U+72F6 48 xǐ xī
+磈 U+78C8 48 wěi kuǐ
+跫 U+8DEB 48 qióng qiōng qiāng
+蹡 U+8E61 48 qiāng qiàng
+稞 U+7A1E 48 kē huà
+轇 U+8F47 48 jiū jiāo
+㓗 U+34D7 48 jié qǐ
+扢 U+6262 48 gǔ gē xì
+佝 U+4F5D 48 kòu gōu
+紼 U+7D3C 48 fú fèi
+盹 U+76F9 48 dǔn dùn zhūn
+裎 U+88CE 48 chéng chěng
+汋 U+6C4B 47 zhuó yuè
+吓 U+5413 47 xià hè
+㓞 U+34DE 47 qì qià yáo
+郪 U+90EA 47 qī cī
+蓲 U+84F2 47 qiū xū
+狃 U+72C3 47 niǔ nǜ
+綝 U+7D9D 47 lín chēn shēn
+咧 U+54A7 47 liě lie
+鋄 U+92C4 47 wǎn wàn
+靃 U+9743 47 huò suǐ
+嘬 U+562C 47 zuō chuài
+甾 U+753E 46 zī zāi
+姁 U+59C1 46 xǔ xū
+纕 U+7E95 46 xiāng ráng
+昷 U+6637 46 wēn yùn
+裼 U+88FC 46 xí tì xī
+擑 U+64D1 46 jiē xié chā shà
+构 U+6784 46 gōu gòu
+刨 U+5228 46 bào páo
+陼 U+967C 45 zhǔ dǔ
+縐 U+7E10 45 zhòu chào cù zhōu
+郅 U+90C5 45 zhì zhī jí
+鯹 U+9BF9 45 xīng zhēng
+鑫 U+946B 45 xīn xùn
+魋 U+9B4B 45 tuí chuí zhuī
+蜡 U+8721 45 là zhà chà qù jí
+緄 U+7DC4 45 gǔn hùn hún
+蹢 U+8E62 45 dí zhí
+欸 U+6B38 45 ǎi āi ēi èi
+簮 U+7C2E 44 zān zǎn
+濙 U+6FD9 44 yíng yìng
+煠 U+7160 44 yè zhá
+䑓 U+4453 44 tái tǎi
+繅 U+7E45 44 sāo zǎo
+洳 U+6D33 44 rù rú
+歕 U+6B55 44 pēn pèn fèn
+䨓 U+4A13 44 léi lèi
+萁 U+8401 44 qí jī
+藋 U+85CB 44 diào dí
+惝 U+60DD 44 chǎng tǎng
+埔 U+57D4 44 pǔ bù
+栟 U+681F 44 bīng bēn
+紖 U+7D16 43 yǐn zhèn
+芯 U+82AF 43 xīn xìn
+曏 U+66CF 43 xiàng shǎng
+檏 U+6A8F 43 pǔ pú
+䅶 U+4176 43 nòu wǔ
+摎 U+644E 43 liáo jiū liú
+輠 U+8F20 43 guǒ guō huà huì
+簳 U+7C33 43 gàn gǎn
+疸 U+75B8 43 dǎn dàn da
+扡 U+6261 43 yǐ chǐ tuō
+豻 U+8C7B 43 àn hàn
+洇 U+6D07 42 yīn yān yē
+徯 U+5FAF 42 xī xí
+鵜 U+9D5C 42 tí tī
+寕 U+5BD5 42 níng nìng
+蘢 U+8622 42 lóng lǒng lòng
+厸 U+53B8 42 lín miǎn
+礧 U+7927 42 lèi léi lěi
+靁 U+9741 42 léi lèi
+矱 U+77F1 42 huò yuē
+湞 U+6E5E 42 chéng zhēn chēng
+胺 U+80FA 42 è àn
+癌 U+764C 42 ái yán
+鐲 U+9432 41 zhuó shǔ
+溱 U+6EB1 41 zhēn qín
+獝 U+735D 41 yù xù
+繻 U+7E7B 41 xū rú
+窱 U+7AB1 41 tiào tiǎo
+禔 U+7994 41 tí zhī
+釃 U+91C3 41 xǐ lí shāi shī
+㳅 U+3CC5 41 jiǎo liú
+萑 U+8411 41 huán tuī zhuī
+頜 U+981C 41 hé hàn gé hán qīn
+莩 U+83A9 41 fú piǎo
+枎 U+678E 41 fú fū
+匼 U+533C 41 qià ǎn kē
+椔 U+6914 40 zī zì
+㧻 U+39FB 40 zhǐ zhuó zú
+䦧 U+49A7 40 qié xì yǎn
+挵 U+6335 40 lòng nòng
+澋 U+6F8B 40 hèng jǐng
+岥 U+5CA5 40 bēi pō pí
+㣧 U+38E7 39 yìn yǒng
+鬄 U+9B04 39 tì dí dì
+歾 U+6B7E 39 mò wěn
+塺 U+587A 39 méi mò
+誙 U+8A99 39 héng kēng
+癉 U+7649 39 dàn dān dǎn tán
+滀 U+6EC0 39 chù xù
+灬 U+706C 39 biāo hǒu
+崪 U+5D2A 38 zú cuì
+瑊 U+744A 38 zhēn jiān
+蹍 U+8E4D 38 zhǎn niǎn
+鑲 U+9472 38 xiāng ráng
+蝥 U+8765 38 máo móu wú wù
+耬 U+802C 38 lóu lǒu
+澑 U+6F91 38 liù liū liú
+擸 U+64F8 38 liè là
+㖀 U+3580 38 lè luò
+皛 U+769B 38 jiǒng jiǎo xiǎo
+瞷 U+77B7 38 xián jiàn
+㦗 U+3997 38 jiàn jìn
+鉺 U+927A 38 ěr èr kēng
+㠗 U+3817 38 ào wò
+蜮 U+872E 37 yù guō
+鑐 U+9450 37 xū rú
+胻 U+80FB 37 xíng héng
+趟 U+8D9F 37 tàng chēng tāng zhēng zhèng
+餤 U+9924 37 tán dàn
+汕 U+6C55 37 shàn shuàn
+芦 U+82A6 37 lú lǔ
+簍 U+7C0D 37 lǒu lǚ jù
+漻 U+6F3B 37 liáo liú
+鯽 U+9BFD 37 jì zéi
+繯 U+7E6F 37 huán huàn
+沲 U+6CB2 37 tuó duò
+䇷 U+41F7 37 bǐ bié
+苲 U+82F2 36 zhǎ zhà zuó
+枒 U+6792 36 yá yā
+朓 U+6713 36 tiào tiǎo
+髿 U+9AFF 36 shā suō
+蜷 U+8737 36 quán juǎn
+罙 U+7F59 36 mí shēn
+粦 U+7CA6 36 lìn lín
+莨 U+83A8 36 láng làng liáng
+僬 U+50EC 36 jiāo jiào
+塈 U+5848 36 jì xì
+楛 U+695B 36 hù kǔ
+贑 U+8D11 36 gǎn gàn gòng
+痱 U+75F1 36 fèi féi fěi
+疔 U+7594 36 dīng nè
+駊 U+99CA 36 bǒ pǒ
+袚 U+889A 36 bō fú
+㼜 U+3F1C 36 àng póu
+趑 U+8D91 35 cī zī cì
+胵 U+80F5 35 zhì chī
+䶗 U+4D97 35 kè qiǎ qiè
+邟 U+909F 35 kàng káng
+砉 U+7809 35 huò huā xū
+釬 U+91EC 35 hàn gān
+仮 U+4EEE 35 jiǎ fǎn
+鍉 U+9349 35 dī chí dí shí
+繃 U+7E43 35 bēng běng bèng
+誖 U+8A96 35 bó bèi
+齜 U+9F5C 34 zī chái
+隐 U+9690 34 yǐn yìn
+抏 U+628F 34 wán wàn
+螞 U+879E 34 mǎ mà mā
+潏 U+6F4F 34 jué yù
+禬 U+79AC 34 kuài guì huì
+硪 U+786A 34 é wò yǐ
+㻔 U+3ED4 34 duǒ ruì
+禫 U+79AB 34 tǎn dàn
+囱 U+56F1 34 cōng chuāng
+荈 U+8348 34 chuǎn quàn
+㧋 U+39CB 33 xiǎn xuǎn
+敄 U+6544 33 wù mòu
+㾽 U+3FBD 33 tuí zhuì
+縓 U+7E13 33 quǎn quàn
+趋 U+8D8B 33 qū cù
+燂 U+71C2 33 qián xún
+炰 U+70B0 33 páo pào
+槾 U+69FE 33 mán màn
+霡 U+9721 33 mò mài
+硌 U+784C 33 luò lì gè
+飬 U+98EC 33 juàn yǎng
+阝 U+961D 33 fù yì
+跕 U+8DD5 33 dié tiē
+阽 U+963D 33 diàn yán
+醝 U+919D 33 cuó cuō
+嵳 U+5D73 33 cuó cī
+㫤 U+3AE4 33 chǎng zhào
+査 U+67FB 33 chá zhā
+髲 U+9AF2 32 pī bì
+淰 U+6DF0 32 niǎn shěn nà niàn liǎn
+湣 U+6E63 32 mǐn hūn
+慬 U+616C 32 jǐn jìn qín
+楬 U+696C 32 jié qià
+鉿 U+927F 32 hā jiā gē kē jiá
+戅 U+6205 32 gàng zhuàng
+䨴 U+4A34 32 duì wèng
+齰 U+9F70 32 cuò zé
+鯈 U+9BC8 32 tiáo yóu chóu
+檡 U+6AA1 31 zhè shì
+醟 U+919F 31 yòng yǒng
+咺 U+54BA 31 xuǎn xuān
+鶱 U+9DB1 31 xuān xiān
+扱 U+6271 31 xī chā
+鯷 U+9BF7 31 shì tí
+槮 U+69EE 31 sēn shēn
+抔 U+6294 31 póu bào
+䍲 U+4372 31 nái ní nì
+梩 U+68A9 31 lí sì
+倈 U+5008 31 lái lài
+閜 U+959C 31 xiǎ xià kě
+廑 U+5ED1 31 jǐn qín
+厪 U+53AA 31 qín jǐn
+葪 U+846A 31 jì jiè
+㒷 U+34B7 31 guǎ xìng xǔ
+摡 U+6461 31 gài xì
+䓛 U+44DB 31 fǔ gǔ
+疿 U+75BF 31 fèi féi
+蹯 U+8E6F 31 fán fān
+緐 U+7DD0 31 fán pán pó
+栘 U+6818 31 yǐ yí
+䓑 U+44D1 31 bǐng píng
+鄹 U+9139 30 zōu jù
+斿 U+65BF 30 yóu liú
+綯 U+7DAF 30 táo kù
+苹 U+82F9 30 píng pín pēng
+攦 U+6526 30 lì xǐ
+壳 U+58F3 30 ké qiào
+焳 U+7133 30 jué jiāo
+㬭 U+3B2D 30 jiào shǎn yǎo
+㡭 U+386D 30 jì kuí
+麧 U+9EA7 30 gē hé
+踱 U+8E31 30 duò duó chuò
+㔜 U+351C 30 bá bó
+杬 U+676C 29 yuán wán
+蛸 U+86F8 29 shāo xiāo
+焫 U+712B 29 ruò rè
+碻 U+78BB 29 què qiāo
+簥 U+7C25 29 jiāo qiáo
+鬵 U+9B35 29 qián xín
+䕞 U+455E 29 làng liáo
+㾗 U+3F97 29 lǎng liàng
+湨 U+6E68 29 qù jú
+稉 U+7A09 29 gēng jīng
+髺 U+9AFA 29 guà kuò
+灨 U+7068 29 gǎn gàn gòng
+澉 U+6F89 29 gǎn hàn
+囮 U+56EE 29 é yóu
+怢 U+6022 28 tú tū
+鰌 U+9C0C 28 qiú qiū
+綪 U+7DAA 28 qiàn zhēng
+擽 U+64FD 28 lüè lì luò
+癆 U+7646 28 láo lào
+鮭 U+9BAD 28 guī wā xié kuí huà
+騀 U+9A00 28 é ě
+攩 U+6529 28 dǎng tǎng
+燀 U+71C0 28 chǎn dǎn
+齵 U+9F75 27 óu yú
+鋣 U+92E3 27 xié yé
+眭 U+772D 27 suī guì huī xié wèi
+襂 U+8942 27 sēn shān shēn
+瓟 U+74DF 27 báo bó
+伲 U+4F32 27 nǐ nì
+蜢 U+8722 27 měng mèng
+鏈 U+93C8 27 liàn lián
+隶 U+96B6 27 lì dài yì dì
+窼 U+7ABC 27 zhāo cōng
+豰 U+8C70 27 bó hù huò gòu
+訌 U+8A0C 27 hóng hòng
+濄 U+6FC4 27 guō wō
+耵 U+8035 27 tīng dīng dǐng
+递 U+9012 27 dì dài
+菂 U+83C2 27 dī dì
+㤇 U+3907 27 ǎo fó wù
+𡑞 U+2145E 27 suì zhuì
+窋 U+7A8B 26 zhú kū
+繘 U+7E58 26 yù jú
+磤 U+78E4 26 yǐn yīn
+沕 U+6C95 26 wù mì
+鯖 U+9BD6 26 qīng zhēng
+顣 U+9863 26 qī cù
+餾 U+993E 26 liù liú
+飂 U+98C2 26 liáo liú liù
+邋 U+908B 26 lá lā liè
+垧 U+57A7 26 jiōng shǎng
+脘 U+8118 26 guǎn wǎn huàn
+獾 U+737E 26 huān quán
+浛 U+6D5B 26 hàn hán
+阸 U+9638 26 è ài
+嶭 U+5DAD 26 è niè
+椏 U+690F 26 yā yá
+桗 U+6857 26 duò duǒ
+軑 U+8ED1 26 dì dài
+脞 U+811E 26 cuǒ qiē
+踩 U+8E29 26 cǎi kuí
+䠋 U+480B 26 bǐ bì mà
+晲 U+6672 25 yǐ nì
+窨 U+7AA8 25 yìn xūn yīn
+蒠 U+84A0 25 xí xī
+蒵 U+84B5 25 xī xí xì
+膛 U+819B 25 táng tāng
+賧 U+8CE7 25 tàn tǎn
+羍 U+7F8D 25 tà dá
+螵 U+87B5 25 piāo pí
+䤄 U+4904 25 miǎn zhuàn
+穈 U+7A48 25 mén méi
+郿 U+90FF 25 méi féi
+樏 U+6A0F 25 lěi léi
+騞 U+9A1E 25 huò huō
+峘 U+5CD8 25 hū huán
+柜 U+67DC 25 guì jǔ
+䵻 U+4D7B 25 gǔ hú huì
+㜑 U+3711 25 fú pó
+艟 U+825F 25 tóng chōng zhuàng
+边 U+8FB9 25 biān bian
+𣪠 U+23AA0 25 jī jì qì
+䫻 U+4AFB 24 xué yù
+葴 U+8474 24 zhēn qián xián
+芴 U+82B4 24 wù hū
+鎢 U+93A2 24 wū wù
+桯 U+686F 24 tīng xíng
+涮 U+6DAE 24 shuàn shuā
+絻 U+7D7B 24 miǎn wèn
+殣 U+6BA3 24 jìn jǐn
+繐 U+7E50 24 suì huì
+䌇 U+4307 24 huì suǒ
+嗃 U+55C3 24 hè xiāo xiào
+餲 U+9932 24 hé ài
+鴂 U+9D02 24 juè jué
+胍 U+80CD 24 guā gū hù
+菏 U+83CF 24 hé gē
+棻 U+68FB 24 fén fēn
+誒 U+8A92 24 è āi ēi éi ěi èi xī yì
+籴 U+7C74 24 dí zá
+鼂 U+9F02 24 cháo zhāo
+喳 U+55B3 24 zhā chā
+謷 U+8B37 24 áo ào
+柣 U+67E3 23 zhí dié zhì
+禜 U+799C 23 yǒng yíng
+杝 U+675D 23 yí chǐ lí
+宎 U+5B8E 23 yǎo yāo yào
+䍃 U+4343 23 yáo yóu
+衕 U+8855 23 tòng dòng
+錭 U+932D 23 táo diāo
+脽 U+813D 23 zhōu shuí
+吲 U+5432 23 shěn yǐn
+腝 U+815D 23 ruǎn ér nào
+矼 U+77FC 23 qiāng gāng kòng
+鄺 U+913A 23 kuàng kuò
+犵 U+72B5 23 gē qì hé jié
+㦜 U+399C 23 huò xuè
+稃 U+7A03 23 fū fú
+䋲 U+42F2 23 chě shéng xǐng zhè
+蠙 U+8819 23 bīn pín
+裷 U+88F7 22 yuān gǔn
+躠 U+8EA0 22 xiě sǎ xiè
+嘐 U+5610 22 xiāo jiāo
+絭 U+7D6D 22 quàn juàn
+昢 U+6622 22 pěi pèi
+樠 U+6A20 22 mén mán
+憭 U+61AD 22 liǎo liáo
+錕 U+9315 22 kūn gǔn
+唊 U+550A 22 jiá qiǎn
+廆 U+5EC6 22 huì guī wěi
+㲹 U+3CB9 22 guǐ qiú
+泭 U+6CED 22 fū fú
+汏 U+6C4F 22 dài dà tài
+漘 U+6F18 22 chún qún
+碚 U+789A 22 bèi péi
+䟺 U+47FA 22 bǎng bèi pèi
+驁 U+9A41 22 ào áo yào
+遉 U+9049 21 zhēn zhēng
+偊 U+504A 21 yǔ jǔ
+謑 U+8B11 21 xì xǐ
+渨 U+6E28 21 wēi wěi
+贉 U+8D09 21 tǎn dǎn dàn
+乓 U+4E53 21 pāng pang
+覛 U+899B 21 mì mò
+䢖 U+4896 21 lǜ yù
+菫 U+83EB 21 jǐn jìn qín
+芔 U+8294 21 huǐ huì
+㮯 U+3BAF 21 huá hún kuǎn
+嘑 U+5611 21 hū hù là
+罫 U+7F6B 21 guà guǎi huà
+㕮 U+356E 21 fǔ tiào
+檽 U+6ABD 21 ér nòu
+踶 U+8E36 21 dì chí tí zhì
+嵽 U+5D7D 21 dié dì
+䩚 U+4A5A 21 dì diàn
+噡 U+5661 21 dān zhān
+茈 U+8308 21 zǐ chái cí cǐ
+骴 U+9AB4 21 chī cī
+畷 U+7577 21 chuò zhuó
+櫡 U+6AE1 20 zhuó zhù
+隃 U+9683 20 yú yáo
+孅 U+5B45 20 xiān qiān
+舔 U+8214 20 tiǎn tān
+挩 U+6329 20 tuō shuì
+胜 U+80DC 20 shèng shēng
+瀜 U+701C 20 yōng róng
+㹤 U+3E64 20 qiè què
+踑 U+8E11 20 qí jī
+亝 U+4E9D 20 qí zhāi zī
+摞 U+645E 20 luò luó
+檑 U+6A91 20 léi lèi
+捖 U+6356 20 huán guā wán
+唪 U+552A 20 fěng běng
+蟫 U+87EB 19 yín tán xún
+袘 U+8898 19 yí yì
+黭 U+9EED 19 yān yǎn
+㕣 U+3563 19 yǎn yàn
+栒 U+6812 19 xún sǔn
+蹜 U+8E5C 19 suō sù
+籔 U+7C54 19 sǒu shù
+鄏 U+910F 19 rù rǔ
+鏚 U+93DA 19 qì qī
+嫖 U+5AD6 19 piào piáo biāo piāo
+鈚 U+921A 19 pí pī
+簰 U+7C30 19 pái bēi
+衇 U+8847 19 mò mài
+烕 U+70D5 19 xuè miè
+濔 U+6FD4 19 mǐ mí nǐ
+庬 U+5EAC 19 páng máng
+录 U+5F55 19 lù lǜ
+躒 U+8E92 19 lì luò yuè
+䦱 U+49B1 19 kuǐ wěi
+挎 U+630E 19 kū kōu kuà
+胐 U+80D0 19 kū péi
+咖 U+5496 19 kā gā
+蕝 U+855D 19 jué zuì
+隽 U+96BD 19 jùn juàn
+桊 U+684A 19 juàn quān quán
+錽 U+933D 19 wǎn wàn
+鈃 U+9203 19 xíng jiān
+䁍 U+404D 19 jià kè qià
+会 U+4F1A 19 huì kuài guì
+罦 U+7F66 19 fú fū
+峉 U+5CC9 19 ē è
+鐓 U+9413 19 duì duī dūn
+醊 U+918A 19 chuò zhuī
+裯 U+88EF 19 chóu dāo
+䛬 U+46EC 19 chóu táo
+鷩 U+9DE9 19 bì biē chǎng
+夲 U+5932 19 běn tāo
+剥 U+5265 19 bō bāo pū
+㨁 U+3A01 18 zhí zhì
+駔 U+99D4 18 zǎng zǔ zù
+䵴 U+4D74 18 yùn zèng
+浟 U+6D5F 18 yóu dí
+滫 U+6EEB 18 sǒu xiū xiǔ
+硝 U+785D 18 xiāo qiào
+鋘 U+92D8 18 wú huá
+碨 U+78A8 18 wēi wěi
+忳 U+5FF3 18 tún zhūn
+鮦 U+9BA6 18 tóng zhòu
+穜 U+7A5C 18 tóng zhòng
+爞 U+721E 18 tóng chóng
+腧 U+8167 18 yú shù
+攕 U+6515 18 sān xiān
+踆 U+8E06 18 qūn cūn cún
+骹 U+9AB9 18 qiāo xiāo
+泙 U+6CD9 18 píng pēng
+撆 U+6486 18 piē piě
+跈 U+8DC8 18 niǎn jiàn
+涊 U+6D8A 18 niǎn rěn niàn liǎn
+竗 U+7AD7 18 miào miǎo
+芼 U+82BC 18 mào máo
+斄 U+6584 18 lì lí tái
+陖 U+9656 18 xùn jùn
+腃 U+8143 18 kuì quān quán juàn
+痀 U+75C0 18 qú gōu jū yǔ
+嬛 U+5B1B 18 huán qióng yuān
+嗨 U+55E8 18 hāi hǎi
+㯻 U+3BFB 18 gǔn hùn
+鳱 U+9CF1 18 gān hàn
+䳬 U+4CEC 18 è yǎo yì
+蓧 U+84E7 18 diào tiāo tiáo
+侳 U+4FB3 18 zuò cuò
+腄 U+8144 18 chuí hóu chuái
+梫 U+68AB 18 cēn qīn
+参 U+53C2 18 cān sān shēn dēn cēn sǎn
+矉 U+77C9 18 bīn pín
+鵪 U+9D6A 18 ān yàn yā
+鱒 U+9C52 17 zùn zūn
+孖 U+5B56 17 zī mā
+黹 U+9EF9 17 zhǐ xiàn
+桭 U+686D 17 zhēn chén
+懮 U+61EE 17 yǒu yōu
+檼 U+6ABC 17 yìn yǐn
+窔 U+7A94 17 yǎo yào
+焄 U+7104 17 xūn hūn
+晅 U+6645 17 xuān xiǎn
+燅 U+71C5 17 xián qián xún
+抾 U+62BE 17 qū jié
+艿 U+827F 17 nǎi réng rèng
+霿 U+973F 17 mèng méng mòu
+漊 U+6F0A 17 lǚ lóu
+硫 U+786B 17 liú chù
+丂 U+4E02 17 kǎo qiǎo yú
+鐧 U+9427 17 jiǎn jiàn jiān
+夹 U+5939 17 jiā jiá
+焏 U+710F 17 jí qì
+觭 U+89ED 17 jī qǐ qí
+芨 U+82A8 17 jí jī
+擖 U+64D6 17 gě yè
+艴 U+8274 17 fú bó pèi
+啡 U+5561 17 fēi pēi
+蕟 U+855F 17 fà fèi
+臑 U+81D1 17 rú ér nào
+硐 U+7850 17 tóng dǒng dòng
+瘩 U+7629 17 da dā dá
+橇 U+6A47 17 qiāo qiào cuì
+誃 U+8A83 17 chǐ chí yí
+靫 U+976B 17 chā chāi
+䦘 U+4998 17 bì xiǎn xiàn
+杮 U+676E 17 fèi bèi
+鑚 U+945A 16 zuàn zuān
+黕 U+9ED5 16 dān dǎn
+楥 U+6965 16 xuàn yuán
+䲻 U+4CBB 16 xuán yuán
+鋙 U+92D9 16 wú yǔ
+罻 U+7F7B 16 wèi yù
+脕 U+8115 16 wǎn wàn
+㖷 U+35B7 16 shí tí
+縴 U+7E34 16 qiān qiàn
+鸂 U+9E02 16 qī xī
+蹼 U+8E7C 16 pú pǔ
+䛘 U+46D8 16 nín rén
+㘝 U+361D 16 niǎn niè
+䩞 U+4A5E 16 nián tiǎn tié wěi
+氌 U+6C0C 16 luó lǔ
+䝀 U+4740 16 liáo liú
+愣 U+6123 16 lèng léng
+垒 U+5792 16 lěi lèi léi lǜ
+墤 U+58A4 16 kuài tuí
+㵣 U+3D63 16 kě luǒ
+龢 U+9FA2 16 hé hè huò
+蛬 U+86EC 16 gǒng qióng
+䪥 U+4AA5 16 dié xiè
+畗 U+7557 16 dá fú
+㙜 U+365C 16 chí tái
+緶 U+7DF6 16 biàn pián biǎn
+甂 U+7502 16 biān piān
+愂 U+6102 16 bèi běi
+氆 U+6C06 16 pǔ bǎng
+㕭 U+356D 16 ào bì
+𢠵 U+22835 16 tǎng chǎng
+揍 U+63CD 15 zòu còu
+噣 U+5663 15 zhòu zhuó
+聀 U+8040 15 zhí zhì
+溠 U+6EA0 15 zhà zhā
+砟 U+781F 15 zhà zuó zhǎ zuò
+佣 U+4F63 15 yòng yōng yóng
+韗 U+97D7 15 xùn yùn
+茠 U+8320 15 xiū hāo
+籺 U+7C7A 15 xié hé
+㿅 U+3FC5 15 xiǎn xuǎn
+㦻 U+39BB 15 xí zhé
+葖 U+8456 15 tú tū
+鼨 U+9F28 15 tóng zhōng
+覗 U+8997 15 sī sì
+蝤 U+8764 15 qiú jiū yóu
+忔 U+5FD4 15 qì yì
+槭 U+69ED 15 cù qī sè
+墣 U+58A3 15 pū pú
+芈 U+8288 15 miē mǐ
+梦 U+68A6 15 mèng méng
+璊 U+748A 15 mén mán
+薟 U+859F 15 liǎn lián xiān yán kàn
+溓 U+6E93 15 lián nián liǎn
+葰 U+8470 15 jùn suī
+㒞 U+349E 15 jùn kě
+鐻 U+943B 15 jù qú
+掝 U+639D 15 huò xù
+叀 U+53C0 15 zhuān huì
+䏦 U+43E6 15 huá tián wǎn
+渹 U+6E39 15 hōng qìng
+貈 U+8C88 15 hé háo mà mò
+䤋 U+490B 15 guó yù
+窐 U+7A90 15 guī wā
+睾 U+777E 15 gāo hào
+哋 U+54CB 15 dì dēi
+㺗 U+3E97 15 dàn yán
+单 U+5355 15 dān shàn chán
+惉 U+60C9 15 chān zhān
+梹 U+68B9 15 bīng bīn
+藨 U+85E8 15 biāo pāo piǎo
+䌵 U+4335 14 zhú zhǔ
+鋥 U+92E5 14 zhèng zèng
+糌 U+7CCC 14 zán zān
+魭 U+9B6D 14 yuán wǎn
+濴 U+6FF4 14 xíng yíng
+撏 U+648F 14 xún xián
+燙 U+71D9 14 tàng dàng
+毸 U+6BF8 14 suī sāi
+俆 U+4FC6 14 xú shū
+翨 U+7FE8 14 shì chì
+㭙 U+3B59 14 shé zhé
+芪 U+82AA 14 qí chí
+瞟 U+779F 14 piǎo piào piāo
+鈮 U+922E 14 ní nǐ
+㞾 U+37BE 14 ní yì
+櫑 U+6AD1 14 lěi léi
+硠 U+7860 14 lǎng láng
+鋦 U+92E6 14 jū jú
+覸 U+89B8 14 jiàn xián
+䦚 U+499A 14 huò kuǎ kuà
+楎 U+694E 14 hún huī
+蕻 U+857B 14 hòng hóng
+㽳 U+3F73 14 hàn xiè xǔ yú
+盯 U+76EF 14 dīng chéng
+鰈 U+9C08 14 dié qiè zhá
+咑 U+5491 14 què quē jué
+䠞 U+481E 14 cù qí
+跐 U+8DD0 14 cǐ cǎi
+跮 U+8DEE 14 chì dié
+㷅 U+3DC5 14 chǎo miǎo
+䪨 U+4AA8 14 báo qú
+墺 U+58BA 14 ào yù
+樿 U+6A3F 13 zhǎn shàn
+伝 U+4F1D 13 chuán yún
+䁆 U+4046 13 ǎn yì
+㤢 U+3922 13 xù yù
+脥 U+8125 13 qiǎn qū jiá xié
+蕫 U+856B 13 tóng dǒng
+罿 U+7F7F 13 tóng chōng
+㑿 U+347F 13 tiáo zhào
+蕛 U+855B 13 téng tí
+襢 U+8962 13 tǎn zhàn
+蚺 U+86BA 13 rán tiàn
+檾 U+6ABE 13 qǐng jiǒng
+悗 U+6097 13 mán mèn
+㦄 U+3984 13 má mì
+蟉 U+87C9 13 liú liào
+欐 U+6B10 13 lǐ lì
+蟸 U+87F8 13 lǐ lí luǒ luó lì
+霩 U+9729 13 huò kuò
+觖 U+89D6 13 jué kuì guì
+礛 U+791B 13 jiān lán
+懁 U+61C1 13 huán xuān
+蘹 U+8639 13 huài huái
+䁔 U+4054 13 hàn huǎn
+鉻 U+927B 13 gè gé luò gē
+砏 U+780F 13 fēn pān
+䄍 U+410D 13 dù duó zhà
+濎 U+6FCE 13 dǐng tìng
+䏑 U+43D1 13 dì zhì
+耷 U+8037 13 dā zhé
+庛 U+5E9B 13 cī cì
+歂 U+6B42 13 chuán chuǎn
+㓼 U+34FC 13 chì chòng
+嘽 U+563D 13 tān chǎn
+䴺 U+4D3A 13 bù cǎi chàn
+敱 U+6571 13 ái zhú
+㑌 U+344C 13 wāng kuāng
+鎐 U+9390 12 zú yáo
+盅 U+76C5 12 zhōng chōng
+觶 U+89F6 12 zhì zhī
+鄘 U+9118 12 yōng yóng
+歅 U+6B45 12 yīn yān
+㩗 U+3A57 12 xí xié
+壝 U+58DD 12 wéi wěi
+綎 U+7D8E 12 tīng tíng
+巂 U+5DC2 12 suǐ guī
+鉈 U+9248 12 shī shé yí tuó tā
+棯 U+68EF 12 rěn niàn
+錤 U+9324 12 qí jī
+鸊 U+9E0A 12 pì bì
+肭 U+80AD 12 nà nǜ
+蝐 U+8750 12 mài mèi
+鐂 U+9402 12 liù liú
+朸 U+6738 12 lì lè
+㭾 U+3B7E 12 jué yuè
+躤 U+8EA4 12 jiè jí
+弜 U+5F1C 12 jiàng qiáng
+鶼 U+9DBC 12 jiān qiān
+鞈 U+9788 12 jiá gé tà
+䖯 U+45AF 12 guì kuí
+㷇 U+3DC7 12 guài kuí
+嘸 U+5638 12 fǔ wǔ
+芣 U+82A3 12 fú fǒu fū fóu
+瞂 U+7782 12 fā fá
+䠟 U+481F 12 dié shè
+戧 U+6227 12 chuāng qiāng qiàng
+濞 U+6FDE 12 pì bì
+逩 U+9029 12 bèn bēn
+鴩 U+9D29 11 tiě hú
+醩 U+91A9 11 záo zāo
+秇 U+79C7 11 yì zhí
+陭 U+966D 11 yī qī yì
+閆 U+9586 11 yán yǎn yàn
+藇 U+85C7 11 xù yù
+闟 U+95DF 11 xì tà sà
+迋 U+8FCB 11 wàng guǎng guàng kuáng
+㾯 U+3FAF 11 tuí wěi
+㲜 U+3C9C 11 tán tǎn
+鸀 U+9E00 11 shú shǔ zhú zhuó
+䱇 U+4C47 11 shàn táo
+駥 U+99E5 11 róng xuè
+琄 U+7404 11 quǎn juān xuàn
+漧 U+6F27 11 qián gān
+㩮 U+3A6E 11 qián xián
+袢 U+88A2 11 pàn fán
+䐁 U+4401 11 niǎo zhuó
+㩢 U+3A62 11 mí miè
+擵 U+64F5 11 mó mí mā
+䕡 U+4561 11 lǔ lǘ
+岭 U+5CAD 11 líng lǐng
+鷚 U+9DDA 11 liáo liù
+轑 U+8F51 11 lǎo láo liǎo
+㔃 U+3503 11 jué pì
+䶖 U+4D96 11 jìn qín
+鮚 U+9B9A 11 jié qià
+㕲 U+3572 11 huá yíng
+翯 U+7FEF 11 hè hé
+絚 U+7D5A 11 gēng gèng
+哏 U+54CF 11 hěn gén
+䘄 U+4604 11 fù zhù
+䶍 U+4D8D 11 dì tì
+樬 U+6A2C 11 cōng sōng
+䜴 U+4734 11 chù shì
+胂 U+80C2 11 shēn shèn chēn
+脠 U+8120 11 shān chān
+坺 U+577A 11 bá bō
+踤 U+8E24 10 zú cuì
+鶽 U+9DBD 10 zhǔn sǔn
+麆 U+9E86 10 zhù chú
+懫 U+61EB 10 zhí zhì
+慹 U+6179 10 zhí zhé
+袗 U+8897 10 zhěn zhēn
+䠦 U+4826 10 zhè zhì
+㒜 U+349C 10 yú yǔ
+鈾 U+923E 10 yóu zhòu
+謻 U+8B3B 10 yí chí
+㭨 U+3B68 10 xié yé
+䚷 U+46B7 10 xì yǐ yì
+橢 U+6A62 10 tuǒ duǒ
+骵 U+9AB5 10 tǐ tī
+偒 U+5052 10 tǎng dàng
+栜 U+681C 10 sù shè
+钃 U+9483 10 shǔ zhú
+䁯 U+406F 10 shè xié
+厦 U+53A6 10 shà xià
+㴔 U+3D14 10 sè yì
+䢇 U+4887 10 rǒng rǒu
+㾨 U+3FA8 10 qǐ yǐ
+廹 U+5EF9 10 pò pǎi
+㟝 U+37DD 10 péi pǒu
+䃲 U+40F2 10 pán pàn
+鷊 U+9DCA 10 nì yì
+髐 U+9AD0 10 náo xiāo
+㙁 U+3641 10 mǎng méi mèi mù nà
+棆 U+68C6 10 zhūn lún
+㵳 U+3D73 10 liáo liú
+沵 U+6CB5 10 mǐ mí nǐ
+肵 U+80B5 10 jìn qí
+檞 U+6A9E 10 jiě xiè
+艽 U+827D 10 qiú jiǔ jiāo
+洚 U+6D1A 10 jiàng hóng
+囝 U+56DD 10 jiǎn nān
+䯛 U+4BDB 10 jiǎn wàn
+嗊 U+55CA 10 hǒng gòng
+䒩 U+44A9 10 hé xiá
+筕 U+7B55 10 xíng háng
+猓 U+7313 10 guǒ luǒ
+䡩 U+4869 10 gǔ hòu tǒu zhěn
+擀 U+64C0 10 gǎn hàn
+矸 U+77F8 10 gān gàn
+醱 U+91B1 10 pò pō
+㮕 U+3B95 10 ér ruǎn
+鳭 U+9CED 10 diāo zhāo
+逿 U+903F 10 dàng táng
+忕 U+5FD5 10 shì tài
+䐊 U+440A 10 dá hún hùn
+蚝 U+869D 10 cì háo
+薋 U+858B 10 cī cí
+㱟 U+3C5F 10 bó pí pǐ
+骳 U+9AB3 10 bì bèi
+潷 U+6F77 10 bǐ bì
+㖠 U+35A0 10 bà nuò
+灂 U+7042 9 zhuó jiào
+鐯 U+942F 9 zhuó zhuō
+㠭 U+382D 9 zhǎn zhàn
+兂 U+5142 9 zān zǎn
+㧈 U+39C8 9 yǐn yìn
+槷 U+69F7 9 yì niè
+貤 U+8CA4 9 yí yì
+䵝 U+4D5D 9 yà yì
+寻 U+5BFB 9 xún xín
+鄩 U+9129 9 xín xún
+粞 U+7C9E 9 xī qī
+峿 U+5CFF 9 yǔ wú
+綄 U+7D84 9 wàn huǎn
+僓 U+50D3 9 tuǐ tuí
+淌 U+6DCC 9 tǎng chàng chǎng
+戃 U+6203 9 tǎng chǎng
+秮 U+79EE 9 huó kuò
+穇 U+7A47 9 shān cǎn
+翜 U+7FDC 9 sè shà
+輇 U+8F07 9 quán chūn
+淜 U+6DDC 9 péng píng
+桙 U+6859 9 yú móu
+玀 U+7380 9 luó ě
+丽 U+4E3D 9 lì lí
+劳 U+52B3 9 láo lào
+啷 U+5577 9 lāng láng
+爌 U+720C 9 kuàng huàng
+奒 U+5952 9 kāi zhā zhà
+趹 U+8DB9 9 jué guì
+巻 U+5DFB 9 juàn juǎn
+耩 U+8029 9 jiǎng gōu
+椵 U+6935 9 jiǎ jiā
+蔇 U+8507 9 jì xì
+禨 U+79A8 9 jī jì
+餫 U+992B 9 hún yùn
+䓿 U+44FF 9 hǎn hàn
+錁 U+9301 9 guǒ kuǎ kè
+巜 U+5DDC 9 guì kuài
+緪 U+7DEA 9 gēng gèng
+䨣 U+4A23 9 gé gèng
+鴚 U+9D1A 9 gē jiā
+䲧 U+4CA7 9 dù shuì
+鎝 U+939D 9 sà dā
+䃀 U+40C0 9 cuì xùn
+餑 U+9911 9 bō bó
+琕 U+7415 9 pín bǐng
+䟆 U+47C6 9 bì bó
+䠙 U+4819 9 bèi páng páo
+鈀 U+9200 9 bǎ pá bā
+墢 U+58A2 9 bá fèi bō
+墬 U+58AC 8 dì de
+唨 U+5528 8 zuǒ zǔ
+寁 U+5BC1 8 zǎn jié
+㤤 U+3924 8 yú yǔ
+滽 U+6EFD 8 yóng róng
+鳦 U+9CE6 8 yǐ yì
+㙪 U+366A 8 yè yì
+薢 U+85A2 8 jiē xiè
+嬥 U+5B25 8 tiǎo tiáo
+盷 U+76F7 8 tián xuán
+㑷 U+3477 8 tài tiàn zhuàn
+䇃 U+41C3 8 sì xiào
+㼤 U+3F24 8 qì qiè yà
+潎 U+6F4E 8 pì piē
+㵫 U+3D6B 8 nǐ yì
+㒝 U+349D 8 miè wà
+㗄 U+35C4 8 mán màn
+埨 U+57E8 8 lǔn lùn
+䈁 U+4201 8 lún luò
+㼑 U+3F11 8 liàn luán
+䃛 U+40DB 8 lián qiàn
+㒿 U+34BF 8 lí lì
+㴃 U+3D03 8 lèi lì
+艻 U+827B 8 lè jí
+鬠 U+9B20 8 kuài kuò
+㟴 U+37F4 8 kuài kuǐ wěi
+閌 U+958C 8 kàng kāng
+仅 U+4EC5 8 jǐn jìn
+檕 U+6A95 8 jì xì
+鈒 U+9212 8 jí sà
+犄 U+7284 8 jī yī
+犿 U+72BF 8 huān fān
+甝 U+751D 8 hān hán
+关 U+5173 8 guān wān
+粰 U+7CB0 8 fú fū
+耏 U+800F 8 ér nài
+扽 U+627D 8 dùn dèn
+蝳 U+8773 8 dú dài
+垌 U+578C 8 dòng tóng
+皠 U+76A0 8 cuǐ cuì
+㭫 U+3B6B 8 cuán cuó zhèn
+訦 U+8A26 8 chén shén
+桲 U+6872 8 bó po
+爊 U+720A 8 áo āo
+佁 U+4F41 8 ǎi yǐ chì sì
+墫 U+58AB 7 zūn cún
+緵 U+7DF5 7 zōng zòng
+妯 U+59AF 7 zhóu zhú
+晸 U+6678 7 zhěn zhěng
+㯰 U+3BF0 7 zhé zhí
+愠 U+6120 7 yùn wěn
+殜 U+6B9C 7 yè dié
+郾 U+90FE 7 yǎn yān
+鵔 U+9D54 7 xùn jùn
+謞 U+8B1E 7 xuè xiào
+愃 U+6103 7 xuān xuǎn
+蓨 U+84E8 7 tiāo tiáo
+赨 U+8D68 7 xióng tóng
+矽 U+77FD 7 xì xī
+嵔 U+5D54 7 wěi wèi
+鼵 U+9F35 7 tú tū
+艼 U+827C 7 tīng dǐng
+㒸 U+34B8 7 suì xuán
+荍 U+834D 7 shōu qiáo
+儃 U+5103 7 chán tǎn
+糣 U+7CE3 7 sǎn sān
+㛱 U+36F1 7 ruì wěi
+扰 U+6270 7 rǎo róu
+甽 U+753D 7 quǎn zhèn
+砠 U+7820 7 qū jū
+銎 U+928E 7 qiōng qióng
+䌠 U+4320 7 qìng yǎn yìn
+䲔 U+4C94 7 qíng qìng
+趬 U+8DAC 7 qiáo qiāo
+肷 U+80B7 7 qiān xù qiǎn
+趿 U+8DBF 7 sà tā qì
+諆 U+8AC6 7 qī jī
+磩 U+78E9 7 qī qì
+諞 U+8ADE 7 piǎn pián
+壀 U+58C0 7 pí bì pì bēi
+䮍 U+4B8D 7 niǎo xìng
+秜 U+79DC 7 ní lí
+㜛 U+371B 7 nèn ruǎn
+鈉 U+9209 7 nà ruì
+攠 U+6520 7 mí mā mó
+媌 U+5A8C 7 máo miáo
+榪 U+69AA 7 mà mǎ
+菻 U+83FB 7 lǐn má
+礌 U+790C 7 lèi léi lěi
+壏 U+58CF 7 làn hǎn
+扝 U+625D 7 kū wū
+砊 U+780A 7 kàng kāng
+蚷 U+86B7 7 jù qú
+臶 U+81F6 7 jiàn zùn
+梜 U+689C 7 jiá jiā
+鱯 U+9C6F 7 huò hù
+䂄 U+4084 7 huò kuàng
+貆 U+8C86 7 huán huān
+㷎 U+3DCE 7 hè hóng xié
+䢗 U+4897 7 hé qǔ
+㲦 U+3CA6 7 hàn hě
+㙈 U+3648 7 hán xià
+过 U+8FC7 7 guò guō
+蟈 U+87C8 7 guō yù
+緺 U+7DFA 7 guā guō wō
+䊺 U+42BA 7 gǔ hù
+蓇 U+84C7 7 gǔ gū
+軵 U+8EF5 7 rǒng fǔ
+詻 U+8A7B 7 è luò
+蘁 U+8601 7 wù è
+炖 U+7096 7 tún dùn tūn
+峝 U+5CDD 7 tóng dòng
+䙷 U+4677 7 dé zhé
+䆃 U+4183 7 dǎo dào
+枱 U+67B1 7 yí tái sì
+㲋 U+3C8B 7 chuò zhuó zú
+輴 U+8F34 7 chūn shūn qūn
+拸 U+62F8 7 chǐ yí
+䜵 U+4735 7 chǐ shì
+搷 U+6437 7 tián shēn
+鰺 U+9C3A 7 sāo shēn cān
+䍌 U+434C 7 bù fú
+㝿 U+377F 7 bó bǒ fù qiàn
+臕 U+81D5 7 biāo piǎo
+蒡 U+84A1 7 bàng páng
+䐿 U+443F 7 áo ào bì
+肮 U+80AE 7 háng gāng āng kǎng
+娭 U+5A2D 7 xī āi
+𩋧 U+292E7 7 xié kài
+𧜁 U+27701 7 shā shà
+錣 U+9323 6 zhuó zhuì
+碡 U+78A1 6 dú zhóu
+謅 U+8B05 6 zōu zhōu chǎo chōu
+䃍 U+40CD 6 zhào zhuì
+魙 U+9B59 6 zhǎn jiàn
+鸒 U+9E12 6 yú yù
+硧 U+7867 6 yǒng tóng
+訡 U+8A21 6 yín yǐn jìn
+医 U+533B 6 yì yī
+猇 U+7307 6 yáo xiāo
+样 U+6837 6 yáng yàng xiàng
+顔 U+9854 6 yán yá
+坃 U+5743 6 xūn xùn
+焮 U+712E 6 xìn xīn
+挟 U+631F 6 xié jiā xiá
+蒍 U+848D 6 wéi wěi
+䖤 U+45A4 6 wǎn yuán
+䚯 U+46AF 6 tǎo zhèn
+闛 U+95DB 6 táng chāng tāng
+箾 U+7BBE 6 shuò xiāo qiào
+鍦 U+9366 6 shé shī
+烻 U+70FB 6 shān shán yàn
+㡊 U+384A 6 qià qiǎn
+蝻 U+877B 6 nǎn án
+嚜 U+569C 6 mò me ma
+㜷 U+3737 6 mí nǎi xiǎn
+苺 U+82FA 6 méi mèi
+牦 U+7266 6 máo lí
+鉚 U+925A 6 liǔ mǎo
+罧 U+7F67 6 lín shēn
+蘞 U+861E 6 liàn liǎn lián xiān
+釙 U+91D9 6 pò pō
+䤚 U+491A 6 lǐ lüè
+䍥 U+4365 6 lèi lì
+䚅 U+4685 6 lái lài
+楑 U+6951 6 kuí kuǐ
+亏 U+4E8F 6 yú kuī
+鈳 U+9233 6 kē ē
+㭈 U+3B48 6 jué kuài
+桕 U+6855 6 jiù gāo
+擏 U+64CF 6 jìng qíng
+倞 U+501E 6 jìng liàng
+紟 U+7D1F 6 jīn jìn
+紒 U+7D12 6 jiè jì
+䔿 U+453F 6 jiè zǔn
+緁 U+7DC1 6 qiè jī qī qì
+洁 U+6D01 6 jí jié
+藠 U+85E0 6 xiào jiào
+嵹 U+5D79 6 jiàng qiáng
+䅐 U+4150 6 jiǎn qián
+瘈 U+7608 6 jì chì zhì
+耤 U+8024 6 jí jiè
+矆 U+77C6 6 huò xuē
+䣶 U+48F6 6 huó tián
+嚄 U+5684 6 huò huō
+顪 U+986A 6 huī huì
+榥 U+69A5 6 huǎng huàng
+䔢 U+4522 6 huá huà
+㭱 U+3B71 6 hé xiá
+撖 U+6496 6 qiǎn hàn
+琀 U+7400 6 hán hàn
+逛 U+901B 6 guàng kuáng
+篢 U+7BE2 6 gōng lǒng
+峊 U+5CCA 6 fù niè
+䃽 U+40FD 6 fú guǐ sì
+䏎 U+43CE 6 féng hàn
+蟦 U+87E6 6 fèi bēn
+䒠 U+44A0 6 fǎn xiá
+腞 U+815E 6 zhuàn dùn tú
+䊮 U+42AE 6 dí zhé zhè
+幨 U+5E68 6 chān chàn
+䄷 U+4137 6 dàn diǎo shí
+㫜 U+3ADC 6 dàn tǎn
+㥞 U+395E 6 cuì qiàn suì
+劗 U+5297 6 cuán jiǎn
+魗 U+9B57 6 chǒu chóu
+䠨 U+4828 6 chàn mà
+䕓 U+4553 6 chá chuì
+䟃 U+47C3 6 cà zàn
+㨐 U+3A10 6 bǔ péi
+蛂 U+86C2 6 biě bié
+膘 U+8198 6 piǎo biāo
+畁 U+7541 6 qí bì
+㢰 U+38B0 6 bì huán
+菶 U+83F6 6 běng péng
+埲 U+57F2 6 běng bàng
+獖 U+7356 6 fén bèn
+犦 U+72A6 6 bào bó
+韽 U+97FD 6 yīn ān
+腌 U+814C 6 yān ā āng ān
+籑 U+7C51 5 zhuàn xuǎn
+芌 U+828C 5 yù yú xū yǔ
+㹞 U+3E5E 5 yín yǐn
+黫 U+9EEB 5 yīn yān
+䑍 U+444D 5 yàn yǐng
+魣 U+9B63 5 xù yú
+槒 U+69D2 5 xù chù
+觹 U+89F9 5 xī wéi
+睕 U+7755 5 wǎn wān
+婠 U+5A60 5 wà wān
+媠 U+5AA0 5 tuǒ duò
+䳋 U+4CCB 5 tóng zhòng
+籊 U+7C4A 5 tì dí
+媞 U+5A9E 5 tí dì
+摲 U+6472 5 shàn zhàn
+銣 U+92A3 5 rú rǔ
+顩 U+9869 5 qiān qīn yǎn
+䨐 U+4A10 5 qià xiá
+抙 U+6299 5 póu pōu fū
+魾 U+9B7E 5 pí pī
+螷 U+87B7 5 pí bèng bì
+䋴 U+42F4 5 niù rǒng róu rǔ
+擰 U+64F0 5 níng nǐng nìng
+㴸 U+3D38 5 nà shǎn yè
+㒇 U+3487 5 mù wǔ
+橅 U+6A45 5 mó mú
+苎 U+82CE 5 méng zhù
+薍 U+858D 5 luàn wàn
+䮫 U+4BAB 5 lóu lǘ
+輘 U+8F18 5 líng léng
+瞵 U+77B5 5 lín lìn lián
+脟 U+811F 5 liè lè luán
+琍 U+740D 5 lì lí
+䜎 U+470E 5 láo lào
+鑭 U+946D 5 lán làn
+菎 U+83CE 5 kūn jùn
+踘 U+8E18 5 jú jū
+䂃 U+4083 5 jiào jié
+顜 U+985C 5 jiǎng jiào
+䭕 U+4B55 5 jiàn zǎn
+梘 U+6898 5 jiàn jiǎn
+譼 U+8B7C 5 jiàn jiān kàn
+㲺 U+3CBA 5 jí kè léi
+韄 U+97C4 5 huò hù
+㨯 U+3A2F 5 huò kuò
+頀 U+9800 5 hù huò
+㕈 U+3548 5 hòu yǐ
+㑵 U+3475 5 hàn jí jié zhǎ zí
+䍐 U+4350 5 hǎn hàn
+櫎 U+6ACE 5 guàng huǎng
+䢔 U+4894 5 gé hé jiá
+䛋 U+46CB 5 gé jì
+䔈 U+4508 5 gǎn gòng nǒu
+虷 U+8677 5 gān hán
+賌 U+8CCC 5 gài gāi
+㤔 U+3914 5 fú fù
+鴀 U+9D00 5 fǒu fóu
+鋨 U+92E8 5 tiě é
+炧 U+70A7 5 duò xiè
+㵽 U+3D7D 5 duì lěi
+䢱 U+48B1 5 dú zhà
+䛠 U+46E0 5 dòu xiáng
+杕 U+6755 5 dì duò
+䑽 U+447D 5 dá tà
+鏓 U+93D3 5 cōng sǒng
+䓧 U+44E7 5 cì jí
+齱 U+9F71 5 zōu chuò
+䭚 U+4B5A 5 chuáng nè
+祌 U+794C 5 zhòng zhǒng
+㳏 U+3CCF 5 chǐ shì
+箈 U+7B88 5 chí dài tái
+䔲 U+4532 5 chéng zhuó
+㨃 U+3A03 5 chéng duǐ
+鍖 U+9356 5 chěn zhēn
+捵 U+6375 5 chěn chēn
+煁 U+7141 5 chén shén
+㜗 U+3717 5 cǎn chú xuàn
+㖕 U+3595 5 bò niè
+挷 U+6337 5 péng bēng bàng bǎng
+㺜 U+3E9C 5 bǎn nóng wàn
+攽 U+653D 5 bān bīn
+軮 U+8EEE 5 ǎng yǎng
+銨 U+92A8 5 ǎn ān
+㜝 U+371D 5 ǎn àn
+縂 U+7E02 4 zǒng zōng
+扻 U+627B 4 zì jié zhì
+稵 U+7A35 4 zī jiū
+虴 U+8674 4 zhé zhà
+椾 U+693E 4 zhàn jiān
+荺 U+837A 4 yún yǔn
+鵌 U+9D4C 4 yú tú
+梬 U+68AC 4 yǐng chěng
+緆 U+7DC6 4 yì xì
+㛪 U+36EA 4 yàn yuán
+戭 U+622D 4 yǎn yǐn
+䝟 U+475F 4 yà yè
+澩 U+6FA9 4 xué xiào
+魆 U+9B46 4 xù xū
+芐 U+8290 4 xià hù
+豀 U+8C40 4 xī xí
+㕒 U+3552 4 wéi wěi
+啘 U+5558 4 yè wā
+酮 U+916E 4 tóng dòng chóng
+圢 U+5722 4 tīng tǐng
+舚 U+821A 4 tān tiàn
+錟 U+931F 4 tán xiān yǎn
+雟 U+96DF 4 xī suǐ
+虪 U+866A 4 shú shū
+䪿 U+4ABF 4 shěng xìn
+艄 U+8244 4 shāo shào
+慅 U+6145 4 sāo cǎo
+㪔 U+3A94 4 sàn tán
+輮 U+8F2E 4 róu rǒu
+醛 U+919B 4 quán chuò
+軥 U+8EE5 4 qú gōu jū
+㥦 U+3966 4 qiè xiá xiǎn
+䶝 U+4D9D 4 qià xiá
+䏌 U+43CC 4 qì yì
+圤 U+5724 4 pǔ pú
+淠 U+6DE0 4 pì pèi
+垺 U+57BA 4 pēi fú póu
+篣 U+7BE3 4 páng péng
+奤 U+5964 4 pǎn hǎ tǎi
+蚴 U+86B4 4 yǒu yòu niù yōu
+盳 U+76F3 4 máng wàng
+菕 U+83D5 4 lún lùn
+鱺 U+9C7A 4 lí lǐ
+轠 U+8F60 4 lěi léi
+㑋 U+344B 4 jiòng kǒng qióng
+䵞 U+4D5E 4 jìng qíng
+㢣 U+38A3 4 jìng qíng
+惊 U+60CA 4 liáng jīng
+鬋 U+9B0B 4 jiān jiǎn
+齌 U+9F4C 4 jì qī
+琿 U+743F 4 hún huī
+輐 U+8F10 4 huǎn wàn
+㚌 U+368C 4 huà huǒ
+抇 U+6287 4 hú gǔ jué
+咊 U+548A 4 hé huò huó hè
+㸁 U+3E01 4 hǎn hàn
+䂸 U+40B8 4 guó xù
+泃 U+6CC3 4 jù jū
+齃 U+9F43 4 gé è
+鄤 U+9124 4 màn wàn fàn
+䉊 U+424A 4 fàn fáng
+砝 U+781D 4 fá fǎ jié gé
+饎 U+994E 4 chì xī
+䀸 U+4038 4 dì zhì
+䂡 U+40A1 4 dǐ zhǐ
+莜 U+839C 4 diào yóu dí
+捯 U+636F 4 dǎo dáo
+舕 U+8215 4 dàn tàn
+䨢 U+4A22 4 dàn dí gào tán
+蹛 U+8E5B 4 dài zhì
+獊 U+734A 4 chuàng cāng
+薵 U+85B5 4 chóu zhòu
+䇺 U+41FA 4 chóu dòu
+䔟 U+451F 4 chí chǐ yí
+䀕 U+4015 4 chèng zhèn
+䜠 U+4720 4 chè zhì
+碴 U+78B4 4 chá zhā zhǎ chā
+鄫 U+912B 4 céng zēng
+鈈 U+9208 4 pī bù
+飍 U+98CD 4 biāo xiū
+䭮 U+4B6E 4 bì fú
+㱸 U+3C78 4 bì bié
+荸 U+8378 4 bí bó
+浜 U+6D5C 4 bāng bīn
+堷 U+5837 4 yìn pǒu
+𤕭 U+2456D 4 jiāng jiàng qiāng
+躦 U+8EA6 3 zuān cuó
+芓 U+8293 3 zǐ zì
+紾 U+7D3E 3 zhěn tiǎn
+謯 U+8B2F 3 jiē zhā zhǎ zǔ
+溭 U+6EAD 3 zé cè
+远 U+8FDC 3 yuǎn yuàn
+淢 U+6DE2 3 yù xù
+䄨 U+4128 3 yú yǔ
+櫾 U+6AFE 3 yóu yòu
+濦 U+6FE6 3 yǐn xī yīn
+靾 U+977E 3 yì xiè
+醳 U+91B3 3 yì shì
+胣 U+80E3 3 yǐ chǐ
+㢓 U+3893 3 yǎo zhàng
+蝆 U+8746 3 yǎng yáng
+芫 U+82AB 3 yuán yán
+㘙 U+3619 3 yán yǎn
+爋 U+720B 3 xùn xūn
+壦 U+58E6 3 xūn xùn
+駽 U+99FD 3 xuàn xuān
+䠣 U+4823 3 xuǎn xuàn
+䣱 U+48F1 3 xù yì
+娎 U+5A0E 3 xiào xiē
+搚 U+641A 3 xié lā
+齴 U+9F74 3 xiǎn yǎn
+䦖 U+4996 3 xiá xié
+蕰 U+8570 3 yùn wēn
+㐁 U+3401 3 tiǎn tiàn
+磌 U+78CC 3 zhēn tián
+䶏 U+4D8F 3 tǐ tì
+溹 U+6EB9 3 sù suò
+㮶 U+3BB6 3 shì shuò
+渗 U+6E17 3 shèn qīn
+閷 U+95B7 3 shài shā
+䓲 U+44F2 3 ruì sà
+䅑 U+4151 3 ruí suí
+衵 U+8875 3 rì nì
+輁 U+8F01 3 qióng gǒng
+綅 U+7D85 3 qīn xiān
+㤲 U+3932 3 qiè qù
+㯠 U+3BE0 3 qiàn xiàn xún
+蕁 U+8541 3 xún qián tán
+䌌 U+430C 3 qì qiè qǔ
+邔 U+9094 3 qǐ jì
+轐 U+8F50 3 pú bú
+釽 U+91FD 3 pī pì
+鞄 U+9784 3 páo bào
+坢 U+5762 3 pǎn pàn
+㲽 U+3CBD 3 niàn rěn xiàn
+㒄 U+3484 3 nàng nèn rǎn
+覕 U+8995 3 miè piē
+乜 U+4E5C 3 miē niè
+䘑 U+4611 3 mài mò
+䅹 U+4179 3 lóu lǒu
+䙪 U+466A 3 lóng màng pàn
+碐 U+7890 3 líng léng
+猎 U+730E 3 xí liè què
+撂 U+6482 3 liào lüè liāo liáo
+浰 U+6D70 3 liàn lì
+䀶 U+4036 3 lǎng liàng
+俫 U+4FEB 3 lái lài
+䪉 U+4A89 3 là liè
+騩 U+9A29 3 kuì guī
+鐀 U+9400 3 kuì guì
+䤭 U+492D 3 kuàn shì suì yí
+挳 U+6333 3 kēng qiān
+薧 U+85A7 3 kǎo hāo
+㕙 U+3559 3 jùn ruì
+㓸 U+34F8 3 jué zhuó
+楀 U+6940 3 yǔ jǔ
+㧕 U+39D5 3 jiù liǔ yú
+骱 U+9AB1 3 xiè gà jiè jiá
+蒋 U+848B 3 jiǎng jiāng
+䄯 U+412F 3 jiǎn xiàn
+餃 U+9903 3 jiǎo jiào
+䓫 U+44EB 3 jì qí
+莋 U+838B 3 jí zuó
+㠎 U+380E 3 jí qì
+鯶 U+9BF6 3 hǔn huàn
+睔 U+7754 3 hǔn gǔn
+喛 U+559B 3 huàn yuán xuǎn hé
+䬝 U+4B1D 3 héng hòng
+薃 U+8583 3 hào hǎo
+譹 U+8B79 3 háo xià
+䛞 U+46DE 3 hǎn hàn
+鱖 U+9C56 3 guì jué
+腡 U+8161 3 guā luó
+茛 U+831B 3 gèn jiàn
+鎘 U+9398 3 gé lì
+㮣 U+3BA3 3 gài zé
+胕 U+80D5 3 fù fú fū
+砩 U+7829 3 fèi fú
+鰟 U+9C1F 3 fáng páng
+眲 U+7732 3 èr nè
+㚷 U+36B7 3 ěr nǎi
+濻 U+6FFB 3 wěi duì
+裻 U+88FB 3 dǔ dū
+䞇 U+4787 3 dié zhì
+㡳 U+3873 3 dǐ zhé zhǐ
+酨 U+9168 3 zài zuì
+达 U+8FBE 3 dá tì tà
+䠓 U+4813 3 cù jiù qù
+漎 U+6F0E 3 cóng sǒng
+繛 U+7E5B 3 chuò chāo
+䄪 U+412A 3 chuò diǎo
+䐤 U+4424 3 chí cuó qì zhàn
+迧 U+8FE7 3 chén zhèn
+伔 U+4F14 3 dǎn shěn
+棽 U+68FD 3 chēn shēn
+䑲 U+4472 3 chè zhái zhào
+䁤 U+4064 3 chè chèng
+䀡 U+4021 3 chàn tàn
+彂 U+5F42 3 fā fà bō
+汃 U+6C43 3 bīn pà
+癟 U+765F 3 biě piē biē
+颮 U+98AE 3 biāo páo
+蔈 U+8508 3 piǎo biāo
+㻞 U+3EDE 3 biàn fèn pìn
+㗉 U+35C9 3 bì è lüè
+魮 U+9B6E 3 bí pí
+㮰 U+3BB0 3 bí pí
+甭 U+752D 3 béng qì
+㷶 U+3DF6 3 bèi bì
+綼 U+7DBC 3 bēi bì
+曓 U+66D3 3 bào bó
+𩋘 U+292D8 3 xié wā
+孶 U+5B76 2 zī zì
+篿 U+7BFF 2 zhuān tuán
+欘 U+6B18 2 zhǔ zhú
+鵃 U+9D43 2 zhōu zhāo
+螲 U+87B2 2 zhì dié
+絼 U+7D7C 2 zhěn zhì
+拃 U+62C3 2 zhǎn zhà
+傮 U+50AE 2 zāo cáo
+枟 U+679F 2 yùn yún
+䨞 U+4A1E 2 yǔ yù
+鄃 U+9103 2 yú shū
+謍 U+8B0D 2 yíng hōng
+㢍 U+388D 2 yíng yǐng
+縯 U+7E2F 2 yǐn yǎn
+酏 U+914F 2 yí hù tuó yǐ
+獟 U+735F 2 yào xiāo
+鷕 U+9DD5 2 yǎo wěi
+抭 U+62AD 2 yǎo yóu
+䌊 U+430A 2 yáo yóu
+䙉 U+4649 2 xún zǎn
+㧒 U+39D2 2 xué yù yuè
+㛛 U+36DB 2 xìn zhèn
+咞 U+549E 2 xiàn xián
+搳 U+6433 2 xiá huá
+䩤 U+4A64 2 xì xié
+蠵 U+8835 2 xī xí
+潝 U+6F5D 2 xī xì
+婐 U+5A50 2 ē wǒ
+㷉 U+3DC9 2 wèi yù yùn
+䂺 U+40BA 2 wǎn wǒ
+䎳 U+43B3 2 wà yuè
+牏 U+724F 2 tóu yú zhù
+㣚 U+38DA 2 tóng tǒng
+䋼 U+42FC 2 tǐng yíng
+䝰 U+4770 2 tí zhì
+鐋 U+940B 2 tàng tāng
+鉭 U+926D 2 dàn tǎn
+驔 U+9A54 2 tán diàn
+弹 U+5F39 2 dàn tán
+鰨 U+9C28 2 tà tǎ dié
+跩 U+8DE9 2 zhuǎi shì
+㫑 U+3AD1 2 shí zhǐ
+箵 U+7BB5 2 shěng xīng xǐng
+睄 U+7744 2 shào qiáo
+鏾 U+93FE 2 sǎn xiàn
+潵 U+6F75 2 sàn sǎ
+撋 U+648B 2 ruán nuó
+䄧 U+4127 2 réng rǒng
+朹 U+6739 2 qiú guǐ
+墧 U+58A7 2 què qiáo
+嗆 U+55C6 2 qiāng qiàng
+㞚 U+379A 2 qì zhǎ
+篻 U+7BFB 2 piào piǎo
+䰉 U+4C09 2 pán pàn
+譨 U+8B68 2 nóu nóng
+拧 U+62E7 2 níng nǐng nìng
+䄒 U+4112 2 niè rěn
+氽 U+6C3D 2 tǔn niào qiú
+䄩 U+4129 2 náo yì
+䪏 U+4A8F 2 nà néng
+訤 U+8A24 2 xiáo ná
+毣 U+6BE3 2 mù mào
+閺 U+95BA 2 wén mín
+㤁 U+3901 2 miǎn tiǎn
+䌩 U+4329 2 mì miè
+狝 U+72DD 2 xiǎn mí
+謱 U+8B31 2 lóu lǚ
+䝏 U+474F 2 lóu lǒu lǘ
+畂 U+7542 2 liù jiù mǔ
+鄻 U+913B 2 liǎn lián
+㔣 U+3523 2 léi lèi
+䧒 U+49D2 2 lái lǎn
+蛞 U+86DE 2 kuò shé
+撌 U+648C 2 kuì guì
+㒂 U+3482 2 kù zhuó
+轁 U+8F41 2 tāo kǎn
+蠼 U+883C 2 jué qú
+竘 U+7AD8 2 jǔ qǔ
+䗇 U+45C7 2 jú qú
+㵾 U+3D7E 2 jìng qìng
+烴 U+70F4 2 jǐng tīng
+嵑 U+5D51 2 jué hé jié
+覐 U+8990 2 jué jiào
+糨 U+7CE8 2 jiàng jiāng
+勥 U+52E5 2 qiǎng jiàng
+螹 U+87B9 2 jiàn chán
+礆 U+7906 2 xiǎn jiǎn
+䩆 U+4A46 2 jiǎn zhǎn
+㔓 U+3513 2 jiǎn xiàn
+踋 U+8E0B 2 jiǎo jué
+癠 U+7660 2 jì jí
+虮 U+866E 2 jī jǐ qí
+䛰 U+46F0 2 hún hùn
+鯇 U+9BC7 2 wǎn huàn
+觟 U+89DF 2 huà xiè
+魟 U+9B5F 2 gōng hóng
+䳚 U+4CDA 2 hé kǎn
+㕡 U+3561 2 hé hè huò
+馯 U+99AF 2 hàn hán
+䌯 U+432F 2 guàn quán
+旝 U+65DD 2 guài kuài
+凅 U+51C5 2 gù hé
+茩 U+8329 2 gǒu hòu
+㤨 U+3928 2 gǒng qióng
+䫦 U+4AE6 2 gé kài
+䩐 U+4A50 2 gé jí
+隑 U+9691 2 gāi gài qí
+㼝 U+3F1D 2 fàn wǎn
+釩 U+91E9 2 fán fǎn fàn
+䀟 U+401F 2 fán fèi fèn
+㣞 U+38DE 2 duó duò
+㼭 U+3F2D 2 diàn niǎo
+釱 U+91F1 2 dì dài
+墆 U+5886 2 dì dié
+㶡 U+3DA1 2 dài huǒ zuó
+䦻 U+49BB 2 cì zǐ
+腏 U+814F 2 chuò zhuì
+婼 U+5A7C 2 ruò chuò
+䋘 U+42D8 2 chuò zhuì
+旾 U+65FE 2 chūn chǔn
+䮞 U+4B9E 2 chù chǔn
+杘 U+6758 2 chì chī
+㒆 U+3486 2 chì kè xì xiào yàn
+㥉 U+3949 2 chè chì
+㦂 U+3982 2 cháng tàng
+㙻 U+367B 2 chán qiè zàn
+㢎 U+388E 2 chà zé zhái zhé
+茬 U+832C 2 chí chá
+梣 U+68A3 2 cén chén qín
+鈽 U+923D 2 bù bū
+脿 U+813F 2 biāo biào biǎo
+䖩 U+45A9 2 bì pì
+㡙 U+3859 2 bì pí
+甏 U+750F 2 pèng bèng
+玤 U+73A4 2 bàng běng
+鎊 U+938A 2 bàng pāng
+㮄 U+3B84 2 bǎng bì péng
+㔙 U+3519 2 bǎng péng
+阥 U+9625 2 yīn yìn ān
+壿 U+58FF 1 zūn cūn zǔn
+觰 U+89F0 1 zhā dǎ zhǎ
+洀 U+6D00 1 zhōu pán
+迣 U+8FE3 1 zhì chì lì
+䱥 U+4C65 1 zhí zhì
+鷏 U+9DCF 1 tián zhēn
+蒧 U+84A7 1 zhēn diǎn
+巶 U+5DF6 1 zhāo zhào
+驏 U+9A4F 1 chǎn zhàn
+橏 U+6A4F 1 zhǎn shǎn
+飵 U+98F5 1 zhǎi zuò
+㡸 U+3878 1 zhǎ zhà
+紥 U+7D25 1 zhá zā
+皶 U+76B6 1 zhā cǔ
+䇥 U+41E5 1 zé zuó
+鍺 U+937A 1 zhě duǒ dǔ
+㚃 U+3683 1 yún yùn
+獂 U+7342 1 yuán huán
+祤 U+7964 1 yǔ xǔ
+懙 U+61D9 1 yǔ yú
+屿 U+5C7F 1 yǔ xù
+㺠 U+3EA0 1 yòu yù
+泑 U+6CD1 1 yǒu yōu
+傛 U+509B 1 yǒng róng
+銿 U+92BF 1 zhōng yōng
+朄 U+6704 1 yìn yǐn
+阴 U+9634 1 yīn yìn ān
+衪 U+886A 1 yǐ yì
+㝖 U+3756 1 yí yín
+㥷 U+3977 1 yè yì
+趭 U+8DAD 1 yào jiào
+嬮 U+5B2E 1 yān yàn
+䬂 U+4B02 1 xuè yuè
+䎀 U+4380 1 xuè yuè
+踅 U+8E05 1 chì xué
+蘐 U+8610 1 xiān xuān
+鋅 U+92C5 1 xīn zǐ
+噷 U+5677 1 xīn hēn
+鮝 U+9B9D 1 xiǎng zhèn
+啌 U+554C 1 xiāng qiāng
+㩈 U+3A48 1 xiàn yǔn
+姺 U+59FA 1 shēn xiǎn xiān
+瞯 U+77AF 1 xián jiàn
+㡉 U+3849 1 xián yán
+襳 U+8973 1 xiān shēn
+菥 U+83E5 1 xī sī
+㜲 U+3732 1 wěng yíng
+煴 U+7174 1 yūn yùn wěn
+犩 U+72A9 1 wèi wéi
+䝹 U+4779 1 wǎn yuàn
+魠 U+9B60 1 tuó tuō
+噋 U+564B 1 tūn kuò
+䐌 U+440C 1 tiǎn zhòu
+䧅 U+49C5 1 tì yà yí
+銻 U+92BB 1 tī tí tì
+鷤 U+9DE4 1 quán tí
+㷋 U+3DCB 1 tán tǎn
+䢰 U+48B0 1 tái tì
+迖 U+8FD6 1 dá tì tà
+䂿 U+40BF 1 tà tiè
+揱 U+63F1 1 shuò xiāo
+襡 U+8961 1 shú shǔ dú
+䝪 U+476A 1 shú shǔ
+湿 U+6E7F 1 shī qì
+猞 U+731E 1 shè shē
+丄 U+4E04 1 shàng shǎng
+杀 U+6740 1 shā sà shài shè
+㮦 U+3BA6 1 sè suǒ
+丧 U+4E27 1 sāng sàng
+䓴 U+44F4 1 ruán ruǎn
+㨎 U+3A0E 1 rú ruán
+䡆 U+4846 1 róng rǒng
+鵀 U+9D40 1 rèn rén
+䀼 U+403C 1 rèn zhěn
+䏕 U+43D5 1 rěn rùn
+呥 U+5465 1 rǎn rán
+蛅 U+86C5 1 rán zhān
+蚒 U+8692 1 tóng rán
+婘 U+5A58 1 quán juàn
+匔 U+5314 1 qiōng qióng
+苘 U+82D8 1 qiǒng qǐng
+瀙 U+7019 1 qīn qìn
+靲 U+9772 1 qín jìn
+䖌 U+458C 1 qín yá yì
+磢 U+78E2 1 qiǎng chuǎng
+䅚 U+415A 1 qiǎng quǎn zé
+䫡 U+4AE1 1 qiàn yán
+䈴 U+4234 1 qiàn zhǎn
+㫓 U+3AD3 1 qǐ qì
+㜎 U+370E 1 qí xì
+沏 U+6C8F 1 qī qiē qiè
+㰴 U+3C34 1 pó pǒu
+荓 U+8353 1 píng pīng
+駓 U+99D3 1 pī pí
+苤 U+82E4 1 pī piě pǐ
+硼 U+787C 1 péng pēng
+陫 U+966B 1 péi fěi
+頄 U+9804 1 kuí qiú pàn
+䯚 U+4BDA 1 ǒu yǎo
+狋 U+72CB 1 ní yí yín
+薴 U+85B4 1 néng nìng
+䔳 U+4533 1 nǎn rán
+䁪 U+406A 1 nǎn zhǎn
+䕼 U+457C 1 nán nàn
+獏 U+734F 1 mú mò
+䜆 U+4706 1 mò nèi shé suì zhé
+䡅 U+4845 1 mǐn xiǎn xún zhèn zuǎn
+暋 U+668B 1 mǐn mín
+渑 U+6E11 1 mǐn miǎn shéng
+㻰 U+3EF0 1 miǎn rè wèi yù
+艒 U+8252 1 mào mù
+㬒 U+3B12 1 mǎng mào
+鼆 U+9F06 1 máng měng
+㜫 U+372B 1 mà méi měi
+獁 U+7341 1 mà mǎ
+逻 U+903B 1 luó luò
+惀 U+60C0 1 lún lǔn
+鞻 U+97BB 1 lóu lǚ
+搂 U+6402 1 lǒu lōu lóu
+蹓 U+8E53 1 liū liù
+襝 U+895D 1 liàn liǎn chān
+僆 U+50C6 1 lián liǎn liàn
+㦑 U+3991 1 liǎn xiàn
+䚕 U+4695 1 lì luán
+䖥 U+45A5 1 lí máo
+㭩 U+3B69 1 lèi líng
+㡞 U+385E 1 lěi lóu lǚ
+㵢 U+3D62 1 léi lěi
+䃕 U+40D5 1 láo luò
+䃹 U+40F9 1 làn lǎng
+㦨 U+39A8 1 lán làn
+㥎 U+394E 1 lái lí
+㻋 U+3ECB 1 là lèi
+旯 U+65EF 1 xù lá
+翋 U+7FCB 1 lā là
+磖 U+78D6 1 lā lá
+黋 U+9ECB 1 kuǎng kuàng
+嶱 U+5DB1 1 kě gé
+簻 U+7C3B 1 kē zhuā
+䟾 U+47FE 1 juě zhuó
+啳 U+5573 1 quán jué
+䖼 U+45BC 1 jué xuè
+䏐 U+43D0 1 jué zhuò
+㤜 U+391C 1 jué yù
+檋 U+6A8B 1 jū jú
+倃 U+5003 1 zán zá
+觓 U+89D3 1 jiū qiú
+幜 U+5E5C 1 jiǒng jǐng
+䋮 U+42EE 1 jìn qián
+㴆 U+3D06 1 jìn xìng
+痎 U+75CE 1 kāi liē
+䣠 U+48E0 1 jié tì
+㮞 U+3B9E 1 jié ní yá
+㝌 U+374C 1 jié jiù zhòu
+䵖 U+4D56 1 jiàn qiàn xiàn
+茧 U+8327 1 chóng jiǎn
+碱 U+78B1 1 jiǎn xián
+䭠 U+4B60 1 jiǎn qiàn
+㳨 U+3CE8 1 jiǎn zá zǎn
+餄 U+9904 1 jiá hé
+浃 U+6D43 1 jiá jiā
+济 U+6D4E 1 jì jǐ
+㠍 U+380D 1 jí jié qì
+鰿 U+9C3F 1 jī jí
+鈥 U+9225 1 huǒ huó
+祵 U+7975 1 kǔn hún
+蔧 U+8527 1 huì suì
+㾠 U+3FA0 1 huáng kuáng kuì
+䝠 U+4760 1 huán yuán
+㯛 U+3BDB 1 hú huò
+銗 U+9297 1 hóu hòu xiàng
+䚂 U+4682 1 hè xì
+蚵 U+86B5 1 hé kè
+滆 U+6EC6 1 hé gé
+䞦 U+47A6 1 hé jié
+䃂 U+40C2 1 gǔn gùn
+䙆 U+4646 1 guì kuì
+庪 U+5EAA 1 guǐ jǐ
+䁛 U+405B 1 guǐ guì kuì
+硅 U+7845 1 guī huò hè
+归 U+5F52 1 guī kuì
+䗆 U+45C6 1 guǎn wěi
+䀰 U+4030 1 gǔ yíng
+㪾 U+3ABE 1 gé luò
+㨰 U+3A30 1 gé gǔn hùn huò jié
+㦴 U+39B4 1 gé qià
+㝓 U+3753 1 gé kè
+錇 U+9307 1 póu péi fú
+絥 U+7D65 1 fú bèi
+䡍 U+484D 1 fú fǔ
+隫 U+96AB 1 fēn fén
+埅 U+57C5 1 fáng fāng dì
+㽹 U+3F79 1 fàn wǎn
+笲 U+7B32 1 fán fān
+煾 U+717E 1 ēn yūn
+㻧 U+3EE7 1 duò hé
+襗 U+8957 1 duó zè
+簵 U+7C35 1 dù lù
+郖 U+90D6 1 dōu dòu
+䅍 U+414D 1 dòng tǐng
+崠 U+5D20 1 dōng dòng
+鐤 U+9424 1 dǐng zhēn
+㹿 U+3E7F 1 diǎo zhào zhuó
+䞶 U+47B6 1 dì tì
+䙸 U+4678 1 dé de
+㽎 U+3F4E 1 dǎn tán
+曃 U+66C3 1 tài dài
+㫹 U+3AF9 1 dài shù yú
+繨 U+7E68 1 dá da
+墶 U+58B6 1 dā da
+㧘 U+39D8 1 cuì nǎo zì
+螅 U+8785 1 xī cì
+㢀 U+3880 1 cì zì
+䧳 U+49F3 1 cí cǐ
+杶 U+6776 1 chūn qūn
+桘 U+6858 1 zhuì chuí duī
+䎫 U+43AB 1 chuàng zǒng
+处 U+5904 1 chù chǔ
+䦌 U+498C 1 chù pò ruì
+䙕 U+4655 1 chù zǒng
+䶵 U+4DB5 1 chí shǐ
+㐼 U+343C 1 chèng zhěng
+脀 U+8100 1 chéng zhēng
+䗊 U+45CA 1 chéng tàn
+裖 U+88D6 1 zhěn zhèn
+䟢 U+47E2 1 chén jiàn niǎn
+抻 U+62BB 1 shèn shēn chēn
+㨋 U+3A0B 1 chě lè zhèn
+䄻 U+413B 1 cháo táo zhào
+檫 U+6AAB 1 chá sà
+蓡 U+84E1 1 cān shēn
+䞳 U+47B3 1 bó fèi
+䊿 U+42BF 1 bó kù
+㩭 U+3A6D 1 bó jiǎo xiào
+鵧 U+9D67 1 píng bìng
+鵖 U+9D56 1 bì bī
+鉍 U+924D 1 bì sè
+䀣 U+4023 1 bì mì
+㘠 U+3620 1 bì mì
+㓖 U+34D6 1 bì bié
+舭 U+822D 1 què bǐ
+㻶 U+3EF6 1 bǐ bì
+䡶 U+4876 1 bèi pì
+㼎 U+3F0E 1 bèi bó kě
+髈 U+9AC8 1 páng bǎng
+螌 U+878C 1 bān pán
+鮊 U+9B8A 1 bó bà
+䥯 U+496F 1 bà bài
+䍩 U+4369 1 ǎng yǎng
+䠹 U+4839 1 ái hái
+𢃕 U+220D5 1 tà ta

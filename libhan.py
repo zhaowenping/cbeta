@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-12-28 06:57:05
+# Last Modified: 2021-01-11 14:50:04
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -201,7 +201,9 @@ class IDS:
         食 on left = 飠
         牜𤣩礻糹⺼艹訁釒飠氵冫忄
         '''
-        tt = {'牛': '牜', '王': '𤣩', '示': '礻', '糸': '糹', '月': '⺼', '草': '艹', '言': '訁',
+        tt = {'牛': '牜', '王': '𤣩', '示': '礻', '糸': '糹', '月': '⺼',
+              '草': '艹', '卄': '艹',
+              '言': '訁',
               '金': '釒', '食': '飠', '水': '氵', '冰': '冫', '心': '忄', '人': '亻', '衣': '衤',
               '手': '扌', '犬': '犭', '病': '疒', '爪': '爫', '火': '灬', '足': '𧾷'}
         rr = self.ids_dict.get(ctx, None)
@@ -318,7 +320,7 @@ def unicode_zone(char):
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    #path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
+    path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
             line = line.strip()
@@ -601,8 +603,8 @@ def grep(filepath, *keyword):
     return line
 
 sch_db = []
-#with open(os.path.join(PATH, "idx/sutra_sch.lst")) as fd:
-with open("idx/sutra_sch.lst") as fd:
+with open(os.path.join(PATH, "idx/sutra_sch.lst")) as fd:
+#with open("idx/sutra_sch.lst") as fd:
     for line in fd:
         line = line.strip().split()[0]
         sch_db.append(line)
@@ -1595,7 +1597,7 @@ def pagerank(filename, sentence='', content=''):
     # sentence_value = sum([{True:0, False:1}[s in content] for s in sentence])
     pr = ("T", "B", "ZW", "A", "C", "D", "F", "G" , "GA", "GB", "I", "J", "K", "L", "M", "N", "P", "S", "U", "X", "Y", "LC")
     pt = re.compile(r'\d+')  # 应该在前端过滤
-    if filename[0] == 'T':
+    if filename and filename[0] == 'T':
         r = 0
     else:
         r = 1
@@ -1749,10 +1751,11 @@ def fullsearch(sentence):
         author = _source['author']
         juan = _source["number"].split('n')[0]
         hl = highlight(hlsentence, _source["raw"])
+        url = _source['url']
+        if not url:
+            url = f'/xml/{juan}/{_source["number"]}.xml#{hit["_id"]}'
         # 文章内容高亮显示
-        result.append({'hl': hl, 'an': f'/xml/{juan}/{_source["number"]}.xml#{hit["_id"]}',
-                'title':_source['title'], 'author': author,
-                'number': _source["number"]})
+        result.append({'hl': hl, 'an': url, 'title':_source['title'], 'author': author, 'number': _source["number"]})
 
     result.sort(key=lambda x: pagerank(x['number']))
 

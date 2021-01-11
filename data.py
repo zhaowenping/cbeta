@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-12-17 21:07:56
+# Last Modified: 2021-01-03 17:09:37
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -19,9 +19,9 @@ import gzip
 
 import redis
 import msgpack
+import requests
 
-from libhan import rm_variant
-
+from libhan import rm_variant, python_escape, python_unescape
 
 REDIS_HOST= 'localhost'
 
@@ -320,6 +320,39 @@ def lookup(word, dictionary=None, lang='hant', mohu=False):
     return {'word': word, 'pinyin': pinyin, 'definition': definition, 'from': ''}
 
 
+def lookup(word, dictionary=None, lang='hant', mohu=False):
+    # nword = normalize_text(word)
+    nword = ''.join(python_escape(word))
+    url = "http://127.0.0.1:9200/dict/_doc/_search"
+    data = {
+     "query": {
+         # "match_phrase": { "orth": nword},  # "content": {"query": sentence, "slop": 1} },
+         "match_phrase": {"hyph": nword},  # "content": {"query": sentence, "slop": 1} },
+       #  "bool":{
+            #  "must": {}
+       # }
+    },
+    # "size": 20,
+    # "from": 0,
+    }
+    r= requests.get(url, json=data, timeout=10)
+    result = r.json()
+    import pprint
+    # result['hits'].pop('hits')
+    # pprint.pprint(result)
+    hits = result['hits']['hits']
+    # print(len(hits))
+    result = []
+    for hit in hits:
+        _source = hit["_source"]
+        # 文章内容高亮显示
+        result.append({'definition': _source['def'], 'word':python_unescape(_source['hyph']), 'from': _source['dict']})
+
+    # result.sort(key=lambda x: pagerank(x['number']))
+    return result
+    return {'word': word, 'pinyin': pinyin, 'definition': definition, 'from': ''}
+
+
 def lookinkangxi_pinyin(word):
     '''在康熙字典中查找句子的拼音'''
 
@@ -388,7 +421,9 @@ def lookinkangxi(word):
 if __name__ == "__main__":
     # main()
     test()
-    #print(lookup('佛陀'))
+    import pprint
+    pprint.pprint(lookup('佛陀'))
+    #pprint.pprint(lookup('𭮊'))
     #print(lookup('彌勒'))
     import pprint
     pprint.pprint(lookinkangxi_pinyin('佛陀'))
