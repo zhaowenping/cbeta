@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-01-11 14:52:20
+# Last Modified: 2021-01-11 14:58:35
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1751,8 +1751,10 @@ def fullsearch(sentence):
         author = _source['author']
         juan = _source["number"].split('n')[0]
         hl = highlight(hlsentence, _source["raw"])
-        url = _source['url']
+        title = _source['title']
+        url = _source.get('url', None)
         if not url:
+            title = _source['title'] + ': ' + _source.get('chapter', '')
             url = f'/xml/{juan}/{_source["number"]}.xml#{hit["_id"]}'
         # 文章内容高亮显示
         result.append({'hl': hl, 'an': url, 'title':_source['title'], 'author': author, 'number': _source["number"]})
