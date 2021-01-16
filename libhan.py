@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-01-13 17:56:21
+# Last Modified: 2021-01-16 07:42:42
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1737,10 +1737,15 @@ def fullsearch(sentence):
     # print(e-s)
 
     s = time.time()
+    # data = {'query': {'bool': {'must': [{'match': {'content': 'bhikkhu'}}]}}, 'size': 5000, 'from': 0}
+    #data = {'query': {'match': {'content': 'bhikkhū'}}, 'size': 5000, 'from': 0}
+    #data = {'query': {'term': {'content': 'bhikkhu'}}, 'size': 5000, 'from': 0}
     r= requests.get(url, json=data, timeout=10)
     result = r.json()
     # e = time.time()
-    print(result)
+    # print(data)
+    # print(result)
+    # print('---------------------------')
     # {'error': {'root_cause': [{'type': 'index_not_found_exception', 'reason': 'no such index [cbeta]', 'resource.type': 'index_or_alias', 'resource.id': 'cbeta', 'index_uuid': '_na_', 'index': 'cbeta'}], 'type': 'index_not_found_exception', 'reason': 'no such index [cbeta]', 'resource.type': 'index_or_alias', 'resource.id': 'cbeta', 'index_uuid': '_na_', 'index': 'cbeta'}, 'status': 404}
 
     hits = result['hits']['hits']
@@ -1946,3 +1951,5 @@ if __name__ == "__main__":
     for i in re_split(pattern, '由尊者迦葉（Maha Kasyape）結集於王舍城', fn=lambda x: f'x{x}', exfn=lambda x: x):
         j = j+ 1
         print(j, i)
+    sentence = 'Bhikkhu'
+    fullsearch(sentence)
