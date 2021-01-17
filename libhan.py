@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-01-16 19:02:47
+# Last Modified: 2021-01-16 19:05:29
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -347,7 +347,8 @@ def read_menu_file(sutra_list):
     with open(sutra_list, encoding='utf8') as fd:
         for line in fd:
             line = line.rstrip()
-            lineq = quote(line)
+            #lineq = quote(line)
+            lineq = line
             # if line.startswith('\t\t\t\t\t'):
             #     print(line)
             if not line.startswith('\t'):
