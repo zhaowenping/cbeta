@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-01-16 07:42:42
+# Last Modified: 2021-01-16 19:02:47
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -29,6 +29,7 @@ import time
 import array
 from functools import reduce
 from functools import total_ordering
+from urllib.parse import quote
 import unicodedata
 # import xml.dom.minidom as minidom
 from xml.etree import ElementTree as ET
@@ -346,40 +347,41 @@ def read_menu_file(sutra_list):
     with open(sutra_list, encoding='utf8') as fd:
         for line in fd:
             line = line.rstrip()
+            lineq = quote(line)
             # if line.startswith('\t\t\t\t\t'):
             #     print(line)
             if not line.startswith('\t'):
-                key1 = line
-                menu.update({line:{}})
+                key1 = lineq
+                menu.update({lineq:{}})
                 continue
             line = line[1:]
 
             if not line.startswith('\t'):
-                key2 = line
-                menu[key1].update({line: {}})
+                key2 = lineq
+                menu[key1].update({lineq: {}})
                 continue
             line = line[1:]
 
             if not line.startswith('\t'):
-                key3 = line
-                menu[key1][key2].update({line: {}})
+                key3 = lineq
+                menu[key1][key2].update({lineq: {}})
                 continue
             line = line[1:]
 
             if not line.startswith('\t'):
-                key4 = line
-                menu[key1][key2][key3].update({line: {}})
+                key4 = lineq
+                menu[key1][key2][key3].update({lineq: {}})
                 continue
             line = line[1:]
 
             if not line.startswith('\t'):
-                key5 = line
-                menu[key1][key2][key3][key4].update({line: {}})
+                key5 = lineq
+                menu[key1][key2][key3][key4].update({lineq: {}})
                 continue
             line = line[1:]
 
             if not line.startswith('\t'):
-                menu[key1][key2][key3][key4][key5].update({line: {}})
+                menu[key1][key2][key3][key4][key5].update({lineq: {}})
                 continue
         return menu
 
