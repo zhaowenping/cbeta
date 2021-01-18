@@ -48,7 +48,7 @@
     <ul class="list-group">
         {% for key in menus %}
          <li class="list-group-item {{ loop.cycle('odd', 'even') }}">
-          <a href="{{request.path}}/{{key}}">{{ key }}</a>
+          <a href="{{request.path}}/{{key|urlencode}}">{{ key }}</a>
           {% if not menus[key] %}
           <!--span class="badge"><a href="{{key}}">简体版</a></span-->
           <!--a href="/dharani/{{key}}" class="badge"><span class="badge">陀罗尼注音<span></a-->
