@@ -6049,6 +6049,8 @@
 毹 𣰟 U+6BF9 U+23C1F
 毹 𭯫 U+6BF9 U+2DBEB
 毻 𣮲 U+6BFB U+23BB2
+毻 毤
+毻 𣮆
 毼 𣭸 U+6BFC U+23B78
 毼 𣮷 U+6BFC U+23BB7
 毾 㲩 U+6BFE U+3CA9
