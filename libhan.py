@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-01-29 15:22:22
+# Last Modified: 2021-01-30 07:17:56
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1658,8 +1658,9 @@ def wordsearch(word):
     # nword = normalize_text(word)
     # sentence = ''.join(python_escape(sentence))
     # 对巴利语梵语的特殊处理
-    # if all(not ishanzi(i) for i in word):
-    #     word = ' '.join(list(shave_marks(normalize_space(word))))
+    if all(not ishanzi(i) for i in word):
+        # word = ' '.join(list(shave_marks(normalize_space(word))))
+        word = shave_marks(normalize_space(word))
 
     url = "http://127.0.0.1:9200/dict/_doc/_search"
     data = {
