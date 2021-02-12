@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-02-11 17:49:25
+# Last Modified: 2021-02-11 17:54:55
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -408,8 +408,6 @@ def search_get():
     # 判断简体繁体, 统一转为繁体之后搜索
     if convert.detect(ncontent)['confidence'] == 's':
         ncontent = convert.s2t(ncontent)
-    # 添加 python转义字符
-    ncontent = python_escape(ncontent)
 
     if q == 'title':
         # 使用经号方式查找藏经
@@ -430,6 +428,8 @@ def search_get():
             results.append({'hl': hl, 'an':sutra.url, 'title':title0, 'author':''})
         return {'results': results, 'content': content, 'q': 'title'}
 
+    # 添加 python转义字符
+    ncontent = ''.join(python_escape(ncontent))
     if q == 'dict':
         results = wordsearch(ncontent)
         return {'results': results, 'content': content, 'q': 'dict'}
