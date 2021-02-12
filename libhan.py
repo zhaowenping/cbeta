@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-02-11 17:41:35
+# Last Modified: 2021-02-11 18:39:59
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1662,6 +1662,34 @@ def wordsearch(word):
         word = shave_marks(normalize_space(word))
 
     url = "http://127.0.0.1:9200/dict/_doc/_search"
+    data = {'query': {'match': {'orth': {'query': word, 'operator': 'and'}}}, 'size': 5000, 'from': 0}
+    r= requests.get(url, json=data, timeout=10)
+    result = r.json()
+    hits = result['hits']['hits']
+    result = []
+    for hit in hits:
+        _source = hit["_source"]
+        # 文章内容高亮显示
+        hyph = python_unescape(_source['hyph'])
+        define = python_unescape(_source['def'])
+        result.append({'hl': define, 'an': '', 'title':hyph, 'author': _source['dict'], 'number': ''})
+
+    return result
+
+
+def wordsearch2(word):
+    # nword = normalize_text(word)
+    # sentence = ''.join(python_escape(sentence))
+    # 对巴利语梵语的特殊处理
+    # if all(not ishanzi(i) for i in word):
+    #    word = shave_marks(normalize_space(word))
+
+    hyph = python_escape(word)
+    url = "http://127.0.0.1:9200/dict/_doc/_search"
+    data = {'query': {'term': {'hyph': hyph}}}
+    r= requests.get(url, json=data, timeout=10)
+    result = r.json()
+
     data = {'query': {'match': {'orth': {'query': word, 'operator': 'and'}}}, 'size': 5000, 'from': 0}
     r= requests.get(url, json=data, timeout=10)
     result = r.json()

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-01-03 17:09:37
+# Last Modified: 2021-02-12 15:35:40
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -349,7 +349,10 @@ def lookup(word, dictionary=None, lang='hant', mohu=False):
         result.append({'definition': _source['def'], 'word':python_unescape(_source['hyph']), 'from': _source['dict']})
 
     # result.sort(key=lambda x: pagerank(x['number']))
-    return result
+    # pprint.pprint(result)
+    result = [f'{it["from"]}: {it["definition"]}' for it in result]
+    definition = '<br>'.join(result)
+    pinyin = ''
     return {'word': word, 'pinyin': pinyin, 'definition': definition, 'from': ''}
 
 
@@ -422,8 +425,9 @@ if __name__ == "__main__":
     # main()
     test()
     import pprint
-    pprint.pprint(lookup('佛陀'))
+    # pprint.pprint(lookup('佛陀'))
     #pprint.pprint(lookup('𭮊'))
     #print(lookup('彌勒'))
     import pprint
-    pprint.pprint(lookinkangxi_pinyin('佛陀'))
+    #pprint.pprint(lookinkangxi_pinyin('佛陀'))
+    pprint.pprint(lookup('香'))
