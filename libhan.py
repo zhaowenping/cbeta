@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-02-11 15:21:42
+# Last Modified: 2021-02-11 17:41:35
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1659,41 +1659,21 @@ def wordsearch(word):
     # sentence = ''.join(python_escape(sentence))
     # 对巴利语梵语的特殊处理
     if all(not ishanzi(i) for i in word):
-        # word = ' '.join(list(shave_marks(normalize_space(word))))
         word = shave_marks(normalize_space(word))
 
     url = "http://127.0.0.1:9200/dict/_doc/_search"
-    data = {
-     "query": {
-         # "match_phrase": { "orth": nword},  # "content": {"query": sentence, "slop": 1} },
-         "match": {"orth": word},  # "content": {"query": sentence, "slop": 1} },
-         "operator": "and"
-       #  "bool":{
-            #  "must": {}
-       # }
-    },
-    "size": 5000,
-    "from": 0,
-    # "highlight": {
-    #     "fields": {
-    #         "raw": {
-
-    #         }
-    #     }
-    # }
-    }
+    data = {'query': {'match': {'orth': {'query': word, 'operator': 'and'}}}, 'size': 5000, 'from': 0}
     r= requests.get(url, json=data, timeout=10)
     result = r.json()
-    # print(result)
     hits = result['hits']['hits']
-    #print(hits)
     result = []
     for hit in hits:
         _source = hit["_source"]
         # 文章内容高亮显示
-        result.append({'hl': _source['def'], 'an': '', 'title':_source['hyph'], 'author': _source['dict'], 'number': ''})
+        hyph = python_unescape(_source['hyph'])
+        define = python_unescape(_source['def'])
+        result.append({'hl': define, 'an': '', 'title':hyph, 'author': _source['dict'], 'number': ''})
 
-    # result.sort(key=lambda x: pagerank(x['number']))
     return result
 
 
