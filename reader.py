@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-02-11 17:46:52
+# Last Modified: 2021-02-11 17:49:25
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -36,7 +36,7 @@ from bottle import GeventServer
 import jieba
 
 from libhan import read_menu_file
-from libhan import Search, IDS, CBETA_COM, python_unescape
+from libhan import Search, IDS, CBETA_COM, python_escape, python_unescape
 from libhan import STConvertor
 from libhan import normalize_text
 from libhan import fullsearch, wordsearch
