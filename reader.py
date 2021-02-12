@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-01-16 18:58:53
+# Last Modified: 2021-02-11 17:46:52
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -408,6 +408,8 @@ def search_get():
     # 判断简体繁体, 统一转为繁体之后搜索
     if convert.detect(ncontent)['confidence'] == 's':
         ncontent = convert.s2t(ncontent)
+    # 添加 python转义字符
+    ncontent = python_escape(ncontent)
 
     if q == 'title':
         # 使用经号方式查找藏经
