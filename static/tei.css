@@ -127,8 +127,8 @@
     /*font-family: sans-serif;*/
 html {
     height: 100%;
-    margin:10pt;
-    font-size: 130%;
+    /*margin:10pt;*/
+    font-size: 125%;
     /*font-family: ENCLOSING_CIRCLE, WSQUARE, quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif,
         "Hiragino Sans GB", "PingFang HK", "PingFang SC", "PMingLiU", "Microsoft YaHei",
         hanaminsat, siddham;
@@ -142,10 +142,9 @@ html {
 
 body{
     height: 100%;
-    color:#000000;
+    color: #333;
     /*background-color: #D0D0D0;  *//*150秒开始,使用40秒缓慢切换到此数值CCCCCC*/
-    padding:2em;
-    padding-top:100px;
+    /*padding-top:100px;*/
     font-feature-settings: "liga";
     //font-feature-settings: "liga", "ss04";
     -webkit-font-variant-ligatures: common-ligatures;
@@ -183,7 +182,7 @@ pre {
     background-color: #E7F4FE;
     border:dashed 0px blue;
     text-indent: 0;
-    padding 0 0 0 0:
+    padding: 0 0 0 0;
 }
 
 h1, h2, h3, h4{
@@ -768,7 +767,7 @@ sub,sup {
 }
 
 sup {
-    top: -.5em;
+    top: -.6em;
 }
 
 sub {

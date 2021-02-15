@@ -1,0 +1,52 @@
+/*导航条*/
+#navbar-top {
+  /*background: #f4efde;*/
+}
+
+#navbar-bottom {
+  /*background: #f4efde;*/
+}
+
+.nav-item {
+  margin-right: 15px;
+}
+
+.nav-link {
+  display: inline;
+}
+
+#normal-txt {
+  margin-left: 30px;
+}
+
+#simple-txt {
+  margin-left: -20px;
+}
+
+/*正文*/
+#allcontent {
+  margin: 0 2em;
+}
+
+sup {
+  font-size: 60%;
+}
+
+#scoll-top {
+  font-size: 150%;
+  margin-right: 10px;
+}
+
+#scoll-bottom {
+  font-size: 150%;
+  margin-right: 10px;
+}
+
+/*底部*/
+.copyright {
+   color: #777;
+   display: block;
+   font-size: 85%;
+   padding: 10px 0 20px;
+   border-top: 1px solid #185598;
+}

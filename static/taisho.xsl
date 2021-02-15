@@ -59,7 +59,8 @@
         <link rel="stylesheet" href="/static/bootstrap4.min.css"/>
         <!--link rel="stylesheet" href="http://han-css.herokuapp.com/style.css"/-->
         <!--link rel="stylesheet" href="/static/jquery.webui-popover.min.css"/-->
-        <link rel="stylesheet" href="/static/tei.css"/>
+        <link rel="stylesheet" href="/static/tei.css?v=021501"/>
+        <link rel="stylesheet" href="/static/reader.css?v=021501"/>
         <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Han/3.2.7/han.min.css"/-->
         <title>
             <xsl:value-of select="concat($current_sutra, ' ', $title)"/>
@@ -112,8 +113,8 @@
         </menu-->
 
             <!--ul class="pagination pagination-sm"-->
-        <nav class="navbar navbar-fixed-top navbar-expand justify-content-center" role="navigation">
-            <!--div class="navbar-header">  
+        <nav id="navbar-top" class="navbar navbar-fixed-top navbar-expand justify-content-center" role="navigation">
+            <!--div class="navbar-header">
                 <a class="navbar-brand">&#9776;</a>  
             </div--> 
             <!--div class="container"-->
@@ -133,7 +134,7 @@
             <!--input id="shupaictl" type="button" value="竖" onclick="shupai(this);"/-->
             <!--a id="pinyinctl" class="navbar-brand" onclick="pinyin(this);">P</a-->
                 <li class="nav-item">
-            <a class="nav-link">
+            <a id="normal-txt" class="nav-link">
                 <xsl:attribute name="href">
                     <xsl:value-of select="concat('/zh_TW', $dir, $current_sutra, '_')"/>
                     <xsl:number format="001" value="$juan"/>
@@ -143,7 +144,7 @@
             </a>
                 </li>
                 <li class="nav-item">
-            <a class="nav-link">
+            <a id="simple-txt" class="nav-link">
                 <xsl:attribute name="href">
                     <xsl:value-of select="concat('/zh', $dir, $current_sutra, '_')"/>
                     <xsl:number format="001" value="$juan"/>
@@ -178,8 +179,8 @@
             <br/>
 
         <div id="topAnchor"/>
-        <a href="#topAnchor" style="position:fixed;right:0;bottom:0" rel="bookmark">&#x21c8;</a>  <!--回到顶部-->
-        <a href="#bottomAnchor" style="position:fixed;right:0;top:70" rel="bookmark">&#x21ca;</a> <!--回到底部-->
+        <a id="scoll-top" href="#topAnchor" style="position:fixed;right:0;bottom:0" rel="bookmark">&#x21c8;</a>  <!--回到顶部-->
+        <a id="scoll-bottom" href="#bottomAnchor" style="position:fixed;right:0;top:70" rel="bookmark">&#x21ca;</a> <!--回到底部-->
         <div id="allcontent" class="content"> <!-- style="writing-mode:vertical-rl;"-->
         <!--补上南传等经典的标题以及作者-->
         <xsl:if test="not(//cb:jhead)">
@@ -226,40 +227,40 @@
         <div class="contentx">
             <xsl:apply-templates/>
         </div>
-        <div id="bottomAnchor"/>
-        <!--版權資訊-->
-        <div>
-            <hr style=" height:2px;border:none;border-top:2px solid #185598;" />
-            <!--div>【經文資訊】<xsl:value-of select="$copyright"/> 第 <xsl:value-of select="concat(substring-before($current_sutra, 'n'), ' 冊 No. ', substring-after($current_sutra, 'n'), ' ', $title)"/><br/-->
-            <div>【經文資訊】<xsl:value-of select="$copyright"/> 第 <xsl:value-of select="concat(substring-before($current_sutra, 'n'), ' 冊')"/><br/>
-                <!--【版本記錄】CBETA 電子佛典 2016.06，完成日期：2016/06/15 <br/>
-            【編輯說明】本資料庫由中華電子佛典協會（CBETA）依卍新續藏所編輯 <br/>
-            -->
-            【原始資料】<xsl:value-of select="/TEI/teiHeader/encodingDesc/projectDesc/p[@xml:lang='zh']"/><br/>
-            【其他事項】本資料庫可自由免費流通，詳細內容請參閱【中華電子佛典協會資料庫版權宣告】 </div>
-            <hr style=" height:2px;border:none;border-top:2px solid #185598;" />
-        </div>
 
         <!--底栏目录-->
-        <nav class="navbar-sm navbar-default" role="navigation">
+        <nav id="navbar-bottom" class="navbar navbar-fixed-top navbar-expand justify-content-center" role="navigation">
             <ul class="nav navbar-nav">
-             <li>
+             <li class="nav-item">
                 <!--a class="navbar-brand" href="/prev/{$current_sutra}_{$juan}/{$lang}">上一卷</a-->
-                <a class="navbar-brand" href="/prev/{$current_sutra}_{$juan}">上一卷</a>
+                <a class="navbar-link" href="/prev/{$current_sutra}_{$juan}">上一卷</a>
              </li>
-             <li>
-                <a href="/mulu">返回目录</a>
+             <li class="nav-item">
+                <a class="navbar-link" href="/mulu">返回目录</a>
              </li>
-             <li>
+             <li class="nav-item">
                 <!--a class="navbar-brand" href="/next/{$current_sutra}_{$juan}/{$lang}">下一卷</a-->
-                <a class="navbar-brand" href="/next/{$current_sutra}_{$juan}">下一卷</a>
+                <a class="navbar-link"  href="/next/{$current_sutra}_{$juan}">下一卷</a>
              </li>
              </ul>
         </nav>
+        <div id="bottomAnchor"/>
+
+        <!--版權資訊-->
+        <div class="copyright">
+            <!--div>【經文資訊】<xsl:value-of select="$copyright"/> 第 <xsl:value-of select="concat(substring-before($current_sutra, 'n'), ' 冊 No. ', substring-after($current_sutra, 'n'), ' ', $title)"/><br/-->
+              【經文資訊】<xsl:value-of select="$copyright"/> 第 <xsl:value-of select="concat(substring-before($current_sutra, 'n'), ' 冊')"/><br/>
+                <!--【版本記錄】CBETA 電子佛典 2016.06，完成日期：2016/06/15 <br/>
+              【編輯說明】本資料庫由中華電子佛典協會（CBETA）依卍新續藏所編輯 <br/>
+              -->
+              【原始資料】<xsl:value-of select="/TEI/teiHeader/encodingDesc/projectDesc/p[@xml:lang='zh']"/><br/>
+              【其他事項】本資料庫可自由免費流通，詳細內容請參閱【中華電子佛典協會資料庫版權宣告】
+        </div>
+
     </div>
 
         </body>
-        <script src="/static/my.js"></script>
+        <script src="/static/my.js?v=0215"></script>
         </html>
     </xsl:template>
 
