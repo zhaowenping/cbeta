@@ -203,6 +203,7 @@ function pinyin(evt){
 
 // 对非文石墨水屏设置背景图片
 window.onload = function(){
+    localStorage.setItem('currentRead', window.location.href);
     if (navigator.userAgent.indexOf("Note2_YZB") === -1){
         // $("body").css('background', "#fffbf0 url(/static/bg.jpg) repeat-y").css("background-size", "100% 100%");
         document.getElementById("body").style.background = "#fffbf0 url(/static/bg.jpg?v=0215) repeat";
