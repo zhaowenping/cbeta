@@ -203,8 +203,22 @@ function pinyin(evt){
 
 // 对非文石墨水屏设置背景图片
 window.onload = function(){
-if (navigator.userAgent.indexOf("Note2_YZB")==-1){
-   document.getElementById("body").style.background = "#fffbf0 url(/static/bg.jpg) repeat";
-}
-}
+    if (navigator.userAgent.indexOf("Note2_YZB")==-1){
+        document.getElementById("body").style.background = "#fffbf0 url(/static/bg.jpg) repeat";
+    }
+    gotoLastPos();
+};
 
+// 记住阅读位置
+$(window).scroll(function () {
+    var str = window.location.href, key = str.substring(str.lastIndexOf("/") + 1);
+    localStorage.setItem(key, $(document).scrollTop());
+});
+
+// 返回阅读位置
+function gotoLastPos() {
+  var str = window.location.href, key = str.substring(str.lastIndexOf("/") + 1);
+  if (localStorage.getItem(key)) {
+    $(document).scrollTop(localStorage.getItem(key));
+  }
+}
