@@ -63,7 +63,8 @@ function lookup(word){
                     repaceSelectionText(word, '<span data-toggle="uipopover" data-placement="auto" data-container="body" data-trigger="hover">' + word.toString() + '</span>');
 $(function (){
      // $("[data-toggle='uipopover']").popover({html:true});
-     $("[data-toggle='uipopover']").webuiPopover({"width": 500, "closeable": true, "title": "拼音/释义", "content": ctx});
+     //$("[data-toggle='uipopover']").webuiPopover({"width": 500, "closeable": true, "title": "拼音/释义", "content": ctx});
+     $("[data-toggle='uipopover']").popover({"closeable": true, "title": "拼音/释义", "content": ctx, "html": true});
 });
                    }
 
