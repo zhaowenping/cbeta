@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="lzh-Hant">
 <head>
-  <meta charset="utf-8"> 
+  <meta charset="utf-8">
   <meta name="author" content="">
   <meta name="description" content="">
   <meta name="keywords" content="">
@@ -9,45 +9,47 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
   <title>藏經词典</title>
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">  
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <!--link rel="stylesheet" type="text/css" href="/static/tei.css"-->
   <!--script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script-->
   <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
-  li.list-group-item {
-    float:left;
-    width:50%; 
-    display : block;
+    li.list-group-item {
+      float: left;
+      width: 50%;
+      display: block;
     }
+
     @media screen and (max-width: 736px) {
       li.list-group-item {
-        width:100%; 
-        }
+        width: 100%;
+      }
     }
-    .odd{
-    //background-color: #99cc66;
-    //background-color: #ccff66;
-    // background-color: #99cc99;
+
+    .odd {
+    / / background-color: #99cc66;
+    / / background-color: #ccff66;
+    / / background-color: #99cc99;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <nav>
-     <h1 style="text-align:center;">辭典目錄</h1>
-  
-     <ol class="breadcrumb">
+<div class="container">
+  <nav>
+    <h1 style="text-align:center;">辭典目錄</h1>
+
+    <ol class="breadcrumb">
       <li><a href="/">回首頁</a></li>
       <li><a href="/tools">總目錄</a></li>
       {#% for url, content in nav %}
       <li><a href="{{url}}">{{content}}</a></li>
       {% endfor %#}
-     </ol>
-    </nav>
-  
-    <ul class="list-group">
-        {#% for key in menus %}
+    </ol>
+  </nav>
+
+  <ul class="list-group">
+    {#% for key in menus %}
          <li class="list-group-item {{ loop.cycle('odd', 'even') }}">
           <a href="{{request.path}}/{{key}}">{{ key }}</a>
           {% if not menus[key] %}
@@ -57,88 +59,90 @@
           {% endif %}
          </li>
         {% endfor%#}
-         <li class="list-group-item odd }}">
-          <a href="/dfb/1">佛學大辭典 (民國 丁福保)</a>
-          <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
-         </li>
-         <li class="list-group-item even}}">
-          <a href="/fk/1">佛光大辭典</a>
-          <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
-         </li>
-         <li class="list-group-item odd }}">
-          <a href="/fxcd/1">法相辭典 (民國 朱沛煌)</a>
-          <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
-         </li>
-         <li class="list-group-item even}}">
-          <a href="/nvd/1">南山律學辭典</a>
-          <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
-         </li>
-         <li class="list-group-item odd}}">
-          <a href="/cyx/1">佛學常見詞彙 (陳義孝)</a>
-          <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
-         </li>
-         <li class="list-group-item even}}">
-          <a href="/ccc/1">漢譯阿含经辭典 (莊春江)</a>
-          <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
-         </li>
-         <li class="list-group-item even}}">
-          <a href="/yzzj/1">閱藏知津 (44卷)(明 智旭)</a>
-          <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
-         </li>
-         <li class="list-group-item even}}">
-          <a href="/szfs/1">三藏法數 (38卷)(明 一如)</a>
-          <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
-         </li>
-         <li class="list-group-item even}}">
-          <a href="/wdhy/1">五燈會元 (20卷)(宋 普濟)</a>
-          <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
-         </li>
-         <li class="list-group-item even}}">
-          <a href="/fymyj/1">翻譯名義集 (7卷)(宋 法雲)</a>
-          <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
-         </li>
-         <li class="list-group-item even}}">
-          <a href="/syfy/1">俗語佛源 (1卷)(中國佛教文化研究所)</a>
-          <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
-         </li>
-         <li class="list-group-item even}}">
-          <a href="/ylb/1">唯識名詞白話新解 (於凌波)</a>
-          <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
-         </li>
-         <li class="list-group-item even}}">
-          <a href="/ldms/1">歷代名僧辭典 (民國 顧偉康)</a>
-          <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
-         </li>
-         <li class="list-group-item even}}">
-          <a href="/bkqs/1">中华佛教百科全书 11卷(上海古籍出版社)</a>
-          <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
-         </li>
-         <li class="list-group-item even}}">
-          <a href="/pentaglot/1">五譯合璧集要 (鄭寶蓮)</a>
-          <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
-         </li>
-         <li class="list-group-item even}}">
-          <a href="/wm/1">威廉梵英辭典</a>
-         </li>
-         <li class="list-group-item even}}">
-          <a href="/yates/1">Yates梵英辭典</a>
-         </li>
-         <li class="list-group-item even}}">
-          <a href="/pali/1">15部巴利语辭典集成</a>
-         </li>
-         <li class="list-group-item even}}">
-          <a href="/pahant/1">巴利语漢语辭典</a>
-         </li>
-         <li class="list-group-item even}}">
-          <a href="/sahant/1">梵漢辭典</a>
-         </li>
-    </ul>
-    </ul>
-  </div>
-  <hr>
-  大藏经版本: CBETA2021Q1         更新时间: 2021-02-09 <br>
-  參數cp: 注音詞頻, 默認值500. 參數pp: 每頁顯示的詞條數量. cp與pp乘積最好不要超過5000萬,否則頁面可能會比較卡頓. 使用示例: http://cbeta.kepan.org/fxcd/1?pp=100&cp=100000
-
+    <li class="list-group-item odd }}">
+      <a href="/dfb/1">佛學大辭典 (民國 丁福保)</a>
+      <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
+    </li>
+    <li class="list-group-item even}}">
+      <a href="/fk/1">佛光大辭典</a>
+      <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
+    </li>
+    <li class="list-group-item odd }}">
+      <a href="/fxcd/1">法相辭典 (民國 朱沛煌)</a>
+      <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
+    </li>
+    <li class="list-group-item even}}">
+      <a href="/nvd/1">南山律學辭典</a>
+      <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
+    </li>
+    <li class="list-group-item odd}}">
+      <a href="/cyx/1">佛學常見詞彙 (陳義孝)</a>
+      <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
+    </li>
+    <li class="list-group-item even}}">
+      <a href="/ccc/1">漢譯阿含经辭典 (莊春江)</a>
+      <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
+    </li>
+    <li class="list-group-item even}}">
+      <a href="/yzzj/1">閱藏知津 (44卷)(明 智旭)</a>
+      <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
+    </li>
+    <li class="list-group-item even}}">
+      <a href="/szfs/1">三藏法數 (38卷)(明 一如)</a>
+      <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
+    </li>
+    <li class="list-group-item even}}">
+      <a href="/wdhy/1">五燈會元 (20卷)(宋 普濟)</a>
+      <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
+    </li>
+    <li class="list-group-item even}}">
+      <a href="/fymyj/1">翻譯名義集 (7卷)(宋 法雲)</a>
+      <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
+    </li>
+    <li class="list-group-item even}}">
+      <a href="/syfy/1">俗語佛源 (1卷)(中國佛教文化研究所)</a>
+      <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
+    </li>
+    <li class="list-group-item even}}">
+      <a href="/ylb/1">唯識名詞白話新解 (於凌波)</a>
+      <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
+    </li>
+    <li class="list-group-item even}}">
+      <a href="/ldms/1">歷代名僧辭典 (民國 顧偉康)</a>
+      <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
+    </li>
+    <li class="list-group-item even}}">
+      <a href="/bkqs/1">中华佛教百科全书 11卷(上海古籍出版社)</a>
+      <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
+    </li>
+    <li class="list-group-item even}}">
+      <a href="/pentaglot/1">五譯合璧集要 (鄭寶蓮)</a>
+      <a href="/zhx/" class="badge"><span class="badge">简体版<span></a>
+    </li>
+    <li class="list-group-item even}}">
+      <a href="/wm/1">威廉梵英辭典</a>
+    </li>
+    <li class="list-group-item even}}">
+      <a href="/yates/1">Yates梵英辭典</a>
+    </li>
+    <li class="list-group-item even}}">
+      <a href="/pali/1">15部巴利语辭典集成</a>
+    </li>
+    <li class="list-group-item even}}">
+      <a href="/pahant/1">巴利语漢语辭典</a>
+    </li>
+    <li class="list-group-item even}}">
+      <a href="/sahant/1">梵漢辭典</a>
+    </li>
+  </ul>
+  </ul>
+</div>
+<hr>
+<div class="container">
+  大藏经版本: CBETA2021Q1 更新时间: 2021-02-09 <br>
+  參數cp: 注音詞頻, 默認值500. 參數pp: 每頁顯示的詞條數量. cp與pp乘積最好不要超過5000萬,否則頁面可能會比較卡頓. 使用示例:
+  http://cbeta.kepan.org/fxcd/1?pp=100&cp=100000
+</div>
 </body>
 </html>
 
