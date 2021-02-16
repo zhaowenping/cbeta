@@ -60,6 +60,11 @@
     #m-search input {
       width: 220px;
     }
+
+    .navbar-fixed-bottom .navbar-collapse,
+    .navbar-fixed-top .navbar-collapse {
+      max-height: 500px;
+    }
   </style>
 </head>
 
@@ -67,11 +72,17 @@
 <div class="m-header navbar navbar-inverse navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="http://cbeta.org" target="_blank">CBETA</a>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand hidden-sm" href="http://cbeta.org" target="_blank">CBETA</a>
     </div>
-    <div class="navbar-collapse collapse" role="navigation">
+    <div id="navbar" class="navbar-collapse collapsed" role="navigation">
       <ul class="nav navbar-nav">
-        <li id="goto-last"><a href="#" onclick="gotoLast();">回到上次閱讀处</a></li>
+        <li id="goto-last" class="hidden-sm hidden-md"><a href="#" onclick="gotoLast();">回到上次閱讀处</a></li>
         <li><a href="/search" target="_blank">全文搜索</a></li>
         <li><a href="/diff" target="_blank">校勘工具</a></li>
         <li><a href="/sd" target="_blank">悉檀体标准化</a></li>
@@ -80,7 +91,7 @@
         <!--li><a href="/ytz" target="_blank" >异体字对照表</a></li-->
       </ul>
       <form id="m-search" class="navbar-form navbar-left" action="/searchmulu" method="post" role="search">
-        <div class="form-group">
+        <div class="form-group" style="float:left; margin-right:5px">
           <input type="text" class="form-control" name="content" placeholder="使用經号或經名前往指定經文">
         </div>
         <button type="submit" class="btn btn-default">確定</button>
