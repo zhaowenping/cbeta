@@ -203,7 +203,7 @@ function pinyin(evt){
 
 // 对非文石墨水屏设置背景图片
 window.onload = function(){
-    localStorage.setItem('currentRead', window.location.href);
+    localStorage.setItem('currentRead', window.location.pathname);
     if (navigator.userAgent.indexOf("Note2_YZB") === -1){
         // $("body").css('background', "#fffbf0 url(/static/bg.jpg) repeat-y").css("background-size", "100% 100%");
         document.getElementById("body").style.background = "#fffbf0 url(/static/bg.jpg?v=0215) repeat";
@@ -213,13 +213,13 @@ window.onload = function(){
 
 // 记住阅读位置
 $(window).scroll(function () {
-    var str = window.location.href, key = str.substring(str.lastIndexOf("/") + 1);
+    var str = window.location.pathname, key = str.substring(str.lastIndexOf("/") + 1);
     localStorage.setItem(key, $(document).scrollTop());
 });
 
 // 返回阅读位置
 function gotoLastPos() {
-  var str = window.location.href, key = str.substring(str.lastIndexOf("/") + 1);
+  var str = window.location.pathname, key = str.substring(str.lastIndexOf("/") + 1);
   if (localStorage.getItem(key)) {
     $(document).scrollTop(localStorage.getItem(key));
   }
