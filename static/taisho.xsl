@@ -60,7 +60,7 @@
         <!--link rel="stylesheet" href="http://han-css.herokuapp.com/style.css"/-->
         <!--link rel="stylesheet" href="/static/jquery.webui-popover.min.css"/-->
         <link rel="stylesheet" href="/static/tei.css?v=021501"/>
-        <link rel="stylesheet" href="/static/reader.css?v=021501"/>
+        <link rel="stylesheet" href="/static/reader.css?v=021601"/>
         <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Han/3.2.7/han.min.css"/-->
         <title>
             <xsl:value-of select="concat($current_sutra, ' ', $title)"/>

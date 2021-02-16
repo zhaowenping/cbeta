@@ -44,9 +44,13 @@ sup {
 
 /*底部*/
 .copyright {
-   color: #777;
-   display: block;
-   font-size: 85%;
-   padding: 10px 0 20px;
-   border-top: 1px solid #185598;
+  color: #777;
+  display: block;
+  font-size: 85%;
+  padding: 10px 0 20px;
+  border-top: 1px solid #185598;
+}
+
+sup + sup {
+  /*display: none;*/
 }
