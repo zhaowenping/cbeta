@@ -23,6 +23,22 @@
   margin-left: -20px;
 }
 
+@media screen and (max-width: 736px) {
+  .navbar {
+    padding: .5rem 0;
+  }
+  #normal-txt {
+    margin-left: 8px;
+  }
+
+  .nav-item {
+    margin-right: 5px;
+  }
+  #allcontent {
+    margin: 0 4px;
+  }
+}
+
 /*正文*/
 #allcontent {
   margin: 0 2em;

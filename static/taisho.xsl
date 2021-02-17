@@ -60,7 +60,7 @@
         <!--link rel="stylesheet" href="http://han-css.herokuapp.com/style.css"/-->
         <!--link rel="stylesheet" href="/static/jquery.webui-popover.min.css"/-->
         <link rel="stylesheet" href="/static/tei.css?v=021501"/>
-        <link rel="stylesheet" href="/static/reader.css?v=021601"/>
+        <link rel="stylesheet" href="/static/reader.css?v=021701"/>
         <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Han/3.2.7/han.min.css"/-->
         <title>
             <xsl:value-of select="concat($current_sutra, ' ', $title)"/>
@@ -236,7 +236,7 @@
                 <a class="navbar-link" href="/prev/{$current_sutra}_{$juan}">上一卷</a>
              </li>
              <li class="nav-item">
-                <a class="navbar-link" href="/mulu">返回目录</a>
+                <a class="navbar-link" href="/mulu">目录</a>
              </li>
              <li class="nav-item">
                 <!--a class="navbar-brand" href="/next/{$current_sutra}_{$juan}/{$lang}">下一卷</a-->
