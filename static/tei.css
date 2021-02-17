@@ -626,6 +626,7 @@ span.l {
         // text-align:left;
         text-align:center;
         text-indent: -1em;
+        font-size: 90%;
     }
     div.lll {
         margin-left: 0;
