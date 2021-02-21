@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-02-20 04:32:04
+# Last Modified: 2021-02-20 07:15:34
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -15,8 +15,9 @@ __version__ = "0.0.1"
 import re
 
 result = dict()
-with open('mochidic.txt') as fd:
+#with open('mochidic.txt') as fd:
 #with open('odadic.txt') as fd:
+with open('zendic.txt') as fd:
     for line in fd:
         x = re.findall(r'&.*?;', line)
         if x:
