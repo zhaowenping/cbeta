@@ -17046,7 +17046,7 @@ N.B. 2: Each line is constituted of three fields separated by tabs: 1. Entry in 
 熱時	<巻1-6>	2895a
 孟夏	<巻1-6>	2895a
 心宿	<巻1-6>	2895a,4041c
-制&C0-EFD1;迦童子	<巻1-6>	2895b
+制吒迦童子	<巻1-6>	2895b
 制多迦童子	<巻1-6>	2895b
 制咤迦童子*	<巻1-6>	2895b
 勢多迦童子	<巻1-6>	2895b

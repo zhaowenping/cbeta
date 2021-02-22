@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-02-12 15:36:54
+# Last Modified: 2021-02-22 05:11:30
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -429,16 +429,21 @@ def search_get():
         return {'results': results, 'content': content, 'q': 'title'}
 
     # 添加 python转义字符
+    ncontent = normalize_text(ncontent)
     ncontent = ''.join(python_escape(ncontent))
+
+    if q == 'content':
+        with open('search.ctx', 'a+') as fd:
+            fd.write(datetime.datetime.now().strftime("%Y%m%dT%T ") + content + '|' + ncontent + '\n')
+    if q == 'dict':
+        with open('search.dict', 'a+') as fd:
+            fd.write(datetime.datetime.now().strftime("%Y%m%dT%T ") + content + '|' + ncontent + '\n')
+
     if q == 'dict':
         results = wordsearch(ncontent)
         return {'results': results, 'content': content, 'q': 'dict'}
 
     results = fullsearch(ncontent)
-
-    if q == 'content':
-        with open('search.dict', 'a+') as fd:
-            fd.write(datetime.datetime.now().strftime("%Y%m%dT%T ") + content + '|' + ncontent + '\n')
 
     return {'results': results, 'content': content, 'q': 'content'}
 
