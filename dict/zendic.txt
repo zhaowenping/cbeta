@@ -193,7 +193,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 &C0-ACAD;不迷己	ほとんどおのれにまよわず	ZGD1158b	ZGo15-P136
 &C0-ACAD;于…	Koga74
 &C0-ACB7;元	しょうげん	ZGD540b
-&C0-ACBA;牛曚&CX-2263;	こぎゅうもうどう	ZGD332a
+牯牛曚&CX-2263;	こぎゅうもうどう	ZGD332a
 &C0-ACE6;教	けんきょう	Iwa234
 &C0-ACF8;利	JE175a/194
 &C0-ACF8;利陀耶	ZGo9-P74
@@ -269,8 +269,8 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 &C0-B7DB;芋	わいう	ZGD1324c	Yo817
 &C0-B7DB;破	Koga497
 &C0-B7DB;燼	ZGo19-P162
-&C0-B85E;臼	かきゅう	ZGD149a	Ina171	Koga50	Yo333
-&C0-B85E;窟	かくつ	ZGD153b	Ina171	Koga50	ZGo15-P171
+窠臼	かきゅう	ZGD149a	Ina171	Koga50	Yo333
+窠窟	かくつ	ZGD153b	Ina171	Koga50	ZGo15-P171
 &C0-B861;	いん	ZGD54d	ZD352
 &C0-B861;州	ZD286	ZD297
 &C0-B861;州黄檗運禪師	ZGo19-P28
@@ -322,8 +322,8 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 &C0-BDF0;起便行	てっきしてすなわちゆく	ZGD883a	Koga322
 &C0-BDF0;却	Yo765
 &C0-BDF0;著	Koga322
-&C0-BE40;	こん	ZGD362d	KG892/55	Koga148
-&C0-BE40;入	ZGo19-P99
+輥	こん	ZGD362d	KG892/55	Koga148
+輥入	ZGo19-P99
 &C0-BE48;	ZD283
 &C0-BE48;師波	とうしは	ZGD925a	Genkyo98/221	KG1009/355
 &C0-BE48;州	ZD170
@@ -353,19 +353,19 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 &C0-BFEC;道	べんどう	ZGD1116a	SKS478/463
 &C0-BFF3;	ぎょう	ZGD214b	ZD242
 &C0-BFF3;衞	ZGo2-P370
-&C0-C0BA;拳	ZGo11-P137
-&C0-C0BA;持	けいじ	ZGD259d
-&C0-C0BA;茶來	けいさらい	ZGD259a
-&C0-C0BA;頭戴角	こうべをささげつのをいただく	ZGD324c	ずをささげつのをいただく	ZGD324c	Koga103	KU38
-&C0-C0BA;鉢	けいはつ	ZGD263c
-&C0-C0BA;油	ZGo10-P135
-&C0-C0BA;油不&C3-4232;	Koga103
-&C0-C0BA;擔問	けいたんもん	ZGD262b
+擎拳	ZGo11-P137
+擎持	けいじ	ZGD259d
+擎茶來	けいさらい	ZGD259a
+擎頭戴角	こうべをささげつのをいただく	ZGD324c	ずをささげつのをいただく	ZGD324c	Koga103	KU38
+擎鉢	けいはつ	ZGD263c
+擎油	ZGo10-P135
+擎油不&C3-4232;	Koga103
+擎擔問	けいたんもん	ZGD262b
 &C0-C0F3;州黄梅縣東馮母山	ZGo5-P19
-&C0-C0F6;往羅浮	ZGo2-P378
-&C0-C0F6;大師知爲特氣	ZGo3-P90
-&C0-C0F6;幽	さんゆう	ZGD411c
-&C0-C0F6;禪師碑文	さんぜんじひぶん	ZGD402d
+璨往羅浮	ZGo2-P378
+璨大師知爲特氣	ZGo3-P90
+璨幽	さんゆう	ZGD411c
+璨禪師碑文	さんぜんじひぶん	ZGD402d
 &C0-C0FC;目	Yo61
 &C0-C0FC;目口&C0-CBDC;	とうもくこうきょ	ZGD941d
 &C0-C16D;&C0-CBBC;	Koga141
@@ -385,14 +385,14 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 &C0-C2C1;士	Ina105
 &C0-C2E4;得	ばくとく	ZGD1016a
 &C0-C2E4;眞	Koga381
-&C0-C2FB;戒	けいかい	ZGD257a
-&C0-C2FB;足	けいそく	ZGD262b
-&C0-C2FB;足遺風	けいそくのいふう	ZGD262b
-&C0-C2FB;足山	けいそくさん	ZGD262b	JE169a/186
-&C0-C2FB;足守衣	けいそくしゅえ	ZGD262b
-&C0-C2FB;皮皷子	Genkyo128/228
-&C0-C2FB;肋集	けいろくしゅう	ZGD265c
-&C0-C2FB;籠山	けいろうざん	ZGD265c
+雞戒	けいかい	ZGD257a
+雞足	けいそく	ZGD262b
+雞足遺風	けいそくのいふう	ZGD262b
+雞足山	けいそくさん	ZGD262b	JE169a/186
+雞足守衣	けいそくしゅえ	ZGD262b
+雞皮皷子	Genkyo128/228
+雞肋集	けいろくしゅう	ZGD265c
+雞籠山	けいろうざん	ZGD265c
 &C0-C346;&CX-2275;	Ina86
 &C0-C346;愚衡和尚語録	せんぐこうおしょうごろく	ZGD678d
 &C0-C347;下	Ina426	Koga463	ZGo18-P145
@@ -402,24 +402,24 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 &C0-C347;在無事甲程	Genkyo199/246
 &C0-C347;在無事甲裡	ぶじこうりにようざいす	ZGD1073a	むじこうりにようざいす	ZGD1073a	Yo35
 &C0-C347;在無辜甲裡	KG1090/559
-&C0-C365;	Ina198	Ina198	Ina470
-&C0-C365;居士	ほうこじ	ZGD1129b	Baso86-1	Ina115	Yo236
-&C0-C365;居士語録	ほうこじごろく	ZGD1129b	Yo236
-&C0-C365;居士好雪片片	ほうこじこうせつへんぺん	ZGD1129b	Yo236
-&C0-C365;居士不昧本來人	ほうこじふまいほんらいにん	ZGD1129b
-&C0-C365;居士明明祖意	ほうこじめいめいたるそい	ZGD1129b
-&C0-C365;公云	ZGo17-P76
-&C0-C365;公雪片	ほうこうせっぺん	ZGD1129a
-&C0-C365;公鮮健且勝阿師	ZGo7-P146
-&C0-C365;公年老	ZGo7-P157
-&C0-C365;眉	ほうび	ZGD1140d
-&C0-C365;老	Ina115
-&C0-C365;老機關沒可把	ZGo15-P126
-&C0-C365;老在否	ZGo7-P52
-&C0-C365;薀好雪	Ina115	Ina449
-&C0-C365;蘊	ほうおん	ZGD1122a	Yo239
-&C0-C365;蘊漉籬	ほうおんろくり	ZGD1122b
-&C0-C365;蘊是非	ほうおんぜひ	ZGD1122a
+龐	Ina198	Ina198	Ina470
+龐居士	ほうこじ	ZGD1129b	Baso86-1	Ina115	Yo236
+龐居士語録	ほうこじごろく	ZGD1129b	Yo236
+龐居士好雪片片	ほうこじこうせつへんぺん	ZGD1129b	Yo236
+龐居士不昧本來人	ほうこじふまいほんらいにん	ZGD1129b
+龐居士明明祖意	ほうこじめいめいたるそい	ZGD1129b
+龐公云	ZGo17-P76
+龐公雪片	ほうこうせっぺん	ZGD1129a
+龐公鮮健且勝阿師	ZGo7-P146
+龐公年老	ZGo7-P157
+龐眉	ほうび	ZGD1140d
+龐老	Ina115
+龐老機關沒可把	ZGo15-P126
+龐老在否	ZGo7-P52
+龐薀好雪	Ina115	Ina449
+龐蘊	ほうおん	ZGD1122a	Yo239
+龐蘊漉籬	ほうおんろくり	ZGD1122b
+龐蘊是非	ほうおんぜひ	ZGD1122a
 &C0-C36A;	ZGo18-P32
 &C0-C36A;&C0-C0B4;	Ina237
 &C0-C36A;&C0-E9E7;	もうどう	ZGD1224a
@@ -661,11 +661,11 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 &C0-DDC2;禪	ZGo17-P91
 &C0-DDCB;架	いか	ZGD20c	えか	ZGD20c	SKS799/807
 &C0-DDD4;稚	けんち	ZGD293b	かんち	ZGD293b
-&C0-DEA5;茨	けんじ	ZGD283b	こんじ	ZGD283b
-&C0-DEA5;駄羅國	JE170b/189	Yo143
-&C0-DEA5;稚	かんち	ZGD184d	かんち	ZGD293b	けんち	ZGD293b	SKS715/718	Yo335	Yo361
-&C0-DEA5;度	けんど	Iwa241	JE170b/189
-&C0-DEA5;陟	JE170b/189
+犍茨	けんじ	ZGD283b	こんじ	ZGD283b
+犍駄羅國	JE170b/189	Yo143
+犍稚	かんち	ZGD184d	かんち	ZGD293b	けんち	ZGD293b	SKS715/718	Yo335	Yo361
+犍度	けんど	Iwa241	JE170b/189
+犍陟	JE170b/189
 &C0-DF42;堵	そと	ZGD774b
 &C0-DF42;堵婆	そとば	ZGD775a
 &C0-DF46;城	ZD242
@@ -697,22 +697,22 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 &C0-E2A3;沱	ZD155
 &C0-E2A5;&C0-E2A5;	ぼうぼう	ZGD1143b	もうもう	ZGD1224b	ぼうぼう	ZGD1224b
 &C0-E2A5;&C0-E2A5;蕩蕩	もうもうとうとう	ZGD1224b	ぼうぼうとうとう	ZGD1224b	ZGo16-P63
-&C0-E2C6;	ぼう	ZGD1118b
-&C0-E2C6;語	ぼうご	ZGD1128b
-&C0-E2C6;子	Koga428
-&C0-E2C6;式	ぼうしき	ZGD1130c
-&C0-E2C6;状	ぼうじょう	ZGD1134b
-&C0-E2C6;頭	ぼうとう	ZGD1139c
-&C0-E2C6;樣	ぼうよう	ZGD1145a	Koga428
-&C0-E2CA; &C0-BCCE; &C0-BCCE;地	Yo141
-&C0-E2CA;&C0-BCCE;&C0-BCCE;地	ZGo19-P62
-&C0-E2CA;&C0-BCCE;&C0-BCCE;地に	Ina70
-&C0-E2CA;&C0-E579;&C0-E579;地	ZGo19-P139
-&C0-E2CA;&C0-E579;&C0-E579;地に	Ina70
-&C0-E2CA;椿椿地	がいとうとうち	ZGD144c	がいしょうしょうち	ZGD144c	たいとうとうち	ZGD144c
-&C0-E2CA;的	ZGo19-P64
-&C0-E2CA;的の漢子	Ina70
-&C0-E2CA;郎	Ina70	Koga57	Yo141
+牓	ぼう	ZGD1118b
+牓語	ぼうご	ZGD1128b
+牓子	Koga428
+牓式	ぼうしき	ZGD1130c
+牓状	ぼうじょう	ZGD1134b
+牓頭	ぼうとう	ZGD1139c
+牓樣	ぼうよう	ZGD1145a	Koga428
+獃&C0-BCCE;&C0-BCCE;地	Yo141
+獃&C0-BCCE;&C0-BCCE;地	ZGo19-P62
+獃&C0-BCCE;&C0-BCCE;地に	Ina70
+獃&C0-E579;&C0-E579;地	ZGo19-P139
+獃&C0-E579;&C0-E579;地に	Ina70
+獃椿椿地	がいとうとうち	ZGD144c	がいしょうしょうち	ZGD144c	たいとうとうち	ZGD144c
+獃的	ZGo19-P64
+獃的の漢子	Ina70
+獃郎	Ina70	Koga57	Yo141
 &C0-E2E4;&C0-B842;	しょうさい	ZGD545a	しゅうさい	ZGD545a
 &C0-E35A;	さつ	ZGD384b	KG888/45
 &C0-E3B0;&C0-EB49;	しつれい	ZGD456b	しつり	ZGD456b	Koga185
@@ -754,17 +754,17 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 &C0-E8A7;外	Yo391
 &C0-E8A7;奧	こんおう	ZGD363a
 &C0-E94F;子	Ina74
-&C0-E977;休乾禪師語録	かんきゅうけんぜんじごろく	ZGD176b
-&C0-E977;狗趁鷂子	かんくようすをおう	ZGD177a
-&C0-E977;山	かんざん	ZGD180a
-&C0-E977;山大師夢遊全集	かんざんだいしむゆうぜんしゅう	ZGD180a
-&C0-E977;山大師夢遊摘要	かんざんだいしむゆうてきよう	ZGD180b
-&C0-E977;山徳清	ZD383	ZD421
-&C0-E977;山老人夢遊集	かんざんろうじんむゆうしゅう	ZGD180b
-&C0-E977;祖大師自著年譜	かんそだいしじちょねんぷ	ZGD184c
-&C0-E977;布袋	かんふたい	ZGD188c	Yo336
-&C0-E977;抹撻	かんまつたつ	ZGD189b	Genkyo103/222	KG1013/365	Yo341
-&C0-E977;與暹禪師語録	かんよせんぜんじごろく	ZGD190a
+憨休乾禪師語録	かんきゅうけんぜんじごろく	ZGD176b
+憨狗趁鷂子	かんくようすをおう	ZGD177a
+憨山	かんざん	ZGD180a
+憨山大師夢遊全集	かんざんだいしむゆうぜんしゅう	ZGD180a
+憨山大師夢遊摘要	かんざんだいしむゆうてきよう	ZGD180b
+憨山徳清	ZD383	ZD421
+憨山老人夢遊集	かんざんろうじんむゆうしゅう	ZGD180b
+憨祖大師自著年譜	かんそだいしじちょねんぷ	ZGD184c
+憨布袋	かんふたい	ZGD188c	Yo336
+憨抹撻	かんまつたつ	ZGD189b	Genkyo103/222	KG1013/365	Yo341
+憨與暹禪師語録	かんよせんぜんじごろく	ZGD190a
 &C0-E9A4;脊	Koga415
 &C0-E9E6;毛	Ina163
 &C0-E9F0;州法如	ZGo2-P284
@@ -862,7 +862,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 &C0-F54F;&C0-DCAC;&C0-ECDC;&C0-C0B4;	まんかんもうとう	ZGD1177d
 &C0-F54F;&C0-DCAC;&C0-EFB7;&C0-CBBE;	まんかんろうとう	ZGD1177d	KG1059/481
 &C0-F5AE;子	しゅうし	ZGD485b	Ina376	Yo718
-&C0-F5B6;奴白&C0-ACBA;	りぬびゃっこ	ZGD1268d
+黧奴白牯	りぬびゃっこ	ZGD1268d
 &C0-F5CD;&C0-D573;	さんたつ	ZGD404a	KG951/207	Koga166
 &C0-F5CD;過	ざんか	ZGD388c	Koga166	Ljl137-2
 &C0-F5CD;向	ざんこう	ZGD393b	Koga166	Yo834
@@ -892,19 +892,19 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 &C0-F9B1;飯	さんぱん	ZGD407b	SKS666/667	Yo585
 &C0-F9B1;飯錢	さんぱんせん	ZGD407b
 &C0-F9BB;&C0-F453;	Koga481
-&C0-F9D2;	Ina379
-&C0-F9D2; &C3-3967;	Ina385
-&C0-F9D2;&C0-C157;	そぞう	ZGD772c	Yo726
-&C0-F9D2;&C3-3967;易飽細嚼難飢	そしんはあきやすくさいしゃくはうえがたし	ZGD771c
-&C0-F9D2;強惡業	そごうのあくごう	ZGD767c
-&C0-F9D2;言	Ina379
-&C0-F9D2;言及細語	ZGo15-P235
-&C0-F9D2;言細語	そごんさいご	ZGD767d	Koga265
-&C0-F9D2;行沙門	そぎょうのしゃもん	ZGD761b
-&C0-F9D2;細	そさい	ZGD767d
-&C0-F9D2;心	Ina384
-&C0-F9D2;湯	そとう	ZGD774c
-&C0-F9D2;惡語	そあくご	ZGD710d	Yo720
+麤	Ina379
+麤 &C3-3967;	Ina385
+麤&C0-C157;	そぞう	ZGD772c	Yo726
+麤&C3-3967;易飽細嚼難飢	そしんはあきやすくさいしゃくはうえがたし	ZGD771c
+麤強惡業	そごうのあくごう	ZGD767c
+麤言	Ina379
+麤言及細語	ZGo15-P235
+麤言細語	そごんさいご	ZGD767d	Koga265
+麤行沙門	そぎょうのしゃもん	ZGD761b
+麤細	そさい	ZGD767d
+麤心	Ina384
+麤湯	そとう	ZGD774c
+麤惡語	そあくご	ZGD710d	Yo720
 &C3-2163;地	そうち	ZGD742b
 &C3-2163;地&C3-2163;天	そうちそうてん	ZGD742b
 &C3-2163;地漫天	そうちまんてん	ZGD742b
@@ -1069,7 +1069,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 溈山警策	いさんきょうさく	ZGD23c	いさんけいさく	ZGD23c	Ina135	Yo264
 溈山三種生	いさんさんしゅしょう	ZGD23d
 溈山書并に鏡を付す	Ina134
-溈山水&C0-ACBA;牛	いさんすいこぎゅう	ZGD24a
+溈山水牯牛	いさんすいこぎゅう	ZGD24a
 溈山請道	Ina134	Ina450
 溈山青は是れ黄にあらず	Ina134
 溈山青不是黄	いさんせいはこれおうにあらず	ZGD24a	Ina464
@@ -1093,9 +1093,9 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 &C3-4F30;&C3-4F30; 地	Yo528
 &C3-4F30;&C3-4F30;地	ららち	ZGD1261d
 &C3-502D;麻	KG934/165
-&C3-5034;	なんじ	ZGD969a	に	ZGD975b
-&C3-5034;家	Ina143
-&C3-5034;看爭奈他何	Genkyo207/248
+儞	なんじ	ZGD969a	に	ZGD975b
+儞家	Ina143
+儞看爭奈他何	Genkyo207/248
 &C3-517B;	えい	ZGD81a
 &C3-517B;華	えいげ	ZGD81c	Yo110
 &C3-517B;眼	えいげん	ZGD82b	Yo110
@@ -1754,7 +1754,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 阿&C3-3A2D;&C3-3A2D;	KU17
 阿&C3-3A2D;阿&C3-3A2D;	Ina8
 阿&C3-4429;&C3-4429; 	あらつらつ	ZGD11a
-阿&C3-5034;	Ina4
+阿儞	Ina4
 阿&C4-4822;	あしゅく	ZGD6c	あしゅく	Iwa9
 阿&C4-4822;寺	JE12a/12
 阿&C4-4822;佛	JE12a/12	Yo15
@@ -1859,7 +1859,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 阿毘達磨法蘊足論	JE2b/2
 阿毘達磨發智論	JE2a/2
 阿毘曇	あびどん	Iwa12	JE3a/3
-阿毘曇八&C0-DEA5;度論	JE3a/3
+阿毘曇八犍度論	JE3a/3
 阿毘曇毘婆沙論	JE3a/3
 阿毘曇藏	ZGo14-P137
 阿毘羅吽缺	あびらうんけん	Iwa12
@@ -2407,7 +2407,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 依正身心	えしょうしんじん	ZGD97c
 依正二報	えしょうにほう	ZGD97c	JE58b/65	Yo121
 依前	いぜん	ZGD27a	KG976/269	Koga9
-依然只在舊&C0-B85E;窟裡	いぜんとしてただきゅうかくつりにあり	ZGD27a
+依然只在舊窠窟裡	いぜんとしてただきゅうかくつりにあり	ZGD27a
 依全	いぜん	ZGD27a
 依草附木	えそうふぼく	ZGD99c	Yo121
 依草附木の精靈	Ina60
@@ -3392,7 +3392,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 一大事訓訣	いちだいじのくんけつ	ZGD32d
 一大事祕密妙註	いちだいじひみつみょうちゅう	ZGD32d
 一大藏教	いちだいぞうきょう	ZGD32d	Ina122
-一大藏教は&C3-5034;が舌頭上に在らん	Ina122
+一大藏教は儞が舌頭上に在らん	Ina122
 一大藏經	Yo248
 一諾	ZD366
 一棚	いっぽう	ZGD49d
@@ -3476,7 +3476,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 一等沒絃琴	ZGo7-P23
 一踏	Koga15
 一頭	いっとう	ZGD48a
-一頭水&C0-ACBA;牛	いっとうのすいこぎゅう	ZGD48a
+一頭水牯牛	いっとうのすいこぎゅう	ZGD48a
 一動一靜	いちどういちじょう	ZGD33b
 一堂	いちどう	ZGD33a	いたん	ZGD33a
 一道	いちどう	ZGD33a	Yo248
@@ -3937,7 +3937,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 一點水墨、兩處成龍	Koga22
 一點梅花蕊三千世界香	KU243
 一齊	いっせい	ZGD45a	KG968/247	Koga15
-一齊&C0-BE40;	Genkyo96/220
+一齊輥	Genkyo96/220
 逸格超宗	いっかくちょうしゅう	ZGD38b	Yo255
 逸群大士の能	Ina139
 逸群之作	いつぐんのさ	ZGD39d
@@ -4028,7 +4028,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 因果不二門	JE129a/141
 因果物語	いんがものがたり	ZGD55b
 因果應報	JE129a/141	Yo260
-因我禮&C3-5034;	いんがらいに	ZGD55b	われによってなんじをらいす	ZGD55b
+因我禮儞	いんがらいに	ZGD55b	われによってなんじをらいす	ZGD55b
 因該果海	ZGo9-P189
 因業	いんごう	Iwa48	JE129b/141
 因見諸方見解	ZGo11-P418
@@ -5977,7 +5977,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 火部星衆	かぶせいしゅ	ZGD169d
 火裏	かり	ZGD172b
 火裏の蓮華に似たり	Ina177
-火裏金&C0-C2FB;	かりのきんけい	ZGD172b
+火裏金雞	かりのきんけい	ZGD172b
 火裏人	かりのひと	ZGD172b	Yo347
 火裏氷	かりのひょう	ZGD172b
 火裏蓮	かりのれん	ZGD172b
@@ -6093,7 +6093,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 荷澤大師顯宗記	ZD395	ZD438
 荷澤和上禪要	かたくわじょうぜんよう	ZGD162d
 荷澤顯宗記	かたくけんしゅうき	ZGD162c
-荷盡已無&C0-C0BA;雨蓋菊殘猶有傲霜枝	KU331
+荷盡已無擎雨蓋菊殘猶有傲霜枝	KU331
 華	はな	ZGD1029d
 華&C0-B0D0;頭	かへんとう	ZGD170a
 華園遺臭録	かえんいしゅうろく	ZGD148c
@@ -6398,7 +6398,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 我大&C0-B7D9;	ZGo15-P87
 我知爲汝安何物心	ZGo1-P220
 我中國有正法	ZGo2-P100
-我得&C3-5034;不得	がとくにふとく	ZGD168a
+我得儞不得	がとくにふとく	ZGD168a
 我入汝出	ZGo7-P58
 我之道法	ZGo2-P317
 我輩	Koga51
@@ -7342,8 +7342,8 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 滑臺	ZD193
 葛西念佛	かさいねんぶつ	Iwa117
 葛藤	かっとう	ZGD166a	かっとう	Iwa125	Genkyo55/210	Ina180	Ina460	JE166a/184	KG958/224	Koga62	Yo353	ZGo8-P81	ZGo10-P17	ZGo17-P53
-葛藤&C0-B85E;	Ina181	Yo353
-葛藤&C0-B85E;裏	かっとうかり	ZGD166b
+葛藤窠	Ina181	Yo353
+葛藤窠裏	かっとうかり	ZGD166b
 葛藤す	Ina181
 葛藤を説く	Ina180
 葛藤窟	Yo353
@@ -7377,7 +7377,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 且莫妨穩便	Genkyo193/245
 且摩	Koga188
 且問	しゃもん	ZGD477a	しばらくとう	ZGD477a	Yo625
-且問&C3-5034;	しゃもんにい	ZGD477a	しばらくなんじにとう	ZGD477a
+且問儞	しゃもんにい	ZGD477a	しばらくなんじにとう	ZGD477a
 且要	しばらくようす	ZGD460a	Ljl72-3
 且要廻頭	ZGo16-P120
 且來	しゃらい	ZGD477c
@@ -7969,7 +7969,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 鑑照	かんしょう	ZGD181c
 鑑心	かんしん	ZGD182c
 鑑多口	かんたく	ZGD184d	かんたこう	ZGD184d
-鑑智僧&C0-C0F6;	Yo335
+鑑智僧璨	Yo335
 鑑智禪師	かんちぜんじ	ZGD184d
 鑑堂一	かんどういつ	ZGD186b
 鑑堂一禪師語録	かんどういつぜんじごろく	ZGD186b
@@ -8267,7 +8267,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 奇特之想	ZGo17-P40
 奇叟異珍	Yo380
 奇拜	きはい	ZGD206c
-寄&C3-5034;打雪竇	Genkyo195/245
+寄儞打雪竇	Genkyo195/245
 寄居	ZGo13-P284
 寄庫錢	きくせん	ZGD196a	SKS845/856	Yo375
 寄唱	きしょう	ZGD199c
@@ -10193,7 +10193,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 近離甚處	きんりいずれのところぞ	ZGD239a	ちかごろなんのところをかはなるる	ZGD239a	Koga93	Yo377	ZGo10-P218	ZGo15-P103	ZGo15-P158
 近來傳得安心法萬壑松風枕上聞	KU337
 近圓	JE86a/94
-金&C0-C2FB;	きんけい	ZGD235c
+金雞	きんけい	ZGD235c
 金粟	きんぞく	ZGD237c
 金粟寺	きんぞくじ	ZGD237c
 金粟智和尚語要	きんぞくちおしょうごよう	ZGD237c
@@ -10419,7 +10419,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 金毛師子	きんもうのしし	ZGD239a	KG1077/526	ZGo15-P118
 金毛師子大家看	ZGo15-P118
 金毛師子不踞地	ZGo15-P209
-金毛獅子&C0-BE40; 繍毬	KU162
+金毛獅子輥繍毬	KU162
 金毛獅子奮威出窟	KU209
 金毛獅子兒	Yo375
 金毛獅子變成狗	KU162
@@ -11502,7 +11502,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 結縁諷經	けちえんふぎん	ZGD271b	SKS532/522
 結夏	けつげ	ZGD272a	JE172b/191	SKS113/79	Yo369
 結夏上堂	Yo369
-結夏茶&C0-E2C6;	けつげさぼう	ZGD272a
+結夏茶牓	けつげさぼう	ZGD272a
 結夏念誦	けつげねんじゅ	ZGD272a
 結夏齋	けつげさい	ZGD272a	Yo369
 結果自然成	けっかじねんじょう	ZGD271d	ZGo5-P188
@@ -12597,7 +12597,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 孤風	こふう	ZGD357d	Ina197	ZGo15-P41
 孤峰	こほう	ZGD358b	Ina198
 孤峰雲散千谿月	KU164
-孤峰智&C0-C0F6;	こほうちさん	ZGD358b
+孤峰智璨	こほうちさん	ZGD358b
 孤峰頂上	こほうちょうじょう	ZGD358c	Ina198	Yo385	ZGo10-P29	ZGo18-P109
 孤峰頂上目視雲霄、古渡頭邊和泥合水	ZD117
 孤峰頂上目視雲霄古渡頭邊和泥合水	KU405
@@ -12749,7 +12749,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 湖南海衆	こなんのかいしゅ	ZGD355c
 湖北	Ina90	Ina147
 湖隱濟顛禪師語録	こいんさいてんぜんじごろく	ZGD302c
-狐&C0-B85E;窟	Ina200
+狐窠窟	Ina200
 狐疑	KG935/168
 狐疑都無信受	ZGo3-P74
 狐朋狗黨	Ina198
@@ -12802,7 +12802,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 胡道	うどう	ZGD66c	JE323b/359	KG926/144	Koga31	Yo806
 胡寅	ZGo14-P13
 胡伯	Koga117
-胡蜂不戀舊時&C0-B85E;、猛將不在家中死	Koga118
+胡蜂不戀舊時窠、猛將不在家中死	Koga118
 胡麻粥	ごましゅく	ZGD359c
 胡魅の漢	Ina204
 胡餅	Genkyo46/208	Koga117
@@ -13213,7 +13213,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 五百塵點劫	ごひゃくじんてんごう	ZGD357a	ごひゃくじんでんごう	Iwa279	JE80b/88	Yo163
 五百生	ごひゃくしょう	ZGD357a
 五百大願	ごひゃくだいがん	ZGD357a	Yo163
-五百頭水&C0-ACBA;牛&C3-DCF1;尊者	ZGo11-P393
+五百頭水牯牛&C3-DCF1;尊者	ZGo11-P393
 五百年一間生	Koga121	KU131
 五百羅漢	ごひゃくらかん	ZGD357a	ごひゃくらかん	Iwa279	JE80b/89
 五百羅漢寺	ごひゃくらかんじ	ZGD357b
@@ -13377,7 +13377,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 吾有正法眼藏	ZD255	ZD255
 吾欲無言	ZGo2-P411
 吾寶下五哲	ごほうかのごてつ	ZGD359a	Yo163
-吾寶宗&C0-C0F6;	Yo163
+吾寶宗璨	Yo163
 吾恆仰慕前哲	ZGo1-P49
 吾歸	ZGo13-P31
 吾髓	ごずい	ZGD348b
@@ -13657,7 +13657,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 乞處	こうじょ	ZGD313c
 鯉魚	Ina279
 交	SKS489/476
-交&C0-BE40;	KG951/205
+交輥	KG951/205
 交&C6-5923;	Yo406
 交易	こうえき	ZGD305b	Koga127	Yo401
 交椅	こうい	ZGD303d	Yo403
@@ -13684,7 +13684,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 侯白	Ina198	Ina201
 侯白侯黒	こうはくこうこく	ZGD323c	KG1051/464	Yo402
 光	ひかり	ZGD1041b	こう	ZGD1041b	ひかり	Iwa673	Ina104	Koga126	ZD241
-光&C0-C0F6;録	こうさんろく	ZGD311c
+光璨録	こうさんろく	ZGD311c
 光に和して吐出	Ina104
 光陰	ZGo13-P236
 光陰可惜	Koga126
@@ -13955,7 +13955,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 向箭頭上覓人	ZGo10-P124
 向前	Koga128
 向前一句裏辨取	ZGo11-P253
-向草裏&C0-BE40;	そうりにむかってこんず	ZGD756d
+向草裏輥	そうりにむかってこんず	ZGD756d
 向草料裏見	ZGo11-P377
 向誰説	ZGo13-P325
 向道	こうどう	ZGD321b	Genkyo7/198	KG963/236	Koga128	Yo401
@@ -15712,7 +15712,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 歳旦人事	さいたんにんじ	ZGD376d	Yo571
 歳末	さいまつ	ZGD378c
 歳末看經	さいまつかんきん	ZGD378c
-歳末看經&C0-E2C6;	さいまつかんきんぼう	ZGD378d
+歳末看經牓	さいまつかんきんぼう	ZGD378d
 歳末簿	さいまつぼ	ZGD378d
 歳末禮賀	さいまつらいが	ZGD378d
 歳偈	さいげ	ZGD372a
@@ -15867,7 +15867,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 作…勢	Koga150
 作意	Koga150
 作衣	さえ	ZGD379c
-作一頭水&C0-ACBA;牛去	ZGo11-P25
+作一頭水牯牛去	ZGo11-P25
 作一頭驢來	ZGo11-P189
 作一領布衫重七斤	ZGo15-P134
 作雨作晴	KU42
@@ -16102,8 +16102,8 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 晒薦	しゃせん	ZGD474b	Yo627
 晒薦牌	しゃせんはい	ZGD474b
 晒藏	しゃぞう	ZGD474b	Yo628
-三&C0-B85E;	さんか	ZGD388b
-三&C0-B85E;法義	さんかほうぎ	ZGD388b
+三窠	さんか	ZGD388b
+三窠法義	さんかほうぎ	ZGD388b
 三&C3-2163;	さんそう	ZGD403a
 三&C4-5632;&C4-686C;	さんもら	ZGD410d
 三阿僧祇劫	さんあそうぎこう	ZGD387c	Yo575	ZD248
@@ -16435,8 +16435,8 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 三世諸佛口掛壁上	KU215
 三世諸佛正覺	ZGo1-P85
 三世諸佛不知有	さんぜしょぶつあることをしらず	ZGD401c
-三世諸佛不知有、狸奴白&C0-ACBA;却知有	Koga163
-三世諸佛不知有狸奴白&C0-ACBA;卻知有	KU349
+三世諸佛不知有、狸奴白牯却知有	Koga163
+三世諸佛不知有狸奴白牯卻知有	KU349
 三世心不可得	さんぜしんふかとく	ZGD401d
 三世心盡	さんぜしんつく	ZGD401c
 三世如來	さんぜにょらい	ZGD401d
@@ -16858,7 +16858,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 山河大地同一佛性	せんがだいちどういつぶっしょう	ZGD673b	さんがだいちどういつぶっしょう	ZGD673b
 山河大地日月星辰	せんがだいちじつげつせいしん	ZGD673a	さんがだいちじつげつせいしん	ZGD673a
 山河大地妙淨明心	せんがだいちみょうじょうみょうしん	ZGD673b	さんがだいちみょうじょうみょうしん	ZGD673b
-山河大地萬象森羅醯&C0-C2FB;&C0-EE6F;&C3-4E5D;草芥人畜一一放大光明一一壁立萬丈	KU412
+山河大地萬象森羅醯雞&C0-EE6F;&C3-4E5D;草芥人畜一一放大光明一一壁立萬丈	KU412
 山河不在鏡中觀	ZD283	ZGo15-P120
 山河并大地、全露法王身	Koga164
 山河竝大地全露法王身	KU260
@@ -17487,7 +17487,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 四靜慮	しじょうりょ	ZGD438c	Ina335	Ina357	JE277b/305	Yo640
 四韋陀	しいだ	ZGD414c	Yo638
 士安	しあん	ZGD414a
-士以手自指曰&C0-C365;公	ZGo7-P70
+士以手自指曰龐公	ZGo7-P70
 士以目瞬之	ZGo7-P74
 士雲	しうん	ZGD414d
 士喝曰	ZGo7-P150
@@ -17945,7 +17945,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 施	せ	ZGD641a	JE261b/289	Yo596
 施&CX-2375;	せじょう	ZGD658c
 施餓鬼	せがき	ZGD651c	せがき	Iwa485	JE261b/289	Yo597
-施餓鬼結縁看經之&C0-E2C6;	うらぼんせじきかんきんだいぼう	ZGD69d
+施餓鬼結縁看經之牓	うらぼんせじきかんきんだいぼう	ZGD69d
 施餓鬼作法	せがきさほう	ZGD651d
 施餓鬼食	SKS584/578
 施餓鬼棚	せがきだな	ZGD651d
@@ -18334,7 +18334,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 似虎犇山	とらのやまにはしるににたり	ZGD957c
 似虎靠山	とらのやまによるににたり	ZGD957c
 似此觀者	Genkyo159/236
-似石含玉不知玉之無瑕如地&C0-C0BA;山不知山之孤峻	KU413
+似石含玉不知玉之無瑕如地擎山不知山之孤峻	KU413
 似接竹點月	たけをついでつきにうつににたり	ZGD822b
 似則似、是則未是	Koga181
 似則似是則未是	にたることはすなわちにたりぜなることはすなわちいまだぜならず	ZGD982a
@@ -18908,7 +18908,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 識達本故	ZGo1-P42
 識通塞	JE279a/309
 識得	しきとく	ZGD421d	Koga182
-識得&C0-C365;翁了也	ZGo7-P167
+識得龐翁了也	ZGo7-P167
 識得形容	ZGo16-P117
 識得自性	ZD266
 識得天下老和尚	Ljl139-5
@@ -19462,7 +19462,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 若能常作如是觀者	ZGo2-P253
 若能不取解	ZGo1-P215
 若把西湖比西施淡粧濃抹兩相宜	KU356
-若非&C0-C365;公又爭識伊	ZGo7-P109
+若非龐公又爭識伊	ZGo7-P109
 若百物不思	ZGo5-P67
 若百物不思常令念絶	ZGo5-P119
 若不安禪靜慮	ZGo16-P161
@@ -20013,11 +20013,11 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 宗&C0-A85A;	そうもん	ZGD755d
 宗&C0-A8DE;	そうせん	ZGD740b
 宗&C0-A9FD;	そうきん	ZGD721b
-宗&C0-ACBA;	そうこ	ZGD725b
+宗牯	そうこ	ZGD725b
 宗&C0-B360;	そうきん	ZGD721b
 宗&C0-BF58;	そうおう	ZGD715c
 宗&C0-BF5A;	そうりん	ZGD757d
-宗&C0-C0F6;	そうさん	ZGD728b
+宗璨	そうさん	ZGD728b
 宗&C0-C5D0;	そうさん	ZGD728b
 宗&C0-CCF8;	そうろく	ZGD759a	しゅうろく	ZGD759a	ZD355
 宗&C0-CD6B;	そうかい	ZGD716d
@@ -20463,7 +20463,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 修成を假らず	Ina373
 修正	しゅしょう	ZGD505b	しゅうしょう	ZGD505b	SKS516/504	Yo719
 修正啓建疏	しゅしょうけいけんしょ	ZGD505b	しゅうょうけいけんしょ	ZGD505b
-修正大&C0-E2C6;文	しゅしょうだいぼうもん	ZGD505b	しゅうょうだいぼうもん	ZGD505b
+修正大牓文	しゅしょうだいぼうもん	ZGD505b	しゅうょうだいぼうもん	ZGD505b
 修正大榜文	しゅしょうだいぼうもん	ZGD505b	しゅうょうだいぼうもん	ZGD505b
 修正會	しゅしょうえ	Iwa409
 修正禮賀	しゅしょうらいが	ZGD505c	しゅうょうらいが	ZGD505c
@@ -21303,8 +21303,8 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 出生入死	しゅっしょうにっし	ZGD511c	Genkyo165/238	Yo713
 出生臺	しゅっさんだい	ZGD511c	すいさんだい	ZGD511c
 出喪	しゅっそう	ZGD512b	すいそう	ZGD512b
-出喪&C0-E2C6;	すいそうぼう	ZGD512b
-出喪&C0-E2C6;　	しゅっそうぼう	ZGD512b
+出喪牓	すいそうぼう	ZGD512b
+出喪牓　	しゅっそうぼう	ZGD512b
 出草	しゅっそう	ZGD512b	Ina378
 出草談	しゅっそうだん	ZGD512b
 出草入草	しゅっそうにっそう	ZGD512b	ZGo15-P103
@@ -21951,9 +21951,9 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 将百丈先師禅板机案来	Ljl254-2
 将钁頭打地三下	Ljl240-4
 小&C0-CECD;布衲	しょうふふのう	ZGD578d
-小&C0-E2C6;	しょうぼう	ZGD579d
-小&C0-E2C6;頭	しょうぼうとう	ZGD579d
-小&C0-E2CA;子	しょうがいす	ZGD531d	しょうたいす	ZGD531d	Yo682
+小牓	しょうぼう	ZGD579d
+小牓頭	しょうぼうとう	ZGD579d
+小獃子	しょうがいす	ZGD531d	しょうたいす	ZGD531d	Yo682
 小&C0-EF63;	Ina360
 小&C0-F1F0;	しょうしん	ZGD560c
 小&C0-F663;	しょうふん	ZGD578d
@@ -22558,11 +22558,11 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 象崖&C0-D670;禪師語録	ぞうがいていぜんじごろく	ZGD717b
 象器箋	しょうきせん	ZGD535a
 象骨	ぞうこつ	ZGD727a
-象骨&C0-BE40;毬	ぞうこつこんきゅう	ZGD727a
+象骨輥毬	ぞうこつこんきゅう	ZGD727a
 象骨山	Yo850
 象骨覆盆	ぞうこつふくぼん	ZGD727a
 象骨老師	Ina439
-象骨老師曾&C0-BE40;毬	ZGo15-P132
+象骨老師曾輥毬	ZGo15-P132
 象骨巖	ぞうこつがん	ZGD727a	Ina439
 象骨巖高	ZGo15-P70
 象骨鐵枷	ぞうこつのてっか	ZGD727a
@@ -24249,7 +24249,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 推與	Koga237
 推讓	ZGo9-P246
 水	すい	ZGD626b	みず	ZGD1182a
-水&C0-ACBA;牛	すいこぎゅう	ZGD630a	Ina387	KG1040/436	Koga235	Yo740	ZGo17-P138	ZGo17-P196
+水牯牛	すいこぎゅう	ZGD630a	Ina387	KG1040/436	Koga235	Yo740	ZGo17-P138	ZGo17-P196
 水に畫いて文を成すが如し	Ina236
 水を擔って河頭に賣る	Ina236
 水印	すいいん	ZGD626d
@@ -24429,7 +24429,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 随後打	Ljl45-8
 随後便掌	Ljl236-1
 随処作主	Ljl97-7
-瑞&C0-C365;	ずいほう	ZGD634b
+瑞龐	ずいほう	ZGD634b
 瑞&C0-F042;	ずいよ	ZGD635a
 瑞雲	ずいうん	ZGD627a
 瑞雲院縁起記	ずいうんいんえんぎき	ZGD627a
@@ -24700,7 +24700,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 是你如今与麼聴法底人	Ljl125-1
 是你如今與麼聽法底人	ZGo10-P86
 是你目前昭昭靈靈	ZGo10-P139
-是&C0-B85E;窟	ZGo11-P53
+是窠窟	ZGo11-P53
 是…	Koga242
 是…是…	Ina431	Koga242
 是…不…	Ina431
@@ -24931,7 +24931,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 性讚	しょうさん	ZGD547b
 性躁	しょうそう	ZGD565b	Yo698
 性靈集	しょうりょうしゅう	Iwa448	せいれいしゅう	Iwa484	JE297b/330
-成&C0-B85E;成窟	Koga223	KU48
+成窠成窟	Koga223	KU48
 成允	じょういん	ZGD526d
 成群作隊	Koga223
 成桂知客	じょうけいしか	ZGD538d
@@ -25445,7 +25445,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 清淨法行經	ZGo3-P45
 清淨法行經云	ZGo3-P56
 清淨法身	しょうじょうほっしん	ZGD558b	Ina364	Ina378	Yo687	ZGo15-P117
-清淨法身&C3-5034;之性	ZD315
+清淨法身儞之性	ZD315
 清淨法身毘盧遮那佛	しょうじょうほっしんびるしゃなぶつ	ZGD558b
 清淨法身毘盧舍那佛	しょうじょうほっしんびるしゃなぶつ	ZGD558b
 清淨法身毘蘆遮那佛	しんじんぱしんびるしゃのふ	ZGD617a
@@ -25618,7 +25618,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 盛景寺	じょうけいじ	ZGD538d
 盛光門派	じょうこうもんぱ	ZGD543b	せいこうもんぱ	ZGD543b
 盛徳寺	せいとくじ	ZGD648c
-精&C0-F9D2;を見ず	Ina316
+精麤を見ず	Ina316
 精究毘尼	ZGo10-P233
 精勤	しょうごん	ZGD544c
 精金百錬出紅爐	KU177
@@ -25920,7 +25920,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 誓願力	JE262a/289
 誓水	せいすい	Iwa483	せいずい	Iwa483
 請&C0-E04D;禪師	ZGo3-P134
-請&C0-E2C6;	しょうぼう	ZGD585a
+請牓	しょうぼう	ZGD585a
 請案	しょうあん	ZGD525b
 請意	しょうい	ZGD525d
 請因縁法	しょういんねんほう	ZGD527c
@@ -25971,7 +25971,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 請和尚代一転語	Ljl194-8
 請話	しょうわ	ZGD593d
 請佛	しょうぶつ	ZGD578b
-請佛事&C0-E2C6;	しょうぶつじぼう	ZGD578b
+請佛事牓	しょうぶつじぼう	ZGD578b
 請佛住世	しょうぶつじゅうせ	ZGD578b	Yo680
 請佛文	しょうぶつもん	ZGD578b
 請來目録	しょうらいもくろく	Iwa447
@@ -26353,7 +26353,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 赤土塗牛&C0-ECCE;	Koga248
 赤土畫簸箕	せきどにはきをえがく	ZGD656a	Koga248
 赤凍紅地	しゃくとうこうち	ZGD470d	Koga248
-赤頭&C0-C0F6;	せきとうさん	ZGD656a	しゃくずさん	ZGD656a
+赤頭璨	せきとうさん	ZGD656a	しゃくずさん	ZGD656a
 赤肉団上	Ljl52-1
 赤肉團	しゃくにくだん	ZGD470d	Koga191	Yo624
 赤肉團を拈轉	Ina329
@@ -26505,7 +26505,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 説因部	せついんぶ	Iwa488
 説化	せっけ	ZGD662a
 説戒	せっかい	ZGD660c	せっかい	Iwa488	JE262b/290	Yo605
-説戒&C0-DEA5;度	JE262b/290
+説戒犍度	JE262b/290
 説戒日	JE262b/290
 説戒要文	せっかいようもん	ZGD660d
 説戒略要	せっかいりゃくよう	ZGD660d
@@ -26514,7 +26514,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 説教師	せっきょうし	ZGD662a	Yo606
 説教坊主	せっきょうぼうず	ZGD662a
 説向	せっこう	ZGD662c
-説細説&C0-F9D2;	せっさいせっそ	ZGD662d
+説細説麤	せっさいせっそ	ZGD662d
 説似	せつじ	ZGD663a	Ina326	Koga253	Yo618	ZGo11-P110
 説似一物則不中	Ina326	Ljl177-6	ZGo10-P152
 説似一物即不中	せつじいちもつそくふちゅう	ZGD663a	Koga253	KU177	Yo618	ZD104
@@ -26610,7 +26610,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 雪堂行和尚語要	せつどうぎょうおしょうごよう	ZGD665d
 雪堂行和尚拾遺録	せつどうぎょうおしょうしゅういろく	ZGD665d
 雪峰	せっぽう	ZGD666c	Ina76	Ina138	Ina235	Ina257	Ina322	Ina327	Ina416	Ina439	Ina439	Yo614	ZGo11-P9	ZGo11-P349	ZGo15-P5	ZGo17-P40
-雪峰&C0-BE40;毬	せっぽうこんきゅう	ZGD667d
+雪峰輥毬	せっぽうこんきゅう	ZGD667d
 雪峰逢&C0-F46E;猴	せっぽうみこうにあう	ZGD669a
 雪峰粟米	Ina324	Ina447
 雪峰粟粒	せっぽうぞくりゅう	ZGD668c
@@ -27631,7 +27631,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 疎堂	そどう	ZGD774d
 疎簾見雪卷深戸映花關	KU273
 祖	そ	ZGD710d	Koga264	Yo720
-祖&C0-C0F6;	そさん	ZGD767d
+祖璨	そさん	ZGD767d
 祖&C0-D671;	そしゅう	ZGD770b
 祖&C0-E6A3;	それん	ZGD777c
 祖&C0-E7DC;	そしん	ZGD771c
@@ -27846,7 +27846,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 素&C0-C27B;	そせん	ZGD772b
 素&C0-CBE3;纜	そたらん	ZGD772d
 素&C0-CBE3;覽	そたらん	ZGD772d
-素&C0-E2CA;	そがい	ZGD760c
+素獃	そがい	ZGD760c
 素&C3-347C;	そちょう	ZGD773a
 素安	そあん	ZGD710d
 素庵田	そあんでん	ZGD711a
@@ -27889,8 +27889,8 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 鼠粘子	ZGo13-P313
 鼠喞鳥空	JE309a/343
 僧	そう	ZGD711c	そう	Iwa508	JE305a/338	SKS224/193	Yo573	Yo726
-僧&C0-C0F6;	そうさん	ZGD728b	Ina344	Ina430	JE308b/342	ZD147	ZD242	ZGo2-P345
-僧&C0-C0F6;第三	ZGo9-P292
+僧璨	そうさん	ZGD728b	Ina344	Ina430	JE308b/342	ZD147	ZD242	ZGo2-P345
+僧璨第三	ZGo9-P292
 僧&C0-CA5D;論	そうぎゃろん	ZGD720c
 僧&C0-EDD9;	ZGo13-P266
 僧位	そうい	Iwa509	JE306a/340
@@ -28083,7 +28083,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 喪身失命	そうしんしつみょう	ZGD738d	Ina384	Koga270	Ljl57-2	Yo735
 喪身失命有多少	ZGo15-P70
 喪薦	そうせん	ZGD740b
-喪中行法&C0-E2C6;	そうちゅうぎょうほうぼう	ZGD742d
+喪中行法牓	そうちゅうぎょうほうぼう	ZGD742d
 喪服七代	ZGo9-P284
 喪法	そうほう	ZGD754a	Yo730
 喪禮	そうれい	ZGD758d
@@ -28348,7 +28348,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 相入	JE308a/342
 相之南	ZGo15-P58
 相罵饒你接觜、相唾饒你溌水	Koga268
-相罵饒&C3-5034;接觜相唾饒&C3-5034;溌水	KU309
+相罵饒儞接觜相唾饒儞溌水	KU309
 相罵饒爾接觜	あいののしることはなんじにくちばしをつぐことをゆるす	ZGD2d
 相罵饒汝接觜	ZGo11-P46
 相罵饒尓接觜、相唾饒尓溌水	ZD100
@@ -28388,7 +28388,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 相隨來也	あいしたがいきたる	ZGD2c	そうずいらいや	ZGD739b	Ina386	Koga267
 相顯相隱	そうけんそういん	ZGD725a
 相饒	Genkyo60/211
-糟&C0-C2FB;	そうけい	ZGD723b	SKS674/675
+糟雞	そうけい	ZGD723b	SKS674/675
 糟糠	そうこう	ZGD726c
 総教伊成佛作祖去	Ljl213-3
 総上他閑塵境	Ljl119-2
@@ -28396,10 +28396,10 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 総無実法	Ljl103-1
 綜藝種智院	しゅげいしゅちいん	Iwa406
 草	くさ	ZGD246b	Baso64-1	Ina217	Koga268
-草&C0-B85E;	Koga268
-草&C0-B85E;裏&C0-BE40;	ZGo16-P114
-草&C0-B85E;裏に&C0-BE40;ず	Ina380
-草&C0-B85E;裏出頭	そうかりよりしゅっとうす	ZGD717d
+草窠	Koga268
+草窠裏輥	ZGo16-P114
+草窠裏に輥ず	Ina380
+草窠裏出頭	そうかりよりしゅっとうす	ZGD717d
 草に落つ	Ina217
 草庵	そうあん	ZGD712c	Yo726
 草庵歌	Yo727	ZD302
@@ -28435,8 +28435,8 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 草木成佛	そうもくじょうぶつ	ZGD755d	そうもくじょうぶつ	Iwa519
 草木國土悉皆成佛	そうもくこくどしっかいじょうぶつ	Iwa518	JE308a/342	Yo732
 草裏	そうり	ZGD756d
-草裏&C0-BE40;	Yo733
-草裏に向って&C0-BE40;ず	Ina383
+草裏輥	Yo733
+草裏に向って輥ず	Ina383
 草裏に商量す	Ina383
 草裏の漢	Ina383
 草裏漢	そうりのかん	ZGD756d	Koga269
@@ -28983,7 +28983,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 多爲定慧	ZGo9-P335
 太	はなはだ	ZGD1030a
 太&C0-B7D9;	たいさつ	ZGD794c	はなはだ	ZGD1030a	KG972/260	Koga285	Yo201
-太&C0-F9D2;生	たいそせい	ZGD805a	Ina391	Yo750
+太麤生	たいそせい	ZGD805a	Ina391	Yo750
 太&C5-5377;	Ina391
 太…生	Koga285
 太唖生	たいあせい	ZGD780d	Yo744
@@ -29376,7 +29376,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 大&C0-DD60;嶺有古佛	ZD289
 大&C0-F040;	だいひん	ZGD815b
 大溈	だいい	ZGD781c	Yo74
-大溈 &C3-5034;が爲に徹困す	Ina38
+大溈 儞が爲に徹困す	Ina38
 大溈喚第一座	だいいかんだいいちざ	ZGD781c	Ina482
 大溈警策	だいいきょうさく	ZGD781d
 大溈撃木魚縁	だいいげきもくぎょえん	ZGD781d	Ina479
@@ -29404,7 +29404,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 大溈六斛の驢乳	Ina38
 大溈六斛驢乳	だいいろっこくろにゅう	ZGD782d	Ina472
 大溈將三束絹	だいいしょうさんそくけん	ZGD782a	Ina467
-大溈爲&C3-5034;徹困	だいいいじてっこん	ZGD781c	Ina466
+大溈爲儞徹困	だいいいじてっこん	ZGD781c	Ina466
 大溈轉面向壁	だいいてんめんこうへき	ZGD782a	Ina467
 大&C3-CCFD;	ZGo18-P145
 大&C4-E2B0;	ZGo14-P72
@@ -30259,7 +30259,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 大乘五更轉	だいじょうごこうてん	ZGD800a
 大乘五方便北宗	だいじょうごほうべんほくしゅう	ZGD800a
 大乘最上乘	ZGo6-P52
-大乘三&C0-B85E;	だいじょうさんか	ZGD800a
+大乘三窠	だいじょうさんか	ZGD800a
 大乘山普巖和尚	ZGo19-P122
 大乘止觀	JE40a/44
 大乘寺	だいじょうじ	ZGD800b	JE39b/42	Yo77	ZD358
@@ -30915,9 +30915,9 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 谷隱道者	ZGo7-P174
 谷隱蘊聰禪師語要	こくいんうんそうぜんじごよう	ZGD332b
 狸奴	Koga471
-狸奴白&C0-ACBA;	りぬびゃっこ	ZGD1268d	Ina281	KG1077/526	Koga471	KU71
-狸奴白&C0-ACBA;却知有	りぬびゃっこかえってあることをしる	ZGD1268d
-狸奴白&C0-ACBA;放毫光	KU197	ZD104
+狸奴白牯	りぬびゃっこ	ZGD1268d	Ina281	KG1077/526	Koga471	KU71
+狸奴白牯却知有	りぬびゃっこかえってあることをしる	ZGD1268d
+狸奴白牯放毫光	KU197	ZD104
 狸奴白&C3-3234;	Yo537
 狸奴白&C3-3234;却知有	Yo537
 樽澤	ZD213
@@ -30961,7 +30961,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 丹羽佛庵	にわぶつあん	ZGD996b
 丹霞	たんか	ZGD834b
 丹霞掩耳	たんかみみをおおう	ZGD834c
-丹霞患&C3-C2FD;&C0-C365;公患聾	ZGo7-P160
+丹霞患&C3-C2FD;龐公患聾	ZGo7-P160
 丹霞喫飯	Ina393	Ina451
 丹霞喫飯也未	たんかきっぱんすやいまだしや	ZGD834b
 丹霞山	たんかさん	ZGD834c	ZD170
@@ -31452,9 +31452,9 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 池塘生春草	KU103
 池陽百問	ちようひゃくもん	ZGD867b
 池觀	ZGo3-P120
-稚&C0-E2CA;	ちがい	ZGD843a
-稚&C0-E2CA;驅烏	Yo50
-稚&C0-E2CA;驅鳥	ちがいくう	ZGD843a
+稚獃	ちがい	ZGD843a
+稚獃驅烏	Yo50
+稚獃驅鳥	ちがいくう	ZGD843a
 稚兒	ちご	Iwa562
 置	Yo50
 置功	ちこう	ZGD846a	KG970/254	Koga304
@@ -31536,7 +31536,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 逐色隨聲	ZGo19-P118
 逐旋&C3-3B73;合	ちくせんねつごう	ZGD845a
 茶	さ	ZGD370b	ちゃ	ZGD370b	Ina167
-茶&C0-E2C6;	ちゃぼう	ZGD851c	さぼう	ZGD851c
+茶牓	ちゃぼう	ZGD851c	さぼう	ZGD851c
 茶の湯	ちゃのゆ	Iwa565
 茶芽半斤	ZGo3-P188
 茶街坊	SKS301/275
@@ -32229,9 +32229,9 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 頂禪	ちょうぜん	ZGD865b
 頂禮	ちょうらい	Iwa580	JE33a/35	ZGo13-P332
 頂髻	ちょうけい	ZGD860a
-鳥&C0-B85E;	ちょうか	ZGD858c
-鳥&C0-B85E;吹毛	ちょうかけをふく	ZGD858c
-鳥&C0-B85E;布毛	ちょうかふもう	ZGD858c
+鳥窠	ちょうか	ZGD858c
+鳥窠吹毛	ちょうかけをふく	ZGD858c
+鳥窠布毛	ちょうかふもう	ZGD858c
 鳥羽僧正	とばそうじょう	Iwa618
 鳥語	ZGo13-P186
 鳥宿池邊樹僧敲月下門	KU275
@@ -32637,8 +32637,8 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 貞和集	じょうわしゅう	ZGD593d
 貞和類聚祖苑聯芳集	Yo298
 貞觀十七年	ZGo3-P90
-呈&C0-E2C6;	ていぼう	ZGD880d
-呈&C0-E2C6;行禮	ていぼうぎょうれい	ZGD880d
+呈牓	ていぼう	ZGD880d
+呈牓行禮	ていぼうぎょうれい	ZGD880d
 呈解	Yo761
 呈解問	ていげもん	ZGD878c
 呈機	Koga316
@@ -33057,7 +33057,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 天外青山	てんがいのせいざん	ZGD889a
 天涯	Ina398
 天蓋	てんがい	ZGD888d	てんがい	Iwa590	JE316b/351	Yo768
-天蓋い地&C0-C0BA;ぐ	Ina397
+天蓋い地擎ぐ	Ina397
 天蓋浴室	てんがいよくしつ	ZGD888d
 天冠	てんかん	Iwa590
 天冠郎中	ZGo3-P134
@@ -33664,7 +33664,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 倒退三千	とうたいさんぜん	ZGD934c	Ina408	Koga339	KU56	Yo797
 倒把少林無孔笛逆風吹了順風吹	KU378
 倒轉鎗頭	そうとうをとうてんす	ZGD748d	さかしまにそうとうをてんず	ZGD748d	KU56
-冬&C0-E2C6;	とうぼう	ZGD940c
+冬牓	とうぼう	ZGD940c
 冬安居	とうあんご	ZGD906c	ふゆあんご	ZGD906c	ふゆあんご	ZGD1099b	JE318b/354	SKS119/86	Yo787
 冬瓜	とうか	ZGD909b
 冬瓜印	Yo792
@@ -34687,7 +34687,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 道	どう	ZGD905c	みち	ZGD1183b	どう	Iwa602	Ina47	JE46a/50	KG897/70	Koga347	Yo98
 道&C0-AC52;	どういく	ZGD906d
 道&C0-AC52;、惠可	ZGo2-P358
-道&C0-C0F6;	どうさん	ZGD923d
+道璨	どうさん	ZGD923d
 道&C0-C27B;	どうせん	ZGD933b	どうせん	Iwa610	Yo105	ZD185
 道&C0-C27B;律師	ZD178
 道&C0-CC78;	どうびん	ZGD939c
@@ -35383,8 +35383,8 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 曇鸞	どんらん	Iwa621	JE48a/53
 鈍&C0-CA64; &C0-E8F6;子	Yo97
 鈍&C0-CA64;&C0-E8F6;子	どんちぎす	ZGD961a
-鈍&C0-E2C6;	Genkyo57/211
-鈍&C0-E2C6;状元	ZGo17-P158
+鈍牓	Genkyo57/211
+鈍牓状元	ZGo17-P158
 鈍工	ZGo17-P6
 鈍根	どんこん	ZGD959d	どんこん	Iwa620	Ina52	Yo98
 鈍根の阿師	Ina52
@@ -35416,7 +35416,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 奈良大佛	ならだいぶつ	Iwa625	JE211a/235
 那	な	ZGD962a	なんぞ	ZGD972d	Ina253	KG895-6/65-6	Koga355	Yo491
 那吒	なた	ZGD965d	Ina257	KG/113	Yo492
-那吒&C0-C0BA;鐵鎚	Koga356	KU109
+那吒擎鐵鎚	Koga356	KU109
 那吒倶伐羅	Ina257
 那吒骨を折き父に還す	Ina257
 那吒析骨還父	ZGo18-P181
@@ -35648,7 +35648,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 南針軒	ZD243
 南石文&C0-D671;禪師語録	なんせきぶんしゅうぜんじごろく	ZGD969d
 南泉	なんせん	ZGD969d	Baso51-1	Ina254	Ljl205-3	ZGo10-P165	ZGo11-P7	ZGo18-P64	ZGo18-P127
-南泉&C0-F5B6;奴白&C0-ACBA;	なんせんりぬびゃっこ	ZGD971d
+南泉黧奴白牯	なんせんりぬびゃっこ	ZGD971d
 南泉一株花	なんせんいっしゅか	ZGD970a
 南泉一隻箭	ZGo11-P190
 南泉一圓相	なんせんいちえんそう	ZGD969d
@@ -35669,13 +35669,13 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 南泉指庭前花	ZD283
 南泉寺	なんせんじ	ZGD970b
 南泉住庵	なんせんじゅうあん	ZGD970b
-南泉水&C0-ACBA;牛	なんせんすいこぎゅう	ZGD970c	Yo490
-南泉水&C0-ACBA;牛の話	Ina256
-南泉水&C0-ACBA;牛話	Ina463
+南泉水牯牛	なんせんすいこぎゅう	ZGD970c	Yo490
+南泉水牯牛の話	Ina256
+南泉水牯牛話	Ina463
 南泉石佛	なんせんせきぶつ	ZGD970d	Yo490
 南泉相見土地	Ina464
 南泉相見土地神	なんせんどじじんにしょうけんす	ZGD971a
-南泉狸奴白&C0-ACBA;	Ina256	Ina484
+南泉狸奴白牯	Ina256	Ina484
 南泉智不到の處	Ina255
 南泉智不到處	なんせんちふとうのところ	ZGD970d	Ina467
 南泉土地に相見す	Ina256
@@ -35683,7 +35683,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 南泉道は物外に非ず	Ina255
 南泉道非物外	なんせんどうはもつげにあらず	ZGD971a	Ina477
 南泉猫兒を斬却す	Ina255
-南泉白&C0-ACBA;	なんせんびゃっこ	ZGD971b	Ina255	Ina456
+南泉白牯	なんせんびゃっこ	ZGD971b	Ina255	Ina456
 南泉不是心佛	なんせんふぜしんぶつ	ZGD971b	Ina255	Ina480
 南泉不説	Ina255	Ina448
 南泉不説底法	なんせんふせつていのほう	ZGD971c
@@ -36089,7 +36089,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 二隱謐禪師語録	にいんひつぜんじごろく	ZGD975c
 二魏高齊後周	ZGo14-P173
 尼	に	ZGD975b	あま	ZGD975b	にい	ZGD975b	あま	Iwa12	JE---/7	Yo6	Yo497
-尼&C0-DEA5;子	にけんし	ZGD976d
+尼犍子	にけんし	ZGD976d
 尼安居	にあんご	ZGD975b
 尼庵	にあん	ZGD975b
 尼戒	にかい	ZGD975c
@@ -36622,7 +36622,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 如定	にょじょう	ZGD991d
 如天	Genkyo63/212
 如天之高、似地之厚	Koga363
-如天普蓋似地普&C0-C0BA;	KU219
+如天普蓋似地普擎	KU219
 如砥	にょし	ZGD991a
 如刀能割不自割如眼能着不自看	KU360
 如湯消氷	Koga362
@@ -36856,8 +36856,8 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 熱謾	Koga369
 熱鐵丸	Ina259
 熱閙	Koga369
-年&C0-E2C6;	ねんぼう	ZGD1005c
-年&C0-E2C6;文	ねんぼうもん	ZGD1005c
+年牓	ねんぼう	ZGD1005c
+年牓文	ねんぼうもん	ZGD1005c
 年涯	Koga369
 年幾	Koga369
 年忌	ねんき	ZGD1002c	ねんき	Iwa650	JE212b/236	Yo495
@@ -37598,7 +37598,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 泊浮	Genkyo29/204
 白	びゃく	ZGD1048b
 白&C0-C1CF;	はくとう	ZGD1016a	Genkyo11/199	Yo199
-白&C0-E2CA;和尚語録	はくがいおしょうごろく	ZGD1014c
+白獃和尚語録	はくがいおしょうごろく	ZGD1014c
 白徧槌	びゃくへんつい	ZGD1052c
 白&C3-4F72;	Koga380
 白&CX-2375;	びゃくじょう	ZGD1051c
@@ -37896,7 +37896,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 肇法師道	ZD283	ZGo15-P119
 肇論	じょうろん	ZGD593d	JE145b/161	ZD345	ZD435
 肇論研究	ZD346	ZD440
-筈を劈け&C0-B85E;を奪う	Ina180
+筈を劈け窠を奪う	Ina180
 幡	はた	ZGD1021a	ばん	ZGD1033c	はた	ZGD1033c	ばん	Iwa668	Yo17
 幡蓋	ばんがい	ZGD1034a
 八縁根種器界	ZGo9-P113
@@ -38489,7 +38489,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 皮衣	ひえ	ZGD1040d
 皮衣土食	Koga388
 皮下有血	ひかにちあり	ZGD1041b	KG1054/471	Koga389
-皮革&C0-DEA5;度	JE105b/116
+皮革犍度	JE105b/116
 皮袈裟	ひげさ	ZGD1042d
 皮袋	ひたい	ZGD1044b	Ina105	Koga388	Yo219
 皮袋裏	ひたいり	ZGD1044b
@@ -38823,7 +38823,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 匹帛	ひっぱく	ZGD1045a
 疋馬單槍	Koga393
 疋馬單鎗	ひつばたんそう	ZGD1045a	Ina105
-髭云識&C0-C365;公&C3-CBA2;	ZGo7-P99
+髭云識龐公&C3-CBA2;	ZGo7-P99
 髭題目	ひげだいもく	Iwa674
 髭便示衆	ZGo7-P97
 彦&C0-DA7A;	JE74b/82
@@ -38870,7 +38870,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 百一物	ひゃくいちもつ	Iwa679
 百一羯磨	JE122a/133
 百因縁集	ひゃくいんねんしゅう	Iwa679
-百億化身&C3-5034;之行	ZD315
+百億化身儞之行	ZD315
 百家	ZGo14-P113
 百花春至爲誰開	KU191	ZGo15-P27
 百花春到爲誰開	Koga394
@@ -39563,7 +39563,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 不道	KU15
 不道無禪	ZGo15-P41
 不得	ふとく	ZGD1095c	Ina61	Ina69	Koga398
-不得&C0-C365;翁擧	ZGo7-P82
+不得龐翁擧	ZGo7-P82
 不得一向	Genkyo129/229
 不得左傾	ZGo16-P152
 不得左猜	ささいすることをえざれ	ZGD381c
@@ -39881,7 +39881,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 布鼓	ふこ	ZGD1069d
 布穀	Genkyo64/212
 布薩	ふさつ	ZGD1071c	ふさつ	Iwa688	JE65a/71	Yo135
-布薩&C0-DEA5;度	JE65a/71
+布薩犍度	JE65a/71
 布薩式	ふさつしき	ZGD1071d
 布薩堂莊嚴座位	ふさつどうしょうごんざい	ZGD1072a
 布薩日	JE65b/71
@@ -41348,7 +41348,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 報化佛	ほうけぶつ	ZGD1126c
 報君知	ZGo15-P67
 報謝	ほうしゃ	ZGD1130d	ほうしゃ	Iwa725
-報衆&C0-E2C6;	ほうしゅぼう	ZGD1132b
+報衆牓	ほうしゅぼう	ZGD1132b
 報鐘	ほうしょう	ZGD1132d
 報障	ほうしょう	ZGD1132d	Ina309	Yo241
 報身	ほうじん	ZGD1135b	ほうじん	Iwa726	Ina308	JE108b/119	Yo234	ZD313
@@ -41365,7 +41365,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 報冤行	ほうおんぎょう	ZGD1122b	Yo239
 報國寺	ほうこくじ	ZGD1129a
 報寃行	JE117a/128
-報曉&C0-C2FB;	Genkyo103/222
+報曉雞	Genkyo103/222
 報榜	ほうぼう	ZGD1143a
 報齋鼓	ほうさいく	ZGD1129c
 報禮	ほうれい	ZGD1147a
@@ -41412,8 +41412,8 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 捧爐神	ぼうろじん	ZGD1147b	Genkyo97/221	ZGo15-P142
 放	ほう	ZGD1117c	ゆるす	ZGD1247c	Koga422	KU7
 放你三十棒	Koga423
-放&C0-E977;	ほうかん	ZGD1123c	KG927/148	Koga422
-放&C0-E977;作麼	ほうかんしてなにかせん	ZGD1123c	Koga423
+放憨	ほうかん	ZGD1123c	KG927/148	Koga422
+放憨作麼	ほうかんしてなにかせん	ZGD1123c	Koga423
 放&C4-372A;	KG952/208
 放&C6-2561;	KG948/199
 放一線道	Koga423
@@ -42324,7 +42324,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 房梁公玄齢	ZGo14-P85
 房廊	ぼうろう	ZGD1147b
 房舍	ぼうしゃ	ZGD1130d
-房舍&C0-DEA5;度	JE22a/23
+房舍犍度	JE22a/23
 暴周	ZGo14-P167
 暴富乞兒休説夢誰家竃裡火無烟	KU390
 暴流	ぼうる	ZGD1146d	ぼる	ZGD1146d
@@ -43469,7 +43469,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 夢中に夢を説く	Ina241
 夢中の妄爲	Ina241
 夢中意識	JE201a/224
-夢中射落&C0-F0C8;螟&C0-B85E;開眼看來無縫罅	KU394
+夢中射落&C0-F0C8;螟窠開眼看來無縫罅	KU394
 夢中説夢	むちゅうせつむ	ZGD1210d	Ina241	Ina460	Yo466
 夢中曾説悟圓通	ZGo15-P233
 夢中問答	JE201a/224
@@ -44001,7 +44001,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 無等等三昧	むとうどうざんまい	ZGD1211b
 無等匹	とうひつなし	ZGD939c	Yo789
 無等倫	Baso40-3
-無頭&C0-E2C6;	SKS622/618
+無頭牓	SKS622/618
 無頭榜	むじゅうぼう	ZGD1206d	むとうぼう	ZGD1206d	Yo472
 無頭腦	むずのう	ZGD1209b
 無動寺	JE201a/224
@@ -44904,7 +44904,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 猛虎畫娥眉	KU118
 猛虎當路坐	もうこみちにあたってざす	ZGD1223b	Koga449	KU118	Yo464
 猛虎頷下金鈴蒼龍窟裏明珠	KU318
-猛將豈在家中死胡蜂不戀舊時&C0-B85E;	KU395
+猛將豈在家中死胡蜂不戀舊時窠	KU395
 盲按杖	もうあんじょう	ZGD1222c
 盲引盲篇	もういんもうへん	ZGD1222c
 盲喝亂喝	もうかつらんかつ	ZGD1222d
@@ -45006,9 +45006,9 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 木鷄鳴子夜芻狗吠天明	KU290
 木鷄啼子夜、芻狗吠天明	Koga429
 目&C0-C0FC;口&C0-CBDC;	もくとうこうきょ	ZGD1226b	Genkyo150/234	Koga450	KU70
-目&C0-DEA5;蓮	Yo457	Yo458
-目&C0-DEA5;連	もっけんれん	ZGD1228a	もっけんれん	Iwa798	JE198b/222
-目&C0-DEA5;連子帝須	JE199a/222
+目犍蓮	Yo457	Yo458
+目犍連	もっけんれん	ZGD1228a	もっけんれん	Iwa798	JE198b/222
+目犍連子帝須	JE199a/222
 目に雲漢を視る	Ina232
 目機銖&CX-2364;	Yo457
 目機銖兩	もっきしゅりょう	ZGD1227d	Ina237	KG1054/470	Koga450	KU69
@@ -47263,7 +47263,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 臨時上堂	りんじじょうどう	ZGD1297b	Yo536
 臨終	りんじゅう	ZGD1297c	りんじゅう	Iwa836
 臨終安心	りんじゅうあんじん	ZGD1297c
-臨終謂弟子僧&C0-C0F6;	ZGo2-P371
+臨終謂弟子僧璨	ZGo2-P371
 臨終正念	JE234a/260
 臨終來迎	JE234a/260
 臨終諷經	りんじゅうふぎん	ZGD1297c
@@ -47272,9 +47272,9 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 臨罷	りんぱ	ZGD1298d
 臨滅	りんめつ	ZGD1299a
 臨濟	りんざい	ZGD1292b	Ina82	Ina86	Ina105	Ina128	Ina173	Ina199	Ina206	Ina269	Ina270	Ina273	Ina281	Ina304	Ina304	Ina317	Ina352	Ina393	Ina437	ZD148	ZD346	ZD359	ZD426	ZGo10-P6	ZGo17-P190
-臨濟&C3-5034;に一頓を放す	Ina282
-臨濟&C3-5034;は是れ俗漢	Ina282
-臨濟&C3-5034;是俗漢	Ina478
+臨濟儞に一頓を放す	Ina282
+臨濟儞は是れ俗漢	Ina282
+臨濟儞是俗漢	Ina478
 臨濟一隻箭	りんざいいっせきせん	ZGD1292b
 臨濟一畫	りんざいいっかく	ZGD1292b	Ina282	Ina457
 臨濟院	りんざいいん	ZGD1292b	Ina281	Yo538	ZD155
@@ -47324,7 +47324,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 臨濟這箇を糶り得るや	Ina283
 臨濟賓主	りんざいひんじゅ	ZGD1295d
 臨濟不看不學	りんざいふかんふがく	ZGD1296a
-臨濟放&C3-5034;一頓	Ina478
+臨濟放儞一頓	Ina478
 臨濟放爾一頓	りんざいほうにいっとん	ZGD1296a
 臨濟未是白拈賊	ZGo15-P212
 臨濟無位の眞人	Ina282
@@ -47789,9 +47789,9 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 篭頭角駄	Genkyo147/233
 篭罩	KG943/186
 老	ろう	ZGD1311a
-老&C0-C365;	ZGo17-P23	ZGo17-P180
-老&C0-C365;云	ZGo17-P90
-老&C0-C365;及第	ろうほうきゅうだい	ZGD1314d
+老龐	ZGo17-P23	ZGo17-P180
+老龐云	ZGo17-P90
+老龐及第	ろうほうきゅうだい	ZGD1314d
 老&C0-D27E;牛	ろうじぎゅう	ZGD1312d	Ina285	Koga488	Yo552	ZGo15-P76
 老&C0-E7DC;四門	ろうしんのしもん	ZGD1313b
 老&C0-EDEB;&C0-C447;	ろうそうこ	ZGD1313c
@@ -48214,7 +48214,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 和上山中	ZGo3-P187
 和上到州州使躬迎	ZGo3-P210
 和上呷茶次	ZGo3-P275
-和身&C0-BE40;入	Genkyo154/235
+和身輥入	Genkyo154/235
 和身沒却	KU75
 和水	わすい	ZGD1326a
 和其光	ZGo6-P103
@@ -49490,7 +49490,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 劈箭截流機	ひっせんせつるのき	ZGD1045a	へきせんせつるのき	ZGD1045a
 劈頭	へきとう	ZGD1111b	ひっとう	ZGD1111b	KG916/119	Koga415
 劈頭劈面	へきとうへきめん	ZGD1111b	ひっとうへきめん	ZGD1111b	Ina101	KU64
-劈筈奪&C0-B85E;	やはずをつんざきあなをうばう	ZGD1237d
+劈筈奪窠	やはずをつんざきあなをうばう	ZGD1237d
 劈腹&C0-ADE6;心	ひっぷくわんしん	ZGD1045b	Ina105	Koga415	KU65	Yo218
 劈面	ひつめん	ZGD1045b	へきめん	ZGD1045b	へきめん	ZGD1111b	Koga415	Yo212
 劈面に來る	Ina106
@@ -49670,7 +49670,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 參頭行者	さんとうあんじゃ	ZGD405b	さんじゅうあんじゃ	ZGD405b	SKS323/299	Yo592
 參同契	さんどうかい	ZGD405c	Yo576	ZD185	ZD302	ZD379	ZD380	ZD443
 參同契薫蕕談	さんどうかいくんゆうだん	ZGD405d
-參同契語&C0-B85E;窟	さんどうかいごかくつ	ZGD405d
+參同契語窠窟	さんどうかいごかくつ	ZGD405d
 參同契吹唱	さんどうかいすいしょう	ZGD405d
 參同契揚泥篇	さんどうかいようでいへん	ZGD406a
 參同契寶鏡三昧異譫	さんどうかいほうきょうざんまいいせん	ZGD405d
@@ -50136,7 +50136,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 圓滿	えんまん	ZGD117b	えんまん	Iwa82
 圓滿修多羅	えんまんしゅたら	ZGD117b
 圓滿如意	えんまんにょい	ZGD117b
-圓滿報身&C3-5034;之智	ZD315
+圓滿報身儞之智	ZD315
 圓滿報身佛	Ina59
 圓滿報身盧遮那佛	えんまんほうしんるしゃなぶつ	ZGD117b	えんもんほうしんるしゃのふ	ZGD117b
 圓滿本光國師見桃録	えんまんほんこうこくしけんとうろく	ZGD117b
@@ -50518,7 +50518,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 寥廓	りょうかく	ZGD1281d	Ina294
 寥寥	りょうりょう	ZGD1290c
 寥寥天地間獨立有何極	KU294
-寫&C0-E2C6;	しゃぼう	ZGD476b
+寫牓	しゃぼう	ZGD476b
 寫照	しゃしょう	ZGD473b	SKS197/164
 寫瓶	しゃびょう	ZGD476a	JE266b/294
 寫文剋的者十餘卷	ZGo9-P258
@@ -51499,7 +51499,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 懶&C0-C5D0;	らんさん	ZGD1262b
 懶&C0-C5D0;&C0-B7DB;芋	らんさんいもをやく	ZGD1262b
 懶&C0-C5D0;不拭涕	らんさんていをぬぐわず	ZGD1262b
-懶安百&C0-ACBA;	らんあんびゃっこ	ZGD1261d
+懶安百牯	らんあんびゃっこ	ZGD1261d
 懶庵	らんあん	ZGD1261d
 懶庵需禪師語要	らんあんじゅぜんじごよう	ZGD1261d
 懶翁和尚語録	らんおうおしょうごろく	ZGD1261d
@@ -51594,7 +51594,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 拏捉不住	だそくすれどもとどまらず	ZGD824c
 拆東籬、補西障	Koga295
 拆半裂三	KG1068/503
-擔&C0-C0BA;	たんけい	ZGD836a
+擔擎	たんけい	ZGD836a
 擔荷	たんか	ZGD834d
 擔崖原禪師語録	たんがいげんぜんじごろく	ZGD835b
 擔閣	たんかく	ZGD835b	Genkyo19/201
@@ -52000,7 +52000,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 舉哀	SKS570/562
 舉似	KG962/232
 舉頭殘照在元是住居西	KU251
-擡&C3-5034;爺擡&C3-5034;娘	Genkyo206/248
+擡儞爺擡儞娘	Genkyo206/248
 擡脚不起	ZGo18-P83
 擡薦商量	たいせんしょうりょう	ZGD803c	Yo749
 擡捺	だいなつ	ZGD811a	Yo80
@@ -52905,7 +52905,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 涵天浴日無涯岸	てんをひたしひをよくしてがいがんなし	ZGD886c
 淨	じょう	ZGD524d	Koga224
 淨&C3-4F30;&C3-4F30;赤灑灑	Ina155	KU135
-淨&C3-4F30;&C3-4F30;絶承當赤洒洒沒&C0-B85E;臼	KU307
+淨&C3-4F30;&C3-4F30;絶承當赤洒洒沒窠臼	KU307
 淨案	じょうあん	ZGD525b
 淨衣	じょうえ	ZGD529b
 淨印	じょういん	ZGD526d
@@ -53873,9 +53873,9 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 瘴癘	ZGo13-P191
 癇病	かんびょう	ZGD188b	Ina172
 癡	ち	ZGD842a	JE29a/31	Yo50
-癡&C0-E2CA;の漢	Ina27
-癡&C0-E2CA;漢	ちがいのかん	ZGD843a	Yo50
-癡&C0-E977;	ちかん	ZGD843b	Yo52
+癡獃の漢	Ina27
+癡獃漢	ちがいのかん	ZGD843a	Yo50
+癡憨	ちかん	ZGD843b	Yo52
 癡・無明	ZGo13-P128
 癡漢	ちかん	ZGD843b
 癡狗	Ina28
@@ -53951,10 +53951,10 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 盂鉢	うはつ	ZGD67c
 盂飯盆水	うほんぼんすい	ZGD68a
 盂蘭盆	うらぼん	ZGD69b	うらぼん	Iwa62	JE326a/362	Yo814
-盂蘭盆看經&C0-E2C6;	うらぼんせじきかんきんだいぼう	ZGD69d
+盂蘭盆看經牓	うらぼんせじきかんきんだいぼう	ZGD69d
 盂蘭盆供	うらぼんく	ZGD69c	SKS556/547	SKS557/547
-盂蘭盆結縁看經&C0-E2C6;	うらぼんせじきかんきんだいぼう	ZGD69d
-盂蘭盆施食看經大&C0-E2C6;	うらぼんせじきかんきんだいぼう	ZGD69d
+盂蘭盆結縁看經牓	うらぼんせじきかんきんだいぼう	ZGD69d
+盂蘭盆施食看經大牓	うらぼんせじきかんきんだいぼう	ZGD69d
 盂蘭盆會	うらぼんえ	ZGD69b	SKS521/510
 盂蘭盆會疏	うらぼんえしょ	ZGD69c
 盂蘭盆會囘向	うらぼんええこう	ZGD69b
@@ -54396,7 +54396,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 祕事法門	ひじぼうもん	Iwa675
 祕法	ひほう	Iwa678
 祕魔	ひま	ZGD1047b
-祕魔&C0-C0BA;叉	ひまさをささぐ	ZGD1047b
+祕魔擎叉	ひまさをささぐ	ZGD1047b
 祕魔道い得るも&C0-CB43;下	Ina104
 祕魔道得&C0-CB43;下	Ina468
 祕魔道得叉下	ひまどうとくさか	ZGD1047c
@@ -55577,7 +55577,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 肅堂濬	しゅくどうえい	ZGD501c
 肅揖	しゅくいつ	ZGD500a
 肚皮	とひ	ZGD957a	ずひ	ZGD957a
-肚皮&C0-E977;	とひかん	ZGD957a	ずひかん	ZGD957a
+肚皮憨	とひかん	ZGD957a	ずひかん	ZGD957a
 肚皮裏	とひり	ZGD957a	ずひり	ZGD957a
 肚裏	とり	ZGD957d	Yo785
 胝	Ina396
@@ -55593,7 +55593,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 隋&C4-ACD2;公山	ZGo2-P354
 隋季喪亂	ZGo2-P379
 隋州	ZD159
-隋朝第三祖&C0-C0F6;禪師	ZGo3-P85
+隋朝第三祖璨禪師	ZGo3-P85
 腆誼	てんぎ	ZGD889c	Yo769
 脾胃肝胆	Ljl77-3
 腥羶不少	せいせんすくなからず	ZGD647b	Yo600
@@ -55714,9 +55714,9 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 與麼與麼	Ina427
 與沒	Ina427
 與沒即去	ZGo1-P122
-舊&C0-B85E;	きゅうか	ZGD210a	Yo439
-舊&C0-B85E;窟	きゅうかくつ	ZGD210a	Yo439
-舊&C0-B85E;窟裏	Ina225
+舊窠	きゅうか	ZGD210a	Yo439
+舊窠窟	きゅうかくつ	ZGD210a	Yo439
+舊窠窟裏	Ina225
 舊業	きゅうごう	ZGD210d	Ina224
 舊時親	きゅうじのしん	ZGD211b
 舊住	くじゅう	ZGD247c	SKS212/180	Yo420
@@ -56028,7 +56028,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 薜茘多	JE102b/113
 藉教悟宗	Ina328	ZGo1-P38
 藏	ぞう	ZGD711d
-藏&C0-C0F6;	ぞうさん	ZGD731a
+藏璨	ぞうさん	ZGD731a
 藏王權現	ざおうごんげん	Iwa304
 藏下	ぞうか	ZGD716c
 藏下頭首	ぞうかちょうしゅ	ZGD716c
@@ -56282,7 +56282,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 襄州	じょうしゅう	ZGD555d
 襄州華厳	Ljl263-1
 襄州華嚴	ZGo10-P221
-襄州居士&C0-C365;蘊	ZGo7-P13
+襄州居士龐蘊	ZGo7-P13
 襤&C0-EE78;	らんさん	ZGD1262b	Koga470	Yo527
 襤&C0-EE78;袖裏	らんさんしゅうり	ZGD1262b
 襪	べつ	ZGD1111c	SKS708/711
@@ -56561,7 +56561,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 訥叔	とっしゅく	ZGD956c
 訶	JE189a/211
 訶子	かし	ZGD157d	Yo348
-訶責&C0-DEA5;度	JE164b/182
+訶責犍度	JE164b/182
 訶利帝母	かりていも	ZGD172c
 訶利底	JE164a/182
 訶梨帝母	かりていも	Iwa133
@@ -56696,7 +56696,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 譬如月影有若干	Baso38-4
 譬如諸天共寶器食	ZGo8-P106
 譬如象馬&C5-E7F1;&C0-D560;	ZGo3-P238
-譬如水&C0-ACBA;牛過窗櫺	ZD285
+譬如水牯牛過窗櫺	ZD285
 譬如請巧人裁衣	ZGo1-P219
 譬如潜泉魚	Ljl150-5	ZGo10-P116
 譬如大龍下雨於閻浮提	ZGo5-P112
@@ -56865,7 +56865,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 趙王禮奉	ZGo11-P17
 趙公、鄭公	ZGo17-P242
 趙州	じょうしゅう	ZGD553c	Ina29	Ina46	Ina205	Ina229	Ina235	Ina238	Ina243	Ina316	Ina371	Ljl219-1	Yo296	ZD250	ZGo10-P178	ZGo15-P184	ZGo17-P190	ZGo17-P242	ZGo18-P17	ZGo18-P42	ZGo18-P54	ZGo18-P80	ZGo18-P119	ZGo18-P134
-趙州&C0-B85E;窟	Ina156	Ina450
+趙州窠窟	Ina156	Ina450
 趙州&C0-E7DC;禪師	ZGo19-P31
 趙州一&C0-DDB0;	じょうしゅういっとう	ZGD553d
 趙州因僧問	ZD266
@@ -57127,7 +57127,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 辭焚机案	ZGo10-P7
 辭勞	じろう	ZGD602c
 辭拜	じはい	ZGD459c
-辯&C0-F9D2;	べんそ	ZGD1115c
+辯麤	べんそ	ZGD1115c
 辯慧	べんえ	ZGD1113c
 辯懸河に似る	Ina13
 辯才	べんさい	ZGD1114b	べんざい	ZGD1114b	ZGo19-P214
@@ -57355,8 +57355,8 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 醫術	いじゅつ	Iwa26
 醫方	いほう	Iwa45
 醫方明	いほうみょう	Iwa45
-醯&C0-C2FB;	Ina182
-醯&C0-C2FB;之局	ZGo14-P126
+醯雞	Ina182
+醯雞之局	ZGo14-P126
 釁罅	きんか	ZGD235a
 釋	しゃく	ZGD467c	しゃく	Iwa380	Yo623
 釋王	しゃくおう	ZGD468b	Yo624
@@ -57405,7 +57405,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 釋宗活	ZD225
 釋神秀	ZGo2-P398
 釋崇裕	ZGo6-P6
-釋僧&C0-C0F6;	ZGo2-P373
+釋僧璨	ZGo2-P373
 釋僧可	ZGo2-P367
 釋尊	しゃくそん	ZGD470b	しゃくそん	Iwa382	JE268a/295	Yo625
 釋尊降誕會	しゃくそんごうたんえ	ZGD470b
@@ -57527,7 +57527,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 鐵眼禪師遺録	てつげんぜんじいろく	ZGD883b
 鐵眼禪師假名法語	てつげんぜんじかなほうご	Iwa587
 鐵牛	てつぎゅう	ZGD883a	てつぎゅう	Iwa587
-鐵牛&C0-C0BA;出黄金角	KU182
+鐵牛擎出黄金角	KU182
 鐵牛の機	Ina401
 鐵牛機	Yo778
 鐵牛生石卵	KU105
@@ -57582,8 +57582,8 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 鐵壁機禪師年譜	てっぺききぜんじねんぷ	ZGD885b
 鐵壁銀山	Ina401
 鐵壁銀山絶來往	KU183
-鐵壁迸開雲片片、黒山&C0-BE40;出月團團	Koga324
-鐵壁迸開雲片片黒山&C0-BE40;出月團團	KU375
+鐵壁迸開雲片片、黒山輥出月團團	Koga324
+鐵壁迸開雲片片黒山輥出月團團	KU375
 鐵鞭	てつべん	ZGD885b
 鐵鞭撃碎驪龍珠	KU183
 鐵鞭韶禪師語要	てつべんしょうぜんじごよう	ZGD885b
@@ -57787,8 +57787,8 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 隱元	いんげん	ZGD56a	いんげん	Iwa47	Ina437	JE129a/141
 隱元隆&C0-B561;	Ina269	Ina270	Yo260	ZD176	ZD326	ZD431
 隱山	いんざん	ZGD56b
-隱山&C0-C0F6;	いんざんさん	ZGD56d
-隱山&C0-C0F6;和尚語要	いんざんさんおしょうごよう	ZGD56d
+隱山璨	いんざんさん	ZGD56d
+隱山璨和尚語要	いんざんさんおしょうごよう	ZGD56d
 隱山惟&C0-DA7C;	Yo263	ZD221	ZD221	ZD365
 隱山下	いんざんか	ZGD56c
 隱山晦迹	いんざんかいしゃく	ZGD56c
@@ -58224,7 +58224,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 馮楫	ひょうしゅう	ZGD1054a
 駟馬	Ina338
 駟馬朝天	しばちょうてん	ZGD459d
-駭&C0-C2FB;犀	がいけいさい	ZGD137c	Yo141
+駭雞犀	がいけいさい	ZGD137c	Yo141
 駱	ZD161
 駢拇	べんぼ	ZGD1116d
 驅烏沙彌	くうしゃみ	ZGD242d	Yo426
