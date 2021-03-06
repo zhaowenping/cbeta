@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-02-24 17:33:34
+# Last Modified: 2021-03-05 21:14:27
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -182,6 +182,7 @@ class IDS:
             for line in fd:
                 line = line.strip().split()
                 self.ids_dict[line[2]] = line[1]
+        self.p = re.compile('|'.join(sorted(self.ids_dict.keys(), key=len, reverse=True)))
 
     def rm_ids(self, ctx):
         '''替换unicode ids形式为普通单个字符, 无法替换则保持原样不动'''
@@ -210,6 +211,14 @@ class IDS:
         rr = self.ids_dict.get(ctx, None)
         if rr:
             return rr
+        # TODO re.findall
+        while True:
+            x = self.p.findall(ctx)
+            if not x: break
+            for i in x:
+                ctx = ctx.replace(i, self.ids_dict[i])
+        if not has_ids(ctx):
+            return ctx
         # 没找到就替换之后再找一次
         tt = {ord(k): ord(tt[k]) for k in tt}
         ctx = ctx.translate(tt)  # .replace(chr(0xFFFD), '')
@@ -217,6 +226,13 @@ class IDS:
         if rr:
             return rr
         return ctx
+
+def has_ids(ctx):
+    '''判断一个字符串ctx是否包含ids符号'''
+    for ch in '↷↹⿰⿱⿴⿵⿶⿷⿸⿹⿺⿻⿲⿳':
+        if ch in ctx:
+            return True
+    return False
 
 
 class CBETA_COM:
