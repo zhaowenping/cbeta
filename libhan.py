@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-03-05 21:14:27
+# Last Modified: 2021-03-10 02:57:44
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -293,10 +293,10 @@ def ishanzi(zi):
     if zi in {'\u2E80', '\u3003', '\u3005', '\u4ebd', '\U000206A4'}:
         return False
     # 主区和A区, 包括补充区0x4DB6-0x4DBF, 0x9FA6-0x9FFC
-    if 0x3400 <= zi <= 0x9FFC: # and zi != 0x4EBD:
+    if 0x3400 <= zi <= 0x9FFF: # and zi != 0x4EBD:
         return True
-    # BCDEFG，包括兼容汉字区0x2FXXX
-    if 0x20000 <= zi <= 0x3134A:
+    # BCDEFGH，包括兼容汉字区0x2FXXX
+    if 0x20000 <= zi <= 0x323BC:
         return True
     # 〇
     if 0x3007 == zi:
@@ -308,10 +308,10 @@ def ishanzi(zi):
 
 
 def unicode_zone(char):
-    '''汉字编码范围'''
+    '''汉字编码范围, unicode14.0'''
     if 0x4E00 <= ord(char) <= 0x9FA5:
         return 'M'
-    if 0x9FA6 <= ord(char) <= 0x9FFC:
+    if 0x9FA6 <= ord(char) <= 0x9FFF:
         return 'Mx'
     if 0x3400 <= ord(char) <= 0x4DB5:
         return 'A'
@@ -319,9 +319,9 @@ def unicode_zone(char):
         return 'Ax'
     if 0x20000 <= ord(char) <= 0x2A6D6:
         return 'B'
-    if 0x2A6D7 <= ord(char) <= 0x2A6DD:
+    if 0x2A6D7 <= ord(char) <= 0x2A6DF:
         return 'Bx'
-    if 0x2A700 <= ord(char) <= 0x2B734:
+    if 0x2A700 <= ord(char) <= 0x2B737:
         return 'C'
     if 0x2B740 <= ord(char) <= 0x2B81D:
         return 'D'
@@ -331,6 +331,8 @@ def unicode_zone(char):
         return 'F'
     if 0x30000 <= ord(char) <= 0x3134A:
         return 'G'
+    if 0x31350 <= ord(char) <= 0x323BC:
+        return 'H'
     return ''
 
 
@@ -1394,6 +1396,15 @@ class STConvertor:
                 line = line.split()
                 self.jt.add(line[0])
 
+        # 简体词汇表
+        self.jtp = set()
+        with open('cc/SPhrases.txt') as fd:
+            for line in fd:
+                if line.startswith('#'): continue
+                line = line.split()
+                self.jtp.add(line[0])
+
+
     def t2s(self, string, punctuation=True, region=False, autonorm=True, onlyURO=True):
         '''繁体转简体, punctuation是否转换单双引号
         region 是否执行区域转换
@@ -1461,6 +1472,7 @@ class STConvertor:
 
     def detect(self, s0):
         '''使用简体字表来判断一段文本是简体还是繁体的概率'''
+        # 使用简体词汇表来判断是否是简体 TODO
         if len(s0) == 0:
             return {'t': 50, 's': 50, 'confidence': 's'}
         t = 50
