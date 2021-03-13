@@ -749,12 +749,12 @@ ruby {
 
 
 /*汉字/西文混排间隙: 预设在「汉字-拉丁字母」「汉字－希腊字母」「汉字－西里耳字母」间加入宽为0.25em的间隙*/
-/*:lang(zh)+:lang(en), :lang(zh)+lang(*-Latn){
+/*[lang|=en]+[lang|=Han], [lang|=Han]+[lang|=en], [lang|=Han]+[lang$=Latn], [lang|=Han]+[lang|=en]{
 }
 */
 
-:lang(*=Hant)+:lang(en), :lang(*=Hant)+:lang(*-Latn), :lang(*=Hant)+:lang(sa*){
-    margin:0.5em;
+:lang(*=Hant)+:lang(en), :lang(*=Hant)+:lang(*-Latn), :lang(*-Latn)+:lang(*=Hant), :lang(*=Hant)+:lang(sa*), :lang(sa*)+:lang(*=Hant){
+    margin-left:0.5em;
 }
 
 
