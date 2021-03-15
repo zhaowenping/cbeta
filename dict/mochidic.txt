@@ -1059,7 +1059,7 @@ N.B. 2: Each line is constituted of three fields separated by tabs: 1. Entry in 
 雪隱	<巻1-6>	1028b,3880c
 公海*	<巻1-6>	1028b,4063a,4307c
 &C0-D54C;伽河	<巻1-6>	1028c
-&C0-D5DA;伽河*	<巻1-6>	1028c
+殑伽河*	<巻1-6>	1028c
 &M003980;河	<巻1-6>	1028c
 久遠壽院	<巻1-6>	1028c
 強伽河	<巻1-6>	1028c
@@ -1068,7 +1068,7 @@ N.B. 2: Each line is constituted of three fields separated by tabs: 1. Entry in 
 恆迦河	<巻1-6>	1028c
 恆水	<巻1-6>	1028c
 恆河	<巻1-6>	1028c,1032b
-&C0-D5DA;伽河門	<巻1-6>	1029a
+殑伽河門	<巻1-6>	1029a
 閻母那河	<巻1-6>	1029a
 阿氏羅筏底河	<巻1-6>	1029c
 薩落瑜河	<巻1-6>	1029c
@@ -1099,7 +1099,7 @@ N.B. 2: Each line is constituted of three fields separated by tabs: 1. Entry in 
 禪藝	<巻1-6>	1031c
 鹽山流	<巻1-6>	1031c
 廣學竪義*	<巻1-6>	1031c,4988b,5012c
-&C0-D5DA;伽沙	<巻1-6>	1032b
+殑伽沙	<巻1-6>	1032b
 江河沙	<巻1-6>	1032b
 江沙	<巻1-6>	1032b
 恆河沙*	<巻1-6>	1032b
@@ -1392,7 +1392,7 @@ N.B. 2: Each line is constituted of three fields separated by tabs: 1. Entry in 
 西州	<巻1-6>	1058a
 西州囘鶻	<巻1-6>	1058a
 火州	<巻1-6>	1058b
-回&C0-ACF8;	<巻1-6>	1058b
+回紇	<巻1-6>	1058b
 回鶻	<巻1-6>	1058b
 哈刺	<巻1-6>	1058b
 僧遵	<巻1-6>	1058c
@@ -5341,7 +5341,7 @@ N.B. 2: Each line is constituted of three fields separated by tabs: 1. Entry in 
 早參	<巻1-6>	1451a,2614a,3703c
 晩參	<巻1-6>	1451a,2614a,3703c
 九參上堂	<巻1-6>	1451a,2707c
-&C0-ACF8;里	<巻1-6>	1451b
+紇里	<巻1-6>	1451b
 三惡行*	<巻1-6>	1451b
 慚*	<巻1-6>	1451b,1476a,3301c
 參暇	<巻1-6>	1451b,2008a
@@ -5404,8 +5404,8 @@ N.B. 2: Each line is constituted of three fields separated by tabs: 1. Entry in 
 一心寺(攝津)*	<巻1-6>	145b
 真阿(顯興)	<巻1-6>	145b
 存牟	<巻1-6>	145b
-體哩&C0-CBE5;淫	<巻1-6>	145b
-齒&CX-254B;	<巻1-6>	145b
+體哩呬淫	<巻1-6>	145b
+齒𡄦	<巻1-6>	145b
 一字文殊*	<巻1-6>	145b,4877c
 一字文殊の法	<巻1-6>	145c
 一遵*	<巻1-6>	145c
@@ -5543,7 +5543,7 @@ N.B. 2: Each line is constituted of three fields separated by tabs: 1. Entry in 
 法道(日本)	<巻1-6>	147b
 一乘寺*	<巻1-6>	147b,1406a
 一生補處*	<巻1-6>	147b,3847b
-&C0-BB75;善信	<巻1-6>	1480a
+褚善信	<巻1-6>	1480a
 &C0-F545;澤	<巻1-6>	1480a
 三教論衡(二種)	<巻1-6>	1480a
 孫盛	<巻1-6>	1480a
@@ -7153,8 +7153,8 @@ N.B. 2: Each line is constituted of three fields separated by tabs: 1. Entry in 
 三昧流*	<巻1-6>	1675c,3444b,3801b
 三昧阿闍梨	<巻1-6>	1676a
 勝定	<巻1-6>	1676a
-三摩&C0-CBE5;多*	<巻1-6>	1676a,1663a,3673c
-三摩&C0-CBE5;多地	<巻1-6>	1676a,2258c
+三摩呬多*	<巻1-6>	1676a,1663a,3673c
+三摩呬多地	<巻1-6>	1676a,2258c
 行玄	<巻1-6>	1676a,2815a
 良祐(三昧流)	<巻1-6>	1676a,3444c,3482b,3801b
 等引	<巻1-6>	1676a,3673c
@@ -8471,7 +8471,7 @@ N.B. 2: Each line is constituted of three fields separated by tabs: 1. Entry in 
 有嚴(日本)	<巻1-6>	1859a,4970b
 指節*	<巻1-6>	1859c,555a
 子&C0-C27B;*	<巻1-6>	1859c,870b
-&C0-CBE5;度	<巻1-6>	185a
+呬度	<巻1-6>	185a
 阿離耶提捨	<巻1-6>	185a
 印第亞	<巻1-6>	185a
 印度*	<巻1-6>	185a
@@ -9102,7 +9102,7 @@ N.B. 2: Each line is constituted of three fields separated by tabs: 1. Entry in 
 七母女天	<巻1-6>	1925a
 七摩怛里天	<巻1-6>	1925a
 吠瑟拏微	<巻1-6>	1925a
-末囉&C0-CBE5;弭	<巻1-6>	1925a
+末囉呬弭	<巻1-6>	1925a
 嬌&C3-4B22;哩	<巻1-6>	1925a
 左悶拏	<巻1-6>	1925a,2182c
 七母天*	<巻1-6>	1925a,3428c
@@ -10769,7 +10769,7 @@ N.B. 2: Each line is constituted of three fields separated by tabs: 1. Entry in 
 釋種*	<巻1-6>	2146c,171c
 塞種	<巻1-6>	2147b
 奢夷耆耶	<巻1-6>	2147b
-盧&C0-CBE5;尼河	<巻1-6>	2147b
+盧呬尼河	<巻1-6>	2147b
 瞿曇種	<巻1-6>	2147b
 拘利城	<巻1-6>	2147c
 提婆陀訶城	<巻1-6>	2147c
@@ -10893,7 +10893,7 @@ N.B. 2: Each line is constituted of three fields separated by tabs: 1. Entry in 
 迦薩吐羅	<巻1-6>	2162a
 設芝	<巻1-6>	2162a
 莫迦婆伽	<巻1-6>	2162a
-娑&C0-CBE5;迦	<巻1-6>	2162a
+娑呬迦	<巻1-6>	2162a
 舍脂*	<巻1-6>	2162a
 舍之	<巻1-6>	2162a
 釋脂	<巻1-6>	2162a
@@ -11613,7 +11613,7 @@ N.B. 2: Each line is constituted of three fields separated by tabs: 1. Entry in 
 慈悲觀	<巻1-6>	2258c
 修所成地	<巻1-6>	2258c
 十七地*	<巻1-6>	2258c
-非三摩&C0-CBE5;多地	<巻1-6>	2258c
+非三摩呬多地	<巻1-6>	2258c
 聞所成地	<巻1-6>	2258c
 無心地	<巻1-6>	2258c
 無尋無伺地	<巻1-6>	2258c
@@ -16749,8 +16749,8 @@ N.B. 2: Each line is constituted of three fields separated by tabs: 1. Entry in 
 曩迦室利	<巻1-6>	2864b
 水吉祥菩薩*	<巻1-6>	2864b,2867a
 垂鈞卵*	<巻1-6>	2864c
-&C0-EB42;&C0-CBE5;耶經*	<巻1-6>	2865a
-玉&C0-CBE5;耶經	<巻1-6>	2865a
+&C0-EB42;呬耶經*	<巻1-6>	2865a
+玉呬耶經	<巻1-6>	2865a
 神前念佛	<巻1-6>	2865a
 念佛壽國論	<巻1-6>	2865a
 瞿醯壇&C0-E06F;羅經	<巻1-6>	2865a
@@ -20920,7 +20920,7 @@ N.B. 2: Each line is constituted of three fields separated by tabs: 1. Entry in 
 圓覺經	<巻1-6>	3396b
 十輪經	<巻1-6>	3397c
 大方廣十輪經*	<巻1-6>	3397c
-答沙扎&C0-ACF8;囉麻拏麻	<巻1-6>	3397c
+答沙扎紇囉麻拏麻	<巻1-6>	3397c
 方廣十輪經	<巻1-6>	3397c
 佛輪	<巻1-6>	3397c
 十種王輪	<巻1-6>	3398a
@@ -21085,7 +21085,7 @@ N.B. 2: Each line is constituted of three fields separated by tabs: 1. Entry in 
 妙慧童女會	<巻1-6>	3415b
 無畏授所問大乘經	<巻1-6>	3415b
 優陀延王會	<巻1-6>	3415b
-阿&C6-3A43;哥怛達尾囉&C0-ACF8;囉拏	<巻1-6>	3415c
+阿&C6-3A43;哥怛達尾囉紇囉拏	<巻1-6>	3415c
 阿闍貰王女阿術達菩薩經	<巻1-6>	3415c
 剛孤怛囉	<巻1-6>	3415c
 三無垢施菩薩應辯會	<巻1-6>	3415c
@@ -26496,7 +26496,7 @@ N.B. 2: Each line is constituted of three fields separated by tabs: 1. Entry in 
 那囉&C0-AF52;母天	<巻1-6>	4037c
 風母天	<巻1-6>	4037c
 摩哩尼母天	<巻1-6>	4037c
-魯&C0-CBE5;尼母	<巻1-6>	4037c
+魯呬尼母	<巻1-6>	4037c
 梵天后	<巻1-6>	4037c
 勤根	<巻1-6>	4038a
 慧根	<巻1-6>	4038a
@@ -28503,7 +28503,7 @@ N.B. 2: Each line is constituted of three fields separated by tabs: 1. Entry in 
 迦赦國	<巻1-6>	423c
 迦尸國*	<巻1-6>	423c,2417c,4277a
 何耶掲唎婆觀音	<巻1-6>	4240a
-賀野&C0-ACF8;哩縛觀音	<巻1-6>	4240a
+賀野紇哩縛觀音	<巻1-6>	4240a
 虚宿	<巻1-6>	4240a
 馬頭大士	<巻1-6>	4240a
 馬頭菩薩	<巻1-6>	4240a
@@ -33404,12 +33404,12 @@ N.B. 2: Each line is constituted of three fields separated by tabs: 1. Entry in 
 滿荼邏	<巻1-6>	4759b
 曼荼羅*	<巻1-6>	4759b,2509a,2121a,4105a
 發生諸佛漫荼羅	<巻1-6>	4759c
-&C0-ACF8;伐耶	<巻1-6>	475b
-&C0-ACF8;哩陀耶	<巻1-6>	475b
-&C0-ACF8;哩乃耶	<巻1-6>	475b
-&C0-ACF8;哩娜耶	<巻1-6>	475b
-&C0-ACF8;哩娜野	<巻1-6>	475b
-&C0-ACF8;利陀	<巻1-6>	475b
+紇伐耶	<巻1-6>	475b
+紇哩陀耶	<巻1-6>	475b
+紇哩乃耶	<巻1-6>	475b
+紇哩娜耶	<巻1-6>	475b
+紇哩娜野	<巻1-6>	475b
+紇利陀	<巻1-6>	475b
 乾栗太	<巻1-6>	475b
 乾栗陀多	<巻1-6>	475b
 干栗多	<巻1-6>	475b
@@ -35158,7 +35158,7 @@ N.B. 2: Each line is constituted of three fields separated by tabs: 1. Entry in 
 哩*	<巻1-6>	4960a
 魯	<巻1-6>	4960a
 釐	<巻1-6>	4960a
-&C0-ACF8;梨	<巻1-6>	4960b
+紇梨	<巻1-6>	4960b
 &C0-F1F3;*	<巻1-6>	4960b
 &C3-3C45;	<巻1-6>	4960b
 &CX-2558;	<巻1-6>	4960b
@@ -37656,15 +37656,15 @@ N.B. 2: Each line is constituted of three fields separated by tabs: 1. Entry in 
 訖栗枳王*	<巻1-6>	630b
 訖哩吉王	<巻1-6>	630b
 鷄梨祁王	<巻1-6>	630b
-&C0-ACF8;利倶*	<巻1-6>	630c
-&C0-ACF8;利倶字曼荼羅	<巻1-6>	631a
-&C0-ACF8;利倶字塔*	<巻1-6>	631c
-&C0-ACF8;利倶字香爐*	<巻1-6>	631c,1112c
+紇利倶*	<巻1-6>	630c
+紇利倶字曼荼羅	<巻1-6>	631a
+紇利倶字塔*	<巻1-6>	631c
+紇利倶字香爐*	<巻1-6>	631c,1112c
 切紙	<巻1-6>	632a
 切籠	<巻1-6>	632a
 龜甲燈籠	<巻1-6>	632a
 切子燈籠*	<巻1-6>	632a,3925b
-&C0-CBE5;摩呾羅王	<巻1-6>	632b
+呬摩呾羅王	<巻1-6>	632b
 二藏三法輪	<巻1-6>	632b
 訖利多種*	<巻1-6>	632b
 麒麟聖財立宗論*	<巻1-6>	632b
@@ -38527,7 +38527,7 @@ N.B. 2: Each line is constituted of three fields separated by tabs: 1. Entry in 
 瞿波羅龍王*	<巻1-6>	698a
 瞿波梨龍王	<巻1-6>	698a
 増長	<巻1-6>	698a,4410a
-&C0-ACF8;哩字	<巻1-6>	698c
+紇哩字	<巻1-6>	698c
 紅頗&C3-3C45;色阿彌陀*	<巻1-6>	698c
 瞿毘霜那國*	<巻1-6>	699a
 功夫	<巻1-6>	699b

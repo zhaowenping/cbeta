@@ -290,7 +290,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 &C0-BA4F;搜	Genkyo72/214
 &C0-BA73;州	しょうしゅう	ZGD553b
 &C0-BB43;仲侃	ZD243
-&C0-BB75;善信・費叔才	ZGo3-P51
+褚善信・費叔才	ZGo3-P51
 &C0-BBAD;	KG900/76	Koga190
 &C0-BBB0;人不得&C0-BBB0;上	Koga70
 &C0-BBC7;釘膠粘	こうていこうねん	ZGD320a	Koga139
