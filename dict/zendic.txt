@@ -307,7 +307,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 &C0-BCB5;&C0-BCB5;	とうとう	ZGD936c
 &C0-BCB5;著	Ina403
 &C0-BCB5;天柱	とうてんちゅう	ZGD936b	SKS53/17	Yo797
-&C0-BCCE;定	しょうじょう	ZGD558c
+椿定	しょうじょう	ZGD558c
 &C0-BCF9;牛愛尾	りぎゅうびをあいす	ZGD1264a	Koga472
 &C0-BD4E;&CX-2168;	KG934/165
 &C0-BD4F;睡	かっすい	ZGD165b	こうすい	ZGD165b	Ina179	KG920/128	Koga139	Yo350
@@ -564,14 +564,14 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 &C0-D475;啄同時門	そったくどうじもん	ZGD773c	Yo726
 &C0-D475;啄之機	Koga277
 &C0-D475;地&C0-EFBC;地	Genkyo166/238
-&C0-D47B;	おん	Iwa95	JE228a/254	KU2
-&C0-D47B;●&C3-B4DB;&C0-D47B;●&C3-B4DB;	ZGo11-P329
-&C0-D47B;●&C3-B4DB;&C7-A1CE;	ZGo11-P102
-&C0-D47B;黒豆	あんこくず	ZGD13c	えんこくず	ZGD111a	KG1039/434	Koga7
-&C0-D47B;黒豆の老和尚	Ina6
-&C0-D47B;黒豆集	あんこくずしゅう	ZGD13c
-&C0-D47B;蘇婆訶	おんそわか	Iwa97
-&C0-D47B;麼&C0-CCBB;鉢訥銘吽	おんまにぱどめいうん	Iwa98
+揞	おん	Iwa95	JE228a/254	KU2
+揞●&C3-B4DB;揞●&C3-B4DB;	ZGo11-P329
+揞●&C3-B4DB;&C7-A1CE;	ZGo11-P102
+揞黒豆	あんこくず	ZGD13c	えんこくず	ZGD111a	KG1039/434	Koga7
+揞黒豆の老和尚	Ina6
+揞黒豆集	あんこくずしゅう	ZGD13c
+揞蘇婆訶	おんそわか	Iwa97
+揞麼&C0-CCBB;鉢訥銘吽	おんまにぱどめいうん	Iwa98
 &C0-D4AB;	せい	ZGD641a	ちん	ZGD641a	Yo597
 &C0-D4AB;頭	せいじゅう	ZGD646a
 &C0-D4B5;地	そうち	ZGD742b
@@ -704,9 +704,9 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 牓状	ぼうじょう	ZGD1134b
 牓頭	ぼうとう	ZGD1139c
 牓樣	ぼうよう	ZGD1145a	Koga428
-獃&C0-BCCE;&C0-BCCE;地	Yo141
-獃&C0-BCCE;&C0-BCCE;地	ZGo19-P62
-獃&C0-BCCE;&C0-BCCE;地に	Ina70
+獃椿椿地	Yo141
+獃椿椿地	ZGo19-P62
+獃椿椿地に	Ina70
 獃&C0-E579;&C0-E579;地	ZGo19-P139
 獃&C0-E579;&C0-E579;地に	Ina70
 獃椿椿地	がいとうとうち	ZGD144c	がいしょうしょうち	ZGD144c	たいとうとうち	ZGD144c
@@ -893,7 +893,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 &C0-F9B1;飯錢	さんぱんせん	ZGD407b
 &C0-F9BB;&C0-F453;	Koga481
 麤	Ina379
-麤 &C3-3967;	Ina385
+麤&C3-3967;	Ina385
 麤&C0-C157;	そぞう	ZGD772c	Yo726
 麤&C3-3967;易飽細嚼難飢	そしんはあきやすくさいしゃくはうえがたし	ZGD771c
 麤強惡業	そごうのあくごう	ZGD767c
@@ -12713,7 +12713,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 枯椿	こしょう	ZGD346a	Ina211
 枯藤	ことう	ZGD354a
 枯木	こぼく	ZGD359a
-枯木&C0-BCCE;	Genkyo120/226
+枯木椿	Genkyo120/226
 枯木&C3-4728;	Genkyo120/226
 枯木花開劫外春	Koga116	KU165	ZD104
 枯木寒灰	Koga116	KU39
@@ -41320,7 +41320,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 包籠	ほうろう	ZGD1147a
 包絛	ほうとう	ZGD1138d
 包鉤	ほうこう	ZGD1128b	SKS805/858	Yo236
-呆&C0-BCCE;&C0-BCCE;地	Genkyo163/237
+呆椿椿地	Genkyo163/237
 呆&C3-4728;&C3-4728;地	Genkyo163/237
 呆椿椿地	がいとうとうち	ZGD144c	がいしょうしょうち	ZGD144c	たいとうとうち	ZGD144c
 呆裏撒奸	ほうりにかんをさっす	ZGD1145b	Yo240
@@ -42483,7 +42483,7 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 穆如清風	KU66
 穆應	ぼくおう	ZGD1147c
 穆菴文康禪師語録	ぼくあんぶんこうぜんじごろく	ZGD1147c
-勃&C0-C250;&C0-D47B;	ぼろおん	Iwa743	ぼろぼん	Iwa744	ぼろん	Iwa744	ぼろんぼろ	Iwa744	JE20b/22
+勃&C0-C250;揞	ぼろおん	Iwa743	ぼろぼん	Iwa744	ぼろん	Iwa744	ぼろんぼろ	Iwa744	JE20b/22
 勃&C0-DF42;	ぼっそ	ZGD1156d
 勃&C6-4C4D;理屈	Genkyo181/242
 勃塑	ぼっそ	ZGD1156d	KG930/156	Koga430
@@ -53892,9 +53892,9 @@ Iwa: Nakamura, Hajime et al. ed. _Iwanami Bukkyojiten 岩波仏教辞典._  . To
 癡兀兀兀兀癡	KU140	ZD96
 癡禪	ちぜん	ZGD848b	JE32a/34	Yo57
 癢和子	ようかす	ZGD1248d	ようわす	ZGD1248d	SKS786/793	Yo827
-癩狗繋枯&C0-BCCE;	Koga467
-癩馬繋枯&C0-BCCE;、黒牛臥死水	Koga467
-癩馬繋枯&C0-BCCE;黒牛臥死水	KU293
+癩狗繋枯椿	Koga467
+癩馬繋枯椿、黒牛臥死水	Koga467
+癩馬繋枯椿黒牛臥死水	KU293
 癩兒牽伴	らいじばんをひく	ZGD1256d	らいじけんばん	ZGD1256d	Koga467	KU71	Yo524	ZD88
 癲兒伴を牽く	Ina274
 癸丑	ZGo6-P6
