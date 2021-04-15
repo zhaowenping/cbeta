@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-02-22 05:11:30
+# Last Modified: 2021-04-15 05:52:43
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -63,6 +63,13 @@ def index():
             zoumadeng.append(line)
     zoumadeng = random.choice(zoumadeng)
     return {'zoumadeng': zoumadeng}
+
+@route('/tencent13246618704147985951.txt')
+def tencent():
+    '''腾讯认证入口'''
+    mime = 'text/plain'
+    response.content_type = mime
+    return '18074286719497631952'
 
 @get('/tools')
 @view('temp/tools.jinja2')
