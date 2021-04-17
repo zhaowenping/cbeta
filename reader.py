@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-04-15 05:52:43
+# Last Modified: 2021-04-16 17:30:10
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -144,10 +144,10 @@ sch_san = read_menu_file("static/san.lst")
 def menu1():
     return {'menus': sch_b, 'request':request, 'yiju': '大正藏部類'}
 
-@route('/cebie')
+@route('/catalog')
 @view('temp/menu.jinja2')
 def menu2():
-    return {'menus': sch_a, 'request':request, 'yiju': '大正藏冊別'}
+    return {'menus': sch_a, 'request':request, 'yiju': '總目錄'}
 
 @route('/dzyz')
 @view('temp/menu.jinja2')
@@ -190,12 +190,12 @@ def submenu1(bulei):
         redirect(sutra.url)
     return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大正藏部類', 'root':root}
 
-@route('/cebie/:bulei#.+#')
+@route('/catalog/:bulei#.+#')
 @view('temp/menu.jinja2')
 def submenu2(bulei):
     menu = (sch_a)
     bulei = bulei.split('/')
-    root = '/cebie'
+    root = '/catalog'
 
     nav = [(root, '总目录')]
     for b in bulei:
@@ -210,7 +210,7 @@ def submenu2(bulei):
         sutra = Number(bulei[-1].split()[0])  # T01n0002
         #         abort(404, f'没找到文件: /xml/{zang}/{sutra}_*.xml')
         redirect(sutra.url)
-    return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '大正藏冊別', 'root': root}
+    return {'menus': menu, 'request':request, 'nav':nav, 'yiju': '總目錄', 'root': root}
 
 
 @route('/dzyz/:bulei#.+#')
