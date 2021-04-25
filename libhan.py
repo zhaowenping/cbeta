@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-04-16 05:35:14
+# Last Modified: 2021-04-24 08:33:43
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -252,6 +252,15 @@ def rm_joiner(ctx):
     ctx = ctx.translate(tt).replace(chr(0xFFFD), '')
     return ctx
 
+def rm_ivd(ctx):
+    '''去除汉字的异体字选择符号, 共256个'''
+    tt = dict()
+    for i in range(0xFE00, 0xFE0F+1):
+        tt[i] = 0xFFFD
+    for i in range(0xE0100, 0xE01EF+1):
+        tt[i] = 0xFFFD
+    ctx = ctx.translate(tt).replace(chr(0xFFFD), '')
+    return ctx
 
 # _space = re.compile(r'[ \t\n\r\x0b\x0c\u3000]+')
 def normalize_space(ctx):
