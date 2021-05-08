@@ -786,8 +786,8 @@ q {
     border-bottom: 1px solid #F2BE45;
 }
 
-/* 人名地名: 下划线 */
-.person {
+/* 人名地名: 下划线 .iba:ddbc:authPlace */
+.ibaddbc{
     /*text-decoration:underline wavy black;*/
     border-bottom: 1px solid black;
 }
