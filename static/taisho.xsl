@@ -566,8 +566,9 @@
 
 
     <!--添加专名号: 人名、地名、朝代名、种族名、国名、机构名-->
+        <!--span class="iba:ddbc:authPerson ibaddbc" data-toggle="tooltip" data-placement="top"-->
     <xsl:template match="name">
-        <span class="iba:ddbc:authPerson ibaddbc" data-toggle="tooltip" data-placement="top">
+        <span class="iba:ddbc:authPerson ibaddbc">
             <xsl:attribute name="title">
                 <xsl:value-of select="."/>
             </xsl:attribute>
