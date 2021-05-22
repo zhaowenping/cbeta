@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-05-22 06:16:03
+# Last Modified: 2021-05-14 04:00:41
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -348,7 +348,7 @@ def unicode_zone(char):
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    #path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
+    path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
             line = line.strip()
@@ -631,8 +631,8 @@ def grep(filepath, *keyword):
     return line
 
 sch_db = []
-#with open(os.path.join(PATH, "idx/sutra_sch.lst")) as fd:
-with open("idx/sutra_sch.lst") as fd:
+with open(os.path.join(PATH, "idx/sutra_sch.lst")) as fd:
+#with open("idx/sutra_sch.lst") as fd:
     for line in fd:
         line = line.strip().split()[0]
         sch_db.append(line)
@@ -1929,7 +1929,17 @@ def make_docx(ff, temp='', fanti=True):
             para = document.add_paragraph(ctx, style='Intense Quote')
             #yield (xmlid, fname, author, title,  ctx)
     docxfname = ff.split('/')[-1][:-4]
-    document.save(os.path.join(temp, f'{docxfname}.docx'))
+    #document.save(os.path.join(temp, f'{docxfname}.docx'))
+    document.save(os.path.join(temp, f'{title}_{docxfname}.docx'))
+
+
+def get_all_xml(path):
+    for entry in os.scandir(path):
+        if not entry.name.startswith('.') and entry.is_dir():
+            for f in os.scandir(entry.path):
+                if not f.name.startswith('.') and f.is_file():
+                    #print(f.name)
+                    yield f.path
 
 
 
@@ -1943,66 +1953,10 @@ def test():
 
 
 if __name__ == "__main__":
-    # main()
-    # test()
-    # print(get_all_juan('T02n0099'))
-    # print(get_all_juan('GA031n0032'))
-    # print(get_all_juan('J31nB269'))
-    # print(get_all_juan('T19n0974A'))
-    # print(get_next_page('T02n0099_001'))
-    # print(get_next_page('T01n0002_001'))
-
-    # ctx = '五<g ref="#CB22072">說</g>九種命終心三界<g ref="#CB29911">々</g><g ref="#CB29911">々</g>生各潤生心各有三故<note place="inline">已上'
-    # print(rm_ditto_mark(ctx))
-    #str_in = "a-kAra"
-    #print(hk2iast(str_in))
-    #print(hk2iastdeve(str_in))
-    # print(convert2t('大佛顶'))
-    # ss = Search()
-    # for idx in ss.search('大佛頂'):
-    #     print(idx)
-    # # TODO:搜索t1000, t1000_001, T01n0001, T01n0001_001, T01n0001_p0001a01, T01,no.1,p.1a1
-    #titlepatten = re.compile(r'([a-zA-Z][a-zA-Z]?)(\d\dn)?(\d\d\d\d)(_\d\d\d)?')
-    #titlepatten.find('t1000')
-    #pprint.pprint(mulu)
-    # print(parse_number('CBETA, T14, no. 475, pp. 537c8-538a14'))
-    # print(parse_number('CBETA 2019.Q2, Y25, no. 25, p. 411a5-7'))
-    # print(parse_number('CBETA 2019.Q3, T20, no. 1113B, p. 498c12-17'))
-    # print(parse_number('T20n1113B'))
-    # print(parse_number('T20n1113'))
-    # print(parse_number('T01n0001_p0001a01'))
-    # print(parse_number('1113b'))
-    # print(parse_number('1113'))
-    # print(parse_number('100.3'))
-    #print(parse_number1('220').url)
-    #print(parse_number1('220').pages)
-    # print(parse_number1('220.200'))
-    # print(parse_number1('220.201'))
-    # print(parse_number1('J32nB271'))
-    # print(normalize_text('說</g>九種命終心三界'))
-    #for i in fullsearch('止觀明靜'):
-    #    print(i)
-    # stc = STConvertor()
-    # print(stc.t2s('那莫三𭦟多嚩日羅赦憾云〃哦'))
-    # print(stc.s2t('安乐国'))
-    # print(stc.detect('安乐国'))
-    # print(stc.detect('那莫三𭦟多嚩日羅赦憾云〃哦'))
-    # print(get_all_juan('T20n1113B'))
-    # print(get_all_juan('T20n1113'))
-    #sentence = '非施者福 title:毘耶娑'
-    #sentence = '非施者福'
-    # print(highlight(sentence, raw))
-    #print(parse_number2('大正藏第九卷第七〇九页'))
-    #print(parse_number2('大正藏第十九卷第16頁下'))
-    order = '“Herr Voß: • ½ cup of Œtker™ caffè latte • bowl of açaí.”'
-    print((order))
-    print(shave_marks(order))
-    print(rm_pun(order))
-    # print(unicodedata.normalize('NFC', shave_marks(order)))
-    pattern = re.compile(r'[\u3007\u3400-\u9FFC\U00020000-\U0003134A]+')
-    j = 0
-    for i in re_split(pattern, '由尊者迦葉（Maha Kasyape）結集於王舍城', fn=lambda x: f'x{x}', exfn=lambda x: x):
-        j = j+ 1
-        print(j, i)
-    sentence = 'Bhikkhu'
-    fullsearch(sentence)
+    #make_docx()
+    for fn in get_all_xml('../xml'):
+        ddd = fn.split('/')[2]
+        print(fn, ddd)
+        if not os.path.exists(f'tt/{ddd}'):
+            os.mkdir(f'tt/{ddd}')
+        make_docx(fn, temp=f'tt/{ddd}', fanti=True)
