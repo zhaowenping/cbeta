@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-05-30 05:38:08
+# Last Modified: 2021-06-04 16:03:26
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -207,7 +207,9 @@ class IDS:
               '草': '艹', '卄': '艹',
               '言': '訁',
               '金': '釒', '食': '飠', '水': '氵', '冰': '冫', '心': '忄', '人': '亻', '衣': '衤',
-              '手': '扌', '犬': '犭', '病': '疒', '爪': '爫', '火': '灬', '足': '𧾷'}
+              '手': '扌', '犬': '犭', '病': '疒', '爪': '爫', '火': '灬', '足': '𧾷',
+             # '亦': '𰁜'
+              }
         rr = self.ids_dict.get(ctx, None)
         if rr:
             return rr

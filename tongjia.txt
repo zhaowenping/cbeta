@@ -54,19 +54,19 @@
 論 U+8AD6 432575 lùn lún
 # 解 U+89E3 428819 jiě jiè xiè
 依 U+4F9D 427241 yī yǐ
-識 U+8B58 420994 shí shì shi zhì
+識 U+8B58 420994 幟誌蘵職
 釋 U+91CB 420604 shì yì
 色 U+8272 417938 sè shǎi
 復 U+5FA9 412481 fù fòu
 從 U+5F9E 404090 cóng zòng zōng cōng
 聞 U+805E 398010 wén wèn
-# 教 U+6559 384180 jiào jiāo
+教 U+6559 384180 jiào jiāo
 或 U+6216 364898 huò yù
 離 U+96E2 364707 lí lì lǐ chī gǔ
-# 便 U+4FBF 357256 biàn pián
+便 U+4FBF 357256 biàn pián
 果 U+679C 355405 guǒ kè luǒ wǒ
 通 U+901A 351476 tōng tòng
-# 禪 U+79AA 347054 chán shàn 
+禪 U+79AA 347054 chán shàn tán
 提 U+63D0 346449 tí dī dǐ shí
 卷 U+5377 334892 juàn juǎn
 的 U+7684 333061 de dí dì

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-05-27 15:23:56
+# Last Modified: 2021-05-31 21:57:41
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -45,12 +45,12 @@ for c1 in rk:
     for zi in cc:
         yitizi[zi] = ','.join(cc)
     #print(','.join(cc))
-    # for c2 in cc:
-    #     # if c1 in edu and c2 in edu:
-    #     if c1 != c2:
-    #         print(c1, c2, "U+%X" % ord(c1), "U+%X" % ord(c2))
+    for c2 in cc:
+        # if c1 in edu and c2 in edu:
+        if c1 != c2:
+            print(c1, c2, "U+%X" % ord(c1), "U+%X" % ord(c2))
 
-# print(data)
+#print(data)
 
 
 def main():
