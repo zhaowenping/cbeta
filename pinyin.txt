@@ -105,18 +105,18 @@
 唯 U+552F 242386 wéi wěi
 家 U+5BB6 241004 jiā jie gū
 金 U+91D1 239176 jīn jìn
-了 U+4E86 238312 le liǎo
+# 了 U+4E86 238312 le liǎo
 思 U+601D 237042 sī sì sāi
 化 U+5316 235045 huà huā
 耶 U+8036 233484 yé yē xié
 反 U+53CD 233220 fǎn fān
-惡 U+60E1 232894 è wù wū
+# 惡 U+60E1 232894 è wù wū
 麼 U+9EBC 232601 me mo mǒ ma
-著 U+8457 228817 zhù zhuó chú zhāo zháo zhe
+#著 U+8457 228817 zhù zhuó chú zhāo zháo zhe
 會 U+6703 226945 huì kuài guì
 轉 U+8F49 225433 zhuǎn zhuàn
 神 U+795E 222629 shén shēn
-和 U+548C 221572 hé huò huó hè
+#和 U+548C 221572 hé huò huó hè
 重 U+91CD 220829 zhòng chóng tóng
 足 U+8DB3 219067 zú jù
 那 U+90A3 218065 nà nèi nā nǎ né něi nuó nuò
