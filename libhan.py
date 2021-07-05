@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-07-03 08:29:53
+# Last Modified: 2021-07-05 14:39:26
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -332,7 +332,7 @@ def unicode_zone(char):
         return 'B'
     if 0x2A6D7 <= ord(char) <= 0x2A6DF:
         return 'Bx'
-    if 0x2A700 <= ord(char) <= 0x2B737:
+    if 0x2A700 <= ord(char) <= 0x2B738:
         return 'C'
     if 0x2B740 <= ord(char) <= 0x2B81D:
         return 'D'
