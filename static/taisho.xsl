@@ -69,7 +69,7 @@
         <!--script src="/static/bootstrap-3.3.7.min.js"></script-->
         <script src="/static/popper.min.js"></script>
         <script src="/static/bootstrap4.min.js"></script>
-        <script type="text/javascript" src="http://authority.dila.edu.tw/webwidget/popup.js"></script>
+        <!--script type="text/javascript" src="http://authority.dila.edu.tw/webwidget/popup.js"></script-->
         <!--script src="/static/jquery.webui-popover.min.js"></script-->
         <!--script src="https://cdnjs.cloudflare.com/ajax/libs/Han/3.2.7/han.min.js"></script-->
         <!--[if lt IE9]> 
@@ -568,13 +568,15 @@
     <!--添加专名号: 人名、地名、朝代名、种族名、国名、机构名-->
         <!--span class="iba:ddbc:authPerson ibaddbc" data-toggle="tooltip" data-placement="top"-->
     <xsl:template match="name[@type='person']">
-        <span title="{.}" class="iba:ddbc:authPerson ibaddbc">
+        <!--span title="{.}" class="iba:ddbc:authPerson ibaddbc"-->
+        <span title="{.}" class="ibaddbc">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
 
     <xsl:template match="name[@type='place']">
-        <span title="{.}" class="iba:ddbc:authPlace ibaddbc">
+        <!--span title="{.}" class="iba:ddbc:authPlace ibaddbc"-->
+        <span title="{.}" class="ibaddbc">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
