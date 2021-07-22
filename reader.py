@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-04-16 17:30:10
+# Last Modified: 2021-07-21 18:35:54
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -375,19 +375,19 @@ def searchmulu():
 
 # 搜索！
 
-@post('/search')
-def search_post():
-    content = request.POST.content
-    # print('搜索: ', content)
-    if not content: return []
-    ncontent = content
-
-    xx = fullsearch(ncontent)
-
-    with open('search.dict', 'a+') as fd:
-        fd.write(datetime.datetime.now().strftime("%Y%m%dT%T ") + content + '|' + ncontent + '\n')
-
-    return xx
+#@post('/search')
+#def search_post():
+#    content = request.POST.content
+#    # print('搜索: ', content)
+#    if not content: return []
+#    ncontent = content
+#
+#    xx = fullsearch(ncontent)
+#
+#    with open('search.dict', 'a+') as fd:
+#        fd.write(datetime.datetime.now().strftime("%Y%m%dT%T ") + content + '|' + ncontent + '\n')
+#
+#    return xx
 
 
 ids = IDS()
@@ -396,6 +396,66 @@ cbeta_com = CBETA_COM()
 @get('/search')
 @view('temp/search.jinja2')
 def search_get():
+    content = request.GET.content
+    title = request.GET.title
+    q = request.GET.q
+    if not q:
+        q = 'content'
+    if not content: return {'q': q}
+    ncontent = content
+
+    # 去除python转义字符
+    ncontent = python_unescape(ncontent)
+    # 去除上标和下标
+    ncontent = re.sub(r'\[[a-zA-Z0-9\*]+\]', '', ncontent)
+    # 去除IDS
+    ncontent = ids.rm_ids(ncontent)
+    # 去除组字式
+    ncontent = cbeta_com.rm_com(ncontent)
+    # 判断简体繁体, 统一转为繁体之后搜索
+    if convert.detect(ncontent)['confidence'] == 's':
+        ncontent = convert.s2t(ncontent)
+
+    if q == 'title':
+        # 使用经号方式查找藏经
+        # TODO:搜索t1000, t1000_001, T01n0001, T01n0001_001, T01n0001_p0001a01, T01,no.1,p.1a1
+        title = ncontent
+        sutra = parse_number(title)
+        if sutra:
+            # author不对,需要修改
+            result = [{'hl': '', 'an': sutra.url, 'title': sutra.title, 'author': ''}]
+            return {'results': result, 'content': content, 'q': 'title'}
+
+        # 使用经名方式查找藏经
+        results = []
+        for idx in ss.search(title):
+            title0 = idx
+            hl = ss.titles[idx]
+            sutra = Number(idx)
+            results.append({'hl': hl, 'an':sutra.url, 'title':title0, 'author':''})
+        return {'results': results, 'content': content, 'q': 'title'}
+
+    # 添加 python转义字符
+    ncontent = normalize_text(ncontent)
+    ncontent = ''.join(python_escape(ncontent))
+
+    if q == 'content':
+        with open('search.ctx', 'a+') as fd:
+            fd.write(datetime.datetime.now().strftime("%Y%m%dT%T ") + content + '|' + ncontent + '\n')
+    if q == 'dict':
+        with open('search.dict', 'a+') as fd:
+            fd.write(datetime.datetime.now().strftime("%Y%m%dT%T ") + content + '|' + ncontent + '\n')
+
+    if q == 'dict':
+        results = wordsearch(ncontent)
+        return {'results': results, 'content': content, 'q': 'dict'}
+
+    results = fullsearch(ncontent)
+
+    return {'results': results, 'content': content, 'q': 'content'}
+
+@post('/search')
+def search_post():
     content = request.GET.content
     title = request.GET.title
     q = request.GET.q
