@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-07-23 17:30:28
+# Last Modified: 2021-07-23 17:49:29
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -600,6 +600,7 @@ class Number:
         title = ''
         with open("idx/sutra_sch.lst") as fd:
             for line in fd:
+                if line.startswith('#'): continue
                 if number in line:
                     title = line.strip().split(maxsplit=1)[1]
                     break
@@ -636,6 +637,7 @@ sch_db = []
 #with open(os.path.join(PATH, "idx/sutra_sch.lst")) as fd:
 with open("idx/sutra_sch.lst") as fd:
     for line in fd:
+        if line.startswith('#'): continue
         line = line.strip().split()[0]
         sch_db.append(line)
 
@@ -1307,6 +1309,7 @@ class Search:
         titles = []
         with open("idx/sutra_sch.lst") as fd:
             for line in fd:
+                if line.startswith('#'): continue
                 line = normalize_text(line.strip()).split(maxsplit=1)
                 titles.append(line)
 
