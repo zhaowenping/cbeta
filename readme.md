@@ -223,6 +223,7 @@
 11. 使用byline cb:type="Author"表示作者, byline cb:type="translator"表示译者，混用大小写和中英文，还同时使用cb:jl_byline，含义模糊
 12. p rend="inline" 的写法，本来就是一个行内元素,导致T55n2157_024.xml显示不正常
 13. cbeta的note标注有时候显示的是勘误后的文字，有时候显示的是勘误前的文字。让人迷惑
+14. ipadpro 无法显示生僻字
 
 ## 汉语拼音使用方式
 
