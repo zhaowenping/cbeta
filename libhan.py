@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-08-24 15:17:14
+# Last Modified: 2021-09-04 18:20:35
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -190,6 +190,10 @@ class IDS:
         return ''.join(ids_split(ctx, fn=self.find_ids))
 
     def find_ids(self, ctx):
+        '''糹 ⺯  15 ⻖ 174
+  16 ⻏ 167
+  17 阝 140
+'''
         '''查找ids序列
         牛 on left = 牜
         玉 on left = 𤣩
@@ -345,7 +349,6 @@ def unicode_zone(char):
     if 0x31350 <= ord(char) <= 0x323BC:
         return 'H'
     return ''
-
 
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
