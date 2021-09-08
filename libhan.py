@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-09-04 18:20:35
+# Last Modified: 2021-09-07 19:21:16
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -207,6 +207,11 @@ class IDS:
         食 on left = 飠
         牜𤣩礻糹⺼艹訁釒飠氵冫忄
         '''
+        #tt = {'牛': '牜', '王': '𤣩', '示': '礻', '糸': '糹', '月': '⺼',
+        #      '言': '訁',
+        #      '金': '釒', '食': '飠', '水': '氵', '冰': '冫', '心': '忄', '人': '亻', '衣': '衤',
+        #      '手': '扌', '犬': '犭', '足': '𧾷',
+        #      }
         tt = {'牛': '牜', '王': '𤣩', '示': '礻', '糸': '糹', '月': '⺼',
               '草': '艹', '卄': '艹',
               '言': '訁',
