@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-09-12 00:40:16
+# Last Modified: 2021-09-12 07:12:26
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -47,10 +47,10 @@ kangxi = ''' 一 丨 丶 丿 乙 亅
 
 kangxi = '''乚  𠃊 𠃑 ⺄ 一 丨 丶 丿 亅
 ⺇ ⺈ 阝 亻 㔾 刂 𠂉 𠆢 㐅 丷 コ 𠂆 亠 冂 冖 冫 凵 勹 匚 匸 卩 厶
-艹 犭 辶 𰀁 夨 䒑 丬 囗 夂 夊 宀 尢 屮 巛 幺 廴 廾 弋 彐 彡 彳
+艹 犭 辶 𰀁 夨 䒑 丬 卪 囗 夂 宀 尢 屮 巛 幺 廴 廾 弋 彐 彡 彳
 爫 灬 氵 扌 忄 ⺼ 𧘇 𠔿 龷 龶 龰 ⺗ 戶 攴 殳 毋 爿
-衤 罒 𡗜 氺 𡗗 𰀉 𠀐 疋 疒 癶 禸
-龹 𭤨 覀 𠂢 竹 糸 耒 聿 舛 艮 艸 虍 襾
+衤 罒 𡗜 氺 𡗗 𰀉 𠀐 𠂕 疋 疒 癶
+龹 𭤨 覀 𠂢 𥫗 𠇍 糸 耒 聿 舛 艮 艸 虍 襾
 𢦏 镸 𠂭 見 豕 豸 貝 車 辵 邑 釆
 𠦝 𨸏 長 門 阜 隹 靑
 韋 頁 風 飛
@@ -72,10 +72,11 @@ for e in kangxi:
     if e in bushou:
         bushou.remove(e)
 
-for e in bushou:
-    if e not in kangxi:
-#for e in kangxi:
-        print(e, 'U+%X' % ord(e), bs.get(e, None))
+#for e in bushou:
+#    if e not in kangxi:
+for e in kangxi:
+    if len(e) !=1: continue
+    print(e, 'U+%X' % ord(e), bs.get(e, None))
 print(len(bushou))
 #pprint.pprint(bs)
 
