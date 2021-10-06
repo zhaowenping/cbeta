@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-09-26 02:25:53
+# Last Modified: 2021-10-03 23:57:31
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -57,9 +57,9 @@ kangxi = '''乚  𠃊 𠃑 ⺄ 一 丨 丶 丿 亅
 10 𭆆 𰮤 𤇾 𣪊 𡨄 馬 髟 鬥 鬯 鬲
 11 𠩺 𦰩 魚 鳥 鹵 麥
 12 黃 黍 黹 黽
-13 𦥯
+13 𦥯 𣪠 𣎆
 14 𰯲 齊
-15 齒
+15 𢀩 齒
 16 𩰲 龍 龜
 17 龠
 19 䜌

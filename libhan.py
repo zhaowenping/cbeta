@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-10-03 16:50:10
+# Last Modified: 2021-10-05 19:03:26
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -359,7 +359,7 @@ def unicode_zone(char):
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    # path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
+    #path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
             line = line.strip()
@@ -562,6 +562,7 @@ class Number:
             pass  #raise 一个错误?
         number = f'{self.book}{self.tome}n{self.sutra}{self.yiyi}_{self.volume:03}'
         # # 对所有的book下的卷排序
+        print('Number.__add__:', self.book, self.tome, self.sutra,self.yiyi, self.volume)
         juanlist = get_sorted_juan(f'{self.book}{self.tome}')
         page = juanlist.index(number) + page
         if 0 <= page < len(juanlist):
@@ -619,6 +620,7 @@ class Number:
 def get_sorted_juan(book):
     '''获得book(T01)下的所有排序好的经卷号(T01n0002_001)'''
     # 对所有的book下的卷排序
+    print('get_sorted_juan:', book)
     juanlist = []
     for path in os.listdir(f'xml/{book}'):
         sutra, juan = path[:-4].split('_')
