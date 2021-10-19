@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-10-16 17:13:24
+# Last Modified: 2021-10-17 16:45:59
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -45,9 +45,9 @@ kangxi = ''' 一 丨 丶 丿 乙 亅
 龠
 '''.split()
 
-kangxi = '''乚  𠃊 𠃑 ⺄ 一 丨 丶 丿 亅
+kangxi = '''乚  𠃊 𠃑 ⺄ 一 丨 丶 丿 亅 𠃍
  2 ⺇ ⺈ 阝 亻 㔾 刂 𠂉 𠆢 㐅 丷 コ 𠂆 亠 冂 冖 冫 凵 勹 匚 匸 卩 厶
- 3 艹 犭 辶 氵 扌 忄 𰀁 夨 䒑 丬 卪 囗 夂 宀 尢 屮 巛 幺 廴 廾 弋 彐 彡 彳
+ 3 艹 犭 辶 氵 扌 忄 𰀁 夨 䒑 丬 卪 囗 夂 宀 尢 屮 巛 幺 廴 廾 弋 𠂋 彐 彡 彳
  4 爫 灬 ⺼ 𧘇 𠔿 龷 龶 龰 ⺗ 戶 毋 爿
  5 衤 罒 𡗜 氺 𡗗 𰀉 𠀐 𠂕 𤴓 疋 疒 癶
  6 龹 𭤨 覀 襾 𠂢 𥫗 𠇍 糸 耒 聿 舛 艮 艸 虍
