@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-10-30 04:39:51
+# Last Modified: 2021-10-30 05:05:17
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -571,7 +571,7 @@ class Number:
         # tomelist: 获得全部book(T01)下的所有排序好的册号列表(T01,T02,T03,T04...)
         page = page - len(juanlist)
         #tomelist = (path.strip(self.book) for path in os.listdir(f'xml') if path.startswith(self.book))
-        tomelist = (path[len(self.book):] for path in os.listdir(f'xml') if re.match(f'^{self.book}\d{2,3}$', path))
+        tomelist = (path[len(self.book):] for path in os.listdir(f'xml') if re.match(f'^{self.book}'+ r'\d{2,3}$', path))
         tomelist = tuple(f'{self.book}{i}' for i in sorted(tomelist, key=int))
         idx = tomelist.index(f'{self.book}{self.tome}')
         if idx + 1 < len(tomelist):
