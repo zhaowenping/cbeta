@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-10-30 05:17:49
+# Last Modified: 2021-10-30 06:31:00
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -500,12 +500,12 @@ class Number:
 
     def __lt__(self, other):
         '''重要性的排序'''
-        pr = ("T", "A", "S", "F", "C", "K", "B", "ZW", "P", "U", "D", "G", "M", "N", "L", "J", "X", "Y", "LC", "GA", "GB", "I")
+        pr = ("T", "A", "S", "F", "C", "K", "B", "ZW", "P", "U", "D", "G", "M", "N", "L", "J", "X", "Y", "LC", "GA", "GB", "I", "TX", "JT")
         tt = {  'T': 1, 'A': 2, 'F': 3, 'S': 4, 'U': 5,
                 'P': 6, 'B': 7, 'ZW': 8, 'J': 9, 'C': 10,
-                'D': 11, 'K': 12, 'G': 13, 'N': 18, 'I':19,
-                'L': 20, 'M': 30, 'Y':40, 'LC':50,
-                'GA':60, 'GB': 70, 'ZS':80, 'X':90}
+                'D': 11, 'K': 12, 'G': 13, 'X': 14, 'N': 18, 'I':19,
+                'L': 20, 'M': 30, 'Y':40, 'LC':50, 'TX': 55,
+                'JT': 58, 'GA':60, 'GB': 70, 'ZS':80}
         yiyi = 0 if not self.yiyi else int(self.yiyi, 16)
         oyiyi = 0 if not other.yiyi else int(other.yiyi, 16)
         return (tt[self.book], int(self.tome), int(self.sutra, 16), yiyi, self.volume) < (tt[other.book], int(other.tome), int(other.sutra, 16), oyiyi, other.volume)
@@ -594,8 +594,6 @@ class Number:
         if 0 <= page < len(juanlist):
             return Number(juanlist[page])
         # else: tome - 1
-        # tomelist = (path[len(self.book):] for path in os.listdir(f'xml') if re.match(f'^{self.book}'+ r'\d{2,3}$', path))
-        # tomelist = [f'{self.book}{i}' for i in sorted(tomelist, key=int)]
         tomelist = (path for path in os.listdir(f'xml') if re.match(f'^{self.book}\d{{2,3}}$', path))
         tomelist = sorted(tomelist, key=lambda tome: int(tome[len(self.book):]))
         idx = tomelist.index(f'{self.book}{self.tome}')
