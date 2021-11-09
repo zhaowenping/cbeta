@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-10-30 06:31:00
+# Last Modified: 2021-11-09 07:11:10
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -125,7 +125,7 @@ def python_unescape(ctx):
 
 
 def python_escape(ctx):
-    '''因为ES不支持F区、G区汉字，所以将F区、G区汉字转换成转义字符序列，方便后续ES中查找'''
+    '''因为ES不支持F区、G区、H区汉字，所以将F区、G区、H区汉字转换成转义字符序列，方便后续ES中查找'''
     for char in ctx:
         ordchar = ord(char)
         # if 0x2CEB0 <= ordchar <= 0x2EBE0:  # F区
@@ -1596,7 +1596,8 @@ def pali_split(ctx):
 def highlight(ss, ct):
     '''在ct中高亮ss. 将汉字和非汉字分开，汉字用字高亮， 非汉字用词高亮'''
     global pun
-    pattern = re.compile(r'[\u3007\u3400-\u9FFC\U00020000-\U0003134A]+')
+    #pattern = re.compile(r'[\u3007\u3400-\u9FFC\U00020000-\U0003134A]+')
+    pattern = re.compile(r'[\u3007\u3400-\u9FFC\U00020000-\U000323BC]+')
     # 删除标点符号
     # pun2 = {k: 0x20 for k in pun}
     # ss = ss.translate(pun2)
@@ -2015,7 +2016,7 @@ if __name__ == "__main__":
     print(shave_marks(order))
     print(rm_pun(order))
     # print(unicodedata.normalize('NFC', shave_marks(order)))
-    pattern = re.compile(r'[\u3007\u3400-\u9FFC\U00020000-\U0003134A]+')
+    pattern = re.compile(r'[\u3007\u3400-\u9FFC\U00020000-\U000323BC]+')
     j = 0
     for i in re_split(pattern, '由尊者迦葉（Maha Kasyape）結集於王舍城', fn=lambda x: f'x{x}', exfn=lambda x: x):
         j = j+ 1
