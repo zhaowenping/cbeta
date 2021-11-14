@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-11-13 14:10:32
+# Last Modified: 2021-11-14 02:10:46
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -125,14 +125,18 @@ def python_unescape(ctx):
 
 
 def python_escape(ctx):
-    '''因为ES不支持F区、G区、H区汉字，所以将F区、G区、H区汉字转换成转义字符序列，方便后续ES中查找'''
+    '''因为ES不支持八卦符号、F区、G区、H区汉字，所以将F区、G区、H区汉字转换成转义字符序列，方便后续ES中查找'''
     for char in ctx:
         ordchar = ord(char)
         # if 0x2CEB0 <= ordchar <= 0x2EBE0:  # F区
         #     yield r'\U{:08X}'.format(ordchar)
         # elif 0x30000 <= ordchar <= 0x3134A:  # G区
         #     yield r'\U{:08X}'.format(ordchar)
-        if 0x2CEB0 <= ordchar:
+        # 八卦符号
+        if 0x268A<=ordchar<=0x268F or 0x2630<=ordchar<=0x2637 or 0x4DC0<=ordchar<=0x4DFF:
+            yield r'\u{:04X}'.format(ordchar)
+        # F、G、H区汉字
+        elif 0x2CEB0 <= ordchar:
             yield r'\U{:08X}'.format(ordchar)
         else:
             yield char
