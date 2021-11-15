@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-07-21 18:35:54
+# Last Modified: 2021-11-14 23:53:16
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -36,7 +36,7 @@ from bottle import GeventServer
 import jieba
 
 from libhan import read_menu_file
-from libhan import Search, IDS, CBETA_COM, python_escape, python_unescape
+from libhan import Search, IDS, CBETA_COM, python_escape, python_unescape, bagua_unescape
 from libhan import STConvertor
 from libhan import normalize_text
 from libhan import fullsearch, wordsearch
@@ -404,6 +404,8 @@ def search_get():
     if not content: return {'q': q}
     ncontent = content
 
+    # 尝试去除八卦转义字符
+    ncontent = bagua_unescape(ncontent)
     # 去除python转义字符
     ncontent = python_unescape(ncontent)
     # 去除上标和下标

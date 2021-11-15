@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-11-14 19:11:50
+# Last Modified: 2021-11-14 23:47:04
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1645,6 +1645,88 @@ def rm_pun(ctx, ex=()):
         pun.pop(ord(char), None)
     ctx = ctx.translate(pun).replace(chr(0xFFFD), '')
     ctx = shave_marks(ctx)
+    return ctx
+
+def bagua_unescape(ctx):
+    '''八卦符号输入解析'''
+    bagua = { '\g111': '\u2630', '\g011': '\u2631', '\g101': '\u2632', '\g001': '\u2633', '\g110': '\u2634', '\g010': '\u2635', '\g100': '\u2636', '\g000': '\u2637',
+        '\G111111': '\u4DC0',
+        '\G000000': '\u4DC1',
+        '\G010001': '\u4DC2',
+        '\G100010': '\u4DC3',
+        '\G010111': '\u4DC4',
+        '\G111010': '\u4DC5',
+        '\G000010': '\u4DC6',
+        '\G010000': '\u4DC7',
+
+        '\G110111': '\u4DC8',
+        '\G111011': '\u4DC9',
+        '\G000111': '\u4DCA',
+        '\G111000': '\u4DCB',
+        '\G111101': '\u4DCC',
+        '\G101111': '\u4DCD',
+        '\G000100': '\u4DCE',
+        '\G001000': '\u4DCF',
+
+        '\G011001': '\u4DD0',
+        '\G100110': '\u4DD1',
+        '\G000011': '\u4DD2',
+        '\G110000': '\u4DD3',
+        '\G101001': '\u4DD4',
+        '\G100101': '\u4DD5',
+        '\G100000': '\u4DD6',
+        '\G000001': '\u4DD7',
+
+        '\G111001': '\u4DD8',
+        '\G100111': '\u4DD9',
+        '\G100001': '\u4DDA',
+        '\G011110': '\u4DDB',
+        '\G010010': '\u4DDC',
+        '\G101101': '\u4DDD',
+        '\G011100': '\u4DDE',
+        '\G001110': '\u4DDF',
+
+        '\G111100': '\u4DE0',
+        '\G001111': '\u4DE1',
+        '\G101000': '\u4DE2',
+        '\G000101': '\u4DE3',
+        '\G110101': '\u4DE4',
+        '\G101011': '\u4DE5',
+        '\G010100': '\u4DE6',
+        '\G001010': '\u4DE7',
+
+        '\G100011': '\u4DE8',
+        '\G110001': '\u4DE9',
+        '\G011111': '\u4DEA',
+        '\G111110': '\u4DEB',
+        '\G011000': '\u4DEC',
+        '\G000110': '\u4DED',
+        '\G011010': '\u4DEE',
+        '\G010110': '\u4DEF',
+
+        '\G011101': '\u4DF0',
+        '\G101110': '\u4DF1',
+        '\G001001': '\u4DF2',
+        '\G100100': '\u4DF3',
+        '\G110100': '\u4DF4',
+        '\G001011': '\u4DF5',
+        '\G001101': '\u4DF6',
+        '\G101100': '\u4DF7',
+
+        '\G110110': '\u4DF8',
+        '\G011011': '\u4DF9',
+        '\G110010': '\u4DFA',
+        '\G010011': '\u4DFB',
+        '\G110011': '\u4DFC',
+        '\G001100': '\u4DFD',
+        '\G010101': '\u4DFE',
+        '\G101010': '\u4DFF'}
+
+    for ch in re.findall(r'(?:[^\\]|^)(\\g[01]{3})', ctx):
+        ctx = ctx.replace(ch, bagua[ch])
+    for ch in re.findall(r'(?:[^\\]|^)(\\G[01]{6})', ctx):
+        ctx = ctx.replace(ch, bagua[ch])
+
     return ctx
 
 
