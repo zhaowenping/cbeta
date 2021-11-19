@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-11-14 23:47:04
+# Last Modified: 2021-11-19 15:29:19
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -193,7 +193,7 @@ class IDS:
         # return ''.join(ids_split(ctx, fn=lambda x:self.ids_dict.get(x, x)))
         return ''.join(ids_split(ctx, fn=self.find_ids))
 
-    def find_ids(self, ctx):
+    def find_ids(self, ids):
         '''糹 ⺯  15 ⻖ 174
   16 ⻏ 167
   17 阝 140
@@ -224,18 +224,20 @@ class IDS:
               '竹': '𥫗'
              # '亦': '𰁜'
               }
-        rr = self.ids_dict.get(ctx, None)
+        rr = self.ids_dict.get(ids, None)
         if rr:
             return rr
-        # TODO re.findall
+        ctx = ids
+
         while True:
             x = self.p.findall(ctx)
             if not x: break
             for i in x:
                 ctx = ctx.replace(i, self.ids_dict[i])
+
         if not has_ids(ctx):
             return ctx
-        # 没找到就替换之后再找一次
+        # 没找到就替换之后再找一次, TODO 应该以替换后无变化作为退出条件
         tt = {ord(k): ord(tt[k]) for k in tt}
         ctx = ctx.translate(tt)  # .replace(chr(0xFFFD), '')
         rr = self.ids_dict.get(ctx, None)
