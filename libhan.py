@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-11-26 14:38:39
+# Last Modified: 2021-12-02 16:58:46
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1905,6 +1905,13 @@ def fullsearch(sentence):
     # print('---------------------------')
     # {'error': {'root_cause': [{'type': 'index_not_found_exception', 'reason': 'no such index [cbeta]', 'resource.type': 'index_or_alias', 'resource.id': 'cbeta', 'index_uuid': '_na_', 'index': 'cbeta'}], 'type': 'index_not_found_exception', 'reason': 'no such index [cbeta]', 'resource.type': 'index_or_alias', 'resource.id': 'cbeta', 'index_uuid': '_na_', 'index': 'cbeta'}, 'status': 404}
 
+# {'error': {'failed_shards': [],
+#            'grouped': True,
+#            'phase': 'query',
+#            'reason': 'all shards failed',
+#            'root_cause': [],
+#            'type': 'search_phase_execution_exception'},
+#  'status': 503}
     hits = result['hits']['hits']
     # value = result['hits']['total']['value']
     result = []
