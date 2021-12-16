@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-12-13 17:10:02
+# Last Modified: 2021-12-15 21:44:06
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -239,8 +239,8 @@ class IDS:
             return ctx
         # 没找到就替换之后再找一次, TODO 应该以替换后无变化作为退出条件
         tt = {ord(k): ord(tt[k]) for k in tt}
-        ctx = ctx.translate(tt)  # .replace(chr(0xFFFD), '')
-        rr = self.ids_dict.get(ctx, None)
+        nctx = ctx.translate(tt)  # .replace(chr(0xFFFD), '')
+        rr = self.ids_dict.get(nctx, None)
         if rr:
             return rr
         return ctx
