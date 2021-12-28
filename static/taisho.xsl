@@ -442,10 +442,17 @@
 
     <xsl:template match="graphic">
       <img class="img-responsive">
+       <xsl:if test="starts-with(@url, '../')">
         <xsl:attribute name="src">
             <xsl:text>/static</xsl:text>
             <xsl:value-of select="substring(@url, 3)"/>
         </xsl:attribute>
+       </xsl:if>
+       <xsl:if test="not(starts-with(@url, '../'))">
+        <xsl:attribute name="src">
+            <xsl:value-of select="@url"/>
+        </xsl:attribute>
+       </xsl:if>
       </img>
     </xsl:template>
 
