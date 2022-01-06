@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2022-01-05 23:08:04
+# Last Modified: 2022-01-06 07:00:32
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1793,6 +1793,30 @@ def must_search(sentence, _from=0, _end=5000):
 
     r = requests.get(url, json=data, timeout=10)
     result = r.json()
+    return result
+
+
+def templesearch(word):
+    '''搜索寺庙道观'''
+    # nword = normalize_text(word)
+    # sentence = ''.join(python_escape(sentence))
+    # 对巴利语梵语的特殊处理
+    # if all(not ishanzi(i) for i in word):
+    #     word = shave_marks(normalize_space(word))
+
+    url = "http://127.0.0.1:9200/temple/_doc/_search"
+    data = {'query': {'match': {'zdef': {'query': word, 'operator': 'and'}}}, 'size': 5000, 'from': 0}
+    r= requests.get(url, json=data, timeout=10)
+    result = r.json()
+    hits = result['hits']['hits']
+    result = []
+    for hit in hits:
+        _source = hit["_source"]
+        # 文章内容高亮显示
+        hyph = python_unescape(_source['hyph'])
+        define = python_unescape(_source['def'])
+        result.append({'hl': define, 'an': '', 'title':hyph, 'author': _source['dict'], 'number': ''})
+
     return result
 
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-11-14 23:53:16
+# Last Modified: 2022-01-06 06:59:20
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -39,7 +39,7 @@ from libhan import read_menu_file
 from libhan import Search, IDS, CBETA_COM, python_escape, python_unescape, bagua_unescape
 from libhan import STConvertor
 from libhan import normalize_text
-from libhan import fullsearch, wordsearch
+from libhan import fullsearch, wordsearch, templesearch
 from libhan import parse_number, make_docx
 
 from libhan import Number, rm_pun
@@ -451,6 +451,12 @@ def search_get():
     if q == 'dict':
         results = wordsearch(ncontent)
         return {'results': results, 'content': content, 'q': 'dict'}
+
+    if q == 'temple':
+        with open('search.temp', 'a+') as fd:
+            fd.write(datetime.datetime.now().strftime("%Y%m%dT%T ") + content + '|' + ncontent + '\n')
+        results = templesearch(content)
+        return {'results': results, 'content': content, 'q': 'temple'}
 
     results = fullsearch(ncontent)
 
