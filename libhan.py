@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2022-01-06 07:00:32
+# Last Modified: 2022-01-06 15:17:45
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1813,9 +1813,9 @@ def templesearch(word):
     for hit in hits:
         _source = hit["_source"]
         # 文章内容高亮显示
-        hyph = python_unescape(_source['hyph'])
-        define = python_unescape(_source['def'])
-        result.append({'hl': define, 'an': '', 'title':hyph, 'author': _source['dict'], 'number': ''})
+        hyph = python_unescape(_source['name'])
+        define = python_unescape(_source['zdef'])
+        result.append({'hl': define, 'an': '', 'title':hyph, 'author': _source['principal'], 'number': ''})
 
     return result
 
