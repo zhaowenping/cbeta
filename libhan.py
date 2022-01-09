@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2022-01-06 15:17:45
+# Last Modified: 2022-01-08 23:34:33
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -512,8 +512,8 @@ class Number:
                 'D': 11, 'K': 12, 'G': 13, 'X': 14, 'N': 18, 'I':19,
                 'L': 20, 'M': 30, 'Y':40, 'LC':50, 'TX': 55,
                 'JT': 58, 'GA':60, 'GB': 70, 'ZS':80}
-        yiyi = 0 if not self.yiyi else int(self.yiyi, 16)
-        oyiyi = 0 if not other.yiyi else int(other.yiyi, 16)
+        yiyi = 0 if not self.yiyi else ord(self.yiyi)-64
+        oyiyi = 0 if not other.yiyi else ord(other.yiyi)-64
         return (tt[self.book], int(self.tome), int(self.sutra, 16), yiyi, self.volume) < (tt[other.book], int(other.tome), int(other.sutra, 16), oyiyi, other.volume)
 
     def __str__(self):
@@ -1322,6 +1322,7 @@ def HKdict2iast(hkdict):
 
 
 class Search:
+    '''搜索经文标题用'''
     def __init__(self, norm=True):
         titles = []
         with open("idx/sutra_sch.lst") as fd:
@@ -1366,8 +1367,8 @@ class Search:
         result = (set(self.index.get(tt, {}).keys()) for tt in list(title))
         # return sorted(reduce(lambda x, y: x & y, result), key=pagerank)
         result = reduce(lambda x, y: x & y, result)
-        #return sorted(result, key=lambda x: Levenshtein.ratio(title, self.titles[x].split(' (')[0]), reverse=True)
-        return sorted(result, key=lambda x: (1 if x[0] == 'T' else 0, Levenshtein.ratio(title, self.titles[x].split(' (')[0])), reverse=True)
+        # return sorted(result, key=lambda x: (1 if x[0] == 'T' else 0, Levenshtein.ratio(title, self.titles[x].split(' (')[0])), reverse=True)
+        return sorted(result, key=Number)
 
 
 # 简体繁体转换
