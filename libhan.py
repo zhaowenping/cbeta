@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2022-01-09 07:19:59
+# Last Modified: 2022-01-09 07:25:23
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1738,14 +1738,14 @@ def pagerank(filename, sentence='', content=''):
     '''对xml文件名评分, filename 为 T20n1060 或者 T20n1060_001.xml 形式
     A,B,C,D,F,G,GA,GB,I,J,K,L,M,N,P,S,T,U,X,ZW, Y, LC
     '''
-    '''重要性的排序'''
+    '''重要性的排序, pagerank.txt中的都是重要经典。排在最前面'''
     n = Number(filename)
     val = None
     lineno = 0
     with open('idx/pagerank.txt') as fd:
         for line in fd:
             line = line.strip()
-            if line.startwith('#'): continue
+            if line.starstwith('#'): continue
             lineno += 1
             if str(n) in line:
                 val = (0, 0, 0, 0, lineno)
