@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2020-06-04 07:17:10
+# Last Modified: 2022-01-09 03:29:09
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -15,7 +15,7 @@ __version__ = "0.0.1"
 import re
 
 cipin = dict()
-with open('../../p01.txt') as fd:
+with open('../../p1.txt') as fd:
     for line in fd:
         line = line.strip().split()
         cipin[line[0]] = int(line[2])
@@ -30,7 +30,7 @@ ids_pattern = sorted(ids_dict.keys(), key=len, reverse=True)
 #print('⿰言羊' in ids_pattern)
 
 IDS = dict()
-with open('/home/zhaowp/Downloads/ranjana_20170930/IDS.TXT') as fd:
+with open('../../ids/IDS.TXT') as fd:
     for line in fd:
         if not line.startswith('U+'):
             continue

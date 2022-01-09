@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2022-01-08 23:34:33
+# Last Modified: 2022-01-09 07:19:59
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1368,7 +1368,8 @@ class Search:
         # return sorted(reduce(lambda x, y: x & y, result), key=pagerank)
         result = reduce(lambda x, y: x & y, result)
         # return sorted(result, key=lambda x: (1 if x[0] == 'T' else 0, Levenshtein.ratio(title, self.titles[x].split(' (')[0])), reverse=True)
-        return sorted(result, key=Number)
+        #return sorted(result, key=Number)
+        return sorted(result, key=pagerank)
 
 
 # 简体繁体转换
@@ -1737,22 +1738,30 @@ def pagerank(filename, sentence='', content=''):
     '''对xml文件名评分, filename 为 T20n1060 或者 T20n1060_001.xml 形式
     A,B,C,D,F,G,GA,GB,I,J,K,L,M,N,P,S,T,U,X,ZW, Y, LC
     '''
-    # sentence = sentence.strip().split()
-    # sentence_value = sum([{True:0, False:1}[s in content] for s in sentence])
-    pr = ("T", "B", "ZW", "A", "C", "D", "F", "G" , "GA", "GB", "I", "J", "K", "L", "M", "N", "P", "S", "U", "X", "Y", "LC")
-    pt = re.compile(r'\d+')  # 应该在前端过滤
-    if filename and filename[0] == 'T':
-        r = 0
-    else:
-        r = 1
-    x = pt.findall(filename)
-    x = [int(i) for i in x]
-    # return r, x[0], x[1], x[2]
-    x.insert(0, r)
-    # x.insert(0, sentence_value)
-    # 对于符合条件的重新排列到前面
-    # zi_order(ss, ct)
-    return x
+    '''重要性的排序'''
+    n = Number(filename)
+    val = None
+    lineno = 0
+    with open('idx/pagerank.txt') as fd:
+        for line in fd:
+            line = line.strip()
+            if line.startwith('#'): continue
+            lineno += 1
+            if str(n) in line:
+                val = (0, 0, 0, 0, lineno)
+                break
+
+    pr = ("T", "A", "S", "F", "C", "K", "B", "ZW", "P", "U", "D", "G", "M", "N", "L", "J", "X", "Y", "LC", "GA", "GB", "I", "TX", "JT")
+    tt = {  'T': 1, 'A': 2, 'F': 3, 'S': 4, 'U': 5,
+            'P': 6, 'B': 7, 'ZW': 8, 'J': 9, 'C': 10,
+            'D': 11, 'K': 12, 'G': 13, 'X': 14, 'N': 18, 'I':19,
+            'L': 20, 'M': 30, 'Y':40, 'LC':50, 'TX': 55,
+            'JT': 58, 'GA':60, 'GB': 70, 'ZS':80}
+    yiyi = 0 if not n.yiyi else ord(n.yiyi)-64
+
+    if not val:
+        val = (tt[n.book], int(n.tome), int(n.sutra, 16), yiyi, n.volume)
+    return val
 
 
 
