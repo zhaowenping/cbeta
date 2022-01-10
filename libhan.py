@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2022-01-09 07:25:23
+# Last Modified: 2022-01-09 16:57:32
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1368,7 +1368,6 @@ class Search:
         # return sorted(reduce(lambda x, y: x & y, result), key=pagerank)
         result = reduce(lambda x, y: x & y, result)
         # return sorted(result, key=lambda x: (1 if x[0] == 'T' else 0, Levenshtein.ratio(title, self.titles[x].split(' (')[0])), reverse=True)
-        #return sorted(result, key=Number)
         return sorted(result, key=pagerank)
 
 
