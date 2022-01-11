@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2022-01-09 16:57:32
+# Last Modified: 2022-01-10 21:39:40
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1744,7 +1744,7 @@ def pagerank(filename, sentence='', content=''):
     with open('idx/pagerank.txt') as fd:
         for line in fd:
             line = line.strip()
-            if line.starstwith('#'): continue
+            if line.startswith('#'): continue
             lineno += 1
             if str(n) in line:
                 val = (0, 0, 0, 0, lineno)
