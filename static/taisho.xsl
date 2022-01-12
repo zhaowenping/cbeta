@@ -907,7 +907,7 @@
         <xsl:if test="not($firefox) and starts-with(@xml:id, 'end')">
             <xsl:text disable-output-escaping="yes">&lt;/span&gt;</xsl:text>
         </xsl:if>
-        <sup lang="en">
+        <sup>
         <span data-toggle="popover" data-placement="auto" data-container="body" data-trigger="hover focus">
         <!--a data-toggle="popover" data-placement="auto" data-trigger="hover"-->
         <xsl:if test="@xml:id">
