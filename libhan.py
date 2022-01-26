@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2022-01-25 22:53:41
+# Last Modified: 2022-01-25 22:57:41
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1517,7 +1517,7 @@ class STConvertor:
                 break
 
         # 使用简体词汇表来判断是否是简体
-        if confidence = 't':
+        if confidence == 't':
             for word in self.jtp:
                 if word in s0:
                     confidence = 's'
