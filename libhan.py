@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2022-01-13 20:50:27
+# Last Modified: 2022-01-25 22:53:41
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1504,16 +1504,24 @@ class STConvertor:
 
     def detect(self, s0):
         '''使用简体字表来判断一段文本是简体还是繁体的概率'''
-        # 使用简体词汇表来判断是否是简体 TODO
         if len(s0) == 0:
             return {'t': 50, 's': 50, 'confidence': 's'}
         t = 50
         s = 50
         confidence = 't'
+
+        # 使用简体字表来判断是否是简体
         for zi in s0:
             if zi in self.jt:
                 confidence = 's'
                 break
+
+        # 使用简体词汇表来判断是否是简体
+        if confidence = 't':
+            for word in self.jtp:
+                if word in s0:
+                    confidence = 's'
+                    break
 
         return {'t': t, 's': s, 'confidence': confidence}
 
