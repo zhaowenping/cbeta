@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2018-10-06 16:39:42
+# Last Modified: 2022-01-27 15:57:48
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -47,7 +47,7 @@ with open('variants.txt') as fd:
 
 import psycopg2
 aa = 0
-conn = psycopg2.connect(database="buddha", user="postgres", password="1234", host="127.0.0.1", port="5432")
+conn = psycopg2.connect(database="buddha", user="postgres", password="1234", host="192.128.1.106", port="5432")
 cur = conn.cursor()
 sql = 'select uni, nun, nor, cipin, des  from cb2  where uni is not null order by cipin desc'
 cur.execute(sql)

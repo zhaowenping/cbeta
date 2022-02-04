@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2022-01-25 22:57:41
+# Last Modified: 2022-02-03 18:30:47
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -663,7 +663,8 @@ juan_pattern = re.compile(r'(\s+)第?([\d零〇一二三四五六七八九]{1,4}
 # ../T31/T31n1585.xml#xpath2(//0011b12)
 # 雜阿含經一五·一七
 # 增一阿含二一·六（大正二·六〇三c）  <pb n="0603c" ed="T" xml:id="T02.0125.0603c"/>
-ahan_pattern = re.compile(r'(《?[中长長雜杂增][一壹]?阿[含鋡][經经]?》?)第?([\d零〇一二三四五六七八九]{1,4})[經经]')
+# ahan_pattern = re.compile(r'(《?[中长長雜杂增][一壹]?阿[含鋡][經经]?》?)第?([\d零〇一二三四五六七八九]{1,4})[經经]')
+ahan_pattern = re.compile(r'(《?[中长長雜杂]阿[含鋡][經经]?》?)第?([\d零〇一二三四五六七八九]{1,4})[經经]')
 def parse_ahan(number):
     found = False
     jinghao = ahan_pattern.findall(number)
@@ -1516,7 +1517,7 @@ class STConvertor:
                 confidence = 's'
                 break
 
-        # 使用简体词汇表来判断是否是简体
+        # 使用简体词表来判断是否是简体
         if confidence == 't':
             for word in self.jtp:
                 if word in s0:
