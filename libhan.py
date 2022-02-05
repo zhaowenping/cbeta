@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2022-02-03 18:30:47
+# Last Modified: 2022-02-04 18:22:30
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -665,6 +665,8 @@ juan_pattern = re.compile(r'(\s+)第?([\d零〇一二三四五六七八九]{1,4}
 # 增一阿含二一·六（大正二·六〇三c）  <pb n="0603c" ed="T" xml:id="T02.0125.0603c"/>
 # ahan_pattern = re.compile(r'(《?[中长長雜杂增][一壹]?阿[含鋡][經经]?》?)第?([\d零〇一二三四五六七八九]{1,4})[經经]')
 ahan_pattern = re.compile(r'(《?[中长長雜杂]阿[含鋡][經经]?》?)第?([\d零〇一二三四五六七八九]{1,4})[經经]')
+#ahan1_pattern = re.compile(r'(《?增[一壹]阿[含鋡][經经]?》?)([\d零〇一二三四五六七八九]{1,3})[經经]')
+ahan1_pattern = re.compile(r'(《?增[一壹]阿[含鋡][經经]?》?)(\d{1,3})\D+(\d{1,3})?')
 def parse_ahan(number):
     found = False
     jinghao = ahan_pattern.findall(number)
@@ -680,7 +682,7 @@ def parse_ahan(number):
         else:
             return None
 
-        # 查表
+        # 查表:杂阿含经
         with open(f'idx/{book}.xml') as fd:
             for line in fd:
                 line = line.strip().split()
@@ -688,6 +690,25 @@ def parse_ahan(number):
                     sutra = Number(line[1])
                     found = True
                     break
+
+    jinghao = ahan1_pattern.findall(number)
+    if jinghao:
+        book, chapter, sutra = jinghao[0]
+        chapter = int(chapter)
+        if not sutra:
+            sutran = 0
+        else:
+            sutran = int(sutra)
+
+        # 查表:增一阿含经
+        with open(f'idx/T0125.xml') as fd:
+            for line in fd:
+                line = line.strip().split()
+                if sutran == int(line[0]) and chapter == int(line[1]):
+                    sutra = Number(line[2])
+                    found = True
+                    break
+
     if not found:
         return None
     return sutra
