@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2022-02-04 18:22:30
+# Last Modified: 2022-02-09 01:19:34
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -486,7 +486,7 @@ class Number:
         else:
             self.book, tome, self.sutra, self.yiyi, self.volume, self.anchor = None, '', '', '', 0, ''
             # r = re.findall(r'([A-Z]{1,2})(\d{2,3})n(\w\d{3})([a-zA-Z])?(?:_(\d{3}))?', n)
-            r = re.findall(r'([A-Z]{1,2})(\d{2,3})n(\w\d{3})([a-zA-Z])?(?:_(\d{3}))?(?:#p(\w\d{3}[abc]\d\d))?', n)
+            r = re.findall(r'([A-Z]{1,2})(\d{2,3})n(\w\d{3})([a-zA-Z])?(?:_(\d{3}))?(?:#(p\w\d{3}[abc]\d\d))?', n)
             if r:
                 self.book, tome, self.sutra, self.yiyi, volume, self.anchor = r[0]
                 self.volume = 0 if not volume else int(volume)
@@ -704,7 +704,7 @@ def parse_ahan(number):
         with open(f'idx/T0125.xml') as fd:
             for line in fd:
                 line = line.strip().split()
-                if sutran == int(line[0]) and chapter == int(line[1]):
+                if chapter == int(line[0]) and sutran == int(line[1]):
                     sutra = Number(line[2])
                     found = True
                     break
@@ -1601,6 +1601,7 @@ def shave_marks(ctx):
 # pun = re.compile('['+string.punctuation+']')
 # 读取标点数据库
 pun = dict()
+#with open('/home/zhaowp/cbeta/cbeta/dict/punctuation.txt') as fd:
 with open('dict/punctuation.txt') as fd:
     for line in fd:
         line = line.strip()
