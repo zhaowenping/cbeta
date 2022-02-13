@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2022-02-09 01:19:34
+# Last Modified: 2022-02-12 17:56:18
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -435,6 +435,64 @@ def read_menu_file(sutra_list):
 #             result.append(path.split('_')[1][:-4])
 #     return result
 
+# 康熙正字与台湾正字转换表
+kx_word_table = { #0x2F804: 0x4F60,
+            # 0x2F86A: 0x5B3E,
+            # 0x2F8B6: 0x62D4,
+            # 0x2F8EB: 0x6AA8,
+            # 0x2F98F: 0x8291,
+            # 0x2F999: 0x831D,
+            0xF9B5: 0x4F8B,  # 例, 例
+            0xFA23: 0x27EAF,  # 𧺯 U+27EAF
+            0xFA0C: 0x5140,  # 兀
+            0xFA18: 0x793C,  # 礼
+            30526: 34886,  # 眾改为衆
+            0x5373: 0x537D, # 即 改为 卽
+            0x65E2: 0x65E3,  # 既 改为 旣
+            0x524E: 0x5239, # 剎改为 刹
+            0x507D: 0x50DE, # 偽 僞
+            0x6C61: 0x6C5A, # 污 汚
+            0x6E88: 0x6F59, # 溈 潙
+            0x70BA: 0x7232, # 為 爲
+            0x5AAF: 0x5B00, # 媯 嬀 U+5AAF U+5B00
+            0x834A: 0x8346, # 荊 荆
+            0x6982: 0x69EA, # 概 槪
+            0x6559: 0x654E, # 教 敎
+            0x6E05: 0x6DF8, # 清 淸
+            0x8209: 0x64E7, # 舉 擧
+            0x5C1A: 0x5C19, # 尚 尙
+            0x55BB: 0x55A9, # 喻 喩
+            0x544A: 0x543F, # 告 吿 U+544A U+543F
+            0x9752: 0x9751, # 青 靑 U+9752 U+9751
+            0x98F2: 0x98EE, # 飲 飮
+            0x555F: 0x5553, # 啟 啓 U+555F U+5553
+            0x5E76: 0x5E77, # 并 幷 U+5E76 U+5E77
+            0x6558: 0x53D9, # 敘 叙 U+6558 U+53D9
+            0x90CE: 0x90DE, # 郎 郞 U+90CE U+90DE
+            0x9109: 0x9115, # 鄉 鄕 U+9109 U+9115
+            0x614E: 0x613C, # 慎 愼 U+614E U+613C
+            0x518A: 0x518C, # 冊 册 U+518A U+518C
+            0x7DD2: 0x7DD6, # 緒 緖 U+7DD2 U+7DD6
+            0x771F: 0x771E, # 真 眞
+            0x503C: 0x5024, # 值 値 U+503C U+5024
+            0x586B: 0x5861, # 填 塡 U+586B U+5861
+            0x6E89: 0x6F11, # 溉 漑
+            0x5C4F: 0x5C5B, # 屏 屛
+            # 0x26B07: 0x2CEC0,  # 菩萨
+            0x3021: 0x4E28,  # 丨 〡
+            }
+
+def regular_glyph_kangxi(ctx):
+    '''将字形变换为康熙字形'''
+    ctx = ctx.translate(kx_word_table)
+    return ctx
+
+def regular_glyph_taiwan(ctx):
+    '''将字形变换为台湾规范字形'''
+    tw_word_table = {kx_word_table[k]: k for k in kx_word_table}
+    ctx = ctx.translate(tw_word_table)
+    return ctx
+
 
 def normalize_text(ctx):
     '''标准化文本(只适合繁体字)'''
@@ -454,6 +512,8 @@ def normalize_text(ctx):
     # ctx = rm_joiner(ctx)
     # 去除汉字重复符号
     ctx = rm_ditto_mark(ctx)
+    # 字形统一为康熙标准字形
+    ctx = regular_glyph_kangxi(ctx)
     # 去除异体字、异体词
     ctx = rm_variant(ctx)
     return ctx
