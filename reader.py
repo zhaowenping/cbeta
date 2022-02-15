@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2022-01-06 06:59:20
+# Last Modified: 2022-02-15 07:00:47
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -391,7 +391,7 @@ def searchmulu():
 
 
 ids = IDS()
-cbeta_com = CBETA_COM()
+#cbeta_com = CBETA_COM()
 
 @get('/search')
 @view('temp/search.jinja2')
@@ -412,8 +412,8 @@ def search_get():
     ncontent = re.sub(r'\[[a-zA-Z0-9\*]+\]', '', ncontent)
     # 去除IDS
     ncontent = ids.rm_ids(ncontent)
-    # 去除组字式
-    ncontent = cbeta_com.rm_com(ncontent)
+    # 去除组字式 XXX
+    # ncontent = cbeta_com.rm_com(ncontent)
     # 判断简体繁体, 统一转为繁体之后搜索
     if convert.detect(ncontent)['confidence'] == 's':
         ncontent = convert.s2t(ncontent)
@@ -478,8 +478,8 @@ def search_post():
     ncontent = re.sub(r'\[[a-zA-Z0-9\*]+\]', '', ncontent)
     # 去除IDS
     ncontent = ids.rm_ids(ncontent)
-    # 去除组字式
-    ncontent = cbeta_com.rm_com(ncontent)
+    # 去除组字式 XXX
+    # ncontent = cbeta_com.rm_com(ncontent)
     # 判断简体繁体, 统一转为繁体之后搜索
     if convert.detect(ncontent)['confidence'] == 's':
         ncontent = convert.s2t(ncontent)
