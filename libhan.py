@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2022-02-15 07:01:17
+# Last Modified: 2022-02-27 01:51:06
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -132,10 +132,13 @@ def python_escape(ctx):
         #     yield r'\U{:08X}'.format(ordchar)
         # elif 0x30000 <= ordchar <= 0x3134A:  # G区
         #     yield r'\U{:08X}'.format(ordchar)
-        # 八卦符号
-        if 0x268A<=ordchar<=0x268F or 0x2630<=ordchar<=0x2637 or 0x4DC0<=ordchar<=0x4DFF:
+        # IDS符号
+        if char in '↷↹⿰⿱⿴⿵⿶⿷⿸⿹⿺⿻⿲⿳':
             yield r'\u{:04X}'.format(ordchar)
-        # F、G、H区汉字
+        # 八卦符号
+        elif 0x268A<=ordchar<=0x268F or 0x2630<=ordchar<=0x2637 or 0x4DC0<=ordchar<=0x4DFF:
+            yield r'\u{:04X}'.format(ordchar)
+        # F、G、H、I区汉字
         elif 0x2CEB0 <= ordchar:
             yield r'\U{:08X}'.format(ordchar)
         else:
@@ -447,6 +450,7 @@ kx_word_table = { #0x2F804: 0x4F60,
             0xFA0C: 0x5140,  # 兀
             0xFA18: 0x793C,  # 礼
             30526: 34886,  # 眾改为衆
+            0x6F40: 0x6F68, # 潀 潨
             0x5373: 0x537D, # 即 改为 卽
             0x65E2: 0x65E3,  # 既 改为 旣
             0x524E: 0x5239, # 剎改为 刹
