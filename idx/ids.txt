@@ -25121,6 +25121,7 @@ U+2ABBE 𪮾 ⿰扌⿱鹿木
 U+2ABCE 𪯎 ⿰幸攵
 U+2ABD4 𪯔 ⿰商攵
 U+2ABE5 𪯥 ⿱玨文
+U+2ABE9 𪯩 ⿰文隻
 U+2ABF1 𪯱 ⿰斤攵
 U+2ABF2 𪯲 ⿰方斤
 U+2ABF9 𪯹 ⿰方長
