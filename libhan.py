@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2022-04-07 23:25:16
+# Last Modified: 2022-04-07 23:36:39
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -551,7 +551,8 @@ class Number:
         else:
             self.book, tome, self.sutra, self.yiyi, self.volume, self.anchor = None, '', '', '', 0, ''
             # r = re.findall(r'([A-Z]{1,2})(\d{2,3})n(\w\d{3})([a-zA-Z])?(?:_(\d{3}))?', n)
-            r = re.findall(r'([A-Z]{1,2})(\d{2,3})n(\w\d{3})([a-zA-Z])?(?:_(\d{3}))?(?:#(p\w\d{3}[abc]\d\d))?', n)
+            #r = re.findall(r'([A-Z]{1,2})(\d{2,3})n(\w\d{3})([a-zA-Z])?(?:_(\d{3}))?(?:#(p\w\d{3}[abc]\d\d))?', n)
+            r = re.findall(r'([A-Z]{1,2})(\d{2,3})n(\w\d{3})([a-zA-Z])?(?:_(\d{3}))?(?:#(p?\w\d{3}[abc]\d\d))?', n)
             if r:
                 self.book, tome, self.sutra, self.yiyi, volume, self.anchor = r[0]
                 self.volume = 0 if not volume else int(volume)
