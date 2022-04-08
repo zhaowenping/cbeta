@@ -383,12 +383,13 @@
         <br/>
     </xsl:template>
 
+    <!--每行给一个id作定位-->
     <xsl:template match="lb">
-        <!--span class="lb">
+        <span class="lb">
           <xsl:attribute name="id">
             <xsl:value-of select="@n"/>
           </xsl:attribute>
-        </span-->
+        </span>
     </xsl:template>
 
     <xsl:template match="lg/l">
