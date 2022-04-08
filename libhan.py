@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2022-04-07 23:36:39
+# Last Modified: 2022-04-07 23:54:46
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -751,6 +751,7 @@ def parse_ahan(number):
         # 查表:杂阿含经
         with open(f'idx/{book}.xml') as fd:
             for line in fd:
+                if line.startswith('#'): continue
                 line = line.strip().split()
                 if sutran == int(line[0]):
                     sutra = Number(line[1])
