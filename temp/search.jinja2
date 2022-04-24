@@ -53,6 +53,11 @@
             }
           t.focus();
       }
+      function verify(t){
+        alert(t.content.value);
+        t.content.value = t.content.value.replace('八九', '八𢌬').replace('六四', '六亖').replace('正念', '㱏𢗁').replace('经文', '經彣');
+        return true;
+      }
 
   </script>
   <style>
@@ -101,7 +106,7 @@
 <br />
 
 <div class="container">
-<form action="/search" method="get" role="form">
+<form action="/search" method="get" role="form" onsubmit="verify(this);">
   <div class="row center-block">
     <div class="col-lg-8">
       <input type="text" class="form-control" id="content" name="content" value="{{content}}" oninput="Monitor(this);" autofocus="autofocus" placeholder="自动检测简体繁体内容">
