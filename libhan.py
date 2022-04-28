@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2022-04-23 08:33:39
+# Last Modified: 2022-04-28 07:36:03
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -187,6 +187,7 @@ class IDS:
         self.ids_dict = dict()
         with open('idx/ids.txt') as fd:
             for line in fd:
+                if line.startswith('#') or not line: continue
                 line = line.strip().split()
                 self.ids_dict[line[2]] = line[1]
         self.p = re.compile('|'.join(sorted(self.ids_dict.keys(), key=len, reverse=True)))
@@ -453,6 +454,9 @@ kx_word_table = { #0x2F804: 0x4F60,
             0x6F40: 0x6F68, # 潀 潨
             0x5373: 0x537D, # 即 改为 卽
             0x65E2: 0x65E3,  # 既 改为 旣
+            0x66A8: 0x66C1,  # 暨 曁
+            0x5848: 0x588D, # 塈 墍
+            0x5527: 0x559E, # 唧 喞
             0x524E: 0x5239, # 剎改为 刹
             0x507D: 0x50DE, # 偽 僞
             0x6C61: 0x6C5A, # 污 汚
