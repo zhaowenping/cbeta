@@ -137,7 +137,7 @@
                 <li class="nav-item">
             <a id="normal-txt" class="nav-link">
                 <xsl:attribute name="href">
-                    <xsl:value-of select="concat('/zh_TW', $dir, $current_sutra, '_')"/>
+                    <xsl:value-of select="concat('/zh_KX', $dir, $current_sutra, '_')"/>
                     <xsl:number format="001" value="$juan"/>
                     <xsl:text>.xml</xsl:text>
                 </xsl:attribute>

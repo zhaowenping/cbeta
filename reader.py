@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2022-02-15 07:00:47
+# Last Modified: 2022-04-29 17:50:13
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -46,6 +46,7 @@ from libhan import Number, rm_pun
 from libhan import get_first_juan
 
 from libhan import HKdict2iast
+from libhan import regular_glyph_taiwan
 from data import lookup, lookinkangxi
 
 # from xsltproc import xsltproc, XSLT
@@ -861,8 +862,47 @@ def t2s_post():
 
 @route('/zh_TW/:filename#.+#')
 def zh_TW(filename):
-    '''正字版'''
+    '''台湾正字版'''
     print('正字版本', filename)
+    with open(filename) as fd:
+        content = fd.read()
+    # 修改语言为简体
+    # content = content.replace('Hant', 'Hans')
+    # 添加敬语染色 honorific  如來、應供、正遍知、明行足、善逝、世間解、無上士調御丈夫、天人師、佛、世尊
+    honorific = {'如來', '多陀怛伽度', '多陀竭', '多陀阿伽[度陀馱駄多]', '怛他蘗多夜?', '怛薩阿竭', '怛闥阿竭', '陀多竭多', '多陀阿加度',
+            '應供', '阿羅訶', '阿羅呵', '至真', '阿囉訶',
+            '正遍知', '正[徧遍][知覺]', '等正覺', '三藐三菩陀', '正等覺', '平等正覺', '正遍智', '正徧知', '正遍覺', '正真道', '正等覺', '正等正覺', '正覺等',
+               '三藐三佛', '三藐三佛陀', '三耶三佛', '三耶三佛檀', '阿耨多羅三耶三佛', '三耶三菩',
+            '明行足', '明行成為', '明行具足', '明行圓滿', '通行備足',
+            '善逝', '修伽陀', '脩伽陀', '蘇揭多', '修伽多', '脩伽度', '脩伽多',
+            '世間解', '路迦憊',
+            '無上士調御丈夫', '無上丈夫調御士', '無上調御丈夫', '無上士道法御', '無上法御',
+            '天人師', '天人之師', '舍多提婆魔㝹舍喃', '舍多提波□魔㝹舍南', '舍多提婆摩㝹舍喃', '舍多提婆魔菟舍喃', '舍多提婆摩嵬舍喃', '天人教師',
+            '佛陀', '佛馱', '浮陀', '浮頭', '沒馱', '步他', '馞陀', '復豆', '浮屠', '浮圖',
+            '世尊', '薄伽梵', '婆伽婆'}
+    # content = re.sub(r'(?!辟支|仿)(佛陀?)', r'<persName>\1</persName>', content)
+    honorific = '|'.join(sorted(honorific, key=len, reverse=True))
+    # print(honorific)
+    content = re.sub(f'({honorific})', r'<Honorific>\1</Honorific>', content)
+    # 人名地名下划线
+    # persName = list()
+    # with open('dict/persName.txt') as fd:
+    #     for line in fd:
+    #         line = line.strip()
+    #         persName.append(line)
+    # persName = '|'.join(persName)
+    # content = re.sub(f'({persName})', r'<persName>\1</persName>', content)
+    content = normalize_text(content)
+    # 转换为台湾正字
+    content = regular_glyph_taiwan(content)
+    print(filename)
+    response.content_type = 'text/xml'
+    return content
+
+@route('/zh_KX/:filename#.+#')
+def zh_KX(filename):
+    '''康熙正字版'''
+    print('康熙正字版本', filename)
     with open(filename) as fd:
         content = fd.read()
     # 修改语言为简体
