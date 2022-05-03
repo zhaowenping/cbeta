@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2022-03-13 06:37:44
+# Last Modified: 2022-05-01 03:07:52
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -63,6 +63,7 @@ kangxi = '''乚  𠃊 𠃑 ⺄ 丨 丶 丿 亅 𠃍 𠄎
 16 𩰲 龍 龜
 17 龠
 19 䜌
+𤰇 𠀗
 '''.split()
 
 import pprint
