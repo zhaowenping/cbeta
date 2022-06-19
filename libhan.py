@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2022-05-03 02:45:32
+# Last Modified: 2022-06-17 22:23:36
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -369,10 +369,10 @@ def unicode_zone(char):
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    #path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
+    path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
-            line = line.strip()
+            line = python_unescape(line.strip())
             if line.startswith('#') or not line: continue
             c0, c1, *cc = line.strip().split()
             if trans and reverse:
@@ -721,8 +721,8 @@ def grep(filepath, *keyword):
     return line
 
 sch_db = []
-#with open(os.path.join(PATH, "idx/sutra_sch.lst")) as fd:
-with open("idx/sutra_sch.lst") as fd:
+with open(os.path.join(PATH, "idx/sutra_sch.lst")) as fd:
+#with open("idx/sutra_sch.lst") as fd:
     for line in fd:
         if line.startswith('#'): continue
         line = line.strip().split()[0]
@@ -1672,8 +1672,8 @@ def shave_marks(ctx):
 # pun = re.compile('['+string.punctuation+']')
 # 读取标点数据库
 pun = dict()
-#with open('/home/zhaowp/cbeta/cbeta/dict/punctuation.txt') as fd:
-with open('dict/punctuation.txt') as fd:
+with open('/home/zhaowp/cbeta/cbeta/dict/punctuation.txt') as fd:
+#with open('dict/punctuation.txt') as fd:
     for line in fd:
         line = line.strip()
         if line.startswith('~~~~~~~~~'):
@@ -1920,6 +1920,7 @@ def templesearch(word):
     r= requests.get(url, json=data, timeout=10)
     result = r.json()
     hits = result['hits']['hits']
+    total = result["hits"]["total"]["value"]
     result = []
     for hit in hits:
         _source = hit["_source"]
@@ -1943,6 +1944,7 @@ def wordsearch(word):
     r= requests.get(url, json=data, timeout=10)
     result = r.json()
     hits = result['hits']['hits']
+    total = result["hits"]["total"]["value"]
     result = []
     for hit in hits:
         _source = hit["_source"]
@@ -1971,6 +1973,7 @@ def wordsearch2(word):
     r= requests.get(url, json=data, timeout=10)
     result = r.json()
     hits = result['hits']['hits']
+    total = result["hits"]["total"]["value"]
     result = []
     for hit in hits:
         _source = hit["_source"]
@@ -2048,7 +2051,7 @@ def fullsearch(sentence):
 #            'type': 'search_phase_execution_exception'},
 #  'status': 503}
     hits = result['hits']['hits']
-    # value = result['hits']['total']['value']
+    total = result["hits"]["total"]["value"]
     result = []
     for hit in hits:
         _source = hit["_source"]
