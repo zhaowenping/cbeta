@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2022-04-29 17:50:13
+# Last Modified: 2022-06-22 21:08:27
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -798,11 +798,14 @@ def nizifa_get():
 def nizifa_post():
     '''逆字法'''
     tcontent = json.loads(request.forms.text).get('text', '')
+    tcontent = python_unescape(tcontent)
     nizibiao = dict()
     s2t_table = dict()
     with open('cc/STCharacters.txt') as fd:
         for line in fd:
-            line = line.strip().split()
+            line = line.strip()
+            if line.startswith('#'): continue
+            line = line.split()
             s2t_table[ord(line[0])] = ord(line[1])
 
     scontent = tcontent.translate(s2t_table)

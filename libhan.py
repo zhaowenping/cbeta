@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2022-06-17 22:23:36
+# Last Modified: 2022-06-23 16:19:14
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -115,9 +115,10 @@ def fullwidth2half(ctx, pun=True, exp=''):
 
 def python_unescape(ctx):
     '''替换python字样转义字符串为正常汉字'''
-    for ch in re.findall(r'(?:[^\\]|^)(\\u[a-fA-F0-9]{4})', ctx):
+    #for ch in re.findall(r'(?:[^\\]|^)(\\u[a-fA-F0-9]{4})', ctx):
+    for ch in re.findall(r'(\\u[a-fA-F0-9]{4})', ctx):
         ctx = ctx.replace(ch, chr(int(ch[-4:], 16)))
-    for ch in re.findall(r'(?:[^\\]|^)(\\U[a-fA-F0-9]{8})', ctx):
+    for ch in re.findall(r'(\\U[a-fA-F0-9]{8})', ctx):
         ctx = ctx.replace(ch, chr(int(ch[-8:], 16)))
     # ctx = ctx.replace(r'\\\\', r'\\')
 
@@ -369,7 +370,7 @@ def unicode_zone(char):
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    path = os.path.join("/home/zhaowp/cbeta/cbeta", path)
+    # path = os.path.join(PATH, path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
             line = python_unescape(line.strip())
@@ -721,8 +722,8 @@ def grep(filepath, *keyword):
     return line
 
 sch_db = []
-with open(os.path.join(PATH, "idx/sutra_sch.lst")) as fd:
-#with open("idx/sutra_sch.lst") as fd:
+#with open(os.path.join(PATH, "idx/sutra_sch.lst")) as fd:
+with open("idx/sutra_sch.lst") as fd:
     for line in fd:
         if line.startswith('#'): continue
         line = line.strip().split()[0]
@@ -1672,8 +1673,9 @@ def shave_marks(ctx):
 # pun = re.compile('['+string.punctuation+']')
 # 读取标点数据库
 pun = dict()
-with open('/home/zhaowp/cbeta/cbeta/dict/punctuation.txt') as fd:
-#with open('dict/punctuation.txt') as fd:
+path = "dict/punctuation.txt"
+#path = os.path.join(PATH, path)
+with open(path) as fd:
     for line in fd:
         line = line.strip()
         if line.startswith('~~~~~~~~~'):
