@@ -68,15 +68,6 @@
   unicode-range: U+11580-115FF;
 }
 
-/* G區漢字 */
-@font-face {
-  font-family: 'SCTG';
-  font-style: normal;
-  font-weight: normal;
-  src:  url(/static/SCTG.otf) format('opentype');
-  unicode-range: U+30000-3134A;
-}
-
 /* CDEF區漢字使用抽取出來的花園明朝字體 */
 /*
 @font-face {
@@ -86,6 +77,15 @@
     unicode-range: U+2CEEC-2EBCF;
 }
 */
+/* FGHI區漢字使用自製字體 */
+@font-face {
+  font-family: 'SCT';
+  font-style: normal;
+  font-weight: normal;
+  src:  url(/static/fonts/SCTG.woff2) format('woff2');
+  unicode-range: U+30000-3134A;
+}
+
 
 /* 用于显示等宽英文和拼音, 拼音a的显示还存在问题 */
 @font-face {
@@ -133,7 +133,7 @@ html {
         "Hiragino Sans GB", "PingFang HK", "PingFang SC", "PMingLiU", "Microsoft YaHei",
         hanaminsat, siddham;
         */
-    font-family: quote, "Hiragino Sans GB", "PingFang SC", "PMingLiU", hanaminsat
+    font-family: quote, "Hiragino Sans GB", "PingFang SC", "PMingLiU", SCT, hanaminsat
     /*font-family: quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;*/
     /*font-family: ENCLOSING_CIRCLE, WSQUARE, quote, Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif, "Hiragino Sans GB", "PingFang HK", "PingFang SC", "PMingLiU", "Microsoft YaHei", siddham;*/
     /* font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;*/
@@ -611,7 +611,7 @@ span.l {
 /*在小屏幕设备上居中显示偈颂*/
 @media screen and (max-width: 736px) {
     body {
-        font-family: quote, "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", "PMingLiU", hanaminsat;
+        font-family: quote, "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", "PMingLiU", SCT, hanaminsat;
         padding: 0.3em;
         font-size: 100%;
     }
