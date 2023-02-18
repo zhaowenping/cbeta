@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2022-09-20 15:48:23
+# Last Modified: 2023-02-18 03:44:17
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -370,7 +370,7 @@ def unicode_zone(char):
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    # path = os.path.join(PATH, path)
+    #path = os.path.join(PATH, path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
             line = python_unescape(line.strip())
@@ -1674,7 +1674,7 @@ def shave_marks(ctx):
 # 读取标点数据库
 pun = dict()
 path = "dict/punctuation.txt"
-#path = os.path.join(PATH, path)
+# path = os.path.join(PATH, path)
 with open(path) as fd:
     for line in fd:
         line = line.strip()
