@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2023-02-18 03:44:17
+# Last Modified: 2023-03-03 04:05:44
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -370,7 +370,7 @@ def unicode_zone(char):
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    #path = os.path.join(PATH, path)
+    # path = os.path.join(PATH, path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
             line = python_unescape(line.strip())
@@ -1674,7 +1674,7 @@ def shave_marks(ctx):
 # 读取标点数据库
 pun = dict()
 path = "dict/punctuation.txt"
-# path = os.path.join(PATH, path)
+#path = os.path.join(PATH, path)
 with open(path) as fd:
     for line in fd:
         line = line.strip()
@@ -2246,15 +2246,16 @@ if __name__ == "__main__":
     # print(highlight(sentence, raw))
     #print(parse_number2('大正藏第九卷第七〇九页'))
     #print(parse_number2('大正藏第十九卷第16頁下'))
-    order = '“Herr Voß: • ½ cup of Œtker™ caffè latte • bowl of açaí.”'
-    print((order))
-    print(shave_marks(order))
-    print(rm_pun(order))
-    # print(unicodedata.normalize('NFC', shave_marks(order)))
-    pattern = re.compile(r'[\u3007\u3400-\u9FFC\U00020000-\U000323BC]+')
-    j = 0
-    for i in re_split(pattern, '由尊者迦葉（Maha Kasyape）結集於王舍城', fn=lambda x: f'x{x}', exfn=lambda x: x):
-        j = j+ 1
-        print(j, i)
-    sentence = 'Bhikkhu'
-    fullsearch(sentence)
+    #order = '“Herr Voß: • ½ cup of Œtker™ caffè latte • bowl of açaí.”'
+    #print((order))
+    #print(shave_marks(order))
+    #print(rm_pun(order))
+    ## print(unicodedata.normalize('NFC', shave_marks(order)))
+    #pattern = re.compile(r'[\u3007\u3400-\u9FFC\U00020000-\U000323BC]+')
+    #j = 0
+    #for i in re_split(pattern, '由尊者迦葉（Maha Kasyape）結集於王舍城', fn=lambda x: f'x{x}', exfn=lambda x: x):
+    #    j = j+ 1
+    #    print(j, i)
+    #sentence = 'Bhikkhu'
+    #fullsearch(sentence)
+    print(parse_number1('LC06n0006_p0221a11'))
