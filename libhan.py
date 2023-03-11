@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2023-03-03 04:05:44
+# Last Modified: 2023-03-11 05:26:26
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -370,7 +370,7 @@ def unicode_zone(char):
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    # path = os.path.join(PATH, path)
+    #path = os.path.join(PATH, path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
             line = python_unescape(line.strip())
@@ -1523,12 +1523,12 @@ class STConvertor:
                 self.jt.add(line[0])
 
         # 简体词汇表
-        self.jtp = set()
+        self.jtphrase = set()
         with open('cc/SPhrases.txt') as fd:
             for line in fd:
                 if line.startswith('#'): continue
                 line = line.split()
-                self.jtp.add(line[0])
+                self.jtphrase.add(line[0])
 
 
     def t2s(self, string, punctuation=True, region=False, autonorm=True, onlyURO=True):
@@ -1612,7 +1612,7 @@ class STConvertor:
 
         # 使用简体词表来判断是否是简体
         if confidence == 't':
-            for word in self.jtp:
+            for word in self.jtphrase:
                 if word in s0:
                     confidence = 's'
                     break
