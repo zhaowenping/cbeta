@@ -20,14 +20,14 @@
     <!--当前文件的卷数, 形如: 001; 目前只能靠猜了-->
     <!--xsl:variable name="juan" select="/TEI[1]/text/body//cb:juan[1]/@n|/TEI/text/body//milestone[@unit='juan']/@n|/TEI/text/body//cb:mulu[@type='卷']/@n"/-->
     <xsl:variable name="juan" select="format-number(/TEI/text/body//milestone[@unit='juan']/@n, '000')"/>
-    <!--当前文件的语言, 默认繁体文言文-->
+    <!--当前文件的语言, 默認香港繁體文言文-->
     <xsl:variable name="lang">
       <xsl:choose>
         <xsl:when test="/TEI/@xml:lang">
           <xsl:value-of select="/TEI/@xml:lang"/>
         </xsl:when>
         <xsl:otherwise>
-          <xsl:text>lzh-Hant</xsl:text>
+          <xsl:text>lzh-Hant-HK</xsl:text>
         </xsl:otherwise>
       </xsl:choose>
     </xsl:variable>

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2023-03-11 05:26:26
+# Last Modified: 2023-03-31 00:28:05
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -487,6 +487,12 @@ kx_word_table = { #0x2F804: 0x4F60,
             0x586B: 0x5861, # 填 塡 U+586B U+5861
             0x6E89: 0x6F11, # 溉 漑
             0x5C4F: 0x5C5B, # 屏 屛
+            # 翱 翺 U+7FF1 U+7FFA
+            # 吞 呑 U+541E U+5451
+            # 熙 煕 U+7199 U+7155
+            # 揭 掲 U+63ED U+63B2
+            # 渴 渇 U+6E34 U+6E07
+            # 研 硏 U+7814 U+784F
             # 0x9B25: 0x9B2D  # 鬥 鬭
             # 0x26B07: 0x2CEC0,  # 菩萨
             0x3021: 0x4E28,  # 丨 〡
