@@ -83,14 +83,14 @@ sūtrapiṭaka
 		S0026 4 Ārya ṃaitreya-vyākaraṇaṃ 佛說彌勒下生成佛經
 		S0027 5 Āryānityatā sūtram 佛說無常經
 		S0028 6 Āryapratītyasamutpādo nāma mahāyānasūtram
-		7 Āryarāṣṭrapālaparipṛcchā nāma mahāyānasūtram
+		7 Āryarāṣṭrapālaparipṛcchā nāma mahāyānasūtram 佛說護國尊者所問大乘經
 			S0029_264 1 Nidānaparivartaḥ prathamaḥ
 			S0029_265 2 Dvitīyaḥ parivartaḥ
 		S0030 8 Āryasāgaranāgarājaparipṛcchā nāma mahāyānasūtram 佛為海龍王說法印經
 		S0031 9 Āryasaṃghāṭa sūtram 僧伽吒經
 		S0032 10 Āryasarvabuddhaviṣayāvatārajñānālokālaṃkāranāma mahāyānasūtram 佛說入一切諸佛境界智慧光明莊嚴大乘經
-		S0033 11 Āryatriratnānusmṛtisūtram
-		S0034 12 Āryatriskandha sūtram
+		S0033 11 Āryatriratnānusmṛtisūtram 隨念三寶經
+		S0034 12 Āryatriskandha sūtram 三蘊經
 		13 Āryavimalakīrtinirdeśo nāma mahāyānasūtram 維摩詰所說經
 			S0035_271 1. buddhakṣetrapariśuddhinidānam
 			S0035_272 2. acintyopāyakauśalyam
@@ -106,7 +106,7 @@ sūtrapiṭaka
 			S0035_282 12 pūrvayogaḥ saddharmaparīndanā ca
 		S0036 14 Bhaiṣajyaguruvaidūryaprabharājasūtram 藥師琉璃光如來本願功德經 
 		S0037 15 Bhavasaṅkrāntisūtram 佛說大方等修多羅王經
-		S0038 16 catuṣpariṣat sūtram
+		S0038 16 catuṣpariṣat sūtram 四衆經
 		17 Daśabhūmikasūtram 佛說十地經
 			S0039_286 1 pramuditā nāma prathamā bhūmiḥ
 			S0039_287 2 vimalā nāma dvitīyā bhūmiḥ
@@ -272,8 +272,8 @@ sūtrapiṭaka
 		S0046 24 Madhyamaka-śālistambasūtram
 		S0047 25 Mahāmegha sūtram 大雲經
 		S0048 26 Mahāparinirvāṇa sūtram
-		S0049 27 Mahāvadānasūtram
-		S0050 28 Megha sūtram
+		S0049 27 Mahāvadānasūtram 大譬喻經
+		S0050 28 Megha sūtram 雲經
 		S0051 29 Nairātmyaparipṛcchā nāma mahāyānasūtram 尼乾子問無我義經
 		S0052 30 Pañcarakṣā sūtram(null)
 		31 Saddharmalaṅkāvatārasūtram 大乘入楞伽經
@@ -315,7 +315,7 @@ sūtrapiṭaka
 			S0054_482 25 śubhavyūharājapūrvayogaparivartaḥ 陀羅尼品
 			S0054_483 26 samantabhadrotsāhanaparivartaḥ 妙莊嚴王本事品
 			S0054_484 27 anuparīndanāparivartaḥ 普賢菩薩勸發品
-		S0055 33 Śālistambasūtram
+		S0055 33 Śālistambasūtram 佛說稻稈經
 		34 Samādhirājasūtram 月燈三昧經
 			S0056_486 1  Nidānaparivartaḥ
 			S0056_487 2  Śālendrarājapūrvayogaparivarto dvitīyaḥ
@@ -382,10 +382,10 @@ sūtrapiṭaka
 			S0060_547 19 Vyāghrīparivartaḥ
 			S0060_548 20 Sarvatathāgatastavaparivartaḥ
 			S0060_549 21 Nigamanaparivartaḥ
-		S0061 39 Vimalakīrtinirdeśa sūtram
-		S0062 40 Vinayaviniścaya upāliparipṛcchā
-		S0063 41 Saddharmasmṛtyupasthānasūtra
-		S0061 42 Vajrasattvaniṣpādana Sūtra
+		S0061 39 Vimalakīrtinirdeśa sūtram 維摩詰所說經
+		S0062 40 Vinayaviniścaya upāliparipṛcchā 決定毗尼優波離請問經
+		S0063 41 Saddharmasmṛtyupasthānasūtra 正法念處經
+		S0061 42 Vajrasattvaniṣpādana Sūtra 金剛薩埵成就法經
 	5 nirdeśa
 		S0062 1 Āryābuddhabalādhānaprātihāryavikurvaṇanirdeśanā mamahāyānasūtram
 		S0063 2 Āryacaturdharmanirdeśasūtram

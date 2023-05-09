@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2023-03-31 00:28:05
+# Last Modified: 2023-05-09 05:06:34
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -141,6 +141,9 @@ def python_escape(ctx):
             yield r'\u{:04X}'.format(ordchar)
         # F、G、H、I区汉字
         elif 0x2CEB0 <= ordchar:
+            yield r'\U{:08X}'.format(ordchar)
+        # 悉曇字
+        elif 0x11580 <= ordchar <=0x115DD:
             yield r'\U{:08X}'.format(ordchar)
         else:
             yield char

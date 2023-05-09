@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2021-12-19 22:28:47
+# Last Modified: 2023-04-09 20:57:32
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -15,8 +15,9 @@ __version__ = "0.0.1"
 import re
 
 ids_dict = list()
-with open('ids2.txt') as fd:
+with open('ids.txt') as fd:
     for line in fd:
+        if line.startswith('#'): continue
         line = line.strip().split()
         #if 'U+%X' % ord(line[1]) != line[0]:
         #    print(line)
@@ -26,9 +27,14 @@ with open('ids2.txt') as fd:
 import pprint
 #print(re.compile('|'.join(sorted(ids_dict.keys(), key=len, reverse=True))))
 #pprint.pprint(ids_dict)
-ids_dict = sorted(ids_dict, key=lambda x: ord(x[1]))
-for zi in ids_dict:
-    print(' '.join(zi))
+#ids_dict = sorted(ids_dict, key=lambda x: ord(x[1]))
+with open('ids.txt') as fd:
+    for line in fd:
+        if line.startswith('#'): continue
+        line = line.strip().split()
+        for zi in ids_dict:
+            if zi[2] == line[2] and  zi[0] != line[0]:
+                print(' '.join(zi))
 
 def main():
     ''''''
