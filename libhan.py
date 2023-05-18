@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2023-05-10 20:14:57
+# Last Modified: 2023-05-18 04:25:30
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -45,7 +45,9 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_LINE_SPACING
 from docx.shared import Pt
 from docx.shared import RGBColor
 import Levenshtein
+import pyewts
 
+Wylie_converter = pyewts.pyewts()
 
 print('调用函数库')
 PATH = "/home/zhaowp/cbeta/cbeta"
@@ -2268,3 +2270,91 @@ if __name__ == "__main__":
     #sentence = 'Bhikkhu'
     #fullsearch(sentence)
     print(parse_number1('LC06n0006_p0221a11'))
+
+def danjuursearch(sentence):
+    '''全文搜索藏文內容, sentence是需要搜索的藏文'''
+    # 标准化文本
+    sentence = Wylie_converter.toWylie(sentence)
+    # sentence = shave_marks(sentence)
+    # sentence = ''.join(python_escape(sentence))
+    url = "http://127.0.0.1:9200/danjuur/_doc/_search"
+    data = {
+     "query": {
+         "match_phrase": { "content": sentence },  # "content": {"query": sentence, "slop": 1} },
+         "bool":{
+            #  "must": {}
+        }
+    },
+    "size": 5000,
+    "from": 0,
+    # "highlight": {
+    #     "fields": {
+    #         "raw": {
+
+    #         }
+    #     }
+    # }
+    }
+
+    # 组成标准查询JSON
+    #  s = time.time()
+    #  if re.findall(r'\s+and\s+|\s*&\s*', sentence, flags=re.I):
+    #      sentences = re.split(r'\s+and\s+|\s*&\s*', sentence, flags=re.I)
+    #      sentences = [re.sub(r'\s+', '', ctx) for ctx in sentences]
+    #  else:
+    #      sentences = re.split(r'\s+', sentence)
+    #  # data["query"]["bool"]["must"] = [{"match_phrase": {"content": st}} for st in sentences]
+    #  sentences = [re.split(r':|：', st) for st in sentences]
+    #  # 标准化经号number字段,按照长度不同分别在number和sutra字段中查找
+    #  must = (("content", st[0]) if len(st) == 1 else (st[0].lower(), st[1]) for st in sentences)
+    #  # must = ((st0, st1 if st0 != 'number' else normalize_number(st1,False)) for st0,st1 in must)
+    #  must = ((st0, st1 if st0 != 'number' else str(parse_number1(st1,False))) for st0,st1 in must)
+    #  must = (('sutra' if (st0=='number' and '_' not in st1) else st0, st1) for st0,st1 in must)
+    #  data["query"]["bool"]["must"] = [{"match_phrase" if key=="content" else "match": {key:val}} for key,val in must]
+    #  # pprint.pprint(data["query"]["bool"]["must"])
+    #  # 用于高亮的内容
+    #  hlsentence = python_unescape(''.join([st[0] for st in sentences if len(st) == 1]))
+    #  # e = time.time()
+    #  # print(e-s)
+
+    s = time.time()
+    # data = {'query': {'bool': {'must': [{'match': {'content': 'bhikkhu'}}]}}, 'size': 5000, 'from': 0}
+    #data = {'query': {'match': {'content': 'bhikkhū'}}, 'size': 5000, 'from': 0}
+    #data = {'query': {'term': {'content': 'bhikkhu'}}, 'size': 5000, 'from': 0}
+    r= requests.get(url, json=data, timeout=10)
+    result = r.json()
+    # e = time.time()
+    # print(data)
+    # print(result)
+    # print('---------------------------')
+    # {'error': {'root_cause': [{'type': 'index_not_found_exception', 'reason': 'no such index [cbeta]', 'resource.type': 'index_or_alias', 'resource.id': 'cbeta', 'index_uuid': '_na_', 'index': 'cbeta'}], 'type': 'index_not_found_exception', 'reason': 'no such index [cbeta]', 'resource.type': 'index_or_alias', 'resource.id': 'cbeta', 'index_uuid': '_na_', 'index': 'cbeta'}, 'status': 404}
+
+# {'error': {'failed_shards': [],
+#            'grouped': True,
+#            'phase': 'query',
+#            'reason': 'all shards failed',
+#            'root_cause': [],
+#            'type': 'search_phase_execution_exception'},
+#  'status': 503}
+    hits = result['hits']['hits']
+    total = result["hits"]["total"]["value"]
+    result = []
+    for hit in hits:
+        _source = hit["_source"]
+        author = _source['author']
+        # hl = highlight(hlsentence, _source["raw"])
+        hl = _source["raw"]
+        title = _source['title'] + ': ' + _source.get('chapter', '')
+        url = _source.get('url', None)
+        print(title, '|||' , url)
+        if 'url' not in _source or not url:
+            title = _source['title']
+            juan = _source["number"].split('n')[0]
+            url = f'/xml/{juan}/{_source["number"]}.xml#{hit["_id"]}'
+        print(title, '|||' , url)
+        # 文章内容高亮显示
+        result.append({'hl': hl, 'an': url, 'title':title, 'author': author, 'number': _source["number"]})
+
+    result.sort(key=lambda x: pagerank(x['number']))
+
+    return result
