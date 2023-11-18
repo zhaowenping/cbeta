@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2023-05-18 04:25:30
+# Last Modified: 2023-11-18 02:00:44
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -128,7 +128,7 @@ def python_unescape(ctx):
 
 
 def python_escape(ctx):
-    '''因为ES不支持八卦符号、F区、G区、H区汉字，所以将F区、G区、H区汉字转换成转义字符序列，方便后续ES中查找'''
+    '''因为ES不支持八卦符号、F区、G区、J区汉字，所以将F区、G区、J区汉字转换成转义字符序列，方便后续ES中查找'''
     for char in ctx:
         ordchar = ord(char)
         # if 0x2CEB0 <= ordchar <= 0x2EBE0:  # F区
@@ -141,7 +141,7 @@ def python_escape(ctx):
         # 八卦符号
         elif 0x268A<=ordchar<=0x268F or 0x2630<=ordchar<=0x2637 or 0x4DC0<=ordchar<=0x4DFF:
             yield r'\u{:04X}'.format(ordchar)
-        # F、G、H、I区汉字
+        # F、G、H、I、J区汉字
         elif 0x2CEB0 <= ordchar:
             yield r'\U{:08X}'.format(ordchar)
         # 悉曇字
@@ -375,7 +375,7 @@ def unicode_zone(char):
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    #path = os.path.join(PATH, path)
+    path = os.path.join(PATH, path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
             line = python_unescape(line.strip())
@@ -575,7 +575,7 @@ class Number:
         # 重新标准化tome
         tome = int(tome)
         tome_len = 2
-        if self.book in {'A', 'C', 'G', 'GA', 'GB', 'L', 'M', 'P', 'U'}:
+        if self.book in {'A', 'C', 'G', 'GA', 'GB', 'L', 'M', 'P', 'U', 'CC'}:
             tome_len = 3
         self.tome = f'{tome:0{tome_len}}'
 
@@ -588,12 +588,12 @@ class Number:
 
     def __lt__(self, other):
         '''重要性的排序'''
-        pr = ("T", "A", "S", "F", "C", "K", "B", "ZW", "P", "U", "D", "G", "M", "N", "L", "J", "X", "Y", "LC", "GA", "GB", "I", "TX", "JT")
+        pr = ("T", "A", "S", "F", "C", "K", "B", "ZW", "P", "U", "D", "G", "M", "N", "L", "J", "X", "Y", "LC", "GA", "GB", "I", "TX", "JT", "CC")
         tt = {  'T': 1, 'A': 2, 'F': 3, 'S': 4, 'U': 5,
                 'P': 6, 'B': 7, 'ZW': 8, 'J': 9, 'C': 10,
                 'D': 11, 'K': 12, 'G': 13, 'X': 14, 'N': 18, 'I':19,
                 'L': 20, 'M': 30, 'Y':40, 'LC':50, 'TX': 55,
-                'JT': 58, 'GA':60, 'GB': 70, 'ZS':80}
+                'JT': 58, 'GA':60, 'GB': 70, 'ZS':80, 'CC': 90}
         yiyi = 0 if not self.yiyi else ord(self.yiyi)-64
         oyiyi = 0 if not other.yiyi else ord(other.yiyi)-64
         return (tt[self.book], int(self.tome), int(self.sutra, 16), yiyi, self.volume) < (tt[other.book], int(other.tome), int(other.sutra, 16), oyiyi, other.volume)
@@ -733,8 +733,8 @@ def grep(filepath, *keyword):
     return line
 
 sch_db = []
-#with open(os.path.join(PATH, "idx/sutra_sch.lst")) as fd:
-with open("idx/sutra_sch.lst") as fd:
+with open(os.path.join(PATH, "idx/sutra_sch.lst")) as fd:
+#with open("idx/sutra_sch.lst") as fd:
     for line in fd:
         if line.startswith('#'): continue
         line = line.strip().split()[0]
@@ -883,7 +883,7 @@ def parse_number2(number):
             book = 'L'
         if '呂澂' in book:
             book = 'LC'
-        if book in {'A', 'C', 'G', 'GA', 'GB', 'L', 'M', 'P', 'U'}:
+        if book in {'A', 'C', 'G', 'GA', 'GB', 'L', 'M', 'P', 'U', 'CC'}:
             tome = '{:03}'.format(int(tome))
         else:
             tome = '{:02}'.format(int(tome))
@@ -922,6 +922,7 @@ def parse_number1(title, guess_juan=False):
     book, tome, sutra, j4, volume, anchor = 'T', '', '', '', '', ''
     # book, tome, sutra, j4, volume, anchor
     #    T,   01,  0001,  a     001, p0001a01
+    #print("1:", book, tome, sutra, j4, volume, anchor)
     found = False
     if not found:
         jinghao = jinghaopatten1.findall(title)
@@ -929,6 +930,7 @@ def parse_number1(title, guess_juan=False):
             book,tome,sutra,j4,volume,anchor = jinghao[0]
             found = True
 
+    #print("2:", title, book, tome, sutra, j4, volume, anchor)
     if not found:
         jinghao = jinghaopatten2.findall(title)
         if jinghao:
@@ -936,12 +938,14 @@ def parse_number1(title, guess_juan=False):
             anchor = '{:04}{}{:02}'.format(int(anchor), j7, int(j8))
             found = True
 
+    #print("3:", title, book, tome, sutra, j4, volume, anchor)
     if not found:
         jinghao = jinghaopatten9.findall(title)
         if jinghao:
             book,sutra,j4,volume = jinghao[0]
             found = True
 
+    #print("4:", title, book, tome, sutra, j4, volume, anchor)
     if title.isdigit():
         sutra = '{:04}'.format(int(title))
         found = True
@@ -949,9 +953,10 @@ def parse_number1(title, guess_juan=False):
     if not found:
             return None
 
+    #print("5:", title, book, tome, sutra, j4, volume, anchor)
     book = book.upper() if book else 'T'
     sutra = sutra.upper().zfill(4)
-    # TODO: 查找卷数
+    # 在數據庫中使用book,sutra查找卷数tome
     if not tome:
         # 大般若经特例
         if volume and f'{book}{sutra}' == 'T0220':
@@ -966,11 +971,16 @@ def parse_number1(title, guess_juan=False):
                 if book in line and f'n{sutra}' in line:
                     tome = line.split('n')[0][len(book):]
                     break
-    # print(1, '|'.join((title, book,tome,sutra,j4,volume,anchor)))
+    # print("6:", '|'.join((title, book,tome,sutra,j4,volume,anchor)))
     if not tome:
         return None
 
-    # 用book,tome,sutra确定j4;有j4确定大小写
+    # 日本部分特例
+    if book == 'T' and 2190 <= int(sutra) <= 2658 and j4:
+        volume = ord(j4) - ord('a') + 1
+        j4 = ''
+
+    # 在數據庫中用book,tome,sutra查找j4;有j4同時查找大小寫來确定大小寫
     found = False
     # j4如果是小写就变为大写, 大写就变成小写
     j9 = j4.upper() if j4 and ord('a') <= ord(j4) <= ord('z') else j4.lower()
@@ -983,6 +993,8 @@ def parse_number1(title, guess_juan=False):
             j4 = line[len(f'{book}{tome}n{sutra}'):]
             found = True
             break
+
+    #print("7:", '|'.join((title, book,tome,sutra,j4,volume,anchor)), found)
 
     if not found:
         return None
@@ -1685,7 +1697,7 @@ def shave_marks(ctx):
 # 读取标点数据库
 pun = dict()
 path = "dict/punctuation.txt"
-#path = os.path.join(PATH, path)
+path = os.path.join(PATH, path)
 with open(path) as fd:
     for line in fd:
         line = line.strip()
@@ -1850,7 +1862,7 @@ def bagua_unescape(ctx):
 
 def pagerank(filename, sentence='', content=''):
     '''对xml文件名评分, filename 为 T20n1060 或者 T20n1060_001.xml 形式
-    A,B,C,D,F,G,GA,GB,I,J,K,L,M,N,P,S,T,U,X,ZW, Y, LC
+    A,B,C,D,F,G,GA,GB,I,J,K,L,M,N,P,S,T,U,X,ZW, Y, LC, CC
     '''
     '''重要性的排序, pagerank.txt中的都是重要经典。排在最前面'''
     n = Number(filename)
@@ -1865,12 +1877,12 @@ def pagerank(filename, sentence='', content=''):
                 val = (0, 0, 0, 0, lineno)
                 break
 
-    pr = ("T", "A", "S", "F", "C", "K", "B", "ZW", "P", "U", "D", "G", "M", "N", "L", "J", "X", "Y", "LC", "GA", "GB", "I", "TX", "JT")
+    pr = ("T", "A", "S", "F", "C", "K", "B", "ZW", "P", "U", "D", "G", "M", "N", "L", "J", "X", "Y", "LC", "GA", "GB", "I", "TX", "JT", "CC")
     tt = {  'T': 1, 'A': 2, 'F': 3, 'S': 4, 'U': 5,
             'P': 6, 'B': 7, 'ZW': 8, 'J': 9, 'C': 10,
             'D': 11, 'K': 12, 'G': 13, 'X': 14, 'N': 18, 'I':19,
             'L': 20, 'M': 30, 'Y':40, 'LC':50, 'TX': 55,
-            'JT': 58, 'GA':60, 'GB': 70, 'ZS':80}
+            'JT': 58, 'GA':60, 'GB': 70, 'ZS':80, 'CC':90}
     yiyi = 0 if not n.yiyi else ord(n.yiyi)-64
 
     if not val:
@@ -2358,3 +2370,7 @@ def danjuursearch(sentence):
     result.sort(key=lambda x: pagerank(x['number']))
 
     return result
+
+
+print(parse_number1('2190'))
+print(parse_number1('2190a'))
