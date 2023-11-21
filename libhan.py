@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2023-11-18 02:00:44
+# Last Modified: 2023-11-20 23:06:31
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -332,7 +332,7 @@ def ishanzi(zi):
     # 主区和A区, 包括补充区0x4DB6-0x4DBF, 0x9FA6-0x9FFC
     if 0x3400 <= zi <= 0x9FFF: # and zi != 0x4EBD:
         return True
-    # BCDEFGH，包括兼容汉字区0x2FXXX
+    # BCDEFGHI，包括兼容汉字区0x2FXXX
     if 0x20000 <= zi <= 0x323BC:
         return True
     # 〇
@@ -370,12 +370,14 @@ def unicode_zone(char):
         return 'G'
     if 0x31350 <= ord(char) <= 0x323BC:
         return 'H'
+    if 0x2EBF0 <= ord(char) <= 0x2EE5D:
+        return 'I'
     return ''
 
 def readdb(path, trans=False, reverse=False):
     '''读取文本数据库, trans为是否用于tanslate函数, reverse为是否翻转'''
     result = dict()
-    path = os.path.join(PATH, path)
+    # path = os.path.join(PATH, path)
     with open(path, encoding='utf8') as fd:
         for line in fd:
             line = python_unescape(line.strip())
@@ -733,8 +735,8 @@ def grep(filepath, *keyword):
     return line
 
 sch_db = []
-with open(os.path.join(PATH, "idx/sutra_sch.lst")) as fd:
-#with open("idx/sutra_sch.lst") as fd:
+#with open(os.path.join(PATH, "idx/sutra_sch.lst")) as fd:
+with open("idx/sutra_sch.lst") as fd:
     for line in fd:
         if line.startswith('#'): continue
         line = line.strip().split()[0]
@@ -1697,7 +1699,7 @@ def shave_marks(ctx):
 # 读取标点数据库
 pun = dict()
 path = "dict/punctuation.txt"
-path = os.path.join(PATH, path)
+#path = os.path.join(PATH, path)
 with open(path) as fd:
     for line in fd:
         line = line.strip()
