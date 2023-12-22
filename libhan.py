@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # Language Version: 2.7+
-# Last Modified: 2023-11-20 23:06:31
+# Last Modified: 2023-12-21 16:44:28
 from __future__ import unicode_literals, division, absolute_import, print_function
 
 """
@@ -1699,7 +1699,7 @@ def shave_marks(ctx):
 # 读取标点数据库
 pun = dict()
 path = "dict/punctuation.txt"
-#path = os.path.join(PATH, path)
+path = os.path.join(PATH, path)
 with open(path) as fd:
     for line in fd:
         line = line.strip()
